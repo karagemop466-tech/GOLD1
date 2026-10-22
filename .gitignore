@@ -3,6 +3,12 @@ __pycache__/
 *.pyc
 .venv/
 
+# Node and generated audit-dashboard output
+node_modules/
+dist/
+coverage/
+*.log
+
 # OS
 .DS_Store
 Thumbs.db

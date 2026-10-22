@@ -1,0 +1,25 @@
+{
+  "name": "gold1-evidence-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Evidence-first gold engagement-ring research and static dashboard",
+  "scripts": {
+    "test": "npm run test:evidence && npm run test:links && npm run test:security && npm run test:html && npm run test:runtime && npm run build && npm run test:build",
+    "test:evidence": "node scripts/audit-evidence.js",
+    "test:links": "node scripts/audit-links.js",
+    "test:security": "node scripts/audit-security.js",
+    "test:html": "html-validate --config tests/htmlvalidate.json \"site/**/*.html\"",
+    "test:runtime": "node scripts/test-runtime.js",
+    "test:build": "node scripts/audit-build.js",
+    "build": "node scripts/build.js",
+    "serve": "node scripts/serve.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "html-validate": "^11.17.0",
+    "jsdom": "^30.1.3"
+  }
+}

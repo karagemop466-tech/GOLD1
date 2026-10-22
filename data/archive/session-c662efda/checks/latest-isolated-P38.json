@@ -1,0 +1,186 @@
+{
+  "pass": "P38",
+  "generated_at": "2026-10-22T23:38:13Z",
+  "builder_version": "1.0.0",
+  "summary": {
+    "total": 17,
+    "passed": 17,
+    "failed": 0,
+    "assertions": 3224,
+    "rows": 43,
+    "pages": 75
+  },
+  "groups": [
+    {
+      "id": "S01",
+      "name": "Provenance",
+      "description": "Every row has an HTTPS source on the retailer's own domain, a retrieval date, and a usable evidence string.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S02",
+      "name": "Price traceable to evidence",
+      "description": "The price digits must literally occur in the evidence text captured from the official source. A price that is not in its evidence is treated as hallucinated.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S03",
+      "name": "Karat validity and traceability",
+      "description": "Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row's own evidence text.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S04",
+      "name": "Internal arithmetic",
+      "description": "Price and weight ranges must be ordered and positive; a struck-through price cannot be below the price being charged.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S05",
+      "name": "Solid-gold claim honesty",
+      "description": "A row may only claim \"solid stated\" when the captured seller text actually contains the word solid.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S06",
+      "name": "Melt-value plausibility",
+      "description": "If a weight is published, the asking price cannot be below the gold content. A price under melt means the weight, karat or price is wrong.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S07",
+      "name": "Plated-metal guard",
+      "description": "Plating, vermeil or gold-filled language must never pass silently. It either disqualifies the row or raises a flag.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S08",
+      "name": "Date and price-feed sanity",
+      "description": "Retrieval dates must be real and not in the future; the stored gold price must be a positive number with an ISO publisher timestamp.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S09",
+      "name": "Identity and schema",
+      "description": "IDs and source URLs must be unique, retailers and categories must exist, and every flag must carry a source and the \"needs review\" status.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S10",
+      "name": "No silent blanks",
+      "description": "A blank value is allowed only when a flag explains it, and a price range must be disclosed as varying.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S11",
+      "name": "Links and placeholders",
+      "description": "Every internal link and asset reference in every generated page must resolve to a real file, and no page may contain placeholder text.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0,
+      "pages_checked": 75
+    },
+    {
+      "id": "S12",
+      "name": "Row-to-page coverage",
+      "description": "Every row must have a detail page that shows both its source link and its verified price.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S13",
+      "name": "Source registry coverage",
+      "description": "Every retailer used for a value must appear in the source registry with a retrieval record.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S14",
+      "name": "Weight traceability",
+      "description": "A weight in grams is only allowed when the grams appear in the evidence text captured from the seller, and the blank/known flags must agree with the stored value.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S15",
+      "name": "Re-verification ledger",
+      "description": "Anything the site calls \"re-verified\" must have a matching ledger entry with the same URL, a date and a quoted line, so the re-read can be audited by a human.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S16",
+      "name": "No invented dollar amounts",
+      "description": "Every dollar figure that appears on any generated page must trace to a value in the data files or to a formula computed from them. A price in the prose that exists nowhere in the data is treated as fabricated.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S17",
+      "name": "Data age",
+      "description": "A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed) and `sess-b93ff7c6` (parallel third pass + reconciliation + publish — **active**)
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed) and `sess-b93ff7c6` (parallel third pass + reconciliation + publish — **active**), and `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — **active**)
 **Board owner:** `sess-b93ff7c6` (reconciled board, §9) · **Board updated:** 2026-10-22
 
 ---
@@ -45,6 +45,8 @@ scope, one branch per session, no cross-session edits — were kept.
 | T12 | **Third pass**: site update (data-age banner, melt/value columns, weight-coverage page content) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
 | T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
 | T14 | **Reconciliation + publish**: merge `main`'s P12 into this branch, keep one ledger, fold in this session's extra reads, rebuild, re-audit, PR, merge, confirm Pages | **done** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `scripts/reconcile_second_read_p12.py`, `data/reverification.json`, `data/rings.json`, `data/flagged.json`, `scripts/build.mjs`, generated `*.html`, `README.md`, this board | 2026-10-22 |
+| T15 | **Independent official-source review**: 13 product rows, seller/policy evidence, 13-page `site/` dashboard and automated audits | **done** | arena/c662efda-gold1 | arena/c662efda-gold1 | `research/**`, `site/**`, `scripts/*.js`, `tests/**`, `package*.json` | 2026-10-22 |
+| T16 | **Standalone subsection publish**: preserve the root publisher, synchronize `site/data/`, run combined audits without rewriting canonical root reports, PR, merge and verify `/site/` on Pages | **in progress** | arena/c662efda-gold1 | arena/c662efda-gold1 | `site/data/**`, `research/README.md` entry link, `scripts/verify.mjs` ignored-dist exclusion only, session archive, §11 below | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -310,3 +312,15 @@ now carries a single T-number per pass and the next pass must claim it *before* 
 ### 2026-10-22 — sess-cf46c7b9 close-out after P34/P36
 
 After several parallel pushes from `sess-bc088451` and `sess-b93ff7c6` landed PRs #11–#19, this session reset to `origin/main` at `a4270dc` (post PR #19), rebuilt the site with `scripts/build.mjs`, and ran the canonical audit. Result: **P36, 17/17 groups, 3,224 assertions, 0 failures** across 43 rows and 59 pages. An internal-link crawl reports 0 broken links. GitHub Pages build for `3e082d8` reported `built`; a newer build was in flight when checked. This session does not alter `data/rings.json` or any retailer evidence — it only records the verified state and confirms the site builds cleanly on top of the merged passes. Final state: **43 listings · 7 retailers · 6 categories · 7/43 published weights · 17/17 audit groups passing · 0 broken internal links**.
+
+---
+
+## 11. Independent official-source review (`arena/c662efda-gold1`)
+
+- **Scope coordination:** T15 is complete and T16 is claimed for standalone publication. The sess-b93ff7c6 T14 root claim was active when the standalone approach was chosen and is now done. The standalone approach is retained to keep the final root diff minimal. Earlier branch-only cross-link/README edits were withdrawn; the final change set leaves root README, builder, generated pages, datasets and canonical reports byte-identical to `main`. No earlier task status or publication record is altered.
+- **Evidence set:** 13 official-product rows with direct links and 2026-10-22 retrieval dates, three seller-policy/reputation records, ten irregularity groups, nine verification gates, and a named Kitco snapshot. Six rows have seller-stated solid-gold wording and listed item weights; seven leave those fields blank. **All 13 remain flagged; zero are purchase-ready.** This remains a separate evidence set and is not counted as unique or auto-migrated into the root 43 rows.
+- **Standalone publication:** the existing legacy Pages publisher remains `main` `/`, so the reviewed dashboard publishes directly at `/GOLD1/site/` with its five exact JSON copies under `site/data/`. There is no competing Actions Pages workflow and no root navigation dependency. `research/README.md` and this record provide repository entry points.
+- **Final fourth-pass audits:** on the merged tree, exact evidence/price/source checks, 257 static references, CSP/DOM/URL/secret/supply-chain checks, recommended HTML validation, 13-page DOM interactions, clean build, and SHA-256 source/output parity all passed again. `npm audit --audit-level=high` reported zero vulnerabilities.
+- **Root-audit coordination:** the inherited verifier excludes only generated `dist/` (which the fourth-pass suite audits separately). Earlier isolated **P32** passed **17/17 groups, 3,228 assertions, 43 rows, 75 root pages, zero failures** and is archived. Earlier isolated **P35** passed **17/17 groups, 3,224 assertions, 43 rows, 75 root pages, zero failures** and is archived. After the latest main merge, isolated **P38** passed **17/17 groups, 3,224 assertions, 43 rows, 75 root pages, zero failures** with `dist/` present; its report is archived at `data/archive/session-c662efda/checks/latest-isolated-P38.json`. Canonical P37 `data/checks/` files and generated root pages remain byte-identical to `main`. Earlier branch-local reports through P28/P31 are also archived; canonical main numbering is not reused.
+- **History:** the pre-integration board is preserved at `data/archive/session-c662efda/COORDINATION.md`. No earlier session dataset, archive, workflow, or dashboard is deleted.
+- **Publication:** pending final PR, autonomous merge, legacy Pages deployment, live `/site/` verification, and final record below.
