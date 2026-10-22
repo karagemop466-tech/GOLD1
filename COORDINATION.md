@@ -252,3 +252,24 @@ then run both scripts. Never edit `data/rings.csv` or the generated HTML by hand
 - Both audits PASS on the merged tree: `scripts/verify_data.py` (14-row dataset) and `tools/verify_data.py` (13-row dataset).
 - PR + merge result recorded below once merged.
 
+### T20 — Integration record (session 2) — PR #7
+
+| Field | Value |
+|---|---|
+| PR | https://github.com/karagemop466-tech/GOLD1/pull/7 |
+| Title | Second verified dataset + category dashboard (docs/): Tiffany, Cartier, BE, Blue Nile/JA, Mejuri — 14 listings, 12 flags, both audits PASS |
+| Merged at (UTC) | 2026-10-22T23:19:49Z |
+| Merge commit | `8374d1b54a4b9ded9ca47a84a06b39ffaf440f5c` |
+| Method | merge commit (no squash), merged without waiting for approval per project instruction |
+| Result | success |
+
+**Pre-merge verification:** `scripts/verify_data.py` PASS (14-row dataset) and `tools/verify_data.py` PASS (13-row dataset) on the merged tree; internal links checked.
+
+**Post-merge deploy verification (2026-10-22T23:20:07Z):** GitHub Pages build status `built`, no error (`gh api repos/.../pages/builds/latest`). Pages source remains `main` / repo root (setting owned by session 1; token cannot write Pages settings). Live checks with page fetches:
+- `https://karagemop466-tech.github.io/GOLD1/docs/` → dashboard renders (14 listings, 12 flags, anchor $4,024.36/ozt, policy banner)
+- `/docs/rings-tiffany-co.html` → $1,600 verified w/ quote; rose-gold price blank + unverified badge; weight column blank
+- `/docs/calculator.html` → JS calc working (4.00 g 14K → $301.88 melt estimate); per-karat table rendered
+
+**Follow-up fix found during live review:** 22K calculator factor 0.9167 (91.7%) disagreed with the labeled/data 916-finengness standard (91.6%) — corrected to 0.916 and rebuilt (included in bookkeeping PR).
+
+**Merge-conflict record (second merge):** origin/main advanced by PR #5 during review; COORDINATION.md append-collision resolved as a union (session 1 close-out kept, session 2 section kept; nothing discarded).
