@@ -351,6 +351,10 @@
     [search, seller, karat, solid, weight, sort].forEach((control) => {
       control.addEventListener(control === search ? 'input' : 'change', apply);
     });
+    document.getElementById('catalog-filters').addEventListener('submit', (event) => {
+      event.preventDefault();
+      apply();
+    });
     document.getElementById('filter-reset').addEventListener('click', () => {
       search.value = '';
       seller.value = '';
@@ -667,6 +671,10 @@
       if (!Number.isFinite(candidate.listedWeightGrams)) error.textContent = 'Official listed weight is unverified, so the weight input was intentionally left blank.';
     });
     [weight, basis, karat, spot, price].forEach((control) => control.addEventListener(control === basis || control === karat ? 'change' : 'input', calculate));
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      calculate();
+    });
     document.getElementById('calc-reset').addEventListener('click', () => {
       candidateSelect.value = '';
       weight.value = '';
@@ -677,6 +685,7 @@
       calculate();
     });
     calculate();
+    error.textContent = '';
 
     const evidence = document.getElementById('calculator-evidence');
     const evidenceRows = state.candidates.map((candidate) => {
