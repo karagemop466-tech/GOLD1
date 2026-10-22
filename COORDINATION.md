@@ -227,7 +227,11 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).
 
-**State after the third pass (live):** 43 listings · 7 retailers · 6 categories · **34 flags** · **5/43 rows with a published weight** · **17/17 check groups passing, 0 failures** (pass P22) · 75 generated pages. Open items a human may want to change: 38 rows still have no published weight, 35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
+**State after this session's PRs (commits `f94e2d2`, `fbfebfe`, `43e0e41`, `cd21db3`):** 43 listings · 7 retailers · 6 categories · **34 flags** · **5/43 rows with a published weight at the time of PR #15** · **17/17 check groups passing, 0 failures** · 75 generated pages · live at https://karagemop466-tech.github.io/GOLD1/
+
+**Current state after the parallel session's reconciliation (PR #11):** published-weight coverage **7/43** (two further Ross-Simons reads folded in: items 571213 and 571222), one merged ledger, 17/17 checks. That session's own record is §9 of this board.
+
+Open items a human may still want to change: **36 rows publish no weight**, 31-35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
 
 
 ### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
