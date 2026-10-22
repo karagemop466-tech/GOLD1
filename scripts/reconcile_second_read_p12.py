@@ -39,28 +39,23 @@ WEIGHTS = {
         grams=(2.5, 2.5),
         quote='Metal "14kt Yellow Gold" · Gold Weight 2.5 grams · Finish "Polished"',
         evidence_add='; spec panel "Metal 14kt Yellow Gold - Gold Weight 2.5 grams" (re-read 2026-10-22)',
-        note=(
-            "Metal weight 2.5 grams is published in the spec panel and was captured on the P12 "
-            "second read. PR #10 had recorded this SKU as having no metal weight; that entry was "
-            "corrected here after the same page was opened again and the spec panel quoted."
-        ),
+        note='P12 corrected an earlier reading that missed the "Gold Weight 2.5 grams" spec line.',
     ),
     "rs-571213": dict(
         grams=(5.0, 5.0),
         quote='Metal "14kt Yellow Gold" · Gold Weight 5.0 grams · page banner "20% Off / Original price $1,195 / Sale price $959"',
         evidence_add='; spec panel "Metal 14kt Yellow Gold - Gold Weight 5.0 grams"; sale banner "20% Off", "Original price $1,195", "Sale price $959"',
-        note=(
-            "Metal weight 5.0 grams is published in the spec panel. The $959.00 is a sale price "
-            "against a $1,195.00 compare-at shown on the same page."
-        ),
+        note='P12 captured the "Gold Weight 5.0 grams" spec line alongside the 1,195.00 compare-at.',
     ),
 }
 for rid, w in WEIGHTS.items():
     row = by_id[rid]
     row["weight_g_low"], row["weight_g_high"] = w["grams"]
-    row["evidence"] = row["evidence"].rstrip(". ") + w["evidence_add"]
+    if w["evidence_add"] not in row["evidence"]:
+        row["evidence"] = row["evidence"].rstrip(". ") + w["evidence_add"]
     row["flags"] = [f for f in row.get("flags", []) if f != "weight_not_published"]
-    row["notes"] = (row.get("notes", "") + " " + w["note"]).strip()
+    if w["note"] not in row.get("notes", ""):
+        row["notes"] = (row.get("notes", "") + " " + w["note"]).strip()
     row["reverified_at"] = DATE
     row["reverified_pass"] = "P12"
 

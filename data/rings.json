@@ -60,12 +60,12 @@
       "source_url": "https://www.ross-simons.com/products/571222",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Women's 3mm 14kt Yellow Gold Band\"; price \"599.00\"; body \"This high-polished 14kt yellow gold band features an exceptionally comfortable fit...\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 2.5 grams\" (re-read 2026-10-22); spec panel \"Metal 14kt Yellow Gold - Gold Weight 2.5 grams\" (re-read 2026-10-22)",
+      "evidence": "Title \"Women's 3mm 14kt Yellow Gold Band\"; price \"599.00\"; body \"This high-polished 14kt yellow gold band features an exceptionally comfortable fit...\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 2.5 grams\" (re-read 2026-10-22)",
       "solid_stated": false,
       "flags": [
         "solid_not_stated"
       ],
-      "notes": "Karat stated. \"Solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant; the feed's shipping weight field is not a metal weight, so none was added. Metal weight 2.5 grams is published in the spec panel and was captured on the P12 second read. PR #10 had recorded this SKU as having no metal weight; that entry was corrected here after the same page was opened again and the spec panel quoted. Metal weight 2.5 grams is published in the spec panel and was captured on the P12 second read. PR #10 had recorded this SKU as having no metal weight; that entry was corrected here after the same page was opened again and the spec panel quoted.",
+      "notes": "Karat stated; \"solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant. P12 corrected an earlier reading that missed the \"Gold Weight 2.5 grams\" spec line.",
       "reverified_at": "2026-10-22",
       "reverified_pass": "P12"
     },
@@ -123,7 +123,7 @@
       "flags": [
         "solid_not_stated"
       ],
-      "notes": "Listing shows a struck-through comparison price of 1195.00 against a current 959.00. Metal weight 5.0 grams is published in the spec panel. The $959.00 is a sale price against a $1,195.00 compare-at shown on the same page. Metal weight 5.0 grams is published in the spec panel. The $959.00 is a sale price against a $1,195.00 compare-at shown on the same page.",
+      "notes": "Struck-through comparison price of 1,195.00 against a current 959.00 sale price. Re-read in pass P12: price confirmed. P12 captured the \"Gold Weight 5.0 grams\" spec line alongside the 1,195.00 compare-at.",
       "reverified_at": "2026-10-22",
       "reverified_pass": "P12"
     },
