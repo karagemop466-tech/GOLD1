@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "retrievedDate": "2026-10-22",
+  "evidenceConventions": "Quotes preserve source wording with whitespace and Markdown emphasis normalized. A semicolon joins separate, non-contiguous excerpts from the same source page.",
+  "reputationMethodology": {
+    "sourceUrl": "https://www.bbb.org/about/overview-of-ratings",
+    "quote": "A rating is not a guarantee of a business's reliability or performance. BBB recommends considering a rating alongside all other available information about the business.",
+    "note": "Complaint counts are snapshots, not normalized by transaction volume. BBB accreditation is recorded as a fact, not treated as an endorsement."
+  },
+  "sellers": [
+    {
+      "id": "traxnyc",
+      "name": "TraxNYC",
+      "officialUrl": "https://traxnyc.com/",
+      "contact": {
+        "customerServicePhone": "212-391-3832",
+        "customerServiceEmail": "service@traxnyc.com",
+        "salesEmail": "sale@traxnyc.com",
+        "verificationEmail": "verify@traxnyc.com",
+        "showroom": "64 W 47th St, Booth F-1, New York, NY 10036",
+        "sourceUrl": "https://traxnyc.com/policies/refund-policy",
+        "quote": "Customer service — orders, cancellations, returns, warranty, shipping, privacy: service@traxnyc.com · 212-391-3832; Sales and product questions: sale@traxnyc.com; Order verification only — documents and verification questions: verify@traxnyc.com; Showroom: 64 W 47th St, Booth F-1, New York, NY 10036"
+      },
+      "payment": {
+        "creditCardAccepted": true,
+        "creditCardsListed": [
+          "Visa",
+          "Mastercard",
+          "Amex"
+        ],
+        "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845",
+        "quote": "Accepted Affirm Bank wire −3% Crypto · ask a jeweler Shop Pay Apple Pay Google Pay PayPal Visa Mastercard Amex",
+        "policyNote": "The refund policy says a chargeback initiated instead of following its return process violates purchase terms and that records may be submitted to contest disputes. This is a seller-policy finding, not a legal conclusion about cardholder rights.",
+        "policySourceUrl": "https://traxnyc.com/policies/refund-policy",
+        "policyQuote": "Customers agree that initiating a chargeback or payment dispute in lieu of following this Returns & Refunds Policy constitutes a violation of purchase terms. This policy, delivery confirmation, inspection documentation, and product records may be submitted as evidence to payment processors and financial institutions to contest disputes."
+      },
+      "returns": {
+        "window": "14 calendar days",
+        "clockStarts": "Confirmed delivery",
+        "conditions": "New, unworn, unaltered; original packaging and materials; seller-issued label; inspection and final approval.",
+        "fees": "5% restocking fee; $50 continental-US or $100 international return shipping; original shipping non-refundable.",
+        "exclusions": "Custom or personalized items, resizing, items made or modified for an individual, custom payments, layaway cash refunds, watches, final-sale and exchange-only items.",
+        "sourceUrl": "https://traxnyc.com/policies/refund-policy",
+        "quotes": [
+          "Eligible merchandise may be returned within fourteen (14) calendar days of confirmed delivery, as determined by the shipping carrier’s delivery confirmation.",
+          "All returned items must be: In new, unworn, and unaltered condition; Free from signs of use, damage, or modification; Returned with all original packaging and materials; All returns are subject to inspection and final approval.",
+          "All approved returns are subject to a non-negotiable 5% restocking fee, which will be deducted from the refund amount.",
+          "$50 — Continental United States; $100 — International returns",
+          "Custom or personalized items, including but not limited to: Custom designs; Ring resizing; Gold dipping, plating, or finishing; Any item made or modified specifically for an individual"
+        ]
+      },
+      "documentation": {
+        "summary": "Every audited TraxNYC candidate lists a certified appraisal. Items 71345 and 71851 also list an IGI center-stone report. The other four explicitly say no lab report is listed. A seller appraisal is not independent authentication.",
+        "sourceUrl": "https://traxnyc.com/policies/refund-policy",
+        "quote": "An official appraisal comes with every piece",
+        "productLevelEvidence": "See each candidate's listingDocumentation evidence in research/candidates.json."
+      },
+      "karatGuarantee": {
+        "summary": "One-year seller karat guarantee with original-buyer, sale-record and alteration conditions. It includes seller testing and is not a substitute for an independent jeweler.",
+        "sourceUrl": "https://traxnyc.com/policies/refund-policy",
+        "quote": "If anything you bought from TraxNYC tests under the gold karat or the sterling silver standard it was sold as, within one year of delivery, you choose: a replacement that tests as sold, or a full refund of the purchase price. No restocking fee or return shipping charge applies. This guarantee is separate from the 14-day return window above and from the 7-day defect window in our Terms of Service.",
+        "conditionsQuote": "What it covers: the piece as we sold it, claimed by the original buyer and matching our record of the sale (item number and the gram weight on your appraisal). It doesn’t cover pieces resized, repaired, plated or otherwise altered by anyone other than TraxNYC, or parts that aren’t the main metal, such as clasp springs, solder joints, plating or stones."
+      },
+      "reputation": {
+        "bbbRating": null,
+        "bbbRatingStatus": "unverified-direct-profile-did-not-expose-letter-grade",
+        "bbbAccredited": false,
+        "complaintsLast3Years": 4,
+        "complaintsLast12Months": 3,
+        "answered": 3,
+        "resolved": 1,
+        "profileUrl": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/traxnyc-corp-0121-97319",
+        "complaintsUrl": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/traxnyc-corp-0121-97319/complaints",
+        "profileQuote": "This business is NOT BBB Accredited.",
+        "complaintsQuote": "4 complaints in the last 3 years. 3 complaints in the last 12 months. Complaint Answered (3); Complaint Resolved (1)",
+        "assessment": "Review complaint details and resolve product/verification questions in writing before considering a purchase. No letter grade is published here because the direct profile extraction did not expose one."
+      }
+    },
+    {
+      "id": "blue-nile",
+      "name": "Blue Nile",
+      "officialUrl": "https://www.bluenile.com/",
+      "contact": {
+        "customerServicePhone": "+1-800-242-2728",
+        "customerServiceEmail": "service@bluenile.com",
+        "sourceUrl": "https://www.bluenile.com/contact-us",
+        "quote": "Call 1-800-242-2728; Feel free to Email us at any time"
+      },
+      "payment": {
+        "creditCardAccepted": true,
+        "creditCardsListed": [
+          "Visa",
+          "Mastercard",
+          "American Express",
+          "Discover"
+        ],
+        "sourceUrl": "https://www.bluenile.com/policies/us-payment-methods",
+        "quote": "Credit cards: We accept major credit cards, including Visa®, Mastercard®, American Express®, and Discover®",
+        "policyNote": "Credit-card acceptance is verified for U.S. shoppers. Cardholder protection depends on the issuer and applicable terms; acceptance alone is not a protection guarantee."
+      },
+      "returns": {
+        "window": "30 days",
+        "clockStarts": "Shipment date",
+        "conditions": "Original, unworn purchase condition with all product documentation; RMA required.",
+        "fees": "Two complimentary returns per customer per year; later/shipping circumstances can incur cost. Missing diamond report replacement fee is $150 when applicable.",
+        "exclusions": "Personalized jewelry, custom orders, engraved items, items resized after initial purchase, Diamond Upgrade Program purchases, clearance and final-sale items.",
+        "sourceUrl": "https://www.bluenile.com/policies/returns",
+        "quotes": [
+          "If you are not 100% satisfied with your purchase, you may return eligible items in their original, unworn condition within 30 days from the shipment date for a full refund or exchange.",
+          "Personalized jewelry, custom orders, engraved items, items resized after initial purchase, Diamond Upgrade Program purchases, clearance items and “Final Sale” items are not eligible for return or exchange.",
+          "Two complimentary returns are allowed per customer, per year. A Return Merchandise Authorization (RMA) number is required for all returns.",
+          "If your item was delivered with a diamond report and that report is not returned, you will be liable for the cost to replace the grading report. The cost to replace a missing diamond grading report is $150"
+        ]
+      },
+      "documentation": {
+        "summary": "Official product-page packaging copy says the presentation box secures an appraisal certificate and diamond grading report. Because all four audited listings are setting prices with diamond selection as a separate step, confirm exactly which documents apply to the configured order in writing.",
+        "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
+        "quote": "The presentation box also secures your appraisal certificate and diamond grading report."
+      },
+      "reputation": {
+        "bbbRating": "A+",
+        "bbbRatingStatus": "direct-profile-verified",
+        "bbbAccredited": true,
+        "complaintsLast3Years": 121,
+        "complaintsLast12Months": 23,
+        "answered": 83,
+        "resolved": 38,
+        "profileUrl": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564",
+        "complaintsUrl": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564/complaints",
+        "profileQuote": "BBB Accredited Business A+ Rated by BBB",
+        "complaintsQuote": "121 complaints in the last 3 years. 23 complaints in the last 12 months. Complaint Answered (83); Complaint Resolved (38)",
+        "assessment": "A+ is recorded as BBB's opinion, not a guarantee. Review recent complaint patterns and product-specific terms; raw complaint counts are not comparable without transaction volume."
+      }
+    },
+    {
+      "id": "brilliant-earth",
+      "name": "Brilliant Earth",
+      "officialUrl": "https://www.brilliantearth.com/",
+      "contact": {
+        "customerServicePhone": "800.691.0952",
+        "textPhone": "+1 415.520.6526",
+        "sourceUrl": "https://www.brilliantearth.com/contact/",
+        "quote": "Call us anytime at 800.691.0952. Our jewelry specialists are here for you 24/7 text us at +1 415.520.6526."
+      },
+      "payment": {
+        "creditCardAccepted": true,
+        "creditCardsListed": [
+          "Visa",
+          "MasterCard",
+          "American Express"
+        ],
+        "sourceUrl": "https://www.brilliantearth.com/flexible-payment-options/",
+        "quote": "We accept all major credit cards, including Visa, MasterCard and American Express.",
+        "policyNote": "Credit-card acceptance is verified. Cardholder protection depends on the issuer and applicable terms; acceptance alone is not a protection guarantee."
+      },
+      "returns": {
+        "window": "30 days",
+        "clockStarts": "When purchase is available for shipment or pickup",
+        "conditions": "Original, unworn condition; return authorization; packaging and promotional gifts; inspection.",
+        "fees": "Free eligible returns with seller label and packaging instructions. An engraved ring can be returned with a $40 engraving-removal charge according to the policy's ring-specific exception.",
+        "exclusions": "Personalized fine jewelry, custom-designed jewelry, orders altered in process, resized or modified rings, items repaired or modified after purchase, and Lifetime Diamond Upgrade items.",
+        "sourceUrl": "https://www.brilliantearth.com/30-Day-Returns/",
+        "quotes": [
+          "If you are not satisfied with your purchase for any reason, simply return or exchange it within 30 days. All items must be in their original, unworn condition.",
+          "Please note our return and exchange policy timelines begin when your purchase is available for shipment or pickup.",
+          "Engraved fine jewelry. Please note that while you can return an engraved ring, we charge $40 to remove the custom engraving.",
+          "Custom designed jewelry. Any orders that were altered while in process. Rings that have been resized or modified. Any items that have been repaired or modified after purchase.",
+          "Write your return shipping authorization number on the outside of the box; full insurance is guaranteed when you use our free shipping label and follow packaging instructions – including double boxing your return package."
+        ]
+      },
+      "documentation": {
+        "summary": "No product-specific appraisal or grading-report inclusion was verified for the three audited setting-only listings. Obtain a written, configuration-specific document list before payment.",
+        "sourceUrls": [
+          "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
+          "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-Gold-BE1D1009-39303615/",
+          "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-14K-Gold-BE1D1009-76788518/"
+        ],
+        "status": "unverified-absence-finding"
+      },
+      "reputation": {
+        "bbbRating": "A+",
+        "bbbRatingStatus": "direct-profile-verified",
+        "bbbAccredited": true,
+        "complaintsLast3Years": 283,
+        "complaintsLast12Months": 85,
+        "answered": 181,
+        "resolved": 102,
+        "profileUrl": "https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721",
+        "complaintsUrl": "https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721/complaints",
+        "profileQuote": "BBB Accredited Business A+ Rated by BBB",
+        "complaintsQuote": "283 complaints in the last 3 years. 85 complaints in the last 12 months. Complaint Answered (181); Complaint Resolved (102)",
+        "assessment": "A+ is recorded as BBB's opinion, not a guarantee. Review recent complaint patterns and product-specific terms; raw complaint counts are not comparable without transaction volume."
+      }
+    }
+  ]
+}

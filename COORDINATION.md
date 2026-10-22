@@ -21,8 +21,8 @@ This Arena session is restricted by the hosting environment to branch `arena/c66
 
 | ID | Task | Status | Owning session | File scope | Started (UTC) |
 |---|---|---|---|---|---|
-| T1 | Repository audit and source research | in progress | arena/c662efda-gold1 | `research/**`, `README.md` | 2026-10-22 |
-| T2 | Verification policy and trust/safety sources | unclaimed | — | `research/policy/**` | — |
+| T1 | Repository audit and source research | done | arena/c662efda-gold1 | `research/**`, `README.md` | 2026-10-22 |
+| T2 | Verification policy and trust/safety sources | in progress | arena/c662efda-gold1 | `research/policy/**` | 2026-10-22 |
 | T3 | Static dashboard shell and accessible UI | unclaimed | — | `site/assets/**`, `site/*.html` (except generated catalog/review tables) | — |
 | T4 | Automated evidence, link, and security checks | unclaimed | — | `scripts/**`, `tests/**`, `package.json`, `package-lock.json` | — |
 | T5 | Final integration: combine evidence, generate all shared outputs, build, audit, PR, deploy | unclaimed | — | `data/**`, `site/data/**`, generated tables/navigation, `.github/**`, root config, `COORDINATION.md` | — |
