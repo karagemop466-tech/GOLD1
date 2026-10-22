@@ -137,3 +137,51 @@ file granularity so a second session can take any single scope without collision
   hand edit can drift from the dataset.
 - No merge conflicts in this run; no other session claimed work while this session was active, so
   no handoff or conflict resolution was required.
+
+### Merge 3 — PR #4 (final integration pass)
+
+| Field | Value |
+|---|---|
+| PR | https://github.com/karagemop466-tech/GOLD1/pull/4 |
+| Merged at (UTC) | 2026-10-22T23:16:38Z |
+| Merge commit | `c6790abeb3a5091a27fae46533767c538ed0a2c1` |
+| Method | merge commit, no approval wait |
+| Result | success — Pages rebuilt from `main` and reported `built` with no error |
+
+**Live re-verification after the final deploy**
+- `/` → dashboard renders with the no-hallucination policy, 13 rows and 15 flags.
+- `/flagged.html` → all 15 flags present with source links.
+- `/calculator.html` → renders with the recorded spot of $4,026.79 pre-filled; the worked example
+  was recomputed independently ($302.08 for 4 g of 14K, $388.39 for 4 g of 18K) and matches.
+
+---
+
+## Session close
+
+| Field | Value |
+|---|---|
+| Status | complete — site live, all scopes done, no open claims |
+| Live site | https://karagemop466-tech.github.io/GOLD1/ |
+| Dataset | 13 verified listings · 3 vetted retailers · 15 published flags |
+| Audit | `python3 tools/verify_data.py` → PASS, 1,761 assertions, 0 errors, 0 warnings |
+| Build | `python3 tools/build_site.py` → 7 pages, link/anchor check PASS, 22 external links on approved hosts |
+
+**Open follow-ups for any future session** (none blocks the site — they are published on
+`flagged.html` and are the honest next steps):
+
+1. **F-10 — reputation research.** Read BBB profiles, state consumer-protection complaint records
+   and an independent review corpus for Blue Nile, Mejuri and Brilliant Earth, then record what was
+   found with links. This is the largest remaining gap.
+2. **F-08 / F-09 — return windows.** Open the Blue Nile and Brilliant Earth returns pages and
+   confirm the number of days plus any resizing/custom exclusions.
+3. **F-04 / F-05 — weight and hallmark.** Either find listings that publish gram weight, or record
+   written seller responses. Do **not** fill these cells with estimates; the audit fails if a
+   weight appears without its own source URL.
+4. **F-15 — unvetted retailers.** Costco, James Allen, Tiffany & Co., Aurate and Derco were named
+   but not scored. If a future session vets them, add rows with the same schema and register their
+   sources first.
+5. **F-11 / F-12 — citations.** Read 16 CFR Part 23 in full, and retrieve an official CFPB or FTC
+   page for credit-card dispute rights.
+
+If a future session extends the dataset: add the source to `data/sources.json` first, then the row,
+then run both scripts. Never edit `data/rings.csv` or the generated HTML by hand — they are outputs.
