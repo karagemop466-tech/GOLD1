@@ -43,7 +43,7 @@ scope, one branch per session, no cross-session edits — were kept.
 | T10 | **Third pass**: recover seller-published metal weight (grams) where the retailer publishes it; recompute melt checks | **done** | sess-bc088451 | arena/bc088451-gold1 | `data/rings.json`, `data/gold-price.json` | 2026-10-22 |
 | T11 | **Third pass**: extend the hallucination audit (weight traceability, melt recomputation, stale-data, no-invented-numbers) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
 | T12 | **Third pass**: site update (data-age banner, melt/value columns, weight-coverage page content) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
-| T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **in progress** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
+| T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -198,6 +198,16 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 
 
+### Third pass (sess-bc088451)
+
+- **Pull request:** [#10](https://github.com/karagemop466-tech/GOLD1/pull/10) — `arena/bc088451-gold1` → `main`
+- **Merge result:** MERGED at 2026-10-22T23:28:17Z, merge commit `f94e2d2`
+- **Pages deploy:** build `f94e2d2` reported `built` (checked via `gh api repos/.../pages/builds/latest`); `https://karagemop466-tech.github.io/GOLD1/weights.html` verified live after deploy
+- **Post-deploy verification:** every root page and a sample ring page returned HTTP 200 from the built tree before merge (12/12), and the deployed `weights.html` renders all 5 weighted rows with the computed melt values
+- **Concurrent-merge note:** another session's PR #1 landed on `main` while this branch was open. It touched only `COORDINATION.md` (+8 lines); the branch was rebased onto it and re-verified (17/17) before pushing. No work was discarded and no conflict remained.
+
+### Earlier passes
+
 - **Pull request:** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
 - **Merge result:** **merged** 2026-10-22T23:21:14Z, merge commit `ef06225`, state `MERGED`. Two earlier merge attempts were rejected as `CONFLICTING` because concurrent sessions pushed to `main` (PRs #7 and #8); each was resolved by merging `origin/main` with `-s ours` and restoring the other session's artefacts, never by overwriting them.
 - **Third pass absorbed:** `arena/c2bbe753-gold1` (PR #7, #8) — 14 extra rows archived as leads, see Incident 2 and F30
@@ -205,6 +215,8 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 - **Post-deploy link check:** `checks.html` served the P9 report (13/13 groups, 43 rows, 74 pages) and `index.html` served 43 listings / 7 retailers / 29 flags on the live domain, confirming the deployment rather than a cached build
 
 Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).
+
+**State after the third pass (live):** 43 listings · 7 retailers · 6 categories · **34 flags** · **5/43 rows with a published weight** · **17/17 check groups passing, 0 failures** (pass P22) · 75 generated pages. Open items a human may want to change: 38 rows still have no published weight, 35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
 
 
 ### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
