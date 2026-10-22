@@ -55,18 +55,17 @@
       "price_high": 599.0,
       "compare_at_high": 599.0,
       "price_basis": "single listed price",
-      "weight_g_low": null,
-      "weight_g_high": null,
+      "weight_g_low": 2.5,
+      "weight_g_high": 2.5,
       "source_url": "https://www.ross-simons.com/products/571222",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Women's 3mm 14kt Yellow Gold Band\"; price \"599.00\"; body \"This high-polished 14kt yellow gold band features an exceptionally comfortable fit...\"",
+      "evidence": "Title \"Women's 3mm 14kt Yellow Gold Band\"; price \"599.00\"; body \"This high-polished 14kt yellow gold band features an exceptionally comfortable fit...\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 2.5 grams\" (re-read 2026-10-22)",
       "solid_stated": false,
       "flags": [
-        "solid_not_stated",
-        "weight_not_published"
+        "solid_not_stated"
       ],
-      "notes": "Karat stated. \"Solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant; the feed's shipping weight field is not a metal weight, so none was added.",
+      "notes": "Karat stated; \"solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant. P12 corrected an earlier reading that missed the \"Gold Weight 2.5 grams\" spec line.",
       "reverified_at": "2026-10-22",
       "reverified_pass": "P12"
     },
@@ -114,18 +113,19 @@
       "price_high": 959.0,
       "compare_at_high": 1195.0,
       "price_basis": "single listed price",
-      "weight_g_low": null,
-      "weight_g_high": null,
+      "weight_g_low": 5.0,
+      "weight_g_high": 5.0,
       "source_url": "https://www.ross-simons.com/products/571213",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Men's 5mm 14kt Yellow Gold Band\"; price \"959.00\"; compare_at_price \"1195.00\"",
+      "evidence": "Title \"Men's 5mm 14kt Yellow Gold Band\"; price \"959.00\"; compare_at_price \"1195.00\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 5.0 grams\"; sale banner \"20% Off\", \"Original price $1,195\", \"Sale price $959\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 5.0 grams\"; sale banner \"20% Off\", \"Original price $1,195\", \"Sale price $959\"",
       "solid_stated": false,
       "flags": [
-        "solid_not_stated",
-        "weight_not_published"
+        "solid_not_stated"
       ],
-      "notes": "Listing shows a struck-through comparison price of 1195.00 against a current 959.00."
+      "notes": "Struck-through comparison price of 1,195.00 against a current 959.00 sale price. Re-read in pass P12: price confirmed. P12 captured the \"Gold Weight 5.0 grams\" spec line alongside the 1,195.00 compare-at.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-981367",
@@ -211,7 +211,9 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "Made in Italy per the listing. Karat stated; \"solid\" not stated."
+      "notes": "Made in Italy per the listing. Karat stated; \"solid\" not stated.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-879968",
@@ -239,13 +241,15 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "Diamond weight is stated as 2.00 ct total weight. Metal weight is not published."
+      "notes": "Diamond weight is stated as 2.00 ct total weight. Metal weight is not published.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-999230",
       "retailer_id": "ross-simons",
       "retailer": "Ross-Simons",
-      "title": "Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold",
+      "title": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold",
       "category": "gemstone",
       "style": "Gemstone eternity band",
       "karat": "14K",
@@ -268,7 +272,9 @@
         "weight_not_published",
         "price_varies"
       ],
-      "notes": "Price varies by ring size (489.00 to 559.00)."
+      "notes": "Price varies by ring size (489.00 to 559.00).",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-991907",
@@ -296,7 +302,9 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "IGI report is stated in the listing text. Metal weight not published."
+      "notes": "IGI report is stated in the listing text. Metal weight not published.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-993512",
@@ -324,7 +332,9 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "Yellow-gold version of the same 2.30 ct. t.w. design as rs-991907."
+      "notes": "Yellow-gold version of the same 2.30 ct. t.w. design as rs-991907.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-991908",
@@ -380,7 +390,9 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "Price covers TWO rings (engagement ring plus matching band). Centre diamond is only .20 ct; the rest is accent weight."
+      "notes": "Price covers TWO rings (engagement ring plus matching band). Centre diamond is only .20 ct; the rest is accent weight.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-943668",
@@ -441,7 +453,9 @@
         "one_of_a_kind",
         "estate_return_terms_unverified"
       ],
-      "notes": "One-of-a-kind, fixed size 6.5. Estate return terms were not separately confirmed, so assume resizing may void returns."
+      "notes": "One-of-a-kind, fixed size 6.5. Estate return terms were not separately confirmed, so assume resizing may void returns.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-254575",
@@ -501,7 +515,9 @@
         "one_of_a_kind",
         "estate_return_terms_unverified"
       ],
-      "notes": "GIA certificate number is published in the listing and can be checked with GIA. Fixed size 7."
+      "notes": "GIA certificate number is published in the listing and can be checked with GIA. Fixed size 7.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "wc-tulip",
@@ -531,7 +547,9 @@
         "setting_only",
         "price_varies"
       ],
-      "notes": "Price range spans metal choices. Centre diamond is a separate purchase, so the total ring cost is higher."
+      "notes": "Price range spans metal choices. Centre diamond is a separate purchase, so the total ring cost is higher.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "wc-4prong",
@@ -683,7 +701,9 @@
         "weight_not_published",
         "made_to_order"
       ],
-      "notes": "Champagne diamonds vary stone to stone - the photo is representative, not the exact stone."
+      "notes": "Champagne diamonds vary stone to stone - the photo is representative, not the exact stone.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "as-hazeline",
@@ -862,7 +882,9 @@
         "plated_variant_in_product",
         "weight_range_published"
       ],
-      "notes": "IMPORTANT: this product mixes vermeil (118.00), 14K and 18K in one listing. The 14K price is 1308.00. The published weight range 2.6-4 g is for the model, not your exact size."
+      "notes": "IMPORTANT: this product mixes vermeil (118.00), 14K and 18K in one listing. The 14K price is 1308.00. The published weight range 2.6-4 g is for the model, not your exact size.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "au-xring",

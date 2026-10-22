@@ -240,6 +240,71 @@
       "failed": 0,
       "rows": 43,
       "pages": 75
+    },
+    {
+      "pass": "P30",
+      "generated_at": "2026-10-22T23:32:09Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P31",
+      "generated_at": "2026-10-22T23:33:01Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75,
+      "assertions": 3227
+    },
+    {
+      "pass": "P32",
+      "generated_at": "2026-10-22T23:33:56Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P33",
+      "generated_at": "2026-10-22T23:34:04Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P34",
+      "generated_at": "2026-10-22T23:34:15Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P35",
+      "generated_at": "2026-10-22T23:35:56Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P36",
+      "generated_at": "2026-10-22T23:36:03Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P37",
+      "generated_at": "2026-10-22T23:36:21Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
     }
   ],
   "notes": "Passes 13-18 are the third pass. Three of them failed deliberately or accidentally, and each failure was a real defect caught before publishing: a dropped flag (S10), an injected fake price (S16), and a link to a page that did not exist yet (S11).",

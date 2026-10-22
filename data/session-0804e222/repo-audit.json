@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "session": "sess-0804e222",
-  "audited_at": "2026-10-22T23:32:00Z",
+  "audited_at": "2026-10-22T23:39:00Z",
   "rule": "No hallucinations: every price, karat, gram weight, policy window, and defect logged here was read directly from the official primary URL on 2026-10-22. Unconfirmed values remain null and are routed to Flagged for Review.",
   "summary": {
     "existing_rows_audited": 43,
@@ -10,36 +10,14 @@
     "brilliant_earth_html_pdps_read": 1,
     "mejuri_html_pdps_read": 4,
     "anna_sheffield_html_pdps_read": 3,
-    "aurate_html_pdps_read": 2,
-    "with_clarity_html_pdps_read": 1,
-    "weights_recovered_from_existing_rows": 3,
-    "live_price_drifts_found": 1,
-    "page_contradictions_found": 5,
+    "aurate_html_pdps_read": 5,
+    "with_clarity_html_pdps_read": 5,
+    "weights_recovered_beyond_main_P37": 5,
+    "solid_wording_recovered_beyond_main_P37": 1,
+    "page_contradictions_found": 6,
     "archived_c2bbe753_leads_audited": 5
   },
   "reverification_entries": [
-    {
-      "row": "rs-571222",
-      "source_url": "https://www.ross-simons.com/products/571222",
-      "read_at": "2026-10-22T23:26Z",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "599.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "599.00", "karat": "14kt", "weight_g": "2.5" },
-      "change": "HTML Details spec table publishes \"Gold Weight 2.5 grams\" (missed by Shopify /products.json feed and earlier read); all in-stock sizes (4-9) confirmed at $599.00",
-      "verdict": "confirmed + weight 2.5 g recovered",
-      "quote": "Width 1/8 inch · Metal 14kt Yellow Gold · Gold Weight 2.5 grams · Finish Polished · All weights and measurements are approximate."
-    },
-    {
-      "row": "rs-571213",
-      "source_url": "https://www.ross-simons.com/products/571213",
-      "read_at": "2026-10-22T23:26Z",
-      "checked": ["price", "karat", "metal_weight", "clearance_status"],
-      "old": { "price": "959.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "959.00", "karat": "14kt", "weight_g": "5.0" },
-      "change": "HTML Details spec table publishes \"Gold Weight 5.0 grams\"; marked CLEARANCE ($959.00 sale, $1,195.00 original) with sizes 9, 10, 10.5, 11, 11.5 in stock and sizes 8, 8.5, 9.5, 12 sold out",
-      "verdict": "confirmed + weight 5.0 g recovered + clearance noted",
-      "quote": "CLEARANCE · Sale price $959 · Original price $1,195 · Width 3/16 inch · Metal 14kt Yellow Gold · Gold Weight 5.0 grams · Finish Polished"
-    },
     {
       "row": "rs-960952",
       "source_url": "https://www.ross-simons.com/products/960952",
@@ -47,53 +25,9 @@
       "checked": ["price", "karat", "metal_weight"],
       "old": { "price": "399.00", "karat": "14K", "weight_g": null },
       "new": { "price": "399.00", "karat": "14kt", "weight_g": "1.3" },
-      "change": "HTML Details spec table publishes \"Gold Weight 1.3 grams\"; sizes 6, 7, 8, 9 in stock at $399.00",
-      "verdict": "confirmed + weight 1.3 g recovered",
-      "quote": "Width 3/16 inch · Metal 14kt Yellow Gold · Gold Weight 1.3 grams · Finish Textured and Polished"
-    },
-    {
-      "row": "rs-879968",
-      "source_url": "https://www.ross-simons.com/products/879968",
-      "read_at": "2026-10-22T23:26Z",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "2695.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "2695.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details spec table checked directly: lists Width, Metal (14kt Yellow Gold), Finish and Diamond specs (1.00 ct I-J I2 solitaire) — no Gold Weight row is published",
-      "verdict": "confirmed; Gold Weight genuinely omitted on stone-set PDP",
-      "quote": "Sale price $2,695 · Metal 14kt Yellow Gold · Gemstone 1 Diamond (Shape: Round Brilliant, Color Grade: I-J, Clarity: I2, Weight: 1.00 ct.)"
-    },
-    {
-      "row": "rs-999230",
-      "source_url": "https://www.ross-simons.com/products/999230",
-      "read_at": "2026-10-22T23:26Z",
-      "checked": ["price", "karat", "metal_weight", "clearance_status"],
-      "old": { "price": "489.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "489.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: marked CLEARANCE ($489 sale, $699 original), only sizes 5 and 9 remain in stock; no Gold Weight row published",
-      "verdict": "confirmed + clearance stock warning; Gold Weight omitted",
-      "quote": "CLEARANCE · Sale price $489 · Original price $699 · Metal 14kt Yellow Gold · Lab-Grown Diamond 0.50 ct. t.w."
-    },
-    {
-      "row": "rs-991907",
-      "source_url": "https://www.ross-simons.com/products/991907",
-      "read_at": "2026-10-22T23:26Z",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "2795.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "2795.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: $2,795.00 across sizes 5-9, 2.00 ct lab-grown oval diamond (E-F, VS1-VS2) with IGI report; no Gold Weight row published",
-      "verdict": "confirmed; Gold Weight omitted on stone-set PDP",
-      "quote": "Price $2,795 · Metal 14kt Yellow Gold · Accompanied by an IGI lab grading report · Lab-Grown Diamond 2.00 ct."
-    },
-    {
-      "row": "rs-993512",
-      "source_url": "https://www.ross-simons.com/products/993512",
-      "read_at": "2026-10-22T23:27Z",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "2795.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "2795.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: $2,795.00 across sizes 5-9, 2.00 ct lab-grown emerald-cut diamond with IGI report; no Gold Weight row published",
-      "verdict": "confirmed; Gold Weight omitted on stone-set PDP",
-      "quote": "Price $2,795 · Metal 14kt Yellow Gold · Accompanied by an IGI lab grading report · Lab-Grown Diamond 2.00 ct."
+      "change": "Earlier P12 read checked only /search/suggest.json and wrote \"no metal weight published in the feed entry\"; opening the live HTML product page reveals \"Gold Weight 1.3 grams\" in the Details table across sizes 6-9 ($399.00)",
+      "verdict": "confirmed + weight 1.3 g recovered from HTML spec table",
+      "quote": "Width 3/16 inch · Metal 14kt Yellow Gold · Gold Weight 1.3 grams · Finish Textured and Polished · All weights and measurements are approximate."
     },
     {
       "row": "rs-991908",
@@ -102,31 +36,9 @@
       "checked": ["price", "karat", "metal_weight"],
       "old": { "price": "1795.00", "karat": "14K", "weight_g": null },
       "new": { "price": "1795.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: $1,795.00 across sizes 5-9, 1.50 ct lab-grown round diamond with IGI report; no Gold Weight row published",
-      "verdict": "confirmed; Gold Weight omitted on stone-set PDP",
+      "change": "Previously unread in P12 (missed by search feed); opening HTML PDP directly confirms $1,795.00 across sizes 5-9, 1.50 ct lab-grown round diamond with IGI report, and confirms no Gold Weight row is published",
+      "verdict": "confirmed; Gold Weight genuinely omitted on stone-set PDP",
       "quote": "Price $1,795 · Metal 14kt Yellow Gold · Accompanied by an IGI lab grading report · Lab-Grown Diamond 1.50 ct."
-    },
-    {
-      "row": "rs-864785",
-      "source_url": "https://www.ross-simons.com/products/864785",
-      "read_at": "2026-10-22T23:27Z",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "2395.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "2395.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: $2,395.00 across sizes 6-9, 0.90 ct. t.w. natural three-stone diamond ring; no Gold Weight row published",
-      "verdict": "confirmed; Gold Weight omitted on stone-set PDP",
-      "quote": "Price $2,395 · Metal 14kt Yellow Gold · Finish Polished · Diamond 0.90 ct. t.w."
-    },
-    {
-      "row": "rs-242556",
-      "source_url": "https://www.ross-simons.com/products/242556",
-      "read_at": "2026-10-22T23:27Z",
-      "checked": ["price", "karat", "metal_weight", "metal_construction"],
-      "old": { "price": "2195.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "2195.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: single estate size 6.5 at $2,195.00; prose states \"14kt two-tone gold ring\" (14kt white gold and 14kt yellow gold) whereas spec table says only \"14kt Yellow Gold\"; no Gold Weight published",
-      "verdict": "confirmed + two-tone 14kt construction noted; Gold Weight omitted",
-      "quote": "C. 1990 Vintage .52 ct. t.w. Diamond Engagement Ring in 14kt Yellow Gold · Size 6.5 $2,195.00 · \"14kt white gold\" and \"14kt two-tone gold ring\""
     },
     {
       "row": "rs-254575",
@@ -135,31 +47,119 @@
       "checked": ["price", "karat", "metal_weight"],
       "old": { "price": "695.00", "karat": "14K", "weight_g": null },
       "new": { "price": "695.00", "karat": "14kt", "weight_g": null },
-      "change": "HTML Details checked: single estate size 6 at $695.00, 14kt yellow gold with 0.25 ct marquise diamond; no Gold Weight published",
+      "change": "Previously unread in P12 (missed by search feed); opening HTML PDP directly confirms single estate size 6 at $695.00 in 14kt yellow gold with 0.25 ct marquise diamond; no Gold Weight published",
       "verdict": "confirmed; Gold Weight omitted on estate PDP",
       "quote": "C. 1980 Vintage .25 Carat Marquise Diamond Solitaire Ring in 14kt Yellow Gold · Size 6 $695.00 · Metal 14kt Yellow Gold"
     },
     {
-      "row": "rs-240912",
-      "source_url": "https://www.ross-simons.com/products/240912",
-      "read_at": "2026-10-22T23:27Z",
-      "checked": ["price", "karat", "metal_weight", "certification"],
-      "old": { "price": "8995.00", "karat": "18K", "weight_g": null },
-      "new": { "price": "8995.00", "karat": "18kt", "weight_g": null },
-      "change": "HTML Details checked: single pre-owned size 4 at $8,995.00, 18kt yellow gold, GIA Certificate #7235079100 (1.51 ct J VS2); no Gold Weight published",
-      "verdict": "confirmed + GIA certificate #7235079100 verified; Gold Weight omitted",
-      "quote": "Pre-Owned 1.71 ct. t.w. GIA Certified Diamond Engagement Ring in 18kt Yellow Gold · Size 4 $8,995.00 · GIA Certificate #7235079100"
+      "row": "wc-4prong-petite",
+      "source_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
+      "read_at": "2026-10-22T23:38Z",
+      "checked": ["setting_basis", "karat"],
+      "old": { "price": "558.00-963.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "558.00-963.00 (feed; HTML uses JS builder)", "karat": "14KT", "weight_g": null },
+      "change": "Opened live HTML PDP: confirms 3-step \"Create Your Diamond Ring\" setting-only builder (centre diamond sold separately); no metal gram weight published",
+      "verdict": "setting-only basis confirmed",
+      "quote": "\"Create Your Diamond Ring\" — 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring · Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring"
     },
     {
-      "row": "be-18k-6p-121h6",
-      "source_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
-      "read_at": "2026-10-22T23:28Z",
-      "checked": ["price", "karat", "metal_weight", "setting_basis"],
-      "old": { "price": "990.00", "karat": "18K", "weight_g": null },
-      "new": { "price": "1090.00", "karat": "18K", "weight_g": null },
-      "change": "Live Brilliant Earth setting price increased by +$100 from $990.00 to $1,090.00 (Setting Only); SKU BE121H6-18KY, 18K Yellow Gold band (2.5mm) with 14K White Gold prongs; no gram weight published",
-      "verdict": "price drift corrected ($990 -> $1,090 setting only)",
-      "quote": "Classic Six-Prong Solitaire Engagement Ring · 18K Yellow Gold · $1,090 (Setting Only) · SKU BE121H6-18KY · Width: 2.5mm · Prong Metal: 14K White Gold"
+      "row": "wc-6prong",
+      "source_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
+      "read_at": "2026-10-22T23:38Z",
+      "checked": ["setting_basis", "karat", "page_consistency"],
+      "old": { "price": "567.00-828.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "567.00-828.00 (feed; HTML uses JS builder)", "karat": "14KT", "weight_g": null },
+      "change": "Opened live HTML PDP: confirms 3-step setting-only builder and 14KT Yellow/Rose Gold options; gallery alt text also contains \"in 14KT Platinum\" wording defect; no gram weight published",
+      "verdict": "setting-only basis confirmed + \"14KT Platinum\" alt-text defect noted",
+      "quote": "\"Create Your Diamond Ring\" — 1 Choose a setting · Classic Six Prong Solitaire Diamond Engagement Ring with Pear Cut Diamond in 14KT Yellow Gold (and \"14KT Platinum\" alt text)"
+    },
+    {
+      "row": "wc-gerbera",
+      "source_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
+      "read_at": "2026-10-22T23:38Z",
+      "checked": ["setting_basis", "karat", "page_consistency"],
+      "old": { "price": "1210.00-1850.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "1210.00-1850.00 (feed; HTML uses JS builder)", "karat": "14KT", "weight_g": null },
+      "change": "Opened live HTML PDP: confirms 3-step setting-only builder (created blue sapphire side stones are in the setting, centre diamond sold separately) and \"14KT Platinum\" alt-text defect; no gram weight published",
+      "verdict": "setting-only basis confirmed + \"14KT Platinum\" alt-text defect noted",
+      "quote": "\"Create Your Diamond Ring\" — 1 Choose a setting · Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring ... in 14KT Yellow Gold"
+    },
+    {
+      "row": "as-bea-sol",
+      "source_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+      "read_at": "2026-10-22T23:31Z",
+      "checked": ["price", "karat", "metal_weight", "purchasability"],
+      "old": { "price": "11500.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "11500.00 (.js feed only; HTML page is inquiry-only)", "karat": "14k", "weight_g": null },
+      "change": "Earlier P12 read checked .js feed only; opening live HTML PDP shows NO visible price and NO Add-to-Bag button — only a custom client inquiry form for a previously sold one-of-a-kind piece",
+      "verdict": "feed price $11,500 confirmed as historical archive figure; HTML inquiry-only flagged",
+      "quote": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct) · \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\""
+    },
+    {
+      "row": "as-hazeline",
+      "source_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
+      "read_at": "2026-10-22T23:31Z",
+      "checked": ["price", "karat", "metal_weight", "purchasability"],
+      "old": { "price": "7150.00-9200.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "7150.00-9200.00 (.js feed only; HTML page is inquiry-only)", "karat": "14k", "weight_g": null },
+      "change": "Live HTML PDP has NO visible retail price and NO Add-to-Bag button — displays custom client inquiry form only; 14k recycled yellow gold confirmed in Details; no gram weight",
+      "verdict": "inquiry-only custom archive piece flagged",
+      "quote": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond · \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you\""
+    },
+    {
+      "row": "as-bea-3stone",
+      "source_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
+      "read_at": "2026-10-22T23:31Z",
+      "checked": ["price", "karat", "metal_weight", "purchasability"],
+      "old": { "price": "5400.00-25100.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "5400.00-25100.00", "karat": "14k", "weight_g": null },
+      "change": "Live HTML PDP IS purchasable online: confirms $5,400.00 floor (4 x $1,350.00 Lab 7x5mm) to $25,100.00 ceiling (Natural 8x6mm) in recycled 14k gold; made to order in 4-6 weeks; no gram weight",
+      "verdict": "confirmed",
+      "quote": "Bea Three Stone Ring - 14k Gold & White Diamond Center · Variant total $25,100.00 · 4 X $1,350.00 · \"recycled 14k yellow, rose, or white gold\""
+    },
+    {
+      "row": "au-2ct-oval",
+      "source_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+      "read_at": "2026-10-22T23:31Z",
+      "checked": ["price", "karat", "metal_weight", "returns"],
+      "old": { "price": "1968.00-2800.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "1968.00 (14k Gold variant)", "karat": "14k", "weight_g": "2.73" },
+      "change": "HTML PDP confirms $1,968 for Rate - 14k GOLD (Yellow) and publishes \"Weight: 2.73g\" (total item weight incl. 2.25tcw lab diamond = 0.45g stone); also displays \"Exchange for size only. Final Sale!\"",
+      "verdict": "confirmed + published weight 2.73 g recovered + Final Sale warning flagged",
+      "quote": "2ct Oval Lab Grown Diamond Bezel Ring · $1,968 · Rate - 14k GOLD · Weight: 2.73g · 2.25tcw · \"Exchange for size only. Final Sale!\""
+    },
+    {
+      "row": "au-1ct-emerald",
+      "source_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+      "read_at": "2026-10-22T23:38Z",
+      "checked": ["price", "karat", "metal_weight", "returns"],
+      "old": { "price": "1498.00-2100.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "1498.00 (14k Gold variant)", "karat": "14k", "weight_g": "1.97" },
+      "change": "HTML PDP confirms $1,498 for Rate - 14k GOLD (Yellow) and publishes \"Weight: 1.97g\" (total item weight incl. 0.85tcw lab diamond = 0.17g stone); displays \"Final Sale! Exchange for size only\"",
+      "verdict": "confirmed + published weight 1.97 g recovered + Final Sale warning flagged",
+      "quote": "1ct Emerald Lab Grown Diamond Bezel Ring · $1,498 · Rate - 14k GOLD · Weight: 1.97g · 0.85tcw · \"Final Sale! Exchange for size only.\""
+    },
+    {
+      "row": "au-3ct-round",
+      "source_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+      "read_at": "2026-10-22T23:38Z",
+      "checked": ["price", "karat", "metal_weight", "returns"],
+      "old": { "price": "2438.00-3000.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "2438.00 (14k Gold variant)", "karat": "14k", "weight_g": "3.3" },
+      "change": "HTML PDP confirms $2,438 for Rate - 14k GOLD (Yellow) and publishes \"Weight: 3.3g\" (total item weight incl. 2.85tcw lab diamond = 0.57g stone); displays \"Exchange for size only. Final Sale!\"",
+      "verdict": "confirmed + published weight 3.3 g recovered + Final Sale warning flagged",
+      "quote": "3ct Round Lab Grown Diamond Bezel Ring · $2,438 · Rate - 14k GOLD · Weight: 3.3g · 2.85tcw · \"Exchange for size only. Final Sale!\""
+    },
+    {
+      "row": "au-xring",
+      "source_url": "https://auratenewyork.com/products/x-ring-with-diamonds",
+      "read_at": "2026-10-22T23:38Z",
+      "checked": ["price", "karat", "solid_wording", "metal_weight", "returns"],
+      "old": { "price": "1808.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "1808.00 (14k Gold variant)", "karat": "14k", "weight_g": "2.7" },
+      "change": "HTML PDP confirms $1,808 for Rate - 14k GOLD (Yellow), explicitly states \"Precision-crafted in solid gold\" / \"diagonally intersecting bands of solid gold\", and publishes \"Weight: 2.7g\" (0.44tcw diamonds); displays \"Final Sale! Exchange for size only\"",
+      "verdict": "confirmed + weight 2.7 g & explicit \"solid gold\" wording recovered + Final Sale flagged",
+      "quote": "Diamond X Ring · $1,808 · Rate - 14k GOLD · \"Precision-crafted in solid gold\" · Weight: 2.7g · 37 G/H SI2 Clarity Round Diamonds (0.44tcw) · \"Final Sale! Exchange for size only.\""
     },
     {
       "row": "bn-14k-ccf-203284",
@@ -283,70 +283,15 @@
       "quote": "Bold Diamond Eternity Ring · From $2,900 · Solid White Gold (14k), Natural Diamond · \"handcrafted in 14k solid gold\" · Band Width: 2.6 mm"
     },
     {
-      "row": "as-bea-sol",
-      "source_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
-      "read_at": "2026-10-22T23:31Z",
-      "checked": ["price", "karat", "metal_weight", "purchasability"],
-      "old": { "price": "5750.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "5750.00 (JSON feed only; HTML page has inquiry form)", "karat": "14k", "weight_g": null },
-      "change": "Live HTML PDP has NO visible retail price and NO Add-to-Bag button — shows \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" ($5,750 exists only in Shopify feed)",
-      "verdict": "inquiry-only custom archive piece flagged",
-      "quote": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct) · \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\""
-    },
-    {
-      "row": "as-hazeline",
-      "source_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
-      "read_at": "2026-10-22T23:31Z",
-      "checked": ["price", "karat", "metal_weight", "purchasability"],
-      "old": { "price": "5800.00-8500.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "5800.00-8500.00 (JSON feed only; HTML page has inquiry form)", "karat": "14k", "weight_g": null },
-      "change": "Live HTML PDP has NO visible retail price and NO Add-to-Bag button — shows custom client inquiry form only; 14k recycled yellow gold confirmed in Details",
-      "verdict": "inquiry-only custom archive piece flagged",
-      "quote": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond · \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you\""
-    },
-    {
-      "row": "as-bea-3stone",
-      "source_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
-      "read_at": "2026-10-22T23:31Z",
-      "checked": ["price", "karat", "metal_weight", "purchasability"],
-      "old": { "price": "5400.00-25100.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "5400.00-25100.00", "karat": "14k", "weight_g": null },
-      "change": "Live HTML PDP IS purchasable online: confirms $5,400.00 floor (4 x $1,350.00 Lab 7x5mm) to $25,100.00 ceiling (Natural 8x6mm) in recycled 14k gold; made to order in 4-6 weeks; no gram weight",
+      "row": "be-18k-6p-121h6",
+      "source_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "read_at": "2026-10-22T23:28Z",
+      "checked": ["price", "karat", "metal_weight", "setting_basis"],
+      "old": { "price": "1090.00", "karat": "18K", "weight_g": null },
+      "new": { "price": "1090.00", "karat": "18K", "weight_g": null },
+      "change": "Confirmed live $1,090 (Setting Only) on SKU BE121H6-18KY (18K Yellow Gold 2.5mm band with 14K White Gold prongs; archived c2bbe753 lead had stale $990); no gram weight published",
       "verdict": "confirmed",
-      "quote": "Bea Three Stone Ring - 14k Gold & White Diamond Center · Variant total $25,100.00 · 4 X $1,350.00 · \"recycled 14k yellow, rose, or white gold\""
-    },
-    {
-      "row": "au-2ct-oval",
-      "source_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
-      "read_at": "2026-10-22T23:31Z",
-      "checked": ["price", "karat", "metal_weight", "returns"],
-      "old": { "price": "1968.00", "karat": "14K", "weight_g": "2.73" },
-      "new": { "price": "1968.00", "karat": "14k", "weight_g": "2.73" },
-      "change": "Confirmed $1,968 in 14k Gold and Weight: 2.73g (2.25tcw oval lab diamond); uncovered live buy-box warning \"Exchange for size only. Final Sale!\" right above a \"Free Returns\" marketing icon",
-      "verdict": "confirmed + Final Sale / Exchange-only warning flagged",
-      "quote": "2ct Oval Lab Grown Diamond Bezel Ring · $1,968 · Rate - 14k GOLD · Weight: 2.73g · \"Exchange for size only. Final Sale!\""
-    },
-    {
-      "row": "au-cigar",
-      "source_url": "https://auratenewyork.com/products/modern-cigar-band",
-      "read_at": "2026-10-22T23:31Z",
-      "checked": ["karat", "metal_weight", "returns", "default_variant"],
-      "old": { "price": "400.00-958.00", "karat": "14K", "weight_g": "2.6-4.0" },
-      "new": { "price": "118.00 default Vermeil; 400.00-958.00 across gold feed", "karat": "14K (default URL opens Vermeil)", "weight_g": "2.6-4" },
-      "change": "Opening base URL without variant parameter redirects to ?variant=31703437738081 ($118 Vermeil / STERLING SILVER) and shows \"Final Sale! Exchange only!\"; Weight: 2.6-4g confirmed; Width (20mm) and Length (5mm) are transposed on Aurate's spec sheet",
-      "verdict": "weight range confirmed; Vermeil default redirect & Final Sale warning flagged",
-      "quote": "Modern Cigar Band · $118 Rate - Vermeil / STERLING SILVER · \"Final Sale! Exchange only!\" · Width: 20mm · Length: 5mm · Thickness: 1mm · Weight: 2.6-4g"
-    },
-    {
-      "row": "wc-tulip",
-      "source_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
-      "read_at": "2026-10-22T23:31Z",
-      "checked": ["setting_basis", "karat"],
-      "old": { "price": "678.00-921.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "not re-read (JS builder)", "karat": "14KT", "weight_g": null },
-      "change": "Confirmed 3-step \"Create Your Diamond Ring\" setting-only builder and 14KT Yellow Gold option; price rendered client-side so original feed price date retained",
-      "verdict": "setting-only basis & 14KT metal confirmed",
-      "quote": "Create Your Diamond Ring · 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring · Tulip Basket Cathedral Classic Solitaire Engagement Ring ... 14KT Yellow Gold"
+      "quote": "Classic Six-Prong Solitaire Engagement Ring · 18K Yellow Gold · $1,090 (Setting Only) · SKU BE121H6-18KY · Width: 2.5mm · Prong Metal: 14K White Gold"
     }
   ],
   "repo_irregularities": [
@@ -354,19 +299,19 @@
       "id": "IRR-01",
       "file": "data/gold-price.json",
       "issue": "Property named \"grains_per_troy_ounce\": 31.1034768 mislabels grams per troy ounce (31.1034768 g/ozt) as grains per troy ounce (1 ozt = 480 grains per NIST Handbook 130 § 2.17).",
-      "resolution": "Add canonical \"grams_per_troy_ounce\": 31.1034768 and \"true_grains_per_troy_ounce\": 480 (retaining legacy alias only with explicit deprecation note if external tools read it, while updating build.mjs and verify.mjs to prefer grams_per_troy_ounce)."
+      "resolution": "Add canonical \"grams_per_troy_ounce\": 31.1034768 and \"true_grains_per_troy_ounce\": 480 while preserving backwards compatibility."
     },
     {
       "id": "IRR-02",
       "file": "data/flagged.json",
-      "issue": "Flag ID F15 is skipped, F30 erroneously states \"No price for [Aurate] is recorded anywhere in this dataset\" despite 5 Aurate rows in data/rings.json, and F32 claims Ross-Simons Gold Weight \"is usually there\" on the unread 13 rows whereas 0 of 10 stone-set/estate rows publish Gold Weight.",
-      "resolution": "Update F30 and F32 with verified facts while preserving original_id provenance, and document the F15 numbering gap."
+      "issue": "Flag ID F15 is skipped, F30 erroneously states \"No price for [Aurate] is recorded anywhere in this dataset\" despite 5 Aurate rows in data/rings.json, F32 claims Ross-Simons Gold Weight \"is usually there\" on unread rows whereas 0 of 10 stone-set/estate rows publish Gold Weight (and rs-960952 had 1.3 g on its HTML page), and F23/F24/F25/F26/F27 reflect pre-read gaps now verified from official pages.",
+      "resolution": "Update stale counts and append verified policy/reputation/regulatory/GIA/CFPB resolution notes without deleting historical findings."
     },
     {
       "id": "IRR-03",
       "file": "data/rings_c2bbe753.json",
-      "issue": "Archived third-pass Cartier row CRN4744700 returns a removed/error page on cartier.com; CRB4230400 used a wrong Love Solitaire URL slug that redirects to Étincelle de Cartier (which explicitly states Rose gold 750/1000 = 18K); Tiffany GRP10863 is unavailable online and quotes a \"Starting from $1,600\" non-returnable/exchange-only price.",
-      "resolution": "Promote verified live Cartier 18K (750/1000) listings (CRB4230400, CRB4225700, CRB4057600) using their canonical URLs and log dead CRN4744700 + unavailable Tiffany GRP10863 on Flagged for Review."
+      "issue": "Archived third-pass Cartier row CRN4744700 returns a removed-page error on cartier.com; CRB4230400/CRB4225700/CRB4057600 explicitly publish 750/1000 (18K) fineness on their canonical PDPs; Brilliant Earth archived row had stale $990 vs live $1,090; Tiffany GRP10863 is unavailable online.",
+      "resolution": "Promote verified live Cartier 18K (750/1000) listings using canonical URLs and log dead CRN4744700 + unavailable Tiffany GRP10863 on Flagged for Review."
     }
   ]
 }

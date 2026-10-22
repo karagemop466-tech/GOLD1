@@ -235,7 +235,7 @@ const counted = (fn) => fn;
   const files = [];
   async function walk(dir) {
     for (const entry of await readdir(dir, { withFileTypes: true })) {
-      if (entry.name.startsWith('.') || entry.name === 'node_modules' || entry.name === 'data' || entry.name === 'scripts' || entry.name === 'assets' || entry.name === 'site') continue;
+      if (entry.name.startsWith('.') || entry.name === 'node_modules' || entry.name === 'dist' || entry.name === 'data' || entry.name === 'scripts' || entry.name === 'assets' || entry.name === 'site') continue;
       const p = join(dir, entry.name);
       if (entry.isDirectory()) await walk(p);
       else if (entry.name.endsWith('.html')) files.push(p);
@@ -418,7 +418,7 @@ const counted = (fn) => fn;
   const files = [];
   async function walk(dir) {
     for (const entry of await readdir(dir, { withFileTypes: true })) {
-      if (entry.name.startsWith('.') || ['node_modules', 'data', 'scripts', 'assets', 'site', 'docs', 'tools'].includes(entry.name)) continue;
+      if (entry.name.startsWith('.') || ['node_modules', 'dist', 'data', 'scripts', 'assets', 'site', 'docs', 'tools'].includes(entry.name)) continue;
       const p = join(dir, entry.name);
       if (entry.isDirectory()) await walk(p);
       else if (entry.name.endsWith('.html')) files.push(p);
