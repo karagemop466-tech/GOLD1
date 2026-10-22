@@ -26,8 +26,8 @@
       "severity": "high",
       "type": "missing data",
       "affected": "36 of 43 rows",
-      "finding": "Weight in grams is the number you need to test a price against gold content, and most of this list does not publish it. Seven rows do: six Ross-Simons bands read straight off the spec panel - 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g - plus the Aurate Modern Cigar Band, which publishes a 2.6-4 g range. Earlier passes reported 1 of 43 because they never captured Ross-Simons' \"Gold Weight\" field. The remaining 36 rows (every Mejuri, Blue Nile, Brilliant Earth, With Clarity and Anna Sheffield row, plus the 11 Ross-Simons rows not re-read) stay blank rather than estimated.",
-      "buyer_action": "For a listing with no published weight, ask the seller for the grams of your exact size in writing and run the calculator with it. For the seven that do publish a weight, treat the figure as the seller's claim until an independent jeweller weighs the ring.",
+      "finding": "Metal weight in grams is the number you need to check price against gold value. As of pass P12, seven listings publish one: six Ross-Simons rings that carry a \"Gold Weight\" line on their own product page - 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g - plus the Aurate Modern Cigar Band (\"Weight: 2.6-4g\", a range). That is up from 1 of 43 before the re-reads. The other 36 rows are deliberately blank rather than estimated; the site never fills a weight from a similar ring.",
+      "buyer_action": "Ask the seller for the gram weight of the exact size you are buying, in writing. Refuse to accept a carat weight as a substitute for metal weight. On Ross-Simons product pages the number is usually already there, in the spec panel under \"Gold Weight\".",
       "sources": [
         "https://www.ross-simons.com/products/571221",
         "https://www.ross-simons.com/products/571222",
@@ -71,8 +71,8 @@
       "severity": "medium",
       "type": "price basis",
       "affected": "rs-943668",
-      "finding": "The listing text states \"Center stone and setting are sold separately.\" and the product is tagged SEMIMOUNTING. 1,269.00-1,439.00 does not buy a complete ring.",
-      "buyer_action": "Read the phrase \"setting\" carefully; budget separately for the centre stone.",
+      "finding": "The listing text states \"Center stone and setting are sold separately.\" and the product is tagged SEMIMOUNTING, so the price — a single $1,269.00 clearance price as of pass P12, with a stated original of $1,795.00 — does not buy a complete ring. Sizes 5, 6 and 6.5 were sold out on the re-read.",
+      "buyer_action": "Read the word \"setting\" carefully and budget separately for the centre stone. Ask which sizes are actually in stock before you plan a resize.",
       "sources": [
         "https://www.ross-simons.com/products/943668"
       ],
@@ -248,11 +248,11 @@
     },
     {
       "id": "F19",
-      "title": "No listing in this pass publishes the ring's weight in grams (0 of 13)",
+      "title": "First pass: no listing published a ring's weight in grams (0 of 13)",
       "severity": "high",
       "type": "first-pass finding",
       "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6",
-      "finding": "Gram weight is the single number needed to compare price against gold value. Blue Nile, Mejuri and Brilliant Earth pages publish width and thickness but not weight. Until a seller supplies weight in writing, the gold-value calculator cannot be applied to any row here. Ask the seller for the weight in grams before paying.",
+      "finding": "Historical finding from the first research pass over Blue Nile, Mejuri and Brilliant Earth: none of those 13 listings published a gram weight — pages gave width and thickness instead. It still holds for those 13 rows. Later passes did recover weights from Ross-Simons and Aurate, so the whole-dataset count is now 7 of 43 (F02). This entry is kept so the earlier claim is not silently rewritten.",
       "buyer_action": "Ask for the gram weight before paying, in writing. A jeweller can weigh it in seconds on arrival.",
       "sources": [
         "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
@@ -263,7 +263,7 @@
     },
     {
       "id": "F20",
-      "title": "No listing publishes hallmark or maker's mark details (0 of 13)",
+      "title": "No listing publishes hallmark or maker's mark details (0 of 13 checked, still true for the rest)",
       "severity": "high",
       "type": "first-pass finding",
       "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6",
@@ -446,7 +446,7 @@
       "severity": "medium",
       "type": "coverage gap",
       "affected": "13 of 17 Ross-Simons rows",
-      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on 571221, \"Gold Weight 3.8 grams\" on 571223 and \"Gold Weight 0.5 grams\" on 981367 and 907250). The earlier passes captured prices and karats but not that field. Six Ross-Simons rows now carry a weight after the P12 re-reads; the other 11 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
+      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on item 571221, \"Gold Weight 3.8 grams\" on 571223 and \"Gold Weight 0.5 grams\" on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 7 of 43 rows carry a weight. Six Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 11 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
       "buyer_action": "If a Ross-Simons row matters to you, open its page and read the Gold Weight line yourself — it is usually there. Send it to me and it can be verified into the table.",
       "sources": [
         "https://www.ross-simons.com/products/571221",
