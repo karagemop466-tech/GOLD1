@@ -302,6 +302,61 @@ const counted = (fn) => fn;
   add('S13', 'Source registry coverage', 'Every retailer used for a value must appear in the source registry with a retrieval record.', failures);
 }
 
+/* ---------------------------------------------------------------- S14 */
+{
+  const failures = [];
+  for (const r of rings.rows) {
+    assertions++;
+    if (r.weight_g_low === null) {
+      if (r.weight_evidence) failures.push(`${r.id}: has weight evidence but no weight value`);
+      continue;
+    }
+    if (!r.weight_evidence) {
+      failures.push(`${r.id}: weight ${r.weight_g_low} has no captured weight evidence — treat as unverifiable`);
+      continue;
+    }
+    const forms = [String(r.weight_g_low), r.weight_g_low.toFixed(1)];
+    if (!forms.some((f) => r.weight_evidence.includes(f))) {
+      failures.push(`${r.id}: weight ${r.weight_g_low} does not appear in its own weight evidence — treat as fabricated`);
+    }
+    if (!r.weight_source_url) failures.push(`${r.id}: weight has no source URL`);
+    else if (!/^https:\/\//.test(r.weight_source_url)) failures.push(`${r.id}: weight source URL is not https`);
+  }
+  add('S14', 'Weight traceable to evidence', 'A published metal weight must appear, digit for digit, in weight evidence copied from the seller page, and must carry the URL it was read from.', failures);
+}
+
+/* ---------------------------------------------------------------- S15 */
+{
+  const failures = [];
+  const allowed = ['matched', 'price_changed', 'title_corrected', 'partial', 'not_indexed', 'not_rechecked'];
+  const log = await readIf('data/recheck.json', { results: [], not_rechecked: [], summary: {} });
+  const logged = new Map((log.results || []).map((x) => [x.ring_id, x]));
+  const ids = new Set(rings.rows.map((r) => r.id));
+  for (const r of rings.rows) {
+    assertions++;
+    if (!allowed.includes(r.recheck_result)) failures.push(`${r.id}: unknown recheck_result "${r.recheck_result}"`);
+    if (r.recheck_result !== 'not_rechecked' && !/^\d{4}-\d{2}-\d{2}$/.test(r.recheck_date || '')) {
+      failures.push(`${r.id}: claims a re-check without a dated pass`);
+    }
+    if (r.recheck_result !== 'not_rechecked' && !r.recheck_url) failures.push(`${r.id}: claims a re-check without the URL that was opened`);
+    if (r.recheck_result === 'not_rechecked' && r.recheck_date) failures.push(`${r.id}: labelled not re-checked but carries a re-check date`);
+  }
+  for (const x of log.results || []) {
+    assertions++;
+    if (!ids.has(x.ring_id)) failures.push(`recheck log names ${x.ring_id}, which is not a row`);
+    else if (x.result === 'matched' || x.result === 'price_changed') {
+      const row = rings.rows.find((r) => r.id === x.ring_id);
+      if (row.price_low !== x.price_read?.[0] || row.price_high !== x.price_read?.[1]) {
+        failures.push(`${x.ring_id}: stored price ${row.price_low}-${row.price_high} does not match the price read in the log`);
+      }
+    }
+    if (!x.url || !/^https:\/\//.test(x.url)) failures.push(`recheck log entry ${x.ring_id} has no https URL`);
+  }
+  const unlogged = rings.rows.filter((r) => r.recheck_result !== 'not_rechecked' && !logged.has(r.id));
+  for (const r of unlogged) failures.push(`${r.id}: claims a re-check that is not in data/recheck.json`);
+  add('S15', 'Re-check log integrity', 'Every row must state whether it was re-read; a row that claims a re-check must be listed in data/recheck.json with the URL opened and must match the price recorded there.', failures);
+}
+
 /* ---------------------------------------------------------------- report */
 const totalFailed = groups.reduce((n, g) => n + (g.failure_count || 0), 0);
 const history = await readIf('data/checks/history.json', { runs: [] });

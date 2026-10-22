@@ -4,7 +4,7 @@ A source-linked buying dashboard for **solid gold engagement rings**, built so t
 
 **Live site:** https://karagemop466-tech.github.io/GOLD1/
 
-Built across two research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows) and session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), integrated into one dataset and one site. The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
+Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), and session **arena/b93ff7c6-gold1** (pass **P12**, 2026-10-22: re-opened 18 listings, added the six metal weights Ross-Simons actually publishes, corrected one price that had moved, and added two new check groups). The earlier passes' original records are preserved unmodified under `data/archive/`.
 
 ---
 
@@ -13,6 +13,8 @@ Built across two research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, M
 > **No hallucinated prices.** Every price, karat and weight on the site was copied from an official retailer feed, stored with the date it was retrieved, and linked on the same row to the exact page it came from. If a value could not be confirmed on an official source it is shown as **— unverified** and published on the **Flagged for review** page. Nothing is estimated, averaged, inferred or remembered.
 
 That rule is printed at the top of the landing page, repeated on every subpage, and then enforced mechanically by `scripts/verify.mjs`, which re-derives every claim from its own evidence text.
+
+**Pass P12 added a second rule:** a price is only "current" if the seller's page was actually re-opened. Every row now carries a re-check status — `matched`, `price corrected`, `not re-checked`, `could not confirm` — and `data/recheck.json` records, line by line, the price before, the price read, the weight read, the URL that was opened and the date. Nothing was silently refreshed.
 
 ---
 
@@ -30,7 +32,8 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `flagged.html` | 29 findings that need a human decision (published, non-blocking) |
 | `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
 | `checks.html` | Output of the latest automated verification pass and the pass history |
-| `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |
+| `data/rings.json` | The curated dataset — 43 rows, each with its evidence string, its weight evidence and its re-check status |
+| `data/recheck.json` | **P12 log:** one line per listing re-opened — price before, price read, weight read, URL, date, result |
 | `data/archive/session-6f8c2bcb/` | First pass's original 13 rows, 15 flags, CSV and gold reading, preserved unmodified |
 | `data/sources.json` | Source registry with retrieval dates and status |
 | `data/flagged.json` | Findings, severity, affected rows, source links |
@@ -41,7 +44,9 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `scripts/collect.mjs` | Evidence collector: re-fetches every source and writes a timestamped snapshot |
 | `scripts/integrate_session_6f8c2bcb.py` | Mechanical migration of the first pass's rows into this schema (no number is retyped) |
 | `scripts/build.mjs` | Static site generator (no dependencies) |
-| `scripts/verify.mjs` | Anti-hallucination audit: 13 check groups, ~1,500 assertions |
+| `scripts/verify.mjs` | Anti-hallucination audit: **15 check groups, ~2,600 assertions** (S14 traces every weight to the seller's own wording, S15 audits the re-check log) |
+| `scripts/apply_recheck_p12.py` | The P12 re-check, as a script: every value it writes was read from the URL named beside it, and running it twice changes nothing |
+| `scripts/apply_recheck_p12_meta.py` | P12 gold-price refresh, source registrations, and the findings this pass proved wrong (F02, F06 rewritten; F31–F35 added) |
 | `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
 | `COORDINATION.md` | Shared task board, verification log and integration record |
 
@@ -80,6 +85,8 @@ Node 22, no npm install, no network calls at build time, no tracking scripts, no
 | S11 | Links and placeholders | Broken internal links, missing assets, placeholder text |
 | S12 | Row-to-page coverage | A row without a detail page showing its source and price |
 | S13 | Source registry coverage | A retailer used for values with no registry entry |
+| S14 | Weight traceable to evidence | A published weight whose digits are not in the weight evidence copied from the seller page |
+| S15 | Re-check log integrity | A row claiming a re-check that is not in `data/recheck.json`, or a logged price that disagrees with the row |
 
 Failures are printed, written to `data/checks/latest.json`, appended to `data/checks/history.json`, and rendered on `checks.html`. The command exits non-zero on any failure.
 
@@ -100,7 +107,10 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 - **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
 - **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
-- **1 of 43 listings publishes metal weight in grams.** The value check cannot be completed for the other 42, and is left blank. → F02
+- **7 of 43 listings publish metal weight in grams**, not 1 as the earlier passes reported: six Ross-Simons bands (1.7 g, 2.5 g, 3.8 g, 5.0 g, 0.5 g, 0.5 g) and the Aurate Modern Cigar Band (2.6–4 g range). The other 36 are blank, not estimated. → F02
+- **The two "suspiciously cheap" rings are explained:** $149 buys 0.5 g of 14K and $179 buys 0.5 g of 18K — about $37.79 and $48.58 of gold at the P12 price, so roughly 3.9× and 3.7× melt. → F06
+- **A stored price had moved:** Ross-Simons 571223 was recorded at $799–$849 and is $849 for every size on re-read. The row was corrected and the change logged. → F31
+- **18 rows were re-opened and confirmed or corrected; 22 were not**, and the site labels those as historical rather than current. → F32
 - **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
 - **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
 - **Two Ross-Simons pieces at $149 and $179** are flagged as value-unverifiable without a weight. → F06
@@ -112,7 +122,7 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 ## Limits
 
-Prices are a snapshot and retailers change them without notice — the retailer page always wins. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
+Prices are a snapshot and retailers change them without notice — the retailer page always wins. In pass P12 the re-check itself caught a real drift (F31), which is why every row now says whether it was re-read or is historical. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
 
 ## License
 

@@ -35,7 +35,7 @@
   <div class="wrap">
     <p class="eyebrow">Research dashboard · data downloaded 2026-10-22</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">43 listings from 7 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged.</p>
+    <p class="lede">43 listings from 7 retailers, each one linked to the exact official page it came from. Prices are stamped with the date they were read, and every row now says whether it was re-read today or is historical. 18 of 43 were re-opened in the latest pass (P12, 2026-10-22) and 3 more were searched for and not found; the rest are labelled <strong>not re-checked</strong> rather than quietly presented as current. Where the seller does not publish a number — most of them still do not publish metal weight — the field is blank and flagged.</p>
     
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -66,9 +66,15 @@
 </div>
     
 <div class="stat">
-  <div class="stat-value">1/43</div>
+  <div class="stat-value">7/43</div>
   <div class="stat-label">publish metal weight</div>
   <div class="stat-note">the number you need for a value check</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">18/43</div>
+  <div class="stat-label">re-read this pass</div>
+  <div class="stat-note">prices compared with the seller page on 2026-10-22</div>
 </div>
     
 <div class="stat">
@@ -78,7 +84,7 @@
 </div>
     
 <div class="stat">
-  <div class="stat-value">29</div>
+  <div class="stat-value">34</div>
   <div class="stat-label">flagged findings</div>
   <div class="stat-note">published, not hidden</div>
 </div>
@@ -96,15 +102,30 @@
   <h2>Gold price used for the value check</h2>
   <div class="price-card">
     <div>
-      <div class="price-big">$4,028.10<span class="unit">/ troy oz</span></div>
-      <p class="muted">gold-api.com · timestamp 2026-10-22T23:01:42Z · <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">source ↗</a></p>
+      <div class="price-big">$4,029.70<span class="unit">/ troy oz</span></div>
+      <p class="muted">gold-api.com · timestamp 2026-10-22T23:22:41Z · <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">source ↗</a></p>
     </div>
     <div class="price-side">
-      <div><span class="k">Per gram</span> <strong>$129.51</strong></div>
-      <div><span class="k">14K gold per gram</span> <strong>$75.55</strong></div>
-      <div><span class="k">18K gold per gram</span> <strong>$97.13</strong></div>
+      <div><span class="k">Per gram</span> <strong>$129.56</strong></div>
+      <div><span class="k">14K gold per gram</span> <strong>$75.58</strong></div>
+      <div><span class="k">18K gold per gram</span> <strong>$97.17</strong></div>
       <p class="sub">Cross-check: COMEX front-month futures $4,043.00/ozt at the same session. <a href="calculator.html">Open the calculator →</a></p>
     </div>
+  </div>
+</section>
+
+<section class="wrap section" id="latest-pass">
+  <h2>What the latest pass changed</h2>
+  <div class="callout">
+    <p><strong>P12 · 2026-10-22.</strong>
+    18 listings were re-opened on the retailer's own page or feed, and 3 more were looked for and not returned by the seller's own search. Six metal weights that the sellers do publish were added (Ross-Simons prints a “Gold Weight” figure that earlier passes missed), one price that had moved was corrected, and one paraphrased title was replaced with the seller's exact string.</p>
+    <ul class="ticks">
+      <li><strong>Weight coverage is now 7 of 43</strong>, not 1 of 43 as earlier passes reported. See <a href="flagged.html#F02">F02</a>.</li>
+      <li><strong>The two cheapest rings are explained, not suspicious.</strong> $149 is 0.5 g of 14K and $179 is 0.5 g of 18K. See <a href="flagged.html#F06">F06</a>.</li>
+      <li><strong>A price had moved:</strong> Ross-Simons 571223 was stored at $799–$849 and is $849 for every size on re-read. See <a href="flagged.html#F31">F31</a>.</li>
+      <li><strong>22 rows were not re-opened</strong> and are labelled as historical. See <a href="flagged.html#F32">F32</a>.</li>
+    </ul>
+    <p><a class="btn" href="checks.html#recheck-log">See every re-read, line by line →</a></p>
   </div>
 </section>
 
@@ -150,14 +171,14 @@
       <h2>What the checklist got right</h2>
       <ul class="ticks">
         <li><strong>Karat is stated on every listing.</strong> All 43 rows name 14K or 18K in the official feed.</li>
-        <li><strong>Two return policies are confirmed in detail.</strong> Ross-Simons allows 30 days from receipt; Aurate allows 14 days from fulfilment for US orders.</li>
+        <li><strong>4 of 7 return policies are confirmed from the retailer's own page.</strong> Ross-Simons allows 30 days from receipt and excludes pieces resized by another jeweller; Aurate allows 14 days from fulfilment; With Clarity 30 calendar days; Anna Sheffield two weeks. Blue Nile, Mejuri, Brilliant Earth are left blank because the policy was not confirmed on the page read.</li>
         <li><strong>Plated metal was excluded, not ranked.</strong> Set &amp; Stones' engagement results were gold-filled and were rejected.</li>
       </ul>
     </div>
     <div>
       <h2>What still needs you</h2>
       <ul class="crosses">
-        <li><strong>Weight is the missing number.</strong> 42 of 43 listings do not publish grams, so the price-versus-gold-value check cannot be finished for them.</li>
+        <li><strong>Weight is still mostly missing.</strong> 36 of 43 listings do not publish grams, so the price-versus-gold-value check cannot be finished for them. The 7 that do are visible in the Weight column.</li>
         <li><strong>Hallmarks cannot be seen online.</strong> Ask for a photo of the inside of the band, then have a jeweller test it on arrival.</li>
         <li><strong>“Setting only” prices are not ring prices.</strong> 14 listed products exclude the centre stone.</li>
       </ul>
@@ -170,10 +191,10 @@
   <div class="pass-card">
           <div class="pass-head">
             <span class="badge ok">PASS</span>
-            <strong>P9</strong>
-            <span class="muted">run 2026-10-22T23:20:31Z</span>
+            <strong>P12</strong>
+            <span class="muted">run 2026-10-22T23:28:10Z</span>
           </div>
-          <p>13 checks passed, 0 failed. The suite looks for fabricated values: prices that do not appear in their own evidence string, karats outside the legal set, melt-value contradictions, future dates and broken internal links.</p>
+          <p>15 checks passed, 0 failed. The suite looks for fabricated values: prices that do not appear in their own evidence string, karats outside the legal set, melt-value contradictions, future dates and broken internal links.</p>
           <p><a href="checks.html">See every check →</a></p>
         </div>
 </section>
@@ -228,6 +249,7 @@
     <th scope="col" class="num-col">Price (USD)</th>
     <th scope="col">Price basis</th>
     <th scope="col">Weight</th>
+    <th scope="col">Re-checked</th>
     <th scope="col">Flags</th>
     <th scope="col">Source</th>
   </tr>
@@ -240,7 +262,8 @@
     <td>Yellow gold<div class="sub">None</div></td>
     <td class="num-col"><span class="num">$400.00</span></td>
     <td class="small">single listed price</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small">1.7 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571221" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -251,19 +274,21 @@
     <td>Yellow gold<div class="sub">None</div></td>
     <td class="num-col"><span class="num">$599.00</span></td>
     <td class="small">single listed price</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small">2.5 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571222" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="799" data-title="women&#39;s 4mm 14kt yellow gold band ross-simons  none">
+  <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="849" data-title="women&#39;s 4mm 14kt yellow gold band ross-simons  none">
     <td class="cell-title"><a href="rings/rs-571223.html">Women&#39;s 4mm 14kt Yellow Gold Band</a><div class="sub">Plain band</div></td>
     <td>Ross-Simons</td>
     <td><strong>14K</strong></td>
     <td>Yellow gold<div class="sub">None</div></td>
-    <td class="num-col"><span class="num">$799.00 – $849.00</span></td>
+    <td class="num-col"><span class="num">$849.00</span></td>
     <td class="small">listed variant range</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span></td>
+    <td class="small">3.8 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip warn" title="The seller price had moved; this row now shows the re-read price.">price corrected</span></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price moved since capture</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571223" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="959" data-title="men&#39;s 5mm 14kt yellow gold band ross-simons  none">
@@ -273,7 +298,8 @@
     <td>Yellow gold<div class="sub">None</div></td>
     <td class="num-col"><span class="num">$959.00</span></td>
     <td class="small">single listed price</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small">5 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571213" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -284,7 +310,8 @@
     <td>Yellow gold<div class="sub">None</div></td>
     <td class="num-col"><span class="num">$149.00</span></td>
     <td class="small">single listed price</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small">0.5 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">low price — check weight</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/981367" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -295,7 +322,8 @@
     <td>Yellow gold<div class="sub">None</div></td>
     <td class="num-col"><span class="num">$179.00</span></td>
     <td class="small">single listed price</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small">0.5 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">low price — check weight</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/907250" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -307,6 +335,7 @@
     <td class="num-col"><span class="num">$399.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/960952" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -318,17 +347,19 @@
     <td class="num-col"><span class="num">$2,695.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/879968" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="gemstone" data-retailer="ross-simons" data-karat="14K" data-price="489" data-title="pink sapphire and garnet eternity band in 14kt yellow gold ross-simons gemstone (sapphire, garnet) .30 ct. t.w. pink sapphire + .80 ct. t.w. garnet">
-    <td class="cell-title"><a href="rings/rs-999230.html">Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold</a><div class="sub">Gemstone eternity band</div></td>
+  <tr data-category="gemstone" data-retailer="ross-simons" data-karat="14K" data-price="489" data-title=".80 ct. t.w. garnet and .30 ct. t.w. pink sapphire geometric eternity band in 14kt yellow gold ross-simons gemstone (sapphire, garnet) .30 ct. t.w. pink sapphire + .80 ct. t.w. garnet">
+    <td class="cell-title"><a href="rings/rs-999230.html">.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold</a><div class="sub">Gemstone eternity band</div></td>
     <td>Ross-Simons</td>
     <td><strong>14K</strong></td>
     <td>Yellow gold<div class="sub">Gemstone (sapphire, garnet)</div></td>
     <td class="num-col"><span class="num">$489.00 – $559.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip warn" title="The stored title was a paraphrase and was replaced with the seller&#39;s exact string.">title corrected</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/999230" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -340,6 +371,7 @@
     <td class="num-col"><span class="num">$2,795.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/991907" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -351,6 +383,7 @@
     <td class="num-col"><span class="num">$2,795.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/993512" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -362,7 +395,8 @@
     <td class="num-col"><span class="num">$1,795.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
+    <td class="small"><span class="chip bad" title="The seller&#39;s own search returned nothing for this SKU on 2026-10-22.">could not confirm</span></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">availability unconfirmed</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/991908" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="three-stone" data-retailer="ross-simons" data-karat="14K" data-price="2395" data-title="1.00 ct. t.w. diamond bridal set: engagement and wedding rings in 14kt yellow gold ross-simons mined diamond 1.00 ct. t.w. diamonds; .20 ct centre">
@@ -373,6 +407,7 @@
     <td class="num-col"><span class="num">$2,395.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/864785" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -384,17 +419,19 @@
     <td class="num-col"><span class="num">$1,269.00 – $1,439.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
+    <td class="small"><span class="chip bad" title="The seller&#39;s own search returned nothing for this SKU on 2026-10-22.">could not confirm</span></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">availability unconfirmed</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/943668" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="estate" data-retailer="ross-simons" data-karat="14K" data-price="2195" data-title="c. 1980 vintage .30 carat sapphire ring with .16 ct. t.w. diamonds in 14kt yellow gold, size 6.5 ross-simons gemstone + mined diamond .30 ct oval sapphire + .16 ct. t.w. diamonds">
-    <td class="cell-title"><a href="rings/rs-242556.html">C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold, Size 6.5</a><div class="sub">Estate halo ring</div></td>
+  <tr data-category="estate" data-retailer="ross-simons" data-karat="14K" data-price="2195" data-title="c. 1980 vintage .30 carat sapphire ring with .16 ct. t.w. diamonds in 14kt yellow gold. size 6.5 ross-simons gemstone + mined diamond .30 ct oval sapphire + .16 ct. t.w. diamonds">
+    <td class="cell-title"><a href="rings/rs-242556.html">C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5</a><div class="sub">Estate halo ring</div></td>
     <td>Ross-Simons</td>
     <td><strong>14K</strong></td>
     <td>Yellow gold<div class="sub">Gemstone + mined diamond</div></td>
     <td class="num-col"><span class="num">$2,195.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/242556" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -406,17 +443,19 @@
     <td class="num-col"><span class="num">$695.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span></td>
+    <td class="small"><span class="chip bad" title="The seller&#39;s own search returned nothing for this SKU on 2026-10-22.">could not confirm</span></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span> <span class="chip chip-warn">availability unconfirmed</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/254575" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="estate" data-retailer="ross-simons" data-karat="14K" data-price="8995" data-title="c. 2023 vintage 1.36 carat certified sapphire ring in 14kt yellow gold, size 7 ross-simons gemstone (sapphire), gia certified 1.36 ct certified oval cushion sapphire">
-    <td class="cell-title"><a href="rings/rs-240912.html">C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold, Size 7</a><div class="sub">Estate solitaire (sapphire)</div></td>
+  <tr data-category="estate" data-retailer="ross-simons" data-karat="14K" data-price="8995" data-title="c. 2023 vintage 1.36 carat certified sapphire ring in 14kt yellow gold. size 7 ross-simons gemstone (sapphire), gia certified 1.36 ct certified oval cushion sapphire">
+    <td class="cell-title"><a href="rings/rs-240912.html">C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7</a><div class="sub">Estate solitaire (sapphire)</div></td>
     <td>Ross-Simons</td>
     <td><strong>14K</strong></td>
     <td>Yellow gold<div class="sub">Gemstone (sapphire), GIA certified</div></td>
     <td class="num-col"><span class="num">$8,995.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/240912" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -428,6 +467,7 @@
     <td class="num-col"><span class="num">$590.00 – $1,110.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -439,6 +479,7 @@
     <td class="num-col"><span class="num">$558.00 – $801.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -450,6 +491,7 @@
     <td class="num-col"><span class="num">$558.00 – $963.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -461,6 +503,7 @@
     <td class="num-col"><span class="num">$567.00 – $828.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -472,6 +515,7 @@
     <td class="num-col"><span class="num">$1,210.00 – $1,850.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">created stone</span> <span class="chip chip-warn">setting unclear</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -483,6 +527,7 @@
     <td class="num-col"><span class="num">$11,500.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -494,6 +539,7 @@
     <td class="num-col"><span class="num">$7,150.00 – $9,200.00</span></td>
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -505,6 +551,7 @@
     <td class="num-col"><span class="num">$5,400.00 – $25,100.00</span></td>
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -516,6 +563,7 @@
     <td class="num-col"><span class="num">$1,968.00 – $2,800.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">metal price unmapped</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -527,6 +575,7 @@
     <td class="num-col"><span class="num">$1,498.00 – $2,100.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">metal price unmapped</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -538,6 +587,7 @@
     <td class="num-col"><span class="num">$2,438.00 – $3,000.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">metal price unmapped</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -548,8 +598,9 @@
     <td>Yellow gold<div class="sub">None</div></td>
     <td class="num-col"><span class="num">$1,308.00</span></td>
     <td class="small">single listed price</td>
-    <td class="small">2.6–4 g</td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">plated variant in listing</span> <span class="chip chip-warn">weight range</span></td>
+    <td class="small">2.6–4 g<div class="sub">published by seller</div></td>
+    <td class="small"><span class="chip warn" title="Part of this listing was re-read; at least one value is still historical.">partly re-checked</span></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">plated variant in listing</span> <span class="chip chip-warn">weight range</span> <span class="chip chip-warn">price not re-confirmed</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/modern-cigar-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bezel" data-retailer="aurate" data-karat="14K" data-price="1808" data-title="diamond x ring (14k yellow gold variant) aurate natural diamond 37 x 1.4mm round diamonds (si quality)">
@@ -560,6 +611,7 @@
     <td class="num-col"><span class="num">$1,808.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/x-ring-with-diamonds" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -571,6 +623,7 @@
     <td class="num-col"><span class="num">$935.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -582,6 +635,7 @@
     <td class="num-col"><span class="num">$1,240.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -593,6 +647,7 @@
     <td class="num-col"><span class="num">$1,275.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -604,6 +659,7 @@
     <td class="num-col"><span class="num">$1,310.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -615,6 +671,7 @@
     <td class="num-col"><span class="num">$2,065.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -626,6 +683,7 @@
     <td class="num-col"><span class="num">$1,000.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -637,6 +695,7 @@
     <td class="num-col"><span class="num">$1,240.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -648,6 +707,7 @@
     <td class="num-col"><span class="num">$1,420.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -659,6 +719,7 @@
     <td class="num-col"><span class="num">$1,100.00</span></td>
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://mejuri.com/products/diamond-eternity-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -670,6 +731,7 @@
     <td class="num-col"><span class="num">$648.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://mejuri.com/products/diamonds-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -681,6 +743,7 @@
     <td class="num-col"><span class="num">$2,900.00</span></td>
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://mejuri.com/products/bold-diamond-eternity-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -692,6 +755,7 @@
     <td class="num-col"><span class="num">$498.00</span></td>
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip ok" title="Price on the seller page matched this row on 2026-10-22.">re-read 2026-10-22</span></td>
     <td class="flags"><span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://mejuri.com/products/2mm-smooth-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -703,6 +767,7 @@
     <td class="num-col"><span class="num">$1,090.00</span></td>
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
+    <td class="small"><span class="chip " title="This row keeps the value captured in an earlier pass. It is not a price for today.">not re-checked</span></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">mixed karat parts</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -716,7 +781,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

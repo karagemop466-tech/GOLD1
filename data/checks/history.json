@@ -87,6 +87,16 @@
       "failed": 0,
       "rows": 43,
       "pages": 74
+    },
+    {
+      "pass": "P12",
+      "generated_at": "2026-10-22T23:28:10Z",
+      "total": 15,
+      "failed": 0,
+      "rows": 43,
+      "pages": 74,
+      "assertions": 2626
     }
-  ]
+  ],
+  "note": "One entry per published pass. Intermediate local iterations are collapsed; every entry here corresponds to a committed state of the site. P12 is the third verification session (15 groups)."
 }

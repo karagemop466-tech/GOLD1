@@ -38,8 +38,8 @@ scope, one branch per session, no cross-session edits — were kept.
 | T6 | Second pass: anti-hallucination audit | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
 | T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
 | T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
-| T9 | **Third verification pass**: re-fetch live listings, correct any drifted price/weight, add weights that sellers do publish, log every check with a source link | **in progress** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `data/rings.json`, `data/gold-price.json`, `data/flagged.json`, `data/checklist.json`, `data/checks/`, `data/recheck.json` (new) | 2026-10-22 |
-| T10 | Integration + publish: rebuild site, run every check group, PR to `main`, merge, confirm Pages deploy | **unclaimed** | — | — | `scripts/build.mjs`, `scripts/verify.mjs`, generated `*.html`, this board | 2026-10-22 |
+| T9 | **Third verification pass (P12)**: re-open live listings, correct drifted values, add the weights sellers do publish, log every check with a source link | **done** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `data/rings.json`, `data/gold-price.json`, `data/flagged.json`, `data/checklist.json`, `data/sources.json`, `data/recheck.json` (new), `scripts/apply_recheck_p12*.py` | 2026-10-22 |
+| T10 | **Integration + publish**: rebuild the site, run every check group, PR to `main`, merge, confirm Pages deploy, record links | **in progress** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, generated `*.html`, `README.md`, this board | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -86,6 +86,15 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | sess-d8f0544e | Gold price | gold-api.com 4,028.100098 USD/ozt at 2026-10-22T23:01:42Z; COMEX GC=F 4,043.00 | stored with publisher timestamps |
 | 2026-10-22 | sess-d8f0544e | US gold-marking rules | eCFR 16 CFR Part 23 (up to date 2026-10-21), § 23.3, § 23.4, § 23.10, § 23.18 headings | cited; body text not quoted |
 | 2026-10-22 | sess-d8f0544e | **Combined dataset**: 43 rows, 58 pages | `node scripts/verify.mjs` | 13/13 groups pass, 2,094 assertions, 0 failures |
+| 2026-10-22 | sess-b93ff7c6 | Ross-Simons 571221/571222/571223/571213/981367/907250 prices **and published gold weights** (1.7 / 2.5 / 3.8 / 5.0 / 0.5 / 0.5 g) | Official product pages, Details table "Gold Weight" | 6 prices confirmed except 571223 (moved $799→$849, corrected); 6 weights added |
+| 2026-10-22 | sess-b93ff7c6 | Ross-Simons 879968, 960952, 999230, 993512, 864785, 242556, 991907, 240912 | Official per-SKU search feed and product JSON | 8 prices matched; 999230 title replaced with the seller's exact string |
+| 2026-10-22 | sess-b93ff7c6 | Ross-Simons 943668, 991908, 254575 | Official search feed (no product returned) | **not confirmable today** — flagged F34, prices left as historical, not restated |
+| 2026-10-22 | sess-b93ff7c6 | Mejuri 2mm Smooth Band | Official product page | $498 and "Handcrafted in recycled 14k solid gold" confirmed; width/thickness published, no grams |
+| 2026-10-22 | sess-b93ff7c6 | Anna Sheffield Bea Solitaire; With Clarity Tulip Basket | Official product JSON feeds | $11,500.00 and $590–$1,110 confirmed |
+| 2026-10-22 | sess-b93ff7c6 | Aurate Modern Cigar Band | Official product JSON | Weight range 2.6–4 g confirmed; 14K price **not** re-confirmed (live $118–$1,668) — F33, row marked `price_unconfirmed` |
+| 2026-10-22 | sess-b93ff7c6 | Gold spot refresh | gold-api.com `price` 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z | stored as primary; 4,028.100098 at 23:01:42Z kept in `previous_readings` |
+| 2026-10-22 | sess-b93ff7c6 | US gold-marking rules | eCFR 16 CFR Part 23, Subchapter B (corrected from "Subchapter C" in earlier notes) | headings §23.3, §23.4, §23.10, §23.18 confirmed on the official page |
+| 2026-10-22 | sess-b93ff7c6 | **Full suite after the rebuild** | `node scripts/build.mjs && node scripts/verify.mjs` | **15/15 groups pass, 2,626 assertions, 0 failures, 74 pages** |
 
 ### Rejected sources (recorded so they are not silently reused)
 
@@ -196,4 +205,15 @@ Combined state at integration: **43 listings · 7 retailers · 6 categories · 2
 
 **Out of scope for this session:** `data/archive/**` (frozen records of earlier passes), `tools/**`, `docs/**` (third pass's preserved microsite). No other session is active on this branch; no conflict expected.
 
-**Rule for this pass:** where today's page differs from what the row recorded, the **row is corrected and the difference is logged as a finding** — the old value is kept in the finding text so nothing is silently rewritten. Where a value could not be re-read, the row keeps its earlier captured value and is marked `recheck: "not re-fetched"` on the site, not silently presented as current.
+**Rule for this pass:** where today's page differs from what the row recorded, the **row is corrected and the difference is logged as a finding** — the old value is kept in the finding text so nothing is silently rewritten. Where a value could not be re-read, the row keeps its earlier captured value and is labelled `not re-checked` on the site, never presented as current.
+
+**Outcome of T9 (done 2026-10-22):**
+
+- **18 listings re-opened** on the retailer's own page or feed; **3 searched for and not found**; **22 not re-opened** and labelled historical. Log: `data/recheck.json`.
+- **Six published weights were found that earlier passes missed.** Ross-Simons prints a "Gold Weight" line in its Details table: 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g. With the Aurate 2.6–4 g range, weight coverage is **7 of 43**, not 1 of 43. F02 rewritten, F06 closed as explained.
+- **One price had moved:** rs-571223 stored $799–$849, live $849 for every size. Row corrected; F31.
+- **One title was a paraphrase:** rs-999230. Replaced with the seller's exact title; F35.
+- **One variant price could not be confirmed:** Aurate Modern Cigar Band 14K $1,308; the live feed spans $118 (vermeil) to $1,668. Row flagged `price_unconfirmed`; F33.
+- **Two check groups added** (S14 weight traceability, S15 re-check-log integrity) and the builder now prints a per-row re-check label plus a re-check log page.
+- **Gold price refreshed** to $4,029.699951/ozt at 2026-10-22T23:22:41Z; the earlier reading is retained.
+- No other session was active on this branch; no conflicts occurred. No file outside the claimed scope was edited.

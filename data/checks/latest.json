@@ -1,12 +1,12 @@
 {
-  "pass": "P11",
-  "generated_at": "2026-10-22T23:22:40Z",
+  "pass": "P12",
+  "generated_at": "2026-10-22T23:28:10Z",
   "builder_version": "1.0.0",
   "summary": {
-    "total": 13,
-    "passed": 13,
+    "total": 15,
+    "passed": 15,
     "failed": 0,
-    "assertions": 2404,
+    "assertions": 2626,
     "rows": 43,
     "pages": 74
   },
@@ -136,6 +136,26 @@
       "id": "S13",
       "name": "Source registry coverage",
       "description": "Every retailer used for a value must appear in the source registry with a retrieval record.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S14",
+      "name": "Weight traceable to evidence",
+      "description": "A published metal weight must appear, digit for digit, in weight evidence copied from the seller page, and must carry the URL it was read from.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S15",
+      "name": "Re-check log integrity",
+      "description": "Every row must state whether it was re-read; a row that claims a re-check must be listed in data/recheck.json with the URL opened and must match the price recorded there.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,

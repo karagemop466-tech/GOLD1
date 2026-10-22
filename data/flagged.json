@@ -2,7 +2,7 @@
   "as_of": "2026-10-22",
   "status_legend": {
     "needs review": "Published here and does not block the release. A human should read it before buying.",
-    "blocking": "Would prevent publishing a value. There are no blocking items: unverified values were left blank instead."
+    "blocking": "There are no blocking items: unverified values were left blank instead."
   },
   "items": [
     {
@@ -22,14 +22,21 @@
     },
     {
       "id": "F02",
-      "title": "Weight is published for only 1 of 43 listings",
+      "title": "Metal weight is published for 7 of 43 listings - the rest still cannot be value-checked",
       "severity": "high",
       "type": "missing data",
-      "affected": "42 of 43 rows",
-      "finding": "Metal weight in grams is the number you need to check price against gold value. Only the Aurate Modern Cigar Band publishes one (“Weight: 2.6-4g”). The first research pass (Blue Nile, Mejuri, Brilliant Earth) found 0 of its 13 listings published grams; pages there give width and thickness instead. For the other 42 rows the weight column is deliberately blank rather than estimated.",
-      "buyer_action": "Ask the seller for the gram weight of the exact size you are buying, in writing. Refuse to accept a carat weight as a substitute for metal weight.",
+      "affected": "36 of 43 rows",
+      "finding": "The earlier passes recorded 1 of 43 as weight-published. Pass P12 found that this was wrong: Ross-Simons prints a 'Gold Weight' figure in the Details table of its product pages, and it reads 1.7 g (571221), 2.5 g (571222), 3.8 g (571223), 5.0 g (571213), 0.5 g (981367) and 0.5 g (907250). Aurate publishes a 2.6-4 g range for the Modern Cigar Band. That is 7 of 43 rows where the price can be compared with the gold actually in the ring. The other 36 - every Mejuri, Blue Nile, Brilliant Earth, With Clarity and Anna Sheffield row, plus 11 Ross-Simons rows - do not publish grams on the page read, so their cells stay blank rather than estimated.",
+      "buyer_action": "For the 36 rows without a published weight, ask the seller for the gram weight of your exact size in writing and run the calculator with it. For the 7 rows with a weight, treat the figure as the seller's claim until an independent jeweller weighs the ring.",
       "sources": [
-        "https://auratenewyork.com/products/modern-cigar-band"
+        "https://www.ross-simons.com/products/571221",
+        "https://www.ross-simons.com/products/571222",
+        "https://www.ross-simons.com/products/571223",
+        "https://www.ross-simons.com/products/571213",
+        "https://www.ross-simons.com/products/981367",
+        "https://www.ross-simons.com/products/907250",
+        "https://auratenewyork.com/products/modern-cigar-band.js",
+        "https://mejuri.com/products/2mm-smooth-band"
       ],
       "status": "needs review"
     },
@@ -74,15 +81,18 @@
     },
     {
       "id": "F06",
-      "title": "Two very low solid-gold prices that cannot be value-checked",
-      "severity": "medium",
+      "title": "The two cheapest rings are now explained: both are 0.5 g of gold",
+      "severity": "low",
       "type": "price plausibility",
       "affected": "rs-981367, rs-907250",
-      "finding": "A 14K ring at 149.00 and an 18K ring at 179.00 are advertised. Both are described as about 1/16 inch wide. At the gold price recorded on this page, an 18K ring at 179.00 contains at most about 1.8 g of gold before labour and margin. That is possible for a very thin band, but with no published weight the value cannot be confirmed.",
-      "buyer_action": "Ask for the gram weight. Weigh it on arrival. Do not assume a high karat at a low price means a good deal.",
+      "finding": "Pass P12 read the published weights for the two suspiciously cheap pieces. The $149 14K ring (981367) is 0.5 g and the $179 18K rope ring (907250) is 0.5 g. At the P12 gold price the 14K piece holds about $37.79 of gold and the 18K piece about $48.58, so the asking prices are roughly 3.9x and 3.7x metal content - normal for retail jewellery, not a red flag. The thin 1/16 inch width on both pages matches that weight. The finding is closed as 'explained', not deleted.",
+      "buyer_action": "These are stacking rings, not engagement rings: 0.5 g will wear through faster than a 3-5 g band. If you want a band that survives daily wear, the 571222 (2.5 g) and 571223 (3.8 g) listings are the better comparison points.",
       "sources": [
         "https://www.ross-simons.com/products/981367",
-        "https://www.ross-simons.com/products/907250"
+        "https://www.ross-simons.com/products/907250",
+        "https://www.ross-simons.com/products/571222",
+        "https://www.ross-simons.com/products/571223",
+        "https://api.gold-api.com/price/XAU"
       ],
       "status": "needs review"
     },
@@ -246,14 +256,15 @@
       "severity": "high",
       "type": "first-pass finding",
       "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6",
-      "finding": "Gram weight is the single number needed to compare price against gold value. Blue Nile, Mejuri and Brilliant Earth pages publish width and thickness but not weight. Until a seller supplies weight in writing, the gold-value calculator cannot be applied to any row here. Ask the seller for the weight in grams before paying.",
+      "finding": "Gram weight is the single number needed to compare price against gold value. Blue Nile, Mejuri and Brilliant Earth pages publish width and thickness but not weight. Until a seller supplies weight in writing, the gold-value calculator cannot be applied to any row here. Ask the seller for the weight in grams before paying. SUPERSEDED by F02: pass P12 found that Ross-Simons does publish gold weight on six of the listings in this dataset, so '0 of 13' described the first pass's reading, not the seller's page.",
       "buyer_action": "Ask for the gram weight before paying, in writing. A jeweller can weigh it in seconds on arrival.",
       "sources": [
         "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
       ],
       "status": "needs review",
       "original_id": "F-04",
-      "found_by": "session-6f8c2bcb"
+      "found_by": "session-6f8c2bcb",
+      "superseded_by": "F02"
     },
     {
       "id": "F20",
@@ -419,6 +430,82 @@
       "status": "needs review",
       "original_id": "F-15",
       "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F31",
+      "title": "Ross-Simons 571223: the stored low price ($799) is no longer offered - every size is $849",
+      "severity": "medium",
+      "type": "price drift",
+      "affected": "rs-571223",
+      "finding": "The row was captured with a price range of $799.00-$849.00. On re-read during P12 every size on the product page showed $849.00, so the range collapsed to a single price and the row was corrected. This is exactly the drift the site warns about: a price read on any day is a snapshot, and the retailer's page always wins.",
+      "buyer_action": "Open the product page and confirm the price for your size before paying.",
+      "sources": [
+        "https://www.ross-simons.com/products/571223",
+        "https://www.ross-simons.com/products/571222"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F32",
+      "title": "22 of 43 listings were not re-opened in pass P12 - their prices are not today's",
+      "severity": "medium",
+      "type": "freshness",
+      "affected": "22 rows, listed in data/recheck.json under not_rechecked",
+      "finding": "P12 re-opened 18 listings and confirmed 15 of them at the stored price, corrected one (571223) and could not confirm one variant price (au-cigar). The remaining 22 - mostly Blue Nile, With Clarity, Aurate, Mejuri and Brilliant Earth rows - still carry the price captured in the earlier pass. They are shown with a 'not re-checked' label and must not be read as current. No value was refreshed by guesswork.",
+      "buyer_action": "Treat any row labelled 'not re-checked' as historical. Click through to the official page, or re-run scripts/collect.mjs with network access, before comparing prices.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/styles/solitaire",
+        "https://www.withclarity.com/search/suggest.json?q=solitaire",
+        "https://auratenewyork.com/search/suggest.json?q=engagement%20ring",
+        "https://www.annasheffield.com/search/suggest.json?q=engagement%20ring",
+        "https://mejuri.com/products/2mm-smooth-band",
+        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F33",
+      "title": "Aurate Modern Cigar Band: the $1,308 14K price could not be re-confirmed",
+      "severity": "medium",
+      "type": "variant price",
+      "affected": "au-cigar",
+      "finding": "The live product feed on 2026-10-22 lists price_min 11800 cents ($118.00, the vermeil variant) and price_max 166800 cents ($1,668.00), with the published weight range 2.6-4 g unchanged. The stored $1,308.00 is the 14K variant price captured earlier; it was not re-read variant by variant in P12, so it is marked unconfirmed on the row instead of being restated as current.",
+      "buyer_action": "Select the 14K yellow gold option on the product page and read the price for your size before comparing it with the $118 vermeil option - they are different products.",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band.js",
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F34",
+      "title": "Three Ross-Simons SKUs are not returned by the site's own search any more",
+      "severity": "medium",
+      "type": "availability",
+      "affected": "rs-943668, rs-991908, rs-254575",
+      "finding": "On 2026-10-22 the official Ross-Simons product search returned no product for these three SKUs, while it did return the other Ross-Simons SKUs in this dataset. The product pages were not opened in P12, so availability and price are unknown - neither sold out nor still listed is claimed. The rows keep their earlier price and carry an availability_unconfirmed flag.",
+      "buyer_action": "Open the product URL and check that it still loads and still shows the piece before relying on it.",
+      "sources": [
+        "https://www.ross-simons.com/products/943668",
+        "https://www.ross-simons.com/products/991908",
+        "https://www.ross-simons.com/products/254575",
+        "https://www.ross-simons.com/search/suggest.json?q=943668&resources[type]=product&resources[limit]=1"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F35",
+      "title": "One stored product title had been paraphrased instead of copied",
+      "severity": "low",
+      "type": "wording",
+      "affected": "rs-999230",
+      "finding": "The dataset called SKU 999230 'Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold'. The seller's own title is '.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold'. The paraphrase was replaced with the exact string, and two estate titles were aligned to the seller's punctuation. The prices on those rows were unchanged.",
+      "buyer_action": "Nothing to do at checkout. This is recorded because a paraphrased title is the first step towards a paraphrased specification.",
+      "sources": [
+        "https://www.ross-simons.com/search/suggest.json?q=999230&resources[type]=product&resources[limit]=1",
+        "https://www.ross-simons.com/products/999230"
+      ],
+      "status": "needs review"
     }
   ]
 }

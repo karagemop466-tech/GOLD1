@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-22",
-  "note": "Each item is the user's original checklist requirement, scored against what could actually be checked in this research pass.",
+  "note": "Each item is the user's original checklist requirement, scored against what could actually be checked in this research pass. Re-scored in pass P12 (2026-10-22).",
   "items": [
     {
       "requirement": "Gold purity: confirm the karat — 10K, 14K, 18K. Higher karat = more gold.",
@@ -48,13 +48,21 @@
     {
       "requirement": "Weight: check the ring's weight in grams — a legitimate seller should provide it.",
       "status": "open",
-      "finding": "1 of 43 listings publishes a metal weight (Aurate Modern Cigar Band, 2.6–4 g). The first research pass found 0 of its 13 listings published grams. The other 42 show a blank, not an estimate. This is the single biggest gap in the project.",
+      "finding": "7 of 43 listings publish a metal weight: six Ross-Simons bands (1.7 g, 2.5 g, 3.8 g, 5.0 g, 0.5 g, 0.5 g) and the Aurate Modern Cigar Band (2.6-4 g range). An earlier pass recorded 1 of 43 and has been corrected (F02). The other 36 rows leave the cell blank rather than estimate it.",
       "how": "Read every captured product description for gram weights; compared against the feed's variant data.",
-      "buyer_action": "Email the seller for the gram weight of your size. If they cannot or will not give it, that is your answer.",
+      "buyer_action": "Ask the seller for the gram weight of your exact size in writing. The calculator turns any quoted weight into a gold value you can compare with the asking price.",
       "links": [
         {
-          "label": "Flagged F02",
+          "label": "F02 - weight coverage",
           "url": "flagged.html#F02"
+        },
+        {
+          "label": "Ross-Simons 571223 (3.8 g)",
+          "url": "https://www.ross-simons.com/products/571223"
+        },
+        {
+          "label": "Gold calculator",
+          "url": "calculator.html"
         }
       ]
     },
@@ -78,17 +86,21 @@
     {
       "requirement": "Price: compare the price with the ring's gold weight and current gold value. An unusually cheap price is a red flag.",
       "status": "partial",
-      "finding": "The gold price is recorded with a publisher timestamp ($4,028.10/ozt on 2026-10-22) and the calculator does grams × karat ÷ 24 × price. For 29 of 30 rows the comparison cannot be completed because the weight is unpublished — so the site shows no multiple rather than a made-up one. Two Ross-Simons pieces at $149 and $179 are flagged as value-unverifiable for exactly this reason.",
+      "finding": "The gold price used for every value check is $4,029.70/ozt at 2026-10-22T23:22:41Z, published by gold-api.com and stored with that timestamp. For the 7 rows that publish a weight the check now runs; for the other 36 it cannot, and the cell stays blank. In P12 the two cheapest pieces were resolved this way: $149 buys 0.5 g of 14K (about $37.79 of gold) and $179 buys 0.5 g of 18K (about $48.58).",
       "how": "Automated melt-value test: for any row with a published weight, the asking price must not be below the gold value. The arithmetic is published on the calculator page.",
-      "buyer_action": "Get grams, then run the calculator. Below 1× melt is a red flag; 2–6× is a normal retail multiple.",
+      "buyer_action": "Run the calculator with the seller's weight. Jewellery sells above melt by design, so use the multiple to spot the absurd, not to expect a bargain at 1x.",
       "links": [
+        {
+          "label": "Gold price source",
+          "url": "https://api.gold-api.com/price/XAU"
+        },
         {
           "label": "Calculator",
           "url": "calculator.html"
         },
         {
-          "label": "Gold price source",
-          "url": "https://api.gold-api.com/price/XAU"
+          "label": "F06 - the two cheapest rings",
+          "url": "flagged.html#F06"
         }
       ]
     },
@@ -133,7 +145,7 @@
     {
       "requirement": "Documentation: keep the listing, receipt, description and the seller's claims about purity.",
       "status": "verified",
-      "finding": "This project already does that for you: every row keeps the exact evidence sentence, the price, the retrieval date and the source URL, and the site regenerates from those records.",
+      "finding": "This project already does that for you: every row keeps the exact evidence sentence, the price, the retrieval date, the source URL, and - since pass P12 - whether the value was re-read today or is historical. data/recheck.json holds one line per listing re-opened, so a claim can be traced back to a dated read.",
       "how": "data/rings.json stores the evidence string per row; data/sources.json stores the source registry with retrieval dates.",
       "buyer_action": "Also save the checkout confirmation and any chat or email where they confirm solid gold and the weight.",
       "links": [

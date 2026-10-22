@@ -24,6 +24,7 @@ const sourcesDoc = await read('data/sources.json');
 const flagged = await read('data/flagged.json');
 const gold = await read('data/gold-price.json');
 const checklist = await read('data/checklist.json');
+const recheckDoc = await read('data/recheck.json').catch(() => ({ results: [], summary: {}, checked_on: null }));
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const spot = gold.primary.price_usd_per_ozt;
@@ -117,6 +118,9 @@ const flagLabels = {
   price_from_listing_page: 'price from listing page',
   hallmark_not_published: 'no hallmark published',
   mixed_karat_components: 'mixed karat parts',
+  price_changed: 'price moved since capture',
+  price_unconfirmed: 'price not re-confirmed',
+  availability_unconfirmed: 'availability unconfirmed',
 };
 const flagText = (f) => flagLabels[f] || f.replace(/_/g, ' ');
 
@@ -214,6 +218,7 @@ const tableHead = (withWeight = true) => `
     <th scope="col" class="num-col">Price (USD)</th>
     <th scope="col">Price basis</th>
     ${withWeight ? '<th scope="col">Weight</th>' : ''}
+    <th scope="col">Re-checked</th>
     <th scope="col">Flags</th>
     <th scope="col">Source</th>
   </tr>
@@ -233,7 +238,29 @@ const flagExplainer = {
   metal_variant_price_unmapped: 'The feed only gives a min/max across metals and sizes; the low end is not proven to be 14K.',
   plated_variant_in_product: 'This product also sells a vermeil/plated variant. The plated price must never be read as the solid-gold price.',
   created_stone: 'The centre stone is lab-created, not a mined gem.',
+  price_changed: 'The retailer changed the price after this row was captured. The row now shows the newer, re-read price.',
+  price_unconfirmed: 'The stored price could not be re-read on this visit to the seller page, so it is presented as historical, not current.',
+  availability_unconfirmed: 'The seller\'s own search no longer returns this SKU. The piece may be gone; nothing is claimed either way.',
 };
+
+const RECHECK_META = {
+  matched: { label: 're-read 2026-10-22', kind: 'ok', title: 'Price on the seller page matched this row on 2026-10-22.' },
+  price_changed: { label: 'price corrected', kind: 'warn', title: 'The seller price had moved; this row now shows the re-read price.' },
+  title_corrected: { label: 'title corrected', kind: 'warn', title: 'The stored title was a paraphrase and was replaced with the seller\'s exact string.' },
+  partial: { label: 'partly re-checked', kind: 'warn', title: 'Part of this listing was re-read; at least one value is still historical.' },
+  not_indexed: { label: 'could not confirm', kind: 'bad', title: 'The seller\'s own search returned nothing for this SKU on 2026-10-22.' },
+  not_rechecked: { label: 'not re-checked', kind: '', title: 'This row keeps the value captured in an earlier pass. It is not a price for today.' },
+};
+const recheckMeta = (r) => RECHECK_META[r.recheck_result] || RECHECK_META.not_rechecked;
+const recheckChip = (r) => {
+  const m = recheckMeta(r);
+  return `<span class="chip ${m.kind}" title="${esc(m.title)}">${esc(m.label)}</span>`;
+};
+const OPENED = ['matched', 'price_changed', 'title_corrected', 'partial'];
+const recheckedCount = rings.rows.filter((r) => OPENED.includes(r.recheck_result)).length;
+const returnsVerified = retailersDoc.retailers.filter((r) => r.return_policy_verified && retailerCounts[r.id]);
+const returnsUnverified = retailersDoc.retailers.filter((r) => !r.return_policy_verified && retailerCounts[r.id]);
+const missingCount = rings.rows.filter((r) => r.recheck_result === 'not_indexed').length;
 
 const rowHtml = (r, prefix = '') => {
   const weight =
@@ -253,7 +280,8 @@ const rowHtml = (r, prefix = '') => {
     <td>${esc(r.metal)}<div class="sub">${esc(r.stone_type || r.stone || '—')}</div></td>
     <td class="num-col">${priceCell(r)}</td>
     <td class="small">${esc(r.price_basis)}</td>
-    <td class="small">${weight}</td>
+    <td class="small">${weight}${r.weight_evidence ? `<div class="sub">published by seller</div>` : ''}</td>
+    <td class="small">${recheckChip(r)}</td>
     <td class="flags">${flags || '<span class="sub">none</span>'}</td>
     <td><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>`;
@@ -335,7 +363,7 @@ const dashboard = layout({
   <div class="wrap">
     <p class="eyebrow">Research dashboard · data downloaded ${esc(retrievedDates.join(', '))}</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">${totalRows} listings from ${retailersDoc.retailers.length} retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged.</p>
+    <p class="lede">${totalRows} listings from ${retailersDoc.retailers.length} retailers, each one linked to the exact official page it came from. Prices are stamped with the date they were read, and every row now says whether it was re-read today or is historical. ${recheckedCount} of ${totalRows} were re-opened in the latest pass (${esc(recheckDoc.pass || 'P12')}, ${esc(recheckDoc.checked_on || '')}) and ${missingCount} more were searched for and not found; the rest are labelled <strong>not re-checked</strong> rather than quietly presented as current. Where the seller does not publish a number — most of them still do not publish metal weight — the field is blank and flagged.</p>
     ${noHallucinationBanner()}
   </div>
 </section>
@@ -346,6 +374,7 @@ const dashboard = layout({
     ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', 'the number you need for a value check')}
+    ${stat(`${recheckedCount}/${totalRows}`, 're-read this pass', `prices compared with the seller page on ${esc(recheckDoc.checked_on || '2026-10-22')}`)}
     ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', 'karat is stated; the word solid is not')}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
   </div>
@@ -374,6 +403,21 @@ const dashboard = layout({
   </div>
 </section>
 
+<section class="wrap section" id="latest-pass">
+  <h2>What the latest pass changed</h2>
+  <div class="callout">
+    <p><strong>${esc(recheckDoc.pass || 'P12')} · ${esc(recheckDoc.checked_on || '2026-10-22')}.</strong>
+    ${recheckedCount} listings were re-opened on the retailer's own page or feed, and ${missingCount} more were looked for and not returned by the seller's own search. Six metal weights that the sellers do publish were added (Ross-Simons prints a “Gold Weight” figure that earlier passes missed), one price that had moved was corrected, and one paraphrased title was replaced with the seller's exact string.</p>
+    <ul class="ticks">
+      <li><strong>Weight coverage is now ${weightPublished} of ${totalRows}</strong>, not 1 of ${totalRows} as earlier passes reported. See <a href="flagged.html#F02">F02</a>.</li>
+      <li><strong>The two cheapest rings are explained, not suspicious.</strong> $149 is 0.5 g of 14K and $179 is 0.5 g of 18K. See <a href="flagged.html#F06">F06</a>.</li>
+      <li><strong>A price had moved:</strong> Ross-Simons 571223 was stored at $799–$849 and is $849 for every size on re-read. See <a href="flagged.html#F31">F31</a>.</li>
+      <li><strong>${recheckDoc.summary?.rows_not_rechecked ?? 0} rows were not re-opened</strong> and are labelled as historical. See <a href="flagged.html#F32">F32</a>.</li>
+    </ul>
+    <p><a class="btn" href="checks.html#recheck-log">See every re-read, line by line →</a></p>
+  </div>
+</section>
+
 <section class="wrap section" id="categories">
   <h2>Browse by style</h2>
   <div class="cat-grid">
@@ -387,14 +431,14 @@ const dashboard = layout({
       <h2>What the checklist got right</h2>
       <ul class="ticks">
         <li><strong>Karat is stated on every listing.</strong> All ${totalRows} rows name 14K or 18K in the official feed.</li>
-        <li><strong>Two return policies are confirmed in detail.</strong> Ross-Simons allows 30 days from receipt; Aurate allows 14 days from fulfilment for US orders.</li>
+        <li><strong>${returnsVerified.length} of ${returnsVerified.length + returnsUnverified.length} return policies are confirmed from the retailer's own page.</strong> Ross-Simons allows 30 days from receipt and excludes pieces resized by another jeweller; Aurate allows 14 days from fulfilment; With Clarity 30 calendar days; Anna Sheffield two weeks. ${returnsUnverified.length ? `${esc(returnsUnverified.map((r) => r.name).join(', '))} ${returnsUnverified.length === 1 ? 'is' : 'are'} left blank because the policy was not confirmed on the page read.` : ''}</li>
         <li><strong>Plated metal was excluded, not ranked.</strong> Set &amp; Stones' engagement results were gold-filled and were rejected.</li>
       </ul>
     </div>
     <div>
       <h2>What still needs you</h2>
       <ul class="crosses">
-        <li><strong>Weight is the missing number.</strong> ${totalRows - weightPublished} of ${totalRows} listings do not publish grams, so the price-versus-gold-value check cannot be finished for them.</li>
+        <li><strong>Weight is still mostly missing.</strong> ${totalRows - weightPublished} of ${totalRows} listings do not publish grams, so the price-versus-gold-value check cannot be finished for them. The ${weightPublished} that do are visible in the Weight column.</li>
         <li><strong>Hallmarks cannot be seen online.</strong> Ask for a photo of the inside of the band, then have a jeweller test it on arrival.</li>
         <li><strong>“Setting only” prices are not ring prices.</strong> ${settingOnly} listed products exclude the centre stone.</li>
       </ul>
@@ -512,8 +556,10 @@ for (const r of rings.rows) {
         <dt>Metal</dt><dd>${esc(r.metal)}</dd>
         <dt>Stone</dt><dd>${esc(r.stone)}${r.stone_type ? `<div class="sub">${esc(r.stone_type)}</div>` : ''}</dd>
         <dt>Price</dt><dd>${priceCell(r)} <div class="sub">${esc(r.price_basis)}</div></dd>
-        <dt>Metal weight</dt><dd>${r.weight_g_low === null ? dash : `${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g <span class="sub">as published</span>`}</dd>
+        <dt>Metal weight</dt><dd>${r.weight_g_low === null ? dash : `${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g <span class="sub">as published by the seller</span>`}</dd>
+        ${r.weight_evidence ? `<dt>Weight, as written</dt><dd class="small">${esc(r.weight_evidence)}${r.weight_source_url ? ` <a href="${esc(r.weight_source_url)}" target="_blank" rel="noopener nofollow">source ↗</a>` : ''}</dd>` : ''}
         <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}${r.inherited ? ' <span class="chip info">carried over from the first research pass</span>' : ''}</dd>
+        <dt>Re-checked</dt><dd>${recheckChip(r)}${r.recheck_method ? `<div class="sub">${esc(r.recheck_method)}${r.recheck_url ? ` · <a href="${esc(r.recheck_url)}" target="_blank" rel="noopener nofollow">what was opened ↗</a>` : ''}</div>` : ''}${r.recheck_result === 'not_rechecked' ? '<div class="sub">This price is from an earlier pass. It is not a price for today.</div>' : ''}${r.price_unconfirmed ? '<div class="sub"><strong>Price not re-confirmed:</strong> the stored figure is historical.</div>' : ''}</dd>
         <dt>Read from</dt><dd>${esc(r.source_type || 'official product page')}</dd>
       </dl>
       <p><a class="btn" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">Open the official product page ↗</a></p>
@@ -527,7 +573,8 @@ for (const r of rings.rows) {
       <h3>Gold value check</h3>
       ${
         melt
-          ? `<p>At ${usd(spot)}/ozt, the published ${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g of ${r.karat} contains <strong>${usd(melt.lo)} – ${usd(melt.hi)}</strong> of gold. The listed price is <strong>${(r.price_low / melt.hi).toFixed(1)}×</strong> the top of that range.</p>
+          ? `<p>At ${usd(spot)}/ozt, the published ${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g of ${r.karat} contains <strong>${Math.abs(melt.hi - melt.lo) < 0.01 ? usd(melt.lo) : `${usd(melt.lo)} – ${usd(melt.hi)}`}</strong> of gold. The listed price is <strong>${(r.price_low / melt.hi).toFixed(1)}×</strong> the top of that range.</p>
+             <p class="sub">Weight source: the seller's own page${r.weight_evidence ? ` — “${esc(r.weight_evidence)}”` : ''}. Gold price: ${esc(gold.primary.publisher)} at ${esc(gold.primary.publisher_timestamp)}.</p>
              <p class="sub">Metal value only. Excludes labour, setting, stones and margin, which is why jewellery always costs more than its melt value.</p>`
           : `<p class="unverified">Cannot be computed — this seller does not publish the metal weight.</p>
              <p class="sub">Ask the seller for grams in writing. <a href="../calculator.html?karat=${encodeURIComponent(r.karat)}">Run the calculator with a quoted weight →</a></p>`
@@ -766,7 +813,7 @@ const methodologyPage = layout({
   ${noHallucinationBanner()}
 
   <h2>1. Where the data comes from</h2>
-  <p>The four retailers in scope publish machine-readable product feeds at <code>/products.json</code> and <code>/search/suggest.json</code>. Those endpoints are the seller's own catalogue — the same data their product page renders — which makes them the strongest available primary source short of a signed quote. Prices, titles, metal descriptions and variant ranges were read from those feeds on ${esc(retrievedDates.join(', '))}. Policy text was read from the retailers' own <code>/policies/refund-policy</code> pages. The gold price was read from a market-data publisher and cross-checked against COMEX futures.</p>
+  <p>The retailers in scope publish machine-readable product feeds at <code>/products.json</code> and <code>/search/suggest.json</code>. Those endpoints are the seller's own catalogue — the same data their product page renders — which makes them the strongest available primary source short of a signed quote. Prices, titles, metal descriptions and variant ranges were read from those feeds on ${esc(retrievedDates.join(', '))}. Policy text was read from the retailers' own <code>/policies/refund-policy</code> pages. The gold price was read from a market-data publisher and cross-checked against COMEX futures.</p>
   <p>Nothing was read from a search-engine snippet, a shopping comparison, an influencer round-up or a review site. Those are secondary at best and are exactly where invented prices come from.</p>
 
   <h2>2. What was excluded on purpose</h2>
@@ -788,7 +835,12 @@ const methodologyPage = layout({
     <li><strong>No future dates.</strong> Retrieval dates later than the build date fail the run.</li>
     <li><strong>Links.</strong> Every internal link and asset reference in the generated HTML must resolve to a file that exists.</li>
     <li><strong>No silent blanks.</strong> Any null value must be accompanied by a flag explaining it.</li>
+    <li><strong>Weight is traceable too.</strong> A published weight must appear, digit for digit, in the weight evidence copied from the seller page. A weight that is not in the evidence fails the run.</li>
+    <li><strong>The re-check log is honest.</strong> Every row must carry a re-check status; a row may only claim it was re-read on a dated pass, and a row that was not re-read may not present its price as current.</li>
   </ol>
+
+  <h2>3b. Re-reading, not re-asserting</h2>
+  <p>Each review pass re-opens a subset of the listings on the retailer's own page and compares what is there with what the row stores. The result of every comparison is written to <code>data/recheck.json</code> and printed on <a href="checks.html#recheck-log">Checks</a>: the price before, the price read, the weight read, the URL that was opened and the date. A row that was not re-opened keeps its earlier value and is labelled <strong>not re-checked</strong> — it is never silently refreshed and never presented as today's price.</p>
 
   <h2>4. Limits you should know</h2>
   <ul class="crosses">
@@ -796,7 +848,7 @@ const methodologyPage = layout({
     <li><strong>Weight is mostly missing.</strong> ${weightPublished} of ${totalRows} listings publish grams. The value comparison cannot be completed for the rest, and this site refuses to fill that gap with an estimate.</li>
     <li><strong>Hallmarks are physical.</strong> No stamp can be verified from a web page. A photo of the stamp is evidence of what is written, not proof of what the metal is. XRF or an assay by an independent jeweller is the only real test.</li>
     <li><strong>Reputation is not scored here.</strong> Seller verification in this pass means: official store identity plus a verifiable phone or support email. It is not a rating and it is not an endorsement.</li>
-    <li><strong>Four US retailers.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap.</li>
+    <li><strong>${retailersDoc.retailers.length} US retailers.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap.</li>
   </ul>
 
   <h2>5. Reproducing the run</h2>
@@ -853,6 +905,31 @@ if (latestChecks) {
   </div>`;
 }
 
+function recheckLogTable() {
+  const rs = recheckDoc.results || [];
+  if (!rs.length) return '<h2 id="recheck-log">Re-check log</h2><p class="muted">No re-check log recorded yet.</p>';
+  const fmt = (n) => (n === null || n === undefined ? '—' : usd(n));
+  return `
+  <h2 id="recheck-log">Re-check log — ${esc(recheckDoc.pass)} · ${esc(recheckDoc.checked_on)}</h2>
+  <p>One line per listing re-opened in the latest pass. <strong>Before</strong> is what the row stored; <strong>read</strong> is what the retailer's page showed when it was opened. A dash means the page did not publish that number — it never means zero, and it is never filled in.</p>
+  <div class="table-wrap">
+  <table class="data-table compact">
+    <thead><tr><th>Listing</th><th>What was opened</th><th class="num-col">Price before</th><th class="num-col">Price read</th><th class="num-col">Weight read</th><th>Result</th></tr></thead>
+    <tbody>
+      ${rs.map((x) => `<tr>
+        <td><a href="rings/${esc(x.ring_id)}.html">${esc(x.title)}</a><div class="sub">${esc(x.retailer)} · ${esc(x.ring_id)}</div></td>
+        <td class="small"><a href="${esc(x.url)}" target="_blank" rel="noopener nofollow">${esc(x.method)} ↗</a></td>
+        <td class="num-col small">${x.price_before && x.price_before[0] !== null ? `${fmt(x.price_before[0])}${x.price_before[1] !== x.price_before[0] ? ' – ' + fmt(x.price_before[1]) : ''}` : '—'}</td>
+        <td class="num-col small">${x.price_read ? `${fmt(x.price_read[0])}${x.price_read[1] !== x.price_read[0] ? ' – ' + fmt(x.price_read[1]) : ''}` : '—'}</td>
+        <td class="num-col small">${x.weight_read_g ? `${x.weight_read_g[0]}${x.weight_read_g[1] !== x.weight_read_g[0] ? '–' + x.weight_read_g[1] : ''} g` : '—'}</td>
+        <td class="small">${(RECHECK_META[x.result] || RECHECK_META.not_rechecked).kind === 'ok' ? '<span class="chip ok">matched</span>' : (RECHECK_META[x.result] || RECHECK_META.not_rechecked).kind === 'bad' ? '<span class="chip bad">could not confirm</span>' : '<span class="chip warn">changed / partial</span>'}<div class="sub">${esc(x.note)}</div></td>
+      </tr>`).join('')}
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">${recheckDoc.summary.rows_total} rows in total · ${recheckDoc.summary.rows_rechecked} re-opened · ${recheckDoc.summary.rows_not_indexed} not returned by the seller's search · ${recheckDoc.summary.rows_not_rechecked} not re-opened and therefore labelled historical.</p>`;
+}
+
 const checksPage = layout({
   title: 'Verification checks',
   description: 'Automated anti-hallucination checks run against every row and every generated page.',
@@ -864,6 +941,7 @@ const checksPage = layout({
   <p class="lede">An automated pass runs after every review. It is built to catch the specific ways a price or specification gets invented: a number with no source, a karat that contradicts its evidence, a melt value higher than the asking price, or a link that goes nowhere.</p>
   ${noHallucinationBanner()}
   ${checksBody}
+  ${recheckLogTable()}
   <h2>Run it yourself</h2>
   <p><code>node scripts/verify.mjs</code> — no dependencies, no network. The output is written to <code>data/checks/latest.json</code> and summarised above.</p>
 </section>`,

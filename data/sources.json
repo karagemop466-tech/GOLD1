@@ -187,7 +187,7 @@
       "publisher": "US Government (eCFR, Office of the Federal Register)",
       "type": "regulation",
       "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "verified": "16 CFR Part 23 \"Guides for the Jewelry, Precious Metals, and Pewter Industries\" exists, up to date as of 2026-10-21, and contains § 23.3 \"Misrepresentation as to gold content\", § 23.4 \"Misuse of the word vermeil\", § 23.10 \"Additional guidance for the use of quality marks\" and § 23.18 \"Misrepresentation of weight and total weight\". Section text is not quoted here.",
+      "verified": "16 CFR Part 23 \"Guides for the Jewelry, Precious Metals, and Pewter Industries\" exists, up to date as of 2026-10-21, and contains \u00a7 23.3 \"Misrepresentation as to gold content\", \u00a7 23.4 \"Misuse of the word vermeil\", \u00a7 23.10 \"Additional guidance for the use of quality marks\" and \u00a7 23.18 \"Misrepresentation of weight and total weight\". Section text is not quoted here.",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
     },
@@ -277,7 +277,7 @@
       "publisher": "GOLD1 third research pass",
       "type": "archived dataset",
       "url": "https://github.com/karagemop466-tech/GOLD1/blob/main/data/rings_c2bbe753.json",
-      "verified": "14 rows incl. Tiffany & Co., Cartier, James Allen and 2 Cartier karats explicitly marked unverified — preserved, not merged (see F30)",
+      "verified": "14 rows incl. Tiffany & Co., Cartier, James Allen and 2 Cartier karats explicitly marked unverified \u2014 preserved, not merged (see F30)",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
     },
@@ -286,7 +286,79 @@
       "publisher": "Tiffany & Co.",
       "type": "official product page",
       "url": "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
-      "verified": "Recorded by the third pass: 'The Tiffany Setting Engagement Ring in 18k Yellow Gold — 40318275 — Starting from $1,600'. Not re-fetched in this pass, so not used in the table.",
+      "verified": "Recorded by the third pass: 'The Tiffany Setting Engagement Ring in 18k Yellow Gold \u2014 40318275 \u2014 Starting from $1,600'. Not re-fetched in this pass, so not used in the table.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-rs-product-pages",
+      "publisher": "Ross-Simons",
+      "type": "official product page",
+      "url": "https://www.ross-simons.com/products/571221",
+      "verified": "Gold weight in grams (Details table), live price per size, metal statement for SKUs 571221, 571222, 571223, 571213, 981367, 907250",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-rs-product-json",
+      "publisher": "Ross-Simons",
+      "type": "official product feed (JSON)",
+      "url": "https://www.ross-simons.com/products/991907.js",
+      "verified": "Price and metal for SKU 991907 and 240912 when site search returned no product",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-rs-search-sku",
+      "publisher": "Ross-Simons",
+      "type": "official search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=879968&resources[type]=product&resources[limit]=1",
+      "verified": "Per-SKU price re-read for 879968, 960952, 999230, 993512, 864785, 242556",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-mejuri-product",
+      "publisher": "Mejuri",
+      "type": "official product page",
+      "url": "https://mejuri.com/products/2mm-smooth-band",
+      "verified": "Price $498 and the phrase 'Handcrafted in recycled 14k solid gold'; specification block has width/thickness but no grams",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-as-product-json",
+      "publisher": "Anna Sheffield",
+      "type": "official product feed (JSON)",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
+      "verified": "Price 1,150,000 cents = $11,500.00 and the 14k recycled gold description",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-wc-product-json",
+      "publisher": "With Clarity",
+      "type": "official product feed (JSON)",
+      "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
+      "verified": "Setting price range 59000-111000 cents and the 'Ring Setting Product' tag",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-au-product-json",
+      "publisher": "Aurate",
+      "type": "official product feed (JSON)",
+      "url": "https://auratenewyork.com/products/modern-cigar-band.js",
+      "verified": "Vermeil price $118 at the low end, price_max $1,668, published weight range 2.6-4 g",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-gold-refresh",
+      "publisher": "gold-api.com",
+      "type": "market data publisher",
+      "url": "https://api.gold-api.com/price/XAU",
+      "verified": "Gold spot $4029.699951 /ozt at 2026-10-22T23:22:41Z",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
     }

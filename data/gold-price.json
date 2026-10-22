@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-10-22T23:01:42Z",
-  "note": "Two independent published gold prices, each stored with the publisher's own timestamp. Neither is an estimate. The calculator lets you replace the price at any time.",
+  "as_of": "2026-10-22T23:22:41Z",
+  "note": "Two independent published gold prices, each stored with the publisher's own timestamp. Neither is an estimate. The primary reading was refreshed in pass P12; earlier readings are kept in previous_readings so the calculator can be re-run against the price a row was captured with. The COMEX cross-check is the reading taken earlier in the same session and is labelled with its own timestamp.",
   "primary": {
     "label": "Gold spot, USD per troy ounce",
-    "price_usd_per_ozt": 4028.100098,
+    "price_usd_per_ozt": 4029.699951,
     "publisher": "gold-api.com",
-    "publisher_timestamp": "2026-10-22T23:01:42Z",
+    "publisher_timestamp": "2026-10-22T23:22:41Z",
     "source_url": "https://api.gold-api.com/price/XAU",
     "source_type": "market data publisher"
   },
@@ -20,5 +20,16 @@
     "note": "Futures price, not spot. Shown only as a cross-check that the spot figure is in the right market range."
   },
   "grains_per_troy_ounce": 31.1034768,
-  "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing."
+  "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
+  "previous_readings": [
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 4028.100098,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-22T23:01:42Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "superseded_on": "2026-10-22",
+      "why": "Re-read in pass P12 to keep the value check on the newest published price."
+    }
+  ]
 }
