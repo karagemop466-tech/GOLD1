@@ -60,12 +60,12 @@
       "source_url": "https://www.ross-simons.com/products/571222",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Women's 3mm 14kt Yellow Gold Band\"; price \"599.00\"; body \"This high-polished 14kt yellow gold band features an exceptionally comfortable fit...\"",
+      "evidence": "Title \"Women's 3mm 14kt Yellow Gold Band\"; price \"599.00\"; body \"This high-polished 14kt yellow gold band features an exceptionally comfortable fit...\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 2.5 grams\" (re-read 2026-10-22); spec panel \"Metal 14kt Yellow Gold - Gold Weight 2.5 grams\" (re-read 2026-10-22)",
       "solid_stated": false,
       "flags": [
         "solid_not_stated"
       ],
-      "notes": "Karat stated. \"Solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant; the feed's shipping weight field is not a metal weight, so none was added.",
+      "notes": "Karat stated. \"Solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant; the feed's shipping weight field is not a metal weight, so none was added. Metal weight 2.5 grams is published in the spec panel and was captured on the P12 second read. PR #10 had recorded this SKU as having no metal weight; that entry was corrected here after the same page was opened again and the spec panel quoted. Metal weight 2.5 grams is published in the spec panel and was captured on the P12 second read. PR #10 had recorded this SKU as having no metal weight; that entry was corrected here after the same page was opened again and the spec panel quoted.",
       "reverified_at": "2026-10-22",
       "reverified_pass": "P12"
     },
@@ -118,19 +118,14 @@
       "source_url": "https://www.ross-simons.com/products/571213",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Men's 5mm 14kt Yellow Gold Band\"; price \"959.00\"; compare_at_price \"1195.00\"",
+      "evidence": "Title \"Men's 5mm 14kt Yellow Gold Band\"; price \"959.00\"; compare_at_price \"1195.00\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 5.0 grams\"; sale banner \"20% Off\", \"Original price $1,195\", \"Sale price $959\"; spec panel \"Metal 14kt Yellow Gold - Gold Weight 5.0 grams\"; sale banner \"20% Off\", \"Original price $1,195\", \"Sale price $959\"",
       "solid_stated": false,
       "flags": [
         "solid_not_stated"
       ],
-      "notes": "Listing shows a struck-through comparison price of 1195.00 against a current 959.00.",
-      "weight_evidence": "Details table: \"Gold Weight 5.0 grams\"; Metal \"14kt Yellow Gold\"; page banner \"20% Off / Original price $1,195 / Sale price $959\"",
-      "weight_source_url": "https://www.ross-simons.com/products/571213",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official product page",
-      "recheck_url": "https://www.ross-simons.com/products/571213",
-      "recheck_result": "matched"
+      "notes": "Listing shows a struck-through comparison price of 1195.00 against a current 959.00. Metal weight 5.0 grams is published in the spec panel. The $959.00 is a sale price against a $1,195.00 compare-at shown on the same page. Metal weight 5.0 grams is published in the spec panel. The $959.00 is a sale price against a $1,195.00 compare-at shown on the same page.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-981367",
@@ -217,11 +212,8 @@
         "weight_not_published"
       ],
       "notes": "Made in Italy per the listing. Karat stated; \"solid\" not stated.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official search feed",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=960952",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-879968",
@@ -250,11 +242,8 @@
         "weight_not_published"
       ],
       "notes": "Diamond weight is stated as 2.00 ct total weight. Metal weight is not published.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official search feed",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=879968",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-999230",
@@ -284,11 +273,8 @@
         "price_varies"
       ],
       "notes": "Price varies by ring size (489.00 to 559.00).",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official search feed",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=999230",
-      "recheck_result": "title_corrected"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-991907",
@@ -317,11 +303,8 @@
         "weight_not_published"
       ],
       "notes": "IGI report is stated in the listing text. Metal weight not published.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official product feed (JSON)",
-      "recheck_url": "https://www.ross-simons.com/products/991907.js",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-993512",
@@ -350,11 +333,8 @@
         "weight_not_published"
       ],
       "notes": "Yellow-gold version of the same 2.30 ct. t.w. design as rs-991907.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official search feed",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=993512",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-991908",
@@ -380,15 +360,9 @@
       "solid_stated": false,
       "flags": [
         "solid_not_stated",
-        "weight_not_published",
-        "availability_unconfirmed"
+        "weight_not_published"
       ],
-      "notes": "The cheapest complete diamond engagement ring in this list with a stated carat weight.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_result": "not_indexed",
-      "recheck_method": "official search feed (returned no product)",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=991908"
+      "notes": "The cheapest complete diamond engagement ring in this list with a stated carat weight."
     },
     {
       "id": "rs-864785",
@@ -417,11 +391,8 @@
         "weight_not_published"
       ],
       "notes": "Price covers TWO rings (engagement ring plus matching band). Centre diamond is only .20 ct; the rest is accent weight.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official search feed",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=864785",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-943668",
@@ -458,7 +429,7 @@
       "id": "rs-242556",
       "retailer_id": "ross-simons",
       "retailer": "Ross-Simons",
-      "title": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
+      "title": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold, Size 6.5",
       "category": "estate",
       "style": "Estate halo ring",
       "karat": "14K",
@@ -483,11 +454,8 @@
         "estate_return_terms_unverified"
       ],
       "notes": "One-of-a-kind, fixed size 6.5. Estate return terms were not separately confirmed, so assume resizing may void returns.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official search feed",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=242556",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-254575",
@@ -515,21 +483,15 @@
         "solid_not_stated",
         "weight_not_published",
         "one_of_a_kind",
-        "estate_return_terms_unverified",
-        "availability_unconfirmed"
+        "estate_return_terms_unverified"
       ],
-      "notes": "Two-tone estate piece, fixed size 7.5.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_result": "not_indexed",
-      "recheck_method": "official search feed (returned no product)",
-      "recheck_url": "https://www.ross-simons.com/search/suggest.json?q=254575"
+      "notes": "Two-tone estate piece, fixed size 7.5."
     },
     {
       "id": "rs-240912",
       "retailer_id": "ross-simons",
       "retailer": "Ross-Simons",
-      "title": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
+      "title": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold, Size 7",
       "category": "estate",
       "style": "Estate solitaire (sapphire)",
       "karat": "14K",
@@ -554,11 +516,8 @@
         "estate_return_terms_unverified"
       ],
       "notes": "GIA certificate number is published in the listing and can be checked with GIA. Fixed size 7.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official product feed (JSON)",
-      "recheck_url": "https://www.ross-simons.com/products/240912.js",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "wc-tulip",
@@ -589,11 +548,8 @@
         "price_varies"
       ],
       "notes": "Price range spans metal choices. Centre diamond is a separate purchase, so the total ring cost is higher.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official product feed (JSON)",
-      "recheck_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "wc-4prong",
@@ -655,9 +611,7 @@
         "setting_only",
         "price_varies"
       ],
-      "notes": "Petite comfort-fit version of wc-4prong.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Petite comfort-fit version of wc-4prong."
     },
     {
       "id": "wc-6prong",
@@ -687,9 +641,7 @@
         "setting_only",
         "price_varies"
       ],
-      "notes": "Six-prong version; centre stone is extra.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Six-prong version; centre stone is extra."
     },
     {
       "id": "wc-gerbera",
@@ -720,9 +672,7 @@
         "setting_only_unclear",
         "price_varies"
       ],
-      "notes": "Tagged \"Ring Setting Product\", but the description reads as if the created sapphire is part of the ring. Whether the sapphire is included at this price is NOT confirmed - ask before ordering.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Tagged \"Ring Setting Product\", but the description reads as if the created sapphire is part of the ring. Whether the sapphire is included at this price is NOT confirmed - ask before ordering."
     },
     {
       "id": "as-bea-sol",
@@ -752,11 +702,8 @@
         "made_to_order"
       ],
       "notes": "Champagne diamonds vary stone to stone - the photo is representative, not the exact stone.",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official product feed (JSON)",
-      "recheck_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
-      "recheck_result": "matched"
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "as-hazeline",
@@ -786,9 +733,7 @@
         "made_to_order",
         "price_varies"
       ],
-      "notes": "Price difference tracks the 1.00 ct vs 1.50 ct centre stone.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Price difference tracks the 1.00 ct vs 1.50 ct centre stone."
     },
     {
       "id": "as-bea-3stone",
@@ -818,9 +763,7 @@
         "made_to_order",
         "price_varies"
       ],
-      "notes": "Very wide price range - it is driven by centre-stone size and grade, which the listing does not enumerate per price.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Very wide price range - it is driven by centre-stone size and grade, which the listing does not enumerate per price."
     },
     {
       "id": "au-2ct-oval",
@@ -850,9 +793,7 @@
         "price_varies",
         "metal_variant_price_unmapped"
       ],
-      "notes": "Variant-level data confirms the 14K/Yellow size-2.5 option is the 1,968.00 low end, so the 14K price is real for this model. Other sizes and 18K or platinum cost more.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Variant-level data confirms the 14K/Yellow size-2.5 option is the 1,968.00 low end, so the 14K price is real for this model. Other sizes and 18K or platinum cost more."
     },
     {
       "id": "au-1ct-emerald",
@@ -882,9 +823,7 @@
         "price_varies",
         "metal_variant_price_unmapped"
       ],
-      "notes": "The feed confirms a 14K option exists but does not map price to metal. The 1,498.00 low end is the product range, not a proven 14K price — set metal and size on the product page before buying.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "The feed confirms a 14K option exists but does not map price to metal. The 1,498.00 low end is the product range, not a proven 14K price — set metal and size on the product page before buying."
     },
     {
       "id": "au-3ct-round",
@@ -914,9 +853,7 @@
         "price_varies",
         "metal_variant_price_unmapped"
       ],
-      "notes": "Same caveat as the other Aurate bezel rings: the 2,438.00 low end is the product range across metals and sizes, not a proven 14K price.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Same caveat as the other Aurate bezel rings: the 2,438.00 low end is the product range across metals and sizes, not a proven 14K price."
     },
     {
       "id": "au-cigar",
@@ -943,18 +880,11 @@
       "flags": [
         "solid_not_stated",
         "plated_variant_in_product",
-        "weight_range_published",
-        "price_unconfirmed"
+        "weight_range_published"
       ],
       "notes": "IMPORTANT: this product mixes vermeil (118.00), 14K and 18K in one listing. The 14K price is 1308.00. The published weight range 2.6-4 g is for the model, not your exact size.",
-      "weight_evidence": "Product description: \"Weight: 2.6-4g\"; Width 20mm; Thickness 1mm; Height 5mm",
-      "weight_source_url": "https://auratenewyork.com/products/modern-cigar-band.js",
-      "recheck_pass": "P12",
-      "recheck_date": "2026-10-22",
-      "recheck_method": "official product feed (JSON)",
-      "recheck_url": "https://auratenewyork.com/products/modern-cigar-band.js",
-      "recheck_result": "partial",
-      "price_unconfirmed": true
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "au-xring",
@@ -982,9 +912,7 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "Sold as a fashion ring, not an engagement ring, but usable as an alternative.",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "notes": "Sold as a fashion ring, not an engagement ring, but usable as an alternative."
     },
     {
       "id": "bn-14k-ccf-203284",
@@ -1017,9 +945,7 @@
       ],
       "notes": "Price read from the official Blue Nile solitaire listing page; the individual product page was not opened in this pass. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-14k-tc-203288",
@@ -1052,9 +978,7 @@
       ],
       "notes": "Price read from the official Blue Nile solitaire listing page; product page not opened in this pass. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-14k-leaf-192442",
@@ -1087,9 +1011,7 @@
       ],
       "notes": "Price read from the official Blue Nile solitaire listing page; product page not opened in this pass. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-14k-bezel-296643",
@@ -1122,9 +1044,7 @@
       ],
       "notes": "Price read from the official Blue Nile solitaire listing page; product page not opened in this pass. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-14k-ridge-304497",
@@ -1157,9 +1077,7 @@
       ],
       "notes": "Price read from the official Blue Nile solitaire listing page; product page not opened in this pass. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-14k-6p-203272",
@@ -1191,9 +1109,7 @@
       ],
       "notes": "Individual product page opened and read in this session. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-18k-6p-194159",
@@ -1225,9 +1141,7 @@
       ],
       "notes": "18K version costs $240 more than the otherwise matching 14K setting (BN-14K-6P-203272). No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "bn-18k-pn-203268",
@@ -1259,9 +1173,7 @@
       ],
       "notes": "Title/metal spec say 18K yellow gold; the product description says 14k white gold. A search snippet also showed $925 for this item while the live page shows $1,420. Both discrepancies are published as flags. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "mej-deb",
@@ -1292,9 +1204,7 @@
       ],
       "notes": "“From” price varies with ring size. No gram weight published (band width 1.5 mm is published instead). Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "mej-db",
@@ -1324,9 +1234,7 @@
       ],
       "notes": "Three-stone band, not a solitaire. No gram weight published (2.8 mm shank is published instead). Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "mej-bde",
@@ -1357,9 +1265,7 @@
       ],
       "notes": "Price captured on the 14k white gold selection; yellow gold may differ. A search snippet showed $2,800 — see F-03. No gram weight published (2.6 mm band is published instead). Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     },
     {
       "id": "mej-2mm",
@@ -1424,9 +1330,7 @@
       ],
       "notes": "Mixed-metal construction: 18K yellow gold band with 14K white gold prongs. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb",
-      "recheck_pass": null,
-      "recheck_result": "not_rechecked"
+      "verified_by": "session-6f8c2bcb"
     }
   ]
 }
