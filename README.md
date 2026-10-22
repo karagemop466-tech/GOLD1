@@ -27,7 +27,7 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `calculator.html` | Gold value calculator: grams × karat ÷ 24 × published gold price, plus price-to-melt multiple |
 | `checklist.html` | The original 12-point checklist, scored item by item |
 | `sources.html` | Source registry, including sources that were checked and **rejected** |
-| `flagged.html` | 14 findings that need a human decision (published, non-blocking) |
+| `flagged.html` | 29 findings that need a human decision (published, non-blocking) |
 | `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
 | `checks.html` | Output of the latest automated verification pass and the pass history |
 | `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |

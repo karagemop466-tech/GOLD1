@@ -271,6 +271,24 @@
       "verified": "Original 13 rows and 15 flags from session arena-6f8c2bcb-gold1, preserved unmodified",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "third-pass-dataset",
+      "publisher": "GOLD1 third research pass",
+      "type": "archived dataset",
+      "url": "https://github.com/karagemop466-tech/GOLD1/blob/main/data/rings_c2bbe753.json",
+      "verified": "14 rows incl. Tiffany & Co., Cartier, James Allen and 2 Cartier karats explicitly marked unverified — preserved, not merged (see F30)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "tiffany-setting",
+      "publisher": "Tiffany & Co.",
+      "type": "official product page",
+      "url": "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
+      "verified": "Recorded by the third pass: 'The Tiffany Setting Engagement Ring in 18k Yellow Gold — 40318275 — Starting from $1,600'. Not re-fetched in this pass, so not used in the table.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     }
   ]
 }

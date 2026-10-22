@@ -1,0 +1,30 @@
+{
+  "generated_utc_hint": "see git log",
+  "checks": [],
+  "failures": [],
+  "warnings": [],
+  "pages": {
+    "calculator.html": 7048,
+    "checklist.html": 9742,
+    "flagged.html": 16697,
+    "index.html": 7479,
+    "methodology.html": 12936,
+    "prices.html": 12730,
+    "rings-blue-nile.html": 9118,
+    "rings-brilliant-earth.html": 5184,
+    "rings-cartier.html": 5580,
+    "rings-mejuri.html": 4829,
+    "rings-tiffany-co.html": 5113,
+    "rings.html": 19474
+  },
+  "checks_summary": {
+    "rings_total": 14,
+    "prices_verified": 7,
+    "prices_left_blank": 7,
+    "karats_verified": 12,
+    "weights_verified": 0,
+    "flags_open": 12,
+    "registered_sources": 16,
+    "direct_fetch_sources": 13
+  }
+}
