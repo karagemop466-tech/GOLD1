@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Transparent gold weight and reference-value calculator using a dated Kitco bid and explicit weight-basis warnings.">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#14241f">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Gold weight and value calculator · GOLD1</title>
+<link rel="stylesheet" href="./assets/styles.css">
+<script src="./assets/app.js" defer></script>
+</head>
+<body data-root="." data-page="calculator" >
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./" aria-label="GOLD1 evidence index home">
+      <span class="brand-mark" aria-hidden="true"><span>G</span></span>
+      <span class="brand-copy"><span class="brand-name">GOLD / 01</span><span class="brand-sub">Ring evidence index</span></span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation"><a href="./catalog/">Catalog</a><a href="./flagged.html" class="nav-flag">Flagged for Review<span class="nav-count" data-nav-flag-count hidden></span></a><a href="./sellers.html">Sellers</a><a href="./checklist.html">Checklist</a><a href="./calculator.html" aria-current="page">Gold calculator</a><a href="./analysis.html">Analysis</a></nav>
+  </div>
+</header>
+<main id="main-content">
+  <section class="page-head"><div class="container"><div class="rule-banner"><strong>CALCULATION ≠ AUTHENTICATION.</strong><span>Results are only as reliable as the weight and karat entered. Listed ring weight produces nominal arithmetic, never verified raw-gold content.</span></div><p class="eyebrow section-sm">Gold weight & reference-value calculator</p><h1 class="page-title">Show the math.<br>Keep the caveat.</h1><p class="lede">Use the dated Kitco bid snapshot or enter another documented quote. Inputs stay in your browser and are not transmitted.</p></div></section>
+  <section class="section-sm"><div class="container stack-lg">
+    <div class="calculator-grid">
+      <form id="gold-calculator" class="calculator-form" novalidate>
+        <div class="form-grid">
+          <div class="field full"><label for="calc-candidate">Optional: load an audited candidate</label><select id="calc-candidate"><option value="">Choose a candidate or enter values below</option></select><span class="field-hint">Missing official weights remain blank; the calculator never invents them.</span></div>
+          <div class="field"><label for="calc-weight">Weight in grams</label><input id="calc-weight" type="number" min="0.000001" max="100000" step="any" inputmode="decimal" placeholder="No value inferred"></div>
+          <div class="field"><label for="calc-basis">Weight basis</label><select id="calc-basis"><option value="listed">Listed/item weight — nominal only</option><option value="metal">User-stated metal-only weight — unverified</option></select></div>
+          <div class="field"><label for="calc-karat">Karat</label><select id="calc-karat"><option value="14">14K (14/24)</option><option value="18">18K (18/24)</option><option value="10">10K (10/24)</option><option value="22">22K (22/24)</option><option value="24">24K (24/24)</option></select></div>
+          <div class="field"><label for="calc-spot">24K bid, USD / troy oz</label><input id="calc-spot" type="number" min="0.01" max="10000000" step="any" inputmode="decimal" required></div>
+          <div class="field full"><label for="calc-price">Optional retail price in USD</label><input id="calc-price" type="number" min="0" max="100000000" step="any" inputmode="decimal" placeholder="Leave blank to omit price arithmetic"><span class="field-hint">A finished ring may include gemstones, design, labor, and other costs. Price arithmetic is not a fairness score.</span></div>
+        </div>
+        <div class="filter-actions"><button class="button button-secondary button-small" id="calc-reset" type="button">Restore sourced snapshot</button><span id="calc-error" class="small text-danger" role="alert"></span></div>
+      </form>
+      <section id="calc-output" class="calculator-output" aria-live="polite" aria-label="Calculation results"><h2>Reference output</h2><p class="muted">Enter a valid weight to calculate. Actual raw-gold amount remains unverified.</p></section>
+    </div>
+    <div><h2>Formula and source</h2><div class="formula">USD/g = bid/troy oz ÷ 31.1034768<br>fine-gold g = weight g × karat ÷ 24<br>reference USD = fine-gold g × USD/g</div><p class="small muted">Full precision is retained until display rounding. The default is Kitco’s Live GoldPrice panel, Oct 22, 2026 – 19:11 NY Time: $4,025.00 bid/troy oz, displayed $129.41/g. <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">Open official Kitco source ↗</a></p><div class="notice notice-warning"><p class="notice-title">Not a melt quote or resale value.</p><p class="small">The result excludes unknown stone/non-gold weight unless you supply a documented metal-only measurement. It does not include fabrication, dealer spreads, taxes, gemstones, workmanship, or resale conditions. “User-stated metal-only” is still unverified by this dashboard.</p></div></div>
+    <div id="calculator-evidence" class="card"><div class="loading">Loading candidate weight states…</div></div>
+  </div></section>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><span class="footer-title">Evidence before purchase.</span><p class="small muted">A dated public-evidence snapshot, not authentication, an appraisal, a dealer quote, or legal/financial advice. No affiliate links or tracking.</p></div>
+      <div><span class="footer-title">Categories</span><div class="footer-links"><a href="./catalog/solitaire.html">Solitaire</a><a href="./catalog/side-stones.html">Side stones</a><a href="./catalog/bezel.html">Bezel</a><a href="./catalog/14k.html">14K gold</a><a href="./catalog/18k.html">18K gold</a></div></div>
+      <div><span class="footer-title">Audit trail</span><div class="footer-links"><a href="./methodology.html">Methodology & sources</a><a href="./flagged.html">Open irregularities</a><a href="https://github.com/karagemop466-tech/GOLD1/tree/arena/c662efda-gold1/research" target="_blank" rel="noopener noreferrer">Research repository ↗</a><a href="https://github.com/karagemop466-tech/GOLD1" target="_blank" rel="noopener noreferrer">GitHub project ↗</a></div></div>
+    </div>
+    <div class="footer-bottom">Official product prices retrieved 2026-10-22. Recheck the seller before relying on any price, policy, or availability. Continued hallucination review is required.</div>
+  </div>
+</footer>
+<dialog id="evidence-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title">Evidence detail</h2><button class="dialog-close" type="button" data-dialog-close aria-label="Close evidence detail">×</button></div><div class="dialog-body" id="dialog-body"></div></dialog>
+</body>
+</html>
