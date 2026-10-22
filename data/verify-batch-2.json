@@ -1,0 +1,151 @@
+{
+ "date": "2026-10-22",
+ "fetched_at": "2026-10-22T23:36Z",
+ "session": "sess-277867af",
+ "note": "Ross-Simons rows 10-17. Each official product page re-fetched on 2026-10-22 and read line by line.",
+ "results": [
+  {
+   "id": "rs-991907",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/991907",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
+    "karat": "14K",
+    "price_low": 2795.0,
+    "price_high": 2795.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$2,795.00\"; specs panel \"Width 5/16 inch\", \"Metal: 14kt White Gold\", no Gold Weight field.",
+    "notes": "Lab-grown diamonds, IGI report included per the page text. No gold weight published."
+   },
+   "quote": "$2,795 ... Size 5 $2,795.00 In-Stock ... Width 5/16 inch / Metal 14ktWhite Gold / Finish Polished / Gemstone 1 Lab-Grown Diamond ( Quantity: 1, ... Weight: 2.00 carats ) / Gemstone 2 Lab-Grown Diamond ( Quantity: 10, ... Weight: 0.30 ct. t.w. )",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-993512",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/993512",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
+    "karat": "14K",
+    "price_low": 2795.0,
+    "price_high": 2795.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$2,795.00\"; specs panel \"Metal: 14kt Yellow Gold\", no Gold Weight field.",
+    "notes": "Same ring as 991907 in yellow gold. No gold weight published."
+   },
+   "quote": "$2,795 ... Size 5 $2,795.00 In-Stock ... Metal 14ktYellow Gold / Finish Polished",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-991908",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/991908",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
+    "karat": "14K",
+    "price_low": 1795.0,
+    "price_high": 1795.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$1,795.00\"; specs panel \"Width 1/4 inch\", \"Metal: 14kt White Gold\", no Gold Weight field."
+   },
+   "quote": "$1,795 ... Size 5 $1,795.00 In-Stock ... Metal 14ktWhite Gold / Finish Polished",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-864785",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/864785",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold",
+    "karat": "14K",
+    "price_low": 2395.0,
+    "price_high": 2395.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: in-stock variants 6/7/8 each \"$2,395.00\" (5, 5.5, 6.5, 7.5, 8.5, 9 Sold Out); no Gold Weight field.",
+    "notes": "Most sizes are sold out on the live page; only 6, 7 and 8 are in stock."
+   },
+   "quote": "$2,395 ... Size 6 $2,395.00 In-Stock / Size 7 $2,395.00 In-Stock / Size 8 $2,395.00 In-Stock ... Width 1/4 inch / Metal 14ktYellow Gold / Finish Polished",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-943668",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/943668",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "changed",
+   "observed": {
+    "title": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
+    "karat": "14K",
+    "price_low": 1269.0,
+    "price_high": 1269.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: banner \"CLEARANCE 29% Off\", \"Original price $1,795\", \"Sale price $1,269\"; in-stock variants 7/8/9 each \"$1,269.00\" (5, 6, 6.5 Sold Out). No Gold Weight field.",
+    "notes": "Stored range 1269-1439 replaced by the observed 1269-1269; the $1,439 figure is not shown on the live page and is treated as unverified (see Flagged F31). Page repeats \"Center stone and setting are sold separately.\""
+   },
+   "quote": "CLEARANCE 29% Off ~~Original price $1,795~~ Sale price $1,269 ... Size 7 $1,269.00 In-Stock / Size 8 $1,269.00 In-Stock / Size 9 $1,269.00 In-Stock ... Center stone and setting are sold separately.",
+   "checks": {"price": "changed (high 1439 not reproducible)", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-242556",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/242556",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
+    "karat": "14K",
+    "price_low": 2195.0,
+    "price_high": 2195.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: single variant, \"$2,195\"; specs \"Width 5/8 inch\", \"Metal: 14kt Yellow Gold\"; body states the diamond accents are set in 14kt white gold, so the ring is two-metal. No Gold Weight field.",
+    "notes": "Estate one-of-a-kind, size 6.5 only. The page describes mixed metals (yellow gold band, white gold-set diamonds)."
+   },
+   "quote": "$2,195 ... C. 1980. A tribute to two-tone, this fascinating Estate collection ring spotlights a deeply hued .30 carat oval sapphire with .16 ct. t.w. round diamonds swirling around and sparkling across the band in 14kt white gold. Finely crafted in polished 14kt yellow gold. ... Exclusive, one-of-a-kind Estate Jewelry.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-254575",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/254575",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
+    "karat": "14K",
+    "price_low": 695.0,
+    "price_high": 695.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: single variant, \"$695\"; specs \"Width 7/16 inch\", \"Metal: 14kt Two-Tone Gold\". No Gold Weight field.",
+    "notes": "Estate one-of-a-kind, size 7.5 only."
+   },
+   "quote": "$695 ... C. 1990. Two tones, infinite versatility. From our Estate collection, this chic 14kt yellow and white gold bypass ring ... Exclusive, one-of-a-kind Estate Jewelry.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-240912",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/240912",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
+    "karat": "14K",
+    "price_low": 8995.0,
+    "price_high": 8995.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: single variant, \"$8,995\"; specs \"Width 1/4 inch\", \"Metal: 14kt Yellow Gold\"; body \"GIA Cert #7235079100\". No Gold Weight field.",
+    "notes": "Estate one-of-a-kind, size 7 only. GIA certificate number is printed on the official page."
+   },
+   "quote": "$8,995 ... Features a vivid 1.36 carat certified oval cushion-cut sapphire glowing in a four-prong setting on a simple polished band of 14kt yellow gold. GIA Cert #7235079100.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  }
+ ]
+}

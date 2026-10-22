@@ -1,0 +1,176 @@
+{
+ "date": "2026-10-22",
+ "fetched_at": "2026-10-22T23:30Z",
+ "session": "sess-277867af",
+ "note": "Ross-Simons rows 1-9. Each official product page re-fetched on 2026-10-22 and read line by line.",
+ "results": [
+  {
+   "id": "rs-571221",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571221",
+   "fetched_at": "2026-10-22T23:24Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Women's 2mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 400.0,
+    "price_high": 400.0,
+    "weight_g_low": 1.7,
+    "weight_g_high": 1.7,
+    "evidence_suffix": "Re-checked 2026-10-22: size variants 5/6/7/8/9 each \"$400.00\"; specs panel \"Metal: 14kt Yellow Gold\", \"Gold Weight: 1.7 grams\".",
+    "notes": "Gold weight is published on the official page (1.7 g). It was previously blank and flagged weight_not_published."
+   },
+   "quote": "Size 5 $400.00 In-Stock ... Metal 14ktYellow Gold / Gold Weight 1.7 grams / Finish Polished / All weights and measurements are approximate.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-571222",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571222",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Women's 3mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 599.0,
+    "price_high": 599.0,
+    "weight_g_low": 2.5,
+    "weight_g_high": 2.5,
+    "evidence_suffix": "Re-checked 2026-10-22: size variants 5/6/7/8/9 each \"$599.00\"; specs panel \"Metal: 14kt Yellow Gold\", \"Gold Weight: 2.5 grams\".",
+    "notes": "Gold weight published on the official page (2.5 g)."
+   },
+   "quote": "Size 5 $599.00 In-Stock ... Metal 14ktYellow Gold / Gold Weight 2.5 grams / Finish Polished.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-571223",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571223",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "changed",
+   "observed": {
+    "title": "Women's 4mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 849.0,
+    "price_high": 849.0,
+    "weight_g_low": 3.8,
+    "weight_g_high": 3.8,
+    "evidence_suffix": "Re-checked 2026-10-22: every in-stock size variant shows \"$849.00\"; specs panel \"Gold Weight: 3.8 grams\". The stored low of $799.00 could not be reproduced on the page.",
+    "notes": "Stored price range 799-849 replaced by the observed 849-849. The $799 figure is not shown anywhere on the live page and is treated as unverified (see Flagged F31)."
+   },
+   "quote": "Size 5 $849.00 In-Stock / Size 6 $849.00 In-Stock / Size 7 $849.00 In-Stock / Size 8 $849.00 In-Stock / Size 9 $849.00 In-Stock ... Gold Weight 3.8 grams.",
+   "checks": {"price": "changed (low 799 not reproducible)", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-571213",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571213",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Men's 5mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 959.0,
+    "price_high": 959.0,
+    "weight_g_low": 5.0,
+    "weight_g_high": 5.0,
+    "evidence_suffix": "Re-checked 2026-10-22: banner \"CLEARANCE 20% Off\", \"Original price $1,195\", \"Sale price $959\"; variants 8-12 each \"$959.00\"; specs panel \"Gold Weight: 5.0 grams\".",
+    "notes": "Sale price confirmed. Because the listed price is a 20%-off clearance price from $1,195, the price may change when the promotion ends."
+   },
+   "quote": "CLEARANCE 20% Off ~~Original price $1,195~~ Sale price $959 ... Size 8 $959.00 In-Stock ... Gold Weight 5.0 grams.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-981367",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/981367",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "14kt Yellow Gold Polished Ring",
+    "karat": "14K",
+    "price_low": 149.0,
+    "price_high": 149.0,
+    "weight_g_low": 0.5,
+    "weight_g_high": 0.5,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-10 each \"$149.00\"; specs panel \"Width 1/16 inch\", \"Metal: 14kt Yellow Gold\", \"Gold Weight: 0.5 grams\".",
+    "notes": "Gold weight published on the official page (0.5 g)."
+   },
+   "quote": "Size 5 $149.00 In-Stock ... Width 1/16 inch / Metal 14ktYellow Gold / Gold Weight 0.5 grams.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-907250",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/907250",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "18kt Yellow Gold Roped Ring",
+    "karat": "18K",
+    "price_low": 179.0,
+    "price_high": 179.0,
+    "weight_g_low": 0.5,
+    "weight_g_high": 0.5,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-10 each \"$179.00\"; specs panel \"Metal: 18kt Yellow Gold\", \"Gold Weight: 0.5 grams\".",
+    "notes": "Gold weight published on the official page (0.5 g). Body text: \"Crafted in polished 18kt yellow gold\"."
+   },
+   "quote": "Size 5 $179.00 In-Stock ... Metal 18ktYellow Gold / Gold Weight 0.5 grams.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-960952",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/960952",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Italian 14kt Yellow Gold Dome Ring",
+    "karat": "14K",
+    "price_low": 399.0,
+    "price_high": 399.0,
+    "weight_g_low": 1.3,
+    "weight_g_high": 1.3,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-10 each \"$399.00\"; specs panel \"Width 1/4 inch\", \"Metal: 14kt Yellow Gold\", \"Gold Weight: 1.3 grams\".",
+    "notes": "Gold weight published on the official page (1.3 g)."
+   },
+   "quote": "Size 5 $399.00 In-Stock ... Width 1/4 inch / Metal 14ktYellow Gold / Gold Weight 1.3 grams.",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "newly captured"}
+  },
+  {
+   "id": "rs-879968",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/879968",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
+    "karat": "14K",
+    "price_low": 2695.0,
+    "price_high": 2695.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$2,695.00\"; specs panel shows only \"Metal: 14kt Yellow Gold\", \"Finish: Polished\" and the diamond row - no Gold Weight field.",
+    "notes": "Page carries a cart-level promotion, \"25% OFF IN CART WITH CODE DIAMOND25\". The listed price of $2,695.00 is before that code. No gold weight is published."
+   },
+   "quote": "25% OFF IN CART WITH CODE DIAMOND25 / $2,695 ... Size 5 $2,695.00 In-Stock ... Metal 14ktYellow Gold / Finish Polished / Gemstone 1 Diamond ( Quantity: 24, Shape & Cutting Style: Round Brilliant, Color Grade: I-J, Clarity: I2-I2, Weight: 2.00 ct. t.w. )",
+   "checks": {"price": "match", "karat": "match", "title": "match", "weight": "not published - left blank"}
+  },
+  {
+   "id": "rs-999230",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/999230",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "changed",
+   "observed": {
+    "karat": "14K",
+    "price_low": 489.0,
+    "price_high": 489.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: banner \"CLEARANCE 30% Off\", \"Original price $695\", \"Sale price $489\"; in-stock variants 5/8/9 \"$489.00\" (sizes 6 and 7 Sold Out). No Gold Weight field on the page.",
+    "notes": "Stored range 489-559 replaced by the observed 489-489; the $559 figure is not shown on the live page and is treated as unverified (see Flagged F31). Stored title is the variant-name short form; the page heading is the full gemstone title (see Flagged F32)."
+   },
+   "quote": "CLEARANCE 30% Off ~~Original price $695~~ Sale price $489 ... Size 5 $489.00 In-Stock / Size 6 Sold Out / Size 7 Sold Out / Size 8 $489.00 In-Stock / Size 9 $489.00 In-Stock ... Width 1/8 inch / Metal 14ktYellow Gold / Finish Polished",
+   "checks": {"price": "changed (high 559 not reproducible)", "karat": "match", "title": "stored title is the variant label, not the page heading", "weight": "not published - left blank"}
+  }
+ ]
+}
