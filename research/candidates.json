@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "retrievedDate": "2026-10-22",
+  "coverageNote": "Thirteen active candidates inspected line by line on official product pages. This is a bounded audit set, not an exhaustive list of every ring for sale.",
+  "candidates": [
+    {
+      "id": "trax-71345",
+      "sellerId": "traxnyc",
+      "name": "14K Gold Marquise Lab-Grown Diamond Engagement Ring 3 CT",
+      "officialItemNumber": "71345",
+      "category": "Side stones",
+      "style": "Marquise prong with side stones",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": "seller-stated",
+      "listedWeightGrams": 2.8,
+      "listedWeightBasis": "Listed item weight; whether gemstones are included is not stated. Sizing may change weight.",
+      "netMetalWeightGrams": null,
+      "priceUsd": 2500,
+      "priceBasis": "Displayed item price for the listed configuration.",
+      "officialProductUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [
+        "IGI center-stone report",
+        "Certified appraisal"
+      ],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "NET_WEIGHT_UNVERIFIED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SIZE_WEIGHT_VARIABLE",
+        "URL_ITEM_NUMBER_CONFLICT"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "14K Gold Marquise Lab-Grown Diamond Engagement Ring 3 CT",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        },
+        {
+          "fields": [
+            "officialItemNumber"
+          ],
+          "quote": "Item number71345",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        },
+        {
+          "fields": [
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "14K gold 58.3% pure gold; Metal Color: Yellow Gold; Center stone Marquise; Setting Prongs; Side diamonds 0.45 Ct not counting the center stone",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "Price $2,500",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        },
+        {
+          "fields": [
+            "listedWeightGrams",
+            "listedWeightBasis"
+          ],
+          "quote": "Weight 2.8 grams can change slightly when sized",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        },
+        {
+          "fields": [
+            "solidGold"
+          ],
+          "quote": "Solid 14K Gold.",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        },
+        {
+          "fields": [
+            "listingDocumentation"
+          ],
+          "quote": "Certificate IGI (International Gemological Institute); Appraisal Certified appraisal included",
+          "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845"
+        }
+      ]
+    },
+    {
+      "id": "trax-70114",
+      "sellerId": "traxnyc",
+      "name": "Solitaire Emerald Lab-Grown Diamond Engagement Ring, 14K Gold, 2.00 ct center",
+      "officialItemNumber": "70114",
+      "category": "Solitaire",
+      "style": "Emerald solitaire",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": "seller-stated",
+      "listedWeightGrams": 2.0,
+      "listedWeightBasis": "Listed item weight; whether gemstones are included is not stated. Sizing may change weight.",
+      "netMetalWeightGrams": null,
+      "priceUsd": 1800,
+      "priceBasis": "Displayed base price; listed size surcharges are additional.",
+      "officialProductUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [
+        "Certified appraisal"
+      ],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "NET_WEIGHT_UNVERIFIED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SIZE_PRICE_VARIABLE",
+        "SIZE_WEIGHT_VARIABLE"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Solitaire Emerald Lab-Grown Diamond Engagement Ring, 14K Gold, 2.00 ct center",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        },
+        {
+          "fields": [
+            "officialItemNumber"
+          ],
+          "quote": "Item number70114",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        },
+        {
+          "fields": [
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Metal 14K Gold 58.3% pure gold; Color: Yellow; Center stone Emerald; Setting style Solitaire",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "Price $1,800; 5.5+$80",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        },
+        {
+          "fields": [
+            "listedWeightGrams",
+            "listedWeightBasis"
+          ],
+          "quote": "Weight 2 grams can change slightly when sized",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        },
+        {
+          "fields": [
+            "solidGold"
+          ],
+          "quote": "Solid 14K Gold.",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        },
+        {
+          "fields": [
+            "listingDocumentation"
+          ],
+          "quote": "Appraisal Certified appraisal included",
+          "sourceUrl": "https://traxnyc.com/products/solitaire-emerald-lab-grown-diamond-engagement-ring"
+        }
+      ]
+    },
+    {
+      "id": "trax-71851",
+      "sellerId": "traxnyc",
+      "name": "14K Gold Two-Tone Radiant Solitaire Engagement Ring, 2.00 ct center",
+      "officialItemNumber": "71851",
+      "category": "Solitaire",
+      "style": "Radiant two-tone solitaire",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": "seller-stated",
+      "listedWeightGrams": 3.0,
+      "listedWeightBasis": "Listed item weight; whether gemstones are included is not stated. Sizing may change weight.",
+      "netMetalWeightGrams": null,
+      "priceUsd": 2000,
+      "priceBasis": "Displayed base price; listed size surcharges are additional.",
+      "officialProductUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [
+        "IGI center-stone report",
+        "Certified appraisal"
+      ],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "NET_WEIGHT_UNVERIFIED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SIZE_PRICE_VARIABLE",
+        "SIZE_WEIGHT_VARIABLE",
+        "MADE_TO_ORDER"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "14K Gold Two-Tone Radiant Solitaire Engagement Ring, 2.00 ct center",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        },
+        {
+          "fields": [
+            "officialItemNumber"
+          ],
+          "quote": "Item number71851",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        },
+        {
+          "fields": [
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Metal 14K Gold 58.3% pure gold; Color: Yellow; Center stone cut Radiant; Setting style Solitaire; Width 1.70 mm band width",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "Price $2,000; 5.5+$80",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        },
+        {
+          "fields": [
+            "listedWeightGrams",
+            "listedWeightBasis"
+          ],
+          "quote": "Weight 3 grams can change slightly when sized",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        },
+        {
+          "fields": [
+            "solidGold"
+          ],
+          "quote": "Solid 14K Gold.",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        },
+        {
+          "fields": [
+            "listingDocumentation"
+          ],
+          "quote": "Certificate IGI (International Gemological Institute); Appraisal Certified appraisal included",
+          "sourceUrl": "https://traxnyc.com/products/two-tone-radiant-solitaire-ring"
+        }
+      ]
+    },
+    {
+      "id": "trax-70689",
+      "sellerId": "traxnyc",
+      "name": "18K Gold Radiant Spark Lab-Grown Diamond Engagement Ring, 2.00 ct center",
+      "officialItemNumber": "70689",
+      "category": "Side stones",
+      "style": "Radiant with side stones",
+      "karat": 18,
+      "metalColor": "Yellow gold",
+      "solidGold": "seller-stated",
+      "listedWeightGrams": 3.8,
+      "listedWeightBasis": "Listed item weight; whether gemstones are included is not stated. Sizing may change weight.",
+      "netMetalWeightGrams": null,
+      "priceUsd": 3000,
+      "priceBasis": "Displayed item price for the listed configuration.",
+      "officialProductUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [
+        "Certified appraisal"
+      ],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "NET_WEIGHT_UNVERIFIED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SIZE_WEIGHT_VARIABLE"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "18K Gold Radiant Spark Lab-Grown Diamond Engagement Ring, 2.00 ct center",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        },
+        {
+          "fields": [
+            "officialItemNumber"
+          ],
+          "quote": "Item number70689",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        },
+        {
+          "fields": [
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Metal 18K Gold 75% pure gold; Color: Yellow; Center stone Radiant; Setting Prong; Side stones 0.69 ct",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "Price $3,000",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        },
+        {
+          "fields": [
+            "listedWeightGrams",
+            "listedWeightBasis"
+          ],
+          "quote": "Weight 3.8 grams can change slightly when sized",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        },
+        {
+          "fields": [
+            "solidGold"
+          ],
+          "quote": "Solid 18K Gold.",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        },
+        {
+          "fields": [
+            "listingDocumentation"
+          ],
+          "quote": "Appraisal Certified appraisal included",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689"
+        }
+      ]
+    },
+    {
+      "id": "trax-66233",
+      "sellerId": "traxnyc",
+      "name": "18K White Gold Engagement Diamond Ring, 0.50 ct Round center",
+      "officialItemNumber": "66233",
+      "category": "Side stones",
+      "style": "Diamond engagement ring with side stones",
+      "karat": 18,
+      "metalColor": "White gold",
+      "solidGold": "seller-stated",
+      "listedWeightGrams": 3.2,
+      "listedWeightBasis": "Listed item weight; whether gemstones are included is not stated. Sizing may change weight.",
+      "netMetalWeightGrams": null,
+      "priceUsd": 3500,
+      "priceBasis": "Displayed base price; listed size surcharges are additional.",
+      "officialProductUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [
+        "Certified appraisal"
+      ],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "NET_WEIGHT_UNVERIFIED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SIZE_PRICE_VARIABLE",
+        "SIZE_WEIGHT_VARIABLE"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "18K White Gold Engagement Diamond Ring, 0.50 ct Round center",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        },
+        {
+          "fields": [
+            "officialItemNumber"
+          ],
+          "quote": "Item number66233",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        },
+        {
+          "fields": [
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Metal 18K Gold 75% pure gold; Metal Color: White Gold; Center stone Round; Setting Prong; Side stones 0.12 ct",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "Price $3,500; 5.5+$150",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        },
+        {
+          "fields": [
+            "listedWeightGrams",
+            "listedWeightBasis"
+          ],
+          "quote": "Weight 3.2 grams can change slightly when sized",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        },
+        {
+          "fields": [
+            "solidGold"
+          ],
+          "quote": "Solid 18K Gold.",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        },
+        {
+          "fields": [
+            "listingDocumentation"
+          ],
+          "quote": "Appraisal Certified appraisal included",
+          "sourceUrl": "https://traxnyc.com/products/ladies-ladies-diamond-rings-engagement-18k-white-gold-engagement-diamond-ring-item66233"
+        }
+      ]
+    },
+    {
+      "id": "trax-70589",
+      "sellerId": "traxnyc",
+      "name": "18K Gold Aurora 2ct Oval Lab-Grown Diamond Engagement Ring",
+      "officialItemNumber": "70589",
+      "category": "Side stones",
+      "style": "East-west oval with tapered baguette side stones",
+      "karat": 18,
+      "metalColor": "White gold",
+      "solidGold": "seller-stated",
+      "listedWeightGrams": 2.9,
+      "listedWeightBasis": "Listed item weight; whether gemstones are included is not stated. Sizing may change weight.",
+      "netMetalWeightGrams": null,
+      "priceUsd": 3250,
+      "priceBasis": "Displayed base price; listed size surcharges are additional.",
+      "officialProductUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [
+        "Certified appraisal"
+      ],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "NET_WEIGHT_UNVERIFIED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SIZE_PRICE_VARIABLE",
+        "SIZE_WEIGHT_VARIABLE"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "18K Gold Aurora 2ct Oval Lab-Grown Diamond Engagement Ring",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        },
+        {
+          "fields": [
+            "officialItemNumber"
+          ],
+          "quote": "Item number70589",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        },
+        {
+          "fields": [
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Metal 18K Gold 75% pure gold; Metal Color: White; Setting Claw; The Aurora sets a 2-carat oval lab grown diamond horizontally — east-west; Tapered baguette diamonds flank the center on each side",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "Price $3,250; 4.5+$150",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        },
+        {
+          "fields": [
+            "listedWeightGrams",
+            "listedWeightBasis"
+          ],
+          "quote": "Weight 2.9 grams can change slightly when sized",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        },
+        {
+          "fields": [
+            "solidGold"
+          ],
+          "quote": "Solid 18K Gold.",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        },
+        {
+          "fields": [
+            "listingDocumentation"
+          ],
+          "quote": "Appraisal Certified appraisal included",
+          "sourceUrl": "https://traxnyc.com/products/ladies-rings-material-aurora-2ct-oval-engagement-ring-item70589"
+        }
+      ]
+    },
+    {
+      "id": "bn-501130y14",
+      "sellerId": "blue-nile",
+      "name": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+      "officialItemNumber": "501130y14",
+      "category": "Solitaire",
+      "style": "Petite solitaire, 1.80 mm band",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 1000,
+      "priceBasis": "Setting price; diamond selection is a separate step.",
+      "officialProductUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Stock Number 501130y14; Metal 14K Yellow Gold; Width 1.80mm",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$1,000(Setting Price); 1 Choose a Setting 2 Choose a Diamond 3 Complete Ring",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639"
+        }
+      ]
+    },
+    {
+      "id": "bn-500000y14",
+      "sellerId": "blue-nile",
+      "name": "Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold",
+      "officialItemNumber": "500000y14",
+      "category": "Solitaire",
+      "style": "Four-prong solitaire, 1.90 mm band; platinum prongs",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 870,
+      "priceBasis": "Setting price; diamond selection is a separate step.",
+      "officialProductUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY",
+        "MIXED_METAL_HEAD"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Stock Number 500000y14; Metal 14K Yellow Gold; Width 1.90mm; this classic 14k yellow gold four-prong solitaire engagement ring with platinum prongs",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$870(Setting Price); 1 Choose a Setting 2 Choose a Diamond 3 Complete Ring",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257"
+        }
+      ]
+    },
+    {
+      "id": "bn-501140y",
+      "sellerId": "blue-nile",
+      "name": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+      "officialItemNumber": "501140y",
+      "category": "Solitaire",
+      "style": "Six-prong solitaire, 1.90 mm band",
+      "karat": 18,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 1240,
+      "priceBasis": "Setting price; diamond selection is a separate step.",
+      "officialProductUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Stock Number 501140y; Metal 18K Yellow Gold; Width 1.90mm",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$1,240(Setting Price); 1 Choose a Setting 2 Choose a Diamond 3 Complete Ring",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159"
+        }
+      ]
+    },
+    {
+      "id": "be-BE1199H6-18KY",
+      "sellerId": "brilliant-earth",
+      "name": "Six-Prong Petite Comfort Fit 1.5mm Solitaire Ring in 18K Yellow Gold",
+      "officialItemNumber": "BE1199H6-18KY",
+      "category": "Solitaire",
+      "style": "Six-prong petite comfort-fit solitaire, 1.5 mm; 14K white-gold prongs",
+      "karat": 18,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 850,
+      "priceBasis": "Setting only.",
+      "officialProductUrl": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY",
+        "MIXED_METAL_HEAD"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Six-Prong Petite Comfort Fit 1.5mm Solitaire Ring in 18K Yellow Gold",
+          "sourceUrl": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Style: BE1199H6-18KY; Metal: 18K Yellow Gold; Prong metal: 14K White Gold; Width: 1.5 mm; Setting: Six-Prong",
+          "sourceUrl": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$850(Setting Only)",
+          "sourceUrl": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/"
+        }
+      ]
+    },
+    {
+      "id": "be-BE1D1009-18KY",
+      "sellerId": "brilliant-earth",
+      "name": "Andrea Bezel Prong Ring in 18K Yellow Gold",
+      "officialItemNumber": "BE1D1009-18KY",
+      "category": "Bezel",
+      "style": "Bezel-prong ring; claw-prong setting, 3 mm band",
+      "karat": 18,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 1950,
+      "priceBasis": "Setting only.",
+      "officialProductUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-Gold-BE1D1009-39303615/",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Andrea Bezel Prong Ring in 18K Yellow Gold",
+          "sourceUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-Gold-BE1D1009-39303615/"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Style: BE1D1009-18KY; Metal: 18K Yellow Gold; Width: 3 mm; Setting: Claw Prong",
+          "sourceUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-Gold-BE1D1009-39303615/"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$1,950(Setting Only)",
+          "sourceUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-Gold-BE1D1009-39303615/"
+        }
+      ]
+    },
+    {
+      "id": "bn-502690y14",
+      "sellerId": "blue-nile",
+      "name": "East West Solitaire in 14k Yellow Gold",
+      "officialItemNumber": "502690y14",
+      "category": "Solitaire",
+      "style": "East-west solitaire, 2.00 mm band",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 1050,
+      "priceBasis": "Setting price; diamond selection is a separate step.",
+      "officialProductUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-solitaire-in-14k-yellow-gold-item-193755",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "East West Solitaire in 14k Yellow Gold",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-solitaire-in-14k-yellow-gold-item-193755"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Stock Number 502690y14; Metal 14K Yellow Gold; Width 2.00mm",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-solitaire-in-14k-yellow-gold-item-193755"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$1,050(Setting Price); 1 Choose a Setting 2 Choose a Diamond 3 Complete Ring",
+          "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-solitaire-in-14k-yellow-gold-item-193755"
+        }
+      ]
+    },
+    {
+      "id": "be-BE1D1009-14KY",
+      "sellerId": "brilliant-earth",
+      "name": "Andrea Bezel Prong Ring in 14K Yellow Gold",
+      "officialItemNumber": "BE1D1009-14KY",
+      "category": "Bezel",
+      "style": "Bezel-prong ring; claw-prong setting, 3 mm band",
+      "karat": 14,
+      "metalColor": "Yellow gold",
+      "solidGold": null,
+      "listedWeightGrams": null,
+      "listedWeightBasis": null,
+      "netMetalWeightGrams": null,
+      "priceUsd": 1750,
+      "priceBasis": "Setting only.",
+      "officialProductUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-14K-Gold-BE1D1009-76788518/",
+      "retrievedDate": "2026-10-22",
+      "purityStamp": null,
+      "makersMark": null,
+      "independentVerification": null,
+      "listingDocumentation": [],
+      "flags": [
+        "PHYSICAL_MARKS_UNVERIFIED",
+        "LISTED_WEIGHT_MISSING",
+        "NET_WEIGHT_UNVERIFIED",
+        "SOLID_GOLD_NOT_STATED",
+        "INDEPENDENT_TEST_REQUIRED",
+        "SETTING_ONLY"
+      ],
+      "evidence": [
+        {
+          "fields": [
+            "name"
+          ],
+          "quote": "Andrea Bezel Prong Ring in 14K Yellow Gold",
+          "sourceUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-14K-Gold-BE1D1009-76788518/"
+        },
+        {
+          "fields": [
+            "officialItemNumber",
+            "karat",
+            "metalColor",
+            "style",
+            "category"
+          ],
+          "quote": "Style: BE1D1009-14KY; Metal: 14K Yellow Gold; Width: 3 mm; Setting: Claw Prong",
+          "sourceUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-14K-Gold-BE1D1009-76788518/"
+        },
+        {
+          "fields": [
+            "priceUsd",
+            "priceBasis"
+          ],
+          "quote": "$1,750(Setting Only)",
+          "sourceUrl": "https://www.brilliantearth.com/Andrea-Bezel-Prong-Ring-14K-Gold-BE1D1009-76788518/"
+        }
+      ]
+    }
+  ],
+  "evidenceConventions": "Quotes preserve source wording with whitespace and Markdown emphasis normalized. A semicolon joins separate, non-contiguous excerpts from the same official page; it never joins different sources."
+}

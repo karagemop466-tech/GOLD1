@@ -20,6 +20,7 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html">Dashboard</a>
       <a href="rings.html">All rings</a>
+      <a href="weights.html">Weight & melt</a>
       <a href="calculator.html">Gold calculator</a>
       <a href="checklist.html">Checklist</a>
       <a href="sources.html" aria-current="page">Sources</a>
@@ -236,41 +237,47 @@
         <td><span class="chip ok">retrieved</span></td>
         <td><a class="src" href="https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
-        <td><strong>Ross-Simons</strong></td>
-        <td class="small">official product page</td>
-        <td>All 17 Ross-Simons rows re-read page by page on 2026-10-22; 7 published gold weights captured, 3 stale price highs corrected</td>
+        <td><strong>Ross-Simons, Mejuri, With Clarity (product pages)</strong></td>
+        <td class="small">official product page, re-read</td>
+        <td>Second read of 7 product pages on 2026-10-22 in pass P12: prices, karats, published Gold Weight lines, setting-only structure and Mejuri return exclusions</td>
         <td><span class="chip ok">retrieved</span></td>
         <td><a class="src" href="https://www.ross-simons.com/products/571221" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
-        <td><strong>With Clarity</strong></td>
-        <td class="small">official storefront search feed</td>
-        <td>All 5 With Clarity rows re-read: price_min/price_max and the Ring Setting Product tag</td>
+        <td><strong>gold-api.com</strong></td>
+        <td class="small">market data publisher</td>
+        <td>Second reading of the same feed: 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z); the later reading drives the melt arithmetic</td>
         <td><span class="chip ok">retrieved</span></td>
-        <td><a class="src" href="https://www.withclarity.com/search/suggest.json?q=classic+six+prong+solitaire&amp;resources%5Btype%5D=product&amp;resources%5Blimit%5D=4" target="_blank" rel="noopener nofollow">open ↗</a></td>
+        <td><a class="src" href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
-        <td><strong>Aurate</strong></td>
-        <td class="small">official storefront search feed</td>
-        <td>All 5 Aurate rows re-read: price_min/price_max, tags and published weights</td>
+        <td><strong>With Clarity</strong></td>
+        <td class="small">official product page</td>
+        <td>5 rows re-read from the storefront feed; setting prices confirmed, no metal weight published</td>
         <td><span class="chip ok">retrieved</span></td>
-        <td><a class="src" href="https://auratenewyork.com/search/suggest.json?q=2ct+oval+lab+grown+diamond+bezel+ring&amp;resources%5Btype%5D=product&amp;resources%5Blimit%5D=1" target="_blank" rel="noopener nofollow">open ↗</a></td>
+        <td><a class="src" href="https://www.withclarity.com/search/suggest.json?q=solitaire" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Aurate New York</strong></td>
+        <td class="small">official product page</td>
+        <td>5 rows re-read from the storefront feed; published weight range 2.6-4g confirmed on Modern Cigar Band</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://auratenewyork.com/search/suggest.json?q=ring" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
         <td><strong>Anna Sheffield</strong></td>
-        <td class="small">official storefront search feed</td>
-        <td>Hazeline and Bea three-stone price ranges re-read; the Bea 1.50ct north-south page was re-read directly and no longer shows a price</td>
+        <td class="small">official product page</td>
+        <td>3 rows re-read; the Bea solitaire page no longer displays any price, so the row is published as unverified</td>
         <td><span class="chip ok">retrieved</span></td>
-        <td><a class="src" href="https://www.annasheffield.com/search/suggest.json?q=hazeline+cushion+champagne&amp;resources%5Btype%5D=product&amp;resources%5Blimit%5D=1" target="_blank" rel="noopener nofollow">open ↗</a></td>
+        <td><a class="src" href="https://www.annasheffield.com/products/bea-solitaire-ring-14k-gold-champagne-diamond-1-50ct" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
         <td><strong>Blue Nile</strong></td>
         <td class="small">official product page</td>
-        <td>All 8 Blue Nile rows re-read page by page on 2026-10-22; two pages contradict themselves on karat (F34)</td>
+        <td>8 setting pages re-read; two pages contradict themselves on karat in the details panel</td>
         <td><span class="chip ok">retrieved</span></td>
-        <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" target="_blank" rel="noopener nofollow">open ↗</a></td>
+        <td><a class="src" href="https://www.bluenile.com/build-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-203284" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
         <td><strong>Mejuri</strong></td>
         <td class="small">official product page</td>
-        <td>All 4 Mejuri rows re-read page by page on 2026-10-22; each confirms &quot;14k solid gold&quot; and its price</td>
+        <td>4 rows re-read; all four state &#39;Solid Yellow Gold (14k)&#39; on the page</td>
         <td><span class="chip ok">retrieved</span></td>
-        <td><a class="src" href="https://mejuri.com/products/diamond-eternity-band?Material=Solid+Yellow+Gold+%2814k%29&amp;Stone=Natural+Diamond" target="_blank" rel="noopener nofollow">open ↗</a></td>
+        <td><a class="src" href="https://mejuri.com/shop/rings?Material=Solid+Yellow+Gold+(14k)" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr>
     </tbody>
   </table>

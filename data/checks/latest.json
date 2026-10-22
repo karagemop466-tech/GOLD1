@@ -1,14 +1,14 @@
 {
-  "pass": "P19",
-  "generated_at": "2026-10-22T23:41:45Z",
+  "pass": "P21",
+  "generated_at": "2026-10-22T23:48:51Z",
   "builder_version": "1.0.0",
   "summary": {
-    "total": 15,
-    "passed": 15,
+    "total": 19,
+    "passed": 19,
     "failed": 0,
-    "assertions": 2469,
+    "assertions": 3337,
     "rows": 43,
-    "pages": 74
+    "pages": 75
   },
   "groups": [
     {
@@ -120,7 +120,7 @@
       "total_assertions": 0,
       "failures": [],
       "failure_count": 0,
-      "pages_checked": 74
+      "pages_checked": 75
     },
     {
       "id": "S12",
@@ -144,6 +144,46 @@
     },
     {
       "id": "S14",
+      "name": "Weight traceability",
+      "description": "A weight in grams is only allowed when the grams appear in the evidence text captured from the seller, and the blank/known flags must agree with the stored value.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S15",
+      "name": "Re-verification ledger",
+      "description": "Anything the site calls \"re-verified\" must have a matching ledger entry with the same URL, a date and a quoted line, so the re-read can be audited by a human.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S16",
+      "name": "No invented dollar amounts",
+      "description": "Every dollar figure that appears on any generated page must trace to a value in the data files or to a formula computed from them. A price in the prose that exists nowhere in the data is treated as fabricated.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S17",
+      "name": "Data age",
+      "description": "A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S18",
       "name": "Unverified values are published as unverified",
       "description": "A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.",
       "passed": 1,
@@ -153,7 +193,7 @@
       "failure_count": 0
     },
     {
-      "id": "S15",
+      "id": "S19",
       "name": "Unverified prices never render as numbers",
       "description": "A row whose price could not be reproduced must print \"— unverified\" wherever a price would go.",
       "passed": 1,

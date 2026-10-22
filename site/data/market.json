@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "retrievedDate": "2026-10-22",
+  "source": {
+    "publisher": "Kitco Metals Inc.",
+    "pageTitle": "Gold Price Today | Price of Gold Per Ounce | 24 Hour Spot Chart",
+    "panel": "Live GoldPrice",
+    "url": "https://www.kitco.com/charts/gold",
+    "sourceTimestamp": "Oct 22, 2026 - 19:11 NY Time",
+    "currency": "USD",
+    "bidPerTroyOunce": 4025.0,
+    "askPerTroyOunce": 4027.0,
+    "displayedBidPerGram": 129.41,
+    "quotes": [
+      "Oct 22, 2026 - 19:11 NY Time; Bid 4,025.00 USD; Ask 4,027.00; ounce 4,025.00; gram 129.41",
+      "Estimated metal value only, retail premiums may apply to physical products.",
+      "Based on a Kitco Gold Spot Bid, one (1) troy ounce of 24K Gold is worth approximately $4,025.00."
+    ],
+    "snapshotWarning": "This is a dated bid-side reference snapshot, not a live feed, dealer quote, resale offer, or jewelry appraisal.",
+    "panelVarianceNote": "Other dynamically updated text on the same page showed $4,024.60/troy oz and $129.39/g at 7:10 p.m. ET, and a footer described the main panel as of 7:10 p.m. EDT. The calculator uses only the named Live GoldPrice panel's 19:11 NY bid and records the variance rather than blending values."
+  },
+  "conversion": {
+    "gramsPerTroyOunce": 31.1034768,
+    "sourceUrl": "https://www.kitco.com/charts/gold",
+    "quote": "A troy ounce is 31.1034768 grams — about 10% heavier than the avoirdupois ounce used for groceries."
+  },
+  "formula": {
+    "referencePerGram": "bidPerTroyOunce / gramsPerTroyOunce",
+    "nominalFineGoldGrams": "listedWeightGrams * karat / 24",
+    "nominalReferenceUsd": "nominalFineGoldGrams * referencePerGram",
+    "rounding": "Retain full precision during arithmetic and round only displayed results. Cross-check the rounded 24K per-gram result to the source-displayed $129.41/g.",
+    "actualNetMetalWeightRule": "Never substitute listedWeightGrams for verified net metal weight. Catalog netMetalWeightGrams and actual raw-gold value remain blank."
+  },
+  "benchmarkMethodology": {
+    "publisher": "London Bullion Market Association",
+    "url": "https://www.lbma.org.uk/prices-and-data/about-lbma-daily-auction-prices",
+    "quote": "The internationally recognised benchmark price for gold delivered in London; Set twice daily (at 10:30 and 15:00 London UK time) in US dollars per troy ounce; Administered independently by ICE Benchmark Administration (IBA).",
+    "use": "Methodology context only. No current LBMA numeric price was obtained or used in the calculator."
+  }
+}

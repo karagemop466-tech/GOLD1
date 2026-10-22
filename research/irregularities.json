@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "retrievedDate": "2026-10-22",
+  "irregularities": [
+    {
+      "id": "physical-marks-unverified",
+      "severity": "blocks-purchase-clearance",
+      "status": "open",
+      "title": "Physical purity stamp and maker’s mark are not verified",
+      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589", "bn-502690y14", "bn-501130y14", "bn-500000y14", "bn-501140y", "be-BE1199H6-18KY", "be-BE1D1009-18KY", "be-BE1D1009-14KY"],
+      "finding": "No readable, item-specific physical purity-stamp plus maker’s-mark evidence was verified on the official listings. Product photography was not treated as hallmark proof.",
+      "action": "Request close-up, item-specific hallmark photographs and inspect the delivered piece. A karat stamp alone is not proof; independently verify before the return window closes.",
+      "sourceBasis": "Absence finding after line-by-line review of every officialProductUrl in research/candidates.json."
+    },
+    {
+      "id": "listed-weight-is-not-net-gold",
+      "severity": "blocks-raw-gold-claim",
+      "status": "open",
+      "title": "Listed weight does not establish net metal weight",
+      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589"],
+      "finding": "The six listings state a gram weight and warn that sizing can change it. They do not state whether gemstones are included in that weight.",
+      "action": "Keep netMetalWeightGrams blank. Any karat/24 calculation must be labeled nominal listed-weight math, never actual raw-gold content or a valuation.",
+      "sourceBasis": "Each affected candidate's listedWeightGrams and listedWeightBasis evidence in research/candidates.json."
+    },
+    {
+      "id": "solid-and-weight-not-stated",
+      "severity": "blocks-purchase-clearance",
+      "status": "open",
+      "title": "Explicit solid-gold wording and gram weight are absent",
+      "affectedCandidateIds": ["bn-502690y14", "bn-501130y14", "bn-500000y14", "bn-501140y", "be-BE1199H6-18KY", "be-BE1D1009-18KY", "be-BE1D1009-14KY"],
+      "finding": "These official pages state karat and gold color, but the audit did not find explicit solid-gold wording or a gram weight. Karat wording alone was not promoted to a solid-gold claim.",
+      "action": "Leave solidGold and all weight fields blank. Obtain written solid-gold confirmation and a metal-only weight for the exact configuration.",
+      "sourceBasis": "Absence finding after line-by-line review of every affected officialProductUrl in research/candidates.json."
+    },
+    {
+      "id": "trax-71345-url-item-conflict",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "URL slug and official item number differ",
+      "affectedCandidateIds": ["trax-71345"],
+      "finding": "The official URL slug ends in 70845, while the official page and item specifics identify item 71345.",
+      "action": "Use item 71345 in seller correspondence and confirm the item number on the invoice and appraisal before payment.",
+      "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845",
+      "quote": "Item #71345; Item number71345"
+    },
+    {
+      "id": "size-price-surcharges",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "Displayed base price is not the price of every size",
+      "affectedCandidateIds": ["trax-70114", "trax-71851", "trax-66233", "trax-70589"],
+      "finding": "These official pages display size-specific surcharges next to the base price.",
+      "action": "Do not treat the base price as a final configured quote. Recheck the exact size, metal color, stone and final total before payment.",
+      "sourceBasis": "Each affected candidate's priceUsd and priceBasis evidence in research/candidates.json."
+    },
+    {
+      "id": "mixed-metal-components",
+      "severity": "blocks-raw-gold-claim",
+      "status": "open",
+      "title": "Some settings include a different prong metal",
+      "affectedCandidateIds": ["bn-500000y14", "be-BE1199H6-18KY"],
+      "finding": "Blue Nile item 500000y14 lists platinum prongs. Brilliant Earth style BE1199H6-18KY lists 14K white-gold prongs on an 18K yellow-gold setting.",
+      "action": "Do not apply one karat fraction to an entire future weight. Request component-level metal weights or have a jeweler assess the actual piece.",
+      "sourceBasis": "Each affected candidate's style evidence in research/candidates.json."
+    },
+    {
+      "id": "be-14k-six-prong-currency-conflict",
+      "severity": "excluded-from-usd-catalog",
+      "status": "excluded",
+      "title": "USD selector conflicts with euro price",
+      "affectedCandidateIds": [],
+      "finding": "The official Six-Prong Petite 14K page displayed USD in the selector but €720.00 as the setting price and showed EUR in the currency controls.",
+      "action": "Excluded from the USD catalog. No currency conversion or USD relabeling was performed. Recheck the official checkout currency manually before any future inclusion.",
+      "sourceUrl": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-14K-Gold-BE1199H6-76788556/",
+      "quote": "USD; six-prong petite comfort fit 1.5mm solitaire-€‌720.00; €‌720.00(Setting Only); EURCADAUDGBP"
+    },
+    {
+      "id": "trax-bbb-search-conflict",
+      "severity": "source-quality-warning",
+      "status": "open",
+      "title": "BBB search summary was not reproducible on the direct profile",
+      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589"],
+      "finding": "A discovery search summary exposed a letter grade and complaint counts that the direct BBB profile did not reproduce. Direct pages confirmed non-accreditation and the complaint counts recorded in research/sellers.json, but did not expose a letter grade.",
+      "action": "The letter grade remains blank and unverified. Search snippets are excluded as evidence; manually review the live BBB profile.",
+      "sourceUrl": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/traxnyc-corp-0121-97319",
+      "quote": "This business is NOT BBB Accredited."
+    },
+    {
+      "id": "trax-chargeback-clause",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "Seller policy discusses chargebacks and disputes",
+      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589"],
+      "finding": "TraxNYC's policy says initiating a chargeback instead of following its return process violates purchase terms and that it may submit records to contest disputes.",
+      "action": "Read the clause and card issuer terms before payment. This dashboard records the seller wording and makes no legal conclusion about cardholder rights.",
+      "sourceUrl": "https://traxnyc.com/policies/refund-policy",
+      "quote": "Customers agree that initiating a chargeback or payment dispute in lieu of following this Returns & Refunds Policy constitutes a violation of purchase terms."
+    },
+    {
+      "id": "be-return-clock",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "Return clock can start before delivery",
+      "affectedCandidateIds": ["be-BE1199H6-18KY", "be-BE1D1009-18KY", "be-BE1D1009-14KY"],
+      "finding": "Brilliant Earth's policy starts the return/exchange timeline when the purchase is available for shipment or pickup, not upon delivery.",
+      "action": "Get the exact start date in writing and arrange independent inspection immediately after delivery; do not assume 30 days from receipt.",
+      "sourceUrl": "https://www.brilliantearth.com/30-Day-Returns/",
+      "quote": "Please note our return and exchange policy timelines begin when your purchase is available for shipment or pickup."
+    }
+  ]
+}
