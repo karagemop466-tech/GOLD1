@@ -1,136 +1,294 @@
 {
-  "registry_updated": "2026-10-22",
+  "as_of": "2026-10-22",
+  "policy": "A value is only allowed in the tables if it is present in one of these primary sources. Sources that are not primary (round-ups, affiliate lists, review aggregators, search snippets) are never used for a value.",
   "sources": [
     {
-      "id": "SRC-ECFR-23",
-      "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries (eCFR, current)",
+      "id": "rs-feed-gold",
+      "publisher": "Ross-Simons",
+      "type": "official product feed",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold/products.json?limit=250",
+      "verified": "Product titles, exact listed prices and metal statements for Ross-Simons gold rings",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-feed-yellow",
+      "publisher": "Ross-Simons",
+      "type": "official product feed",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold-yellow-gold/products.json?limit=250",
+      "verified": "Additional Ross-Simons yellow gold ring products and prices",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-search-bands",
+      "publisher": "Ross-Simons",
+      "type": "official storefront search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=14kt%20gold%20band&resources[type]=product&resources[limit]=6",
+      "verified": "14K band listings 571221, 571222, 571223, 571213, 879968, 999230",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-search-diamond",
+      "publisher": "Ross-Simons",
+      "type": "official storefront search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=diamond%20engagement%20ring%2014kt&resources[type]=product&resources[limit]=5",
+      "verified": "Lab-grown engagement rings 991907, 991908, 993512; bridal set 864785; setting 943668",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-search-estate",
+      "publisher": "Ross-Simons",
+      "type": "official storefront search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=estate%2014kt%20gold%20ring&resources[type]=product&resources[limit]=5",
+      "verified": "Estate rings 242556, 254575, 245300, 960952, 240912",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-search-solitaire",
+      "publisher": "With Clarity",
+      "type": "official storefront search feed",
+      "url": "https://www.withclarity.com/search/suggest.json?q=solitaire&resources[type]=product&resources[limit]=10",
+      "verified": "Solitaire setting IDs and price ranges; tag \"Ring Setting Product\"",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-search-sapphire",
+      "publisher": "With Clarity",
+      "type": "official storefront search feed",
+      "url": "https://www.withclarity.com/search/suggest.json?q=sapphire%20engagement%20ring&resources[type]=product&resources[limit]=6",
+      "verified": "Gerbera created-sapphire ring price range and description",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-search-engagement",
+      "publisher": "Anna Sheffield",
+      "type": "official storefront search feed",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=10",
+      "verified": "Bea Three Stone and Eleonore listings, prices, metal statements",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-search-solitaire",
+      "publisher": "Anna Sheffield",
+      "type": "official storefront search feed",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=solitaire%20engagement%20ring&resources[type]=product&resources[limit]=5",
+      "verified": "Bea Solitaire and Hazeline listings, prices, metal statements",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-search-engagement",
+      "publisher": "Aurate",
+      "type": "official storefront search feed",
+      "url": "https://auratenewyork.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=10",
+      "verified": "Lab-grown bezel rings, price ranges, metal tags",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-search-band",
+      "publisher": "Aurate",
+      "type": "official storefront search feed",
+      "url": "https://auratenewyork.com/search/suggest.json?q=14k%20gold%20band&resources[type]=product&resources[limit]=5",
+      "verified": "Modern Cigar Band 14K variant price and published weight range; Diamond X Ring 14K variant price",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-return-policy",
+      "publisher": "Ross-Simons",
+      "type": "official policy page",
+      "url": "https://www.ross-simons.com/policies/refund-policy",
+      "verified": "30-day return window from receipt; resized-by-another-jeweler exclusion; QA/gemologist inspection; phone 800-835-0919; Cranston RI return address",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-return-policy",
+      "publisher": "Aurate",
+      "type": "official policy page",
+      "url": "https://auratenewyork.com/policies/refund-policy",
+      "verified": "14-day refund/exchange after fulfillment (US); 30-day exchanges; engraved and international sales final; care@auratenewyork.com",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-return-policy",
+      "publisher": "With Clarity",
+      "type": "official policy page",
+      "url": "https://www.withclarity.com/policies/refund-policy",
+      "verified": "30 days from receipt; resized/repaired by another jeweller = no return; diamond upgrades excluded; $250 fee for a missing certificate; one return per order",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-return-policy",
+      "publisher": "Anna Sheffield",
+      "type": "official policy page",
+      "url": "https://www.annasheffield.com/policies/refund-policy",
+      "verified": "Two-week return window; 10% restocking fee capped at $500; engraved/bespoke final sale; buyer pays shipping; support email info@annasheffield.com; cancellation fee once production starts",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-meta",
+      "publisher": "Aurate",
+      "type": "official store metadata",
+      "url": "https://auratenewyork.com/meta.json",
+      "verified": "Store identity, currency USD, published product count",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-meta",
+      "publisher": "With Clarity",
+      "type": "official store metadata",
+      "url": "https://www.withclarity.com/meta.json",
+      "verified": "Store identity, city Long Island City NY, USD, ship-to countries",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-meta",
+      "publisher": "Anna Sheffield",
+      "type": "official store metadata",
+      "url": "https://www.annasheffield.com/meta.json",
+      "verified": "Store identity, city New York NY, USD, ships worldwide",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "gold-api",
+      "publisher": "gold-api.com",
+      "type": "market data feed",
+      "url": "https://api.gold-api.com/price/XAU",
+      "verified": "Gold spot USD 4,028.10/ozt at 2026-10-22T23:01:42Z",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "yahoo-comex",
+      "publisher": "Yahoo Finance",
+      "type": "market data feed",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+      "verified": "COMEX gold futures GC=F last 4,043.00 USD/ozt, market time epoch 1792709863",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "ecfr-16-23",
+      "publisher": "US Government (eCFR, Office of the Federal Register)",
+      "type": "regulation",
       "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "publisher": "U.S. Government (eCFR / Office of the Federal Register)",
-      "type": "regulation",
-      "used_for": "Legal basis for gold quality marks, the 10-karat minimum for describing an item as gold, and §23.10 quality-mark guidance.",
-      "verification": "Official index entry retrieved in this session; §23.10 and §23.4 excerpts confirmed through the Federal Register final rule (SRC-FR-2018). Full sections were not read line-by-line — see flag F-11.",
-      "status": "official-partial"
+      "verified": "16 CFR Part 23 \"Guides for the Jewelry, Precious Metals, and Pewter Industries\" exists, up to date as of 2026-10-21, and contains § 23.3 \"Misrepresentation as to gold content\", § 23.4 \"Misuse of the word vermeil\", § 23.10 \"Additional guidance for the use of quality marks\" and § 23.18 \"Misrepresentation of weight and total weight\". Section text is not quoted here.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-FR-2018",
-      "title": "Federal Register 83 FR 40659 — Guides for the Jewelry, Precious Metals, and Pewter Industries (final revisions, 2018-08-16)",
-      "url": "https://www.federalregister.gov/documents/2018/08/16/2018-17454/guides-for-the-jewelry-precious-metals-and-pewter-industries",
-      "publisher": "U.S. Government (Federal Register)",
-      "type": "regulation",
-      "used_for": "Verbatim basis for: quality-mark definition (§23.10); Note 2 to §23.10 — the National Stamping Act requires the trademark or name of the manufacturer/dealer to be applied next to a quality mark; §23.4 — gold descriptions below 10 karat are improper.",
-      "quoted": "“The National Stamping Act provides that any person, firm, corporation, or association, being a manufacturer or dealer ... who applies or causes to be applied a quality mark ... shall apply to the article the trademark or name of such person.” (Note 2 to § 23.10)",
-      "verification": "Official page retrieved in this session; excerpt above read from the retrieved document.",
-      "status": "official"
+      "id": "ftc-guide-rejected",
+      "publisher": "US Federal Trade Commission",
+      "type": "regulation guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide",
+      "verified": "Nothing - this URL returned a 404 page on 2026-10-22, so it is NOT used as a source.",
+      "status": "rejected (404)",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-FTC-GUIDES",
-      "title": "FTC — Jewelry, Precious Metals, and Pewter Industries guides (business guidance)",
-      "url": "https://www.ftc.gov/business-guidance/resources/jewelry-precious-metals-and-pewter-industries-guides",
-      "publisher": "Federal Trade Commission",
-      "type": "regulator guidance",
-      "used_for": "Pointer to the Guides for a general audience.",
-      "verification": "URL not opened in this session (a guessed FTC path returned 404). Cite SRC-ECFR-23 and SRC-FR-2018 for the text instead. — flag F-11",
-      "status": "unverified"
+      "id": "lbma-rejected",
+      "publisher": "LBMA",
+      "type": "market data",
+      "url": "https://prices.lbma.org.uk/json/gold_pm.json",
+      "verified": "Nothing - the request failed (HTTP 500) on 2026-10-22, so it is NOT used as a source.",
+      "status": "rejected (error)",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-GOLDPRICE",
-      "title": "GoldPrice.org — live spot gold quote (USD/troy ounce) with NY timestamp",
-      "url": "https://goldprice.org/",
-      "publisher": "GoldPrice.org",
-      "type": "commercial market data",
-      "used_for": "Single point-in-time spot reference recorded in data/spot-gold.json. Not a government or exchange feed.",
-      "verification": "Retrieved 2026-10-22; page displayed “Spot Gold Price: USD 4,026.79 / Ounce ... Oct 22nd, 2026 at 07:07 NY Time”. A second ticker on the same page showed 4,025.71 — see flag F-13.",
-      "status": "verified-single-source"
+      "id": "bluenile-rejected",
+      "publisher": "Blue Nile",
+      "type": "retailer page",
+      "url": "https://www.bluenile.com/engagement-rings/solitaire",
+      "verified": "Nothing - this URL returned a 404 page on 2026-10-22, so no Blue Nile row was created.",
+      "status": "rejected (404)",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-BN-LIST",
-      "title": "Blue Nile — Solitaire Engagement Rings (category listing, 311 results)",
+      "id": "setandstones-rejected",
+      "publisher": "Set & Stones",
+      "type": "retailer catalogue",
+      "url": "https://setandstones.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=8",
+      "verified": "Checked and EXCLUDED: the engagement-ring results returned were gold-filled / gold-plated pieces, which fail the solid-gold requirement.",
+      "status": "rejected (plated metal)",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bn-solitaire-list",
+      "publisher": "Blue Nile",
+      "type": "official category listing",
       "url": "https://www.bluenile.com/engagement-rings/styles/solitaire",
-      "publisher": "Blue Nile",
-      "type": "retailer listing",
-      "used_for": "Name + setting price + product URL for rows BN-14K-CCF-203284, BN-14K-TC-203288, BN-14K-LEAF-192442, BN-14K-BEZEL-296643, BN-14K-RIDGE-304497.",
-      "verification": "Listing page retrieved 2026-10-22; each price read directly from the product card.",
-      "status": "verified-listing"
+      "verified": "Setting prices for 5 Blue Nile solitaire settings (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-BN-203272",
-      "title": "Blue Nile — Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
-      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+      "id": "bn-product-18k",
       "publisher": "Blue Nile",
-      "type": "retailer product page",
-      "used_for": "BN-14K-6P-203272 — $1,000 setting price; stock no. 501140y14; 1.90 mm width; settable 0.20–8.00 ct round/oval/marquise/pear.",
-      "verification": "Product page retrieved 2026-10-22.",
-      "status": "verified"
-    },
-    {
-      "id": "SRC-BN-194159",
-      "title": "Blue Nile — Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+      "type": "official product page",
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
-      "publisher": "Blue Nile",
-      "type": "retailer product page",
-      "used_for": "BN-18K-6P-194159 — $1,240 setting price; stock no. 501140y; 1.90 mm width.",
-      "verification": "Product page retrieved 2026-10-22.",
-      "status": "verified"
+      "verified": "18K setting price 1,240; contact phone; warranty text (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-BN-203268",
-      "title": "Blue Nile — Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
-      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
-      "publisher": "Blue Nile",
-      "type": "retailer product page",
-      "used_for": "BN-18K-PN-203268 — $1,420 setting price; stock no. 501120y; 1.80 mm width. Page description says “crafted in polished 14k white gold” — flag F-01.",
-      "verification": "Product page retrieved 2026-10-22.",
-      "status": "verified-with-flag"
-    },
-    {
-      "id": "SRC-MEJ-DEB",
-      "title": "Mejuri — Diamond Eternity Band",
+      "id": "mejuri-product",
+      "publisher": "Mejuri",
+      "type": "official product page",
       "url": "https://mejuri.com/products/diamond-eternity-band",
-      "publisher": "Mejuri",
-      "type": "retailer product page",
-      "used_for": "MEJ-DEB — From $1,100 (14k yellow gold, natural diamond); 0.532 ct average; 33–42 diamonds; 1.5 mm band; SI–I clarity; GHI colour; 30-day returns.",
-      "verification": "Product page retrieved 2026-10-22 (URL with Material=Solid Yellow Gold (14k) & Stone=Natural Diamond applied by the site).",
-      "status": "verified"
+      "verified": "Price from 1,100; explicit 'solid gold' wording (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     },
     {
-      "id": "SRC-MEJ-DB",
-      "title": "Mejuri — Diamonds Band",
-      "url": "https://mejuri.com/products/diamonds-band",
-      "publisher": "Mejuri",
-      "type": "retailer product page",
-      "used_for": "MEJ-DB — $648 (14k yellow gold, natural diamond); minimum carat weight 0.07 ct; 1.8 mm stones; 2.8 mm shank; SI–I; GHI.",
-      "verification": "Product page retrieved 2026-10-22.",
-      "status": "verified"
-    },
-    {
-      "id": "SRC-MEJ-BDE",
-      "title": "Mejuri — Bold Diamond Eternity Ring",
-      "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
-      "publisher": "Mejuri",
-      "type": "retailer product page",
-      "used_for": "MEJ-BDE — From $2,900 on the 14k white gold / natural diamond selection; 1.15–1.57 ct; 23 diamonds; 2.6 mm band; SI–I; GHI.",
-      "verification": "Product page retrieved 2026-10-22 with Material=Solid White Gold (14k). Price is material- and size-dependent — flag F-03.",
-      "status": "verified"
-    },
-    {
-      "id": "SRC-MEJ-2MM",
-      "title": "Mejuri — 2mm Smooth Band",
-      "url": "https://mejuri.com/products/2mm-smooth-band",
-      "publisher": "Mejuri",
-      "type": "retailer product page",
-      "used_for": "MEJ-2MM — $498 (14k yellow gold); 2 mm width; 1.3 mm thickness.",
-      "verification": "Product page retrieved 2026-10-22 with Material=Solid Yellow Gold (14k).",
-      "status": "verified"
-    },
-    {
-      "id": "SRC-BE-121H6",
-      "title": "Brilliant Earth — Classic Six-Prong Solitaire Ring in 18K Yellow Gold",
-      "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "id": "be-product",
       "publisher": "Brilliant Earth",
-      "type": "retailer product page",
-      "used_for": "BE-18K-6P-121H6 — $1,090 (setting only); style BE121H6-18KY; 2.5 mm width; six-prong; prong metal 14K white gold; free shipping & returns; free 1-year resizing.",
-      "verification": "Product page retrieved 2026-10-22.",
-      "status": "verified"
+      "type": "official product page",
+      "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "verified": "Setting price 1,090; 18K metal spec (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "session-6f8c2bcb-archive",
+      "publisher": "GOLD1 first research pass",
+      "type": "archived dataset",
+      "url": "https://github.com/karagemop466-tech/GOLD1/blob/main/data/archive/session-6f8c2bcb/rings.json",
+      "verified": "Original 13 rows and 15 flags from session arena-6f8c2bcb-gold1, preserved unmodified",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "third-pass-dataset",
+      "publisher": "GOLD1 third research pass",
+      "type": "archived dataset",
+      "url": "https://github.com/karagemop466-tech/GOLD1/blob/main/data/rings_c2bbe753.json",
+      "verified": "14 rows incl. Tiffany & Co., Cartier, James Allen and 2 Cartier karats explicitly marked unverified — preserved, not merged (see F30)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "tiffany-setting",
+      "publisher": "Tiffany & Co.",
+      "type": "official product page",
+      "url": "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
+      "verified": "Recorded by the third pass: 'The Tiffany Setting Engagement Ring in 18k Yellow Gold — 40318275 — Starting from $1,600'. Not re-fetched in this pass, so not used in the table.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     }
   ]
 }

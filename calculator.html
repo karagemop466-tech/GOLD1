@@ -3,114 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gold calculator · GOLD1</title>
-<meta name="description" content="Gold melt-value calculator: weight, karat and spot price, with the recorded spot reading.">
-<link rel="stylesheet" href="assets/style.css">
+<title>Gold value calculator · GOLD1</title>
+<meta name="description" content="Work out how much gold is actually in a ring: weight × karat purity × the published gold price, with a melt-multiple check.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="index.html"><span class="brand-dot"></span>GOLD<span class="brand-suffix">/ ring research</span></a>
-    <nav class="site-nav" aria-label="Sections"><a href="index.html" class="">Overview</a><a href="solitaire.html" class="">Solitaire settings</a><a href="bands.html" class="">Bands</a><a href="retailers.html" class="">Retailers</a><a href="calculator.html" class="active">Gold calculator</a><a href="verification.html" class="">Verification</a><a href="flagged.html" class="">Flagged (15)</a></nav>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">Au</span>
+      <span class="brand-text"><strong>GOLD1</strong><small>solid gold engagement ring research</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Dashboard</a>
+      <a href="rings.html">All rings</a>
+      <a href="calculator.html" aria-current="page">Gold calculator</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged</a>
+      <a href="methodology.html">Method</a>
+      <a href="checks.html">Checks</a>
+    </nav>
   </div>
 </header>
-<main id="main" class="wrap">
+<main id="main">
 
-<section class="hero hero-tight">
-  <p class="eyebrow">Gold calculator</p>
-  <h1>What is the gold actually worth?</h1>
-  <p class="lede">Arithmetic only: weight × purity × spot. It cannot tell you whether a ring is a good buy, and it refuses to run on guessed numbers — you need a real gram weight from the seller.</p>
-</section>
+<section class="wrap section">
+  <h1>Gold value calculator</h1>
+  <p class="lede">Two numbers decide whether a gold ring is fairly priced: how many grams it weighs, and what gold is worth that day. This calculator does the arithmetic. It does not guess any weight — you have to get that from the seller or a scale.</p>
 
-<section class="calc-layout">
-  <form class="calc-card" id="gold-form" novalidate>
-    <h2>Inputs</h2>
-    <div class="field">
-      <label for="weight">Ring weight <span class="unit">grams</span></label>
-      <input type="number" id="weight" name="weight" min="0" step="0.01" inputmode="decimal" placeholder="e.g. 4.2">
-      <p class="hint">From the seller, in writing, or from a jeweler's scale. Not published on any listing in this dataset.</p>
-    </div>
-    <div class="field">
-      <label for="karat">Purity</label>
-      <select id="karat" name="karat">
-        <option value="10">10K — 41.7% fine gold</option>
-        <option value="14" selected>14K — 58.3% fine gold</option>
-        <option value="18">18K — 75.0% fine gold</option>
-        <option value="22">22K — 91.7% fine gold</option>
-        <option value="24">24K — 99.9%+ fine gold</option>
-        <option value="custom">Other — enter fineness %</option>
-      </select>
-      <input type="number" id="custom-purity" class="hidden" min="1" max="100" step="0.1" placeholder="Fineness % e.g. 58.5" aria-label="Custom fineness percent">
-      <p class="hint">Karat is a 24-part scale: fineness = karat ÷ 24.</p>
-    </div>
-    <div class="field">
-      <label for="spot">Spot gold price <span class="unit">USD per troy ounce</span></label>
-      <input type="number" id="spot" name="spot" min="1" step="0.01" value="4026.79" inputmode="decimal">
-      <p class="hint">Default is the recorded reading: <strong>$4,026.79</strong> on Oct 22nd, 2026 at 07:07 NY Time from <a href="https://goldprice.org/" target="_blank" rel="noopener">GoldPrice.org</a>. Edit it to today's number — the result is stamped with whatever you enter.</p>
-    </div>
-    <div class="field">
-      <label for="paid">Price asked <span class="unit">USD · optional</span></label>
-      <input type="number" id="paid" name="paid" min="0" step="1" inputmode="decimal" placeholder="e.g. 1,100">
-      <p class="hint">Compare the asking price with the melt value to see the multiple.</p>
-    </div>
-    <button type="button" class="btn-ghost" id="calc-reset">Reset to recorded spot</button>
-  </form>
+  <div class="calc-grid">
+    <form class="card calc-form" id="calc-form">
+      <h2>Inputs</h2>
+      <label class="field"><span>Ring weight (grams)</span>
+        <input id="c-weight" type="number" min="0" step="0.01" value="3" required>
+        <small>Weigh the ring, or ask the seller. This is total metal weight, not carat weight of stones.</small>
+      </label>
+      <label class="field"><span>Karat</span>
+        <select id="c-karat">
+          <option value="10">10K — 41.7% gold</option><option value="14" selected>14K — 58.3% gold</option><option value="18">18K — 75.0% gold</option><option value="22">22K — 91.7% gold</option><option value="24">24K — 100.0% gold</option>
+        </select>
+      </label>
+      <label class="field"><span>Gold price (USD per troy ounce)</span>
+        <input id="c-spot" type="number" min="0" step="0.01" value="4028.10" required>
+        <small>Pre-filled with the published spot price at 2026-10-22T23:01:42Z. Replace it with today's price from the <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">source ↗</a>.</small>
+      </label>
+      <label class="field"><span>Asking price of the ring (USD)</span>
+        <input id="c-price" type="number" min="0" step="0.01" placeholder="optional">
+        <small>Leave blank to compute metal value only.</small>
+      </label>
+    </form>
 
-  <div class="calc-results" aria-live="polite">
-    <h2>Result</h2>
-    <div class="result-main">
-      <span class="result-label">Fine gold content</span>
-      <strong id="out-fine">—</strong>
-      <span class="result-sub" id="out-fine-sub">enter a weight to begin</span>
+    <div class="card calc-out" aria-live="polite">
+      <h2>Result</h2>
+      <div class="calc-line"><span>Pure gold content</span><strong id="o-pure">—</strong></div>
+      <div class="calc-line"><span>Gold value at this price</span><strong id="o-value">—</strong></div>
+      <div class="calc-line"><span>Value per gram of ring</span><strong id="o-pergram">—</strong></div>
+      <div class="calc-line"><span>Asking price ÷ gold value</span><strong id="o-multiple">—</strong></div>
+      <div id="o-verdict" class="verdict"></div>
+      <p class="sub">Formula: grams × (karat ÷ 24) × (price per troy ounce ÷ 31.1034768). Stones and labour are excluded, so real jewellery normally costs 2–6× its melt value. A multiple under 1 means the price is below the gold content — treat that as a red flag, not a bargain.</p>
     </div>
-    <div class="result-main">
-      <span class="result-label">Melt value at your spot price</span>
-      <strong id="out-value">—</strong>
-      <span class="result-sub" id="out-value-sub">not a valuation of the ring</span>
-    </div>
-    <div class="result-main">
-      <span class="result-label">Gold value as a share of the price</span>
-      <strong id="out-share">—</strong>
-      <span class="result-sub" id="out-share-sub">add a price to compare</span>
-    </div>
-    <div class="formula">
-      <p><strong>Formula</strong></p>
-      <p><code>fine gold (g) = weight (g) × (karat ÷ 24)</code></p>
-      <p><code>melt value = fine gold (g) ÷ 31.1034768 × spot (USD/oz)</code></p>
-      <p><code>share = melt value ÷ price asked</code></p>
-    </div>
-    <p class="fine">1 troy ounce = 31.1034768 grams exactly. Karat fractions (10/24, 14/24, 18/24) are arithmetic, not an assay.</p>
   </div>
-</section>
 
-<section class="block note-block warn-block">
-  <h2>Why the result is not a price opinion</h2>
-  <p>A ring's price includes fabrication, the setting, the stone, labour, duty, warranty and the retailer's margin. Melt value is what the gold alone would fetch as scrap. On a diamond ring the two numbers can sit far apart, and neither one is “the real price”.</p>
-  <p>Melt value is also <strong>not</strong> what a jeweler will pay: refining costs and trade margins apply.</p>
-</section>
-
-<section class="block">
-  <div class="block-head"><h2>A worked example — clearly hypothetical</h2>
-  <p>Not a listing in this dataset. No row in the dataset has a published weight, so this cannot be run on a real entry yet.</p></div>
-  <div class="table-scroll"><table class="data-table">
-    <thead><tr><th>Hypothetical ring</th><th class="num">Weight</th><th class="num">Fineness</th><th class="num">Fine gold</th><th class="num">Melt value</th></tr></thead>
+  <h2>Karat reference</h2>
+  <div class="table-wrap">
+  <table class="data-table compact">
+    <thead><tr><th>Mark</th><th class="num-col">Gold fraction</th><th class="num-col">Gold per gram at $4,028.10/ozt</th><th class="num-col">Gold in 3 g</th><th>Notes</th></tr></thead>
     <tbody>
-      <tr><td>14K band, hypothetical 4.00 g</td><td class="num">4.00 g</td><td class="num">58.33%</td><td class="num">2.333 g</td><td class="num">$302.08</td></tr>
-      <tr><td>18K band, hypothetical 4.00 g</td><td class="num">4.00 g</td><td class="num">75.00%</td><td class="num">3.000 g</td><td class="num">$388.39</td></tr>
+      <tr><td><strong>10K</strong></td><td class="num-col">41.7%</td><td class="num-col">$53.96</td><td class="num-col">$161.88</td><td class="small">41.7% gold. Hardest wearing of these, least gold.</td></tr><tr><td><strong>14K</strong></td><td class="num-col">58.3%</td><td class="num-col">$75.55</td><td class="num-col">$226.64</td><td class="small">58.3% gold. The US engagement-ring standard.</td></tr><tr><td><strong>18K</strong></td><td class="num-col">75.0%</td><td class="num-col">$97.13</td><td class="num-col">$291.39</td><td class="small">75% gold. Richer colour, softer than 14K.</td></tr><tr><td><strong>22K</strong></td><td class="num-col">91.7%</td><td class="num-col">$118.71</td><td class="num-col">$356.14</td><td class="small">Common in coins and South Asian jewellery.</td></tr><tr><td><strong>24K</strong></td><td class="num-col">100.0%</td><td class="num-col">$129.51</td><td class="num-col">$388.52</td><td class="small">Pure gold — too soft for daily-wear rings.</td></tr>
     </tbody>
-  </table></div>
-  <p class="fine">Computed with the recorded spot of $4,026.79/oz on Oct 22nd, 2026 at 07:07 NY Time. Change a weight in the calculator above and the numbers move; nothing here is stored as a fact about any real ring.</p>
-</section>
+  </table>
+  </div>
+  <p class="sub">Karat is a fraction of 24 by definition. Whether a piece may legally be marked a given karat is governed by 16 CFR Part 23 — see <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener nofollow">eCFR ↗</a>.</p>
 
+  <h2>Worked example from this list</h2>
+  <p>The Aurate Modern Cigar Band is the only listing here that publishes a weight: 2.6–4 g at 14K, listed at $1,308.00. That is $196.42–$302.18 of gold, or about 4.3× the top of the metal range. For a wide designer band that is a normal retail multiple, and it is checkable — which is the point.</p>
+</section>
 </main>
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p><strong>No invented numbers.</strong> Every price here was read from the retailer's own page on 2026-10-22 and is timestamped. Blank cells are blank because the seller does not publish the value — not because it was estimated.</p>
-    <p class="foot-meta">Dataset v1.0.0 · compiled 2026-10-22 · <a href="verification.html">how verification works</a> · <a href="flagged.html">flagged items</a> · <a href="data/rings.csv">download CSV</a></p>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
+    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
-<script src="assets/app.js" defer></script>
-<script src="assets/calculator.js" defer></script>
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>

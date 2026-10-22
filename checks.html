@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification checks · GOLD1</title>
+<meta name="description" content="Automated anti-hallucination checks run against every row and every generated page.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">Au</span>
+      <span class="brand-text"><strong>GOLD1</strong><small>solid gold engagement ring research</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Dashboard</a>
+      <a href="rings.html">All rings</a>
+      <a href="calculator.html">Gold calculator</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged</a>
+      <a href="methodology.html">Method</a>
+      <a href="checks.html" aria-current="page">Checks</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap section">
+  <h1>Verification checks</h1>
+  <p class="lede">An automated pass runs after every review. It is built to catch the specific ways a price or specification gets invented: a number with no source, a karat that contradicts its evidence, a melt value higher than the asking price, or a link that goes nowhere.</p>
+  
+<div class="rule-banner" role="note">
+  <h2>No hallucinations — the rule this whole project runs on</h2>
+  <p>Every price, karat and weight below is copied from the seller's own product feed and linked on the same row. <strong>Nothing is estimated, averaged or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Re-check against the source link before you buy: prices change without notice.</p>
+</div>
+  
+  <div class="pass-card">
+    <div class="pass-head">
+      <span class="badge ok">PASS</span>
+      <strong>P9</strong>
+      <span class="muted">run 2026-10-22T23:20:31Z</span>
+    </div>
+    <p>13 passed · 0 failed · 13 checks against 43 rows and 74 generated pages.</p>
+  </div>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Check</th><th>What it looks for</th><th class="num-col">Passed</th><th class="num-col">Failed</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>S01</strong><div class="sub">Provenance</div></td>
+        <td class="small">Every row has an HTTPS source on the retailer&#39;s own domain, a retrieval date, and a usable evidence string.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S02</strong><div class="sub">Price traceable to evidence</div></td>
+        <td class="small">The price digits must literally occur in the evidence text captured from the official source. A price that is not in its evidence is treated as hallucinated.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S03</strong><div class="sub">Karat validity and traceability</div></td>
+        <td class="small">Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row&#39;s own evidence text.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S04</strong><div class="sub">Internal arithmetic</div></td>
+        <td class="small">Price and weight ranges must be ordered and positive; a struck-through price cannot be below the price being charged.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S05</strong><div class="sub">Solid-gold claim honesty</div></td>
+        <td class="small">A row may only claim &quot;solid stated&quot; when the captured seller text actually contains the word solid.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S06</strong><div class="sub">Melt-value plausibility</div></td>
+        <td class="small">If a weight is published, the asking price cannot be below the gold content. A price under melt means the weight, karat or price is wrong.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S07</strong><div class="sub">Plated-metal guard</div></td>
+        <td class="small">Plating, vermeil or gold-filled language must never pass silently. It either disqualifies the row or raises a flag.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S08</strong><div class="sub">Date and price-feed sanity</div></td>
+        <td class="small">Retrieval dates must be real and not in the future; the stored gold price must be a positive number with an ISO publisher timestamp.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S09</strong><div class="sub">Identity and schema</div></td>
+        <td class="small">IDs and source URLs must be unique, retailers and categories must exist, and every flag must carry a source and the &quot;needs review&quot; status.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S10</strong><div class="sub">No silent blanks</div></td>
+        <td class="small">A blank value is allowed only when a flag explains it, and a price range must be disclosed as varying.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S11</strong><div class="sub">Links and placeholders</div></td>
+        <td class="small">Every internal link and asset reference in every generated page must resolve to a real file, and no page may contain placeholder text.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S12</strong><div class="sub">Row-to-page coverage</div></td>
+        <td class="small">Every row must have a detail page that shows both its source link and its verified price.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S13</strong><div class="sub">Source registry coverage</div></td>
+        <td class="small">Every retailer used for a value must appear in the source registry with a retrieval record.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  </div>
+  <h2>Pass history</h2>
+  <p>Each review pass re-runs the suite. The history is kept in <code>data/checks/history.json</code>.</p>
+  <div class="table-wrap">
+  <table class="data-table compact">
+    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h2>Run it yourself</h2>
+  <p><code>node scripts/verify.mjs</code> — no dependencies, no network. The output is written to <code>data/checks/latest.json</code> and summarised above.</p>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
+    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

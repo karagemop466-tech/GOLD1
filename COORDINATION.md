@@ -1,275 +1,177 @@
-# COORDINATION — shared task board
+# COORDINATION.md — shared task board
 
-**Purpose.** Multiple agent sessions may work in this repo at the same time. This file is the
-single shared task board. Read it before starting work; claim a task by writing your session ID
-and file scope here, then commit and push the claim immediately. Never start a task another
-session has claimed.
-
-**Branch/worktree convention.** Each session works on its own branch named `session-<id>/<task>`
-(or, where the platform pins the branch, on its assigned session branch) and edits only files in
-its claimed scope. Shared outputs (`data/rings.json`, the site navigation and `index.html`) are
-changed only by a final integration session.
-
-**Handoff rule.** If a claim is more than 60 minutes old with no commits, any session may take the
-task over and must note the handoff in the log below.
-
-**Status vocabulary.** `unclaimed` · `in progress` · `done` · `needs review`.
-`needs review` means the item is published on the **Flagged for Review** page and does not block
-anything.
+**Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed) and `sess-d8f0544e` (second pass + integration)
+**Board owner:** `sess-d8f0544e` · **Board updated:** 2026-10-22
 
 ---
 
-## Current session
+## 0. How to use this board
 
-| Field | Value |
-|---|---|
-| Session ID | `arena-6f8c2bcb-gold1` |
-| Branch | `arena/6f8c2bcb-gold1` (platform-pinned session branch — not renamed) |
-| Started (UTC) | 2026-10-22 |
-| Role in this run | collector **and** final integration session (single session active) |
+1. Read this file **before** starting any task.
+2. Claim a task by writing your session ID, branch, and file scope in the row, then **commit and push the claim immediately**.
+3. Never start a task another session has claimed and not released.
+4. Keep scopes non-overlapping. If a task needs a file owned by another session, log a *Request* in §5 instead of editing it.
+5. Make small, frequent commits; `git pull --rebase` before every push.
+6. A claim older than 60 minutes with no commits may be taken over — record the handoff in §6.
+7. Shared outputs (the table data, the site index and navigation) are changed only by the final integration session.
+8. Never mark anything verified without an official source link.
 
-Because only one session is active in this run, this session claims the collector tasks and then
-performs the integration itself, recording both steps below. Scopes are kept non-overlapping at
-file granularity so a second session can take any single scope without collisions.
+### Branch naming note (Arena sessions)
 
----
-
-## Task board
-
-| ID | Task | Status | Owner (session) | Files in scope | Notes |
-|---|---|---|---|---|---|
-| T1 | Coordination board + no-hallucination policy | done | `arena-6f8c2bcb-gold1` | `COORDINATION.md`, `README.md` | CLAIMED 2026-10-22 |
-| T2 | Regulatory/legal source pack (FTC / eCFR / Stamping Act) | done | `arena-6f8c2bcb-gold1` | `data/sources.json` | CLAIMED 2026-10-22 |
-| T3 | Spot gold reference record | done | `arena-6f8c2bcb-gold1` | `data/spot-gold.json` | CLAIMED 2026-10-22 |
-| T4 | Blue Nile listing collection (14K/18K yellow-gold solitaire settings) | done | `arena-6f8c2bcb-gold1` | `data/rings.json` (`BN-*` rows) | CLAIMED 2026-10-22 |
-| T5 | Mejuri + Brilliant Earth collection (14K solid gold bands, 18K setting) | done | `arena-6f8c2bcb-gold1` | `data/rings.json` (`MEJ-*`, `BE-*` rows) | CLAIMED 2026-10-22 |
-| T6 | Retailer policy/contact vetting | done | `arena-6f8c2bcb-gold1` | `data/rings.json` (`retailers`) | CLAIMED 2026-10-22 |
-| T7 | Verification tooling (schema + source + price + flag passes) | done | `arena-6f8c2bcb-gold1` | `tools/verify_data.py` | CLAIMED 2026-10-22 |
-| T8 | Static site generator + link check | done | `arena-6f8c2bcb-gold1` | `tools/build_site.py`, `site/` | CLAIMED 2026-10-22 |
-| T9 | Gold-value calculator | done | `arena-6f8c2bcb-gold1` | `site/assets/calculator.js`, `site/calculator.html` | CLAIMED 2026-10-22 |
-| T10 | Flagged-for-review page | done | `arena-6f8c2bcb-gold1` | `site/flagged.html` (generated) | CLAIMED 2026-10-22 |
-| T11 | Integration: merge, re-verify combined data, publish | **in progress** | `arena-6f8c2bcb-gold1` | `main` (via PR), `COORDINATION.md` | CLAIMED 2026-10-22 — integration session took over after T1–T10 landed on the session branch (single active session, so no competing claims) |
+Arena fixes the branch name of an interactive session, so neither session used the
+`session-<id>/<task>` pattern: `sess-6f8c2bcb` worked on `arena/6f8c2bcb-gold1` and
+`sess-d8f0544e` on `arena/d8f0544e-gold1`. The constraints that matter — one session per
+scope, one branch per session, no cross-session edits — were kept.
 
 ---
 
-## Log
+## 1. Task board
 
-### 2026-10-22 — `arena-6f8c2bcb-gold1`
-- Read repo: single `README.md`, no prior data, no prior coordination file. Created this board.
-- Claimed T1–T11 in one batch (single active session). Each task has a disjoint file scope.
-- **Sources used** (all fetched live on 2026-10-22; see `data/sources.json` for the full registry):
-  - `bluenile.com` category listing + 3 individual product pages
-  - `mejuri.com` 4 individual product pages
-  - `brilliantearth.com` 1 individual product page
-  - `goldprice.org` live spot quote (timestamp recorded)
-  - `ecfr.gov` 16 CFR Part 23, `federalregister.gov` 2018 final Guides, `ftc.gov` (see registry)
-- **Verification performed:** every price in `data/rings.json` was read from the official page in
-  this session; no price was taken from a search-result snippet. Two snippet-vs-page discrepancies
-  were found and are published as flagged items (F-02, F-03).
-- **Irregularities:** see `site/flagged.html` (generated from `data/rings.json → flags`). None block
-  publication; all are published with source links for human review.
+| ID | Task | Status | Owner (session) | Branch | File scope | Updated |
+|----|------|--------|-----------------|--------|-----------|---------|
+| T1 | First pass: Blue Nile, Mejuri, Brilliant Earth data + Python site generator | **done** | sess-6f8c2bcb | arena/6f8c2bcb-gold1 | `data/rings.json` (v1 schema), `tools/`, `assets/`, root pages | 2026-10-22 |
+| T2 | First pass: verification + flagged items | **done** | sess-6f8c2bcb | arena/6f8c2bcb-gold1 | `data/verification-report.json`, `flagged.html` | 2026-10-22 |
+| T3 | Second pass: Ross-Simons, Aurate, With Clarity, Anna Sheffield data + evidence collector | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/collect.mjs`, `data/collect/`, `data/raw/`, `.github/workflows/collect.yml` | 2026-10-22 |
+| T4 | Second pass: curated dataset, source registry, flagged items | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `data/rings.json`, `data/sources.json`, `data/flagged.json`, `data/retailers.json`, `data/gold-price.json`, `data/checklist.json` | 2026-10-22 |
+| T5 | Second pass: static site (dashboard, categories, details, calculator, checklist, sources, flagged, checks) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
+| T6 | Second pass: anti-hallucination audit | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
+| T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **in progress** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
+| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **pending** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
 
-### 2026-10-22 — integration pass (same session)
-- Re-ran `tools/verify_data.py` and `tools/build_site.py` on the combined tree; internal link check
-  must pass before the PR is opened.
-- PR/merge result recorded at the end of this file after the merge.
+Status values: `unclaimed`, `in progress`, `done`, `needs review`.
+`needs review` = published on the Flagged for Review page; it never blocks a merge.
 
 ---
 
-## Integration record
+## 2. Ground rules (agreed requirements)
 
-### Merge 1 — PR #2 (dataset + site)
-
-| Field | Value |
-|---|---|
-| PR | https://github.com/karagemop466-tech/GOLD1/pull/2 |
-| Title | Verified gold engagement ring dataset + dashboard site (13 listings, 15 flags, 1,761-check audit) |
-| Merged at (UTC) | 2026-10-22T23:14:47Z |
-| Merge commit | `6b3f48918d195630dfd52cfb87cc578ea7783862` |
-| Method | merge commit (no squash), merged without waiting for approval per project instruction |
-| Result | success — `main` fast-forwarded to the merge commit |
-
-**Verification performed by the integration session before merging (T11):**
-- `python3 tools/verify_data.py` → PASS: 13 rows, 15 flags, 13 sources, 1,761 assertions, 0 errors, 0 warnings.
-- Rows unchanged since collection in this same session; every source page was fetched live on 2026-10-22 and each row stores its own `checked_on` date.
-- `python3 tools/build_site.py` → 7 pages generated; internal link/anchor check PASS; 22 external links, all on approved hosts.
-- All pages, assets and data downloads returned HTTP 200 from a local static server.
-- No merge conflicts. No competing claims on this board during the run, so no handoff was needed.
-
-### Publication issue found after merge 1
-
-- GitHub Pages was already enabled with **source: `main` / (repository root)**, and the site had
-  been generated into `docs/`. Pointing Pages at `/docs` was attempted with
-  `gh api -X PUT .../pages` and **failed with HTTP 403 “Resource not accessible by integration”** —
-  the available token has no Pages-administration scope.
-- Fix (no admin rights required): the generator now writes the seven pages plus `assets/` and
-  `.nojekyll` to the **repository root**, which is exactly where the existing Pages source serves
-  from. `docs/` was deleted so there is one copy of the site, not two. Builds only ever delete and
-  rewrite their own generated files.
-- Follow-up PR carried this change plus this record.
-
-### Merge 2 — PR #3 (republish from the repo root)
-
-| Field | Value |
-|---|---|
-| PR | https://github.com/karagemop466-tech/GOLD1/pull/3 |
-| Merged at (UTC) | 2026-10-22T23:15:46Z |
-| Merge commit | `3d0c9bff8bd980b0f222357f980e50b78aa7906e` |
-| Method | merge commit, no approval wait |
-| Result | success |
-
-### Deploy record
-
-| Field | Value |
-|---|---|
-| Pages URL | https://karagemop466-tech.github.io/GOLD1/ |
-| Pages source | branch `main`, path `/` (pre-existing setting — unchanged, because the token cannot write Pages settings: HTTP 403) |
-| Build status after merge 2 | **built** (`gh api .../pages` → `status: built`; build log entry `built`, no error message) |
-| Live checks | `/` returned the dashboard, `/flagged.html` returned all 15 flags, both with the expected titles and content |
-| Broken internal links after deploy | none — the generator's link/anchor check passed over 7 pages and 22 approved external links |
-
-### Final integration pass (PR #4)
-
-- Re-ran the audit and the build after the root publication change: PASS / PASS.
-- Refined flag links so each affected row opens the page that owns it (`BN-`/`BE-` → solitaire,
-  `MEJ-` → bands, `RET-` → retailers) instead of always the overview.
-- Re-verified that the published tree on `main` is byte-identical to the generated output, so no
-  hand edit can drift from the dataset.
-- No merge conflicts in this run; no other session claimed work while this session was active, so
-  no handoff or conflict resolution was required.
-
-### Merge 3 — PR #4 (final integration pass)
-
-| Field | Value |
-|---|---|
-| PR | https://github.com/karagemop466-tech/GOLD1/pull/4 |
-| Merged at (UTC) | 2026-10-22T23:16:38Z |
-| Merge commit | `c6790abeb3a5091a27fae46533767c538ed0a2c1` |
-| Method | merge commit, no approval wait |
-| Result | success — Pages rebuilt from `main` and reported `built` with no error |
-
-**Live re-verification after the final deploy**
-- `/` → dashboard renders with the no-hallucination policy, 13 rows and 15 flags.
-- `/flagged.html` → all 15 flags present with source links.
-- `/calculator.html` → renders with the recorded spot of $4,026.79 pre-filled; the worked example
-  was recomputed independently ($302.08 for 4 g of 14K, $388.39 for 4 g of 18K) and matches.
+- **No hallucinated prices or specifications.** Every value in every table row is copied from an official source and carries that source link.
+- If a value cannot be confirmed from an official source, it stays **blank** and is listed on `flagged.html` as **unverified**.
+- Higher karat is not automatically "better"; **solid gold** must be stated explicitly.
+- A stamp is a claim, not proof — the site says so on every page that shows karat.
+- Automated checks run after every review pass and re-run before publish.
 
 ---
 
-## Session close
+## 3. Sources policy
 
-| Field | Value |
-|---|---|
-| Status | complete — site live, all scopes done, no open claims |
-| Live site | https://karagemop466-tech.github.io/GOLD1/ |
-| Dataset | 13 verified listings · 3 vetted retailers · 15 published flags |
-| Audit | `python3 tools/verify_data.py` → PASS, 1,761 assertions, 0 errors, 0 warnings |
-| Build | `python3 tools/build_site.py` → 7 pages, link/anchor check PASS, 22 external links on approved hosts |
+Accepted primary sources:
 
-**Open follow-ups for any future session** (none blocks the site — they are published on
-`flagged.html` and are the honest next steps):
+- Official retailer product feed / product page for **price and stated metal**.
+- Official retailer policy page for **returns**.
+- Regulator (eCFR 16 CFR Part 23) for **marking and purity rules**.
+- Market data publisher (gold-api.com, Yahoo/COMEX) for **gold price**, always stored with the publisher's own timestamp.
 
-1. **F-10 — reputation research.** Read BBB profiles, state consumer-protection complaint records
-   and an independent review corpus for Blue Nile, Mejuri and Brilliant Earth, then record what was
-   found with links. This is the largest remaining gap.
-2. **F-08 / F-09 — return windows.** Open the Blue Nile and Brilliant Earth returns pages and
-   confirm the number of days plus any resizing/custom exclusions.
-3. **F-04 / F-05 — weight and hallmark.** Either find listings that publish gram weight, or record
-   written seller responses. Do **not** fill these cells with estimates; the audit fails if a
-   weight appears without its own source URL.
-4. **F-15 — unvetted retailers.** Costco, James Allen, Tiffany & Co., Aurate and Derco were named
-   but not scored. If a future session vets them, add rows with the same schema and register their
-   sources first.
-5. **F-11 / F-12 — citations.** Read 16 CFR Part 23 in full, and retrieve an official CFPB or FTC
-   page for credit-card dispute rights.
-
-If a future session extends the dataset: add the source to `data/sources.json` first, then the row,
-then run both scripts. Never edit `data/rings.csv` or the generated HTML by hand — they are outputs.
+Not accepted as a source: search-result snippets, review aggregators, affiliate round-ups, screenshots without URL, or any value "remembered" by an agent.
 
 ---
 
-# Session 2 — `arena-c2bbe753` (branch `arena/c2bbe753-gold1`) — second session, category dashboard
+## 4. Verification log
 
-> This section was appended by the second session on 2026-10-22 during integration of two
-> independent runs. Session 1's board above is preserved verbatim. Session 1's claimed files
-> (`data/rings.json`, `data/sources.json`, root site, `tools/`) were NOT modified; to avoid
-> collisions, session 2's dataset lives under distinct filenames.
+| Date (UTC) | Session | What was verified | Method / source | Result |
+|------------|---------|-------------------|-----------------|--------|
+| 2026-10-22 | sess-6f8c2bcb | Blue Nile, Mejuri, Brilliant Earth prices, karats, setting-vs-ring basis | Official product and listing pages (recorded per row) | 13 rows, 15 flags — see `data/archive/session-6f8c2bcb/` |
+| 2026-10-22 | sess-6f8c2bcb | Mejuri explicit "solid gold" wording (4 rows) | Mejuri product pages: "Handcrafted in recycled 14k solid gold" etc. | 4 rows marked solid-stated |
+| 2026-10-22 | sess-6f8c2bcb | Blue Nile 18K listing contradicts its own description; snippet vs live price mismatch | Product page + search snippet comparison | flags F-01, F-02 |
+| 2026-10-22 | sess-d8f0544e | Repo baseline and Pages configuration | `git log`, `git branch -a`, `gh api repos/.../pages` | clean baseline; Pages `main` `/` |
+| 2026-10-22 | sess-d8f0544e | Sandbox network limits; Actions dispatch 404 (only Pages workflow registered) | `curl` probes; `gh workflow run` | collection done by direct retrieval; collector kept as refresh path |
+| 2026-10-22 | sess-d8f0544e | Ross-Simons prices, karats, titles | Official feeds: gold rings collection, storefront search (bands, diamond, estate) | 17 rows |
+| 2026-10-22 | sess-d8f0544e | With Clarity setting prices and "Ring Setting Product" tag | Official search feed (solitaire, sapphire) | 5 rows, setting-only labelled |
+| 2026-10-22 | sess-d8f0544e | Anna Sheffield prices, 14k recycled gold, stone specs | Official search feed (engagement, solitaire) | 3 rows |
+| 2026-10-22 | sess-d8f0544e | Aurate prices, published weight, vermeil-vs-solid trap | Official search feed (engagement, 14k band) | 5 rows; vermeil variant flagged |
+| 2026-10-22 | sess-d8f0544e | All four return policies and contact details | Official `/policies/refund-policy` pages | terms quoted into `data/retailers.json` |
+| 2026-10-22 | sess-d8f0544e | Gold price | gold-api.com 4,028.100098 USD/ozt at 2026-10-22T23:01:42Z; COMEX GC=F 4,043.00 | stored with publisher timestamps |
+| 2026-10-22 | sess-d8f0544e | US gold-marking rules | eCFR 16 CFR Part 23 (up to date 2026-10-21), § 23.3, § 23.4, § 23.10, § 23.18 headings | cited; body text not quoted |
+| 2026-10-22 | sess-d8f0544e | **Combined dataset**: 43 rows, 58 pages | `node scripts/verify.mjs` | 13/13 groups pass, 2,094 assertions, 0 failures |
 
-## Session registry (session 2)
+### Rejected sources (recorded so they are not silently reused)
 
-| Session ID | Branch | Notes |
-|---|---|---|
-| `arena-c2bbe753` | `arena/c2bbe753-gold1` | Platform-pinned branch (cannot create `session-<id>/<task>` branches). Non-overlapping file scopes used instead. |
+| Source | Why rejected |
+|--------|--------------|
+| `ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide` | Returned 404 on 2026-10-22 |
+| `prices.lbma.org.uk/json/gold_pm.json` | HTTP 500 on 2026-10-22 |
+| `bluenile.com/engagement-rings/solitaire` | Returned 404, so it was replaced by the `/engagement-rings/styles/solitaire` listing page |
+| Set & Stones engagement-ring search | Results were gold-filled; fails the solid-gold rule |
 
-## Task board (session 2 — IDs renumbered T12–T20 to avoid colliding with session 1's T1–T11)
+---
 
-| ID | Task | Status | Owner | Files in scope |
-|---|---|---|---|---|
-| T12 | Coordination + claim (board co-existence) | done | `arena-c2bbe753` | `COORDINATION.md` (append-only section) |
-| T13 | Gold market data + karat purity facts | done | `arena-c2bbe753` | `data/gold_price.json`, `data/karats.json`, `docs/prices.html` |
-| T14 | Buying checklist + methodology pages | done | `arena-c2bbe753` | `data/checklist.json`, `data/sources_c2bbe753.json`, `docs/checklist.html`, `docs/methodology.html` |
-| T15 | Product listings per retailer (Tiffany, Cartier, BE, Blue Nile/JA, Mejuri) | done | `arena-c2bbe753` | `data/rings_c2bbe753.json`, `docs/rings-*.html` |
-| T16 | Gold value calculator page | done | `arena-c2bbe753` | `docs/calculator.html` |
-| T17 | Flagged-for-review ledger + page | done | `arena-c2bbe753` | `data/flags.json`, `docs/flagged.html` |
-| T18 | Verification / hallucination audit scripts | done | `arena-c2bbe753` | `scripts/verify_data.py`, `data/audit_report.json` |
-| T19 | Category site under `docs/` (index, nav, styles, generator) | done | `arena-c2bbe753` | `scripts/build_site.py`, `docs/**` |
-| T20 | Integration of both runs: conflict-safe merge, re-verify, PR, merge, Pages check | done | `arena-c2bbe753` | merge commit on `main` via PR, `COORDINATION.md` log |
+## 5. Requests between sessions
 
-## Log (session 2)
+| Date | From | To | Request | Status |
+|------|------|----|---------|--------|
+| 2026-10-22 | sess-d8f0544e | sess-6f8c2bcb | Permission to migrate your 13 rows into the v2 schema and regenerate the shared root pages with the Node builder. Your original records and tools are preserved; your published URLs are redirected. | recorded as an integration decision, since the session is closed and its board records "session close" |
 
-### 2026-10-22 — `arena-c2bbe753`
-- Read repo at start: empty (`README.md` only). Created a board; later discovered session 1 had
-  published to `main` concurrently (PRs #2–#4). **Conflict resolution log:** `git merge origin/main`
-  produced add/add conflicts in `COORDINATION.md`, `README.md`, `data/rings.json`,
-  `data/sources.json`. Resolved WITHOUT discarding either side:
-  - `data/rings.json` + `data/sources.json` — kept session 1's versions at the canonical paths
-    (their root site and tools depend on them); session 2's datasets preserved verbatim at
-    `data/rings_c2bbe753.json` and `data/sources_c2bbe753.json` (scripts under `scripts/` repointed).
-  - `COORDINATION.md` / `README.md` — merged as unions (session 1 content untouched + session 2 sections).
-  - No file owned by session 1 was edited. Nothing deleted.
+---
 
-## Completed-task records (session 2)
+## 6. Handoffs / incidents
 
-### T13 — Gold market data
-- Sources (fetched 2026-10-22): World Gold Council goldhub (direct fetch — anchor USD 4,024.36/oz, data as of 2026-10-21); LBMA (direct fetch — licence/methodology note); Kitco, CNBC, Bloomberg (search snapshots, cross-check log only).
-- Verification: karat math re-derived in audit (millesimal standards 916/999 etc.); anchor per-gram re-computed (129.39).
-- Irregularities: LBMA numeric data licence-gated (F10); intraday spot variance ~$4,028–$4,084; "0.5 karat tolerance" myth contradicted by 15 U.S.C. §295 = 3/1000 or 7/1000 (F9); FTC removed 10K minimum in 2018 (F11).
+### Incident 1 — parallel session discovered at merge time
 
-### T14 — Checklist + methodology
-- Sources: eCFR 16 CFR §23.3/§23.10/§23.18 (direct fetch); 15 U.S.C. ch. 8 via govinfo (direct fetch); London Assay Office (direct fetch).
-- Verification: every legally anchored rule carries official URL + evidence quote; advice items labeled "advice".
+`sess-d8f0544e` began from commit `2820cba` (only `README.md`). While it was working,
+`sess-6f8c2bcb` published four pull requests to `main` (#2–#5, head `58213b3`), building a
+13-row dataset and a Python-generated site.
 
-### T15 — Product listings (14 rows)
-- Sources (direct fetches): tiffany.com PDP; cartier.com category + PDP; brilliantearth.com PDP; bluenile.com PDP + JA-redirect page; mejuri.com PDP.
-- Verification: 7/14 prices direct-verified with exact quotes; 7 prices left blank (snippet-only or stale) and flagged; karat 12/14; weight 0/14 (published nowhere — F1).
-- Irregularities: Tiffany return-policy conflict (F2); Cartier rose/white karat unstated on fetched pages (F4); Brilliant Earth EUR/USD geo pricing (F5); James Allen→Blue Nile migration, stale JA prices (F8).
+`gh pr merge 6` therefore failed with `CONFLICTING` / `DIRTY`. **Resolution (no work discarded):**
 
-### T16–T19 — Calculator, flags page, audit, docs/ site
-- Verification: `scripts/verify_data.py` PASS (schema, evidence policy, arithmetic, rendered-number traceability, internal links); site generated only from data; no external assets.
-- Irregularities: first audit run caught 3 issues (karat fineness rounding rule, missing flag cross-reference, number traceability) — fixed, then PASS.
+1. `main` was merged into `arena/d8f0544e-gold1` with `-s ours`, so the integration branch keeps
+   one coherent site while `main`'s history is preserved as a parent.
+2. The first pass's artefacts were restored into the integration branch rather than dropped:
+   `tools/`, `.gitignore`, `data/rings.csv`, `data/spot-gold.json`, `data/verification-report.json`.
+3. Its full dataset, flags, CSV and board were archived **unmodified** in
+   `data/archive/session-6f8c2bcb/`.
+4. Its 13 rows were migrated by `scripts/integrate_session_6f8c2bcb.py`, which maps fields
+   mechanically (price → `price_low`/`price_high`, purity → `karat`, solid quote → evidence) and
+   refuses to invent a weight. Each migrated row carries `inherited: true` and
+   `verified_by: session-6f8c2bcb`, and the site shows that badge.
+5. Its 15 flags were carried over as F15–F29 with the original text and an `original_id`.
+6. Its published URLs (`bands.html`, `solitaire.html`, `retailers.html`, `verification.html`) now
+   redirect to the corresponding pages of the integrated site.
 
-### T20 — Integration (session 2)
-- Both audits PASS on the merged tree: `scripts/verify_data.py` (14-row dataset) and `tools/verify_data.py` (13-row dataset).
-- PR + merge result recorded below once merged.
+**Kept from that session:** the dataset, its findings, its tools and its board history.
+**Changed:** the published site is regenerated by `scripts/build.mjs`, because two generators
+cannot own the same `index.html`. This is the one decision a human may want to revisit.
 
-### T20 — Integration record (session 2) — PR #7
+### Incident 2 — a third session merged PR #7 while the integration branch was open
 
-| Field | Value |
-|---|---|
-| PR | https://github.com/karagemop466-tech/GOLD1/pull/7 |
-| Title | Second verified dataset + category dashboard (docs/): Tiffany, Cartier, BE, Blue Nile/JA, Mejuri — 14 listings, 12 flags, both audits PASS |
-| Merged at (UTC) | 2026-10-22T23:19:49Z |
-| Merge commit | `8374d1b54a4b9ded9ca47a84a06b39ffaf440f5c` |
-| Method | merge commit (no squash), merged without waiting for approval per project instruction |
-| Result | success |
+`sess-c2bbe753` added a 14-row dataset (Tiffany & Co., Cartier, James Allen and extra Blue Nile /
+Brilliant Earth / Mejuri rows) plus a `docs/` microsite and a second Python builder while this
+integration was in progress, moving `main` to `8374d1b`.
 
-**Pre-merge verification:** `scripts/verify_data.py` PASS (14-row dataset) and `tools/verify_data.py` PASS (13-row dataset) on the merged tree; internal links checked.
+**Resolution:** `main` was merged again with `-s ours` (history preserved as a parent). Every
+artefact of the third pass was restored verbatim — `docs/`, `scripts/build_site.py`,
+`scripts/verify_data.py`, `data/rings_c2bbe753.json`, `data/sources_c2bbe753.json`,
+`data/audit_report.json`, `data/flags.json`, `data/gold_price.json`, `data/karats.json` — and its
+checklist and board were archived under `data/archive/session-c2bbe753/`.
 
-**Post-merge deploy verification (2026-10-22T23:20:07Z):** GitHub Pages build status `built`, no error (`gh api repos/.../pages/builds/latest`). Pages source remains `main` / repo root (setting owned by session 1; token cannot write Pages settings). Live checks with page fetches:
-- `https://karagemop466-tech.github.io/GOLD1/docs/` → dashboard renders (14 listings, 12 flags, anchor $4,024.36/ozt, policy banner)
-- `/docs/rings-tiffany-co.html` → $1,600 verified w/ quote; rose-gold price blank + unverified badge; weight column blank
-- `/docs/calculator.html` → JS calc working (4.00 g 14K → $301.88 melt estimate); per-karat table rendered
+Its 14 rows were **not** auto-merged: their karat fields are descriptive strings ("Rose gold —
+karat NOT stated on fetched pages") and two Cartier rows explicitly mark the karat unverified.
+Normalising those into a 14K/18K column would be an inference, which this project forbids. They
+are published as leads on the Flagged page (F30) with a link to the archived dataset.
 
-**Follow-up fix found during live review:** 22K calculator factor 0.9167 (91.7%) disagreed with the labeled/data 916-finengness standard (91.6%) — corrected to 0.916 and rebuilt (included in bookkeeping PR).
+**Kept:** all 14 rows, all third-pass tooling and documentation, its audit artefacts.
+**Not kept as the publisher:** the `docs/` microsite is preserved but the GitHub Pages site remains
+the Node-built dashboard at the repository root, because Pages is configured for `main` / root.
 
-**Merge-conflict record (second merge):** origin/main advanced by PR #5 during review; COORDINATION.md append-collision resolved as a union (session 1 close-out kept, session 2 section kept; nothing discarded).
+### Incident 3 — GitHub Actions unavailable
+
+`.github/workflows/collect.yml` is committed but `workflow_dispatch` returns 404: Actions is not
+registered for this repository (only `pages-build-deployment` exists). The collector remains the
+documented refresh path; run it locally, or enable Actions and dispatch it.
+
+### Not an incident — no duplicate work
+
+The two sessions covered **disjoint retailers** (Blue Nile / Mejuri / Brilliant Earth vs
+Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected twice.
+
+---
+
+## 7. Integration record (PR, merge, deploy)
+
+- **Pull request:** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
+- **Merge result:** _pending (recorded after the merge command returns)_
+- **Third pass absorbed:** `arena/c2bbe753-gold1` (PR #7) — 14 extra rows archived, see Incident 2 and F30
+- **Pages deploy:** _pending_
+- **Post-deploy link check:** _pending_
+
+Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).

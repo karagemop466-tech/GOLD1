@@ -1,181 +1,119 @@
-# GOLD1 — Gold engagement ring research
+# GOLD1 — solid gold engagement ring research
 
-**Live site: <https://karagemop466-tech.github.io/GOLD1/>** — published by GitHub Pages from the root of `main`
+A source-linked buying dashboard for **solid gold engagement rings**, built so that no price or specification can be invented.
 
-> ## No hallucinations
-> Every price, purity claim and policy statement in this repository was read from the
-> retailer's own web page on **2026-10-22** and carries a source link and a date.
-> Nothing is estimated, inferred, averaged, or recalled from memory. If a seller does not
-> publish a value — and none of them publishes a gram weight — the cell stays **empty and
-> flagged** rather than filled with a guess.
->
-> **This rule is re-checked mechanically before every publish.** See
-> [`tools/verify_data.py`](tools/verify_data.py): 1,761 assertions over schema, source
-> domains, price arithmetic, evidence rules, flag integrity and every headline statistic.
-> The build fails if any number cannot be reproduced from the rows.
->
-> Re-read this rule when verifying anything in this repo: *is the value on the page, with a
-> link, with a date — or is it something I assume?* Assumptions are not published here.
+**Live site:** https://karagemop466-tech.github.io/GOLD1/
+
+Built across two research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows) and session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), integrated into one dataset and one site. The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
 
 ---
 
-## What this is
+## The one rule
 
-A small, deliberately honest dataset for buying a **solid-gold engagement ring** online,
-built against a 13-point buying checklist. It answers one question per ring: *can the gold
-content be checked before money changes hands?*
+> **No hallucinated prices.** Every price, karat and weight on the site was copied from an official retailer feed, stored with the date it was retrieved, and linked on the same row to the exact page it came from. If a value could not be confirmed on an official source it is shown as **— unverified** and published on the **Flagged for review** page. Nothing is estimated, averaged, inferred or remembered.
 
-- **13 verified listings**, 3 U.S. retailers: Blue Nile, Mejuri, Brilliant Earth
-- **9 setting-only prices** and **4 complete-ring prices**, never mixed
-- **15 flagged items**, all published with source links
-- **0 listings publish a gram weight**; **0 publish hallmark details** — the two facts the
-  checklist actually depends on
+That rule is printed at the top of the landing page, repeated on every subpage, and then enforced mechanically by `scripts/verify.mjs`, which re-derives every claim from its own evidence text.
 
-The scope is stated on the site and it is real: this is a verified starting set, not a
-census of the market. Missing retailers are listed as unvetted rather than ignored.
+---
 
-## Headline findings
+## What is in the repo
 
-1. **The two numbers that decide fair pricing are missing everywhere.** Not one of the 13
-   pages states the ring's weight in grams or what is stamped inside the band. Both must be
-   obtained in writing from the seller before payment, then checked after delivery.
-2. **Most "engagement ring prices" are setting prices.** 9 of 13 rows exclude the centre
-   diamond. A $935 setting is not a $935 ring.
-3. **'Solid gold' is a phrase, not a guarantee.** Only Mejuri's pages use the words
-   "14k solid gold" (4 rows). Blue Nile and Brilliant Earth state karat only — a wording gap,
-   not evidence of plated goods, but exactly what the checklist asks you to confirm.
-4. **Search snippets lie.** Two snippet prices disagreed with the live pages ($925 vs
-   $1,420; $2,800 vs $2,900). Both are published as flags (F-02, F-03).
-5. **A stamp is a marking requirement, not an assay.** Under the National Stamping Act a
-   quality mark must sit beside the maker's trademark; even a correct mark says nothing about
-   the specific item in your hand. XRF or equivalent testing after delivery is the only
-   confirmation.
+| Path | What it is |
+|------|------------|
+| `index.html` | Landing dashboard: the rule, headline findings, gold price, category cards, full table |
+| `rings.html` | All listings with filters (search, category, seller, karat, max price) and sortable columns |
+| `categories/*.html` | One page per style: solitaire, three-stone & halo, bezel & modern, gemstone, bands, estate |
+| `rings/<id>.html` | One page per listing: evidence text, melt-value check, flags, seller contact and return terms, pre-purchase steps |
+| `calculator.html` | Gold value calculator: grams × karat ÷ 24 × published gold price, plus price-to-melt multiple |
+| `checklist.html` | The original 12-point checklist, scored item by item |
+| `sources.html` | Source registry, including sources that were checked and **rejected** |
+| `flagged.html` | 29 findings that need a human decision (published, non-blocking) |
+| `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
+| `checks.html` | Output of the latest automated verification pass and the pass history |
+| `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |
+| `data/archive/session-6f8c2bcb/` | First pass's original 13 rows, 15 flags, CSV and gold reading, preserved unmodified |
+| `data/sources.json` | Source registry with retrieval dates and status |
+| `data/flagged.json` | Findings, severity, affected rows, source links |
+| `data/retailers.json` | Retailer identity, contact details and return terms (verbatim-sourced) |
+| `data/gold-price.json` | Gold spot + COMEX cross-check with publisher timestamps |
+| `data/checks/` | Latest pass and full pass history |
+| `data/collect/sources.json` | Machine-readable list of every primary URL used |
+| `scripts/collect.mjs` | Evidence collector: re-fetches every source and writes a timestamped snapshot |
+| `scripts/integrate_session_6f8c2bcb.py` | Mechanical migration of the first pass's rows into this schema (no number is retyped) |
+| `scripts/build.mjs` | Static site generator (no dependencies) |
+| `scripts/verify.mjs` | Anti-hallucination audit: 13 check groups, ~1,500 assertions |
+| `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
+| `COORDINATION.md` | Shared task board, verification log and integration record |
 
-## Repository layout
+Directories `site/` is reserved and currently empty; all generated pages live in the repo root because GitHub Pages serves this repository from `main` at `/`.
 
-```
-data/
-  rings.json                 source of truth — 13 rows, 15 flags, retailer vetting, analysis
-  rings.csv                  generated by the audit (never hand-edited)
-  sources.json               source registry — every URL used, with what it supports
-  spot-gold.json             one timestamped spot reading + usage policy
-  verification-report.json   machine-readable audit result (assertions, errors, warnings)
-tools/
-  verify_data.py             six-pass audit; exits 1 on any unsupported number
-  build_site.py              generates the site pages and runs the link check
-site_assets/                 hand-written CSS/JS copied into assets/ by the build
-assets/                      generated CSS/JS (do not hand-edit)
-*.html (repo root)           generated pages served by GitHub Pages — do not hand-edit
-COORDINATION.md              shared task board for parallel agent sessions
-```
+---
 
-## The site
-
-| Page | Contents |
-|---|---|
-| [Overview](https://karagemop466-tech.github.io/GOLD1/) | No-hallucination policy, dataset stats, checklist scored against evidence, all 13 entries |
-| [Solitaire settings](https://karagemop466-tech.github.io/GOLD1/solitaire.html) | 9 settings with specs, purity, price basis, returns |
-| [Bands](https://karagemop466-tech.github.io/GOLD1/bands.html) | 4 Mejuri complete rings in 14k solid gold |
-| [Retailers](https://karagemop466-tech.github.io/GOLD1/retailers.html) | Contact, returns, warranty, what each refuses to publish |
-| [Gold calculator](https://karagemop466-tech.github.io/GOLD1/calculator.html) | Weight × karat × spot, with the recorded spot and its timestamp |
-| [Verification](https://karagemop466-tech.github.io/GOLD1/verification.html) | The six passes, source registry, what was not verified |
-| [Flagged for review](https://karagemop466-tech.github.io/GOLD1/flagged.html) | Every irregularity and unverified item, with sources |
-
-## Rebuild and re-verify
+## Run it
 
 ```bash
-python3 tools/verify_data.py   # audit the dataset (nonzero exit on any error)
-python3 tools/build_site.py    # regenerate the pages and run the internal link check
+node scripts/build.mjs      # regenerate every page from data/
+node scripts/verify.mjs     # audit the data and the generated HTML
+python3 -m http.server 8080 # preview at http://localhost:8080
 ```
 
-Both scripts are standard-library Python; there is no build dependency to install.
-
-The build writes the site to the repository root because GitHub Pages is configured to serve
-`main` from `/`. It deletes and rewrites only the seven generated pages plus `assets/` — the
-authored tree (`data/`, `tools/`, `site_assets/`, docs) is never touched by a build.
-
-## How a row earns its place
-
-| Field | Requirement enforced by the audit |
-|---|---|
-| Price | Numeric, positive, whole dollars, matching its display string, checked ≤ 7 days ago |
-| Source | https, on the retailer's own domain, present in `data/sources.json` |
-| Price basis | Must state whether the centre stone is included |
-| Weight | Only with its own source URL; otherwise "no gram weight published" + flag F-04 |
-| Hallmark | Only if published; otherwise flag F-05 |
-| Statistics | Recomputed from the rows on every run — a wrong summary fails the build |
-
-## What is **not** verified
-
-Published openly rather than buried — see the [Flagged for review](https://karagemop466-tech.github.io/GOLD1/flagged.html) page:
-
-- **Seller reputation** — no BBB profile, complaint record or independent review set was read (F-10).
-- **Return windows** at Blue Nile and Brilliant Earth — badges seen, windows not confirmed (F-08, F-09).
-- **Credit-card dispute rights** — recommended as practice, but no official citation captured (F-12).
-- **Regulatory text** — confirmed through official index entries and Federal Register excerpts, not full section reads (F-11).
-- **Physical inspection** — no ring was weighed, XRF-tested or handled. Nothing here is an appraisal.
-- **Unvetted retailers** — Costco, James Allen, Tiffany & Co., Aurate and Derco were named during sourcing and deliberately not scored (F-15).
-
-## Legal references
-
-- [16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23)
-- [83 FR 40659 (2018-08-16)](https://www.federalregister.gov/documents/2018/08/16/2018-17454/guides-for-the-jewelry-precious-metals-and-pewter-industries) — includes Note 2 to § 23.10 on the National Stamping Act's maker's-mark requirement
-
-## The buy / no-buy rule
-
-Buy only when the seller will put the **karat**, the **weight in grams** and the **return
-window** in writing, and will accept the ring back after an independent jeweler inspects it.
-If any of the three is refused, the price does not matter.
+Node 22, no npm install, no network calls at build time, no tracking scripts, no CDN.
 
 ---
 
-*Prices are point-in-time and will drift. The `checked_on` date is part of every row — re-verify
-before buying. Nothing here is financial, legal or appraisal advice.*
+## The verification passes
+
+`scripts/verify.mjs` runs after every review. Each group is a mechanical test, not an opinion:
+
+| ID | Group | What it catches |
+|----|-------|-----------------|
+| S01 | Provenance | A row with no HTTPS source, a source on the wrong domain, or no evidence text |
+| S02 | Price traceable to evidence | **The price digits must literally occur in the evidence text.** A number that is not in its own evidence is treated as fabricated |
+| S03 | Karat validity | A karat that is not 10/14/18/22/24, or that the evidence never states |
+| S04 | Internal arithmetic | Price low > high, non-positive weight, compare-at below selling price |
+| S05 | Solid-claim honesty | Claiming "solid stated" when the seller text never says solid |
+| S06 | Melt-value plausibility | An asking price below the gold content — impossible, so weight/karat/price must be wrong |
+| S07 | Plated-metal guard | Vermeil / plated / gold-filled language passing silently |
+| S08 | Date sanity | Missing or future retrieval dates, bad price feed |
+| S09 | Identity and schema | Duplicate IDs or URLs, unknown retailer or category, unflagged flags |
+| S10 | No silent blanks | A blank weight without an explanation, or an undisclosed price range |
+| S11 | Links and placeholders | Broken internal links, missing assets, placeholder text |
+| S12 | Row-to-page coverage | A row without a detail page showing its source and price |
+| S13 | Source registry coverage | A retailer used for values with no registry entry |
+
+Failures are printed, written to `data/checks/latest.json`, appended to `data/checks/history.json`, and rendered on `checks.html`. The command exits non-zero on any failure.
 
 ---
 
-## Second dashboard: category-organized site (`docs/`, session 2)
+## Adding a listing (the only allowed way)
 
-A second agent session (`arena-c2bbe753`, branch `arena/c2bbe753-gold1`) independently built a
-category-organized dashboard with its own verified dataset. Both runs are preserved; neither
-modified the other's claimed files. After the root dashboard was published (Pages source = repo
-root), the second site is served under **`/docs/`** of the same Pages URL:
-**<https://karagemop466-tech.github.io/GOLD1/docs/>**
+1. Retrieve the product from the retailer's own feed or product page. Record the exact wording that states the karat and the price.
+2. Add a row to `data/rings.json` with `source_url`, `retrieved_at`, and an `evidence` string containing the verbatim price and karat.
+3. If weight is not published, leave it `null` **and** add the `weight_not_published` flag. Do not estimate it.
+4. Add any new source to `data/sources.json`.
+5. Add a finding to `data/flagged.json` if the listing has a trap (setting-only price, plated variant, one-off estate piece).
+6. Run `node scripts/build.mjs && node scripts/verify.mjs`. If S02 fails, the price is not in your evidence — fix the evidence, not the price.
 
-- **14 listings / 5 retailers** (adds Tiffany & Co. and Cartier; includes the James Allen →
-  Blue Nile migration as a flagged finding): `data/rings_c2bbe753.json`
-- **Price anchor** USD 4,024.36/oz t (World Gold Council, data as of 2026-10-21, direct fetch) with
-  a same-day cross-check log: `data/gold_price.json` (do not confuse with session 1's
-  `data/spot-gold.json` — both are kept, each with its own quotes and timestamps)
-- **Karat/purity table + official legal context**: `data/karats.json`
-- **12-item buying checklist**, each rule anchored to 16 CFR Part 23, 15 U.S.C. ch. 8, or the
-  London Assay Office: `data/checklist.json`
-- **Flagged-for-review ledger (12 flags)**: `data/flags.json` → `docs/flagged.html`
-- Pages: `docs/index.html` (dashboard), `docs/rings*.html` (per-retailer tables, every row with a
-  source link), `docs/prices.html`, `docs/calculator.html` (grams × karat × spot), `docs/checklist.html`,
-  `docs/methodology.html`, `docs/flagged.html`
-- Generator + audit (stdlib-only, independent of `tools/`):
-  `python3 scripts/build_site.py && python3 scripts/verify_data.py`
+---
 
-### No-hallucination policy (session 2 dataset — same rule, independently enforced)
+## Current findings (as of 2026-10-22)
 
-Every price, karat, weight and policy value in `data/*_c2bbe753.json` was taken from the official
-page linked next to it, with an exact evidence quote and fetch date. Values not confirmable from an
-official source are **blank and flagged** — 7 of 14 prices are deliberately blank because they were
-only seen in search snapshots (or stale after the James Allen → Blue Nile migration). The audit
-(`scripts/verify_data.py`) fails the build on any unbacked number, including a scan that traces
-rendered `$` amounts back to the data layer.
+- **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
+- **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
+- **1 of 43 listings publishes metal weight in grams.** The value check cannot be completed for the other 42, and is left blank. → F02
+- **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
+- **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
+- **Two Ross-Simons pieces at $149 and $179** are flagged as value-unverifiable without a weight. → F06
+- **Resizing is a return-rights trap**: Ross-Simons and With Clarity both refuse returns on jewellery resized by another jeweller; Anna Sheffield charges a 10% restocking fee. → F07, F11
+- **Blue Nile's 18K Petite Nouveau listing contradicts its own metal spec** (first pass, F15).
+- **Set & Stones was excluded** because its engagement-ring results were gold-filled. Blue Nile's category URL 404'd, so no row was invented. → `sources.html`
 
-### Notable findings unique to the second dataset
+---
 
-1. **No retailer reviewed publishes metal weight in grams** — Tiffany, Cartier, Brilliant Earth,
-   Blue Nile, Mejuri: zero out of 14 listings (matches session 1's finding on its 13).
-2. **Tiffany & Co. listing shows conflicting return text** ("non returnable" / "exchange only" vs
-   sitewide "complimentary returns") — clarify in writing before buying.
-3. **The popular "0.5 karat tolerance" claim is contradicted by the official statute** —
-   15 U.S.C. §295 (as amended 1976) sets 3/1000 (watchcases/flatware) or 7/1000 (all other
-   articles) below the mark, assayed as one piece including solder.
-4. **"James Allen is Now Part of Blue Nile"** — old JA product URLs redirect to bluenile.com;
-   JA prices seen elsewhere must be treated as stale.
-5. **LBMA numeric gold prices are licence-gated**; the dataset anchors on the World Gold Council
-   figure and time-stamps every other quote.
+## Limits
+
+Prices are a snapshot and retailers change them without notice — the retailer page always wins. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
+
+## License
+
+Data and text in this repository are published for personal research use. Product names, prices and descriptions belong to their retailers and are quoted only as evidence.

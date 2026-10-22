@@ -1,0 +1,192 @@
+{
+  "note": "Every URL here is a PRIMARY source: an official retailer product feed, an official retailer policy page, a regulator, or a market-data publisher. The collector records exactly what each URL returned.",
+  "sources": [
+    {
+      "id": "rs-gold-rings",
+      "kind": "shopify_products",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold/products.json?limit=250",
+      "note": "Ross-Simons official gold rings collection feed"
+    },
+    {
+      "id": "rs-gold-diamond",
+      "kind": "shopify_products",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold-diamond/products.json?limit=250",
+      "note": "Ross-Simons official gold + diamond rings collection feed"
+    },
+    {
+      "id": "rs-gold-yellow",
+      "kind": "shopify_products",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold-yellow-gold/products.json?limit=250",
+      "note": "Ross-Simons official yellow gold rings collection feed"
+    },
+    {
+      "id": "rs-estate",
+      "kind": "shopify_products",
+      "url": "https://www.ross-simons.com/collections/jewelry-estate-rings/products.json?limit=250",
+      "note": "Ross-Simons official estate rings collection feed"
+    },
+    {
+      "id": "rs-gold-gemstone",
+      "kind": "shopify_products",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold-gemstones/products.json?limit=250",
+      "note": "Ross-Simons official gold gemstone rings collection feed"
+    },
+    {
+      "id": "rs-stackable-gold",
+      "kind": "shopify_products",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-stackable-gold/products.json?limit=250",
+      "note": "Ross-Simons official gold stackable rings collection feed"
+    },
+    {
+      "id": "wc-solitaire",
+      "kind": "shopify_suggest",
+      "query": "solitaire",
+      "url": "https://www.withclarity.com/search/suggest.json?q=solitaire&resources[type]=product&resources[limit]=10",
+      "note": "With Clarity official storefront search feed"
+    },
+    {
+      "id": "wc-three-stone",
+      "kind": "shopify_suggest",
+      "query": "three stone engagement ring",
+      "url": "https://www.withclarity.com/search/suggest.json?q=three%20stone%20engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "With Clarity official storefront search feed"
+    },
+    {
+      "id": "wc-halo",
+      "kind": "shopify_suggest",
+      "query": "halo engagement ring",
+      "url": "https://www.withclarity.com/search/suggest.json?q=halo%20engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "With Clarity official storefront search feed"
+    },
+    {
+      "id": "wc-bezel",
+      "kind": "shopify_suggest",
+      "query": "bezel engagement ring",
+      "url": "https://www.withclarity.com/search/suggest.json?q=bezel%20engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "With Clarity official storefront search feed"
+    },
+    {
+      "id": "wc-gemstone",
+      "kind": "shopify_suggest",
+      "query": "sapphire engagement ring",
+      "url": "https://www.withclarity.com/search/suggest.json?q=sapphire%20engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "With Clarity official storefront search feed"
+    },
+    {
+      "id": "wc-lab-grown",
+      "kind": "shopify_suggest",
+      "query": "lab grown diamond engagement ring",
+      "url": "https://www.withclarity.com/search/suggest.json?q=lab%20grown%20diamond%20engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "With Clarity official storefront search feed"
+    },
+    {
+      "id": "au-engagement",
+      "kind": "shopify_suggest",
+      "query": "engagement ring",
+      "url": "https://auratenewyork.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "Aurate official storefront search feed"
+    },
+    {
+      "id": "au-diamond-rings",
+      "kind": "shopify_suggest",
+      "query": "diamond ring",
+      "url": "https://auratenewyork.com/search/suggest.json?q=diamond%20ring&resources[type]=product&resources[limit]=10",
+      "note": "Aurate official storefront search feed"
+    },
+    {
+      "id": "au-bands",
+      "kind": "shopify_suggest",
+      "query": "gold band",
+      "url": "https://auratenewyork.com/search/suggest.json?q=gold%20band&resources[type]=product&resources[limit]=10",
+      "note": "Aurate official storefront search feed"
+    },
+    {
+      "id": "as-engagement",
+      "kind": "shopify_suggest",
+      "query": "engagement ring",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "Anna Sheffield official storefront search feed"
+    },
+    {
+      "id": "as-solitaire",
+      "kind": "shopify_suggest",
+      "query": "solitaire engagement ring",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=solitaire%20engagement%20ring&resources[type]=product&resources[limit]=10",
+      "note": "Anna Sheffield official storefront search feed"
+    },
+    {
+      "id": "as-three-stone",
+      "kind": "shopify_suggest",
+      "query": "three stone",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=three%20stone&resources[type]=product&resources[limit]=10",
+      "note": "Anna Sheffield official storefront search feed"
+    },
+    {
+      "id": "as-bands",
+      "kind": "shopify_suggest",
+      "query": "gold band",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=gold%20band&resources[type]=product&resources[limit]=10",
+      "note": "Anna Sheffield official storefront search feed"
+    },
+    {
+      "id": "gold-spot",
+      "kind": "json",
+      "url": "https://api.gold-api.com/price/XAU",
+      "note": "Gold spot price feed (USD per troy ounce), publisher: gold-api.com"
+    },
+    {
+      "id": "comex-futures",
+      "kind": "json",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+      "note": "COMEX gold futures front month quote, publisher: Yahoo Finance"
+    },
+    {
+      "id": "ftc-jewelry-guides",
+      "kind": "page",
+      "url": "https://www.ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide",
+      "note": "US FTC Gold and Silver Jewelry Industry Guide (16 CFR 23) - regulator source for karat marking rules"
+    },
+    {
+      "id": "ecfr-16-23",
+      "kind": "page",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "note": "eCFR - 16 CFR Part 23, Jewelry, Precious Metals, and Pewter Industries (official regulation text)"
+    },
+    {
+      "id": "lbma-prices",
+      "kind": "page",
+      "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
+      "note": "LBMA official precious metal price publisher"
+    },
+    {
+      "id": "au-refund-policy",
+      "kind": "page",
+      "url": "https://auratenewyork.com/policies/refund-policy",
+      "note": "Aurate official return policy"
+    },
+    {
+      "id": "au-faq",
+      "kind": "page",
+      "url": "https://auratenewyork.com/pages/faq",
+      "note": "Aurate official FAQ (materials, hallmarking, warranty)"
+    },
+    {
+      "id": "rs-refund-policy",
+      "kind": "page",
+      "url": "https://www.ross-simons.com/policies/refund-policy",
+      "note": "Ross-Simons official return policy"
+    },
+    {
+      "id": "as-refund-policy",
+      "kind": "page",
+      "url": "https://www.annasheffield.com/policies/refund-policy",
+      "note": "Anna Sheffield official return policy"
+    },
+    {
+      "id": "wc-refund-policy",
+      "kind": "page",
+      "url": "https://www.withclarity.com/policies/refund-policy",
+      "note": "With Clarity official return policy"
+    }
+  ]
+}
