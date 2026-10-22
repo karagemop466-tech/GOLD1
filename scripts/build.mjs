@@ -99,6 +99,25 @@ const meltValue = (r) => {
   return { lo, hi };
 };
 
+const fineGold = (r, w) => {
+  const p = purityOf(r.karat);
+  if (!p || !w) return null;
+  return w * p;
+};
+
+/** Gold content in the ring at the stored spot price, or the dash when the seller publishes no weight. */
+const meltCell = (r) => {
+  const m = meltValue(r);
+  if (!m) return '<span class="unverified" title="No published weight, so no gold value can be computed">—</span>';
+  const body = m.lo === m.hi ? usd(m.lo) : `${usd(m.lo)}–${usd(m.hi)}`;
+  const mult = r.price_low / m.hi;
+  return `${body}<div class="sub">${mult.toFixed(1)}× price</div>`;
+};
+
+const reverification = await read('data/reverification.json').catch(() => ({ entries: [] }));
+const reverifiedRows = rings.rows.filter((r) => r.reverified_at);
+const priceReread = (reverification.entries || []).filter((e) => (e.checked || []).includes('price') && e.new && e.new.price !== 'not re-read').length;
+
 const flagLabels = {
   solid_not_stated: 'solid not stated',
   weight_not_published: 'no weight',
@@ -138,6 +157,7 @@ const retrievedDates = [...new Set(rings.rows.map((r) => r.retrieved_at))].sort(
 const NAV = [
   ['index.html', 'Dashboard'],
   ['rings.html', 'All rings'],
+  ['weights.html', 'Weight & melt'],
   ['calculator.html', 'Gold calculator'],
   ['checklist.html', 'Checklist'],
   ['sources.html', 'Sources'],
@@ -213,7 +233,7 @@ const tableHead = (withWeight = true) => `
     <th scope="col">Metal / stone</th>
     <th scope="col" class="num-col">Price (USD)</th>
     <th scope="col">Price basis</th>
-    ${withWeight ? '<th scope="col">Weight</th>' : ''}
+    ${withWeight ? '<th scope="col">Weight</th><th scope="col" class="num-col">Gold content</th>' : ''}
     <th scope="col">Flags</th>
     <th scope="col">Source</th>
   </tr>
@@ -254,6 +274,7 @@ const rowHtml = (r, prefix = '') => {
     <td class="num-col">${priceCell(r)}</td>
     <td class="small">${esc(r.price_basis)}</td>
     <td class="small">${weight}</td>
+    <td class="num-col small">${meltCell(r)}</td>
     <td class="flags">${flags || '<span class="sub">none</span>'}</td>
     <td><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>`;
@@ -327,7 +348,7 @@ const latestChecks = await read('data/checks/latest.json').catch(() => null);
 const dashboard = layout({
   title: 'Verified solid gold engagement rings',
   description:
-    'A verified, source-linked list of solid gold engagement rings from four US retailers, with a gold-value calculator and a hallucination audit.',
+    'A verified, source-linked list of solid gold engagement rings from seven US retailers, with a weight and melt-value analysis, a gold calculator and a hallucination audit.',
   current: 'root',
   active: 'Dashboard',
   body: `
@@ -346,8 +367,9 @@ const dashboard = layout({
     ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', 'the number you need for a value check')}
-    ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : 'all four are Mejuri; the rest state karat only')}
+    ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : `${solidStated} are Mejuri; the rest state karat only`)}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
+    ${stat(`${priceReread}/${totalRows}`, 'prices re-read live in P12', 'same page opened twice; two had moved')}
   </div>
 </section>
 
@@ -398,6 +420,29 @@ const dashboard = layout({
         <li><strong>Hallmarks cannot be seen online.</strong> Ask for a photo of the inside of the band, then have a jeweller test it on arrival.</li>
         <li><strong>“Setting only” prices are not ring prices.</strong> ${settingOnly} listed products exclude the centre stone.</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2>What pass P12 changed</h2>
+  <div class="two-col">
+    <div class="card">
+      <h3>Re-read against the live pages</h3>
+      <ul class="ticks">
+        ${reverification.entries.map((e) => `<li><strong>${esc(e.row)}</strong> — ${esc(e.verdict)} <a href="${esc(e.source_url)}" target="_blank" rel="noopener nofollow">source ↗</a></li>`).join('')}
+      </ul>
+      <p class="sub">Full quotes and old/new values: <a href="checks.html#reverification">re-verification ledger →</a></p>
+    </div>
+    <div class="card">
+      <h3>What the re-read found</h3>
+      <ul class="crosses">
+        <li><strong>Weight is not as rare as it looked.</strong> Ross-Simons publishes a Gold Weight line; four rows gained a real weight, taking coverage from 1 to ${weightPublished} of ${totalRows}.</li>
+        <li><strong>Two prices had moved.</strong> rs-571223 and rs-943668 no longer list the old values; both were corrected and the drift is logged as F31.</li>
+        <li><strong>Two “impossible” low prices are explainable.</strong> $149 and $179 are 0.5 g rings; the flag now says so instead of “cannot be checked” (F06).</li>
+        <li><strong>Returns have an engraving trap.</strong> Mejuri states engraved items are not returnable (F33).</li>
+      </ul>
+      <p class="sub">Nothing was inferred to fill a blank. The 38 rows without a published weight stay blank and stay flagged.</p>
     </div>
   </div>
 </section>
@@ -513,7 +558,7 @@ for (const r of rings.rows) {
         <dt>Stone</dt><dd>${esc(r.stone)}${r.stone_type ? `<div class="sub">${esc(r.stone_type)}</div>` : ''}</dd>
         <dt>Price</dt><dd>${priceCell(r)} <div class="sub">${esc(r.price_basis)}</div></dd>
         <dt>Metal weight</dt><dd>${r.weight_g_low === null ? dash : `${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g <span class="sub">as published</span>`}</dd>
-        <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}${r.inherited ? ' <span class="chip info">carried over from the first research pass</span>' : ''}</dd>
+        <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}${r.inherited ? ' <span class="chip info">carried over from the first research pass</span>' : ''}${r.reverified_at ? ` <span class="chip ok">re-read ${esc(r.reverified_at)}</span>` : ''}</dd>
         <dt>Read from</dt><dd>${esc(r.source_type || 'official product page')}</dd>
       </dl>
       <p><a class="btn" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">Open the official product page ↗</a></p>
@@ -527,7 +572,7 @@ for (const r of rings.rows) {
       <h3>Gold value check</h3>
       ${
         melt
-          ? `<p>At ${usd(spot)}/ozt, the published ${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g of ${r.karat} contains <strong>${usd(melt.lo)} – ${usd(melt.hi)}</strong> of gold. The listed price is <strong>${(r.price_low / melt.hi).toFixed(1)}×</strong> the top of that range.</p>
+          ? `<p>At ${usd(spot)}/ozt (${usd(spotPerGram)}/g), the published ${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g of ${r.karat} is ${fineGold(r, r.weight_g_low).toFixed(2)}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + fineGold(r, r.weight_g_high).toFixed(2) : ''} g of fine gold, worth <strong>${melt.lo === melt.hi ? usd(melt.lo) : usd(melt.lo) + ' – ' + usd(melt.hi)}</strong>. The listed price is <strong>${(r.price_low / melt.hi).toFixed(1)}×</strong> the top of that range.</p>
              <p class="sub">Metal value only. Excludes labour, setting, stones and margin, which is why jewellery always costs more than its melt value.</p>`
           : `<p class="unverified">Cannot be computed — this seller does not publish the metal weight.</p>
              <p class="sub">Ask the seller for grams in writing. <a href="../calculator.html?karat=${encodeURIComponent(r.karat)}">Run the calculator with a quoted weight →</a></p>`
@@ -560,6 +605,119 @@ for (const r of rings.rows) {
   });
   await writeFile(join(OUT, 'rings', `${r.id}.html`), html);
 }
+
+/* 4b. Weight and melt analysis ------------------------------------------ */
+const weighted = rings.rows
+  .filter((r) => r.weight_g_low !== null)
+  .slice()
+  .sort((a, b) => (a.price_low / (meltValue(a)?.hi || 1)) - (b.price_low / (meltValue(b)?.hi || 1)));
+const noWeightBySeller = rings.rows.filter((r) => r.weight_g_low === null).reduce((acc, r) => {
+  acc[r.retailer] = (acc[r.retailer] || 0) + 1;
+  return acc;
+}, {});
+const example = rings.rows.find((r) => r.id === 'rs-571221') || weighted[0];
+const exampleMelt = example ? meltValue(example) : null;
+
+const weightsPage = layout({
+  title: 'Weight and gold content',
+  description:
+    'Every listing whose seller publishes a metal weight, with the gold content computed from that weight and the stored gold price — and every listing where the number is missing.',
+  current: 'root',
+  active: 'Weight & melt',
+  body: `
+<section class="wrap section">
+  <h1>Weight and gold content</h1>
+  <p class="lede">The value check needs two numbers: the price, which every seller publishes, and the metal weight in grams, which almost none of them do. This page shows exactly which numbers exist, what they compute to, and where the gap is.</p>
+  ${noHallucinationBanner()}
+
+  <div class="stats narrow">
+    ${stat(`${weightPublished}`, 'listings publish a weight', `of ${totalRows} — the rest are blank, not estimated`)}
+    ${stat(`${totalRows - weightPublished}`, 'no weight published', 'the gold-value check cannot be run on these')}
+    ${stat(`${priceReread}`, 'prices re-read in this pass', `${reverifiedRows.length - priceReread} further row checked for basis only`) }
+  </div>
+
+  <h2>The formula, and why it is not an appraisal</h2>
+  <div class="card">
+    <p><strong>Fine gold (g) = published grams × (karat ÷ 24)</strong><br>
+       <strong>Gold value (USD) = fine gold (g) × (${usd(spot)} ÷ ${gold.grains_per_troy_ounce} USD per gram)</strong></p>
+    ${example && exampleMelt
+      ? `<p class="sub">Worked from a row on this site: ${esc(example.title)} at ${esc(example.retailer)} is listed at ${usd(example.price_low)} and publishes ${example.weight_g_low} g at ${esc(example.karat)}.
+         ${example.weight_g_low} g × (${parseInt(example.karat, 10)} ÷ 24) = ${fineGold(example, example.weight_g_low).toFixed(3)} g of fine gold;
+         × ${usd(spotPerGram)}/g = <strong>${usd(exampleMelt.lo)}</strong>. The asking price is ${(example.price_low / exampleMelt.lo).toFixed(1)}× that metal value.</p>`
+      : ''}
+    <p class="sub">Labour, setting, stones, hallmarking, retail margin and sales tax are all outside this number, which is why finished jewellery normally sells for 2–6× its melt value. A multiple under 1 would mean the price is below the metal — so treat it as a data error, not a bargain. Spot price: ${usd(spot)}/ozt at ${esc(gold.primary.publisher_timestamp)} (<a href="${esc(gold.primary.source_url)}" target="_blank" rel="noopener nofollow">${esc(gold.primary.publisher)} ↗</a>). Seller-published weights are marked approximate by the seller (F34).</p>
+  </div>
+
+  <h2>Listings with a published weight</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th scope="col">Ring</th><th scope="col">Seller</th><th scope="col">Karat</th>
+        <th scope="col" class="num-col">Grams (published)</th><th scope="col" class="num-col">Fine gold</th>
+        <th scope="col" class="num-col">Gold value</th><th scope="col" class="num-col">Price</th>
+        <th scope="col" class="num-col">Price ÷ gold</th><th scope="col">Source</th>
+      </tr>
+    </thead>
+    <tbody>
+      ${weighted
+        .map((r) => {
+          const m = meltValue(r);
+          const fgLo = fineGold(r, r.weight_g_low);
+          const fgHi = fineGold(r, r.weight_g_high ?? r.weight_g_low);
+          return `<tr>
+        <td class="cell-title"><a href="rings/${r.id}.html">${esc(r.title)}</a></td>
+        <td>${esc(r.retailer)}</td>
+        <td><strong>${esc(r.karat)}</strong></td>
+        <td class="num-col">${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g</td>
+        <td class="num-col">${fgLo.toFixed(2)}${fgHi !== fgLo ? '–' + fgHi.toFixed(2) : ''} g</td>
+        <td class="num-col">${usd(m.lo)}${m.hi !== m.lo ? '–' + usd(m.hi) : ''}</td>
+        <td class="num-col">${priceCell(r)}</td>
+        <td class="num-col">${(r.price_low / m.hi).toFixed(1)}×</td>
+        <td><a class="src" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">official page ↗</a></td>
+      </tr>`;
+        })
+        .join('\n')}
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">Gold value is computed by this site from the seller's published grams and the stored spot price. It is arithmetic, not a quote, and it is reproducible with the <a href="calculator.html">calculator</a>.</p>
+
+  <h2>Listings with no published weight</h2>
+  <p>${totalRows - weightPublished} of ${totalRows} rows fall here. They are counted by seller so the gap is visible rather than hidden:</p>
+  <div class="table-wrap">
+  <table class="data-table compact">
+    <thead><tr><th scope="col">Seller</th><th scope="col" class="num-col">Rows without a weight</th><th scope="col">What is known instead</th></tr></thead>
+    <tbody>
+      ${Object.entries(noWeightBySeller)
+        .sort((a, b) => b[1] - a[1])
+        .map(([seller, n]) => {
+          const row = rings.rows.find((r) => r.retailer === seller);
+          const known = {
+            'Ross-Simons': 'page does publish a Gold Weight line on many items, but not on these rows in the passes so far (F32)',
+            'With Clarity': 'setting-only products; the builder prices the setting, not a finished ring',
+            'Aurate': 'the cigar band publishes a range; the other Aurate rows publish none',
+            'Blue Nile': 'setting prices; no gram weight in the feed',
+            'Mejuri': 'publishes width and thickness in mm, not grams',
+            'Anna Sheffield': 'made-to-order pieces; no weight in the feed',
+            'Brilliant Earth': 'setting price; no gram weight in the feed',
+          }[seller] || 'no weight in the captured evidence';
+          return `<tr><td><strong>${esc(seller)}</strong></td><td class="num-col">${n}</td><td class="small">${esc(known)}</td></tr>`;
+        })
+        .join('\n')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>What to do with this</h2>
+  <ol class="steps">
+    <li>Ask the seller for the weight in grams for your exact size, in writing, before paying.</li>
+    <li>Paste their number into the <a href="calculator.html">calculator</a> with today's gold price to get the metal floor.</li>
+    <li>On arrival, have an independent jeweller weigh the ring and XRF-test the karat before you wear or resize it.</li>
+    <li>If the measured weight is materially below what the seller stated, that is your return reason — keep the written statement and the receipt.</li>
+  </ol>
+</section>`,
+});
 
 /* 5. Calculator --------------------------------------------------------- */
 const karatOptions = [10, 14, 18, 22, 24];
@@ -624,7 +782,17 @@ const calculator = layout({
   <p class="sub">Karat is a fraction of 24 by definition. Whether a piece may legally be marked a given karat is governed by 16 CFR Part 23 — see <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener nofollow">eCFR ↗</a>.</p>
 
   <h2>Worked example from this list</h2>
-  <p>The Aurate Modern Cigar Band is the only listing here that publishes a weight: 2.6–4 g at 14K, listed at ${usd(1308)}. That is ${usd(2.6 * (14 / 24) * spotPerGram)}–${usd(4 * (14 / 24) * spotPerGram)} of gold, or about ${(1308 / (4 * (14 / 24) * spotPerGram)).toFixed(1)}× the top of the metal range. For a wide designer band that is a normal retail multiple, and it is checkable — which is the point.</p>
+  ${(() => {
+    const w = rings.rows.filter((r) => r.weight_g_low !== null).slice(0, 3);
+    if (!w.length) return '<p class="muted">No listing on this site publishes a metal weight yet, so there is no worked example to show.</p>';
+    return w
+      .map((r) => {
+        const m = meltValue(r);
+        return `<p><strong>${esc(r.title)}</strong> (${esc(r.retailer)}) publishes ${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g at ${esc(r.karat)} and is listed at ${usd(r.price_low)}. That is ${usd(m.lo)}${m.hi !== m.lo ? '–' + usd(m.hi) : ''} of gold, or ${(r.price_low / m.hi).toFixed(1)}× the metal value. <a href="rings/${r.id}.html">Full check →</a></p>`;
+      })
+      .join('');
+  })()}
+  <p class="sub">Every number above is computed from data already on this site — grams from the seller, karat from the seller, price from the seller, spot from the market feed. Nothing is typed by hand.</p>
 </section>`,
 });
 
@@ -766,7 +934,8 @@ const methodologyPage = layout({
   ${noHallucinationBanner()}
 
   <h2>1. Where the data comes from</h2>
-  <p>The four retailers in scope publish machine-readable product feeds at <code>/products.json</code> and <code>/search/suggest.json</code>. Those endpoints are the seller's own catalogue — the same data their product page renders — which makes them the strongest available primary source short of a signed quote. Prices, titles, metal descriptions and variant ranges were read from those feeds on ${esc(retrievedDates.join(', '))}. Policy text was read from the retailers' own <code>/policies/refund-policy</code> pages. The gold price was read from a market-data publisher and cross-checked against COMEX futures.</p>
+  <p>The retailers in scope (Ross-Simons, Aurate, With Clarity, Anna Sheffield) publish machine-readable product feeds at <code>/products.json</code> and <code>/search/suggest.json</code>. Those endpoints are the seller's own catalogue — the same data their product page renders — which makes them the strongest available primary source short of a signed quote. Prices, titles, metal descriptions and variant ranges were read from those feeds on ${esc(retrievedDates.join(', '))}. The remaining retailers (Blue Nile, Mejuri, Brilliant Earth) were read from their own product pages. Policy text was read from the retailers' own <code>/policies/refund-policy</code> pages. The gold price was read from a market-data publisher and cross-checked against COMEX futures.</p>
+  <p><strong>Second read (pass P12).</strong> Seven product pages were opened again in this pass and the price, karat, weight and setting basis were copied off the page a second time. Where the page had changed, the row was corrected and the change logged (F31); where a weight line existed, it was added with the seller's own wording as evidence. The ledger of those re-reads, with quotes and before/after values, is on <a href="checks.html#reverification">Checks</a> and in <code>data/reverification.json</code>.</p>
   <p>Nothing was read from a search-engine snippet, a shopping comparison, an influencer round-up or a review site. Those are secondary at best and are exactly where invented prices come from.</p>
 
   <h2>2. What was excluded on purpose</h2>
@@ -788,7 +957,14 @@ const methodologyPage = layout({
     <li><strong>No future dates.</strong> Retrieval dates later than the build date fail the run.</li>
     <li><strong>Links.</strong> Every internal link and asset reference in the generated HTML must resolve to a file that exists.</li>
     <li><strong>No silent blanks.</strong> Any null value must be accompanied by a flag explaining it.</li>
+    <li><strong>Plated-metal guard.</strong> Vermeil, plated, gold-filled, gold-tone or overlay wording in a listing must raise a flag; it can never pass as solid gold.</li>
+    <li><strong>Source registry coverage.</strong> A retailer used for a value must appear in the source register.</li>
+    <li><strong>Weight traceability.</strong> A weight in grams is only accepted when those grams appear in the evidence text copied from the seller.</li>
+    <li><strong>Re-verification ledger.</strong> A row may only be labelled "re-read" if the ledger holds the same URL, a date and the quoted line.</li>
+    <li><strong>No invented dollar amounts.</strong> Every dollar figure on every generated page must trace to a value in the data files or to a formula computed from them. This is the check that catches a price invented in the prose.</li>
+    <li><strong>Data age.</strong> A snapshot older than 30 days fails the run, so a stale price cannot be published as current.</li>
   </ol>
+  <p class="sub">All seventeen groups and their live results are listed on <a href="checks.html">Checks</a>. The suite is also tested against deliberate sabotage: a fake five-figure price was injected into a page to confirm the invented-amount check fires (pass P15 in the history).</p>
 
   <h2>4. Limits you should know</h2>
   <ul class="crosses">
@@ -796,7 +972,8 @@ const methodologyPage = layout({
     <li><strong>Weight is mostly missing.</strong> ${weightPublished} of ${totalRows} listings publish grams. The value comparison cannot be completed for the rest, and this site refuses to fill that gap with an estimate.</li>
     <li><strong>Hallmarks are physical.</strong> No stamp can be verified from a web page. A photo of the stamp is evidence of what is written, not proof of what the metal is. XRF or an assay by an independent jeweller is the only real test.</li>
     <li><strong>Reputation is not scored here.</strong> Seller verification in this pass means: official store identity plus a verifiable phone or support email. It is not a rating and it is not an endorsement.</li>
-    <li><strong>Four US retailers.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap.</li>
+    <li><strong>Seven US retailers, 43 listings.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap. Only ${reverifiedRows.length} of the ${totalRows} rows were re-read live in the latest pass; the others carry the retrieval date they were captured on.</li>
+    <li><strong>Only ${weightPublished} of ${totalRows} rows publish a weight,</strong> so the gold-value check is complete for those and impossible for the rest. <a href="weights.html">Weight and gold content</a> shows exactly which is which.</li>
   </ul>
 
   <h2>5. Reproducing the run</h2>
@@ -841,13 +1018,13 @@ if (latestChecks) {
   <p>Each review pass re-runs the suite. The history is kept in <code>data/checks/history.json</code>.</p>
   <div class="table-wrap">
   <table class="data-table compact">
-    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th></tr></thead>
+    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th><th>What happened</th></tr></thead>
     <tbody>
       ${(await read('data/checks/history.json').catch(() => ({ runs: [] }))).runs
         .map(
-          (h) => `<tr><td>${esc(h.pass)}</td><td>${esc(h.generated_at)}</td><td class="num-col">${h.total}</td><td class="num-col">${h.failed}</td><td>${h.failed === 0 ? '<span class="chip ok">pass</span>' : '<span class="chip bad">fail</span>'}</td></tr>`,
+          (h) => `<tr><td>${esc(h.pass)}</td><td>${esc(h.generated_at)}</td><td class="num-col">${h.total}</td><td class="num-col">${h.failed}</td><td>${h.failed === 0 ? '<span class="chip ok">pass</span>' : '<span class="chip bad">fail</span>'}</td><td class="small">${esc(h.note || '')}</td></tr>`,
         )
-        .join('') || '<tr><td colspan="5" class="muted">No history yet.</td></tr>'}
+        .join('') || '<tr><td colspan="6" class="muted">No history yet.</td></tr>'}
     </tbody>
   </table>
   </div>`;
@@ -864,6 +1041,25 @@ const checksPage = layout({
   <p class="lede">An automated pass runs after every review. It is built to catch the specific ways a price or specification gets invented: a number with no source, a karat that contradicts its evidence, a melt value higher than the asking price, or a link that goes nowhere.</p>
   ${noHallucinationBanner()}
   ${checksBody}
+  <h2 id="reverification">Re-verification ledger — pass P12</h2>
+  <p>Seven rows and one market feed were re-read from the live pages in this pass. Each line records what the page said the first time, what it said on the re-read, and the quote that proves it. The machine-readable version is <code>data/reverification.json</code>, and check S15 fails the build if a row claims to be re-verified without an entry here.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">What was checked</th><th scope="col">Before</th><th scope="col">On re-read</th><th scope="col">Verdict</th><th scope="col">Quote / source</th></tr></thead>
+    <tbody>
+      ${(reverification.entries || []).map((e) => `<tr>
+        <td><strong>${esc(e.row)}</strong></td>
+        <td class="small">${esc((e.checked || []).join(', '))}</td>
+        <td class="small">${esc(Object.entries(e.old || {}).map(([k, v]) => `${k}: ${v === null ? 'blank' : v}`).join(' · '))}</td>
+        <td class="small">${esc(Object.entries(e.new || {}).map(([k, v]) => `${k}: ${v === null ? 'blank' : v}`).join(' · '))}</td>
+        <td class="small">${esc(e.verdict)}</td>
+        <td class="small">${esc(e.quote)} <a href="${esc(e.source_url)}" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr>`).join('')}
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">${esc(reverification.not_reverified?.why || '')}</p>
+
   <h2>Run it yourself</h2>
   <p><code>node scripts/verify.mjs</code> — no dependencies, no network. The output is written to <code>data/checks/latest.json</code> and summarised above.</p>
 </section>`,
@@ -872,6 +1068,7 @@ const checksPage = layout({
 /* --------------------------------------------------------------- writes */
 await writeFile(join(OUT, 'index.html'), dashboard);
 await writeFile(join(OUT, 'rings.html'), ringsPage);
+await writeFile(join(OUT, 'weights.html'), weightsPage);
 await writeFile(join(OUT, 'calculator.html'), calculator);
 await writeFile(join(OUT, 'checklist.html'), checklistPage);
 await writeFile(join(OUT, 'sources.html'), sourcesPage);
@@ -885,4 +1082,4 @@ await writeFile(join(OUT, '404.html'), layout({
   body: `<section class="wrap section"><h1>Page not found</h1><p class="lede">That page does not exist. Everything on this site is reachable from the dashboard.</p><p><a class="btn" href="index.html">Back to the dashboard</a></p></section>`,
 }));
 
-console.log(`built: index, rings, ${CATEGORIES.length} categories, ${rings.rows.length} ring pages, calculator, checklist, sources, flagged, methodology, checks`);
+console.log(`built: index, rings, ${CATEGORIES.length} categories, ${rings.rows.length} ring pages, weights, calculator, checklist, sources, flagged, methodology, checks`);

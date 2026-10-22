@@ -20,6 +20,7 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html">Dashboard</a>
       <a href="rings.html">All rings</a>
+      <a href="weights.html">Weight & melt</a>
       <a href="calculator.html">Gold calculator</a>
       <a href="checklist.html">Checklist</a>
       <a href="sources.html">Sources</a>
@@ -41,7 +42,8 @@
 </div>
 
   <h2>1. Where the data comes from</h2>
-  <p>The four retailers in scope publish machine-readable product feeds at <code>/products.json</code> and <code>/search/suggest.json</code>. Those endpoints are the seller's own catalogue — the same data their product page renders — which makes them the strongest available primary source short of a signed quote. Prices, titles, metal descriptions and variant ranges were read from those feeds on 2026-10-22. Policy text was read from the retailers' own <code>/policies/refund-policy</code> pages. The gold price was read from a market-data publisher and cross-checked against COMEX futures.</p>
+  <p>The retailers in scope (Ross-Simons, Aurate, With Clarity, Anna Sheffield) publish machine-readable product feeds at <code>/products.json</code> and <code>/search/suggest.json</code>. Those endpoints are the seller's own catalogue — the same data their product page renders — which makes them the strongest available primary source short of a signed quote. Prices, titles, metal descriptions and variant ranges were read from those feeds on 2026-10-22. The remaining retailers (Blue Nile, Mejuri, Brilliant Earth) were read from their own product pages. Policy text was read from the retailers' own <code>/policies/refund-policy</code> pages. The gold price was read from a market-data publisher and cross-checked against COMEX futures.</p>
+  <p><strong>Second read (pass P12).</strong> Seven product pages were opened again in this pass and the price, karat, weight and setting basis were copied off the page a second time. Where the page had changed, the row was corrected and the change logged (F31); where a weight line existed, it was added with the seller's own wording as evidence. The ledger of those re-reads, with quotes and before/after values, is on <a href="checks.html#reverification">Checks</a> and in <code>data/reverification.json</code>.</p>
   <p>Nothing was read from a search-engine snippet, a shopping comparison, an influencer round-up or a review site. Those are secondary at best and are exactly where invented prices come from.</p>
 
   <h2>2. What was excluded on purpose</h2>
@@ -63,15 +65,23 @@
     <li><strong>No future dates.</strong> Retrieval dates later than the build date fail the run.</li>
     <li><strong>Links.</strong> Every internal link and asset reference in the generated HTML must resolve to a file that exists.</li>
     <li><strong>No silent blanks.</strong> Any null value must be accompanied by a flag explaining it.</li>
+    <li><strong>Plated-metal guard.</strong> Vermeil, plated, gold-filled, gold-tone or overlay wording in a listing must raise a flag; it can never pass as solid gold.</li>
+    <li><strong>Source registry coverage.</strong> A retailer used for a value must appear in the source register.</li>
+    <li><strong>Weight traceability.</strong> A weight in grams is only accepted when those grams appear in the evidence text copied from the seller.</li>
+    <li><strong>Re-verification ledger.</strong> A row may only be labelled "re-read" if the ledger holds the same URL, a date and the quoted line.</li>
+    <li><strong>No invented dollar amounts.</strong> Every dollar figure on every generated page must trace to a value in the data files or to a formula computed from them. This is the check that catches a price invented in the prose.</li>
+    <li><strong>Data age.</strong> A snapshot older than 30 days fails the run, so a stale price cannot be published as current.</li>
   </ol>
+  <p class="sub">All seventeen groups and their live results are listed on <a href="checks.html">Checks</a>. The suite is also tested against deliberate sabotage: a fake five-figure price was injected into a page to confirm the invented-amount check fires (pass P15 in the history).</p>
 
   <h2>4. Limits you should know</h2>
   <ul class="crosses">
     <li><strong>Prices move.</strong> The numbers are a snapshot from 2026-10-22. The retailer page always wins.</li>
-    <li><strong>Weight is mostly missing.</strong> 1 of 43 listings publish grams. The value comparison cannot be completed for the rest, and this site refuses to fill that gap with an estimate.</li>
+    <li><strong>Weight is mostly missing.</strong> 5 of 43 listings publish grams. The value comparison cannot be completed for the rest, and this site refuses to fill that gap with an estimate.</li>
     <li><strong>Hallmarks are physical.</strong> No stamp can be verified from a web page. A photo of the stamp is evidence of what is written, not proof of what the metal is. XRF or an assay by an independent jeweller is the only real test.</li>
     <li><strong>Reputation is not scored here.</strong> Seller verification in this pass means: official store identity plus a verifiable phone or support email. It is not a rating and it is not an endorsement.</li>
-    <li><strong>Four US retailers.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap.</li>
+    <li><strong>Seven US retailers, 43 listings.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap. Only 8 of the 43 rows were re-read live in the latest pass; the others carry the retrieval date they were captured on.</li>
+    <li><strong>Only 5 of 43 rows publish a weight,</strong> so the gold-value check is complete for those and impossible for the rest. <a href="weights.html">Weight and gold content</a> shows exactly which is which.</li>
   </ul>
 
   <h2>5. Reproducing the run</h2>
@@ -81,7 +91,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

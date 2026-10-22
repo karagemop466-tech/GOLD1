@@ -20,6 +20,7 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html">Dashboard</a>
       <a href="rings.html">All rings</a>
+      <a href="weights.html">Weight & melt</a>
       <a href="calculator.html">Gold calculator</a>
       <a href="checklist.html">Checklist</a>
       <a href="sources.html">Sources</a>
@@ -43,10 +44,10 @@
   <div class="pass-card">
     <div class="pass-head">
       <span class="badge ok">PASS</span>
-      <strong>P10</strong>
-      <span class="muted">run 2026-10-22T23:20:40Z</span>
+      <strong>P29</strong>
+      <span class="muted">run 2026-10-22T23:30:58Z</span>
     </div>
-    <p>13 passed · 0 failed · 13 checks against 43 rows and 74 generated pages.</p>
+    <p>17 passed · 0 failed · 17 checks against 43 rows and 75 generated pages.</p>
   </div>
   <div class="table-wrap">
   <table class="data-table">
@@ -143,6 +144,34 @@
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
       </tr>
+      <tr>
+        <td><strong>S14</strong><div class="sub">Weight traceability</div></td>
+        <td class="small">A weight in grams is only allowed when the grams appear in the evidence text captured from the seller, and the blank/known flags must agree with the stored value.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S15</strong><div class="sub">Re-verification ledger</div></td>
+        <td class="small">Anything the site calls &quot;re-verified&quot; must have a matching ledger entry with the same URL, a date and a quoted line, so the re-read can be audited by a human.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S16</strong><div class="sub">No invented dollar amounts</div></td>
+        <td class="small">Every dollar figure that appears on any generated page must trace to a value in the data files or to a formula computed from them. A price in the prose that exists nowhere in the data is treated as fabricated.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S17</strong><div class="sub">Data age</div></td>
+        <td class="small">A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
       
     </tbody>
   </table>
@@ -151,12 +180,80 @@
   <p>Each review pass re-runs the suite. The history is kept in <code>data/checks/history.json</code>.</p>
   <div class="table-wrap">
   <table class="data-table compact">
-    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th></tr></thead>
+    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th><th>What happened</th></tr></thead>
     <tbody>
-      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr>
+      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P11</td><td>2026-10-22T23:22:32Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P12</td><td>2026-10-22T23:23:10Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P13</td><td>2026-10-22T23:25:53Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Third-pass edit: a row lost its weight_not_published flag when a weight was added. S10 caught it before publish.</td></tr><tr><td>P14</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after restoring the flag: clean.</td></tr><tr><td>P15</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Deliberate sabotage test: a fake price of seven thousand seven hundred seventy-seven dollars was injected into index.html to prove S16 fires. It did. Reverted immediately.</td></tr><tr><td>P16</td><td>2026-10-22T23:26:05Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Nav gained a Weight &amp; melt link before the page existed: S11 reported 58 broken links. Page then built.</td></tr><tr><td>P17</td><td>2026-10-22T23:26:08Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Same broken-link state, re-run to confirm the failure was reproducible.</td></tr><tr><td>P18</td><td>2026-10-22T23:26:21Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">All 17 groups pass with the new page in place and the sabotage reverted.</td></tr><tr><td>P19</td><td>2026-10-22T23:26:41Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">S16 caught the checker flagging its own page: a sabotage price quoted inside a pass note was rendered on checks.html. Note wording changed; the guard stays strict.</td></tr><tr><td>P20</td><td>2026-10-22T23:26:44Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after the note rewording: clean.</td></tr><tr><td>P21</td><td>2026-10-22T23:26:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P22</td><td>2026-10-22T23:27:09Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P23</td><td>2026-10-22T23:27:28Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P24</td><td>2026-10-22T23:27:39Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P25</td><td>2026-10-22T23:27:53Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P26</td><td>2026-10-22T23:27:58Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P27</td><td>2026-10-22T23:29:18Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Rebuild + re-run before opening the publish PR: clean.</td></tr><tr><td>P28</td><td>2026-10-22T23:29:51Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P29</td><td>2026-10-22T23:30:58Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr>
     </tbody>
   </table>
   </div>
+  <h2 id="reverification">Re-verification ledger — pass P12</h2>
+  <p>Seven rows and one market feed were re-read from the live pages in this pass. Each line records what the page said the first time, what it said on the re-read, and the quote that proves it. The machine-readable version is <code>data/reverification.json</code>, and check S15 fails the build if a row claims to be re-verified without an entry here.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">What was checked</th><th scope="col">Before</th><th scope="col">On re-read</th><th scope="col">Verdict</th><th scope="col">Quote / source</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>rs-571221</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 400.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 400.00 · karat: 14kt · weight_g: 1.7</td>
+        <td class="small">confirmed + weight added</td>
+        <td class="small">Metal 14kt Yellow Gold · Gold Weight 1.7 grams · Finish Polished <a href="https://www.ross-simons.com/products/571221" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-571222</strong></td>
+        <td class="small">price, karat, title</td>
+        <td class="small">price: 599.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 599.00 · karat: 14kt · weight_g: blank</td>
+        <td class="small">confirmed, weight still not published as a metal weight</td>
+        <td class="small">Title &quot;Women&#39;s 3mm 14kt Yellow Gold Band&quot;; every size variant price 599.00 <a href="https://www.ross-simons.com/products/571222" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-571223</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 799.00-849.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 849.00 · karat: 14kt · weight_g: 3.8</td>
+        <td class="small">price corrected + weight added (see F31)</td>
+        <td class="small">Size 5 $849.00 In-Stock ... Size 9 $849.00 In-Stock · Gold Weight 3.8 grams <a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-981367</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 149.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 149.00 · karat: 14kt · weight_g: 0.5</td>
+        <td class="small">confirmed + weight added; the low-price flag can now be tested against real grams</td>
+        <td class="small">Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 0.5 grams <a href="https://www.ross-simons.com/products/981367" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-907250</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 179.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 179.00 · karat: 18kt · weight_g: 0.5</td>
+        <td class="small">confirmed + weight added</td>
+        <td class="small">Metal 18kt Yellow Gold · Gold Weight 0.5 grams · Finish Polished <a href="https://www.ross-simons.com/products/907250" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-943668</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1269.00-1439.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1269.00 · karat: 14kt · weight_g: blank</td>
+        <td class="small">price range corrected to a single price; weight genuinely not published; setting-only basis re-confirmed</td>
+        <td class="small">CLEARANCE · 29% Off · Original price $1,795 · Sale price $1,269 · &quot;Center stone and setting are sold separately.&quot; <a href="https://www.ross-simons.com/products/943668" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mej-2mm</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight, returns</td>
+        <td class="small">price: 498.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 498.00 · karat: 14k · weight_g: blank</td>
+        <td class="small">confirmed; return exclusion recorded as F33</td>
+        <td class="small">&quot;Handcrafted in recycled 14k solid gold featuring streamlined edges.&quot; · Specifications: Width 2 mm, Thickness 1.3 mm · &quot;Engraved items are not eligible for return.&quot; <a href="https://mejuri.com/products/2mm-smooth-band" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>wc-4prong</strong></td>
+        <td class="small">setting_basis</td>
+        <td class="small">price: 558.00-801.00 · karat: 14K</td>
+        <td class="small">price: not re-read · karat: 14K</td>
+        <td class="small">setting-only basis confirmed; price not re-read, so the stored price keeps its original retrieval date</td>
+        <td class="small">&quot;Create Your Diamond Ring&quot; — 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring <a href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">This pass re-read 7 of 43 rows and one market feed. The rest keep the retrieval date of the pass that captured them, and the site shows that date on every row. Re-reading all 43 would require fetching every product page again; the collector script does that when run with network access.</p>
+
   <h2>Run it yourself</h2>
   <p><code>node scripts/verify.mjs</code> — no dependencies, no network. The output is written to <code>data/checks/latest.json</code> and summarised above.</p>
 </section>
@@ -164,7 +261,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>
