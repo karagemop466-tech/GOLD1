@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "description": "Flagged for Review ledger. Each item is an irregularity, unverified value, or verification limitation found while working line by line. Nothing here blocks publication — it is published so the project owner can review and request changes.",
+    "last_review_utc": "2026-10-22"
+  },
+  "flags": [
+    {
+      "id": "F1",
+      "severity": "high",
+      "title": "No retailer reviewed publishes the ring's metal weight in grams",
+      "detail": "The project checklist requires checking weight in grams. Across 14 listings from Tiffany & Co., Cartier, Brilliant Earth, Blue Nile and Mejuri, NOT ONE listing page reviewed published the finished metal weight in grams (Cartier publishes width/thickness only; others publish band width). Every ring row therefore has weight_g = null. ACTION: ask each seller for the exact weight in grams in writing before purchase, and weigh/verify independently on arrival.",
+      "source_urls": [
+        "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
+        "https://mejuri.com/products/diamonds-band"
+      ]
+    },
+    {
+      "id": "F2",
+      "severity": "high",
+      "title": "Tiffany & Co. return-policy conflict on the Tiffany Setting product page",
+      "detail": "The fetched Tiffany Setting (18k Yellow Gold) page displayed BOTH 'Please note that this item is non returnable.' AND 'Please note that this item can only be exchanged.' alongside the sitewide claim 'We offer complimentary shipping and returns on all Tiffany & Co. orders placed on the U.S. website.' These statements conflict. The checklist requires a confirmed return right after independent inspection — clarify with Tiffany in writing BEFORE purchase which policy applies to engagement rings.",
+      "source_urls": [
+        "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
+        "https://www.tiffany.com/policy/return-policy.html"
+      ],
+      "evidence_quote": "Please note that this item is non returnable. ... Please note that this item can only be exchanged. ... We offer complimentary shipping and returns on all Tiffany & Co. orders placed on the U.S. website."
+    },
+    {
+      "id": "F3",
+      "severity": "medium",
+      "title": "Tiffany Setting 18k Rose Gold price ($1,530) seen only as search snapshot",
+      "detail": "Tiffany's official 1-carat solitaire category page (search snapshot dated 2026-04-16) showed 'Starting from $1,530' for the 18k Rose Gold Tiffany Setting. Direct verification was not performed, so the price is left blank in the ring table (R02).",
+      "source_urls": [
+        "https://www.tiffany.com/engagement/1-carat-diamond-rings/solitaire/"
+      ]
+    },
+    {
+      "id": "F4",
+      "severity": "medium",
+      "title": "Cartier rose-gold and white-gold Etincelle karat not stated on fetched pages",
+      "detail": "The princess-cut (yellow gold) product page states 'Yellow gold 750/1000' (=18K). The pear-shaped (rose gold) and emerald-cut (white gold) variants were verified for price and metal only via the official category page; the fetched pages did not state their karat/750 fineness. Karat left unverified (R04, R05). Expected but UNCONFIRMED: 750/1000.",
+      "source_urls": [
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/",
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html"
+      ]
+    },
+    {
+      "id": "F5",
+      "severity": "medium",
+      "title": "Brilliant Earth currency/geo pricing discrepancy (Atelier Solitaire 14KY)",
+      "detail": "The official Brilliant Earth US listing (search snapshot 2026-08-27) showed '$1,190 (Setting Only)'. A direct fetch on 2026-10-22 was served a EUR geo page showing '€1,350.00 (Setting Only)'. The USD price could not be re-confirmed on the fetch date, so R06 price is blank. Brilliant Earth prices by region/currency — confirm the USD price on the live page from your own location.",
+      "source_urls": [
+        "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
+      ]
+    },
+    {
+      "id": "F6",
+      "severity": "low",
+      "title": "Brilliant Earth 18K Atelier variant price not yet fetched",
+      "detail": "The 18K Yellow Gold variant of the Atelier Solitaire (URL verified from the 14K page) has no verified price (R07). Needed for a like-for-like 14K vs 18K cost comparison.",
+      "source_urls": [
+        "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
+      ]
+    },
+    {
+      "id": "F7",
+      "severity": "medium",
+      "title": "Search-snapshot-only prices (Blue Nile six-prong/four-prong; Mejuri Slim Eternity)",
+      "detail": "Prices seen in search snapshots of official pages but not confirmed by direct fetch on 2026-10-22: Blue Nile Classic Six-Prong Solitaire 14KY ($1,000, stock 501140y14), Blue Nile Classic Four Prong Solitaire 14KY ($870), Mejuri Slim Diamond Eternity Band (yellow 14k 'From $648'; white 14k product page snippet 'From $898' — variant-dependent). Left blank in the table per policy (R09, R10, R14).",
+      "source_urls": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
+        "https://mejuri.com/products/slim-diamond-eternity-band"
+      ]
+    },
+    {
+      "id": "F8",
+      "severity": "high",
+      "title": "James Allen has been folded into Blue Nile — JA listing prices may be stale",
+      "detail": "Direct fetch of a jamesallen.com product URL on 2026-10-22 redirected to bluenile.com, which states 'James Allen is Now Part of Blue Nile' and shows the former SKU (17740Y14, $660 in the old JA search snapshot) as sold out. Any James Allen price circulating in search results must be treated as UNVERIFIED; shop the migrated inventory on bluenile.com (e.g. R11). Affected rows: R11 (JA-branded setting sold on Blue Nile, verified price from bluenile.com) and R12 (former JA SKU 17740Y14 — price left blank).",
+      "source_urls": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515?jaRedirect=true",
+        "https://www.jamesallen.com/engagement-rings/solitaire/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515"
+      ],
+      "evidence_quote": "James Allen is Now Part of Blue Nile — 'You'll find the same beautiful diamonds and fine jewelry — now at bluenile.com.'"
+    },
+    {
+      "id": "F9",
+      "severity": "high",
+      "title": "Popular '0.5 karat tolerance' claim contradicted by the official statute",
+      "detail": "Multiple retail blogs claim a US 'half-karat' tolerance below a gold stamp (e.g. 'a 14K ring may assay 13.5K'). The official National Gold and Silver Stamping Act as amended (15 U.S.C. §295, govinfo) instead sets whole-article tolerances of 3/1000 fineness (watchcases, flatware) or 7/1000 fineness (all other articles) below the mark — about 0.17 karat at 14K, not 0.5. The 1976 amendment notes confirm the older 'one-half of one carat' language was REPLACED. Rely on the statute, not the blogs.",
+      "source_urls": [
+        "https://www.govinfo.gov/link/uscode/15/294"
+      ],
+      "evidence_quote": "§295: '...shall not be less by more than three one-thousandth parts, in the case of a watchcase or flatware, or than seven one-thousandth parts, in the case of any other such article, than the fineness indicated by the mark...' (Amendments 1976: substituted 'three one-thousandth parts' for 'one-half of one carat'...)"
+    },
+    {
+      "id": "F10",
+      "severity": "medium",
+      "title": "LBMA gold price numbers are licence-gated; public gold 'spot' quotes vary intraday",
+      "detail": "The LBMA page confirms the LBMA Gold Price is administered by ICE Benchmark Administration, but numeric data now requires an IBA licence (per the World Gold Council: 'As of 18 March 2025... historical LBMA Gold Price data has been removed at the request of the ICE Benchmark Administration'). Public spot quotes on 2026-10-22 ranged ~$4,028–$4,084/oz intraday across Kitco/CNBC/Bloomberg. This project therefore uses the World Gold Council figure (USD 4,024.36/oz, data as of 2026-10-21, fetched directly) as its single dated anchor and treats all other quotes as time-stamped cross-checks only.",
+      "source_urls": [
+        "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices",
+        "https://www.gold.org/goldhub/data/gold-prices",
+        "https://www.kitco.com/charts/gold",
+        "https://www.cnbc.com/amp/select/the-price-of-gold-today-oct-22-2026/"
+      ]
+    },
+    {
+      "id": "F11",
+      "severity": "medium",
+      "title": "FTC removed the 10K minimum in 2018 — older checklists are out of date",
+      "detail": "The project checklist (and much retail guidance) assumes 10K is the US legal minimum to call something 'gold'. The FTC's 2018 revision of the Jewelry Guides removed that threshold; the Guides' own example list now includes '9 Karat Gold' as an acceptable designation when the karat fineness is correctly and conspicuously disclosed. Consequence for shoppers: check the DISCLOSED karat and the actual marking, not just the word 'gold'. (Secondary confirmations: JCK and National Jeweler coverage of the 2018 revision.)",
+      "source_urls": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.3",
+        "https://www.ftc.gov/system/files/documents/public_statements/1393857/g71001_jewelry_guides_statement_of_basis_and_purpose_final_8-8-18.pdf"
+      ],
+      "evidence_quote": "16 CFR 23.3(c)(1): '...for example, \"14 Karat Gold\", \"14 K. Gold\", \"14 Kt. Gold\", \"9 Karat Gold\", or \"9 Kt. Gold\".'"
+    },
+    {
+      "id": "F12",
+      "severity": "low",
+      "title": "Retail prices are snapshots and move with the gold market",
+      "detail": "All prices were captured 2026-10-22 (unless noted) with gold ~USD 4,024/oz (WGC, 2026-10-21 data). Gold moved ~2-3% in a single day this week (see price page cross-checks); retailers reprice settings accordingly. Re-verify on the live product page before any purchase, and re-run the calculator with the day's spot.",
+      "source_urls": [
+        "https://www.gold.org/goldhub/data/gold-prices"
+      ]
+    }
+  ]
+}

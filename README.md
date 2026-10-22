@@ -1,100 +1,128 @@
-# GOLD1 — gold engagement-ring evidence index
+# GOLD1 — solid gold engagement ring research
 
-A source-linked research repository and static dashboard for comparing gold engagement-ring settings without turning incomplete listings into unsupported buying advice.
+A source-linked buying dashboard for **solid gold engagement rings**, built so that no price or specification can be invented.
 
-> **NO HALLUCINATIONS.** A value that is not confirmed by an official product/manufacturer source stays blank and unverified. Never infer a price, karat, solid-gold construction, weight, hallmark, seller term, or test result. Continued hallucination review is required after every review.
+**Live site:** https://karagemop466-tech.github.io/GOLD1/
 
-## Current research status
+Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), and session **arena/bc088451-gold1** (live re-verification of 7 pages + one market feed, 4 weights recovered, 2 prices corrected, 5 new findings). The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
 
-- **13 candidates**, each with a direct official product URL, displayed price, currency, and **2026-10-22** retrieval date.
-- **13 flagged for review; 0 purchase-ready.** Publication does not imply clearance.
-- Six TraxNYC rows explicitly say solid gold and list gram weights. Those are seller statements and listed item weights—not verified physical purity or net metal weight.
-- Seven Blue Nile/Brilliant Earth rows leave solid-gold wording and weight blank. No value is substituted.
-- No candidate has verified physical purity-stamp plus maker’s-mark evidence, exact net metal weight, or independent post-delivery testing.
-- Seller records preserve official contact, payment, return, documentation, and guarantee findings alongside direct BBB snapshots. BBB complaint counts are not normalized for business size and are not rankings or guarantees.
+---
 
-The dashboard contains 13 pages: landing summary, complete catalog, five category subpages, a prominent **Flagged for Review** matrix, seller review, buyer checklist, gold calculator, analysis, and methodology/sources.
+## The one rule
 
-## Run and verify
+> **No hallucinated prices.** Every price, karat and weight on the site was copied from an official retailer feed, stored with the date it was retrieved, and linked on the same row to the exact page it came from. If a value could not be confirmed on an official source it is shown as **— unverified** and published on the **Flagged for review** page. Nothing is estimated, averaged, inferred or remembered.
 
-Node.js 22 or newer is recommended. There are no production dependencies.
+That rule is printed at the top of the landing page, repeated on every subpage, and then enforced mechanically by `scripts/verify.mjs`, which re-derives every claim from its own evidence text.
+
+---
+
+## What is in the repo
+
+| Path | What it is |
+|------|------------|
+| `index.html` | Landing dashboard: the rule, headline findings, gold price, category cards, full table |
+| `rings.html` | All listings with filters (search, category, seller, karat, max price) and sortable columns |
+| `weights.html` | Weight and gold content: every listing with a published weight, the melt arithmetic shown line by line, and the per-seller count of rows where no weight exists |
+| `categories/*.html` | One page per style: solitaire, three-stone & halo, bezel & modern, gemstone, bands, estate |
+| `rings/<id>.html` | One page per listing: evidence text, melt-value check, flags, seller contact and return terms, pre-purchase steps |
+| `calculator.html` | Gold value calculator: grams × karat ÷ 24 × published gold price, plus price-to-melt multiple |
+| `checklist.html` | The original 12-point checklist, scored item by item |
+| `sources.html` | Source registry, including sources that were checked and **rejected** |
+| `flagged.html` | 29 findings that need a human decision (published, non-blocking) |
+| `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
+| `checks.html` | Output of the latest automated verification pass and the pass history |
+| `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |
+| `data/reverification.json` | Ledger of the P12 live re-reads: row, URL, what was checked, before/after, verdict and the quoted line |
+| `data/archive/session-6f8c2bcb/` | First pass's original 13 rows, 15 flags, CSV and gold reading, preserved unmodified |
+| `data/sources.json` | Source registry with retrieval dates and status |
+| `data/flagged.json` | Findings, severity, affected rows, source links |
+| `data/retailers.json` | Retailer identity, contact details and return terms (verbatim-sourced) |
+| `data/gold-price.json` | Gold spot + COMEX cross-check with publisher timestamps |
+| `data/checks/` | Latest pass and full pass history |
+| `data/collect/sources.json` | Machine-readable list of every primary URL used |
+| `scripts/collect.mjs` | Evidence collector: re-fetches every source and writes a timestamped snapshot |
+| `scripts/integrate_session_6f8c2bcb.py` | Mechanical migration of the first pass's rows into this schema (no number is retyped) |
+| `scripts/build.mjs` | Static site generator (no dependencies) |
+| `scripts/verify.mjs` | Anti-hallucination audit: 13 check groups, ~1,500 assertions |
+| `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
+| `COORDINATION.md` | Shared task board, verification log and integration record |
+
+Directories `site/` is reserved and currently empty; all generated pages live in the repo root because GitHub Pages serves this repository from `main` at `/`.
+
+---
+
+## Run it
 
 ```bash
-npm ci
-npm test
-npm run build
-npm run serve
+node scripts/build.mjs      # regenerate every page from data/
+node scripts/verify.mjs     # audit the data and the generated HTML
+python3 -m http.server 8080 # preview at http://localhost:8080
 ```
 
-The preview server binds to `0.0.0.0:4173` and serves only `dist/`. The publish directory is generated; do not edit it directly.
+Node 22, no npm install, no network calls at build time, no tracking scripts, no CDN.
 
-`npm test` runs, in order:
+---
 
-1. Evidence/schema, exact-price, seller, market-math, gate, irregularity, and narrative audits.
-2. Static internal-link and local-fragment checks.
-3. CSP, safe-DOM, local-only-fetch, external-URL, secret, and supply-chain checks.
-4. Recommended HTML/accessibility validation for every page.
-5. Browser-style DOM integration for all pages, including category filters, dialogs, seller policies, calculator behavior, and analysis.
-6. A clean static build with five exact data copies, `.nojekyll`, and a SHA-256 manifest.
-7. Published-byte/data parity and a second internal-link audit against `dist/`.
+## The verification passes
 
-`npm audit --audit-level=high` is also used for dependency review. Automated checks complement direct source review; they do not authenticate jewelry or prove that an external page remains unchanged.
+`scripts/verify.mjs` runs after every review. Each group is a mechanical test, not an opinion:
 
-## Evidence layout
+| ID | Group | What it catches |
+|----|-------|-----------------|
+| S01 | Provenance | A row with no HTTPS source, a source on the wrong domain, or no evidence text |
+| S02 | Price traceable to evidence | **The price digits must literally occur in the evidence text.** A number that is not in its own evidence is treated as fabricated |
+| S03 | Karat validity | A karat that is not 10/14/18/22/24, or that the evidence never states |
+| S04 | Internal arithmetic | Price low > high, non-positive weight, compare-at below selling price |
+| S05 | Solid-claim honesty | Claiming "solid stated" when the seller text never says solid |
+| S06 | Melt-value plausibility | An asking price below the gold content — impossible, so weight/karat/price must be wrong |
+| S07 | Plated-metal guard | Vermeil / plated / gold-filled language passing silently |
+| S08 | Date sanity | Missing or future retrieval dates, bad price feed |
+| S09 | Identity and schema | Duplicate IDs or URLs, unknown retailer or category, unflagged flags |
+| S10 | No silent blanks | A blank weight without an explanation, or an undisclosed price range |
+| S11 | Links and placeholders | Broken internal links, missing assets, placeholder text |
+| S12 | Row-to-page coverage | A row without a detail page showing its source and price |
+| S13 | Source registry coverage | A retailer used for values with no registry entry |
+| S14 | Weight traceability | Grams that do not appear in the seller's own evidence text, or a blank/known flag that contradicts the stored weight |
+| S15 | Re-verification ledger | A row labelled "re-read" with no ledger entry, no quote, or a different URL |
+| S16 | No invented dollar amounts | **Any dollar figure on any page that no data file or formula produces.** Tested against deliberate sabotage (pass P15: a fake five-figure price was injected and caught) |
+| S17 | Data age | A snapshot older than 30 days, or a re-verified count that does not match the ledger |
 
-| Path | Purpose |
-|---|---|
-| `research/candidates.json` | Thirteen field-level product records, official excerpts, prices, URLs, retrieval dates, flags, and unsupported-conclusion lists |
-| `research/sellers.json` | Seller contacts, payment/return/documentation findings, BBB evidence, and reputation-methodology limits |
-| `research/irregularities.json` | Ten issue groups, including excluded records, source conflicts, mixed metals, size surcharges, and policy cautions |
-| `research/policy/verification.json` | FTC/GIA/CFPB/LBMA guidance and nine explicit verification gates |
-| `research/policy/market.json` | Named Kitco panel snapshot and nominal listed-weight calculation contract |
-| `research/AUDIT.md`, `research/policy/AUDIT.md` | Source-review and verification records |
-| `site/` | Reviewed HTML, CSS, and JavaScript source |
-| `scripts/`, `tests/` | Automated audits and validator configuration |
-| `dist/` | Generated publication output; ignored by Git |
-| `COORDINATION.md` | Task ownership, work log, and final PR/merge/deployment record |
+Failures are printed, written to `data/checks/latest.json`, appended to `data/checks/history.json`, and rendered on `checks.html`. The command exits non-zero on any failure.
 
-## Gold arithmetic and its limits
+---
 
-The only numeric market input is the named **Kitco Live GoldPrice** panel snapshot:
+## Adding a listing (the only allowed way)
 
-- Source timestamp: **Oct 22, 2026 — 19:11 NY Time**.
-- Bid: **$4,025.00 per troy ounce**; ask: $4,027.00.
-- Conversion stated by the same source: **31.1034768 grams per troy ounce**.
-- Derived 24K bid reference: **$129.4067549387/g**, displayed as **$129.41/g**.
+1. Retrieve the product from the retailer's own feed or product page. Record the exact wording that states the karat and the price.
+2. Add a row to `data/rings.json` with `source_url`, `retrieved_at`, and an `evidence` string containing the verbatim price and karat.
+3. If weight is not published, leave it `null` **and** add the `weight_not_published` flag. Do not estimate it.
+4. Add any new source to `data/sources.json`.
+5. Add a finding to `data/flagged.json` if the listing has a trap (setting-only price, plated variant, one-off estate piece).
+6. Run `node scripts/build.mjs && node scripts/verify.mjs`. If S02 fails, the price is not in your evidence — fix the evidence, not the price.
 
-For a listed weight and karat:
+---
 
-```text
-nominal fine-gold grams = listed weight × karat ÷ 24
-nominal reference USD = nominal fine-gold grams × 4,025 ÷ 31.1034768
-```
+## Current findings (as of 2026-10-22)
 
-Precision is retained until display rounding. This is **nominal listed-weight arithmetic only**. It is not actual raw-gold content, melt/resale value, an appraisal, a dealer quote, or a fairness score. Actual raw-gold amount and value remain blank without verified net metal weight.
+- **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
+- **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
+- **5 of 43 listings publish metal weight in grams** (up from 1 after the P12 re-read). The value check is complete for those five and impossible for the other 38, where it is left blank rather than estimated. → F02, F32
+- **Live re-read of 7 product pages found two prices had moved** (rs-571223 $799→$849; rs-943668 range $1,269–$1,439 → single $1,269 clearance). Both were corrected, and the old values are kept in `data/reverification.json`. → F31
+- **The two "impossible" prices are explained, not excused**: $149 and $179 are 0.5 g rings (≈0.29 g and ≈0.38 g of fine gold), giving 3.9× and 3.7× melt. → F06
+- **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
+- **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
+- **Weights the seller publishes are labelled approximate** by the seller, so melt figures carry that tolerance. → F34
+- **Mejuri's return promise excludes engraving** — "Engraved items are not eligible for return." Engraving is offered in the same buy box. → F33
+- **Resizing is a return-rights trap**: Ross-Simons and With Clarity both refuse returns on jewellery resized by another jeweller; Anna Sheffield charges a 10% restocking fee. → F07, F11
+- **Blue Nile's 18K Petite Nouveau listing contradicts its own metal spec** (first pass, F15).
+- **Set & Stones was excluded** because its engagement-ring results were gold-filled. Blue Nile's category URL 404'd, so no row was invented. → `sources.html`
 
-Size surcharges, stones, labor, design, taxes, shipping, and mixed-metal components can affect comparisons. Blue Nile item `500000y14` has platinum prongs; Brilliant Earth `BE1199H6-18KY` has 14K white-gold prongs. Do not apply one karat fraction blindly to a future whole-ring weight.
+---
 
-## Verification policy
+## Limits
 
-A karat stamp alone is not proof. Before purchase, require explicit karat and solid-gold construction—not plated, vermeil, gold-filled, overlay, or gold-tone—and reconcile the purity stamp with a nearby maker’s mark. Obtain exact net metal weight, written seller/contact answers, configuration-specific return terms (including resized/custom exclusions), documentation, and a protected payment route.
+Prices are a snapshot and retailers change them without notice — the retailer page always wins. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
 
-Use an independent jeweler after delivery; quantitative XRF by a qualified professional can help verify precious-metal content and detect plating, but sampling area and interpretation matter. Complete verification before the actual return deadline. **Do not buy if reasonable independent verification or a workable return route is refused.**
+## License
 
-Credit-card disputes are not guaranteed refunds. Preserve records, contact the issuer, and follow its process. The cited CFPB billing-error guidance discusses written notice within 60 calendar days after the charge appears; defective-goods disputes may follow a different process.
-
-## Updating research
-
-1. Read `COORDINATION.md`; honor task ownership and scopes.
-2. Re-open the official product/policy source. Search snippets are discovery aids, not price evidence.
-3. Preserve exact wording for each claimed field, a direct URL, and the retrieval date.
-4. Leave missing values null, add source-specific flags, and record conflicting sources rather than choosing a convenient value.
-5. Recheck excluded/unavailable records separately; never revive an old discovery price as current.
-6. Run `npm test` after every review. Fix failures or keep the affected item explicitly flagged.
-7. Reverify combined output and published-byte parity before integration. Continue hallucination and security review after publication.
-
-## Publication
-
-`.github/workflows/pages.yml` runs the full audit chain on the working branch, pull requests, and `main`. Only a successful `main` build is deployed to GitHub Pages. The generated artifact is static, contains no trackers or affiliate parameters, fetches only same-origin JSON, and does not require a backend or secrets.
-
-The authoritative PR, merge, workflow, and live-URL result is recorded in `COORDINATION.md`.
+Data and text in this repository are published for personal research use. Product names, prices and descriptions belong to their retailers and are quoted only as evidence.

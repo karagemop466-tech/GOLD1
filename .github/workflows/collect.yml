@@ -1,0 +1,59 @@
+name: Collect primary-source evidence
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Why this collection run is being performed
+        required: false
+        default: routine refresh
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect-evidence
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the branch that dispatched the run
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Use Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Collect primary-source snapshots
+        run: node scripts/collect.mjs data/collect/sources.json
+
+      - name: Summarise retrieval results
+        run: |
+          echo "### Evidence collection" >> "$GITHUB_STEP_SUMMARY"
+          node -e '
+            const m = require("./data/raw/_manifest.json");
+            const ok = m.sources.filter(s => s.ok).length;
+            console.log(`- collected_at: ${m.collected_at}`);
+            console.log(`- sources OK: ${ok}/${m.sources.length}`);
+            for (const s of m.sources) {
+              console.log(`  - ${s.ok ? "OK" : "FAIL"} \`${s.id}\` HTTP ${s.http_status}`);
+            }
+          ' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit snapshots
+        run: |
+          git config user.name "gold1-collector"
+          git config user.email "gold1-collector@users.noreply.github.com"
+          git add data/raw
+          if git diff --cached --quiet; then
+            echo "No snapshot changes."
+          else
+            git commit -m "data: refresh primary-source snapshots ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi

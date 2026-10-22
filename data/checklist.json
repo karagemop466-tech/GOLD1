@@ -1,0 +1,186 @@
+{
+  "as_of": "2026-10-22",
+  "note": "Each item is the user's original checklist requirement, scored against what could actually be checked in this research pass.",
+  "items": [
+    {
+      "requirement": "Gold purity: confirm the karat — 10K, 14K, 18K. Higher karat = more gold.",
+      "status": "verified",
+      "finding": "All 43 rows state a karat in the seller's own text and the karat is on the row with the source link. The set is 14K and 18K only; no 10K pieces survived the shortlist.",
+      "how": "Karat read from the product title/description in the official feed and cross-checked against the row's evidence string by an automated test.",
+      "buyer_action": "Still confirm the mark on the ring itself on arrival — a web page is a claim, not an assay.",
+      "links": [
+        {
+          "label": "eCFR 16 CFR Part 23",
+          "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+        }
+      ]
+    },
+    {
+      "requirement": "Solid gold: the listing must explicitly say solid gold, not plated, vermeil, gold-filled, overlay or gold-tone.",
+      "status": "open",
+      "finding": "4 of 43 listings contain the words “solid gold” in their own product text — all four are Mejuri. None of the other 39 contains plating language either, so the shortlist is clear of plated products, but the explicit confirmation the checklist demands is missing on most of it. One Aurate product sells a vermeil variant alongside solid gold on the same page, which is the exact trap this rule exists to catch.",
+      "how": "Searched the captured product text of all 43 rows for solid / plated / vermeil / filled / overlay / gold-tone, and inspected every metal option in the Aurate variants.",
+      "buyer_action": "Get one written sentence from the seller: \"solid 14K gold, not plated, not vermeil, not gold-filled.\" Keep it with the receipt.",
+      "links": [
+        {
+          "label": "Flagged F01",
+          "url": "flagged.html#F01"
+        },
+        {
+          "label": "16 CFR 23.4 (vermeil)",
+          "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+        }
+      ]
+    },
+    {
+      "requirement": "Hallmark: a 10K/14K/18K stamp plus a maker's/manufacturer's mark.",
+      "status": "not-online",
+      "finding": "No retailer page retrieved states the hallmark or maker's mark that will be struck inside the band. This cannot be confirmed from a web page at all, so nothing is claimed.",
+      "how": "Looked for stamp/hallmark wording in each product description; found none. US marking rules live in 16 CFR Part 23, including § 23.3 (misrepresentation as to gold content) and § 23.10 (quality marks).",
+      "buyer_action": "Ask for a close-up photo of the inside of the band before paying, then have an independent jeweller read the stamp on arrival.",
+      "links": [
+        {
+          "label": "eCFR Part 23",
+          "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+        }
+      ]
+    },
+    {
+      "requirement": "Weight: check the ring's weight in grams — a legitimate seller should provide it.",
+      "status": "open",
+      "finding": "1 of 43 listings publishes a metal weight (Aurate Modern Cigar Band, 2.6–4 g). The first research pass found 0 of its 13 listings published grams. The other 42 show a blank, not an estimate. This is the single biggest gap in the project.",
+      "how": "Read every captured product description for gram weights; compared against the feed's variant data.",
+      "buyer_action": "Email the seller for the gram weight of your size. If they cannot or will not give it, that is your answer.",
+      "links": [
+        {
+          "label": "Flagged F02",
+          "url": "flagged.html#F02"
+        }
+      ]
+    },
+    {
+      "requirement": "Seller reputation: research independent reviews and complaints; verify real contact information.",
+      "status": "partial",
+      "finding": "Contact details were confirmed from official pages for Ross-Simons (phone 800-835-0919 and a support email), Aurate (care@auratenewyork.com) and Anna Sheffield (info@annasheffield.com). With Clarity has confirmed store identity (Long Island City, NY) but no phone or support address was verified in this pass. No review-site sentiment is scored here, because review aggregators are not primary sources.",
+      "how": "Official refund-policy pages and official store metadata feeds were read; nothing was taken from third-party review sites.",
+      "buyer_action": "Phone the seller before ordering. A working phone number and a postal address are the cheapest reputation test there is.",
+      "links": [
+        {
+          "label": "Ross-Simons policy",
+          "url": "https://www.ross-simons.com/policies/refund-policy"
+        },
+        {
+          "label": "Aurate policy",
+          "url": "https://auratenewyork.com/policies/refund-policy"
+        }
+      ]
+    },
+    {
+      "requirement": "Price: compare the price with the ring's gold weight and current gold value. An unusually cheap price is a red flag.",
+      "status": "partial",
+      "finding": "The gold price is recorded with a publisher timestamp ($4,028.10/ozt on 2026-10-22) and the calculator does grams × karat ÷ 24 × price. For 29 of 30 rows the comparison cannot be completed because the weight is unpublished — so the site shows no multiple rather than a made-up one. Two Ross-Simons pieces at $149 and $179 are flagged as value-unverifiable for exactly this reason.",
+      "how": "Automated melt-value test: for any row with a published weight, the asking price must not be below the gold value. The arithmetic is published on the calculator page.",
+      "buyer_action": "Get grams, then run the calculator. Below 1× melt is a red flag; 2–6× is a normal retail multiple.",
+      "links": [
+        {
+          "label": "Calculator",
+          "url": "calculator.html"
+        },
+        {
+          "label": "Gold price source",
+          "url": "https://api.gold-api.com/price/XAU"
+        }
+      ]
+    },
+    {
+      "requirement": "Return policy: make sure you can return it after inspecting it, including exclusions on resized or custom rings.",
+      "status": "verified",
+      "finding": "All four return policies were read in full. Ross-Simons: 30 days from receipt, and the exact exclusion your checklist warns about — merchandise 'altered, or resized by a jeweler other than Ross-Simons' cannot be returned. Aurate: 14 days from fulfilment for US orders, 30 days for exchanges, engraved and international sales final. With Clarity: 30 days, but resizing or repair by another jeweller voids it and a missing diamond certificate costs $250. Anna Sheffield: two weeks from delivery, with a 10% restocking fee (max $500) and engraved or bespoke orders final sale.",
+      "how": "Read each retailer's official refund-policy page and copied the exact conditions into data/retailers.json, including the resizing and custom-order exclusions.",
+      "buyer_action": "Do not resize before you decide to keep it, and never let a third-party jeweller touch it while the return window is open. Keep certificates and original packaging.",
+      "links": [
+        {
+          "label": "Ross-Simons policy",
+          "url": "https://www.ross-simons.com/policies/refund-policy"
+        },
+        {
+          "label": "Aurate policy",
+          "url": "https://auratenewyork.com/policies/refund-policy"
+        },
+        {
+          "label": "With Clarity policy",
+          "url": "https://www.withclarity.com/policies/refund-policy"
+        },
+        {
+          "label": "Anna Sheffield policy",
+          "url": "https://www.annasheffield.com/policies/refund-policy"
+        }
+      ]
+    },
+    {
+      "requirement": "Payment: prefer a credit card for purchase protection; avoid irreversible payment methods.",
+      "status": "buyer-action",
+      "finding": "Payment method is a checkout choice, not a published product attribute, so there is nothing to verify in a feed. All four retailers accept major card brands according to their own store metadata where published.",
+      "how": "No value was inferred. This item is advice, not data.",
+      "buyer_action": "Pay by credit card. Never wire transfer, and avoid anything that removes your chargeback rights.",
+      "links": [
+        {
+          "label": "Ross-Simons returns and care",
+          "url": "https://www.ross-simons.com/policies/refund-policy"
+        }
+      ]
+    },
+    {
+      "requirement": "Documentation: keep the listing, receipt, description and the seller's claims about purity.",
+      "status": "verified",
+      "finding": "This project already does that for you: every row keeps the exact evidence sentence, the price, the retrieval date and the source URL, and the site regenerates from those records.",
+      "how": "data/rings.json stores the evidence string per row; data/sources.json stores the source registry with retrieval dates.",
+      "buyer_action": "Also save the checkout confirmation and any chat or email where they confirm solid gold and the weight.",
+      "links": [
+        {
+          "label": "Sources",
+          "url": "sources.html"
+        }
+      ]
+    },
+    {
+      "requirement": "Upon arrival: before wearing or resizing, take it to an independent jeweller to verify gold purity and weight.",
+      "status": "buyer-action",
+      "finding": "Physical verification cannot be automated or done remotely. Nothing is claimed about purity beyond what the seller states.",
+      "how": "Not applicable to a web research pass — stated as an open action rather than faked.",
+      "buyer_action": "Weigh it, read the stamp, and ask for a purity test before the return window closes. Do this on day one, not week three.",
+      "links": [
+        {
+          "label": "Flagged F12",
+          "url": "flagged.html#F12"
+        }
+      ]
+    },
+    {
+      "requirement": "Best verification: ask for XRF testing or another professional gold-purity test; do not rely solely on the stamp.",
+      "status": "buyer-action",
+      "finding": "XRF is a physical test performed on the ring. No retailer page retrieved offers or publishes an XRF result per piece, so no purity claim beyond the seller's karat statement is made anywhere on this site.",
+      "how": "Searched the captured product text for XRF / assay; nothing was found, so nothing was claimed.",
+      "buyer_action": "Ask the jeweller for XRF on the band (not just the setting) and keep the printout with the receipt.",
+      "links": [
+        {
+          "label": "Method — limits",
+          "url": "methodology.html"
+        }
+      ]
+    },
+    {
+      "requirement": "If the seller will not let you independently verify or return it: do not buy it.",
+      "status": "verified",
+      "finding": "This rule is applied throughout. Products with a setting-only price, unclear stone inclusion, or unverified return terms are labelled as such instead of being recommended. No listing on this site is presented as \"safe to buy\" — each one is presented with its evidence and its gaps.",
+      "how": "Every row carries flags; the Flagged page turns each gap into a specific question to ask the seller.",
+      "buyer_action": "If any answer is vague or refused, walk away. There are 30 alternatives here.",
+      "links": [
+        {
+          "label": "Flagged for review",
+          "url": "flagged.html"
+        }
+      ]
+    }
+  ]
+}
