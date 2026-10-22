@@ -231,7 +231,7 @@ Combined state at integration: **43 listings · 7 retailers · 6 categories · 2
 
 **Current state after the parallel session's reconciliation (PR #11):** published-weight coverage **7/43** (two further Ross-Simons reads folded in: items 571213 and 571222), one merged ledger, 17/17 checks. That session's own record is §9 of this board.
 
-Open items a human may still want to change: **36 rows publish no weight**, 31-35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
+Open items a human may still want to change: **36 of 43 rows publish no weight**, **23 of 43 rows were not re-read in P12** (the ledger holds 20 rows, two of them basis-only), retailer reputation research (F25) is unstarted, and F01 (the word \"solid\" absent from 39 listings) is unchanged.
 
 
 ### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
