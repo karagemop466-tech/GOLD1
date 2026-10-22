@@ -1,0 +1,29 @@
+{
+  "record_id": "SPOT-2026-10-22",
+  "metal": "gold",
+  "quote_currency": "USD",
+  "quote_unit": "troy_ounce",
+  "value": 4026.79,
+  "quote_label_on_source": "Spot Gold Price: USD 4,026.79 / Ounce",
+  "quote_timestamp_on_source": "Oct 22nd, 2026 at 07:07 NY Time",
+  "retrieved_on": "2026-10-22",
+  "retrieved_by": "arena-6f8c2bcb-gold1",
+  "source_name": "GoldPrice.org",
+  "source_url": "https://goldprice.org/",
+  "source_type": "commercial market-data aggregator (not a government or exchange feed)",
+  "second_reading_on_same_page": {
+    "value": 4025.71,
+    "change": -106.8,
+    "change_percent": -2.58,
+    "note": "The ticker block on the same page showed 4,025.71 with a daily change of -106.80 (-2.58%). Two readings on one page differ by 1.08 USD/oz, consistent with a live tick updating between page sections. The calculator therefore treats the spot price as a user-editable input and never as a fixed fact."
+  },
+  "usage_policy": [
+    "This is a single point-in-time record, not a live feed. It is displayed with its timestamp wherever it is used.",
+    "The calculator defaults to this value but every field is editable; the site never silently refreshes a price.",
+    "Gold value computed from this number is a MELT-VALUE ESTIMATE ONLY. It ignores fabrication, setting, diamond value, labour, duty and retailer margin, and it cannot be computed for any ring in this dataset because no listing published a gram weight (see flag F-04)."
+  ],
+  "unit_constants": {
+    "grams_per_troy_ounce": 31.1034768,
+    "note": "Exact by definition of the troy ounce; used for arithmetic only."
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "registry_updated": "2026-10-22",
+  "sources": [
+    {
+      "id": "SRC-ECFR-23",
+      "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries (eCFR, current)",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "publisher": "U.S. Government (eCFR / Office of the Federal Register)",
+      "type": "regulation",
+      "used_for": "Legal basis for gold quality marks, the 10-karat minimum for describing an item as gold, and §23.10 quality-mark guidance.",
+      "verification": "Official index entry retrieved in this session; §23.10 and §23.4 excerpts confirmed through the Federal Register final rule (SRC-FR-2018). Full sections were not read line-by-line — see flag F-11.",
+      "status": "official-partial"
+    },
+    {
+      "id": "SRC-FR-2018",
+      "title": "Federal Register 83 FR 40659 — Guides for the Jewelry, Precious Metals, and Pewter Industries (final revisions, 2018-08-16)",
+      "url": "https://www.federalregister.gov/documents/2018/08/16/2018-17454/guides-for-the-jewelry-precious-metals-and-pewter-industries",
+      "publisher": "U.S. Government (Federal Register)",
+      "type": "regulation",
+      "used_for": "Verbatim basis for: quality-mark definition (§23.10); Note 2 to §23.10 — the National Stamping Act requires the trademark or name of the manufacturer/dealer to be applied next to a quality mark; §23.4 — gold descriptions below 10 karat are improper.",
+      "quoted": "“The National Stamping Act provides that any person, firm, corporation, or association, being a manufacturer or dealer ... who applies or causes to be applied a quality mark ... shall apply to the article the trademark or name of such person.” (Note 2 to § 23.10)",
+      "verification": "Official page retrieved in this session; excerpt above read from the retrieved document.",
+      "status": "official"
+    },
+    {
+      "id": "SRC-FTC-GUIDES",
+      "title": "FTC — Jewelry, Precious Metals, and Pewter Industries guides (business guidance)",
+      "url": "https://www.ftc.gov/business-guidance/resources/jewelry-precious-metals-and-pewter-industries-guides",
+      "publisher": "Federal Trade Commission",
+      "type": "regulator guidance",
+      "used_for": "Pointer to the Guides for a general audience.",
+      "verification": "URL not opened in this session (a guessed FTC path returned 404). Cite SRC-ECFR-23 and SRC-FR-2018 for the text instead. — flag F-11",
+      "status": "unverified"
+    },
+    {
+      "id": "SRC-GOLDPRICE",
+      "title": "GoldPrice.org — live spot gold quote (USD/troy ounce) with NY timestamp",
+      "url": "https://goldprice.org/",
+      "publisher": "GoldPrice.org",
+      "type": "commercial market data",
+      "used_for": "Single point-in-time spot reference recorded in data/spot-gold.json. Not a government or exchange feed.",
+      "verification": "Retrieved 2026-10-22; page displayed “Spot Gold Price: USD 4,026.79 / Ounce ... Oct 22nd, 2026 at 07:07 NY Time”. A second ticker on the same page showed 4,025.71 — see flag F-13.",
+      "status": "verified-single-source"
+    },
+    {
+      "id": "SRC-BN-LIST",
+      "title": "Blue Nile — Solitaire Engagement Rings (category listing, 311 results)",
+      "url": "https://www.bluenile.com/engagement-rings/styles/solitaire",
+      "publisher": "Blue Nile",
+      "type": "retailer listing",
+      "used_for": "Name + setting price + product URL for rows BN-14K-CCF-203284, BN-14K-TC-203288, BN-14K-LEAF-192442, BN-14K-BEZEL-296643, BN-14K-RIDGE-304497.",
+      "verification": "Listing page retrieved 2026-10-22; each price read directly from the product card.",
+      "status": "verified-listing"
+    },
+    {
+      "id": "SRC-BN-203272",
+      "title": "Blue Nile — Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+      "publisher": "Blue Nile",
+      "type": "retailer product page",
+      "used_for": "BN-14K-6P-203272 — $1,000 setting price; stock no. 501140y14; 1.90 mm width; settable 0.20–8.00 ct round/oval/marquise/pear.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-BN-194159",
+      "title": "Blue Nile — Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
+      "publisher": "Blue Nile",
+      "type": "retailer product page",
+      "used_for": "BN-18K-6P-194159 — $1,240 setting price; stock no. 501140y; 1.90 mm width.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-BN-203268",
+      "title": "Blue Nile — Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
+      "publisher": "Blue Nile",
+      "type": "retailer product page",
+      "used_for": "BN-18K-PN-203268 — $1,420 setting price; stock no. 501120y; 1.80 mm width. Page description says “crafted in polished 14k white gold” — flag F-01.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified-with-flag"
+    },
+    {
+      "id": "SRC-MEJ-DEB",
+      "title": "Mejuri — Diamond Eternity Band",
+      "url": "https://mejuri.com/products/diamond-eternity-band",
+      "publisher": "Mejuri",
+      "type": "retailer product page",
+      "used_for": "MEJ-DEB — From $1,100 (14k yellow gold, natural diamond); 0.532 ct average; 33–42 diamonds; 1.5 mm band; SI–I clarity; GHI colour; 30-day returns.",
+      "verification": "Product page retrieved 2026-10-22 (URL with Material=Solid Yellow Gold (14k) & Stone=Natural Diamond applied by the site).",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-MEJ-DB",
+      "title": "Mejuri — Diamonds Band",
+      "url": "https://mejuri.com/products/diamonds-band",
+      "publisher": "Mejuri",
+      "type": "retailer product page",
+      "used_for": "MEJ-DB — $648 (14k yellow gold, natural diamond); minimum carat weight 0.07 ct; 1.8 mm stones; 2.8 mm shank; SI–I; GHI.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-MEJ-BDE",
+      "title": "Mejuri — Bold Diamond Eternity Ring",
+      "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
+      "publisher": "Mejuri",
+      "type": "retailer product page",
+      "used_for": "MEJ-BDE — From $2,900 on the 14k white gold / natural diamond selection; 1.15–1.57 ct; 23 diamonds; 2.6 mm band; SI–I; GHI.",
+      "verification": "Product page retrieved 2026-10-22 with Material=Solid White Gold (14k). Price is material- and size-dependent — flag F-03.",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-MEJ-2MM",
+      "title": "Mejuri — 2mm Smooth Band",
+      "url": "https://mejuri.com/products/2mm-smooth-band",
+      "publisher": "Mejuri",
+      "type": "retailer product page",
+      "used_for": "MEJ-2MM — $498 (14k yellow gold); 2 mm width; 1.3 mm thickness.",
+      "verification": "Product page retrieved 2026-10-22 with Material=Solid Yellow Gold (14k).",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-BE-121H6",
+      "title": "Brilliant Earth — Classic Six-Prong Solitaire Ring in 18K Yellow Gold",
+      "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "publisher": "Brilliant Earth",
+      "type": "retailer product page",
+      "used_for": "BE-18K-6P-121H6 — $1,090 (setting only); style BE121H6-18KY; 2.5 mm width; six-prong; prong metal 14K white gold; free shipping & returns; free 1-year resizing.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
+    }
+  ]
+}
