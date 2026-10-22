@@ -78,4 +78,32 @@ file granularity so a second session can take any single scope without collision
 
 ## Integration record
 
-_(filled in after the merge — see bottom of file)_
+### Merge 1 — PR #2 (dataset + site)
+
+| Field | Value |
+|---|---|
+| PR | https://github.com/karagemop466-tech/GOLD1/pull/2 |
+| Title | Verified gold engagement ring dataset + dashboard site (13 listings, 15 flags, 1,761-check audit) |
+| Merged at (UTC) | 2026-10-22T23:14:47Z |
+| Merge commit | `6b3f48918d195630dfd52cfb87cc578ea7783862` |
+| Method | merge commit (no squash), merged without waiting for approval per project instruction |
+| Result | success — `main` fast-forwarded to the merge commit |
+
+**Verification performed by the integration session before merging (T11):**
+- `python3 tools/verify_data.py` → PASS: 13 rows, 15 flags, 13 sources, 1,761 assertions, 0 errors, 0 warnings.
+- Rows unchanged since collection in this same session; every source page was fetched live on 2026-10-22 and each row stores its own `checked_on` date.
+- `python3 tools/build_site.py` → 7 pages generated; internal link/anchor check PASS; 22 external links, all on approved hosts.
+- All pages, assets and data downloads returned HTTP 200 from a local static server.
+- No merge conflicts. No competing claims on this board during the run, so no handoff was needed.
+
+### Publication issue found after merge 1
+
+- GitHub Pages was already enabled with **source: `main` / (repository root)**, and the site had
+  been generated into `docs/`. Pointing Pages at `/docs` was attempted with
+  `gh api -X PUT .../pages` and **failed with HTTP 403 “Resource not accessible by integration”** —
+  the available token has no Pages-administration scope.
+- Fix (no admin rights required): the generator now writes the seven pages plus `assets/` and
+  `.nojekyll` to the **repository root**, which is exactly where the existing Pages source serves
+  from. `docs/` was deleted so there is one copy of the site, not two. Builds only ever delete and
+  rewrite their own generated files.
+- Follow-up PR carries this change plus this record.
