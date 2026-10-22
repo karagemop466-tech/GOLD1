@@ -1,0 +1,199 @@
+{
+  "as_of": "2026-10-22",
+  "status_legend": {
+    "needs review": "Published here and does not block the release. A human should read it before buying.",
+    "blocking": "Would prevent publishing a value. There are no blocking items: unverified values were left blank instead."
+  },
+  "items": [
+    {
+      "id": "F01",
+      "title": "None of the 30 listings uses the word \"solid\"",
+      "severity": "high",
+      "type": "wording / specification",
+      "affected": "all rows",
+      "finding": "Every listing states a karat (14kt, 18kt, 14K) but none of the retrieved product text says \"solid gold\". Karat wording plus the absence of plated/vermeil language is good evidence, but it is not the explicit statement your checklist requires.",
+      "buyer_action": "Before paying, get the seller to confirm in writing: \"solid 14K gold, not plated, not vermeil, not gold-filled, not gold over silver\". Keep that message with the receipt.",
+      "sources": [
+        "https://www.ross-simons.com/products/571222",
+        "https://www.auratenewyork.com/products/modern-cigar-band",
+        "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F02",
+      "title": "Weight is published for only 1 of 30 listings",
+      "severity": "high",
+      "type": "missing data",
+      "affected": "29 rows; only au-cigar publishes a weight",
+      "finding": "Metal weight in grams is the number you need to check price against gold value. Only the Aurate Modern Cigar Band publishes one (\"Weight: 2.6-4g\"). For the other 29 rows the weight column is deliberately blank rather than estimated.",
+      "buyer_action": "Ask the seller for the gram weight of the exact size you are buying, in writing. Refuse to accept a carat weight as a substitute for metal weight.",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F03",
+      "title": "Aurate mixes vermeil and solid gold inside one listing",
+      "severity": "high",
+      "type": "listing trap",
+      "affected": "au-cigar",
+      "finding": "The Modern Cigar Band feed reports price_min 118.00 and price_max 1668.00. 118.00 is the vermeil variant; the 14K variant is 1,308.00. A shopper who sorts by lowest price sees a vermeil price for a solid-gold product page.",
+      "buyer_action": "Always switch the metal selector to 14K or 18K and re-read the price before adding to cart.",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F04",
+      "title": "With Clarity prices are for the setting only",
+      "severity": "high",
+      "type": "price basis",
+      "affected": "wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong",
+      "finding": "These products carry the tag \"Ring Setting Product\". The listed range buys the metal setting; the centre diamond is a separate purchase. The total cost of a finished ring is therefore higher than the number shown.",
+      "buyer_action": "Build the full ring (setting + stone) and compare the total, not the setting price.",
+      "sources": [
+        "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F05",
+      "title": "Ross-Simons also sells a setting with the stone excluded",
+      "severity": "medium",
+      "type": "price basis",
+      "affected": "rs-943668",
+      "finding": "The listing text states \"Center stone and setting are sold separately.\" and the product is tagged SEMIMOUNTING. 1,269.00-1,439.00 does not buy a complete ring.",
+      "buyer_action": "Read the phrase \"setting\" carefully; budget separately for the centre stone.",
+      "sources": [
+        "https://www.ross-simons.com/products/943668"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F06",
+      "title": "Two very low solid-gold prices that cannot be value-checked",
+      "severity": "medium",
+      "type": "price plausibility",
+      "affected": "rs-981367, rs-907250",
+      "finding": "A 14K ring at 149.00 and an 18K ring at 179.00 are advertised. Both are described as about 1/16 inch wide. At the gold price recorded on this page, an 18K ring at 179.00 contains at most about 1.8 g of gold before labour and margin. That is possible for a very thin band, but with no published weight the value cannot be confirmed.",
+      "buyer_action": "Ask for the gram weight. Weigh it on arrival. Do not assume a high karat at a low price means a good deal.",
+      "sources": [
+        "https://www.ross-simons.com/products/981367",
+        "https://www.ross-simons.com/products/907250"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F07",
+      "title": "Estate pieces are one-of-a-kind and fixed size",
+      "severity": "medium",
+      "type": "return risk",
+      "affected": "rs-242556, rs-254575, rs-240912",
+      "finding": "All three estate listings are single-size, one-of-a-kind pieces. Ross-Simons' published policy refuses returns on merchandise 'altered, or resized by a jeweler other than Ross-Simons', so resizing can end your return right. The policy page retrieved does not publish a separate estate-jewellery carve-out either way, so estate-specific terms remain unconfirmed.",
+      "buyer_action": "Buy your exact size, or have the retailer resize it. Get the return position in writing before ordering.",
+      "sources": [
+        "https://www.ross-simons.com/policies/refund-policy"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F08",
+      "title": "With Clarity Gerbera: is the sapphire included?",
+      "severity": "medium",
+      "type": "ambiguous listing",
+      "affected": "wc-gerbera",
+      "finding": "The product is tagged \"Ring Setting Product\" (which normally means stone excluded) yet the description presents the marquise created sapphire as part of the ring. The listing does not resolve the contradiction.",
+      "buyer_action": "Ask customer service, in writing, whether 1,210.00 includes the created sapphire centre stone.",
+      "sources": [
+        "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F09",
+      "title": "Anna Sheffield price range is not explained line by line",
+      "severity": "low",
+      "type": "price basis",
+      "affected": "as-bea-3stone, as-hazeline",
+      "finding": "Bea Three Stone is listed 5,400.00-25,100.00 and Hazeline 7,150.00-9,200.00. The listings mention stone sizes but do not map each price to a specific configuration.",
+      "buyer_action": "Ask for a written quote for the exact stone you are buying before paying.",
+      "sources": [
+        "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
+        "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F10",
+      "title": "No phone or support address verified for With Clarity",
+      "severity": "low",
+      "type": "seller verification",
+      "affected": "with-clarity",
+      "finding": "Contact details were confirmed from official pages for Ross-Simons (phone 800-835-0919 and a support email), Aurate (support email) and Anna Sheffield (info@annasheffield.com). For With Clarity only official store metadata (Long Island City, NY, USD, ship-to countries) was confirmed; no phone number or support address was verified in this pass.",
+      "buyer_action": "Find a phone number or postal address on With Clarity's own site and test it before ordering.",
+      "sources": [
+        "https://www.withclarity.com/meta.json",
+        "https://www.withclarity.com/policies/refund-policy"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F11",
+      "title": "Return windows are short and returns are not free everywhere",
+      "severity": "high",
+      "type": "return cost",
+      "affected": "with-clarity, anna-sheffield",
+      "finding": "Anna Sheffield allows two weeks from delivery and charges a 10% restocking fee (capped at $500) on refunds. With Clarity allows 30 days but charges $250 if the diamond certificate is missing and $300 to re-certify. With Clarity also refuses returns on jewellery 'worked on, resized or repaired by another jeweler', and Anna Sheffield makes engraved or bespoke orders final sale. A return is therefore not automatically free or unlimited.",
+      "buyer_action": "Decide within the window, keep every certificate and the original box, do not resize before you commit, and photograph the ring the day it arrives.",
+      "sources": [
+        "https://www.annasheffield.com/policies/refund-policy",
+        "https://www.withclarity.com/policies/refund-policy"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F12",
+      "title": "A hallmark and maker's mark cannot be verified online",
+      "severity": "high",
+      "type": "physical verification",
+      "affected": "all rows",
+      "finding": "No retailer page retrieved states the exact hallmark or maker's mark that will be struck inside the band. A photograph of the inside of the band is the only pre-purchase evidence, and it still does not prove purity. US marking rules are set out in 16 CFR Part 23, including § 23.3 on misrepresentation of gold content and § 23.10 on quality marks.",
+      "buyer_action": "Ask for a close-up photo of the stamp. On arrival, have an independent jeweller confirm the stamp and test purity (XRF preferred).",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F13",
+      "title": "Aurate metal-variant prices are not mapped one-to-one",
+      "severity": "medium",
+      "type": "price basis",
+      "affected": "au-2ct-oval, au-1ct-emerald, au-3ct-round",
+      "finding": "For these three rings the feed reports only a min/max across 14K, 18K, platinum and ring sizes. The lowest price is not proven to be the 14K price, so the low end is shown as a range rather than as a 14K price.",
+      "buyer_action": "Set metal to 14K and the size you need, then read the actual price before buying.",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F14",
+      "title": "Carat weight is not the same as metal weight",
+      "severity": "medium",
+      "type": "measurement",
+      "affected": "all diamond rows",
+      "finding": "Listings quote ct. t.w. (total carat weight of stones). That says nothing about how many grams of gold you are buying, which is what the gold-value comparison needs. 16 CFR 23.18 covers misrepresentation of weight and \"total weight\".",
+      "buyer_action": "Ask separately for the gold weight in grams. Keep stone weight and metal weight in separate columns, as this site does.",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+      ],
+      "status": "needs review"
+    }
+  ]
+}

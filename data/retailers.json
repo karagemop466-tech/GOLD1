@@ -1,0 +1,72 @@
+{
+  "as_of": "2026-10-22",
+  "note": "Retailer identity and contact details below are copied only from pages retrieved in this session. Fields that were not confirmed are null and are flagged on the Flagged for Review page.",
+  "retailers": [
+    {
+      "id": "ross-simons",
+      "name": "Ross-Simons",
+      "domain": "ross-simons.com",
+      "site": "https://www.ross-simons.com",
+      "contact_verified": true,
+      "phone": "800-835-0919",
+      "email": "customerservice@ross-simons.com",
+      "address_verified": "Ross-Simons, Attn: Returns Department, 9 Ross Simons Dr., Cranston, RI 02920",
+      "contact_source": "https://www.ross-simons.com/policies/refund-policy",
+      "return_policy_verified": true,
+      "return_summary": "30 days from receipt for refund or exchange; items must be original and unused; shipping non-refundable; merchandise damaged, altered, or resized by a jeweler other than Ross-Simons cannot be returned; all returns are inspected by QA/gemologist before credit.",
+      "return_source": "https://www.ross-simons.com/policies/refund-policy",
+      "checkout_note": "Card processing handled by the retailer; pay by credit card so you keep chargeback rights.",
+      "rows": 17
+    },
+    {
+      "id": "with-clarity",
+      "name": "With Clarity",
+      "domain": "withclarity.com",
+      "site": "https://www.withclarity.com",
+      "contact_verified": false,
+      "phone": null,
+      "email": null,
+      "address_verified": null,
+      "contact_source": "https://www.withclarity.com/meta.json",
+      "store_metadata": "Store feed lists city Long Island City, New York, US; ships to US, CA, GB, AU.",
+      "return_policy_verified": true,
+      "return_summary": "30 calendar days from receipt for return or exchange; final sale after that. One return per order; second purchases inside 30 days are final sale. Diamond upgrades are not returnable. Jewellery that is worked on, resized or repaired by another jeweller is not eligible for returns. Free insured return shipping; a missing diamond certificate incurs a $250 fee ($300 to re-certify).",
+      "return_source": "https://www.withclarity.com/policies/refund-policy",
+      "checkout_note": "Do not let a local jeweller size or repair it before you decide to keep it — that ends the return right. Keep the diamond certificate in the box.",
+      "rows": 5
+    },
+    {
+      "id": "anna-sheffield",
+      "name": "Anna Sheffield",
+      "domain": "annasheffield.com",
+      "site": "https://www.annasheffield.com",
+      "contact_verified": true,
+      "phone": null,
+      "email": "info@annasheffield.com",
+      "address_verified": null,
+      "contact_source": "https://www.annasheffield.com/policies/refund-policy",
+      "store_metadata": "Store feed lists city New York, New York, US; ships worldwide.",
+      "return_policy_verified": true,
+      "return_summary": "Returns accepted up to two weeks after delivery for engagement rings, bands and fine jewellery, unworn and in original packaging. A 10% restocking fee (not more than $500) applies to refunds; exchanges do not pay it. Customised, engraved or bespoke orders are final sale. Buyer pays return shipping and original shipping is not refunded. Cancellations of engagement rings incur a fee once production has begun (from day 3).",
+      "return_source": "https://www.annasheffield.com/policies/refund-policy",
+      "checkout_note": "Two-week window and a 10% restocking fee: inspect fast. A resize by anyone else, or an engraving, removes your right to return.",
+      "rows": 3
+    },
+    {
+      "id": "aurate",
+      "name": "Aurate",
+      "domain": "auratenewyork.com",
+      "site": "https://auratenewyork.com",
+      "contact_verified": true,
+      "phone": null,
+      "email": "care@auratenewyork.com",
+      "address_verified": null,
+      "contact_source": "https://auratenewyork.com/policies/refund-policy",
+      "return_policy_verified": true,
+      "return_summary": "Refund or exchange on US purchases up to 14 days after the order was fulfilled, original condition; exchanges accepted within 30 days of fulfillment; international sales and engraved pieces are final.",
+      "return_source": "https://auratenewyork.com/policies/refund-policy",
+      "checkout_note": "Engraved pieces are final sale. Confirm the 14-day window starts at fulfillment, not delivery.",
+      "rows": 5
+    }
+  ]
+}

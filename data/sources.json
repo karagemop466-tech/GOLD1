@@ -1,0 +1,231 @@
+{
+  "as_of": "2026-10-22",
+  "policy": "A value is only allowed in the tables if it is present in one of these primary sources. Sources that are not primary (round-ups, affiliate lists, review aggregators, search snippets) are never used for a value.",
+  "sources": [
+    {
+      "id": "rs-feed-gold",
+      "publisher": "Ross-Simons",
+      "type": "official product feed",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold/products.json?limit=250",
+      "verified": "Product titles, exact listed prices and metal statements for Ross-Simons gold rings",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-feed-yellow",
+      "publisher": "Ross-Simons",
+      "type": "official product feed",
+      "url": "https://www.ross-simons.com/collections/jewelry-rings-gold-yellow-gold/products.json?limit=250",
+      "verified": "Additional Ross-Simons yellow gold ring products and prices",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-search-bands",
+      "publisher": "Ross-Simons",
+      "type": "official storefront search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=14kt%20gold%20band&resources[type]=product&resources[limit]=6",
+      "verified": "14K band listings 571221, 571222, 571223, 571213, 879968, 999230",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-search-diamond",
+      "publisher": "Ross-Simons",
+      "type": "official storefront search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=diamond%20engagement%20ring%2014kt&resources[type]=product&resources[limit]=5",
+      "verified": "Lab-grown engagement rings 991907, 991908, 993512; bridal set 864785; setting 943668",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-search-estate",
+      "publisher": "Ross-Simons",
+      "type": "official storefront search feed",
+      "url": "https://www.ross-simons.com/search/suggest.json?q=estate%2014kt%20gold%20ring&resources[type]=product&resources[limit]=5",
+      "verified": "Estate rings 242556, 254575, 245300, 960952, 240912",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-search-solitaire",
+      "publisher": "With Clarity",
+      "type": "official storefront search feed",
+      "url": "https://www.withclarity.com/search/suggest.json?q=solitaire&resources[type]=product&resources[limit]=10",
+      "verified": "Solitaire setting IDs and price ranges; tag \"Ring Setting Product\"",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-search-sapphire",
+      "publisher": "With Clarity",
+      "type": "official storefront search feed",
+      "url": "https://www.withclarity.com/search/suggest.json?q=sapphire%20engagement%20ring&resources[type]=product&resources[limit]=6",
+      "verified": "Gerbera created-sapphire ring price range and description",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-search-engagement",
+      "publisher": "Anna Sheffield",
+      "type": "official storefront search feed",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=10",
+      "verified": "Bea Three Stone and Eleonore listings, prices, metal statements",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-search-solitaire",
+      "publisher": "Anna Sheffield",
+      "type": "official storefront search feed",
+      "url": "https://www.annasheffield.com/search/suggest.json?q=solitaire%20engagement%20ring&resources[type]=product&resources[limit]=5",
+      "verified": "Bea Solitaire and Hazeline listings, prices, metal statements",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-search-engagement",
+      "publisher": "Aurate",
+      "type": "official storefront search feed",
+      "url": "https://auratenewyork.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=10",
+      "verified": "Lab-grown bezel rings, price ranges, metal tags",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-search-band",
+      "publisher": "Aurate",
+      "type": "official storefront search feed",
+      "url": "https://auratenewyork.com/search/suggest.json?q=14k%20gold%20band&resources[type]=product&resources[limit]=5",
+      "verified": "Modern Cigar Band 14K variant price and published weight range; Diamond X Ring 14K variant price",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "rs-return-policy",
+      "publisher": "Ross-Simons",
+      "type": "official policy page",
+      "url": "https://www.ross-simons.com/policies/refund-policy",
+      "verified": "30-day return window from receipt; resized-by-another-jeweler exclusion; QA/gemologist inspection; phone 800-835-0919; Cranston RI return address",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-return-policy",
+      "publisher": "Aurate",
+      "type": "official policy page",
+      "url": "https://auratenewyork.com/policies/refund-policy",
+      "verified": "14-day refund/exchange after fulfillment (US); 30-day exchanges; engraved and international sales final; care@auratenewyork.com",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-return-policy",
+      "publisher": "With Clarity",
+      "type": "official policy page",
+      "url": "https://www.withclarity.com/policies/refund-policy",
+      "verified": "30 days from receipt; resized/repaired by another jeweller = no return; diamond upgrades excluded; $250 fee for a missing certificate; one return per order",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-return-policy",
+      "publisher": "Anna Sheffield",
+      "type": "official policy page",
+      "url": "https://www.annasheffield.com/policies/refund-policy",
+      "verified": "Two-week return window; 10% restocking fee capped at $500; engraved/bespoke final sale; buyer pays shipping; support email info@annasheffield.com; cancellation fee once production starts",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "au-meta",
+      "publisher": "Aurate",
+      "type": "official store metadata",
+      "url": "https://auratenewyork.com/meta.json",
+      "verified": "Store identity, currency USD, published product count",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-meta",
+      "publisher": "With Clarity",
+      "type": "official store metadata",
+      "url": "https://www.withclarity.com/meta.json",
+      "verified": "Store identity, city Long Island City NY, USD, ship-to countries",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "as-meta",
+      "publisher": "Anna Sheffield",
+      "type": "official store metadata",
+      "url": "https://www.annasheffield.com/meta.json",
+      "verified": "Store identity, city New York NY, USD, ships worldwide",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "gold-api",
+      "publisher": "gold-api.com",
+      "type": "market data feed",
+      "url": "https://api.gold-api.com/price/XAU",
+      "verified": "Gold spot USD 4,028.10/ozt at 2026-10-22T23:01:42Z",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "yahoo-comex",
+      "publisher": "Yahoo Finance",
+      "type": "market data feed",
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+      "verified": "COMEX gold futures GC=F last 4,043.00 USD/ozt, market time epoch 1792709863",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "ecfr-16-23",
+      "publisher": "US Government (eCFR, Office of the Federal Register)",
+      "type": "regulation",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "verified": "16 CFR Part 23 \"Guides for the Jewelry, Precious Metals, and Pewter Industries\" exists, up to date as of 2026-10-21, and contains § 23.3 \"Misrepresentation as to gold content\", § 23.4 \"Misuse of the word vermeil\", § 23.10 \"Additional guidance for the use of quality marks\" and § 23.18 \"Misrepresentation of weight and total weight\". Section text is not quoted here.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "ftc-guide-rejected",
+      "publisher": "US Federal Trade Commission",
+      "type": "regulation guidance",
+      "url": "https://www.ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide",
+      "verified": "Nothing - this URL returned a 404 page on 2026-10-22, so it is NOT used as a source.",
+      "status": "rejected (404)",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "lbma-rejected",
+      "publisher": "LBMA",
+      "type": "market data",
+      "url": "https://prices.lbma.org.uk/json/gold_pm.json",
+      "verified": "Nothing - the request failed (HTTP 500) on 2026-10-22, so it is NOT used as a source.",
+      "status": "rejected (error)",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bluenile-rejected",
+      "publisher": "Blue Nile",
+      "type": "retailer page",
+      "url": "https://www.bluenile.com/engagement-rings/solitaire",
+      "verified": "Nothing - this URL returned a 404 page on 2026-10-22, so no Blue Nile row was created.",
+      "status": "rejected (404)",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "setandstones-rejected",
+      "publisher": "Set & Stones",
+      "type": "retailer catalogue",
+      "url": "https://setandstones.com/search/suggest.json?q=engagement%20ring&resources[type]=product&resources[limit]=8",
+      "verified": "Checked and EXCLUDED: the engagement-ring results returned were gold-filled / gold-plated pieces, which fail the solid-gold requirement.",
+      "status": "rejected (plated metal)",
+      "retrieved_at": "2026-10-22"
+    }
+  ]
+}
