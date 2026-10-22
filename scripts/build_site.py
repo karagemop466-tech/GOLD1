@@ -27,10 +27,10 @@ def load(name):
         return json.load(f)
 
 
-SOURCES = load("sources.json")
+SOURCES = load("sources_c2bbe753.json")
 PRICE = load("gold_price.json")
 KARATS = load("karats.json")
-RINGS = load("rings.json")
+RINGS = load("rings_c2bbe753.json")
 FLAGS = load("flags.json")
 CHECKLIST = load("checklist.json")
 
@@ -94,6 +94,7 @@ def page(filename, title, body, active):
 <footer>
   <div class="wrap">
     <p><strong>{e(TAGLINE)}</strong> · Data snapshot {e(BUILD_UTC)} · Prices checked {e("2026-10-22")} against official retailer pages.</p>
+    <p>Companion dataset &amp; root dashboard: <a href="../index.html">site root — first-run dashboard</a> (Blue Nile · Mejuri · Brilliant Earth) · this section: Tiffany &amp; Co. · Cartier · Brilliant Earth · Blue Nile/James Allen · Mejuri category tables. Both runs keep separate data files and separate audits.</p>
     <p>This is an independent research project. It is not affiliated with, endorsed by, or sponsored by any retailer or institution named on this site. Prices are snapshots for comparison — always confirm on the official product page before purchasing.</p>
   </div>
 </footer>

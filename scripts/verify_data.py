@@ -46,10 +46,10 @@ def check(cond, msg):
 
 
 def main():
-    sources = load("sources.json")
+    sources = load("sources_c2bbe753.json")
     price = load("gold_price.json")
     karats = load("karats.json")
-    rings = load("rings.json")
+    rings = load("rings_c2bbe753.json")
     flags = load("flags.json")
     checklist = load("checklist.json")
 
