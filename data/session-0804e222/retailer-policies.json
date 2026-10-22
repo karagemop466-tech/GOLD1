@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0.0",
+  "session": "sess-0804e222",
+  "verified_at": "2026-10-22T23:33:00Z",
+  "note": "Primary-source verified return/resize/custom policies, official customer-care contact details, and independent Better Business Bureau (bbb.org) reputation profiles for all 10 retailers in the integrated dataset.",
+  "retailers": [
+    {
+      "id": "ross-simons",
+      "name": "Ross-Simons",
+      "domain": "www.ross-simons.com",
+      "return_window_days": 30,
+      "return_clock_starts": "delivery",
+      "return_shipping": "$4.95 deducted for prepaid US return label (or customer-paid insured mail)",
+      "return_policy_url": "https://www.ross-simons.com/policies/refund-policy",
+      "return_exclusions": "Custom, personalized, engraved, altered/resized, and final-sale items are non-returnable; estate/one-of-a-kind items must be unworn with tags attached.",
+      "contact": {
+        "phone": "1-800-835-0919",
+        "email": "customerservice@ross-simons.com",
+        "address": "9 Ross Simons Dr, Cranston, RI 02920-4475",
+        "contact_url": "https://www.ross-simons.com/pages/contact-us"
+      },
+      "bbb": {
+        "status": "BBB Accredited Business (since 2017-03-15)",
+        "rating": "A+",
+        "years_in_business": 74,
+        "complaints_3yr": 35,
+        "customer_review_summary": "4.42/5 across 579 BBB customer reviews",
+        "profile_url": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000"
+      }
+    },
+    {
+      "id": "with-clarity",
+      "name": "With Clarity",
+      "domain": "www.withclarity.com",
+      "return_window_days": 30,
+      "return_clock_starts": "receipt (delivery)",
+      "return_shipping": "Free insured US return label (limit 1 return or exchange per customer every 6 months)",
+      "return_policy_url": "https://www.withclarity.com/pages/terms-conditions",
+      "return_exclusions": "Custom-designed, resized, engraved (engraving removal fee applies where eligible), previously exchanged, and any subsequent order placed within 6 months of a prior return/exchange are final sale; missing lab certificate incurs replacement fee.",
+      "contact": {
+        "phone": "1-844-234-6463",
+        "email": "service@withclarity.com",
+        "address": "Renaissance FMI Inc. / With Clarity Inc., 46-24 28th St, Long Island City, NY 11101 (Showroom: 118 Spring St, New York, NY 10012)",
+        "contact_url": "https://www.withclarity.com/pages/terms-conditions"
+      },
+      "bbb": {
+        "status": "BBB Accredited Business (since 2018-05-16)",
+        "rating": "A+",
+        "years_in_business": 11,
+        "complaints_3yr": 7,
+        "customer_review_summary": "BBB Accredited under With Clarity Inc / Four Mine, Inc.",
+        "profile_url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/with-clarity-inc-0121-169327/complaints"
+      }
+    },
+    {
+      "id": "anna-sheffield",
+      "name": "Anna Sheffield",
+      "domain": "www.annasheffield.com",
+      "return_window_days": 14,
+      "return_clock_starts": "delivery (in-stock ready-to-ship items only; 7 days to request RA)",
+      "return_shipping": "Customer-arranged/authorized RA return; $25 restocking/shipping deduction may apply per refund policy",
+      "return_policy_url": "https://www.annasheffield.com/policies/refund-policy",
+      "return_exclusions": "Made-to-order, custom, ceremonial/bespoke, resized, engraved, and sale items are final sale or store-credit/exchange restricted per policy.",
+      "contact": {
+        "phone": "+1-212-925-7010",
+        "email": "concierge@annasheffield.com",
+        "address": "Sheffield & Kearney, New York, NY / 8503 Melrose Ave, West Hollywood, CA 90069",
+        "contact_url": "https://www.annasheffield.com/policies/refund-policy"
+      },
+      "bbb": {
+        "status": "Not BBB Accredited",
+        "rating": "A+",
+        "years_in_business": 18,
+        "complaints_3yr": null,
+        "customer_review_summary": "BBB file opened 2022-12-14 (West Hollywood profile)",
+        "profile_url": "https://www.bbb.org/us/ca/west-hollywood/profile/jewelry-stores/anna-sheffield-jewelry-1216-1650222"
+      }
+    },
+    {
+      "id": "aurate",
+      "name": "Aurate New York",
+      "domain": "auratenewyork.com",
+      "return_window_days": 30,
+      "return_clock_starts": "delivery (eligible non-final-sale items only)",
+      "return_shipping": "Handling/processing fee applies; engagement & made-to-order rings on live PDPs display \"Final Sale! Exchange for size only\"",
+      "return_policy_url": "https://auratenewyork.com/policies/refund-policy",
+      "return_exclusions": "Live ring PDPs (including 2ct Oval Bezel and Modern Cigar Band) explicitly state \"Final Sale! Exchange only! Exchange for size only\"; engraved, custom, and international warranty/return claims heavily restricted.",
+      "contact": {
+        "phone": "1-888-616-2872",
+        "email": "care@auratenewyork.com",
+        "address": "580 5th Ave Ste 2300, New York, NY 10036-4730",
+        "contact_url": "https://auratenewyork.com/policies/refund-policy"
+      },
+      "bbb": {
+        "status": "Not BBB Accredited",
+        "rating": "F",
+        "years_in_business": 12,
+        "complaints_3yr": 23,
+        "customer_review_summary": "Rated F by BBB for failure to respond to 8 complaints (23 total complaints; 1.22/5 across 18 BBB reviews)",
+        "profile_url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/aurate-new-york-0121-170321"
+      }
+    },
+    {
+      "id": "blue-nile",
+      "name": "Blue Nile",
+      "domain": "www.bluenile.com",
+      "return_window_days": 30,
+      "return_clock_starts": "shipment date (NOT delivery date)",
+      "return_shipping": "Free insured US return shipping via RMA (maximum 2 complimentary US returns per customer per year)",
+      "return_policy_url": "https://www.bluenile.com/policies/returns",
+      "return_exclusions": "Rings resized after purchase, engraved items (except rings where engraving removal applies), custom-designed jewelry, Diamond Upgrade Program items, and final-sale items are non-returnable; missing diamond grading report incurs $150 replacement fee.",
+      "contact": {
+        "phone": "+1-800-242-2728",
+        "email": "service@bluenile.com",
+        "address": "Blue Nile Inc. (Signet Jewelers), Seattle, WA 98108",
+        "contact_url": "https://www.bluenile.com/policies/returns"
+      },
+      "bbb": {
+        "status": "BBB Accredited Business (since 1999-03-01)",
+        "rating": "A+",
+        "years_in_business": 27,
+        "complaints_3yr": 121,
+        "customer_review_summary": "A+ BBB grade on Seattle HQ file (121 complaints in 3 yrs; separate Newport Beach CA file averages 1.09/5 across 256 customer reviews)",
+        "profile_url": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564"
+      }
+    },
+    {
+      "id": "mejuri",
+      "name": "Mejuri",
+      "domain": "mejuri.com",
+      "return_window_days": 30,
+      "return_clock_starts": "delivery or in-store pickup date",
+      "return_shipping": "Free 30-day returns & exchanges in US/CA/UK/AU/DE on unworn items with original packaging",
+      "return_policy_url": "https://mejuri.com/company/returns-terms",
+      "return_exclusions": "Engraved/monogrammed items, \"Before We Melt\" sale items, gift cards, and worn/altered pieces are final sale and non-returnable; lab-grown diamond items must include original SCS certificate.",
+      "contact": {
+        "phone": "+1-855-496-1110 (SMS/Text) / +1-310-597-4745",
+        "email": "contact@mejuri.com",
+        "address": "Mejuri Inc., 60 Bloor Street West, Floor 8, Toronto, ON M4W 3B8, Canada",
+        "contact_url": "https://mejuri.com/company/terms"
+      },
+      "bbb": {
+        "status": "Not BBB Accredited",
+        "rating": "NR / Unaccredited (16 complaints closed on Chicago US file)",
+        "years_in_business": 14,
+        "complaints_3yr": 16,
+        "customer_review_summary": "Toronto HQ file opened 2018-12-18; US retail complaints tracked on regional BBB files",
+        "profile_url": "https://www.bbb.org/ca/on/toronto/profile/jewelry-manufacturers/mejuri-0107-1370644"
+      }
+    },
+    {
+      "id": "brilliant-earth",
+      "name": "Brilliant Earth",
+      "domain": "www.brilliantearth.com",
+      "return_window_days": 30,
+      "return_clock_starts": "date order is available for shipment or showroom pickup",
+      "return_shipping": "Free insured FedEx US/CA/UK/AU return label via RMA (RMA valid 7 days; must double-box and drop at staffed FedEx Ship Center)",
+      "return_policy_url": "https://www.brilliantearth.com/30-Day-Returns/",
+      "return_exclusions": "Items that have been resized, modified, repaired by a third party, custom-designed, previously exchanged, upgraded, or bought for \"comparative purchasing\" are non-returnable; engraved rings incur a $40 engraving-removal fee ($250 per missing diamond certificate on BBB-filed policy).",
+      "contact": {
+        "phone": "1-800-691-0952 (SMS: +1-415-520-6526)",
+        "email": "customerservice@brilliantearth.com (web/phone RMA required)",
+        "address": "300 Grant Ave, Floor 3, San Francisco, CA 94108-3629",
+        "contact_url": "https://www.brilliantearth.com/30-Day-Returns/"
+      },
+      "bbb": {
+        "status": "BBB Accredited Business (since 2007-02-21)",
+        "rating": "A+",
+        "years_in_business": 21,
+        "complaints_3yr": 285,
+        "customer_review_summary": "4.45/5 across 341 BBB customer reviews; 285 complaints in 3 years (BBB profile reviewed March 2026)",
+        "profile_url": "https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721"
+      }
+    },
+    {
+      "id": "automic-gold",
+      "name": "Automic Gold",
+      "domain": "www.automicgold.com",
+      "return_window_days": 30,
+      "return_clock_starts": "delivery date",
+      "return_shipping": "Free prepaid US return shipping via automic.aftership.com (must mail within 14 days of label generation to avoid recycling fee)",
+      "return_policy_url": "https://www.automicgold.com/pages/returns-exchange-policy",
+      "return_exclusions": "Engraved items (+$60/line), custom pieces, modified/resized items, and gift cards are final sale; diamond pieces must include original certificate; eternity bubble rings cannot be resized (30-day size exchange offered).",
+      "contact": {
+        "phone": "1-888-992-8866",
+        "email": "care@automicgold.com / custom@automicgold.com",
+        "address": "88 10th Ave #10, New York, NY 10011 (In-house NYC manufacturing)",
+        "contact_url": "https://www.automicgold.com/pages/contact"
+      },
+      "bbb": {
+        "status": "Not BBB Accredited",
+        "rating": "NR (0 unanswered complaints shown on NY overview)",
+        "years_in_business": 9,
+        "complaints_3yr": null,
+        "customer_review_summary": "BBB NY file opened 2021-03-08; founded 2017-04-21",
+        "profile_url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      }
+    },
+    {
+      "id": "cartier",
+      "name": "Cartier",
+      "domain": "www.cartier.com",
+      "return_window_days": 30,
+      "return_clock_starts": "delivery date",
+      "return_shipping": "Complimentary US e-boutique return shipping or Cartier retail boutique return (strict Maison Quality Control inspection)",
+      "return_policy_url": "https://www.cartier.com/en-us/conditions-of-sales-pay-by-link.html",
+      "return_exclusions": "Personalized, engraved, embossed, bespoke, worn, or altered items are strictly non-returnable and non-refundable; protective stickers, tags, original Maison box, and diamond certificates must be intact; Gift Recipients cannot receive cash refunds.",
+      "contact": {
+        "phone": "1-800-227-8437",
+        "email": "Client Relations Center via cartier.com/en-us/contact-customer-care",
+        "address": "Cartier (Richemont North America, Inc.), 645 / 653 Fifth Avenue, New York, NY 10022",
+        "contact_url": "https://www.cartier.com/en-us/contact-customer-care"
+      },
+      "bbb": {
+        "status": "Not BBB Accredited",
+        "rating": "Unaccredited NY HQ file (founded 1847)",
+        "years_in_business": 179,
+        "complaints_3yr": null,
+        "customer_review_summary": "BBB NY Headquarters file opened 2002-10-28",
+        "profile_url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-designers/cartier-0121-356"
+      }
+    },
+    {
+      "id": "mene",
+      "name": "Menē",
+      "domain": "mene.com",
+      "return_window_days": 7,
+      "return_clock_starts": "receipt (delivery) for US/non-EU orders (20 days from fulfillment in EU); plus Lifetime Buyback Guarantee at daily metal value minus 10% fee",
+      "return_shipping": "Prepaid insured return label emailed within 7 business days (must double-box and drop at staffed FedEx Ship Center or official UPS Store within 7 days)",
+      "return_policy_url": "https://mene.com/terms-of-service",
+      "return_exclusions": "Engraved ($75), customized, or personalized items are final sale; discretionary refunds to original payment method may deduct up to a 10% restocking fee (100% value issued for Menē Credit, which has no cash value); missing Certificate of Authenticity incurs a 5% assessment fee.",
+      "contact": {
+        "phone": "1-833-636-3245 (1-833-MENE-24K)",
+        "email": "Customer Care via mene.com/customer-care",
+        "address": "Menē Inc., 307-334 Adelaide Street West, Toronto, ON M5V 1R4, Canada (Made in USA)",
+        "contact_url": "https://mene.com/terms-of-service"
+      },
+      "bbb": {
+        "status": "Unverified on BBB (publicly traded TSXV: MENE; audited bullion/jewelry disclosures)",
+        "rating": null,
+        "years_in_business": null,
+        "complaints_3yr": null,
+        "customer_review_summary": "BBB profile not confirmed in search; flagged transparently rather than guessed",
+        "profile_url": "https://mene.com/terms-of-service"
+      }
+    }
+  ]
+}

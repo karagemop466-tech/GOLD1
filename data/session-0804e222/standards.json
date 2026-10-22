@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0.0",
+  "session": "sess-0804e222",
+  "verified_at": "2026-10-22T23:34:00Z",
+  "spot_verification": {
+    "source_url": "https://api.gold-api.com/price/XAU",
+    "retrieved_at": "2026-10-22T23:22:41Z",
+    "price_usd_per_ozt": 4029.699951,
+    "price_usd_per_gram_24k": 129.557862,
+    "note": "Independent live spot cross-check within 0.01% of data/gold-price.json ($4,029.699951 vs $4,029.70/ozt)."
+  },
+  "nist_conversions": {
+    "authority": "National Institute of Standards and Technology (NIST)",
+    "document": "NIST Handbook 130 (2025), Uniform Laws and Regulations, Section 2.17 — Precious Metals Conversion Information",
+    "source_url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
+    "retrieved_at": "2026-10-22",
+    "exact_equivalents": {
+      "grams_per_troy_ounce": 31.1034768,
+      "pennyweights_per_troy_ounce": 20,
+      "grains_per_troy_ounce": 480,
+      "grams_per_pennyweight": 1.55517384,
+      "grams_per_grain": 0.06479891,
+      "milligrams_per_metric_carat": 200
+    }
+  },
+  "ftc_jewelry_guides": {
+    "authority": "Federal Trade Commission (eCFR Title 16, Chapter I, Subchapter B, Part 23 — current as of 2026-10-21) & National Gold and Silver Stamping Act (15 U.S.C. 294 et seq.)",
+    "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+    "retrieved_at": "2026-10-22",
+    "sections_read_in_full": [
+      {
+        "section": "16 CFR § 23.3(a)–(b)",
+        "rule": "Unqualified \"Gold\" means 24 karat fine gold throughout. Any alloy under 24K must immediately precede \"Gold\" with its karat fineness (e.g., \"14K Gold\"); before the 2018 revision FTC required ≥10K to use \"karat gold\", and alloys under 10K require explicit karat disclosure so consumers know corrosion/tarnish susceptibility."
+      },
+      {
+        "section": "16 CFR § 23.3(c)(1) & Footnote 32",
+        "rule": "It is unfair or deceptive to mark, describe, or otherwise represent any karat gold item as \"Solid Gold\" (or in a manner indicating solid construction) if the item has a hollow center or interior. \"Solid Gold\" legally denotes non-hollow physical construction, not merely absence of plating."
+      },
+      {
+        "section": "16 CFR § 23.3(b)(4)–(7) & § 23.3(c)(2)–(4)",
+        "rule": "Non-solid surface coatings must disclose karat of coating and application method: \"Gold Electroplate\" / \"Gold Plated\" requires ≥0.175 microns fine-gold equivalent (\"Heavy Gold Electroplate\" ≥2.5 microns); mechanically bonded coatings ≥1/20 total metal weight may be called \"Gold Filled\", while ≥1/40 weight must be qualified (e.g., \"1/40 12K Rolled Gold Plate\" or \"Gold Overlay\")."
+      },
+      {
+        "section": "16 CFR § 23.3 Note (15 U.S.C. 295)",
+        "rule": "National Stamping Act alloy assay tolerance: actual gold fineness without solder may not be >3 parts per thousand (0.003) below stamped karat; whole item assayed with solder may not be >7 parts per thousand (0.007) below stamped karat."
+      },
+      {
+        "section": "16 CFR § 23.4",
+        "rule": "\"Vermeil\" may describe only a sterling silver base coated on all significant surfaces with ≥10K gold of substantial thickness (minimum 2.5 microns fine-gold equivalent)."
+      },
+      {
+        "section": "16 CFR § 23.7",
+        "rule": "Surface plating of precious-metal jewelry with rhodium (standard on 14K/18K white gold) should be disclosed when non-disclosure would mislead buyers expecting solid white metal colour throughout."
+      },
+      {
+        "section": "16 CFR § 23.10 & Note 2 (15 U.S.C. 297)",
+        "rule": "Whenever a quality/karat mark (10K, 14K, 18K, 585, 750) is stamped on gold jewelry in interstate commerce, it MUST be accompanied closely by the registered U.S. trademark or legal name of the manufacturer or seller responsible for the mark."
+      },
+      {
+        "section": "16 CFR § 23.18",
+        "rule": "1 metric carat = 200 milligrams (0.200 grams) = 100 points, with ±0.005 ct fraction tolerance."
+      }
+    ]
+  },
+  "gia_xrf_testing_warnings": [
+    {
+      "citation": "GIA Gems & Gemology, Spring 2024, Vol. 60, No. 1 — Lab Notes: \"Electroformed Gold Bracelet\"",
+      "source_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+      "retrieved_at": "2026-10-22",
+      "summary": "A 41 g yellow-metal bracelet bearing a glued-on \"14K\" stamped disk produced surface XRF readings of 17.99K to 22.47K with NO plating alert, yet microscopic seam inspection and core testing revealed a non-precious resin interior beneath electroformed gold plating."
+    },
+    {
+      "citation": "GIA Gems & Gemology, Summer 2025, Vol. 61, No. 2 — Lab Notes: \"Gold-Plated Gold\"",
+      "source_url": "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold",
+      "retrieved_at": "2026-10-22",
+      "summary": "Multiple rings and chains made of lower-karat gold (9K–10K) electroplated with higher-karat yellow gold produced surface XRF readings of 13.5K–18K without triggering XRF's base-metal plating warning because both substrate and coating were gold alloys. Subsurface polishing/testing and specific-gravity checks were required to expose the under-karated core."
+    }
+  ],
+  "cfpb_credit_card_protections": {
+    "authority": "Consumer Financial Protection Bureau (CFPB) — Fair Credit Billing Act (15 U.S.C. § 1666 & § 1666i; Regulation Z, 12 CFR § 1026.12–.13)",
+    "sources": [
+      "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+      "https://www.consumerfinance.gov/ask-cfpb/i-bought-something-with-my-credit-card-and-im-not-happy-with-it-what-can-i-do-en-1969/"
+    ],
+    "retrieved_at": "2026-10-22",
+    "verified_rules": [
+      "Billing errors (undelivered goods, goods not accepted, wrong amount, unauthorized charges): send written notice to the card issuer's billing-inquiries address within 60 days after the first statement showing the charge; issuer must acknowledge within 30 days and resolve within 2 billing cycles (max 90 days), and you may withhold payment on the disputed amount and related finance charges while pending.",
+      "Claims and defenses on unsatisfactory quality (15 U.S.C. § 1666i / Reg Z § 1026.12(c)): applies to credit cards (NOT debit cards, wire transfers, Zelle, crypto, or non-credit BNPL) when you first made a good-faith attempt to resolve with the merchant, the purchase exceeded $50, and occurred in your home state or within 100 miles of your current billing address (unless the merchant is card-issuer affiliated or your card network/issuer extends broader zero-liability/chargeback rights — individual cardholder agreements remain unverified)."
+    ]
+  }
+}
