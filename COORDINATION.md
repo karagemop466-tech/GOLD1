@@ -22,8 +22,8 @@ This Arena session is restricted by the hosting environment to branch `arena/c66
 | ID | Task | Status | Owning session | File scope | Started (UTC) |
 |---|---|---|---|---|---|
 | T1 | Repository audit and source research | done | arena/c662efda-gold1 | `research/**`, `README.md` | 2026-10-22 |
-| T2 | Verification policy and trust/safety sources | in progress | arena/c662efda-gold1 | `research/policy/**` | 2026-10-22 |
-| T3 | Static dashboard shell and accessible UI | unclaimed | — | `site/assets/**`, `site/*.html` (except generated catalog/review tables) | — |
+| T2 | Verification policy and trust/safety sources | done | arena/c662efda-gold1 | `research/policy/**` | 2026-10-22 |
+| T3 | Static dashboard shell and accessible UI | in progress | arena/c662efda-gold1 | `site/assets/**`, `site/*.html` (except generated catalog/review tables) | 2026-10-22 |
 | T4 | Automated evidence, link, and security checks | unclaimed | — | `scripts/**`, `tests/**`, `package.json`, `package-lock.json` | — |
 | T5 | Final integration: combine evidence, generate all shared outputs, build, audit, PR, deploy | unclaimed | — | `data/**`, `site/data/**`, generated tables/navigation, `.github/**`, root config, `COORDINATION.md` | — |
 
@@ -37,6 +37,8 @@ None.
 
 - Claimed T1. Initial repository contains only `README.md` (`# GOLD1`); there is no existing catalog, price, purity, weight, seller, or return-policy claim to preserve or verify.
 - Remote branches checked before starting: only `origin/main` was present. No competing task claim was found.
+- **T1 done (c098387).** `research/candidates.json` contains 13 active rows with official product URLs, retrieval dates, field-level excerpts, null missing values, and review flags. Six have explicit seller-stated solid-gold wording and listed weights; seven leave solid-gold/weight fields blank. No row has verified physical marks, net metal weight, independent testing, or purchase-ready status. `research/sellers.json` records official contact/payment/return/documentation findings and direct BBB profile/complaint snapshots. `research/irregularities.json` records ten open/excluded issues, including item 71345’s URL-ID mismatch, size surcharges, mixed-metal prongs, the excluded €720 BE variant, the BBB snippet conflict, chargeback wording, and BE’s return clock. All source URLs are preserved in those files. T1 evidence/hallucination/security audit passed; see `research/AUDIT.md`.
+- **T2 done.** `research/policy/verification.json` preserves FTC karat/maker/solid/plating guidance, GIA XRF capabilities/limitations, CFPB dispute timing/records guidance, and nine explicit verification gates. `research/policy/market.json` uses only Kitco’s named Live GoldPrice panel: 2026-10-22 19:11 NY, bid $4,025.00/troy oz, ask $4,027.00, displayed $129.41/g; troy-ounce conversion 31.1034768 g. LBMA is methodology-only. Dynamic Kitco panel variance is recorded, not blended. Derived rate $129.4067549387/g cross-checks to displayed $129.41/g. Audit passed in `research/policy/AUDIT.md`. Claimed T3.
 
 ## Final publication record
 

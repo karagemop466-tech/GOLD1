@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "retrievedDate": "2026-10-22",
+  "decisionRule": "A web listing is only a candidate. Purchase-ready requires every project gate, including physical marks, exact metal weight, written configuration-specific return eligibility, documentation, seller/reputation review, and timely independent post-delivery verification. Missing evidence never passes.",
+  "statusDefinitions": {
+    "seller-stated": "The official seller page makes the claim; it is not independent authentication.",
+    "verified": "Direct evidence supports the specific field at the stated scope. Product prices are verified only as retrieved snapshots, not future quotes.",
+    "unverified": "Evidence is absent, unreadable, conflicting, or outside the source's scope. The value remains blank.",
+    "excluded": "The item is retained in the audit log but not included in the active USD catalog."
+  },
+  "sources": {
+    "ftcJewelry": {
+      "publisher": "Federal Trade Commission",
+      "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "quotes": {
+        "karat": "A piece of jewelry marked 18K gold is 18 parts gold mixed with six parts of another metal. A piece marked 14K gold is 14 parts gold mixed with 10 parts of another metal.",
+        "maker": "Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark. The trademark may be a name, a symbol, or initials. If you’re thinking about buying a piece of gold jewelry but don’t see a trademark along with the karat mark, don’t buy it.",
+        "solid": "The phrase “solid gold” means the gold item isn’t hollow. The item will also have a karat mark like 14K or 18K to tell you how much gold is in the item.",
+        "plated": "A piece of jewelry can be plated with gold by mechanical plating, electroplating, and other processes. Eventually, the gold plating wears away, depending on how the item is worn and the thickness of the plating.",
+        "filled": "“Gold filled,” “gold overlay,” and “rolled gold plate (RGP)” describe jewelry with a layer of at least 10 karat gold mechanically applied to a base metal.",
+        "vermeil": "Vermeil is a special type of gold-plated product with a base of sterling silver coated or plated with gold.",
+        "flashed": "The terms “gold flashed” and “gold washed” describe products with a very thin electroplating of gold. This will wear away faster than gold plate, gold filled, or gold electroplate.",
+        "returns": "Find the store’s refund and return policies — and get them in writing. If something goes wrong, you’ll know what to do.",
+        "reputation": "Find out what others say about a seller. Type its name and the words “complaint” or “review” into a search engine."
+      }
+    },
+    "giaXrf": {
+      "publisher": "Gemological Institute of America",
+      "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
+      "quotes": {
+        "capability": "Quantitative XRF is widely used to verify precious metal content in jewelry and even to detect plating.",
+        "alloys": "XRF can accurately measure the major components of common gold alloys (Mercer, 1992).",
+        "plating": "XRF can also detect gold plating, often through measurement of the base metal being plated or other metals plated between the gold and base metal such as nickel.",
+        "nondestructive": "XRF offers rapid data acquisition, ease of use, and fully nondestructive analysis",
+        "sampling": "XRF is more of a bulk analysis method that samples much larger surface areas, typically on the order of 1–5 mm2, so care must be taken in choosing the technique that provides the appropriate level of spatial analysis."
+      },
+      "interpretationLimit": "These excerpts support XRF as a professional tool, not a claim that one reading authenticates every piece, every layer, every component, or every gemstone. Ask the jeweler to explain sampling, detected elements, plating assessment, uncertainty, and any additional test needed."
+    },
+    "cfpbRefund": {
+      "publisher": "Consumer Financial Protection Bureau",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-can-i-get-a-refund-on-a-product-or-service-i-purchased-with-my-credit-card-en-1969/",
+      "quote": "Contact your credit card company to see whether you can dispute a charge. In some cases, the credit card company can reverse the charge. This is sometimes called a chargeback.",
+      "billingErrorQuote": "It can be considered a billing error to be charged for a purchase when you did not receive what you ordered or did not accept delivery of the purchased items. You should send a notice about a billing error to your credit card company within 60 days of the charge appearing on your credit card statement."
+    },
+    "cfpbDispute": {
+      "publisher": "Consumer Financial Protection Bureau",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+      "quote": "To protect your rights you must also send a written billing error notice to the card company within 60 calendar days after the charge appeared on your statement.",
+      "recordQuote": "Be sure to keep copies for your records. Write down the dates you make follow-up calls and keep this information together in a file.",
+      "qualityCaveat": "You may have to go through a different dispute process if you use a credit card to pay for goods or services that turn out to be defective."
+    }
+  },
+  "gates": [
+    {
+      "id": "official-karat",
+      "title": "Explicit karat on the official listing",
+      "passWhen": "The exact item and selected variant state karat on an official seller/manufacturer page.",
+      "sourceId": "ftcJewelry",
+      "sourceQuoteKey": "karat"
+    },
+    {
+      "id": "solid-construction",
+      "title": "Explicit solid gold; no prohibited construction",
+      "passWhen": "The exact item explicitly says solid gold and provides no conflicting plated, vermeil, gold-filled, overlay, rolled-gold, electroplated, flashed, washed, or gold-tone construction. Seller wording remains only a listing claim until physical verification.",
+      "sourceId": "ftcJewelry",
+      "sourceQuoteKey": "solid",
+      "projectExcludedTerms": ["plated", "vermeil", "gold-filled", "gold filled", "overlay", "rolled gold plate", "electroplate", "flashed", "washed", "gold-tone"]
+    },
+    {
+      "id": "physical-marks",
+      "title": "Physical purity stamp and maker’s mark",
+      "passWhen": "The actual item has a readable karat quality mark and nearby maker name or U.S. registered trademark. A stamp alone never passes independent verification.",
+      "sourceId": "ftcJewelry",
+      "sourceQuoteKey": "maker"
+    },
+    {
+      "id": "metal-weight",
+      "title": "Exact metal-only gram weight",
+      "passWhen": "The exact configuration has a sourced metal-only gram weight, with gemstones and non-gold components appropriately excluded by a competent measurement. Listed total/item weight is not a substitute.",
+      "sourceId": null,
+      "basis": "Project no-inference rule. Missing or ambiguous weight remains blank."
+    },
+    {
+      "id": "seller-review",
+      "title": "Seller identity, contact, and independent reputation review",
+      "passWhen": "Official contact routes are available and independent reputation/complaint sources have been reviewed without unresolved irregularities. BBB accreditation or a letter grade alone never passes this gate.",
+      "sourceId": "ftcJewelry",
+      "sourceQuoteKey": "reputation"
+    },
+    {
+      "id": "return-route",
+      "title": "Written, configuration-specific return route",
+      "passWhen": "The seller confirms in writing that the exact size/configuration is returnable, with the window start, fees, authorization, packaging, and custom/resized/engraved exclusions understood. There must be enough time for independent inspection.",
+      "sourceId": "ftcJewelry",
+      "sourceQuoteKey": "returns"
+    },
+    {
+      "id": "payment-records",
+      "title": "Payment and documentation plan",
+      "passWhen": "Credit-card acceptance and issuer terms are reviewed; the buyer retains the itemized invoice, appraisal, applicable lab reports, all packaging, and written seller responses. Card acceptance and an appraisal are not guarantees.",
+      "sourceId": "cfpbDispute",
+      "sourceQuoteKey": "recordQuote"
+    },
+    {
+      "id": "price-gold-context",
+      "title": "Price compared with actual metal context",
+      "passWhen": "The final configured price is known and actual metal-only weight supports a real fine-gold calculation. Nominal listed-weight math cannot pass this gate or prove a fair retail price.",
+      "sourceId": null,
+      "basis": "Project no-inference rule and the dated market-source limitations in market.json."
+    },
+    {
+      "id": "independent-verification",
+      "title": "Independent post-delivery jeweler verification",
+      "passWhen": "An independent jeweler inspects the delivered item, marks, construction, and metal; uses appropriate testing such as XRF with professional interpretation; and completes the review before the return deadline. Do not buy if reasonable independent verification or a workable return route is refused.",
+      "sourceId": "giaXrf",
+      "sourceQuoteKey": "capability"
+    }
+  ],
+  "postDeliveryChecklist": [
+    "Photograph the unopened package, delivered item, purity stamp, maker’s mark, and any irregularity.",
+    "Keep all original packaging, invoice, appraisal, lab reports, return authorization instructions, and written seller communications.",
+    "Have an independent jeweler inspect construction and marks and perform appropriate metal testing; request written results and limitations.",
+    "Reconcile actual metal weight and item number with the invoice/appraisal without altering, resizing, engraving, or wearing the item.",
+    "Confirm the return deadline from the policy's actual trigger and leave time for inspection and authorized return shipping.",
+    "If there is a problem, contact the seller promptly. For card issues, contact the issuer and preserve written notices and dates; CFPB guidance describes a 60-calendar-day billing-error notice period, while defective-goods disputes can follow a different process."
+  ]
+}
