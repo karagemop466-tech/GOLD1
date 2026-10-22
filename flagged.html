@@ -34,7 +34,7 @@
 
 <section class="wrap section">
   <h1>Flagged for review</h1>
-  <p class="lede">35 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
+  <p class="lede">40 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -496,13 +496,78 @@
       <p class="sub"><a href="https://www.ross-simons.com/search/suggest.json?q=999230&amp;resources[type]=product&amp;resources[limit]=1" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/999230" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
       <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
     </article>
+<article class="flag-card sev-high">
+      <div class="flag-head">
+        <span class="flag-id">F37</span>
+        <span class="chip bad">high</span>
+        <span class="chip">unverified value</span>
+      </div>
+      <h2>Anna Sheffield Bea solitaire no longer publishes a price</h2>
+      <p>The official product page still resolves and still describes the 1.50ct oval champagne diamond in 14k recycled gold, but it no longer displays any price: the buy box has been replaced by an enquiry form (&#39;While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.&#39;). The stored 11,500.00 could not be reproduced, so it is published as unverified and must not be used as a quote until Anna Sheffield prices the piece in writing.</p>
+      <p class="small"><strong>Affects:</strong> as-bea-sol</p>
+      <p class="action"><strong>What to do:</strong> Do not treat the stored 11,500.00 as a price. The row now reads &#39;— unverified&#39; on this site. Email Anna Sheffield for a written quote for a 1.50ct oval champagne diamond Bea solitaire in 14k, and ask for the metal weight in grams at the same time.</p>
+      <p class="sub"><a href="https://www.annasheffield.com/products/bea-solitaire-ring-14k-gold-champagne-diamond-1-50ct" target="_blank" rel="noopener nofollow">www.annasheffield.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F38</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">official source contradiction</span>
+      </div>
+      <h2>Two Blue Nile setting pages contradict themselves on karat and metal colour</h2>
+      <p>The page title/price block for Classic Comfort Fit (2.5mm) is headed &#39;14K Yellow Gold&#39; while the details panel on the same page reads &#39;18k&#39; and &#39;Metal: 18k Yellow Gold&#39;. The Petite Nouveau six-prong page is headed &#39;18K Yellow Gold&#39; while its details panel reads &#39;polished 14k white gold&#39;. Both rows store the karat from the page heading, which is what the price block is attached to; the contradiction is on the seller&#39;s own page and cannot be resolved from it.</p>
+      <p class="small"><strong>Affects:</strong> bn-14k-ccf-203284, bn-18k-pn-203268</p>
+      <p class="action"><strong>What to do:</strong> Put the exact configuration in the basket and read the karat off the order summary before paying. Screenshot it. Karat is the single biggest driver of the gold value of the ring, so a 14K part billed as 18K is worth challenging.</p>
+      <p class="sub"><a href="https://www.bluenile.com/build-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-203284" target="_blank" rel="noopener nofollow">www.bluenile.com ↗</a> · <a href="https://www.bluenile.com/build-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268" target="_blank" rel="noopener nofollow">www.bluenile.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F39</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">partial verification</span>
+      </div>
+      <h2>Aurate Modern Cigar Band: the 14K variant price was not re-read at variant level</h2>
+      <p>Product, tags and the published 2.6-4g weight range were re-confirmed. The stored 1,308.00 belongs to the 14K/yellow/size-3 variant and was not re-readable at variant level this pass (the feed exposes only price_min 118.00 and price_max 1,668.00 for the product).</p>
+      <p class="small"><strong>Affects:</strong> au-cigar</p>
+      <p class="action"><strong>What to do:</strong> Select the 14K/yellow/size 3 variant and read the price in the basket before relying on the stored 1,308.00. The same product also sells a vermeil variant, so check which one is selected.</p>
+      <p class="sub"><a href="https://auratenewyork.com/products/modern-cigar-band" target="_blank" rel="noopener nofollow">auratenewyork.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F40</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">data correction / verification</span>
+      </div>
+      <h2>One stored price range could not be reproduced in full (rs-999230)</h2>
+      <p>This pass read a single clearance price of 489.00 at 23:48Z and could not reproduce the stored upper figure 559.00. P12 had recorded 489.00-559.00 at 23:35Z. The stored range is kept (both passes are published) and flagged rather than overwritten.</p>
+      <p class="small"><strong>Affects:</strong> rs-999230</p>
+      <p class="action"><strong>What to do:</strong> Read the price off the Ross-Simons page yourself before ordering. The clearance banner was live on 2026-10-22 and clearance stock is one-of-a-kind, so the price may move again without notice.</p>
+      <p class="sub"><a href="https://www.ross-simons.com/products/999230" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-low">
+      <div class="flag-head">
+        <span class="flag-id">F41</span>
+        <span class="chip info">low</span>
+        <span class="chip">partial verification</span>
+      </div>
+      <h2>Aurate Diamond X Ring: the product feed shows a price band the row cannot attribute to one variant</h2>
+      <p>This pass read the storefront feed showing a product price band of 1,808.00-2,578.00 across variants, but the band could not be attributed to a specific metal/size variant on this read. The stored 1,808.00 (14K) is kept and the row is marked partially verified rather than widened to a range no single official line supports.</p>
+      <p class="small"><strong>Affects:</strong> au-xring</p>
+      <p class="action"><strong>What to do:</strong> Choose your metal and size and read the price on the product page. If it is above the stored 1,808.00, the higher figure is the one that applies to the variant you picked.</p>
+      <p class="sub"><a href="https://auratenewyork.com/products/diamond-x-ring" target="_blank" rel="noopener nofollow">auratenewyork.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
   </div>
 </section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,026.70 per troy ounce at 2026-10-22T23:38:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

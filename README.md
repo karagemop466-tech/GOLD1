@@ -90,6 +90,8 @@ Node 22, no npm install, no network calls at build time, no tracking scripts, no
 | S15 | Re-verification ledger | A row labelled "re-read" with no ledger entry, no quote, or a different URL |
 | S16 | No invented dollar amounts | **Any dollar figure on any page that no data file or formula produces.** Tested against deliberate sabotage (pass P15: a fake five-figure price was injected and caught) |
 | S17 | Data age | A snapshot older than 30 days, or a re-verified count that does not match the ledger |
+| S18 | Unverified values are published as unverified | A value that could not be reproduced must carry the flag, a written reason, and a listing on the Flagged page |
+| S19 | Unverified prices never render as numbers | A row whose price is not reproducible must print "— unverified" on every page, never a dollar figure |
 
 Failures are printed, written to `data/checks/latest.json`, appended to `data/checks/history.json`, and rendered on `checks.html`. The command exits non-zero on any failure.
 
@@ -110,7 +112,7 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 - **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
 - **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
-- **7 of 43 listings publish metal weight in grams** (up from 1; six Ross-Simons bands plus the Aurate range). The value check is complete for those seven and impossible for the other 36, where it is left blank rather than estimated. → F02, F32
+- **8 of 43 listings publish metal weight in grams** (up from 1; seven Ross-Simons bands plus the Aurate range). The value check is complete for those eight and impossible for the other 35, where it is left blank rather than estimated. → F02, F32
 - **Live re-read of 20 product pages found two prices had moved** (rs-571223 $799→$849; rs-943668 range $1,269–$1,439 → single $1,269 clearance). Both were corrected, and the old values are kept in `data/reverification.json`. → F31
 - **The two "impossible" prices are explained, not excused**: $149 and $179 are 0.5 g rings (≈0.29 g and ≈0.38 g of fine gold), giving 3.9× and 3.7× melt. → F06
 - **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
@@ -119,13 +121,16 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 - **Mejuri's return promise excludes engraving** — "Engraved items are not eligible for return." Engraving is offered in the same buy box. → F33
 - **Resizing is a return-rights trap**: Ross-Simons and With Clarity both refuse returns on jewellery resized by another jeweller; Anna Sheffield charges a 10% restocking fee. → F07, F11
 - **Blue Nile's 18K Petite Nouveau listing contradicts its own metal spec** (first pass, F15).
+- **Two Blue Nile setting pages contradict themselves on karat and metal colour** (the 2.5 mm comfort-fit page is headed 14K while its own details panel says 18k; the 18K Petite Nouveau page's details panel says 14k white gold). Both rows store the karat the price block is attached to, and the contradiction is published rather than resolved by picking a number. → F38
+- **One price is now published as unverified**: the Anna Sheffield Bea solitaire no longer displays any price — the buy box has been replaced by an enquiry form — so the row reads "— unverified" everywhere. → F37
+- **Three rows are only partly verified** (rs-999230, au-cigar, au-xring): in each case two readings of the same page disagree, or a variant-level price could not be re-read. → F39, F40, F41
 - **Set & Stones was excluded** because its engagement-ring results were gold-filled. Blue Nile's category URL 404'd, so no row was invented. → `sources.html`
 
 ---
 
 ## Limits
 
-Prices are a snapshot and retailers change them without notice — the retailer page always wins. In pass P12 the re-check itself caught a real drift (F31), which is why every row now says whether it was re-read or is historical. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
+Prices are a snapshot and retailers change them without notice — the retailer page always wins. Every one of the 43 rows has now been re-read line by line against its own official page; 39 were confirmed, 3 could only be partly verified, and 1 was withdrawn as unverified. Where two independent passes disagreed, both readings are published and the row is marked partly verified rather than overwritten with a guess. In pass P12 the re-check itself caught a real drift (F31), which is why every row now says whether it was re-read or is historical. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
 
 ## License
 

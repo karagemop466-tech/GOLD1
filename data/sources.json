@@ -307,6 +307,56 @@
       "verified": "Second reading of the same feed: 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z); the later reading drives the melt arithmetic",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p18-with-clarity-recheck",
+      "publisher": "With Clarity",
+      "type": "official product page",
+      "url": "https://www.withclarity.com/search/suggest.json?q=solitaire",
+      "verified": "5 rows re-read from the storefront feed; setting prices confirmed, no metal weight published",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-aurate-recheck",
+      "publisher": "Aurate New York",
+      "type": "official product page",
+      "url": "https://auratenewyork.com/search/suggest.json?q=ring",
+      "verified": "5 rows re-read from the storefront feed; published weight range 2.6-4g confirmed on Modern Cigar Band",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-anna-sheffield-recheck",
+      "publisher": "Anna Sheffield",
+      "type": "official product page",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-14k-gold-champagne-diamond-1-50ct",
+      "verified": "3 rows re-read; the Bea solitaire page no longer displays any price, so the row is published as unverified",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-blue-nile-recheck",
+      "publisher": "Blue Nile",
+      "type": "official product page",
+      "url": "https://www.bluenile.com/build-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-203284",
+      "verified": "8 setting pages re-read; two pages contradict themselves on karat in the details panel",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-mejuri-recheck",
+      "publisher": "Mejuri",
+      "type": "official product page",
+      "url": "https://mejuri.com/shop/rings?Material=Solid+Yellow+Gold+(14k)",
+      "verified": "4 rows re-read; all four state 'Solid Yellow Gold (14k)' on the page",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
     }
   ]
 }

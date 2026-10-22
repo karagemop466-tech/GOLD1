@@ -508,6 +508,82 @@
         "https://www.ross-simons.com/products/999230"
       ],
       "status": "needs review"
+    },
+    {
+      "id": "F37",
+      "status": "needs review",
+      "title": "Anna Sheffield Bea solitaire no longer publishes a price",
+      "severity": "high",
+      "type": "unverified value",
+      "affected": "as-bea-sol",
+      "finding": "The official product page still resolves and still describes the 1.50ct oval champagne diamond in 14k recycled gold, but it no longer displays any price: the buy box has been replaced by an enquiry form ('While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.'). The stored 11,500.00 could not be reproduced, so it is published as unverified and must not be used as a quote until Anna Sheffield prices the piece in writing.",
+      "buyer_action": "Do not treat the stored 11,500.00 as a price. The row now reads '— unverified' on this site. Email Anna Sheffield for a written quote for a 1.50ct oval champagne diamond Bea solitaire in 14k, and ask for the metal weight in grams at the same time.",
+      "sources": [
+        "https://www.annasheffield.com/products/bea-solitaire-ring-14k-gold-champagne-diamond-1-50ct"
+      ],
+      "found_by": "sess-277867af",
+      "found_at": "2026-10-22"
+    },
+    {
+      "id": "F38",
+      "status": "needs review",
+      "title": "Two Blue Nile setting pages contradict themselves on karat and metal colour",
+      "severity": "medium",
+      "type": "official source contradiction",
+      "affected": "bn-14k-ccf-203284, bn-18k-pn-203268",
+      "finding": "The page title/price block for Classic Comfort Fit (2.5mm) is headed '14K Yellow Gold' while the details panel on the same page reads '18k' and 'Metal: 18k Yellow Gold'. The Petite Nouveau six-prong page is headed '18K Yellow Gold' while its details panel reads 'polished 14k white gold'. Both rows store the karat from the page heading, which is what the price block is attached to; the contradiction is on the seller's own page and cannot be resolved from it.",
+      "buyer_action": "Put the exact configuration in the basket and read the karat off the order summary before paying. Screenshot it. Karat is the single biggest driver of the gold value of the ring, so a 14K part billed as 18K is worth challenging.",
+      "sources": [
+        "https://www.bluenile.com/build-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-203284",
+        "https://www.bluenile.com/build-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268"
+      ],
+      "found_by": "sess-277867af",
+      "found_at": "2026-10-22"
+    },
+    {
+      "id": "F39",
+      "status": "needs review",
+      "title": "Aurate Modern Cigar Band: the 14K variant price was not re-read at variant level",
+      "severity": "medium",
+      "type": "partial verification",
+      "affected": "au-cigar",
+      "finding": "Product, tags and the published 2.6-4g weight range were re-confirmed. The stored 1,308.00 belongs to the 14K/yellow/size-3 variant and was not re-readable at variant level this pass (the feed exposes only price_min 118.00 and price_max 1,668.00 for the product).",
+      "buyer_action": "Select the 14K/yellow/size 3 variant and read the price in the basket before relying on the stored 1,308.00. The same product also sells a vermeil variant, so check which one is selected.",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ],
+      "found_by": "sess-277867af",
+      "found_at": "2026-10-22"
+    },
+    {
+      "id": "F40",
+      "status": "needs review",
+      "title": "One stored price range could not be reproduced in full (rs-999230)",
+      "severity": "medium",
+      "type": "data correction / verification",
+      "affected": "rs-999230",
+      "finding": "This pass read a single clearance price of 489.00 at 23:48Z and could not reproduce the stored upper figure 559.00. P12 had recorded 489.00-559.00 at 23:35Z. The stored range is kept (both passes are published) and flagged rather than overwritten.",
+      "buyer_action": "Read the price off the Ross-Simons page yourself before ordering. The clearance banner was live on 2026-10-22 and clearance stock is one-of-a-kind, so the price may move again without notice.",
+      "sources": [
+        "https://www.ross-simons.com/products/999230"
+      ],
+      "found_by": "sess-277867af",
+      "found_at": "2026-10-22"
+    },
+    {
+      "id": "F41",
+      "status": "needs review",
+      "title": "Aurate Diamond X Ring: the product feed shows a price band the row cannot attribute to one variant",
+      "severity": "low",
+      "type": "partial verification",
+      "affected": "au-xring",
+      "finding": "This pass read the storefront feed showing a product price band of 1,808.00-2,578.00 across variants, but the band could not be attributed to a specific metal/size variant on this read. The stored 1,808.00 (14K) is kept and the row is marked partially verified rather than widened to a range no single official line supports.",
+      "buyer_action": "Choose your metal and size and read the price on the product page. If it is above the stored 1,808.00, the higher figure is the one that applies to the variant you picked.",
+      "sources": [
+        "https://auratenewyork.com/products/diamond-x-ring"
+      ],
+      "found_by": "sess-277867af",
+      "found_at": "2026-10-22"
     }
   ]
 }

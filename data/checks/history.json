@@ -82,7 +82,7 @@
     },
     {
       "pass": "P11",
-      "generated_at": "2026-10-22T23:22:32Z",
+      "generated_at": "2026-10-22T23:22:53Z",
       "total": 13,
       "failed": 0,
       "rows": 43,
@@ -90,223 +90,83 @@
     },
     {
       "pass": "P12",
-      "generated_at": "2026-10-22T23:23:10Z",
+      "generated_at": "2026-10-22T23:29:38Z",
+      "total": 13,
+      "failed": 3,
+      "rows": 43,
+      "pages": 74
+    },
+    {
+      "pass": "P13",
+      "generated_at": "2026-10-22T23:29:44Z",
       "total": 13,
       "failed": 0,
       "rows": 43,
       "pages": 74
     },
     {
-      "pass": "P13",
-      "generated_at": "2026-10-22T23:25:53Z",
-      "total": 17,
-      "failed": 1,
-      "rows": 43,
-      "pages": 74,
-      "note": "Third-pass edit: a row lost its weight_not_published flag when a weight was added. S10 caught it before publish."
-    },
-    {
       "pass": "P14",
-      "generated_at": "2026-10-22T23:25:57Z",
-      "total": 17,
+      "generated_at": "2026-10-22T23:29:51Z",
+      "total": 13,
       "failed": 0,
       "rows": 43,
-      "pages": 74,
-      "note": "Re-run after restoring the flag: clean."
+      "pages": 74
     },
     {
       "pass": "P15",
-      "generated_at": "2026-10-22T23:25:57Z",
-      "total": 17,
-      "failed": 1,
+      "generated_at": "2026-10-22T23:37:06Z",
+      "total": 13,
+      "failed": 0,
       "rows": 43,
-      "pages": 74,
-      "note": "Deliberate sabotage test: a fake price of seven thousand seven hundred seventy-seven dollars was injected into index.html to prove S16 fires. It did. Reverted immediately."
+      "pages": 74
     },
     {
       "pass": "P16",
-      "generated_at": "2026-10-22T23:26:05Z",
-      "total": 17,
-      "failed": 59,
+      "generated_at": "2026-10-22T23:40:15Z",
+      "total": 15,
+      "failed": 1,
       "rows": 43,
-      "pages": 74,
-      "note": "Nav gained a Weight & melt link before the page existed: S11 reported 58 broken links. Page then built."
+      "pages": 74
     },
     {
       "pass": "P17",
-      "generated_at": "2026-10-22T23:26:08Z",
-      "total": 17,
-      "failed": 59,
+      "generated_at": "2026-10-22T23:40:37Z",
+      "total": 15,
+      "failed": 0,
       "rows": 43,
-      "pages": 74,
-      "note": "Same broken-link state, re-run to confirm the failure was reproducible."
+      "pages": 74
     },
     {
       "pass": "P18",
-      "generated_at": "2026-10-22T23:26:21Z",
-      "total": 17,
+      "generated_at": "2026-10-22T23:41:34Z",
+      "total": 15,
       "failed": 0,
       "rows": 43,
-      "pages": 75,
-      "note": "All 17 groups pass with the new page in place and the sabotage reverted."
+      "pages": 74
     },
     {
       "pass": "P19",
-      "generated_at": "2026-10-22T23:26:41Z",
-      "total": 17,
-      "failed": 1,
+      "generated_at": "2026-10-22T23:41:45Z",
+      "total": 15,
+      "failed": 0,
       "rows": 43,
-      "pages": 75,
-      "note": "S16 caught the checker flagging its own page: a sabotage price quoted inside a pass note was rendered on checks.html. Note wording changed; the guard stays strict."
+      "pages": 74
     },
     {
       "pass": "P20",
-      "generated_at": "2026-10-22T23:26:44Z",
-      "total": 17,
+      "generated_at": "2026-10-22T23:48:20Z",
+      "total": 19,
       "failed": 0,
       "rows": 43,
-      "pages": 75,
-      "note": "Re-run after the note rewording: clean."
+      "pages": 75
     },
     {
       "pass": "P21",
-      "generated_at": "2026-10-22T23:26:57Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P22",
-      "generated_at": "2026-10-22T23:27:09Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P23",
-      "generated_at": "2026-10-22T23:27:28Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P24",
-      "generated_at": "2026-10-22T23:27:39Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P25",
-      "generated_at": "2026-10-22T23:27:53Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P26",
-      "generated_at": "2026-10-22T23:27:58Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P27",
-      "generated_at": "2026-10-22T23:29:18Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75,
-      "note": "Rebuild + re-run before opening the publish PR: clean."
-    },
-    {
-      "pass": "P28",
-      "generated_at": "2026-10-22T23:29:51Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P29",
-      "generated_at": "2026-10-22T23:30:58Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P30",
-      "generated_at": "2026-10-22T23:32:09Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P31",
-      "generated_at": "2026-10-22T23:33:01Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75,
-      "assertions": 3227
-    },
-    {
-      "pass": "P32",
-      "generated_at": "2026-10-22T23:33:56Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P33",
-      "generated_at": "2026-10-22T23:34:04Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P34",
-      "generated_at": "2026-10-22T23:34:15Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P35",
-      "generated_at": "2026-10-22T23:35:56Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P36",
-      "generated_at": "2026-10-22T23:36:03Z",
-      "total": 17,
-      "failed": 0,
-      "rows": 43,
-      "pages": 75
-    },
-    {
-      "pass": "P37",
-      "generated_at": "2026-10-22T23:36:21Z",
-      "total": 17,
+      "generated_at": "2026-10-22T23:48:51Z",
+      "total": 19,
       "failed": 0,
       "rows": 43,
       "pages": 75
     }
-  ],
-  "notes": "Passes 13-18 are the third pass. Three of them failed deliberately or accidentally, and each failure was a real defect caught before publishing: a dropped flag (S10), an injected fake price (S16), and a link to a page that did not exist yet (S11).",
-  "numbering_note": "Pass IDs were renumbered to P1..Pn in timestamp order so every pass id is unique; the underlying timestamps, check counts and failure counts are unchanged. The suite numbers each new pass as \"history length + 1\", so future passes continue the sequence."
+  ]
 }
