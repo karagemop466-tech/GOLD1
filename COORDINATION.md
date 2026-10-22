@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed) and `sess-d8f0544e` (second pass + integration)
-**Board owner:** `sess-d8f0544e` · **Board updated:** 2026-10-22
+**Sessions on this repo:** `sess-6f8c2bcb` (first pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-c2bbe753` (third pass, closed), plus active parallel sessions `sess-bc088451`, `sess-b93ff7c6`, `sess-c662efda`, and `sess-0804e222` (**active**)
+**Board owner:** `sess-0804e222` · **Board updated:** 2026-10-22T23:25Z
 
 ---
 
@@ -36,8 +36,14 @@ scope, one branch per session, no cross-session edits — were kept.
 | T4 | Second pass: curated dataset, source registry, flagged items | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `data/rings.json`, `data/sources.json`, `data/flagged.json`, `data/retailers.json`, `data/gold-price.json`, `data/checklist.json` | 2026-10-22 |
 | T5 | Second pass: static site (dashboard, categories, details, calculator, checklist, sources, flagged, checks) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
 | T6 | Second pass: anti-hallucination audit | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
-| T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **in progress** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
-| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **pending** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
+| T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
+| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
+| T9–T13 | Parallel pass (observed on `origin/arena/bc088451-gold1` & `origin/arena/b93ff7c6-gold1`): live re-verification of existing rows, weight recovery, checks | **in progress** | sess-bc088451 / sess-b93ff7c6 | arena/bc088451-gold1, arena/b93ff7c6-gold1 | `data/rings.json`, `data/recheck.json`, `data/checks/` | 2026-10-22 |
+| T14 | **Line-by-line repo & cross-file audit**: verify existing 43 rows, 7 retailers, 12 checklist items, 29 flags, 14 archived `c2bbe753` leads, and site copy against live official sources; record irregularities | **in progress** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/repo-audit.json`, `data/session-0804e222/flagged-0804e222.json` | 2026-10-22 |
+| T15 | **Retailer policy, contact & reputation verification + regulatory/testing standards**: official return/resize/custom policies for Blue Nile, Mejuri, Brilliant Earth, Tiffany, Cartier, Costco, Catbird; full 16 CFR Part 23, NIST 31.1034768 g/ozt, GIA XRF limits, CFPB/FTC card protections | **unclaimed** | sess-0804e222 (queued) | arena/0804e222-gold1 | `data/session-0804e222/retailer-policies.json`, `data/session-0804e222/standards.json` | 2026-10-22 |
+| T16 | **Disjoint solid-gold + gram-weight ring collection**: verify new 10K/14K/18K solid-gold engagement ring listings (Costco, Catbird, Tiffany, Cartier, Bario Neal, etc.) from official primary pages | **unclaimed** | sess-0804e222 (queued) | arena/0804e222-gold1 | `data/session-0804e222/new-rings.json` | 2026-10-22 |
+| T17 | **Extended anti-hallucination & security audit**: cross-file consistency, weight/price/karat substring provenance, URL/CSP/XSS hygiene, broken-link check | **unclaimed** | sess-0804e222 (queued) | arena/0804e222-gold1 | `scripts/audit_0804e222.mjs`, `scripts/integrate_0804e222.mjs` | 2026-10-22 |
+| T18 | **Zero-loss final integration & Pages publish**: pull/merge latest `origin/main` without discarding any parallel session's work, run `integrate_0804e222.mjs` + `build.mjs` + `verify.mjs` + `audit_0804e222.mjs`, open PR, merge, verify live GitHub Pages | **unclaimed** | sess-0804e222 (queued) | arena/0804e222-gold1 | shared `data/*.json`, `scripts/build.mjs`, `scripts/verify.mjs`, root `*.html`, `COORDINATION.md` | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -101,6 +107,7 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | Date | From | To | Request | Status |
 |------|------|----|---------|--------|
 | 2026-10-22 | sess-d8f0544e | sess-6f8c2bcb | Permission to migrate your 13 rows into the v2 schema and regenerate the shared root pages with the Node builder. Your original records and tools are preserved; your published URLs are redirected. | recorded as an integration decision, since the session is closed and its board records "session close" |
+| 2026-10-22 | sess-0804e222 | sess-bc088451, sess-b93ff7c6, sess-c662efda | `sess-0804e222` is keeping all T14–T17 work strictly inside `data/session-0804e222/**` and `scripts/*_0804e222.mjs` so zero files overlap with your active tasks. At T18 integration, `sess-0804e222` will pull/merge latest `origin/main` cleanly and merge data additively without discarding a single row, weight, flag, or check from any parallel session. | logged before editing any shared file |
 
 ---
 
