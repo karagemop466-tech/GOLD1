@@ -4,7 +4,7 @@ A source-linked buying dashboard for **solid gold engagement rings**, built so t
 
 **Live site:** https://karagemop466-tech.github.io/GOLD1/
 
-Built across two research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows) and session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), integrated into one dataset and one site. The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
+Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), and session **arena/bc088451-gold1** (live re-verification of 7 pages + one market feed, 4 weights recovered, 2 prices corrected, 5 new findings). The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
 
 ---
 
@@ -22,6 +22,7 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 |------|------------|
 | `index.html` | Landing dashboard: the rule, headline findings, gold price, category cards, full table |
 | `rings.html` | All listings with filters (search, category, seller, karat, max price) and sortable columns |
+| `weights.html` | Weight and gold content: every listing with a published weight, the melt arithmetic shown line by line, and the per-seller count of rows where no weight exists |
 | `categories/*.html` | One page per style: solitaire, three-stone & halo, bezel & modern, gemstone, bands, estate |
 | `rings/<id>.html` | One page per listing: evidence text, melt-value check, flags, seller contact and return terms, pre-purchase steps |
 | `calculator.html` | Gold value calculator: grams × karat ÷ 24 × published gold price, plus price-to-melt multiple |
@@ -31,6 +32,7 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
 | `checks.html` | Output of the latest automated verification pass and the pass history |
 | `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |
+| `data/reverification.json` | Ledger of the P12 live re-reads: row, URL, what was checked, before/after, verdict and the quoted line |
 | `data/archive/session-6f8c2bcb/` | First pass's original 13 rows, 15 flags, CSV and gold reading, preserved unmodified |
 | `data/sources.json` | Source registry with retrieval dates and status |
 | `data/flagged.json` | Findings, severity, affected rows, source links |
@@ -80,6 +82,10 @@ Node 22, no npm install, no network calls at build time, no tracking scripts, no
 | S11 | Links and placeholders | Broken internal links, missing assets, placeholder text |
 | S12 | Row-to-page coverage | A row without a detail page showing its source and price |
 | S13 | Source registry coverage | A retailer used for values with no registry entry |
+| S14 | Weight traceability | Grams that do not appear in the seller's own evidence text, or a blank/known flag that contradicts the stored weight |
+| S15 | Re-verification ledger | A row labelled "re-read" with no ledger entry, no quote, or a different URL |
+| S16 | No invented dollar amounts | **Any dollar figure on any page that no data file or formula produces.** Tested against deliberate sabotage (pass P15: a fake five-figure price was injected and caught) |
+| S17 | Data age | A snapshot older than 30 days, or a re-verified count that does not match the ledger |
 
 Failures are printed, written to `data/checks/latest.json`, appended to `data/checks/history.json`, and rendered on `checks.html`. The command exits non-zero on any failure.
 
@@ -100,10 +106,13 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 - **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
 - **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
-- **1 of 43 listings publishes metal weight in grams.** The value check cannot be completed for the other 42, and is left blank. → F02
+- **5 of 43 listings publish metal weight in grams** (up from 1 after the P12 re-read). The value check is complete for those five and impossible for the other 38, where it is left blank rather than estimated. → F02, F32
+- **Live re-read of 7 product pages found two prices had moved** (rs-571223 $799→$849; rs-943668 range $1,269–$1,439 → single $1,269 clearance). Both were corrected, and the old values are kept in `data/reverification.json`. → F31
+- **The two "impossible" prices are explained, not excused**: $149 and $179 are 0.5 g rings (≈0.29 g and ≈0.38 g of fine gold), giving 3.9× and 3.7× melt. → F06
 - **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
 - **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
-- **Two Ross-Simons pieces at $149 and $179** are flagged as value-unverifiable without a weight. → F06
+- **Weights the seller publishes are labelled approximate** by the seller, so melt figures carry that tolerance. → F34
+- **Mejuri's return promise excludes engraving** — "Engraved items are not eligible for return." Engraving is offered in the same buy box. → F33
 - **Resizing is a return-rights trap**: Ross-Simons and With Clarity both refuse returns on jewellery resized by another jeweller; Anna Sheffield charges a 10% restocking fee. → F07, F11
 - **Blue Nile's 18K Petite Nouveau listing contradicts its own metal spec** (first pass, F15).
 - **Set & Stones was excluded** because its engagement-ring results were gold-filled. Blue Nile's category URL 404'd, so no row was invented. → `sources.html`

@@ -20,6 +20,7 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html">Dashboard</a>
       <a href="rings.html">All rings</a>
+      <a href="weights.html">Weight & melt</a>
       <a href="calculator.html">Gold calculator</a>
       <a href="checklist.html">Checklist</a>
       <a href="sources.html">Sources</a>
@@ -33,7 +34,7 @@
 
 <section class="wrap section">
   <h1>Flagged for review</h1>
-  <p class="lede">29 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
+  <p class="lede">34 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -109,12 +110,12 @@
       <div class="flag-head">
         <span class="flag-id">F06</span>
         <span class="chip warn">medium</span>
-        <span class="chip">price plausibility</span>
+        <span class="chip">price / value check</span>
       </div>
-      <h2>Two very low solid-gold prices that cannot be value-checked</h2>
-      <p>A 14K ring at 149.00 and an 18K ring at 179.00 are advertised. Both are described as about 1/16 inch wide. At the gold price recorded on this page, an 18K ring at 179.00 contains at most about 1.8 g of gold before labour and margin. That is possible for a very thin band, but with no published weight the value cannot be confirmed.</p>
+      <h2>Two very low solid-gold prices — now testable against published weights</h2>
+      <p>$149 for a 14K ring and $179 for an 18K ring looked implausible. Pass P12 found both pages publish a metal weight: 0.5 grams each. At 14K that is about 0.29 g of fine gold; at 18K about 0.375 g. The prices are therefore consistent with extremely light rings, not with a mis-stated karat. The earlier finding said the value could not be checked; it now can, and the answer is &quot;thin and light&quot;, not &quot;fake&quot;.</p>
       <p class="small"><strong>Affects:</strong> rs-981367, rs-907250</p>
-      <p class="action"><strong>What to do:</strong> Ask for the gram weight. Weigh it on arrival. Do not assume a high karat at a low price means a good deal.</p>
+      <p class="action"><strong>What to do:</strong> Decide whether 0.5 g of metal is enough ring for daily wear. Weigh it on arrival - an independent jeweller can do this in a minute - and treat any shortfall from the stated 0.5 g as a return reason.</p>
       <p class="sub"><a href="https://www.ross-simons.com/products/981367" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/907250" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
       <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
     </article>
@@ -417,13 +418,78 @@
       <p class="sub"><a href="https://www.costco.com/" target="_blank" rel="noopener nofollow">www.costco.com ↗</a></p>
       <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
     </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F31</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">price drift</span>
+      </div>
+      <h2>Prices moved between research passes — two rows corrected</h2>
+      <p>Re-reading the same two product pages on 2026-10-22 gave different prices from the earlier pass. rs-571223 now lists $849.00 on every in-stock size, so the stored $799.00 floor is no longer on the page. rs-943668 is now a clearance item at $1,269.00 with an original price of $1,795.00, and sizes 5, 6 and 6.5 are sold out; the stored $1,439.00 ceiling was a size variant that is no longer listed. Both rows were corrected to the price the page shows, and the old values are kept in data/reverification.json so nothing is silently overwritten.</p>
+      <p class="small"><strong>Affects:</strong> rs-571223 (was $799.00-$849.00, now $849.00); rs-943668 (was $1,269.00-$1,439.00, now a single $1,269.00 clearance price)</p>
+      <p class="action"><strong>What to do:</strong> Treat every price here as a snapshot. Open the product link on the row before you buy, and expect the other 35 rows to have moved too — they were not re-read in this pass.</p>
+      <p class="sub"><a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/943668" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F32</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">coverage gap</span>
+      </div>
+      <h2>Ross-Simons publishes a gold weight on its product pages, but 13 of its 17 rows still have none</h2>
+      <p>Ross-Simons renders a &quot;Gold Weight&quot; line in the spec panel of its product pages (for example &quot;Gold Weight 1.7 grams&quot; on item 571221 and &quot;Gold Weight 0.5 grams&quot; on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 5 of 43 rows carry a weight. Four Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 13 were not re-read, so their weight stays blank rather than being inferred from a sibling item.</p>
+      <p class="small"><strong>Affects:</strong> 13 of 17 Ross-Simons rows</p>
+      <p class="action"><strong>What to do:</strong> If a Ross-Simons row matters to you, open its page and read the Gold Weight line yourself — it is usually there. Send it to me and it can be verified into the table.</p>
+      <p class="sub"><a href="https://www.ross-simons.com/products/571221" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F33</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">returns</span>
+      </div>
+      <h2>Mejuri&#39;s return promise has an exclusion that matters for rings: engraving</h2>
+      <p>The Mejuri product page states &quot;We offer free 30-day returns &amp; exchanges starting from the day the shipment is delivered or picked up in-store. Some exclusions apply&quot; and, separately, &quot;Engraved items are not eligible for return.&quot; Engraving is offered as an option in the same buy box as the ring, so a personalised ring can lose its return right at checkout.</p>
+      <p class="small"><strong>Affects:</strong> all Mejuri rows (mej-2mm, mej-db, mej-deb, mej-bde)</p>
+      <p class="action"><strong>What to do:</strong> Do not add engraving until you have weighed and inspected the ring, or accept that the purchase becomes final.</p>
+      <p class="sub"><a href="https://mejuri.com/products/2mm-smooth-band" target="_blank" rel="noopener nofollow">mejuri.com ↗</a> · <a href="https://mejuri.com/faq/return-exchanges" target="_blank" rel="noopener nofollow">mejuri.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-low">
+      <div class="flag-head">
+        <span class="flag-id">F34</span>
+        <span class="chip info">low</span>
+        <span class="chip">measurement precision</span>
+      </div>
+      <h2>Seller-published weights are approximate — so every melt figure here inherits that error</h2>
+      <p>Every Ross-Simons page that shows a weight also states: &quot;All weights and measurements are approximate.&quot; A 0.5 g ring priced against gold at 129.56 USD/gram therefore has a melt value with a real tolerance around it, not an exact figure. The site labels those numbers as computed from the published weight and never presents them as an appraisal.</p>
+      <p class="small"><strong>Affects:</strong> all rows with a published weight (5 of 43)</p>
+      <p class="action"><strong>What to do:</strong> Use the melt multiple as an order-of-magnitude check, not to the cent. Have the ring weighed on a jeweller&#39;s scale on arrival.</p>
+      <p class="sub"><a href="https://www.ross-simons.com/products/981367" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-low">
+      <div class="flag-head">
+        <span class="flag-id">F35</span>
+        <span class="chip info">low</span>
+        <span class="chip">metal finish</span>
+      </div>
+      <h2>Mejuri&#39;s solid white gold is rhodium-plated on the surface — yellow gold is not</h2>
+      <p>The Mejuri materials panel says: &quot;14k solid white gold pieces are finished with rhodium plating, giving them their signature color along with added shine and durability.&quot; That is a surface finish on a solid 14k white gold ring, not a gold substitute — but a buyer filtering for &quot;no plating&quot; should know the white version carries a plating layer that wears over time and is re-polished by jewellers.</p>
+      <p class="small"><strong>Affects:</strong> Mejuri white-gold variants of the listed rows (the rows themselves are yellow gold)</p>
+      <p class="action"><strong>What to do:</strong> If plating is a hard no, choose the yellow or rose variants; if you want white, ask the jeweller about re-rhodium cost and interval.</p>
+      <p class="sub"><a href="https://mejuri.com/products/2mm-smooth-band" target="_blank" rel="noopener nofollow">mejuri.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
   </div>
 </section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>
