@@ -213,7 +213,8 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 - **Pull request:** [#10](https://github.com/karagemop466-tech/GOLD1/pull/10) — `arena/bc088451-gold1` → `main`
 - **Merge result:** MERGED at 2026-10-22T23:28:17Z, merge commit `f94e2d2`
 - **Pages deploy:** build `f94e2d2` reported `built` (checked via `gh api repos/.../pages/builds/latest`); `https://karagemop466-tech.github.io/GOLD1/weights.html` verified live after deploy
-- **Post-deploy verification:** every root page and a sample ring page returned HTTP 200 from the built tree before merge (12/12), and the deployed `weights.html` renders all 5 weighted rows with the computed melt values
+- **Post-deploy verification:** every root page and a sample ring page returned HTTP 200 from the built tree before merge (12/12). After deploy, `weights.html` renders all 5 weighted rows with the computed melt values, `checks.html` shows the full 17-group table plus the re-verification ledger, and `index.html` shows 43 listings / 7 retailers / 34 flags / 5-of-43 weights
+- **Follow-up PR:** [#12](https://github.com/karagemop466-tech/GOLD1/pull/12) — MERGED, merge commit `fbfebfe`, Pages `built`. It published one consistent pass id across `index.html`, `checks.html` and `data/checks/latest.json`, and renumbered the pass history so every id is unique (timestamps, counts and failures unchanged)
 - **Concurrent-merge note:** another session's PR #1 landed on `main` while this branch was open. It touched only `COORDINATION.md` (+8 lines); the branch was rebased onto it and re-verified (17/17) before pushing. No work was discarded and no conflict remained.
 
 ### Earlier passes

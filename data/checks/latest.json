@@ -1,6 +1,6 @@
 {
-  "pass": "P28",
-  "generated_at": "2026-10-22T23:31:56Z",
+  "pass": "P30",
+  "generated_at": "2026-10-22T23:32:09Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 17,
@@ -182,5 +182,6 @@
       "failures": [],
       "failure_count": 0
     }
-  ]
+  ],
+  "note": "Reconciled pass: both P12 sessions merged into one ledger (20 entries), 7 rows with a published seller weight, 35 findings, 17 check groups."
 }
