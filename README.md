@@ -4,6 +4,8 @@ A source-linked buying dashboard for **solid gold engagement rings**, built so t
 
 **Live site:** https://karagemop466-tech.github.io/GOLD1/
 
+Built across two research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows) and session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), integrated into one dataset and one site. The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
+
 ---
 
 ## The one rule
@@ -28,7 +30,8 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `flagged.html` | 14 findings that need a human decision (published, non-blocking) |
 | `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
 | `checks.html` | Output of the latest automated verification pass and the pass history |
-| `data/rings.json` | The curated dataset — 30 rows, each with its evidence string |
+| `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |
+| `data/archive/session-6f8c2bcb/` | First pass's original 13 rows, 15 flags, CSV and gold reading, preserved unmodified |
 | `data/sources.json` | Source registry with retrieval dates and status |
 | `data/flagged.json` | Findings, severity, affected rows, source links |
 | `data/retailers.json` | Retailer identity, contact details and return terms (verbatim-sourced) |
@@ -36,6 +39,7 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `data/checks/` | Latest pass and full pass history |
 | `data/collect/sources.json` | Machine-readable list of every primary URL used |
 | `scripts/collect.mjs` | Evidence collector: re-fetches every source and writes a timestamped snapshot |
+| `scripts/integrate_session_6f8c2bcb.py` | Mechanical migration of the first pass's rows into this schema (no number is retyped) |
 | `scripts/build.mjs` | Static site generator (no dependencies) |
 | `scripts/verify.mjs` | Anti-hallucination audit: 13 check groups, ~1,500 assertions |
 | `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
@@ -94,13 +98,14 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 ## Current findings (as of 2026-10-22)
 
-- **30 listings**, 4 retailers (Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
-- **0 of 30 listings use the word "solid"**, although none carries plating language either. Karat is stated everywhere; explicit "solid" confirmation is not. → F01
-- **1 of 30 listings publishes metal weight in grams.** The value check cannot be completed for the other 29, and is left blank. → F02
+- **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
+- **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
+- **1 of 43 listings publishes metal weight in grams.** The value check cannot be completed for the other 42, and is left blank. → F02
 - **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
 - **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
 - **Two Ross-Simons pieces at $149 and $179** are flagged as value-unverifiable without a weight. → F06
 - **Resizing is a return-rights trap**: Ross-Simons and With Clarity both refuse returns on jewellery resized by another jeweller; Anna Sheffield charges a 10% restocking fee. → F07, F11
+- **Blue Nile's 18K Petite Nouveau listing contradicts its own metal spec** (first pass, F15).
 - **Set & Stones was excluded** because its engagement-ring results were gold-filled. Blue Nile's category URL 404'd, so no row was invented. → `sources.html`
 
 ---

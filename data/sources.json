@@ -226,6 +226,51 @@
       "verified": "Checked and EXCLUDED: the engagement-ring results returned were gold-filled / gold-plated pieces, which fail the solid-gold requirement.",
       "status": "rejected (plated metal)",
       "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bn-solitaire-list",
+      "publisher": "Blue Nile",
+      "type": "official category listing",
+      "url": "https://www.bluenile.com/engagement-rings/styles/solitaire",
+      "verified": "Setting prices for 5 Blue Nile solitaire settings (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bn-product-18k",
+      "publisher": "Blue Nile",
+      "type": "official product page",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
+      "verified": "18K setting price 1,240; contact phone; warranty text (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "mejuri-product",
+      "publisher": "Mejuri",
+      "type": "official product page",
+      "url": "https://mejuri.com/products/diamond-eternity-band",
+      "verified": "Price from 1,100; explicit 'solid gold' wording (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "be-product",
+      "publisher": "Brilliant Earth",
+      "type": "official product page",
+      "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "verified": "Setting price 1,090; 18K metal spec (first pass)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "session-6f8c2bcb-archive",
+      "publisher": "GOLD1 first research pass",
+      "type": "archived dataset",
+      "url": "https://github.com/karagemop466-tech/GOLD1/blob/main/data/archive/session-6f8c2bcb/rings.json",
+      "verified": "Original 13 rows and 15 flags from session arena-6f8c2bcb-gold1, preserved unmodified",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     }
   ]
 }

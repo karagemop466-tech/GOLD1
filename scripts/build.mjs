@@ -113,6 +113,10 @@ const flagLabels = {
   metal_variant_price_unmapped: 'metal price unmapped',
   plated_variant_in_product: 'plated variant in listing',
   created_stone: 'created stone',
+  starting_price: 'starting price',
+  price_from_listing_page: 'price from listing page',
+  hallmark_not_published: 'no hallmark published',
+  mixed_karat_components: 'mixed karat parts',
 };
 const flagText = (f) => flagLabels[f] || f.replace(/_/g, ' ');
 
@@ -339,7 +343,7 @@ const dashboard = layout({
 <section class="wrap section">
   <div class="stats">
     ${stat(`${totalRows}`, 'verified listings', 'price + karat from the official feed')}
-    ${stat(`${retailersDoc.retailers.length}`, 'retailers', 'Ross-Simons, Aurate, With Clarity, Anna Sheffield')}
+    ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', 'the number you need for a value check')}
     ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', 'karat is stated; the word solid is not')}
@@ -349,8 +353,8 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="callout ${solidStated === 0 ? 'warn' : ''}">
-    <h2>Headline finding: karat is everywhere, the word "solid" is nowhere</h2>
-    <p>Every one of the ${totalRows} listings states a karat. <strong>${solidStated === 0 ? 'None' : solidStated}</strong> of them says “solid gold” in the product text. That does not make them plated — none of the ${totalRows} carries plating language either — but it means the explicit confirmation your checklist asks for is still missing at checkout. See <a href="flagged.html">Flagged for review</a> (F01) for the exact wording to request from each seller.</p>
+    <h2>Headline finding: karat is everywhere, the word “solid” is rare</h2>
+    <p>Every one of the ${totalRows} listings states a karat. <strong>${solidStated === 0 ? 'None' : solidStated}</strong> of them ${solidStated === 1 ? 'states' : 'state'} “solid gold” in the product text — the rest name a karat and nothing more. That does not make them plated (none of the ${totalRows} carries plating language), but the explicit confirmation your checklist asks for is still missing at checkout. See <a href="flagged.html">Flagged for review</a> (F01) for the exact wording to request from each seller.</p>
   </div>
 </section>
 
@@ -509,7 +513,8 @@ for (const r of rings.rows) {
         <dt>Stone</dt><dd>${esc(r.stone)}${r.stone_type ? `<div class="sub">${esc(r.stone_type)}</div>` : ''}</dd>
         <dt>Price</dt><dd>${priceCell(r)} <div class="sub">${esc(r.price_basis)}</div></dd>
         <dt>Metal weight</dt><dd>${r.weight_g_low === null ? dash : `${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g <span class="sub">as published</span>`}</dd>
-        <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}</dd>
+        <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}${r.inherited ? ' <span class="chip info">carried over from the first research pass</span>' : ''}</dd>
+        <dt>Read from</dt><dd>${esc(r.source_type || 'official product page')}</dd>
       </dl>
       <p><a class="btn" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">Open the official product page ↗</a></p>
       <p class="sub">If the price on that page differs from the price here, the page wins. This site records what the feed said on ${esc(r.retrieved_at)}.</p>

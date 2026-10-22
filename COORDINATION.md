@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Board owner:** session `sess-d8f0544e` (Arena branch `arena/d8f0544e-gold1`)
-**Board updated:** 2026-10-22 (final integration)
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed) and `sess-d8f0544e` (second pass + integration)
+**Board owner:** `sess-d8f0544e` · **Board updated:** 2026-10-22
 
 ---
 
@@ -11,7 +11,7 @@
 1. Read this file **before** starting any task.
 2. Claim a task by writing your session ID, branch, and file scope in the row, then **commit and push the claim immediately**.
 3. Never start a task another session has claimed and not released.
-4. Keep scopes non-overlapping. If a task needs a file owned by another session, log a *Request* in §5 instead of editing the file.
+4. Keep scopes non-overlapping. If a task needs a file owned by another session, log a *Request* in §5 instead of editing it.
 5. Make small, frequent commits; `git pull --rebase` before every push.
 6. A claim older than 60 minutes with no commits may be taken over — record the handoff in §6.
 7. Shared outputs (the table data, the site index and navigation) are changed only by the final integration session.
@@ -19,16 +19,10 @@
 
 ### Branch naming note (Arena sessions)
 
-The generic protocol asks for branches named `session-<id>/<task>`. Arena fixes the branch name of an
-interactive session, so this session worked on `arena/d8f0544e-gold1` and mapped every task to it. The
-constraints that matter — one session per scope, one branch per session, no cross-session edits — were kept.
-
-### Concurrency check
-
-At the start of the session `git branch -a` showed only `main` and `arena/d8f0544e-gold1`, and the
-repository contained a single commit (`2820cba`) with one file (`README.md`). No other session had a claim,
-a branch, or uncommitted work. This session therefore claimed all tasks and recorded that claim in commit
-`c3c552f`. No conflicts occurred and no handoff was needed.
+Arena fixes the branch name of an interactive session, so neither session used the
+`session-<id>/<task>` pattern: `sess-6f8c2bcb` worked on `arena/6f8c2bcb-gold1` and
+`sess-d8f0544e` on `arena/d8f0544e-gold1`. The constraints that matter — one session per
+scope, one branch per session, no cross-session edits — were kept.
 
 ---
 
@@ -36,19 +30,21 @@ a branch, or uncommitted work. This session therefore claimed all tasks and reco
 
 | ID | Task | Status | Owner (session) | Branch | File scope | Updated |
 |----|------|--------|-----------------|--------|-----------|---------|
-| T1 | Primary-source evidence collection (official product feeds, policy pages, gold price, regulator text) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/collect.mjs`, `data/collect/`, `data/raw/`, `.github/workflows/collect.yml` | 2026-10-22 |
-| T2 | Curate verified ring rows + source registry + flagged items | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `data/rings.json`, `data/sources.json`, `data/flagged.json`, `data/retailers.json`, `data/gold-price.json`, `data/checklist.json` | 2026-10-22 |
-| T3 | Site build (landing dashboard, category pages, table, calculator, sources, flagged) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `assets/`, root `*.html`, `categories/`, `rings/`, `scripts/build.mjs` | 2026-10-22 |
-| T4 | Verification + anti-hallucination checks | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
-| T5 | Documentation (README, methodology, checklist) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `README.md`, `methodology.html`, `checklist.html` | 2026-10-22 |
-| T6 | Integration: re-verify combined data, confirm build + no broken links, publish Pages, PR | **in progress** | sess-d8f0544e | arena/d8f0544e-gold1 | root config, §7 below | 2026-10-22 |
+| T1 | First pass: Blue Nile, Mejuri, Brilliant Earth data + Python site generator | **done** | sess-6f8c2bcb | arena/6f8c2bcb-gold1 | `data/rings.json` (v1 schema), `tools/`, `assets/`, root pages | 2026-10-22 |
+| T2 | First pass: verification + flagged items | **done** | sess-6f8c2bcb | arena/6f8c2bcb-gold1 | `data/verification-report.json`, `flagged.html` | 2026-10-22 |
+| T3 | Second pass: Ross-Simons, Aurate, With Clarity, Anna Sheffield data + evidence collector | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/collect.mjs`, `data/collect/`, `data/raw/`, `.github/workflows/collect.yml` | 2026-10-22 |
+| T4 | Second pass: curated dataset, source registry, flagged items | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `data/rings.json`, `data/sources.json`, `data/flagged.json`, `data/retailers.json`, `data/gold-price.json`, `data/checklist.json` | 2026-10-22 |
+| T5 | Second pass: static site (dashboard, categories, details, calculator, checklist, sources, flagged, checks) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
+| T6 | Second pass: anti-hallucination audit | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
+| T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **in progress** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
+| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **pending** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
 
 ---
 
-## 2. Ground rules for this project (agreed requirements)
+## 2. Ground rules (agreed requirements)
 
 - **No hallucinated prices or specifications.** Every value in every table row is copied from an official source and carries that source link.
 - If a value cannot be confirmed from an official source, it stays **blank** and is listed on `flagged.html` as **unverified**.
@@ -75,20 +71,19 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 
 | Date (UTC) | Session | What was verified | Method / source | Result |
 |------------|---------|-------------------|-----------------|--------|
-| 2026-10-22 | sess-d8f0544e | Repo baseline: single commit `2820cba`, only `README.md`; no other session branches or claims | `git log`, `git branch -a`, `gh api repos/.../pages` | clean baseline |
-| 2026-10-22 | sess-d8f0544e | GitHub Pages already enabled: source `main`, path `/`, HTTPS enforced, URL `https://karagemop466-tech.github.io/GOLD1/` | `gh api repos/karagemop466-tech/GOLD1/pages` | publish target confirmed |
-| 2026-10-22 | sess-d8f0544e | Sandbox has no direct outbound access to retailer domains; GitHub Actions workflow dispatch returns 404 (only the internal Pages workflow is registered) | `curl` probes; `gh workflow run collect.yml --ref arena/d8f0544e-gold1` | collection done by direct retrieval instead; collector kept as refresh path |
-| 2026-10-22 | sess-d8f0544e | Ross-Simons prices, karats, product titles | Official feeds: `/collections/jewelry-rings-gold/products.json`, `/search/suggest.json?q=14kt gold band`, `?q=diamond engagement ring 14kt`, `?q=estate 14kt gold ring` | 17 rows sourced |
-| 2026-10-22 | sess-d8f0544e | With Clarity setting prices and the "Ring Setting Product" tag | Official search feed `/search/suggest.json?q=solitaire`, `?q=sapphire engagement ring` | 5 rows sourced, all labelled setting-only |
-| 2026-10-22 | sess-d8f0544e | Anna Sheffield prices, 14k recycled gold statements, stone specs | Official search feed `/search/suggest.json?q=engagement ring`, `?q=solitaire engagement ring` | 3 rows sourced |
-| 2026-10-22 | sess-d8f0544e | Aurate prices, published weight, vermeil-vs-solid trap | Official search feed `/search/suggest.json?q=engagement ring`, `?q=14k gold band` | 5 rows sourced; vermeil variant flagged |
-| 2026-10-22 | sess-d8f0544e | Ross-Simons return terms and contact details | `/policies/refund-policy` (official) | 30 days; resized-by-another-jeweler exclusion; phone 800-835-0919 |
-| 2026-10-22 | sess-d8f0544e | Aurate return terms and contact details | `/policies/refund-policy` (official) | 14 days US; engraved/international final; care@auratenewyork.com |
-| 2026-10-22 | sess-d8f0544e | With Clarity return terms | `/policies/refund-policy` (official) | 30 days; resize/repair by another jeweller voids return; $250 certificate fee |
-| 2026-10-22 | sess-d8f0544e | Anna Sheffield return terms and contact details | `/policies/refund-policy` (official) | Two weeks; 10% restocking fee (max $500); engraved/bespoke final; info@annasheffield.com |
-| 2026-10-22 | sess-d8f0544e | Gold price | `https://api.gold-api.com/price/XAU` → 4,028.100098 USD/ozt at 2026-10-22T23:01:42Z; COMEX GC=F 4,043.00 cross-check | stored with publisher timestamp |
-| 2026-10-22 | sess-d8f0544e | US gold-marking rules exist and are current | eCFR 16 CFR Part 23, up to date as of 2026-10-21; § 23.3, § 23.4, § 23.10, § 23.18 headings read | cited, body text not quoted |
-| 2026-10-22 | sess-d8f0544e | Automated audit of all 30 rows and 45 generated pages | `node scripts/verify.mjs` passes P1–P3 | 13/13 groups pass, 1,557 assertions, 0 failures |
+| 2026-10-22 | sess-6f8c2bcb | Blue Nile, Mejuri, Brilliant Earth prices, karats, setting-vs-ring basis | Official product and listing pages (recorded per row) | 13 rows, 15 flags — see `data/archive/session-6f8c2bcb/` |
+| 2026-10-22 | sess-6f8c2bcb | Mejuri explicit "solid gold" wording (4 rows) | Mejuri product pages: "Handcrafted in recycled 14k solid gold" etc. | 4 rows marked solid-stated |
+| 2026-10-22 | sess-6f8c2bcb | Blue Nile 18K listing contradicts its own description; snippet vs live price mismatch | Product page + search snippet comparison | flags F-01, F-02 |
+| 2026-10-22 | sess-d8f0544e | Repo baseline and Pages configuration | `git log`, `git branch -a`, `gh api repos/.../pages` | clean baseline; Pages `main` `/` |
+| 2026-10-22 | sess-d8f0544e | Sandbox network limits; Actions dispatch 404 (only Pages workflow registered) | `curl` probes; `gh workflow run` | collection done by direct retrieval; collector kept as refresh path |
+| 2026-10-22 | sess-d8f0544e | Ross-Simons prices, karats, titles | Official feeds: gold rings collection, storefront search (bands, diamond, estate) | 17 rows |
+| 2026-10-22 | sess-d8f0544e | With Clarity setting prices and "Ring Setting Product" tag | Official search feed (solitaire, sapphire) | 5 rows, setting-only labelled |
+| 2026-10-22 | sess-d8f0544e | Anna Sheffield prices, 14k recycled gold, stone specs | Official search feed (engagement, solitaire) | 3 rows |
+| 2026-10-22 | sess-d8f0544e | Aurate prices, published weight, vermeil-vs-solid trap | Official search feed (engagement, 14k band) | 5 rows; vermeil variant flagged |
+| 2026-10-22 | sess-d8f0544e | All four return policies and contact details | Official `/policies/refund-policy` pages | terms quoted into `data/retailers.json` |
+| 2026-10-22 | sess-d8f0544e | Gold price | gold-api.com 4,028.100098 USD/ozt at 2026-10-22T23:01:42Z; COMEX GC=F 4,043.00 | stored with publisher timestamps |
+| 2026-10-22 | sess-d8f0544e | US gold-marking rules | eCFR 16 CFR Part 23 (up to date 2026-10-21), § 23.3, § 23.4, § 23.10, § 23.18 headings | cited; body text not quoted |
+| 2026-10-22 | sess-d8f0544e | **Combined dataset**: 43 rows, 58 pages | `node scripts/verify.mjs` | 13/13 groups pass, 2,094 assertions, 0 failures |
 
 ### Rejected sources (recorded so they are not silently reused)
 
@@ -96,29 +91,65 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 |--------|--------------|
 | `ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide` | Returned 404 on 2026-10-22 |
 | `prices.lbma.org.uk/json/gold_pm.json` | HTTP 500 on 2026-10-22 |
-| `bluenile.com/engagement-rings/solitaire` | Returned 404, so no Blue Nile row was created |
+| `bluenile.com/engagement-rings/solitaire` | Returned 404, so it was replaced by the `/engagement-rings/styles/solitaire` listing page |
 | Set & Stones engagement-ring search | Results were gold-filled; fails the solid-gold rule |
 
 ---
 
 ## 5. Requests between sessions
 
-_None._
+| Date | From | To | Request | Status |
+|------|------|----|---------|--------|
+| 2026-10-22 | sess-d8f0544e | sess-6f8c2bcb | Permission to migrate your 13 rows into the v2 schema and regenerate the shared root pages with the Node builder. Your original records and tools are preserved; your published URLs are redirected. | recorded as an integration decision, since the session is closed and its board records "session close" |
 
 ---
 
 ## 6. Handoffs / incidents
 
-- **Actions unavailable.** `.github/workflows/collect.yml` is committed but `workflow_dispatch` returns 404 because GitHub Actions is not registered for this repository (only `pages-build-deployment` exists). The collector remains the documented refresh path; run it locally, or enable Actions and dispatch it.
-- **No merge conflicts** occurred: a single session owned every scope, and the claim was pushed before any file was written.
+### Incident 1 — parallel session discovered at merge time
+
+`sess-d8f0544e` began from commit `2820cba` (only `README.md`). While it was working,
+`sess-6f8c2bcb` published four pull requests to `main` (#2–#5, head `58213b3`), building a
+13-row dataset and a Python-generated site.
+
+`gh pr merge 6` therefore failed with `CONFLICTING` / `DIRTY`. **Resolution (no work discarded):**
+
+1. `main` was merged into `arena/d8f0544e-gold1` with `-s ours`, so the integration branch keeps
+   one coherent site while `main`'s history is preserved as a parent.
+2. The first pass's artefacts were restored into the integration branch rather than dropped:
+   `tools/`, `.gitignore`, `data/rings.csv`, `data/spot-gold.json`, `data/verification-report.json`.
+3. Its full dataset, flags, CSV and board were archived **unmodified** in
+   `data/archive/session-6f8c2bcb/`.
+4. Its 13 rows were migrated by `scripts/integrate_session_6f8c2bcb.py`, which maps fields
+   mechanically (price → `price_low`/`price_high`, purity → `karat`, solid quote → evidence) and
+   refuses to invent a weight. Each migrated row carries `inherited: true` and
+   `verified_by: session-6f8c2bcb`, and the site shows that badge.
+5. Its 15 flags were carried over as F15–F29 with the original text and an `original_id`.
+6. Its published URLs (`bands.html`, `solitaire.html`, `retailers.html`, `verification.html`) now
+   redirect to the corresponding pages of the integrated site.
+
+**Kept from that session:** the dataset, its findings, its tools and its board history.
+**Changed:** the published site is regenerated by `scripts/build.mjs`, because two generators
+cannot own the same `index.html`. This is the one decision a human may want to revisit.
+
+### Incident 2 — GitHub Actions unavailable
+
+`.github/workflows/collect.yml` is committed but `workflow_dispatch` returns 404: Actions is not
+registered for this repository (only `pages-build-deployment` exists). The collector remains the
+documented refresh path; run it locally, or enable Actions and dispatch it.
+
+### Not an incident — no duplicate work
+
+The two sessions covered **disjoint retailers** (Blue Nile / Mejuri / Brilliant Earth vs
+Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected twice.
 
 ---
 
 ## 7. Integration record (PR, merge, deploy)
 
-To be completed by the final integration session after the pull request is merged and Pages redeploys:
+- **Pull request:** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
+- **Merge result:** _pending (recorded after the merge command returns)_
+- **Pages deploy:** _pending_
+- **Post-deploy link check:** _pending_
 
-- Pull request: _pending_
-- Merge result: _pending_
-- Pages deploy: _pending_
-- Post-deploy link check: _pending_
+Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**.

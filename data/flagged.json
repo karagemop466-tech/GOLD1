@@ -7,11 +7,11 @@
   "items": [
     {
       "id": "F01",
-      "title": "None of the 30 listings uses the word \"solid\"",
+      "title": "Only 4 of 43 listings use the words “solid gold”",
       "severity": "high",
       "type": "wording / specification",
-      "affected": "all rows",
-      "finding": "Every listing states a karat (14kt, 18kt, 14K) but none of the retrieved product text says \"solid gold\". Karat wording plus the absence of plated/vermeil language is good evidence, but it is not the explicit statement your checklist requires.",
+      "affected": "39 of 43 rows (all except mej-deb, mej-db, mej-bde, mej-2mm)",
+      "finding": "Four Mejuri listings quote “14k solid gold” in their own product text. The other 39 listings — all of Ross-Simons, Blue Nile, Brilliant Earth, Anna Sheffield, With Clarity and the Aurate rings — state a karat without ever using the word solid. None of the 39 carries plating language either, so they are probably solid alloys, but “probably” is exactly what your checklist says not to accept. The Aurate cigar band even sells a vermeil variant on the same page, which shows why the distinction matters.",
       "buyer_action": "Before paying, get the seller to confirm in writing: \"solid 14K gold, not plated, not vermeil, not gold-filled, not gold over silver\". Keep that message with the receipt.",
       "sources": [
         "https://www.ross-simons.com/products/571222",
@@ -22,11 +22,11 @@
     },
     {
       "id": "F02",
-      "title": "Weight is published for only 1 of 30 listings",
+      "title": "Weight is published for only 1 of 43 listings",
       "severity": "high",
       "type": "missing data",
-      "affected": "29 rows; only au-cigar publishes a weight",
-      "finding": "Metal weight in grams is the number you need to check price against gold value. Only the Aurate Modern Cigar Band publishes one (\"Weight: 2.6-4g\"). For the other 29 rows the weight column is deliberately blank rather than estimated.",
+      "affected": "42 of 43 rows",
+      "finding": "Metal weight in grams is the number you need to check price against gold value. Only the Aurate Modern Cigar Band publishes one (“Weight: 2.6-4g”). The first research pass (Blue Nile, Mejuri, Brilliant Earth) found 0 of its 13 listings published grams; pages there give width and thickness instead. For the other 42 rows the weight column is deliberately blank rather than estimated.",
       "buyer_action": "Ask the seller for the gram weight of the exact size you are buying, in writing. Refuse to accept a carat weight as a substitute for metal weight.",
       "sources": [
         "https://auratenewyork.com/products/modern-cigar-band"
@@ -92,7 +92,7 @@
       "severity": "medium",
       "type": "return risk",
       "affected": "rs-242556, rs-254575, rs-240912",
-      "finding": "All three estate listings are single-size, one-of-a-kind pieces. Ross-Simons' published policy refuses returns on merchandise 'altered, or resized by a jeweler other than Ross-Simons', so resizing can end your return right. The policy page retrieved does not publish a separate estate-jewellery carve-out either way, so estate-specific terms remain unconfirmed.",
+      "finding": "All three Ross-Simons estate listings are single-size, one-of-a-kind pieces. Ross-Simons' published policy refuses returns on merchandise 'altered, or resized by a jeweler other than Ross-Simons', so resizing can end your return right. The policy page retrieved does not publish a separate estate-jewellery carve-out either way, so estate-specific terms remain unconfirmed.",
       "buyer_action": "Buy your exact size, or have the retailer resize it. Get the return position in writing before ordering.",
       "sources": [
         "https://www.ross-simons.com/policies/refund-policy"
@@ -156,11 +156,11 @@
     },
     {
       "id": "F12",
-      "title": "A hallmark and maker's mark cannot be verified online",
+      "title": "A hallmark and maker’s mark cannot be verified online",
       "severity": "high",
       "type": "physical verification",
       "affected": "all rows",
-      "finding": "No retailer page retrieved states the exact hallmark or maker's mark that will be struck inside the band. A photograph of the inside of the band is the only pre-purchase evidence, and it still does not prove purity. US marking rules are set out in 16 CFR Part 23, including § 23.3 on misrepresentation of gold content and § 23.10 on quality marks.",
+      "finding": "No retailer page retrieved — in this pass or the first one — states the exact hallmark or maker’s mark that will be struck inside the band. A photograph of the inside of the band is the only pre-purchase evidence, and it still does not prove purity. US marking rules are set out in 16 CFR Part 23, including § 23.3 on misrepresentation of gold content and § 23.10 on quality marks.",
       "buyer_action": "Ask for a close-up photo of the stamp. On arrival, have an independent jeweller confirm the stamp and test purity (XRF preferred).",
       "sources": [
         "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
@@ -194,6 +194,231 @@
         "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
       ],
       "status": "needs review"
+    },
+    {
+      "id": "F16",
+      "title": "Blue Nile 18K ring description contradicts its own metal specification",
+      "severity": "high",
+      "type": "first-pass finding",
+      "affected": "bn-18k-pn-203268",
+      "finding": "The Petite Nouveau Six-Prong Solitaire page is titled and specified as 18K Yellow Gold, but the product description on the same page says the ring is “crafted in polished 14k white gold”. One of the two statements is wrong. Do not buy without written confirmation of the metal from the seller.",
+      "buyer_action": "Ask Blue Nile, in writing, which metal the 18K ring is and get it on the receipt. Photograph the stamp on arrival.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268"
+      ],
+      "status": "needs review",
+      "original_id": "F-01",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F17",
+      "title": "Search-engine snippet price ($925) does not match the live page ($1,420)",
+      "severity": "high",
+      "type": "first-pass finding",
+      "affected": "bn-18k-pn-203268",
+      "finding": "A search result for Blue Nile item 203268 displayed “$925 (Setting Price)”. The live page read $1,420 on 2026-10-22. The live page is authoritative and is what this dataset records. This is why snippets are never used as price evidence in this project.",
+      "buyer_action": "Never trust a search-result price. Open the live page and use that number, as this site does.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268"
+      ],
+      "status": "needs review",
+      "original_id": "F-02",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F18",
+      "title": "Mejuri Bold Diamond Eternity Ring: snippet $2,800 vs live $2,900",
+      "severity": "medium",
+      "type": "first-pass finding",
+      "affected": "mej-bde",
+      "finding": "A search snippet showed $2,800; the live page on the 14k white gold / natural diamond selection showed “From $2,900”. Mejuri prices vary by material, stone and size, and “From” prices move with size. The dataset records the material- and date-stamped value.",
+      "buyer_action": "Set the exact metal, stone and size, then read the price. \"From\" prices are not purchase prices.",
+      "sources": [
+        "https://mejuri.com/products/bold-diamond-eternity-ring"
+      ],
+      "status": "needs review",
+      "original_id": "F-03",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F19",
+      "title": "No listing in this pass publishes the ring's weight in grams (0 of 13)",
+      "severity": "high",
+      "type": "first-pass finding",
+      "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6",
+      "finding": "Gram weight is the single number needed to compare price against gold value. Blue Nile, Mejuri and Brilliant Earth pages publish width and thickness but not weight. Until a seller supplies weight in writing, the gold-value calculator cannot be applied to any row here. Ask the seller for the weight in grams before paying.",
+      "buyer_action": "Ask for the gram weight before paying, in writing. A jeweller can weigh it in seconds on arrival.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
+      ],
+      "status": "needs review",
+      "original_id": "F-04",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F20",
+      "title": "No listing publishes hallmark or maker's mark details (0 of 13)",
+      "severity": "high",
+      "type": "first-pass finding",
+      "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6",
+      "finding": "None of the pages reviewed state what is stamped inside the band. Under the National Stamping Act a quality mark must be accompanied by the maker's trademark, so the absence of published hallmark information is a legitimate pre-purchase question, not proof of a problem. Verify the stamp in person and with XRF after delivery.",
+      "buyer_action": "Ask for a close-up photo of the inside of the band and have an independent jeweller read the stamp.",
+      "sources": [
+        "https://www.federalregister.gov/documents/2018/08/16/2018-17454/guides-for-the-jewelry-precious-metals-and-pewter-industries"
+      ],
+      "status": "needs review",
+      "original_id": "F-05",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F21",
+      "title": "Setting-only prices are not ring prices (9 of 13 rows)",
+      "severity": "high",
+      "type": "first-pass finding",
+      "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, be-18k-6p-121h6",
+      "finding": "Blue Nile and Brilliant Earth quote “Setting Price” / “Setting Only”, which excludes the centre diamond. A $1,000 setting plus a diamond is a materially different purchase. Mejuri's 4 rows are complete-ring prices, so the two groups must never be compared directly.",
+      "buyer_action": "Budget for the centre stone separately; compare finished-ring totals, not setting prices.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
+      ],
+      "status": "needs review",
+      "original_id": "F-06",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F22",
+      "title": "“From” prices on Mejuri change with ring size",
+      "severity": "low",
+      "type": "first-pass finding",
+      "affected": "mej-deb, mej-bde",
+      "finding": "Two Mejuri rows show “From $…”, meaning the selected size determines the final price. The recorded number is the lowest displayed price on the date checked.",
+      "buyer_action": "Never budget from a \"from\" price. Configure the ring and re-read the total.",
+      "sources": [
+        "https://mejuri.com/products/diamond-eternity-band"
+      ],
+      "status": "needs review",
+      "original_id": "F-07",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F23",
+      "title": "Blue Nile return window not confirmed on the pages read",
+      "severity": "medium",
+      "type": "first-pass finding",
+      "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268",
+      "finding": "The product pages show a “Free Returns” badge and link to a Returns Policy, but do not state the number of days. The specific policy page was not opened in this pass, so the window and any resizing/custom exclusions are unverified.",
+      "buyer_action": "Get the return window and any resize exclusion in writing before ordering.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
+      ],
+      "status": "needs review",
+      "original_id": "F-08",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F24",
+      "title": "Brilliant Earth return window not confirmed on the page read",
+      "severity": "medium",
+      "type": "first-pass finding",
+      "affected": "be-18k-6p-121h6",
+      "finding": "The page shows “Free Shipping & Returns” and “Free 1-Year Resizing”, but not the return window or exclusions. The dedicated returns page was not opened in this pass.",
+      "buyer_action": "Get the return window in writing before ordering.",
+      "sources": [
+        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
+      ],
+      "status": "needs review",
+      "original_id": "F-09",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F25",
+      "title": "Independent reputation research not performed in this pass",
+      "severity": "high",
+      "type": "first-pass finding",
+      "affected": "all rows",
+      "finding": "No BBB profile, state consumer-protection complaint record or independent review corpus was read for any of the three retailers. Contact information was verified (phone or store locator), but seller reputation is not yet independently verified for any retailer in this dataset.",
+      "buyer_action": "Search the retailer name plus \"complaints\" on your own, and check the business address is real.",
+      "sources": [
+        "https://www.bluenile.com/contact-us"
+      ],
+      "status": "needs review",
+      "original_id": "F-10",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F26",
+      "title": "Regulatory text confirmed via official excerpts, not full section reads",
+      "severity": "medium",
+      "type": "first-pass finding",
+      "affected": "checklist page",
+      "finding": "16 CFR Part 23 was confirmed through the official eCFR index entry and the Federal Register final-rule text (including Note 2 to §23.10 and §23.4). Sections were not read in full, and a guessed FTC business-guidance URL returned 404.",
+      "buyer_action": "Read the regulation section yourself before relying on it.",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+      ],
+      "status": "needs review",
+      "original_id": "F-11",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F27",
+      "title": "Credit-card purchase-protection advice is not backed by a citation yet",
+      "severity": "medium",
+      "type": "first-pass finding",
+      "affected": "all rows",
+      "finding": "The recommendation to pay by credit card is standard consumer practice but no official CFPB/FTC page was retrieved in this pass to support specific dispute rights. Treat the payment row on the checklist as advice, not as a verified legal claim.",
+      "buyer_action": "Pay by credit card; the protection comes from your card issuer, not from the retailer.",
+      "sources": [
+        "https://www.consumerfinance.gov/"
+      ],
+      "status": "needs review",
+      "original_id": "F-12",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F28",
+      "title": "Spot gold is a single commercial reading, and the page disagreed with itself by $1.08",
+      "severity": "low",
+      "type": "first-pass finding",
+      "affected": "gold price card",
+      "finding": "The recorded spot ($4,026.79/oz at 2026-10-22 07:07 NY) is from a commercial aggregator, not an exchange feed. A second ticker on the same page showed $4,025.71. The calculator therefore treats spot as an editable input and stamps every result with the number used.",
+      "buyer_action": "Take the gold price as a reference, not a quote. Two publishers can differ by a dollar.",
+      "sources": [
+        "https://goldprice.org/"
+      ],
+      "status": "needs review",
+      "original_id": "F-13",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F29",
+      "title": "Brilliant Earth 18K ring uses 14K white gold prongs",
+      "severity": "low",
+      "type": "first-pass finding",
+      "affected": "be-18k-6p-121h6",
+      "finding": "The product detail lists “Prong metal: 14K White Gold” on an 18K yellow gold ring. This is a mixed-metal construction, not an error, but it means not all metal in the ring is 18K.",
+      "buyer_action": "If the two-tone detail matters, confirm the karat of every component (band and prongs) in writing.",
+      "sources": [
+        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
+      ],
+      "status": "needs review",
+      "original_id": "F-14",
+      "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F30",
+      "title": "Retailers named but not vetted in this pass",
+      "severity": "medium",
+      "type": "first-pass finding",
+      "affected": "mejuri, brilliant-earth",
+      "finding": "Costco, James Allen, Tiffany & Co., Aurate and Derco Diamonds appeared during source discovery but were not vetted. No price for them is recorded anywhere in this dataset. Listing them here prevents anyone from mistaking absence for a negative finding.",
+      "buyer_action": "Vet each retailer yourself: phone number, postal address and a live support channel.",
+      "sources": [
+        "https://www.costco.com/"
+      ],
+      "status": "needs review",
+      "original_id": "F-15",
+      "found_by": "session-6f8c2bcb"
     }
   ]
 }

@@ -1,14 +1,14 @@
 {
-  "pass": "P5",
-  "generated_at": "2026-10-22T23:17:35Z",
+  "pass": "P7",
+  "generated_at": "2026-10-22T23:19:44Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 13,
     "passed": 13,
     "failed": 0,
-    "assertions": 1559,
-    "rows": 30,
-    "pages": 45
+    "assertions": 2102,
+    "rows": 43,
+    "pages": 62
   },
   "groups": [
     {
@@ -120,7 +120,7 @@
       "total_assertions": 0,
       "failures": [],
       "failure_count": 0,
-      "pages_checked": 45
+      "pages_checked": 62
     },
     {
       "id": "S12",

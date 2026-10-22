@@ -1,6 +1,6 @@
 {
   "as_of": "2026-10-22",
-  "note": "Retailer identity and contact details below are copied only from pages retrieved in this session. Fields that were not confirmed are null and are flagged on the Flagged for Review page.",
+  "note": "Retailer identity and contact details below are copied only from pages retrieved in this session or in the first research pass (session 6f8c2bcb). Fields that were not confirmed are null and flagged on the Flagged for Review page.",
   "retailers": [
     {
       "id": "ross-simons",
@@ -67,6 +67,54 @@
       "return_source": "https://auratenewyork.com/policies/refund-policy",
       "checkout_note": "Engraved pieces are final sale. Confirm the 14-day window starts at fulfillment, not delivery.",
       "rows": 5
+    },
+    {
+      "id": "blue-nile",
+      "name": "Blue Nile",
+      "domain": "bluenile.com",
+      "site": "https://www.bluenile.com",
+      "contact_verified": true,
+      "phone": "+1-800-242-2728",
+      "email": "service@bluenile.com",
+      "address_verified": null,
+      "contact_source": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+      "return_policy_verified": false,
+      "return_summary": null,
+      "return_source": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+      "checkout_note": "Product pages carry a 'Free Returns' badge but the window was not stated, so no return window is claimed here. Get it in writing.",
+      "rows": 8
+    },
+    {
+      "id": "mejuri",
+      "name": "Mejuri",
+      "domain": "mejuri.com",
+      "site": "https://mejuri.com",
+      "contact_verified": false,
+      "phone": null,
+      "email": null,
+      "address_verified": null,
+      "contact_source": "https://mejuri.com/products/diamond-eternity-band",
+      "return_policy_verified": false,
+      "return_summary": null,
+      "return_source": "https://mejuri.com/products/diamond-eternity-band",
+      "checkout_note": "'From' prices move with ring size and metal - read the price for your exact selection.",
+      "rows": 4
+    },
+    {
+      "id": "brilliant-earth",
+      "name": "Brilliant Earth",
+      "domain": "brilliantearth.com",
+      "site": "https://www.brilliantearth.com",
+      "contact_verified": false,
+      "phone": null,
+      "email": null,
+      "address_verified": null,
+      "contact_source": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "return_policy_verified": false,
+      "return_summary": null,
+      "return_source": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "checkout_note": "Sold as a setting; confirm the centre stone cost separately.",
+      "rows": 1
     }
   ]
 }
