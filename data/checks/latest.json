@@ -1,5 +1,5 @@
 {
-  "pass": "P26",
+  "pass": "P31",
   "generated_at": "2026-10-22T23:31:38Z",
   "builder_version": "1.0.0",
   "summary": {
@@ -182,5 +182,6 @@
       "failures": [],
       "failure_count": 0
     }
-  ]
+  ],
+  "note": "P31 is the reconciled pass: both P12 sessions merged, 7 rows with a published weight, 20 ledger entries, 35 findings, 17 check groups."
 }
