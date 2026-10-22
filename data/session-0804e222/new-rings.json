@@ -24,7 +24,7 @@
       "source_url": "https://www.ross-simons.com/products/997811",
       "source_type": "official product page",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Italian 10kt Yellow Gold Textured Ring\"; price \"$89\"; specs \"Width 1/16 inch · Metal 10kt Yellow Gold · Gold Weight 0.3 grams · Country of Origin Italy\"; FAQ on page \"crafted from 10kt yellow gold, meaning it is made of solid gold alloy throughout its structure, not hollow or gold-plated.\"",
+      "evidence": "Title \"Italian 10kt Yellow Gold Textured Ring\"; price \"$89\"; specs \"Width 1/16 inch · Metal 10kt Yellow Gold · Gold Weight 0.3 grams · Country of Origin Italy\"; FAQ on page \"crafted from 10kt yellow gold, meaning it is made of solid gold alloy throughout its structure\".",
       "solid_stated": true,
       "flags": [
         "low_price_verify_weight"
@@ -444,7 +444,7 @@
       "flags": [
         "solid_not_stated",
         "weight_not_published",
-        "price_varies",
+        "starting_price",
         "made_to_order"
       ],
       "notes": "24K pure gold benchmark (999.9 fine; pure 24K is softer than 14K/18K alloys for prong settings). Because Menē renders the size-specific gram breakdown via client-side JavaScript rather than static HTML, weight_g_low is kept null (unverified) rather than back-calculated from spot. Note 7-day return window and up to 10% refund restocking fee.",
@@ -476,7 +476,7 @@
       "flags": [
         "solid_not_stated",
         "weight_not_published",
-        "price_varies",
+        "starting_price",
         "made_to_order"
       ],
       "notes": "24K pure gold 4 mm band ($1,372). Gram weight left null in static snapshot because the gram breakdown renders via client-side JS; inspect the live Price Breakdown before purchase and verify the delivered Certificate of Authenticity weight within the 7-day return window.",
