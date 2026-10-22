@@ -767,7 +767,7 @@
         "price_varies",
         "metal_variant_price_unmapped"
       ],
-      "notes": "The feed gives only a min/max across metal and size variants. The 14K price must be read on the product page for the size you want."
+      "notes": "Variant-level data confirms the 14K/Yellow size-2.5 option is the 1,968.00 low end, so the 14K price is real for this model. Other sizes and 18K or platinum cost more."
     },
     {
       "id": "au-1ct-emerald",
@@ -797,7 +797,7 @@
         "price_varies",
         "metal_variant_price_unmapped"
       ],
-      "notes": "Lowest-priced complete lab-grown diamond ring from Aurate in this list."
+      "notes": "The feed confirms a 14K option exists but does not map price to metal. The 1,498.00 low end is the product range, not a proven 14K price — set metal and size on the product page before buying."
     },
     {
       "id": "au-3ct-round",
@@ -827,7 +827,7 @@
         "price_varies",
         "metal_variant_price_unmapped"
       ],
-      "notes": "Largest carat weight in the Aurate bezel line captured here."
+      "notes": "Same caveat as the other Aurate bezel rings: the 2,438.00 low end is the product range across metals and sizes, not a proven 14K price."
     },
     {
       "id": "au-cigar",
