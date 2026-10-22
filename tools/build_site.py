@@ -569,7 +569,18 @@ python3 tools/build_site.py    # regenerate docs/ + run the link check</code></p
 def build_flagged() -> str:
     cards = ""
     for f in sorted(FLAGS, key=lambda x: ({"high": 0, "medium": 1, "low": 2}[x["severity"]], x["id"])):
-        affected = ", ".join(f'<a href="index.html">{esc(a)}</a>' for a in f["affected_rows"]) or "—"
+        def target(row_id: str) -> str:
+            if row_id.startswith("RET-"):
+                return "retailers.html"
+            if row_id.startswith(("MEJ-", "MER-")):
+                return "bands.html"
+            if row_id.startswith(("BN-", "BE-")):
+                return "solitaire.html"
+            return "verification.html"
+
+        affected = ", ".join(
+            f'<a href="{target(a)}">{esc(a)}</a>' for a in f["affected_rows"]
+        ) or "—"
         cards += f"""
 <article class="flag-card sev-{esc(f["severity"])}" id="{esc(f["id"])}">
   <header>

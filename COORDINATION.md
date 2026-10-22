@@ -106,4 +106,34 @@ file granularity so a second session can take any single scope without collision
   `.nojekyll` to the **repository root**, which is exactly where the existing Pages source serves
   from. `docs/` was deleted so there is one copy of the site, not two. Builds only ever delete and
   rewrite their own generated files.
-- Follow-up PR carries this change plus this record.
+- Follow-up PR carried this change plus this record.
+
+### Merge 2 — PR #3 (republish from the repo root)
+
+| Field | Value |
+|---|---|
+| PR | https://github.com/karagemop466-tech/GOLD1/pull/3 |
+| Merged at (UTC) | 2026-10-22T23:15:46Z |
+| Merge commit | `3d0c9bff8bd980b0f222357f980e50b78aa7906e` |
+| Method | merge commit, no approval wait |
+| Result | success |
+
+### Deploy record
+
+| Field | Value |
+|---|---|
+| Pages URL | https://karagemop466-tech.github.io/GOLD1/ |
+| Pages source | branch `main`, path `/` (pre-existing setting — unchanged, because the token cannot write Pages settings: HTTP 403) |
+| Build status after merge 2 | **built** (`gh api .../pages` → `status: built`; build log entry `built`, no error message) |
+| Live checks | `/` returned the dashboard, `/flagged.html` returned all 15 flags, both with the expected titles and content |
+| Broken internal links after deploy | none — the generator's link/anchor check passed over 7 pages and 22 approved external links |
+
+### Final integration pass (PR #4)
+
+- Re-ran the audit and the build after the root publication change: PASS / PASS.
+- Refined flag links so each affected row opens the page that owns it (`BN-`/`BE-` → solitaire,
+  `MEJ-` → bands, `RET-` → retailers) instead of always the overview.
+- Re-verified that the published tree on `main` is byte-identical to the generated output, so no
+  hand edit can drift from the dataset.
+- No merge conflicts in this run; no other session claimed work while this session was active, so
+  no handoff or conflict resolution was required.
