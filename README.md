@@ -4,7 +4,7 @@ A source-linked buying dashboard for **solid gold engagement rings**, built so t
 
 **Live site:** https://karagemop466-tech.github.io/GOLD1/
 
-Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), and session **arena/bc088451-gold1** (live re-verification of 7 pages + one market feed, 4 weights recovered, 2 prices corrected, 5 new findings). The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
+Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), session **arena/bc088451-gold1** (live re-verification of 7 pages + one market feed, 4 weights recovered, 2 prices corrected, 5 new findings), and session **arena/b93ff7c6-gold1** (an independent second read of the same pass: 2 further weights the other session missed, 12 more listings re-read, 1 paraphrased title corrected). Both P12 sessions are reconciled into one ledger — see §9 of `COORDINATION.md`. The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
 
 ---
 
@@ -13,6 +13,8 @@ Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile,
 > **No hallucinated prices.** Every price, karat and weight on the site was copied from an official retailer feed, stored with the date it was retrieved, and linked on the same row to the exact page it came from. If a value could not be confirmed on an official source it is shown as **— unverified** and published on the **Flagged for review** page. Nothing is estimated, averaged, inferred or remembered.
 
 That rule is printed at the top of the landing page, repeated on every subpage, and then enforced mechanically by `scripts/verify.mjs`, which re-derives every claim from its own evidence text.
+
+**Pass P12 added a second rule:** a price is only "current" if the seller's page was actually re-opened. `data/reverification.json` is the single ledger: one line per listing re-opened, with the old value, the value read, the seller's quote, the URL and the date. A row may only be labelled *re-read* if the ledger holds that entry — the audit fails the build otherwise. Nothing is silently refreshed, and rows that were not re-opened keep their capture date and say so.
 
 ---
 
@@ -43,7 +45,9 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `scripts/collect.mjs` | Evidence collector: re-fetches every source and writes a timestamped snapshot |
 | `scripts/integrate_session_6f8c2bcb.py` | Mechanical migration of the first pass's rows into this schema (no number is retyped) |
 | `scripts/build.mjs` | Static site generator (no dependencies) |
-| `scripts/verify.mjs` | Anti-hallucination audit: 13 check groups, ~1,500 assertions |
+| `scripts/verify.mjs` | Anti-hallucination audit: **15 check groups, ~2,600 assertions** (S14 traces every weight to the seller's own wording, S15 audits the re-check log) |
+| `scripts/apply_recheck_p12.py` | The P12 re-check, as a script: every value it writes was read from the URL named beside it, and running it twice changes nothing |
+| `scripts/reconcile_second_read_p12.py` | Reconciles the two parallel P12 sessions: adds the 2 weights the first session missed, appends the second session's 12 re-reads to the one ledger, and corrects the findings that were stale (F02, F32, F06, F36) |
 | `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
 | `COORDINATION.md` | Shared task board, verification log and integration record |
 
@@ -106,8 +110,8 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 - **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
 - **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
-- **5 of 43 listings publish metal weight in grams** (up from 1 after the P12 re-read). The value check is complete for those five and impossible for the other 38, where it is left blank rather than estimated. → F02, F32
-- **Live re-read of 7 product pages found two prices had moved** (rs-571223 $799→$849; rs-943668 range $1,269–$1,439 → single $1,269 clearance). Both were corrected, and the old values are kept in `data/reverification.json`. → F31
+- **7 of 43 listings publish metal weight in grams** (up from 1; six Ross-Simons bands plus the Aurate range). The value check is complete for those seven and impossible for the other 36, where it is left blank rather than estimated. → F02, F32
+- **Live re-read of 20 product pages found two prices had moved** (rs-571223 $799→$849; rs-943668 range $1,269–$1,439 → single $1,269 clearance). Both were corrected, and the old values are kept in `data/reverification.json`. → F31
 - **The two "impossible" prices are explained, not excused**: $149 and $179 are 0.5 g rings (≈0.29 g and ≈0.38 g of fine gold), giving 3.9× and 3.7× melt. → F06
 - **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
 - **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
@@ -121,7 +125,7 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 ## Limits
 
-Prices are a snapshot and retailers change them without notice — the retailer page always wins. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
+Prices are a snapshot and retailers change them without notice — the retailer page always wins. In pass P12 the re-check itself caught a real drift (F31), which is why every row now says whether it was re-read or is historical. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
 
 ## License
 
