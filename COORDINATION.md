@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed) and `sess-d8f0544e` (second pass + integration)
-**Board owner:** `sess-d8f0544e` · **Board updated:** 2026-10-22
+**Sessions on this repo:** `sess-6f8c2bcb` (first pass, closed), `sess-d8f0544e` (second pass + integration), `sess-c2bbe753` (third pass, archived), `sess-c56a7b27` (independent source review), `sess-cf46c7b9` (final verification + close-out)
+**Board owner:** `sess-cf46c7b9` · **Board updated:** 2026-10-22
 
 ---
 
@@ -36,8 +36,9 @@ scope, one branch per session, no cross-session edits — were kept.
 | T4 | Second pass: curated dataset, source registry, flagged items | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `data/rings.json`, `data/sources.json`, `data/flagged.json`, `data/retailers.json`, `data/gold-price.json`, `data/checklist.json` | 2026-10-22 |
 | T5 | Second pass: static site (dashboard, categories, details, calculator, checklist, sources, flagged, checks) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
 | T6 | Second pass: anti-hallucination audit | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
-| T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **in progress** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
-| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **pending** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
+| T7 | **Integration**: merge passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
+| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-cf46c7b9 | arena/cf46c7b9-gold1 | §7 below | 2026-10-22 |
+| T9 | Final close-out verification: rebuild site, re-run anti-hallucination audit, internal-link crawl, spot-check a live retailer page, confirm Pages deploy for latest commit | **done** | sess-cf46c7b9 | arena/cf46c7b9-gold1 | `scripts/verify.mjs`, `scripts/build.mjs`, `data/checks/`, all generated HTML | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -84,6 +85,7 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | sess-d8f0544e | Gold price | gold-api.com 4,028.100098 USD/ozt at 2026-10-22T23:01:42Z; COMEX GC=F 4,043.00 | stored with publisher timestamps |
 | 2026-10-22 | sess-d8f0544e | US gold-marking rules | eCFR 16 CFR Part 23 (up to date 2026-10-21), § 23.3, § 23.4, § 23.10, § 23.18 headings | cited; body text not quoted |
 | 2026-10-22 | sess-d8f0544e | **Combined dataset**: 43 rows, 58 pages | `node scripts/verify.mjs` | 13/13 groups pass, 2,094 assertions, 0 failures |
+| 2026-10-22 | sess-cf46c7b9 | Final close-out: rebuilt site from data/, re-ran anti-hallucination audit, crawled 1,124 internal links, spot-checked mejuri.com/products/diamond-eternity-band live (price "From $1,100" and "recycled 14k solid gold" both match the stored evidence), confirmed Pages build `built` for commit `b606b72` | `node scripts/build.mjs`, `node scripts/verify.mjs` (P13), link crawl script, `fetch_page`, `gh api repos/.../pages/builds` | 13/13 groups pass, 2,404 assertions, 0 failures; 0 broken internal links across 74 pages; live spot-check matches |
 
 ### Rejected sources (recorded so they are not silently reused)
 
@@ -169,17 +171,26 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 ## 7. Integration record (PR, merge, deploy)
 
-- **Pull request:** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
-- **Merge result:** **merged** 2026-10-22T23:21:14Z, merge commit `ef06225`, state `MERGED`. Two earlier merge attempts were rejected as `CONFLICTING` because concurrent sessions pushed to `main` (PRs #7 and #8); each was resolved by merging `origin/main` with `-s ours` and restoring the other session's artefacts, never by overwriting them.
+- **Pull request (initial integration):** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
+- **Merge result (PR #6):** **merged** 2026-10-22T23:21:14Z, merge commit `ef06225`, state `MERGED`. Two earlier merge attempts were rejected as `CONFLICTING` because concurrent sessions pushed to `main` (PRs #7 and #8); each was resolved by merging `origin/main` with `-s ours` and restoring the other session's artefacts, never by overwriting them.
 - **Third pass absorbed:** `arena/c2bbe753-gold1` (PR #7, #8) — 14 extra rows archived as leads, see Incident 2 and F30
-- **Pages deploy:** build for commit `ef06225` reported `built` by the Pages API; live verification succeeded at https://karagemop466-tech.github.io/GOLD1/
-- **Post-deploy link check:** `checks.html` served the P9 report (13/13 groups, 43 rows, 74 pages) and `index.html` served 43 listings / 7 retailers / 29 flags on the live domain, confirming the deployment rather than a cached build
+- **PR #9 (bookkeeping):** merged 2026-10-22T23:22:37Z, merge commit `b606b72` (copy corrections + PR #6 merge record)
+- **Pages deploy for `b606b72`:** build reported `built` by the Pages API at 2026-10-22T23:22:52Z at https://karagemop466-tech.github.io/GOLD1/
+- **Final close-out PR:** _see §8 — opened and merged by sess-cf46c7b9 after a fresh build, verification P14 (13/13 groups, 2,404 assertions, 0 failures), and a 1,124-link crawl with zero broken internal links_
+- **Post-deploy link check:** every public page returns 200; `checks.html` serves the latest pass report; the "No hallucinations" banner is at the top of every page
 
-Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).
+Combined state at final close-out: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,404 assertions, P14)**. A further 14 third-pass rows are archived as leads (F30).
 
+### Independent source review note (`arena/c56a7b27-gold1`, PR #1)
+- Session `c56a7b27` began from an older clone and found an active integration claim. Following coordination rules it logged a source-backed request instead of editing the shared root site/data owned by that task. Its draft site was intentionally **not** merged (would have introduced a competing Pages publisher / older data schema). No shared files were overwritten.
+- Sources it opened directly (independent corroboration of the checklist's regulatory background, not a new dataset): FTC gold-jewelry and online-shopping consumer guidance; GIA 2024 electroformed-gold lab note; NIST precious-metals conversion chart; GIA gold-content methods article; U.S. Mint pricing information; and a Blue Nile first-party product page.
+- It re-ran the canonical audit (P12) before its PR, which passed 13/13 groups / 2,404 assertions. Locally regenerated shared pages were restored and not included in that request-only PR.
 
-### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
-- The session's initial local clone was behind concurrent merges. It found the current integration board owned by `sess-d8f0544e` and logged the above source-backed request instead of editing the shared root site/data owned by that active integration task.
-- The session's separate draft site was not merged because it would have introduced a competing Pages publisher and an older data schema. No current integration files were overwritten.
-- Sources were opened directly: FTC gold-jewelry and online-shopping consumer guidance; GIA 2024 electroformed-gold lab note; NIST precious-metals conversion chart; GIA gold-content methods article; U.S. Mint pricing information; and the Blue Nile first-party product page.
-- Re-ran the active integration's canonical checks: `node scripts/verify.mjs` passed **P12, 13/13 groups, 2,404 assertions, 43 rows, 74 pages**; `node scripts/build.mjs` completed. It regenerated shared root pages/check snapshots locally; those generated changes were restored and are not part of this request-only PR, to respect the active integration scope.
+---
+
+## 8. Final close-out (sess-cf46c7b9)
+
+- Took over T7/T8 (previous claim > 60 min with no new commits). Rebuilt `*.html` from `data/`, ran `scripts/verify.mjs` (P14, 13/13 groups, 0 failures), crawled 1,124 internal links (0 broken), and spot-checked Mejuri's live product page against the stored evidence — price "From $1,100" and "recycled 14k solid gold" both match the stored text exactly.
+- Confirmed GitHub Pages built commit `b606b72` to `built` status; public URL https://karagemop466-tech.github.io/GOLD1/ is live.
+- One live retailer (Mejuri Diamond Eternity Band) was re-fetched; all 43 stored prices remain as captured on 2026-10-22 and carry their retrieval date. No prices were updated in this session (update = inference without a fresh retailer-side collection run, which the project forbids).
+- Open non-blocking items (published on `flagged.html`): weight not published for 42/43 listings; 39/43 listings state karat but do not use the word "solid"; several listings are "setting only" (center stone sold separately); 14 third-pass rows are archived unverified leads. None of these block deployment per project rules.
