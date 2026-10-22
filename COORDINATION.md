@@ -185,3 +185,70 @@ file granularity so a second session can take any single scope without collision
 
 If a future session extends the dataset: add the source to `data/sources.json` first, then the row,
 then run both scripts. Never edit `data/rings.csv` or the generated HTML by hand — they are outputs.
+
+---
+
+# Session 2 — `arena-c2bbe753` (branch `arena/c2bbe753-gold1`) — second session, category dashboard
+
+> This section was appended by the second session on 2026-10-22 during integration of two
+> independent runs. Session 1's board above is preserved verbatim. Session 1's claimed files
+> (`data/rings.json`, `data/sources.json`, root site, `tools/`) were NOT modified; to avoid
+> collisions, session 2's dataset lives under distinct filenames.
+
+## Session registry (session 2)
+
+| Session ID | Branch | Notes |
+|---|---|---|
+| `arena-c2bbe753` | `arena/c2bbe753-gold1` | Platform-pinned branch (cannot create `session-<id>/<task>` branches). Non-overlapping file scopes used instead. |
+
+## Task board (session 2 — IDs renumbered T12–T20 to avoid colliding with session 1's T1–T11)
+
+| ID | Task | Status | Owner | Files in scope |
+|---|---|---|---|---|
+| T12 | Coordination + claim (board co-existence) | done | `arena-c2bbe753` | `COORDINATION.md` (append-only section) |
+| T13 | Gold market data + karat purity facts | done | `arena-c2bbe753` | `data/gold_price.json`, `data/karats.json`, `docs/prices.html` |
+| T14 | Buying checklist + methodology pages | done | `arena-c2bbe753` | `data/checklist.json`, `data/sources_c2bbe753.json`, `docs/checklist.html`, `docs/methodology.html` |
+| T15 | Product listings per retailer (Tiffany, Cartier, BE, Blue Nile/JA, Mejuri) | done | `arena-c2bbe753` | `data/rings_c2bbe753.json`, `docs/rings-*.html` |
+| T16 | Gold value calculator page | done | `arena-c2bbe753` | `docs/calculator.html` |
+| T17 | Flagged-for-review ledger + page | done | `arena-c2bbe753` | `data/flags.json`, `docs/flagged.html` |
+| T18 | Verification / hallucination audit scripts | done | `arena-c2bbe753` | `scripts/verify_data.py`, `data/audit_report.json` |
+| T19 | Category site under `docs/` (index, nav, styles, generator) | done | `arena-c2bbe753` | `scripts/build_site.py`, `docs/**` |
+| T20 | Integration of both runs: conflict-safe merge, re-verify, PR, merge, Pages check | done | `arena-c2bbe753` | merge commit on `main` via PR, `COORDINATION.md` log |
+
+## Log (session 2)
+
+### 2026-10-22 — `arena-c2bbe753`
+- Read repo at start: empty (`README.md` only). Created a board; later discovered session 1 had
+  published to `main` concurrently (PRs #2–#4). **Conflict resolution log:** `git merge origin/main`
+  produced add/add conflicts in `COORDINATION.md`, `README.md`, `data/rings.json`,
+  `data/sources.json`. Resolved WITHOUT discarding either side:
+  - `data/rings.json` + `data/sources.json` — kept session 1's versions at the canonical paths
+    (their root site and tools depend on them); session 2's datasets preserved verbatim at
+    `data/rings_c2bbe753.json` and `data/sources_c2bbe753.json` (scripts under `scripts/` repointed).
+  - `COORDINATION.md` / `README.md` — merged as unions (session 1 content untouched + session 2 sections).
+  - No file owned by session 1 was edited. Nothing deleted.
+
+## Completed-task records (session 2)
+
+### T13 — Gold market data
+- Sources (fetched 2026-10-22): World Gold Council goldhub (direct fetch — anchor USD 4,024.36/oz, data as of 2026-10-21); LBMA (direct fetch — licence/methodology note); Kitco, CNBC, Bloomberg (search snapshots, cross-check log only).
+- Verification: karat math re-derived in audit (millesimal standards 916/999 etc.); anchor per-gram re-computed (129.39).
+- Irregularities: LBMA numeric data licence-gated (F10); intraday spot variance ~$4,028–$4,084; "0.5 karat tolerance" myth contradicted by 15 U.S.C. §295 = 3/1000 or 7/1000 (F9); FTC removed 10K minimum in 2018 (F11).
+
+### T14 — Checklist + methodology
+- Sources: eCFR 16 CFR §23.3/§23.10/§23.18 (direct fetch); 15 U.S.C. ch. 8 via govinfo (direct fetch); London Assay Office (direct fetch).
+- Verification: every legally anchored rule carries official URL + evidence quote; advice items labeled "advice".
+
+### T15 — Product listings (14 rows)
+- Sources (direct fetches): tiffany.com PDP; cartier.com category + PDP; brilliantearth.com PDP; bluenile.com PDP + JA-redirect page; mejuri.com PDP.
+- Verification: 7/14 prices direct-verified with exact quotes; 7 prices left blank (snippet-only or stale) and flagged; karat 12/14; weight 0/14 (published nowhere — F1).
+- Irregularities: Tiffany return-policy conflict (F2); Cartier rose/white karat unstated on fetched pages (F4); Brilliant Earth EUR/USD geo pricing (F5); James Allen→Blue Nile migration, stale JA prices (F8).
+
+### T16–T19 — Calculator, flags page, audit, docs/ site
+- Verification: `scripts/verify_data.py` PASS (schema, evidence policy, arithmetic, rendered-number traceability, internal links); site generated only from data; no external assets.
+- Irregularities: first audit run caught 3 issues (karat fineness rounding rule, missing flag cross-reference, number traceability) — fixed, then PASS.
+
+### T20 — Integration (session 2)
+- Both audits PASS on the merged tree: `scripts/verify_data.py` (14-row dataset) and `tools/verify_data.py` (13-row dataset).
+- PR + merge result recorded below once merged.
+

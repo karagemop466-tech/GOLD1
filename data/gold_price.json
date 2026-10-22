@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "description": "Gold market price anchor and cross-check log. The anchor is the ONLY value used by this project's calculator. Cross-checks are recorded to show intraday variance and are NOT used for calculations.",
+    "no_hallucination_policy": "Every number below carries its source URL, evidence quote, fetch date and fetch method. Derived values are labeled 'derived' and show the formula.",
+    "last_review_utc": "2026-10-22"
+  },
+  "anchor": {
+    "label": "Gold spot price (project anchor)",
+    "price_usd_per_troy_oz": 4024.36,
+    "as_of": "2026-10-21",
+    "currency": "USD",
+    "unit": "troy ounce (31.1034768 g)",
+    "source_id": "S-WGC",
+    "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+    "fetch_method": "direct-fetch",
+    "fetched_utc": "2026-10-22",
+    "evidence_quote": "USD /oz 4,024.36 ... Gold spot prices ... 21 October, 2026 ... Data as of 21 October, 2026",
+    "derived": [
+      {
+        "label": "Fine gold per gram (derived)",
+        "value": "USD 129.39 / g",
+        "formula": "4024.36 / 31.1034768 = 129.3918... (rounded 2dp)"
+      }
+    ]
+  },
+  "cross_checks": [
+    {
+      "source": "Kitco",
+      "url": "https://www.kitco.com/charts/gold",
+      "value_usd_per_oz": 4062.30,
+      "timestamp_in_source": "2026-10-22 10:54 a.m. EDT",
+      "fetch_method": "search-snapshot",
+      "evidence_quote": "The current price of gold is $4,062.30 per troy ounce as of October 22, 2026, 10:54 a.m. ET"
+    },
+    {
+      "source": "Kitco (live ticker, later time)",
+      "url": "https://www.kitco.com/price/precious-metals",
+      "value_usd_per_oz": 4032.80,
+      "timestamp_in_source": "2026-10-22 14:46",
+      "fetch_method": "search-snapshot",
+      "evidence_quote": "GOLD Oct 22, 2026 14:46 4,032.80 4,034.80 -107.500 -2.60%"
+    },
+    {
+      "source": "CNBC (citing CNBC Gold/USD spot)",
+      "url": "https://www.cnbc.com/amp/select/the-price-of-gold-today-oct-22-2026/",
+      "value_usd_per_oz": 4083.82,
+      "timestamp_in_source": "2026-10-22 9:00 a.m. ET",
+      "fetch_method": "search-snapshot",
+      "evidence_quote": "Gold's spot price ... today as of 9:00 a.m. ET is $4,083.82 per ounce"
+    },
+    {
+      "source": "Bloomberg (XAU:CUR)",
+      "url": "https://www.bloomberg.com/quote/XAU:CUR",
+      "value_usd_per_oz": 4028.58,
+      "timestamp_in_source": "2026-10-22 5:00 PM EDT",
+      "fetch_method": "search-snapshot",
+      "evidence_quote": "XAU:CUR 4,028.5800 ... As of 5:00 PM EDT Oct 22"
+    }
+  ],
+  "notes": [
+    "Cross-check values ranged ~USD 4,028-4,084/oz on 2026-10-22 intraday: treat ANY gold value calculation as date-and-time specific.",
+    "LBMA Gold Price numeric data is licence-gated (ICE Benchmark Administration); see flagged item F10.",
+    "Spot price is for fine (24K, .999) bullion gold. Scrap/buyback offers are typically below spot; retail jewellery is typically far above spot."
+  ]
+}

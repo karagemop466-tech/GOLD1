@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "description": "Online gold-ring buying checklist. Each item shows whether its underlying rule is anchored to an official source (fetched 2026-10-22) or is prudent-practice advice.",
+    "last_review_utc": "2026-10-22"
+  },
+  "checklist": [
+    {
+      "id": "C1",
+      "item": "Gold purity — confirm the karat (10K, 14K, 18K...). Higher karat = more gold.",
+      "type": "official rule + advice",
+      "source_label": "16 CFR §23.3 — karat fineness must be correctly disclosed",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.3",
+      "detail": "Karat = parts of gold per 24. 18K = 75.0%, 14K = 58.3%, 10K = 41.7%. See the Gold Prices & Karats page for the full table."
+    },
+    {
+      "id": "C2",
+      "item": "Solid gold — listing must explicitly say SOLID gold — not plated, vermeil, gold-filled, gold overlay, or gold-tone.",
+      "type": "official rule + advice",
+      "source_label": "16 CFR §23.3(b)(3),(5)-(8), (c)(1)-(2) — plated/filled/overlay terms are surface coatings with their own fineness rules; hollow pieces may not be called 'solid'",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.3",
+      "detail": "Vermeil = gold-plated silver. Gold-filled/rolled gold plate = mechanically bonded surface layer (≥1/40th of article weight at ≥10K for the mechanical plating example in the Guides). If a listing can't say 'solid 14K gold' or 'solid 18K gold', walk away."
+    },
+    {
+      "id": "C3",
+      "item": "Hallmark — look for a 10K/14K/18K stamp PLUS a maker's/manufacturer's mark.",
+      "type": "official rule",
+      "source_label": "eCFR §23.10 quoting the National Stamping Act (15 U.S.C. §297)",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.10",
+      "detail": "'...who applies or causes to be applied a quality mark... shall apply to the article the trademark or name of such person.' A karat stamp with NO maker's mark is a red flag. UK-sold rings carry independent assay-office hallmarks (e.g. London, hallmarking since 1300)."
+    },
+    {
+      "id": "C4",
+      "item": "Weight — check the ring's weight in grams. A legitimate seller should be able to provide it.",
+      "type": "advice (checklist requirement)",
+      "source_label": "Project checklist; supported by 16 CFR §23.18 (weight misrepresentation is deceptive)",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.18",
+      "detail": "FINDING: none of the 14 listings reviewed publishes metal weight in grams (see Flag F1). Request it in writing; use the calculator page to convert weight + karat into metal value."
+    },
+    {
+      "id": "C5",
+      "item": "Seller reputation — research independent reviews and complaints; verify real contact information.",
+      "type": "advice",
+      "source_label": "Project checklist",
+      "source_url": null,
+      "detail": "Also verify corporate changes: e.g. James Allen now routes to Blue Nile (Flag F8) — know exactly WHICH legal entity you are buying from. US sellers operating deceptively on metal content face FTC Act §5 enforcement via the Jewelry Guides."
+    },
+    {
+      "id": "C6",
+      "item": "Price — compare the price with the ring's gold weight and current gold value. Unusually cheap = red flag.",
+      "type": "advice + tool",
+      "source_label": "Project checklist; anchor price on Gold Prices page (World Gold Council, fetched 2026-10-22)",
+      "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+      "detail": "Use the calculator: metal melt value = grams × (karat/24) × spot-per-gram. Retail settings are priced far above melt (design, brand, labour, stones) — but BELOW-melt pricing on a 'gold' ring is a classic fake signal."
+    },
+    {
+      "id": "C7",
+      "item": "Return policy — make sure you can return it after receiving and inspecting it; check exclusions on resized/custom rings.",
+      "type": "advice",
+      "source_label": "Project checklist; compare with retailer policies found",
+      "source_url": null,
+      "detail": "Verified examples 2026-10-22: Mejuri free 30-day returns & exchanges; Blue Nile free returns; Cartier complimentary returns & exchanges; Brilliant Earth free shipping & returns + free 1-year resizing; Tiffany — CONFLICTING text flagged (F2): confirm in writing before buying. Engraving/resizing often final-sale (Mejuri engraving: not eligible for returns)."
+    },
+    {
+      "id": "C8",
+      "item": "Payment — prefer a credit card for purchase protection; avoid irreversible payment methods.",
+      "type": "advice",
+      "source_label": "Project checklist",
+      "source_url": null,
+      "detail": "Irreversible methods (wire, crypto, gift cards) leave no chargeback path. Note: financing plans seen on listings (Affirm/Klarna/Blue Nile card) are credit products, not purchase protection."
+    },
+    {
+      "id": "C9",
+      "item": "Documentation — keep the listing, receipt, description, and the seller's claims about gold purity.",
+      "type": "advice",
+      "source_label": "Project checklist",
+      "source_url": null,
+      "detail": "Screenshot the listing including any 'solid 14K/18K gold' wording — the FTC Guides make metal-content claims part of the product's lawful description, so your record is your evidence."
+    },
+    {
+      "id": "C10",
+      "item": "Upon arrival — before wearing or resizing, take it to an independent jeweler to verify gold purity and weight.",
+      "type": "advice",
+      "source_label": "Project checklist",
+      "source_url": null,
+      "detail": "Do this INSIDE the return window. Resizing before verification can forfeit your return rights (see C7 exclusions)."
+    },
+    {
+      "id": "C11",
+      "item": "Best verification — ask for XRF testing or another professional purity test; don't rely on the stamp.",
+      "type": "advice + official practice",
+      "source_label": "Project checklist; independent assay is the job of assay offices (e.g. London Assay Office)",
+      "source_url": "https://www.assayofficelondon.co.uk/hallmarking",
+      "detail": "XRF (X-ray fluorescence) reads surface composition non-destructively; fire assay is destructive but definitive. A stamp is only a claim — 15 U.S.C. §294 makes FALSE marks unlawful, but enforcement happens after the fact; test the piece."
+    },
+    {
+      "id": "C12",
+      "item": "If the seller won't let you independently verify/return it — don't buy.",
+      "type": "advice (decision rule)",
+      "source_label": "Project checklist",
+      "source_url": null,
+      "detail": "This is the project's bright line. A confident seller of real solid gold has nothing to fear from a jeweler's scale and an XRF read."
+    }
+  ],
+  "key_principle": "A 14K or 18K stamp by itself does NOT prove purity. The safe pattern: reputable seller + correct markings (karat + maker's mark) + price consistent with weight × karat × spot + independent testing after delivery.",
+  "key_principle_sources": [
+    {"label": "16 CFR Part 23 (FTC Jewelry Guides)", "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"},
+    {"label": "15 U.S.C. ch. 8 — National Gold and Silver Stamping Act", "url": "https://www.govinfo.gov/link/uscode/15/294"},
+    {"label": "Gold spot anchor — World Gold Council", "url": "https://www.gold.org/goldhub/data/gold-prices"}
+  ]
+}

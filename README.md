@@ -131,3 +131,51 @@ If any of the three is refused, the price does not matter.
 
 *Prices are point-in-time and will drift. The `checked_on` date is part of every row — re-verify
 before buying. Nothing here is financial, legal or appraisal advice.*
+
+---
+
+## Second dashboard: category-organized site (`docs/`, session 2)
+
+A second agent session (`arena-c2bbe753`, branch `arena/c2bbe753-gold1`) independently built a
+category-organized dashboard with its own verified dataset. Both runs are preserved; neither
+modified the other's claimed files. After the root dashboard was published (Pages source = repo
+root), the second site is served under **`/docs/`** of the same Pages URL:
+**<https://karagemop466-tech.github.io/GOLD1/docs/>**
+
+- **14 listings / 5 retailers** (adds Tiffany & Co. and Cartier; includes the James Allen →
+  Blue Nile migration as a flagged finding): `data/rings_c2bbe753.json`
+- **Price anchor** USD 4,024.36/oz t (World Gold Council, data as of 2026-10-21, direct fetch) with
+  a same-day cross-check log: `data/gold_price.json` (do not confuse with session 1's
+  `data/spot-gold.json` — both are kept, each with its own quotes and timestamps)
+- **Karat/purity table + official legal context**: `data/karats.json`
+- **12-item buying checklist**, each rule anchored to 16 CFR Part 23, 15 U.S.C. ch. 8, or the
+  London Assay Office: `data/checklist.json`
+- **Flagged-for-review ledger (12 flags)**: `data/flags.json` → `docs/flagged.html`
+- Pages: `docs/index.html` (dashboard), `docs/rings*.html` (per-retailer tables, every row with a
+  source link), `docs/prices.html`, `docs/calculator.html` (grams × karat × spot), `docs/checklist.html`,
+  `docs/methodology.html`, `docs/flagged.html`
+- Generator + audit (stdlib-only, independent of `tools/`):
+  `python3 scripts/build_site.py && python3 scripts/verify_data.py`
+
+### No-hallucination policy (session 2 dataset — same rule, independently enforced)
+
+Every price, karat, weight and policy value in `data/*_c2bbe753.json` was taken from the official
+page linked next to it, with an exact evidence quote and fetch date. Values not confirmable from an
+official source are **blank and flagged** — 7 of 14 prices are deliberately blank because they were
+only seen in search snapshots (or stale after the James Allen → Blue Nile migration). The audit
+(`scripts/verify_data.py`) fails the build on any unbacked number, including a scan that traces
+rendered `$` amounts back to the data layer.
+
+### Notable findings unique to the second dataset
+
+1. **No retailer reviewed publishes metal weight in grams** — Tiffany, Cartier, Brilliant Earth,
+   Blue Nile, Mejuri: zero out of 14 listings (matches session 1's finding on its 13).
+2. **Tiffany & Co. listing shows conflicting return text** ("non returnable" / "exchange only" vs
+   sitewide "complimentary returns") — clarify in writing before buying.
+3. **The popular "0.5 karat tolerance" claim is contradicted by the official statute** —
+   15 U.S.C. §295 (as amended 1976) sets 3/1000 (watchcases/flatware) or 7/1000 (all other
+   articles) below the mark, assayed as one piece including solder.
+4. **"James Allen is Now Part of Blue Nile"** — old JA product URLs redirect to bluenile.com;
+   JA prices seen elsewhere must be treated as stale.
+5. **LBMA numeric gold prices are licence-gated**; the dataset anchors on the World Gold Council
+   figure and time-stamps every other quote.
