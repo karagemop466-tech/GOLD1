@@ -1,157 +1,136 @@
 {
-  "meta": {
-    "description": "Register of official sources used in this project. Every verified value in this project traces to a source on this register. 'fetch_method' records exactly how the value was obtained: 'direct-fetch' (page downloaded and read) or 'search-snapshot' (search-engine snippet of the official page; treated as UNVERIFIED until direct fetch).",
-    "last_review_utc": "2026-10-22"
-  },
+  "registry_updated": "2026-10-22",
   "sources": [
     {
-      "id": "S-WGC",
-      "name": "World Gold Council — Gold spot prices (Goldhub)",
-      "url": "https://www.gold.org/goldhub/data/gold-prices",
-      "type": "market data",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Primary gold spot price anchor: USD 4,024.36/oz, data as of 21 October 2026.",
-      "notes": "Page states: 'Market Data: Provided by ICE Data Services' and 'Data as of 21 October, 2026'."
-    },
-    {
-      "id": "S-LBMA",
-      "name": "LBMA — Precious Metal Prices (benchmark administered by ICE Benchmark Administration)",
-      "url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices",
-      "type": "market data",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Reference for what the LBMA Gold Price is (twice-daily auction administered by IBA). Numeric values now licence-gated via MyLBMA/ICE; NOT used for any number in this project.",
-      "notes": "IRREGULARITY FLAG: numeric LBMA price data requires an IBA licence since 18 Mar 2025 per World Gold Council page; public sites may lag or differ."
-    },
-    {
-      "id": "S-KITCO",
-      "name": "Kitco — gold charts/price",
-      "url": "https://www.kitco.com/charts/gold",
-      "type": "market data (cross-check only)",
-      "fetch_method": "search-snapshot",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Cross-check only: USD 4,062.30/oz 'as of October 22, 2026, 10:54 a.m. EDT' (search snapshot). NOT used for calculations."
-    },
-    {
-      "id": "S-CNBC",
-      "name": "CNBC Select — price of gold today",
-      "url": "https://www.cnbc.com/amp/select/the-price-of-gold-today-oct-22-2026/",
-      "type": "market data (cross-check only)",
-      "fetch_method": "search-snapshot",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Cross-check only: USD 4,083.82/oz 'as of 9:00 a.m. ET' 2026-10-22 (search snapshot). NOT used for calculations."
-    },
-    {
-      "id": "S-ECFR23",
-      "name": "eCFR — 16 CFR Part 23, FTC Guides for the Jewelry, Precious Metals, and Pewter Industries",
+      "id": "SRC-ECFR-23",
+      "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries (eCFR, current)",
       "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "type": "law/regulation",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Gold-content marking rules (§23.3), quality-mark and maker's-mark rules (§23.10), weight representation (§23.18). Content 'up to date as of 10/21/2026'.",
-      "notes": "§23.3(c)(1) expressly allows karat designations such as '9 Karat Gold' when correctly disclosed — the 10K threshold was removed from the 2018 revision."
+      "publisher": "U.S. Government (eCFR / Office of the Federal Register)",
+      "type": "regulation",
+      "used_for": "Legal basis for gold quality marks, the 10-karat minimum for describing an item as gold, and §23.10 quality-mark guidance.",
+      "verification": "Official index entry retrieved in this session; §23.10 and §23.4 excerpts confirmed through the Federal Register final rule (SRC-FR-2018). Full sections were not read line-by-line — see flag F-11.",
+      "status": "official-partial"
     },
     {
-      "id": "S-USC294",
-      "name": "U.S. Code (govinfo) — 15 U.S.C. ch. 8 §§291–296, National Gold and Silver Stamping Act of 1906 (as amended 1976)",
-      "url": "https://www.govinfo.gov/link/uscode/15/294",
-      "type": "law/statute",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Fineness tolerance: whole-article assay (incl. solder) may not be below the marked fineness by more than 3/1000 (watchcases, flatware) or 7/1000 (all other articles) — §295. §294 prohibits falsely marked gold ware in commerce.",
-      "notes": "1976 amendment (Pub. L. 94–450) replaced the old 'one-half of one carat' / 'one carat' tolerances with the 3/1000 and 7/1000 standards."
+      "id": "SRC-FR-2018",
+      "title": "Federal Register 83 FR 40659 — Guides for the Jewelry, Precious Metals, and Pewter Industries (final revisions, 2018-08-16)",
+      "url": "https://www.federalregister.gov/documents/2018/08/16/2018-17454/guides-for-the-jewelry-precious-metals-and-pewter-industries",
+      "publisher": "U.S. Government (Federal Register)",
+      "type": "regulation",
+      "used_for": "Verbatim basis for: quality-mark definition (§23.10); Note 2 to §23.10 — the National Stamping Act requires the trademark or name of the manufacturer/dealer to be applied next to a quality mark; §23.4 — gold descriptions below 10 karat are improper.",
+      "quoted": "“The National Stamping Act provides that any person, firm, corporation, or association, being a manufacturer or dealer ... who applies or causes to be applied a quality mark ... shall apply to the article the trademark or name of such person.” (Note 2 to § 23.10)",
+      "verification": "Official page retrieved in this session; excerpt above read from the retrieved document.",
+      "status": "official"
     },
     {
-      "id": "S-USC297",
-      "name": "15 U.S.C. §297 (trademark/maker's mark requirement), as cited in eCFR §23.10",
-      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.10",
-      "type": "law/statute",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Requirement that a quality mark be accompanied by the trademark or name of the manufacturer/dealer (National Stamping Act), quoted inside eCFR §23.10 'Disclosure of identity of manufacturers, processors, or distributors'."
+      "id": "SRC-FTC-GUIDES",
+      "title": "FTC — Jewelry, Precious Metals, and Pewter Industries guides (business guidance)",
+      "url": "https://www.ftc.gov/business-guidance/resources/jewelry-precious-metals-and-pewter-industries-guides",
+      "publisher": "Federal Trade Commission",
+      "type": "regulator guidance",
+      "used_for": "Pointer to the Guides for a general audience.",
+      "verification": "URL not opened in this session (a guessed FTC path returned 404). Cite SRC-ECFR-23 and SRC-FR-2018 for the text instead. — flag F-11",
+      "status": "unverified"
     },
     {
-      "id": "S-FTCPDF",
-      "name": "FTC — Statement of Basis and Purpose, Final Revisions to the Jewelry Guides (Aug 2018)",
-      "url": "https://www.ftc.gov/system/files/documents/public_statements/1393857/g71001_jewelry_guides_statement_of_basis_and_purpose_final_8-8-18.pdf",
-      "type": "regulatory guidance",
-      "fetch_method": "search-snapshot",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Background on 2018 Jewelry Guide revisions (plating thickness definitions, karat disclosure)."
+      "id": "SRC-GOLDPRICE",
+      "title": "GoldPrice.org — live spot gold quote (USD/troy ounce) with NY timestamp",
+      "url": "https://goldprice.org/",
+      "publisher": "GoldPrice.org",
+      "type": "commercial market data",
+      "used_for": "Single point-in-time spot reference recorded in data/spot-gold.json. Not a government or exchange feed.",
+      "verification": "Retrieved 2026-10-22; page displayed “Spot Gold Price: USD 4,026.79 / Ounce ... Oct 22nd, 2026 at 07:07 NY Time”. A second ticker on the same page showed 4,025.71 — see flag F-13.",
+      "status": "verified-single-source"
     },
     {
-      "id": "S-LONDON",
-      "name": "The Goldsmiths' Company Assay Office (London) — Hallmarking",
-      "url": "https://www.assayofficelondon.co.uk/hallmarking",
-      "type": "assay authority",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Independent assay/hallmarking reference; hallmarking since 1300; UK fineness options incl. 9, 14, 18, 22 carat, 990, 999 gold (per their calculator)."
+      "id": "SRC-BN-LIST",
+      "title": "Blue Nile — Solitaire Engagement Rings (category listing, 311 results)",
+      "url": "https://www.bluenile.com/engagement-rings/styles/solitaire",
+      "publisher": "Blue Nile",
+      "type": "retailer listing",
+      "used_for": "Name + setting price + product URL for rows BN-14K-CCF-203284, BN-14K-TC-203288, BN-14K-LEAF-192442, BN-14K-BEZEL-296643, BN-14K-RIDGE-304497.",
+      "verification": "Listing page retrieved 2026-10-22; each price read directly from the product card.",
+      "status": "verified-listing"
     },
     {
-      "id": "S-TIFFANY",
-      "name": "Tiffany & Co. — official US site (product page)",
-      "url": "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
+      "id": "SRC-BN-203272",
+      "title": "Blue Nile — Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+      "publisher": "Blue Nile",
       "type": "retailer product page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Tiffany Setting 18k Yellow Gold price/specs."
+      "used_for": "BN-14K-6P-203272 — $1,000 setting price; stock no. 501140y14; 1.90 mm width; settable 0.20–8.00 ct round/oval/marquise/pear.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
     },
     {
-      "id": "S-CARTIER-CAT",
-      "name": "Cartier — official US site, Engagement rings category",
-      "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/",
-      "type": "retailer category page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Etincelle de Cartier prices and metals (pear/princess/emerald paved variants)."
-    },
-    {
-      "id": "S-CARTIER-PDP",
-      "name": "Cartier — official US site, Etincelle princess-cut paved product page (Ref. B4232900)",
-      "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "id": "SRC-BN-194159",
+      "title": "Blue Nile — Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
+      "publisher": "Blue Nile",
       "type": "retailer product page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Yellow gold 750/1000 karat statement, 0.16 ct princess centre, USD 3,350, complimentary returns & exchanges."
+      "used_for": "BN-18K-6P-194159 — $1,240 setting price; stock no. 501140y; 1.90 mm width.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
     },
     {
-      "id": "S-BE",
-      "name": "Brilliant Earth — official site, Atelier Solitaire Ring product page (style BE1D2444-14KY)",
-      "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+      "id": "SRC-BN-203268",
+      "title": "Blue Nile — Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
+      "publisher": "Blue Nile",
       "type": "retailer product page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Metal/style verification, EUR-geo price, return/warranty services.",
-      "notes": "Fetch was served a EUR (Euro) geo-pricing page (€1,350). USD price taken from official-site US listing via search snapshot — flagged unverified."
+      "used_for": "BN-18K-PN-203268 — $1,420 setting price; stock no. 501120y; 1.80 mm width. Page description says “crafted in polished 14k white gold” — flag F-01.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified-with-flag"
     },
     {
-      "id": "S-BN",
-      "name": "Blue Nile — official site, Petite Solitaire Engagement Ring in 14k Yellow Gold (stock 501130y14)",
-      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
+      "id": "SRC-MEJ-DEB",
+      "title": "Mejuri — Diamond Eternity Band",
+      "url": "https://mejuri.com/products/diamond-eternity-band",
+      "publisher": "Mejuri",
       "type": "retailer product page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "USD 1,000 setting price, 14K metal, width 1.80mm, free returns."
+      "used_for": "MEJ-DEB — From $1,100 (14k yellow gold, natural diamond); 0.532 ct average; 33–42 diamonds; 1.5 mm band; SI–I clarity; GHI colour; 30-day returns.",
+      "verification": "Product page retrieved 2026-10-22 (URL with Material=Solid Yellow Gold (14k) & Stone=Natural Diamond applied by the site).",
+      "status": "verified"
     },
     {
-      "id": "S-BN-JA",
-      "name": "Blue Nile — official site, page reached via jamesallen.com product URL",
-      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515?jaRedirect=true",
-      "type": "retailer product page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "Confirmation of 'James Allen is Now Part of Blue Nile' migration and sold-out status of the former JA SKU 17740Y14; similar-items block shows JA-branded settings with prices on bluenile.com."
-    },
-    {
-      "id": "S-MEJURI",
-      "name": "Mejuri — official site, Diamonds Band product page",
+      "id": "SRC-MEJ-DB",
+      "title": "Mejuri — Diamonds Band",
       "url": "https://mejuri.com/products/diamonds-band",
+      "publisher": "Mejuri",
       "type": "retailer product page",
-      "fetch_method": "direct-fetch",
-      "fetched_utc": "2026-10-22",
-      "used_for": "USD 648 price, 'Solid Yellow Gold (14k)', 'Handcrafted in 14k solid gold', 90% recycled gold, 30-day free returns, 2-year warranty."
+      "used_for": "MEJ-DB — $648 (14k yellow gold, natural diamond); minimum carat weight 0.07 ct; 1.8 mm stones; 2.8 mm shank; SI–I; GHI.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-MEJ-BDE",
+      "title": "Mejuri — Bold Diamond Eternity Ring",
+      "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
+      "publisher": "Mejuri",
+      "type": "retailer product page",
+      "used_for": "MEJ-BDE — From $2,900 on the 14k white gold / natural diamond selection; 1.15–1.57 ct; 23 diamonds; 2.6 mm band; SI–I; GHI.",
+      "verification": "Product page retrieved 2026-10-22 with Material=Solid White Gold (14k). Price is material- and size-dependent — flag F-03.",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-MEJ-2MM",
+      "title": "Mejuri — 2mm Smooth Band",
+      "url": "https://mejuri.com/products/2mm-smooth-band",
+      "publisher": "Mejuri",
+      "type": "retailer product page",
+      "used_for": "MEJ-2MM — $498 (14k yellow gold); 2 mm width; 1.3 mm thickness.",
+      "verification": "Product page retrieved 2026-10-22 with Material=Solid Yellow Gold (14k).",
+      "status": "verified"
+    },
+    {
+      "id": "SRC-BE-121H6",
+      "title": "Brilliant Earth — Classic Six-Prong Solitaire Ring in 18K Yellow Gold",
+      "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "publisher": "Brilliant Earth",
+      "type": "retailer product page",
+      "used_for": "BE-18K-6P-121H6 — $1,090 (setting only); style BE121H6-18KY; 2.5 mm width; six-prong; prong metal 14K white gold; free shipping & returns; free 1-year resizing.",
+      "verification": "Product page retrieved 2026-10-22.",
+      "status": "verified"
     }
   ]
 }
