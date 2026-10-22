@@ -1,0 +1,43 @@
+# Coordination board
+
+Last updated: 2026-10-22 (UTC)
+
+## Non-negotiable evidence rules
+
+- **No hallucinations.** Never infer, estimate, or fill a catalog value. A missing value stays blank and is flagged `unverified`.
+- Prices and product facts must come from the official seller/manufacturer page, with a direct URL and retrieval date. Search-result snippets are discovery aids, not evidence.
+- Independent review sources are used for reputation findings; official seller pages are not independent reviews.
+- Every research record must preserve exact source wording or a precise quote for the claimed fields.
+- A karat stamp alone does not verify purity. Listings are candidates, not authenticated purchases.
+- Run the evidence/security audit after every review and before integration. Fix or flag every failure.
+
+## Session protocol
+
+Claim one task before editing its scope. Keep file scopes non-overlapping. Record source URLs, verification performed, and irregularities when marking a task done. Run `git pull --rebase` before every push. A claim older than 60 minutes with no commits may be taken over with a handoff note here.
+
+This Arena session is restricted by the hosting environment to branch `arena/c662efda-gold1`; all task and integration commits therefore remain on that session branch. The final PR must use that branch.
+
+## Tasks
+
+| ID | Task | Status | Owning session | File scope | Started (UTC) |
+|---|---|---|---|---|---|
+| T1 | Repository audit and source research | in progress | arena/c662efda-gold1 | `research/**`, `README.md` | 2026-10-22 |
+| T2 | Verification policy and trust/safety sources | unclaimed | — | `research/policy/**` | — |
+| T3 | Static dashboard shell and accessible UI | unclaimed | — | `site/assets/**`, `site/*.html` (except generated catalog/review tables) | — |
+| T4 | Automated evidence, link, and security checks | unclaimed | — | `scripts/**`, `tests/**`, `package.json`, `package-lock.json` | — |
+| T5 | Final integration: combine evidence, generate all shared outputs, build, audit, PR, deploy | unclaimed | — | `data/**`, `site/data/**`, generated tables/navigation, `.github/**`, root config, `COORDINATION.md` | — |
+
+## Requests across scopes
+
+None.
+
+## Work log
+
+### 2026-10-22 — arena/c662efda-gold1
+
+- Claimed T1. Initial repository contains only `README.md` (`# GOLD1`); there is no existing catalog, price, purity, weight, seller, or return-policy claim to preserve or verify.
+- Remote branches checked before starting: only `origin/main` was present. No competing task claim was found.
+
+## Final publication record
+
+Pending final integration.
