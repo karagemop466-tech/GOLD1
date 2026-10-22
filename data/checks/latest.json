@@ -1,12 +1,12 @@
 {
-  "pass": "P14",
-  "generated_at": "2026-10-22T23:29:51Z",
+  "pass": "P19",
+  "generated_at": "2026-10-22T23:41:45Z",
   "builder_version": "1.0.0",
   "summary": {
-    "total": 13,
-    "passed": 13,
+    "total": 15,
+    "passed": 15,
     "failed": 0,
-    "assertions": 2404,
+    "assertions": 2469,
     "rows": 43,
     "pages": 74
   },
@@ -125,7 +125,7 @@
     {
       "id": "S12",
       "name": "Row-to-page coverage",
-      "description": "Every row must have a detail page that shows both its source link and its verified price.",
+      "description": "Every row must have a detail page that shows its source link and, unless the value is unverified, its verified price.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,
@@ -136,6 +136,26 @@
       "id": "S13",
       "name": "Source registry coverage",
       "description": "Every retailer used for a value must appear in the source registry with a retrieval record.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S14",
+      "name": "Unverified values are published as unverified",
+      "description": "A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S15",
+      "name": "Unverified prices never render as numbers",
+      "description": "A row whose price could not be reproduced must print \"— unverified\" wherever a price would go.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,

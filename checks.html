@@ -43,10 +43,10 @@
   <div class="pass-card">
     <div class="pass-head">
       <span class="badge ok">PASS</span>
-      <strong>P9</strong>
-      <span class="muted">run 2026-10-22T23:20:31Z</span>
+      <strong>P18</strong>
+      <span class="muted">run 2026-10-22T23:41:34Z</span>
     </div>
-    <p>13 passed · 0 failed · 13 checks against 43 rows and 74 generated pages.</p>
+    <p>15 passed · 0 failed · 15 checks against 43 rows and 74 generated pages.</p>
   </div>
   <div class="table-wrap">
   <table class="data-table">
@@ -131,7 +131,7 @@
       </tr>
       <tr>
         <td><strong>S12</strong><div class="sub">Row-to-page coverage</div></td>
-        <td class="small">Every row must have a detail page that shows both its source link and its verified price.</td>
+        <td class="small">Every row must have a detail page that shows its source link and, unless the value is unverified, its verified price.</td>
         <td class="num-col">1</td>
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
@@ -139,6 +139,20 @@
       <tr>
         <td><strong>S13</strong><div class="sub">Source registry coverage</div></td>
         <td class="small">Every retailer used for a value must appear in the source registry with a retrieval record.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S14</strong><div class="sub">Unverified values are published as unverified</div></td>
+        <td class="small">A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S15</strong><div class="sub">Unverified prices never render as numbers</div></td>
+        <td class="small">A row whose price could not be reproduced must print &quot;— unverified&quot; wherever a price would go.</td>
         <td class="num-col">1</td>
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
@@ -153,7 +167,7 @@
   <table class="data-table compact">
     <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th></tr></thead>
     <tbody>
-      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr>
+      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P11</td><td>2026-10-22T23:22:53Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P12</td><td>2026-10-22T23:29:38Z</td><td class="num-col">13</td><td class="num-col">3</td><td><span class="chip bad">fail</span></td></tr><tr><td>P13</td><td>2026-10-22T23:29:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P14</td><td>2026-10-22T23:29:51Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P15</td><td>2026-10-22T23:37:06Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P16</td><td>2026-10-22T23:40:15Z</td><td class="num-col">15</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td></tr><tr><td>P17</td><td>2026-10-22T23:40:37Z</td><td class="num-col">15</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P18</td><td>2026-10-22T23:41:34Z</td><td class="num-col">15</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr>
     </tbody>
   </table>
   </div>
@@ -164,7 +178,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,026.70 per troy ounce at 2026-10-22T23:38:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

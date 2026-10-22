@@ -33,7 +33,7 @@
 
 <section class="wrap section">
   <h1>Flagged for review</h1>
-  <p class="lede">29 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
+  <p class="lede">35 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -417,13 +417,91 @@
       <p class="sub"><a href="https://www.costco.com/" target="_blank" rel="noopener nofollow">www.costco.com ↗</a></p>
       <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
     </article>
+<article class="flag-card sev-high">
+      <div class="flag-head">
+        <span class="flag-id">F31</span>
+        <span class="chip bad">high</span>
+        <span class="chip">data correction / verification</span>
+      </div>
+      <h2>Three stored price ranges could not be reproduced on the live official pages</h2>
+      <p>On the 2026-10-22 line-by-line re-check the stored low/high values 799-849, 489-559 and 1269-1439 were re-read against the live Ross-Simons pages. Each page shows a single price for every in-stock size: $849.00, $489.00 and $1,269.00 respectively. The second figure in each pair ($799, $559, $1,439) does not appear anywhere on the page, so it has been dropped rather than kept as an unverified number. All three are after their own clearance markdowns (571213 is 20% off $1,195; 999230 is 30% off $695; 943668 is 29% off $1,795), so prices move with the promotion.</p>
+      <p class="small"><strong>Affects:</strong> rs-571223, rs-999230, rs-943668</p>
+      <p class="action"><strong>What to do:</strong> Treat the published figure as the price on the day it was checked and re-read the page before paying. Two of the three are clearance prices, which end without notice.</p>
+      <p class="sub"><a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/999230" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a> · <a href="https://www.ross-simons.com/products/943668" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-low">
+      <div class="flag-head">
+        <span class="flag-id">F32</span>
+        <span class="chip info">low</span>
+        <span class="chip">wording / labelling</span>
+      </div>
+      <h2>One stored title is the variant label, not the page heading</h2>
+      <p>The stored title reads &quot;Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold&quot;, which is the name of the colourway in the variant selector. The page heading reads &quot;.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold&quot;. The price and karat are unaffected; only the label differs.</p>
+      <p class="small"><strong>Affects:</strong> rs-999230</p>
+      <p class="action"><strong>What to do:</strong> Match on the item number (999230), not the product name, when you compare the page with this table.</p>
+      <p class="sub"><a href="https://www.ross-simons.com/products/999230" target="_blank" rel="noopener nofollow">www.ross-simons.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-high">
+      <div class="flag-head">
+        <span class="flag-id">F33</span>
+        <span class="chip bad">high</span>
+        <span class="chip">unverified value</span>
+      </div>
+      <h2>Anna Sheffield Bea solitaire no longer publishes a price</h2>
+      <p>The page still resolves and still describes a 1.50ct oval champagne diamond in 14k recycled yellow or rose gold, but the buy box has been replaced by a made-to-order enquiry form: &quot;While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.&quot; The stored $11,500 could not be reproduced, so the row is published with a blank, unverified price rather than a number nobody can stand behind.</p>
+      <p class="small"><strong>Affects:</strong> as-bea-sol</p>
+      <p class="action"><strong>What to do:</strong> Ask Anna Sheffield to quote the piece in writing before you compare it with anything else on this site.</p>
+      <p class="sub"><a href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" target="_blank" rel="noopener nofollow">www.annasheffield.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-high">
+      <div class="flag-head">
+        <span class="flag-id">F34</span>
+        <span class="chip bad">high</span>
+        <span class="chip">official source contradiction</span>
+      </div>
+      <h2>Two Blue Nile pages contradict themselves on karat and metal colour</h2>
+      <p>Re-checked on 2026-10-22. Item 203284 is headed 14K Yellow Gold and its spec panel says &quot;Metal 14K Yellow Gold&quot;, but the Product Details paragraph underneath says &quot;This one, crafted in 18k yellow gold&quot;. Item 203268 is headed 18k Yellow Gold with a matching spec, while its Product Details paragraph says &quot;this petite nouveau solitaire engagement ring is crafted in polished 14k white gold&quot;. Blue Nile&#39;s own page therefore states two different metals for the same stock item. This is exactly the failure mode the checklist warns about: the heading is a claim, not a measurement.</p>
+      <p class="small"><strong>Affects:</strong> bn-14k-ccf-203284, bn-18k-pn-203268</p>
+      <p class="action"><strong>What to do:</strong> Do not rely on the description text. Email Blue Nile and ask which metal the stock number shipped, then confirm with XRF after delivery. Keep the reply with the receipt.</p>
+      <p class="sub"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" target="_blank" rel="noopener nofollow">www.bluenile.com ↗</a> · <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268" target="_blank" rel="noopener nofollow">www.bluenile.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F35</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">mixed metals</span>
+      </div>
+      <h2>Brilliant Earth six-prong setting mixes metals: 18K band, 14K white gold prongs</h2>
+      <p>The official page lists &quot;Metal: 18K Yellow Gold&quot; and, on the same Ring Information block, &quot;Prong metal: 14K White Gold&quot;. The ring is therefore not 18K throughout, which changes the gold content of the piece and is easy to miss when you only read the headline metal.</p>
+      <p class="small"><strong>Affects:</strong> be-18k-6p-121h6</p>
+      <p class="action"><strong>What to do:</strong> Ask how many grams of the finished ring are 18K and how many are 14K before you compare its price with a fully 18K setting.</p>
+      <p class="sub"><a href="https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/" target="_blank" rel="noopener nofollow">www.brilliantearth.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-medium">
+      <div class="flag-head">
+        <span class="flag-id">F36</span>
+        <span class="chip warn">medium</span>
+        <span class="chip">partial verification</span>
+      </div>
+      <h2>Aurate Modern Cigar Band: the 14K variant price was not re-read at variant level</h2>
+      <p>The re-check confirmed the product, its tags and its published weight range of 2.6-4g, but the product-level feed only exposes price_min &quot;118.00&quot; (the vermeil variant) and price_max &quot;1668.00&quot;. The stored $1,308 belongs to the 14K/Yellow/size-3 variant and was carried forward from the earlier official-feed evidence rather than re-read line by line on this pass. It sits inside the published range but is not independently re-confirmed.</p>
+      <p class="small"><strong>Affects:</strong> au-cigar</p>
+      <p class="action"><strong>What to do:</strong> Put the 14K/yellow/size 3 variant in the basket and read the price there before you rely on it. Note the same product also sells a vermeil variant, so check which one is selected.</p>
+      <p class="sub"><a href="https://auratenewyork.com/products/modern-cigar-band" target="_blank" rel="noopener nofollow">auratenewyork.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
   </div>
 </section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,028.10 per troy ounce at 2026-10-22T23:01:42Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,026.70 per troy ounce at 2026-10-22T23:38:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

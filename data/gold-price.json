@@ -1,24 +1,31 @@
 {
-  "as_of": "2026-10-22T23:01:42Z",
-  "note": "Two independent published gold prices, each stored with the publisher's own timestamp. Neither is an estimate. The calculator lets you replace the price at any time.",
-  "primary": {
-    "label": "Gold spot, USD per troy ounce",
-    "price_usd_per_ozt": 4028.100098,
-    "publisher": "gold-api.com",
-    "publisher_timestamp": "2026-10-22T23:01:42Z",
-    "source_url": "https://api.gold-api.com/price/XAU",
-    "source_type": "market data publisher"
-  },
-  "cross_check": {
-    "label": "COMEX gold futures, front month (GC=F), USD per troy ounce",
-    "price_usd_per_ozt": 4043.0,
-    "publisher": "Yahoo Finance",
-    "publisher_timestamp_epoch": 1792709863,
-    "publisher_timestamp": null,
-    "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
-    "source_type": "market data publisher",
-    "note": "Futures price, not spot. Shown only as a cross-check that the spot figure is in the right market range."
-  },
-  "grains_per_troy_ounce": 31.1034768,
-  "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing."
+ "as_of": "2026-10-22T23:38:41Z",
+ "note": "Two independent published gold prices, each stored with the publisher's own timestamp. Neither is an estimate. Refreshed 2026-10-22T23:38:41Z during the line-by-line re-verification pass; the earlier reading from the same evening is kept underneath for audit. The calculator lets you replace the price at any time.",
+ "primary": {
+  "label": "Gold spot, USD per troy ounce",
+  "price_usd_per_ozt": 4026.699951,
+  "publisher": "gold-api.com",
+  "publisher_timestamp": "2026-10-22T23:38:41Z",
+  "source_url": "https://api.gold-api.com/price/XAU",
+  "source_type": "market data publisher"
+ },
+ "cross_check": {
+  "label": "COMEX gold futures, front month (GC=F), USD per troy ounce",
+  "price_usd_per_ozt": 4042.5,
+  "publisher": "Yahoo Finance (COMEX GC=F, Dec 26 contract)",
+  "publisher_timestamp_epoch": 1792711718,
+  "publisher_timestamp": "2026-10-22T23:28:38Z",
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+  "source_type": "market data publisher",
+  "note": "Futures price, not spot. Shown only as a cross-check that the spot figure is in the right market range."
+ },
+ "grains_per_troy_ounce": 31.1034768,
+ "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
+ "refreshed_by": "sess-277867af",
+ "refreshed_at": "2026-10-22T23:38:41Z",
+ "previous_reading": {
+  "price_usd_per_ozt": 4028.100098,
+  "publisher_timestamp": "2026-10-22T23:01:42Z",
+  "note": "The reading captured earlier on 2026-10-22, kept so the change is auditable."
+ }
 }

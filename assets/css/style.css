@@ -166,7 +166,7 @@ input:focus, select:focus { outline: 2px solid #e9d5a1; outline-offset: 1px; bor
 
 /* tables */
 .table-wrap { border: 1px solid var(--line); border-radius: var(--radius); background: #fff; overflow: auto; }
-.data-table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 900px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: .9rem; min-width: 1180px; }
 .data-table.compact { min-width: 600px; }
 .data-table th, .data-table td { padding: .7rem .8rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
 .data-table thead th {
