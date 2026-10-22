@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "description": "Register of official sources used in this project. Every verified value in this project traces to a source on this register. 'fetch_method' records exactly how the value was obtained: 'direct-fetch' (page downloaded and read) or 'search-snapshot' (search-engine snippet of the official page; treated as UNVERIFIED until direct fetch).",
+    "last_review_utc": "2026-10-22"
+  },
+  "sources": [
+    {
+      "id": "S-WGC",
+      "name": "World Gold Council — Gold spot prices (Goldhub)",
+      "url": "https://www.gold.org/goldhub/data/gold-prices",
+      "type": "market data",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Primary gold spot price anchor: USD 4,024.36/oz, data as of 21 October 2026.",
+      "notes": "Page states: 'Market Data: Provided by ICE Data Services' and 'Data as of 21 October, 2026'."
+    },
+    {
+      "id": "S-LBMA",
+      "name": "LBMA — Precious Metal Prices (benchmark administered by ICE Benchmark Administration)",
+      "url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices",
+      "type": "market data",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Reference for what the LBMA Gold Price is (twice-daily auction administered by IBA). Numeric values now licence-gated via MyLBMA/ICE; NOT used for any number in this project.",
+      "notes": "IRREGULARITY FLAG: numeric LBMA price data requires an IBA licence since 18 Mar 2025 per World Gold Council page; public sites may lag or differ."
+    },
+    {
+      "id": "S-KITCO",
+      "name": "Kitco — gold charts/price",
+      "url": "https://www.kitco.com/charts/gold",
+      "type": "market data (cross-check only)",
+      "fetch_method": "search-snapshot",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Cross-check only: USD 4,062.30/oz 'as of October 22, 2026, 10:54 a.m. EDT' (search snapshot). NOT used for calculations."
+    },
+    {
+      "id": "S-CNBC",
+      "name": "CNBC Select — price of gold today",
+      "url": "https://www.cnbc.com/amp/select/the-price-of-gold-today-oct-22-2026/",
+      "type": "market data (cross-check only)",
+      "fetch_method": "search-snapshot",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Cross-check only: USD 4,083.82/oz 'as of 9:00 a.m. ET' 2026-10-22 (search snapshot). NOT used for calculations."
+    },
+    {
+      "id": "S-ECFR23",
+      "name": "eCFR — 16 CFR Part 23, FTC Guides for the Jewelry, Precious Metals, and Pewter Industries",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "type": "law/regulation",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Gold-content marking rules (§23.3), quality-mark and maker's-mark rules (§23.10), weight representation (§23.18). Content 'up to date as of 10/21/2026'.",
+      "notes": "§23.3(c)(1) expressly allows karat designations such as '9 Karat Gold' when correctly disclosed — the 10K threshold was removed from the 2018 revision."
+    },
+    {
+      "id": "S-USC294",
+      "name": "U.S. Code (govinfo) — 15 U.S.C. ch. 8 §§291–296, National Gold and Silver Stamping Act of 1906 (as amended 1976)",
+      "url": "https://www.govinfo.gov/link/uscode/15/294",
+      "type": "law/statute",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Fineness tolerance: whole-article assay (incl. solder) may not be below the marked fineness by more than 3/1000 (watchcases, flatware) or 7/1000 (all other articles) — §295. §294 prohibits falsely marked gold ware in commerce.",
+      "notes": "1976 amendment (Pub. L. 94–450) replaced the old 'one-half of one carat' / 'one carat' tolerances with the 3/1000 and 7/1000 standards."
+    },
+    {
+      "id": "S-USC297",
+      "name": "15 U.S.C. §297 (trademark/maker's mark requirement), as cited in eCFR §23.10",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.10",
+      "type": "law/statute",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Requirement that a quality mark be accompanied by the trademark or name of the manufacturer/dealer (National Stamping Act), quoted inside eCFR §23.10 'Disclosure of identity of manufacturers, processors, or distributors'."
+    },
+    {
+      "id": "S-FTCPDF",
+      "name": "FTC — Statement of Basis and Purpose, Final Revisions to the Jewelry Guides (Aug 2018)",
+      "url": "https://www.ftc.gov/system/files/documents/public_statements/1393857/g71001_jewelry_guides_statement_of_basis_and_purpose_final_8-8-18.pdf",
+      "type": "regulatory guidance",
+      "fetch_method": "search-snapshot",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Background on 2018 Jewelry Guide revisions (plating thickness definitions, karat disclosure)."
+    },
+    {
+      "id": "S-LONDON",
+      "name": "The Goldsmiths' Company Assay Office (London) — Hallmarking",
+      "url": "https://www.assayofficelondon.co.uk/hallmarking",
+      "type": "assay authority",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Independent assay/hallmarking reference; hallmarking since 1300; UK fineness options incl. 9, 14, 18, 22 carat, 990, 999 gold (per their calculator)."
+    },
+    {
+      "id": "S-TIFFANY",
+      "name": "Tiffany & Co. — official US site (product page)",
+      "url": "https://www.tiffany.com/engagement/engagement-rings/18k-yellow-gold-and-platinum-diamond-engagement-rings-1712.html",
+      "type": "retailer product page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Tiffany Setting 18k Yellow Gold price/specs."
+    },
+    {
+      "id": "S-CARTIER-CAT",
+      "name": "Cartier — official US site, Engagement rings category",
+      "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/",
+      "type": "retailer category page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Etincelle de Cartier prices and metals (pear/princess/emerald paved variants)."
+    },
+    {
+      "id": "S-CARTIER-PDP",
+      "name": "Cartier — official US site, Etincelle princess-cut paved product page (Ref. B4232900)",
+      "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "type": "retailer product page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Yellow gold 750/1000 karat statement, 0.16 ct princess centre, USD 3,350, complimentary returns & exchanges."
+    },
+    {
+      "id": "S-BE",
+      "name": "Brilliant Earth — official site, Atelier Solitaire Ring product page (style BE1D2444-14KY)",
+      "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+      "type": "retailer product page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Metal/style verification, EUR-geo price, return/warranty services.",
+      "notes": "Fetch was served a EUR (Euro) geo-pricing page (€1,350). USD price taken from official-site US listing via search snapshot — flagged unverified."
+    },
+    {
+      "id": "S-BN",
+      "name": "Blue Nile — official site, Petite Solitaire Engagement Ring in 14k Yellow Gold (stock 501130y14)",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
+      "type": "retailer product page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "USD 1,000 setting price, 14K metal, width 1.80mm, free returns."
+    },
+    {
+      "id": "S-BN-JA",
+      "name": "Blue Nile — official site, page reached via jamesallen.com product URL",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515?jaRedirect=true",
+      "type": "retailer product page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "Confirmation of 'James Allen is Now Part of Blue Nile' migration and sold-out status of the former JA SKU 17740Y14; similar-items block shows JA-branded settings with prices on bluenile.com."
+    },
+    {
+      "id": "S-MEJURI",
+      "name": "Mejuri — official site, Diamonds Band product page",
+      "url": "https://mejuri.com/products/diamonds-band",
+      "type": "retailer product page",
+      "fetch_method": "direct-fetch",
+      "fetched_utc": "2026-10-22",
+      "used_for": "USD 648 price, 'Solid Yellow Gold (14k)', 'Handcrafted in 14k solid gold', 90% recycled gold, 30-day free returns, 2-year warranty."
+    }
+  ]
+}
