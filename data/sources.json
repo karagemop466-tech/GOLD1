@@ -289,6 +289,24 @@
       "verified": "Recorded by the third pass: 'The Tiffany Setting Engagement Ring in 18k Yellow Gold — 40318275 — Starting from $1,600'. Not re-fetched in this pass, so not used in the table.",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-live-reread",
+      "publisher": "Ross-Simons, Mejuri, With Clarity (product pages)",
+      "type": "official product page, re-read",
+      "url": "https://www.ross-simons.com/products/571221",
+      "verified": "Second read of 7 product pages on 2026-10-22 in pass P12: prices, karats, published Gold Weight lines, setting-only structure and Mejuri return exclusions",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p12-gold-api-second-read",
+      "publisher": "gold-api.com",
+      "type": "market data publisher",
+      "url": "https://api.gold-api.com/price/XAU",
+      "verified": "Second reading of the same feed: 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z); the later reading drives the melt arithmetic",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "generated_at": "2026-10-22",
-  "note": "Every row below was copied from an official retailer feed retrieved on 2026-10-22. price_low/price_high are the exact listed USD prices from that feed (lowest and highest variant). Nothing is estimated. Where a field could not be confirmed it is null and the row carries a flag. Rows carry an inherited=true marker when they came from the first research pass (session arena-6f8c2bcb-gold1) and were mapped mechanically by scripts/integrate_session_6f8c2bcb.py; their numbers were not retyped.",
+  "note": "43 curated listings. Every price, karat and weight is copied from the retailer page named on the row. Rows with reverified_at were re-read in pass P12 (2026-10-22) and still say what the page says; rows without it keep the retrieval date of the pass that captured them.",
   "fields": {
     "price_basis": [
       "single listed price",
@@ -26,18 +26,19 @@
       "price_high": 400.0,
       "compare_at_high": 400.0,
       "price_basis": "single listed price",
-      "weight_g_low": null,
-      "weight_g_high": null,
+      "weight_g_low": 1.7,
+      "weight_g_high": 1.7,
       "source_url": "https://www.ross-simons.com/products/571221",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Women's 2mm 14kt Yellow Gold Band\"; price \"400.00\"; body \"Sleek and sophisticated, this slender band shines in high-polished 14kt yellow gold.\"",
+      "evidence": "Title \"Women's 2mm 14kt Yellow Gold Band\"; price \"400.00\"; specs \"Metal 14kt Yellow Gold · Gold Weight 1.7 grams · Finish Polished\"; body \"Sleek and sophisticated, this slender band shines in high-polished 14kt yellow gold.\"",
       "solid_stated": false,
       "flags": [
-        "solid_not_stated",
-        "weight_not_published"
+        "solid_not_stated"
       ],
-      "notes": "Karat stated in title and description. The word \"solid\" does not appear in the listing text."
+      "notes": "Karat stated in title and specs. The word \"solid\" does not appear in the listing text. Metal weight 1.7 grams is published in the page's own spec panel (re-read in pass P12); the seller states that all weights are approximate.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-571222",
@@ -65,7 +66,9 @@
         "solid_not_stated",
         "weight_not_published"
       ],
-      "notes": "Karat stated. \"Solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer."
+      "notes": "Karat stated. \"Solid\" not stated. Tagged BRIDAL / WEDDING BAND by the retailer. Re-read in pass P12: price 599.00 confirmed on every size variant; the feed's shipping weight field is not a metal weight, so none was added.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-571223",
@@ -78,23 +81,23 @@
       "metal": "Yellow gold",
       "stone": "None",
       "stone_type": null,
-      "price_low": 799.0,
+      "price_low": 849.0,
       "price_high": 849.0,
       "compare_at_high": 849.0,
-      "price_basis": "listed variant range",
-      "weight_g_low": null,
-      "weight_g_high": null,
+      "price_basis": "single listed price (all in-stock sizes)",
+      "weight_g_low": 3.8,
+      "weight_g_high": 3.8,
       "source_url": "https://www.ross-simons.com/products/571223",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"Women's 4mm 14kt Yellow Gold Band\"; price_min \"799.00\"; price_max \"849.00\"",
+      "evidence": "Title \"Women's 4mm 14kt Yellow Gold Band\"; all in-stock sizes list price \"849.00\"; specs \"Metal 14kt Yellow Gold · Gold Weight 3.8 grams\"; body \"Timeless and elegant, our slender yet substantial band gleams in sunny 14kt yellow gold.\"",
       "solid_stated": false,
       "flags": [
-        "solid_not_stated",
-        "weight_not_published",
-        "price_varies"
+        "solid_not_stated"
       ],
-      "notes": "Listed price differs across ring sizes (799.00 to 849.00)."
+      "notes": "First pass recorded a 799.00-849.00 range across sizes. The P12 re-read found 849.00 on every in-stock size, so the row now carries the single current price and the floor was dropped (see F31). Metal weight 3.8 grams is published in the spec panel.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-571213",
@@ -139,19 +142,19 @@
       "price_high": 149.0,
       "compare_at_high": 149.0,
       "price_basis": "single listed price",
-      "weight_g_low": null,
-      "weight_g_high": null,
+      "weight_g_low": 0.5,
+      "weight_g_high": 0.5,
       "source_url": "https://www.ross-simons.com/products/981367",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"14kt Yellow Gold Polished Ring\"; price \"149.00\"; body \"1/16\\\" wide. 14kt yellow gold ring.\"",
+      "evidence": "Title \"14kt Yellow Gold Polished Ring\"; price \"149.00\"; specs \"Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 0.5 grams\"; body \"1/16\\\" wide. 14kt yellow gold ring.\"",
       "solid_stated": false,
       "flags": [
-        "solid_not_stated",
-        "weight_not_published",
-        "low_price_verify_weight"
+        "solid_not_stated"
       ],
-      "notes": "At 149.00 this can only be a very light 14K ring; weight is not published, so value cannot be checked until a jeweller weighs it."
+      "notes": "The 149.00 price was previously unverifiable because no weight was captured. The page publishes \"Gold Weight 0.5 grams\", so the gold content is about 0.29 g of fine gold - a thin, light ring, which is why the price is low. Compare with melt on the row page.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-907250",
@@ -168,19 +171,19 @@
       "price_high": 179.0,
       "compare_at_high": 179.0,
       "price_basis": "single listed price",
-      "weight_g_low": null,
-      "weight_g_high": null,
+      "weight_g_low": 0.5,
+      "weight_g_high": 0.5,
       "source_url": "https://www.ross-simons.com/products/907250",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"18kt Yellow Gold Roped Ring\"; price \"179.00\"; body \"Crafted in polished 18kt yellow gold... 1/16\\\" wide.\"",
+      "evidence": "Title \"18kt Yellow Gold Roped Ring\"; price \"179.00\"; specs \"Metal 18kt Yellow Gold · Gold Weight 0.5 grams\"; body \"Crafted in polished 18kt yellow gold... 1/16\\\" wide.\"",
       "solid_stated": false,
       "flags": [
-        "solid_not_stated",
-        "weight_not_published",
-        "low_price_verify_weight"
+        "solid_not_stated"
       ],
-      "notes": "179.00 for an 18K ring is only possible on a very light, thin piece. Weight is not published. Verify before buying."
+      "notes": "179.00 for 18K is explained by the published weight: 0.5 grams, about 0.375 g of fine gold. The low-price warning was retired once the weight was read.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-960952",
@@ -391,7 +394,7 @@
       "stone": ".28 ct. t.w. accent diamonds; centre stone NOT included",
       "stone_type": "Mined diamond (accents)",
       "price_low": 1269.0,
-      "price_high": 1439.0,
+      "price_high": 1269.0,
       "compare_at_high": 1795.0,
       "price_basis": "setting only - center stone sold separately",
       "weight_g_low": null,
@@ -399,15 +402,16 @@
       "source_url": "https://www.ross-simons.com/products/943668",
       "source_type": "official product feed",
       "retrieved_at": "2026-10-22",
-      "evidence": "Price_min \"1269.00\"; price_max \"1439.00\"; body \"Center stone and setting are sold separately.\"; tag \"SEMIMOUNTING\"",
+      "evidence": "Clearance sale price \"1269.00\"; original price \"1795.00\"; body \"Center stone and setting are sold separately.\"; spec panels list Width, Metal, Finish and Gemstone 1 only - the product renders no Gold Weight field",
       "solid_stated": false,
       "flags": [
         "solid_not_stated",
         "weight_not_published",
-        "setting_only",
-        "price_varies"
+        "setting_only"
       ],
-      "notes": "The listing itself says the centre stone is sold separately. The price does NOT buy a complete ring."
+      "notes": "Setting only: the listing says the centre stone is sold separately, so 1269.00 does not buy a complete ring. Pass P12 found a single clearance price (the earlier 1439.00 ceiling was a size-variant price that is no longer listed) and sizes 5, 6 and 6.5 sold out. See F31.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "rs-242556",
@@ -557,7 +561,9 @@
         "setting_only",
         "price_varies"
       ],
-      "notes": "Retailer calls this a best-selling 4-prong solitaire setting."
+      "notes": "Setting only: the page opens with a three-step builder - \"1 Choose a setting / 2 Choose a diamond / 3 Complete Your Ring\" - so the price on this URL is the setting step. Pass P12 confirmed the setting basis but did not re-read the price, so the stored range keeps its original retrieval date.",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "wc-4prong-petite",
@@ -1259,15 +1265,17 @@
       "source_url": "https://mejuri.com/products/2mm-smooth-band",
       "source_type": "official product page",
       "retrieved_at": "2026-10-22",
-      "evidence": "Title \"2mm Smooth Band\"; price \"$498\"; metal \"14k Yellow Gold\"; solid-gold note \"“Handcrafted in recycled 14k solid gold featuring streamlined edges”\"; price read from the product page on 2026-10-22",
+      "evidence": "Title \"2mm Smooth Band\"; price \"$498\"; metal \"14k Yellow Gold\"; solid-gold note \"Handcrafted in recycled 14k solid gold featuring streamlined edges\"; specs \"Width: 2 mm\", \"Thickness: 1.3 mm\" and no gram weight; re-read from the product page on 2026-10-22",
       "solid_stated": true,
       "flags": [
         "weight_not_published",
         "hallmark_not_published"
       ],
-      "notes": "Useful as a like-for-like gold-price benchmark: plain 14k band, no stones, but still no gram weight published. No gram weight published (2 mm width, 1.3 mm thickness are published instead). Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number.",
+      "notes": "Plain 14k band with no stones, useful as a like-for-like gold-price benchmark. Mejuri publishes width (2 mm) and thickness (1.3 mm) but no gram weight, so the melt check still cannot be run. Returns: \"Free 30-day returns & exchanges\" with exclusions, and \"Engraved items are not eligible for return.\" (F33). Carried over from the first research pass and re-read in P12 without any number changing.",
       "inherited": true,
-      "verified_by": "session-6f8c2bcb"
+      "verified_by": "session-6f8c2bcb",
+      "reverified_at": "2026-10-22",
+      "reverified_pass": "P12"
     },
     {
       "id": "be-18k-6p-121h6",

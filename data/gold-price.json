@@ -1,11 +1,11 @@
 {
-  "as_of": "2026-10-22T23:01:42Z",
+  "as_of": "2026-10-22T23:22:41Z",
   "note": "Two independent published gold prices, each stored with the publisher's own timestamp. Neither is an estimate. The calculator lets you replace the price at any time.",
   "primary": {
     "label": "Gold spot, USD per troy ounce",
-    "price_usd_per_ozt": 4028.100098,
+    "price_usd_per_ozt": 4029.699951,
     "publisher": "gold-api.com",
-    "publisher_timestamp": "2026-10-22T23:01:42Z",
+    "publisher_timestamp": "2026-10-22T23:22:41Z",
     "source_url": "https://api.gold-api.com/price/XAU",
     "source_type": "market data publisher"
   },
@@ -20,5 +20,20 @@
     "note": "Futures price, not spot. Shown only as a cross-check that the spot figure is in the right market range."
   },
   "grains_per_troy_ounce": 31.1034768,
-  "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing."
+  "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
+  "readings": [
+    {
+      "price_usd_per_ozt": 4028.100098,
+      "publisher_timestamp": "2026-10-22T23:01:42Z",
+      "publisher": "gold-api.com",
+      "observed_by": "sess-d8f0544e"
+    },
+    {
+      "price_usd_per_ozt": 4029.699951,
+      "publisher_timestamp": "2026-10-22T23:22:41Z",
+      "publisher": "gold-api.com",
+      "observed_by": "sess-bc088451"
+    }
+  ],
+  "readings_note": "Two separate readings of the same published feed, 21 minutes apart, both stored with the publisher's own timestamp. The later one is used for the melt calculations on this site. Difference: +1.60 USD/ozt (+0.04%). The melt figures are re-derived from this stored price by scripts/verify.mjs."
 }

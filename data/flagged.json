@@ -74,12 +74,12 @@
     },
     {
       "id": "F06",
-      "title": "Two very low solid-gold prices that cannot be value-checked",
+      "title": "Two very low solid-gold prices — now testable against published weights",
       "severity": "medium",
-      "type": "price plausibility",
+      "type": "price / value check",
       "affected": "rs-981367, rs-907250",
-      "finding": "A 14K ring at 149.00 and an 18K ring at 179.00 are advertised. Both are described as about 1/16 inch wide. At the gold price recorded on this page, an 18K ring at 179.00 contains at most about 1.8 g of gold before labour and margin. That is possible for a very thin band, but with no published weight the value cannot be confirmed.",
-      "buyer_action": "Ask for the gram weight. Weigh it on arrival. Do not assume a high karat at a low price means a good deal.",
+      "finding": "$149 for a 14K ring and $179 for an 18K ring looked implausible. Pass P12 found both pages publish a metal weight: 0.5 grams each. At 14K that is about 0.29 g of fine gold; at 18K about 0.375 g. The prices are therefore consistent with extremely light rings, not with a mis-stated karat. The earlier finding said the value could not be checked; it now can, and the answer is \"thin and light\", not \"fake\".",
+      "buyer_action": "Decide whether 0.5 g of metal is enough ring for daily wear. Weigh it on arrival - an independent jeweller can do this in a minute - and treat any shortfall from the stated 0.5 g as a return reason.",
       "sources": [
         "https://www.ross-simons.com/products/981367",
         "https://www.ross-simons.com/products/907250"
@@ -419,6 +419,75 @@
       "status": "needs review",
       "original_id": "F-15",
       "found_by": "session-6f8c2bcb"
+    },
+    {
+      "id": "F31",
+      "title": "Prices moved between research passes — two rows corrected",
+      "severity": "medium",
+      "type": "price drift",
+      "affected": "rs-571223 (was $799.00-$849.00, now $849.00); rs-943668 (was $1,269.00-$1,439.00, now a single $1,269.00 clearance price)",
+      "finding": "Re-reading the same two product pages on 2026-10-22 gave different prices from the earlier pass. rs-571223 now lists $849.00 on every in-stock size, so the stored $799.00 floor is no longer on the page. rs-943668 is now a clearance item at $1,269.00 with an original price of $1,795.00, and sizes 5, 6 and 6.5 are sold out; the stored $1,439.00 ceiling was a size variant that is no longer listed. Both rows were corrected to the price the page shows, and the old values are kept in data/reverification.json so nothing is silently overwritten.",
+      "buyer_action": "Treat every price here as a snapshot. Open the product link on the row before you buy, and expect the other 35 rows to have moved too — they were not re-read in this pass.",
+      "sources": [
+        "https://www.ross-simons.com/products/571223",
+        "https://www.ross-simons.com/products/943668"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F32",
+      "title": "Ross-Simons publishes a gold weight on its product pages, but 13 of its 17 rows still have none",
+      "severity": "medium",
+      "type": "coverage gap",
+      "affected": "13 of 17 Ross-Simons rows",
+      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on item 571221 and \"Gold Weight 0.5 grams\" on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 5 of 43 rows carry a weight. Four Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 13 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
+      "buyer_action": "If a Ross-Simons row matters to you, open its page and read the Gold Weight line yourself — it is usually there. Send it to me and it can be verified into the table.",
+      "sources": [
+        "https://www.ross-simons.com/products/571221",
+        "https://www.ross-simons.com/products/571223"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F33",
+      "title": "Mejuri's return promise has an exclusion that matters for rings: engraving",
+      "severity": "medium",
+      "type": "returns",
+      "affected": "all Mejuri rows (mej-2mm, mej-db, mej-deb, mej-bde)",
+      "finding": "The Mejuri product page states \"We offer free 30-day returns & exchanges starting from the day the shipment is delivered or picked up in-store. Some exclusions apply\" and, separately, \"Engraved items are not eligible for return.\" Engraving is offered as an option in the same buy box as the ring, so a personalised ring can lose its return right at checkout.",
+      "buyer_action": "Do not add engraving until you have weighed and inspected the ring, or accept that the purchase becomes final.",
+      "sources": [
+        "https://mejuri.com/products/2mm-smooth-band",
+        "https://mejuri.com/faq/return-exchanges"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F34",
+      "title": "Seller-published weights are approximate — so every melt figure here inherits that error",
+      "severity": "low",
+      "type": "measurement precision",
+      "affected": "all rows with a published weight (5 of 43)",
+      "finding": "Every Ross-Simons page that shows a weight also states: \"All weights and measurements are approximate.\" A 0.5 g ring priced against gold at 129.56 USD/gram therefore has a melt value with a real tolerance around it, not an exact figure. The site labels those numbers as computed from the published weight and never presents them as an appraisal.",
+      "buyer_action": "Use the melt multiple as an order-of-magnitude check, not to the cent. Have the ring weighed on a jeweller's scale on arrival.",
+      "sources": [
+        "https://www.ross-simons.com/products/981367",
+        "https://www.ross-simons.com/products/571223"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F35",
+      "title": "Mejuri's solid white gold is rhodium-plated on the surface — yellow gold is not",
+      "severity": "low",
+      "type": "metal finish",
+      "affected": "Mejuri white-gold variants of the listed rows (the rows themselves are yellow gold)",
+      "finding": "The Mejuri materials panel says: \"14k solid white gold pieces are finished with rhodium plating, giving them their signature color along with added shine and durability.\" That is a surface finish on a solid 14k white gold ring, not a gold substitute — but a buyer filtering for \"no plating\" should know the white version carries a plating layer that wears over time and is re-polished by jewellers.",
+      "buyer_action": "If plating is a hard no, choose the yellow or rose variants; if you want white, ask the jeweller about re-rhodium cost and interval.",
+      "sources": [
+        "https://mejuri.com/products/2mm-smooth-band"
+      ],
+      "status": "needs review"
     }
   ]
 }
