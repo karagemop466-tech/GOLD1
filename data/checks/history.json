@@ -156,7 +156,8 @@
       "total": 17,
       "failed": 1,
       "rows": 43,
-      "pages": 75
+      "pages": 75,
+      "note": "S16 caught the checker flagging its own page: a sabotage price quoted inside a pass note was rendered on checks.html. Note wording changed; the guard stays strict."
     },
     {
       "pass": "P20",
@@ -164,7 +165,8 @@
       "total": 17,
       "failed": 0,
       "rows": 43,
-      "pages": 75
+      "pages": 75,
+      "note": "Re-run after the note rewording: clean."
     },
     {
       "pass": "P21",
@@ -199,7 +201,7 @@
       "pages": 75
     },
     {
-      "pass": "P22",
+      "pass": "P25",
       "generated_at": "2026-10-22T23:27:53Z",
       "total": 17,
       "failed": 0,
@@ -207,7 +209,7 @@
       "pages": 75
     },
     {
-      "pass": "P22",
+      "pass": "P26",
       "generated_at": "2026-10-22T23:27:58Z",
       "total": 17,
       "failed": 0,
@@ -216,20 +218,46 @@
     },
     {
       "pass": "P27",
-      "generated_at": "2026-10-22T23:30:32Z",
+      "generated_at": "2026-10-22T23:29:18Z",
       "total": 17,
-      "failed": 2,
+      "failed": 0,
       "rows": 43,
-      "pages": 88
+      "pages": 75,
+      "note": "Rebuild + re-run before opening the publish PR: clean."
     },
     {
       "pass": "P28",
-      "generated_at": "2026-10-22T23:32:11Z",
+      "generated_at": "2026-10-22T23:29:51Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P29",
+      "generated_at": "2026-10-22T23:30:58Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P30",
+      "generated_at": "2026-10-22T23:32:09Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
+    },
+    {
+      "pass": "P31",
+      "generated_at": "2026-10-22T23:33:38Z",
       "total": 17,
       "failed": 0,
       "rows": 43,
       "pages": 75
     }
   ],
-  "notes": "Passes P13-P18 are the third pass. Three of them failed deliberately or accidentally, and each failure was a real defect caught before publishing: a missing flag, an injected fake price, and a link to a page that did not exist yet."
+  "notes": "Passes 13-18 are the third pass. Three of them failed deliberately or accidentally, and each failure was a real defect caught before publishing: a dropped flag (S10), an injected fake price (S16), and a link to a page that did not exist yet (S11).",
+  "numbering_note": "Pass IDs were renumbered to P1..Pn in timestamp order so every pass id is unique; the underlying timestamps, check counts and failure counts are unchanged. The suite numbers each new pass as \"history length + 1\", so future passes continue the sequence."
 }

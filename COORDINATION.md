@@ -43,7 +43,7 @@ scope, one branch per session, no cross-session edits — were kept.
 | T10 | **Third pass**: recover seller-published metal weight (grams) where the retailer publishes it; recompute melt checks | **done** | sess-bc088451 | arena/bc088451-gold1 | `data/rings.json`, `data/gold-price.json` | 2026-10-22 |
 | T11 | **Third pass**: extend the hallucination audit (weight traceability, melt recomputation, stale-data, no-invented-numbers) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
 | T12 | **Third pass**: site update (data-age banner, melt/value columns, weight-coverage page content) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
-| T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **in progress** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
+| T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
 | T14 | **Fourth pass**: independent official-source evidence, seller/policy review, 13-page audit dashboard, automated tests | **done** | arena/c662efda-gold1 | arena/c662efda-gold1 | `research/**`, `site/**` source, `scripts/*.js`, `tests/**`, `package*.json` | 2026-10-22 |
 | T15 | **Fourth-pass integration**: preserve the root publisher, publish synchronized evidence under reserved `site/`, add a generated root cross-link, combined audit, PR and Pages verification | **in progress** | arena/c662efda-gold1 | arena/c662efda-gold1 | `site/data/**`, `README.md`, `scripts/build.mjs` cross-link only, `scripts/verify.mjs` generated-output exclusion, generated root HTML, `.gitignore`, §8 below | 2026-10-22 |
 
@@ -200,6 +200,17 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 
 
+### Third pass (sess-bc088451)
+
+- **Pull request:** [#10](https://github.com/karagemop466-tech/GOLD1/pull/10) — `arena/bc088451-gold1` → `main`
+- **Merge result:** MERGED at 2026-10-22T23:28:17Z, merge commit `f94e2d2`
+- **Pages deploy:** build `f94e2d2` reported `built` (checked via `gh api repos/.../pages/builds/latest`); `https://karagemop466-tech.github.io/GOLD1/weights.html` verified live after deploy
+- **Post-deploy verification:** every root page and a sample ring page returned HTTP 200 from the built tree before merge (12/12). After deploy, `weights.html` renders all 5 weighted rows with the computed melt values, `checks.html` shows the full 17-group table plus the re-verification ledger, and `index.html` shows 43 listings / 7 retailers / 34 flags / 5-of-43 weights
+- **Follow-up PR:** [#12](https://github.com/karagemop466-tech/GOLD1/pull/12) — MERGED, merge commit `fbfebfe`, Pages `built`. It published one consistent pass id across `index.html`, `checks.html` and `data/checks/latest.json`, and renumbered the pass history so every id is unique (timestamps, counts and failures unchanged)
+- **Concurrent-merge note:** another session's PR #1 landed on `main` while this branch was open. It touched only `COORDINATION.md` (+8 lines); the branch was rebased onto it and re-verified (17/17) before pushing. No work was discarded and no conflict remained.
+
+### Earlier passes
+
 - **Pull request:** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
 - **Merge result:** **merged** 2026-10-22T23:21:14Z, merge commit `ef06225`, state `MERGED`. Two earlier merge attempts were rejected as `CONFLICTING` because concurrent sessions pushed to `main` (PRs #7 and #8); each was resolved by merging `origin/main` with `-s ours` and restoring the other session's artefacts, never by overwriting them.
 - **Third pass absorbed:** `arena/c2bbe753-gold1` (PR #7, #8) — 14 extra rows archived as leads, see Incident 2 and F30
@@ -208,6 +219,8 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).
 
+**State after the third pass (live):** 43 listings · 7 retailers · 6 categories · **34 flags** · **5/43 rows with a published weight** · **17/17 check groups passing, 0 failures** (pass P22) · 75 generated pages. Open items a human may want to change: 38 rows still have no published weight, 35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
+
 
 ### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
 - The session's initial local clone was behind concurrent merges. It found the current integration board owned by `sess-d8f0544e` and logged the above source-backed request instead of editing the shared root site/data owned by that active integration task.
@@ -215,17 +228,16 @@ Combined state at integration: **43 listings · 7 retailers · 6 categories · 2
 - Sources were opened directly: FTC gold-jewelry and online-shopping consumer guidance; GIA 2024 electroformed-gold lab note; NIST precious-metals conversion chart; GIA gold-content methods article; U.S. Mint pricing information; and the Blue Nile first-party product page.
 - Re-ran the active integration's canonical checks: `node scripts/verify.mjs` passed **P12, 13/13 groups, 2,404 assertions, 43 rows, 74 pages**; `node scripts/build.mjs` completed. It regenerated shared root pages/check snapshots locally; those generated changes were restored and are not part of this request-only PR, to respect the active integration scope.
 
-
 ---
 
 ## 8. Fourth-pass official-source review and integration (`arena/c662efda-gold1`)
 
-- **Scope claim:** T14 is complete; T15 is claimed for combined integration and publication. Existing T1–T13 records and the active third-session publication record are preserved unchanged.
+- **Scope claim:** T14 is complete; T15 is claimed for combined integration and publication. Existing T1–T13 records and the third-session publication records are preserved unchanged.
 - **Evidence set:** 13 official-product rows with direct links and 2026-10-22 retrieval dates, three seller-policy/reputation records, ten irregularity groups, nine verification gates, and a named Kitco snapshot. Six rows have seller-stated solid-gold wording and listed weights; seven leave those fields blank. **All 13 remain flagged; zero are purchase-ready.** This set remains separate from the root 43-row dataset and is not counted as unique or auto-migrated.
 - **Local audits before integration:** exact evidence/price/source checks, 257 static references, CSP/DOM/URL/secret/supply-chain checks, recommended HTML validation, 13-page DOM interaction tests, clean build, and source/output SHA-256 parity all passed. `npm audit --audit-level=high` reported zero vulnerabilities. Combined audits against the merged tree are still required.
 - **Publisher decision:** the existing GitHub Pages configuration remains `main` `/` with the root `.nojekyll`. The fourth-pass dashboard uses the reserved `site/` directory and will be available below that path. Its competing Actions Pages workflow was removed before integration; the existing collector workflow and all earlier dashboards/data/archives remain present.
 - **History:** this session's pre-integration coordination board is preserved at `data/archive/session-c662efda/COORDINATION.md`. No earlier session file is deleted or replaced by the fourth-pass dashboard.
-- **Combined integration audit:** added only a generated `Source audit` navigation link to the existing root pages and exact copies of the five fourth-pass datasets under `site/data/`. The root 43-row dataset, all 75 root pages, archives, collector, and existing Pages publisher remain present. `npm test` passed every fourth-pass gate; `node scripts/verify.mjs` pass **P28** passed **17/17 groups, 3,213 assertions, 43 rows, 75 root pages** with `dist/` present. The root builder then regenerated `checks.html` from P28.
-- **Audit correction, not suppression:** P27 recorded two failures because the inherited walker scanned ignored `dist/calculator.html` under the root data schema. The walker now excludes only `dist/`; those bytes are still checked by the fourth-pass HTML/runtime/link/security/build-parity suites. P27 remains in the check history.
+- **Combined integration audit:** added only a generated `Source audit` navigation link to the existing root pages and exact copies of the five fourth-pass datasets under `site/data/`. The root 43-row dataset, all 75 root pages, archives, collector, and existing Pages publisher remain present. `npm test` passed every fourth-pass gate; Branch-local **P28** passed **17/17 groups, 3,213 assertions, 43 rows, 75 root pages** with `dist/` present before the latest main merge. That branch report is archived; the canonical main history through P30 is preserved. After merging `origin/main` at `cd21db3`, canonical **P31** passed **17/17 groups, 3,217 assertions, 43 rows, 75 root pages** with `dist/` present, and the root builder regenerated `checks.html` from P31.
+- **Audit correction, not suppression:** P27 recorded two failures because the inherited walker scanned ignored `dist/calculator.html` under the root data schema. The walker now excludes only `dist/`; those bytes are still checked by the fourth-pass HTML/runtime/link/security/build-parity suites. The P27/P28 branch reports remain in `data/archive/session-c662efda/checks/`; canonical main pass numbers are not reused.
 - **HTTP smoke test:** the combined preview returned 200 for the root dashboard, nested root detail page, `site/`, catalog, flagged page, and calculator. Root and nested navigation reach `site/`; all five HTTP-served subsection JSON files matched the audited source SHA-256 hashes. Root README now distinguishes the two datasets and avoids treating XRF alone as proof of every construction detail.
 - **Publication:** T15 remains in progress pending the final PR, merge, legacy Pages deployment, live-URL verification, and final record below.
