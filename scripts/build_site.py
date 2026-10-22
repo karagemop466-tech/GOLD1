@@ -464,7 +464,7 @@ fake "gold" rings often cost suspiciously less.</p>
       <option value="0.4167">10K — 41.7%</option>
       <option value="0.5833" selected>14K — 58.3%</option>
       <option value="0.7500">18K — 75.0%</option>
-      <option value="0.9167">22K — 91.6%</option>
+      <option value="0.916">22K — 91.6% (916 fineness)</option>
       <option value="0.9990">24K — 99.9%</option>
       <option value="custom">custom…</option>
     </select>
@@ -516,7 +516,7 @@ function calc() {{
     '<div><span>Spot per gram (derived)</span><strong>' + fmt(perGram) + '</strong></div>' +
     '<div class="big"><span>Estimated metal (melt) value</span><strong>' + fmt(value) + '</strong></div>';
   var kt = '';
-  var karats = [[10,0.4167],[14,0.5833],[18,0.7500],[22,0.9167],[24,0.9990]];
+  var karats = [[10,0.4167],[14,0.5833],[18,0.7500],[22,0.916],[24,0.999]];
   kt += '<table><thead><tr><th>Karat</th><th>Purity</th><th>USD / gram (derived)</th><th>USD / dwt (derived)</th><th>USD / ozt (derived)</th></tr></thead><tbody>';
   for (var i = 0; i < karats.length; i++) {{
     kt += '<tr><td>' + karats[i][0] + 'K</td><td>' + (karats[i][1]*100).toFixed(1) + '%</td><td>' + fmt(perGram*karats[i][1]) + '</td><td>' + fmt(perGram*karats[i][1]*1.55517384) + '</td><td>' + fmt(perGram*karats[i][1]*OZT) + '</td></tr>';
