@@ -221,6 +221,14 @@
       "failed": 0,
       "rows": 43,
       "pages": 75
+    },
+    {
+      "pass": "P28",
+      "generated_at": "2026-10-22T23:31:56Z",
+      "total": 17,
+      "failed": 0,
+      "rows": 43,
+      "pages": 75
     }
   ],
   "notes": "Passes P13-P18 are the third pass. Three of them failed deliberately or accidentally, and each failure was a real defect caught before publishing: a missing flag, an injected fake price, and a link to a page that did not exist yet."
