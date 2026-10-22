@@ -23,8 +23,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-OUT = ROOT / "docs"
+OUT = ROOT  # GitHub Pages serves this repository from the root of main
 TODAY = "2026-10-22"
+
+# Only these paths are generated. Everything else in the repo is authored and must never
+# be deleted by a build. (The root also holds README.md, data/, tools/ and site_assets/.)
+GENERATED_PAGES = [
+    "index.html", "solitaire.html", "bands.html", "retailers.html",
+    "verification.html", "flagged.html", "calculator.html",
+]
 
 APPROVED_EXTERNAL_HOSTS = {
     "www.bluenile.com", "bluenile.com", "mejuri.com", "www.mejuri.com",
@@ -698,10 +705,15 @@ def build_calculator() -> str:
 
 # --------------------------------------------------------------------------- write + link check
 def write_site() -> None:
-    if OUT.exists():
-        shutil.rmtree(OUT)
-    (OUT / "assets").mkdir(parents=True)
-    (OUT / "data").mkdir(parents=True)
+    # Remove only previously generated artefacts — never the authored tree.
+    for name in GENERATED_PAGES + [".nojekyll"]:
+        target = OUT / name
+        if target.exists():
+            target.unlink()
+    assets = OUT / "assets"
+    if assets.is_dir():
+        shutil.rmtree(assets)
+    assets.mkdir(parents=True, exist_ok=True)
 
     files = {
         "index.html": build_index(),
@@ -715,18 +727,14 @@ def write_site() -> None:
     for name, content in files.items():
         (OUT / name).write_text(content)
 
-    for name in ("rings.json", "rings.csv", "sources.json", "spot-gold.json",
-                 "verification-report.json"):
-        shutil.copy(DATA / name, OUT / "data" / name)
-
-    # GitHub Pages: .nojekyll so folders starting with _ and raw data are served as-is
+    # GitHub Pages: .nojekyll so the site is served exactly as generated
     (OUT / ".nojekyll").write_text("")
 
 
 def link_check() -> int:
     broken: list[str] = []
     external: set[str] = set()
-    html_files = sorted(OUT.glob("*.html"))
+    html_files = sorted(OUT / name for name in GENERATED_PAGES)
     anchors: dict[str, set[str]] = {}
     for path in html_files:
         text = path.read_text()
@@ -772,17 +780,14 @@ def link_check() -> int:
 
 def main() -> int:
     asset_dir = ROOT / "site_assets"
-    if not (asset_dir / "style.css").exists():
-        print("missing site_assets/style.css")
+    missing = [n for n in ("style.css", "app.js", "calculator.js") if not (asset_dir / n).exists()]
+    if missing:
+        print("missing site assets:", ", ".join(missing))
         return 1
     write_site()
     for name in ("style.css", "app.js", "calculator.js"):
         shutil.copy(asset_dir / name, OUT / "assets" / name)
-    for name, content in {
-        "index.html": (OUT / "index.html").read_text(),
-    }.items():
-        pass
-    print(f"wrote {len(list(OUT.glob('*.html')))} pages to docs/")
+    print(f"wrote {len(GENERATED_PAGES)} pages to the repo root (GitHub Pages source: main / )")
     return link_check()
 
 

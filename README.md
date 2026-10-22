@@ -1,6 +1,6 @@
 # GOLD1 — Gold engagement ring research
 
-**Live site: <https://karagemop466-tech.github.io/GOLD1/>** (published from `docs/`)
+**Live site: <https://karagemop466-tech.github.io/GOLD1/>** — published by GitHub Pages from the root of `main`
 
 > ## No hallucinations
 > Every price, purity claim and policy statement in this repository was read from the
@@ -62,9 +62,10 @@ data/
   verification-report.json   machine-readable audit result (assertions, errors, warnings)
 tools/
   verify_data.py             six-pass audit; exits 1 on any unsupported number
-  build_site.py              generates docs/ from data/ and runs the link check
-site_assets/                 hand-written CSS/JS used by the generated site
-docs/                        the published GitHub Pages site (generated — do not hand-edit)
+  build_site.py              generates the site pages and runs the link check
+site_assets/                 hand-written CSS/JS copied into assets/ by the build
+assets/                      generated CSS/JS (do not hand-edit)
+*.html (repo root)           generated pages served by GitHub Pages — do not hand-edit
 COORDINATION.md              shared task board for parallel agent sessions
 ```
 
@@ -84,10 +85,14 @@ COORDINATION.md              shared task board for parallel agent sessions
 
 ```bash
 python3 tools/verify_data.py   # audit the dataset (nonzero exit on any error)
-python3 tools/build_site.py    # regenerate docs/ and run the internal link check
+python3 tools/build_site.py    # regenerate the pages and run the internal link check
 ```
 
 Both scripts are standard-library Python; there is no build dependency to install.
+
+The build writes the site to the repository root because GitHub Pages is configured to serve
+`main` from `/`. It deletes and rewrites only the seven generated pages plus `assets/` — the
+authored tree (`data/`, `tools/`, `site_assets/`, docs) is never touched by a build.
 
 ## How a row earns its place
 
