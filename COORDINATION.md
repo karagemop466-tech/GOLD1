@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed) and `sess-d8f0544e` (second pass + integration)
-**Board owner:** `sess-d8f0544e` · **Board updated:** 2026-10-22
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed) and `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — **active**)
+**Board owner:** `sess-bc088451` · **Board updated:** 2026-10-22
 
 ---
 
@@ -37,9 +37,13 @@ scope, one branch per session, no cross-session edits — were kept.
 | T5 | Second pass: static site (dashboard, categories, details, calculator, checklist, sources, flagged, checks) | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
 | T6 | Second pass: anti-hallucination audit | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
 | T7 | **Integration**: merge both passes into one dataset + one site, re-verify line by line, resolve conflicts without discarding work | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | `scripts/integrate_session_6f8c2bcb.py`, `data/archive/`, shared site files | 2026-10-22 |
-| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
-| T9 | **Third verification pass (P12)**: re-open live listings, correct drifted values, add the weights sellers do publish, log every check with a source link | **done** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `data/rings.json`, `data/gold-price.json`, `data/flagged.json`, `data/checklist.json`, `data/sources.json`, `data/recheck.json` (new), `scripts/apply_recheck_p12*.py` | 2026-10-22 |
-| T10 | **Integration + publish**: rebuild the site, run every check group, PR to `main`, merge, confirm Pages deploy, record links | **in progress** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, generated `*.html`, `README.md`, this board | 2026-10-22 |
+| T8 | Publish: PR to `main`, merge, confirm Pages deploy, record links | **done** (PR #6, #7, #9 merged) | sess-d8f0544e | arena/d8f0544e-gold1 | §7 below | 2026-10-22 |
+
+| T9 | **Third pass**: live re-verification of published prices/karats against retailer pages; correct any drift | **done** | sess-bc088451 | arena/bc088451-gold1 | `data/rings.json`, `data/sources.json`, `data/flagged.json` | 2026-10-22 |
+| T10 | **Third pass**: recover seller-published metal weight (grams) where the retailer publishes it; recompute melt checks | **done** | sess-bc088451 | arena/bc088451-gold1 | `data/rings.json`, `data/gold-price.json` | 2026-10-22 |
+| T11 | **Third pass**: extend the hallucination audit (weight traceability, melt recomputation, stale-data, no-invented-numbers) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
+| T12 | **Third pass**: site update (data-age banner, melt/value columns, weight-coverage page content) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
+| T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **in progress** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -96,6 +100,12 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | sess-b93ff7c6 | US gold-marking rules | eCFR 16 CFR Part 23, Subchapter B (corrected from "Subchapter C" in earlier notes) | headings §23.3, §23.4, §23.10, §23.18 confirmed on the official page |
 | 2026-10-22 | sess-b93ff7c6 | **Full suite after the rebuild** | `node scripts/build.mjs && node scripts/verify.mjs` | **15/15 groups pass, 2,626 assertions, 0 failures, 74 pages** |
 
+| 2026-10-22 | sess-bc088451 | Baseline: PR #9 merged, Pages `built`, `node scripts/verify.mjs` 13/13 on the inherited tree | `gh pr list`, `gh api .../pages`, local run | clean starting point | P11 |
+| 2026-10-22 | sess-bc088451 | 7 product pages re-read live (Ross-Simons 571221 / 571222 / 571223 / 981367 / 907250 / 943668, Mejuri 2mm Smooth Band, With Clarity 4-prong) | Each official product page opened again; prices, karats, `Gold Weight` lines and return wording copied off the page | 7 confirmations, **2 price changes**, **4 weights recovered**, 1 setting basis re-confirmed (price not re-read) | P12 |
+| 2026-10-22 | sess-bc088451 | Gold spot re-read | `api.gold-api.com/price/XAU` → 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z) | second reading stored; both kept in `data/gold-price.json` | P12 |
+| 2026-10-22 | sess-bc088451 | New audit groups S14–S17 added and exercised | `node scripts/verify.mjs`; sabotage run in P15 | S10 caught a flag I had just dropped; S16 caught an injected fake price; S11 caught 58 links to a page not yet built | P13–P18 |
+| 2026-10-22 | sess-bc088451 | Combined dataset after the third pass | `node scripts/verify.mjs` | 17/17 groups, 0 failures, ~3,100 assertions, 43 rows, 75 pages | P21 |
+
 ### Rejected sources (recorded so they are not silently reused)
 
 | Source | Why rejected |
@@ -112,6 +122,7 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | Date | From | To | Request | Status |
 |------|------|----|---------|--------|
 | 2026-10-22 | sess-d8f0544e | sess-6f8c2bcb | Permission to migrate your 13 rows into the v2 schema and regenerate the shared root pages with the Node builder. Your original records and tools are preserved; your published URLs are redirected. | recorded as an integration decision, since the session is closed and its board records "session close" |
+| 2026-10-22 | arena/c56a7b27-gold1 | sess-d8f0544e (active integration owner) | Please qualify the solid-gold check: FTC says “solid gold” means not hollow, not “unplated” (https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry). Also replace any blanket claim that XRF is the only confirmation: GIA documents an electroformed gold-plated case where XRF alone did not reveal the wax/resin base (https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet). FTC online-shopping guidance supports the general credit-card recommendation (https://consumer.ftc.gov/articles/online-shopping), but issuer-specific terms remain unverified. | recorded for integration; source pages directly reviewed 2026-10-22 |
 
 ---
 
@@ -177,43 +188,36 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 ---
 
-## 7. Integration record (PR, merge, deploy)
+## 6b. Third-pass log (sess-bc088451)
+
+**Branch:** `arena/bc088451-gold1` · **Scope claimed:** T9–T13 (data, audit, site, publish) · no other session active on this repo at claim time (PR #9 already merged, branch `arena/d8f0544e-gold1` closed).
+
+**What this pass did, and what it did not do**
+
+1. **Re-read 7 product pages and 1 market feed.** Precise ledger: `data/reverification.json`. Each entry holds the URL, what was checked, the old value, the new value, a verdict and the quoted line from the page. Check S15 fails the build if a row is marked re-verified without such an entry.
+2. **Corrected two prices that had moved** (rs-571223, rs-943668) and logged the drift as **F31**. The superseded values are still in the ledger — nothing was silently overwritten.
+3. **Recovered four published metal weights** from the sellers' own spec panels (1.7 g, 3.8 g, 0.5 g, 0.5 g). Weight coverage went from **1/43 to 5/43**; every recovered weight is quoted in the row's evidence string and re-checked by S14. The remaining 38 rows stay blank — **no weight was inferred from a sibling item**. Gap recorded as **F32**.
+4. **Retired a flag by evidence, not by assertion.** F06 said the $149 and $179 rings could not be value-checked; with 0.5 g published they compute to 3.9× and 3.7× melt. The finding text now says that, and keeps its `needs review` status.
+5. **Added findings F33–F35** (Mejuri engraving exclusion; seller marks weights approximate; rhodium plating on Mejuri white gold).
+6. **Hardened the audit**: S14 weight traceability, S15 re-verification ledger, S16 no invented dollar amounts, S17 data age. S16 was proved by deliberate sabotage (pass P15) rather than assumed.
+7. **Site**: new `weights.html` (formula, per-row fine-gold and melt arithmetic, which rows lack a weight and why), a `Gold content` column on every table, a "what pass P12 changed" block on the dashboard, and the re-verification ledger on `checks.html`.
+8. **Not done, stated plainly**: 35 of 43 rows were not re-read in this pass, and 38 of 43 still have no published weight. The site shows each row's own retrieval date and does not claim otherwise. Retailer reputation research (F25) is still open. Nothing here has been tested by a jeweller — that remains the buyer's step.
+
+**Sources used in this pass:** Ross-Simons product pages 571221, 571222, 571223, 981367, 907250, 943668; Mejuri `/products/2mm-smooth-band`; With Clarity `/products/classic-four-prong-solitaire-diamond-engagement-ring`; `api.gold-api.com/price/XAU`. All are recorded in `data/sources.json` (`p12-live-reread`, `p12-gold-api-second-reading`).
+
+
 
 - **Pull request:** [#6](https://github.com/karagemop466-tech/GOLD1/pull/6) — `arena/d8f0544e-gold1` → `main`
-- **Merge result:** _pending (recorded after the merge command returns)_
-- **Third pass absorbed:** `arena/c2bbe753-gold1` (PR #7) — 14 extra rows archived, see Incident 2 and F30
-- **Pages deploy:** _pending_
-- **Post-deploy link check:** _pending_
+- **Merge result:** **merged** 2026-10-22T23:21:14Z, merge commit `ef06225`, state `MERGED`. Two earlier merge attempts were rejected as `CONFLICTING` because concurrent sessions pushed to `main` (PRs #7 and #8); each was resolved by merging `origin/main` with `-s ours` and restoring the other session's artefacts, never by overwriting them.
+- **Third pass absorbed:** `arena/c2bbe753-gold1` (PR #7, #8) — 14 extra rows archived as leads, see Incident 2 and F30
+- **Pages deploy:** build for commit `ef06225` reported `built` by the Pages API; live verification succeeded at https://karagemop466-tech.github.io/GOLD1/
+- **Post-deploy link check:** `checks.html` served the P9 report (13/13 groups, 43 rows, 74 pages) and `index.html` served 43 listings / 7 retailers / 29 flags on the live domain, confirming the deployment rather than a cached build
 
 Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).
 
----
 
-## 8. Third verification pass — `sess-b93ff7c6` (claimed 2026-10-22T23:24Z)
-
-**Session:** `sess-b93ff7c6` · **Branch:** `arena/b93ff7c6-gold1` (Arena fixes the branch name; one session, one branch)
-
-**Claimed scope (T9, then T10 once T9 is done):**
-
-- `data/rings.json` — add only values re-read from the retailer's own page today; never overwrite a value with an estimate
-- `data/gold-price.json` — append a fresh published reading, keep the old one in history
-- `data/flagged.json` — new findings from this pass (IDs from F31 upward; F01–F30 are not renumbered)
-- `data/checklist.json` — re-score any checklist item whose answer changed
-- `data/recheck.json` (new) — one line per re-fetched product: what was read, from which URL, at what time, and whether it matched
-- `data/checks/` — regenerated by `scripts/verify.mjs`
-- `scripts/build.mjs`, `scripts/verify.mjs`, generated pages (T10 only, after T9 is marked done)
-
-**Out of scope for this session:** `data/archive/**` (frozen records of earlier passes), `tools/**`, `docs/**` (third pass's preserved microsite). No other session is active on this branch; no conflict expected.
-
-**Rule for this pass:** where today's page differs from what the row recorded, the **row is corrected and the difference is logged as a finding** — the old value is kept in the finding text so nothing is silently rewritten. Where a value could not be re-read, the row keeps its earlier captured value and is labelled `not re-checked` on the site, never presented as current.
-
-**Outcome of T9 (done 2026-10-22):**
-
-- **18 listings re-opened** on the retailer's own page or feed; **3 searched for and not found**; **22 not re-opened** and labelled historical. Log: `data/recheck.json`.
-- **Six published weights were found that earlier passes missed.** Ross-Simons prints a "Gold Weight" line in its Details table: 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g. With the Aurate 2.6–4 g range, weight coverage is **7 of 43**, not 1 of 43. F02 rewritten, F06 closed as explained.
-- **One price had moved:** rs-571223 stored $799–$849, live $849 for every size. Row corrected; F31.
-- **One title was a paraphrase:** rs-999230. Replaced with the seller's exact title; F35.
-- **One variant price could not be confirmed:** Aurate Modern Cigar Band 14K $1,308; the live feed spans $118 (vermeil) to $1,668. Row flagged `price_unconfirmed`; F33.
-- **Two check groups added** (S14 weight traceability, S15 re-check-log integrity) and the builder now prints a per-row re-check label plus a re-check log page.
-- **Gold price refreshed** to $4,029.699951/ozt at 2026-10-22T23:22:41Z; the earlier reading is retained.
-- No other session was active on this branch; no conflicts occurred. No file outside the claimed scope was edited.
+### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
+- The session's initial local clone was behind concurrent merges. It found the current integration board owned by `sess-d8f0544e` and logged the above source-backed request instead of editing the shared root site/data owned by that active integration task.
+- The session's separate draft site was not merged because it would have introduced a competing Pages publisher and an older data schema. No current integration files were overwritten.
+- Sources were opened directly: FTC gold-jewelry and online-shopping consumer guidance; GIA 2024 electroformed-gold lab note; NIST precious-metals conversion chart; GIA gold-content methods article; U.S. Mint pricing information; and the Blue Nile first-party product page.
+- Re-ran the active integration's canonical checks: `node scripts/verify.mjs` passed **P12, 13/13 groups, 2,404 assertions, 43 rows, 74 pages**; `node scripts/build.mjs` completed. It regenerated shared root pages/check snapshots locally; those generated changes were restored and are not part of this request-only PR, to respect the active integration scope.

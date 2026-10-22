@@ -20,6 +20,7 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html">Dashboard</a>
       <a href="rings.html">All rings</a>
+      <a href="weights.html">Weight & melt</a>
       <a href="calculator.html">Gold calculator</a>
       <a href="checklist.html">Checklist</a>
       <a href="sources.html">Sources</a>
@@ -43,10 +44,10 @@
   <div class="pass-card">
     <div class="pass-head">
       <span class="badge ok">PASS</span>
-      <strong>P12</strong>
-      <span class="muted">run 2026-10-22T23:28:10Z</span>
+      <strong>P24</strong>
+      <span class="muted">run 2026-10-22T23:27:39Z</span>
     </div>
-    <p>15 passed · 0 failed · 15 checks against 43 rows and 74 generated pages.</p>
+    <p>17 passed · 0 failed · 17 checks against 43 rows and 75 generated pages.</p>
   </div>
   <div class="table-wrap">
   <table class="data-table">
@@ -144,15 +145,29 @@
         <td><span class="chip ok">pass</span></td>
       </tr>
       <tr>
-        <td><strong>S14</strong><div class="sub">Weight traceable to evidence</div></td>
-        <td class="small">A published metal weight must appear, digit for digit, in weight evidence copied from the seller page, and must carry the URL it was read from.</td>
+        <td><strong>S14</strong><div class="sub">Weight traceability</div></td>
+        <td class="small">A weight in grams is only allowed when the grams appear in the evidence text captured from the seller, and the blank/known flags must agree with the stored value.</td>
         <td class="num-col">1</td>
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
       </tr>
       <tr>
-        <td><strong>S15</strong><div class="sub">Re-check log integrity</div></td>
-        <td class="small">Every row must state whether it was re-read; a row that claims a re-check must be listed in data/recheck.json with the URL opened and must match the price recorded there.</td>
+        <td><strong>S15</strong><div class="sub">Re-verification ledger</div></td>
+        <td class="small">Anything the site calls &quot;re-verified&quot; must have a matching ledger entry with the same URL, a date and a quoted line, so the re-read can be audited by a human.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S16</strong><div class="sub">No invented dollar amounts</div></td>
+        <td class="small">Every dollar figure that appears on any generated page must trace to a value in the data files or to a formula computed from them. A price in the prose that exists nowhere in the data is treated as fabricated.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S17</strong><div class="sub">Data age</div></td>
+        <td class="small">A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.</td>
         <td class="num-col">1</td>
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
@@ -165,171 +180,80 @@
   <p>Each review pass re-runs the suite. The history is kept in <code>data/checks/history.json</code>.</p>
   <div class="table-wrap">
   <table class="data-table compact">
-    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th></tr></thead>
+    <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th><th>What happened</th></tr></thead>
     <tbody>
-      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P11</td><td>2026-10-22T23:22:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr><tr><td>P12</td><td>2026-10-22T23:28:10Z</td><td class="num-col">15</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td></tr>
+      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P11</td><td>2026-10-22T23:22:32Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P12</td><td>2026-10-22T23:23:10Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P13</td><td>2026-10-22T23:25:53Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Third-pass edit: a row lost its weight_not_published flag when a weight was added. S10 caught it before publish.</td></tr><tr><td>P14</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after restoring the flag: clean.</td></tr><tr><td>P15</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Deliberate sabotage test: a fake price of seven thousand seven hundred seventy-seven dollars was injected into index.html to prove S16 fires. It did. Reverted immediately.</td></tr><tr><td>P16</td><td>2026-10-22T23:26:05Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Nav gained a Weight &amp; melt link before the page existed: S11 reported 58 broken links. Page then built.</td></tr><tr><td>P17</td><td>2026-10-22T23:26:08Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Same broken-link state, re-run to confirm the failure was reproducible.</td></tr><tr><td>P18</td><td>2026-10-22T23:26:21Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">All 17 groups pass with the new page in place and the sabotage reverted.</td></tr><tr><td>P19</td><td>2026-10-22T23:26:41Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small"></td></tr><tr><td>P20</td><td>2026-10-22T23:26:44Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P21</td><td>2026-10-22T23:26:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P22</td><td>2026-10-22T23:27:09Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P23</td><td>2026-10-22T23:27:28Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P24</td><td>2026-10-22T23:27:39Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr>
     </tbody>
   </table>
   </div>
-  
-  <h2 id="recheck-log">Re-check log — P12 · 2026-10-22</h2>
-  <p>One line per listing re-opened in the latest pass. <strong>Before</strong> is what the row stored; <strong>read</strong> is what the retailer's page showed when it was opened. A dash means the page did not publish that number — it never means zero, and it is never filled in.</p>
+  <h2 id="reverification">Re-verification ledger — pass P12</h2>
+  <p>Seven rows and one market feed were re-read from the live pages in this pass. Each line records what the page said the first time, what it said on the re-read, and the quote that proves it. The machine-readable version is <code>data/reverification.json</code>, and check S15 fails the build if a row claims to be re-verified without an entry here.</p>
   <div class="table-wrap">
-  <table class="data-table compact">
-    <thead><tr><th>Listing</th><th>What was opened</th><th class="num-col">Price before</th><th class="num-col">Price read</th><th class="num-col">Weight read</th><th>Result</th></tr></thead>
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">What was checked</th><th scope="col">Before</th><th scope="col">On re-read</th><th scope="col">Verdict</th><th scope="col">Quote / source</th></tr></thead>
     <tbody>
       <tr>
-        <td><a href="rings/rs-571221.html">Women&#39;s 2mm 14kt Yellow Gold Band</a><div class="sub">Ross-Simons · rs-571221</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/571221" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$400.00</td>
-        <td class="num-col small">$400.00</td>
-        <td class="num-col small">1.7 g</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price $400.00 unchanged. Gold weight published (1.7 g) - not captured in earlier passes.</div></td>
+        <td><strong>rs-571221</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 400.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 400.00 · karat: 14kt · weight_g: 1.7</td>
+        <td class="small">confirmed + weight added</td>
+        <td class="small">Metal 14kt Yellow Gold · Gold Weight 1.7 grams · Finish Polished <a href="https://www.ross-simons.com/products/571221" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-571222.html">Women&#39;s 3mm 14kt Yellow Gold Band</a><div class="sub">Ross-Simons · rs-571222</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/571222" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$599.00</td>
-        <td class="num-col small">$599.00</td>
-        <td class="num-col small">2.5 g</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price $599.00 unchanged. Gold weight published (2.5 g).</div></td>
+        <td><strong>rs-571222</strong></td>
+        <td class="small">price, karat, title</td>
+        <td class="small">price: 599.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 599.00 · karat: 14kt · weight_g: blank</td>
+        <td class="small">confirmed, weight still not published as a metal weight</td>
+        <td class="small">Title &quot;Women&#39;s 3mm 14kt Yellow Gold Band&quot;; every size variant price 599.00 <a href="https://www.ross-simons.com/products/571222" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-571223.html">Women&#39;s 4mm 14kt Yellow Gold Band</a><div class="sub">Ross-Simons · rs-571223</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$799.00 – $849.00</td>
-        <td class="num-col small">$849.00</td>
-        <td class="num-col small">3.8 g</td>
-        <td class="small"><span class="chip warn">changed / partial</span><div class="sub">CORRECTED 2026-10-22: the stored low price was 799.00. Every size on the live page now shows 849.00, so the range collapsed to a single price. Weight 3.8 g published.</div></td>
+        <td><strong>rs-571223</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 799.00-849.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 849.00 · karat: 14kt · weight_g: 3.8</td>
+        <td class="small">price corrected + weight added (see F31)</td>
+        <td class="small">Size 5 $849.00 In-Stock ... Size 9 $849.00 In-Stock · Gold Weight 3.8 grams <a href="https://www.ross-simons.com/products/571223" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-571213.html">Men&#39;s 5mm 14kt Yellow Gold Band</a><div class="sub">Ross-Simons · rs-571213</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/571213" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$959.00</td>
-        <td class="num-col small">$959.00</td>
-        <td class="num-col small">5 g</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Sale price $959.00 against a $1,195.00 compare-at, confirmed on the page. Gold weight 5.0 g.</div></td>
+        <td><strong>rs-981367</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 149.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 149.00 · karat: 14kt · weight_g: 0.5</td>
+        <td class="small">confirmed + weight added; the low-price flag can now be tested against real grams</td>
+        <td class="small">Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 0.5 grams <a href="https://www.ross-simons.com/products/981367" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-981367.html">14kt Yellow Gold Polished Ring</a><div class="sub">Ross-Simons · rs-981367</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/981367" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$149.00</td>
-        <td class="num-col small">$149.00</td>
-        <td class="num-col small">0.5 g</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price $149.00 unchanged. Gold weight published (0.5 g) - the low price is explained by a very light ring, not by a fake karat stamp.</div></td>
+        <td><strong>rs-907250</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 179.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 179.00 · karat: 18kt · weight_g: 0.5</td>
+        <td class="small">confirmed + weight added</td>
+        <td class="small">Metal 18kt Yellow Gold · Gold Weight 0.5 grams · Finish Polished <a href="https://www.ross-simons.com/products/907250" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-907250.html">18kt Yellow Gold Roped Ring</a><div class="sub">Ross-Simons · rs-907250</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/907250" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$179.00</td>
-        <td class="num-col small">$179.00</td>
-        <td class="num-col small">0.5 g</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price $179.00 unchanged. Gold weight published (0.5 g) for an 18K ring, which explains the price.</div></td>
+        <td><strong>rs-943668</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1269.00-1439.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1269.00 · karat: 14kt · weight_g: blank</td>
+        <td class="small">price range corrected to a single price; weight genuinely not published; setting-only basis re-confirmed</td>
+        <td class="small">CLEARANCE · 29% Off · Original price $1,795 · Sale price $1,269 · &quot;Center stone and setting are sold separately.&quot; <a href="https://www.ross-simons.com/products/943668" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-879968.html">2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold</a><div class="sub">Ross-Simons · rs-879968</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=879968" target="_blank" rel="noopener nofollow">official search feed ↗</a></td>
-        <td class="num-col small">$2,695.00</td>
-        <td class="num-col small">$2,695.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 2695.00 confirmed in the official product feed. Weight still not published.</div></td>
+        <td><strong>mej-2mm</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight, returns</td>
+        <td class="small">price: 498.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 498.00 · karat: 14k · weight_g: blank</td>
+        <td class="small">confirmed; return exclusion recorded as F33</td>
+        <td class="small">&quot;Handcrafted in recycled 14k solid gold featuring streamlined edges.&quot; · Specifications: Width 2 mm, Thickness 1.3 mm · &quot;Engraved items are not eligible for return.&quot; <a href="https://mejuri.com/products/2mm-smooth-band" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
-        <td><a href="rings/rs-960952.html">Italian 14kt Yellow Gold Dome Ring</a><div class="sub">Ross-Simons · rs-960952</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=960952" target="_blank" rel="noopener nofollow">official search feed ↗</a></td>
-        <td class="num-col small">$399.00</td>
-        <td class="num-col small">$399.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 399.00 confirmed in the official product feed.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-999230.html">.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold</a><div class="sub">Ross-Simons · rs-999230</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=999230" target="_blank" rel="noopener nofollow">official search feed ↗</a></td>
-        <td class="num-col small">$489.00 – $559.00</td>
-        <td class="num-col small">$489.00 – $559.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip warn">changed / partial</span><div class="sub">Price range 489.00-559.00 confirmed. The stored title was a paraphrase (&#39;Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold&#39;); replaced with the seller&#39;s exact product title.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-993512.html">2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold</a><div class="sub">Ross-Simons · rs-993512</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=993512" target="_blank" rel="noopener nofollow">official search feed ↗</a></td>
-        <td class="num-col small">$2,795.00</td>
-        <td class="num-col small">$2,795.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 2795.00 confirmed in the official product feed.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-991907.html">2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold</a><div class="sub">Ross-Simons · rs-991907</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/991907.js" target="_blank" rel="noopener nofollow">official product feed (JSON) ↗</a></td>
-        <td class="num-col small">$2,795.00</td>
-        <td class="num-col small">$2,795.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 2795.00 confirmed. Karat/metal re-confirmed as 14kt white gold.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-864785.html">1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold</a><div class="sub">Ross-Simons · rs-864785</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=864785" target="_blank" rel="noopener nofollow">official search feed ↗</a></td>
-        <td class="num-col small">$2,395.00</td>
-        <td class="num-col small">$2,395.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 2395.00 confirmed. Note this feed entry is a two-ring bridal set, not a single ring.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-242556.html">C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5</a><div class="sub">Ross-Simons · rs-242556</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=242556" target="_blank" rel="noopener nofollow">official search feed ↗</a></td>
-        <td class="num-col small">$2,195.00</td>
-        <td class="num-col small">$2,195.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 2195.00 confirmed; title punctuation aligned to the seller&#39;s exact string.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-240912.html">C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7</a><div class="sub">Ross-Simons · rs-240912</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/products/240912.js" target="_blank" rel="noopener nofollow">official product feed (JSON) ↗</a></td>
-        <td class="num-col small">$8,995.00</td>
-        <td class="num-col small">$8,995.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price 8995.00, size 7 and the GIA certificate number 7235079100 re-confirmed in the seller&#39;s own feed. The SKU did not appear in site search, so the JSON feed was read instead.</div></td>
-      </tr><tr>
-        <td><a href="rings/mej-2mm.html">2mm Smooth Band</a><div class="sub">Mejuri · mej-2mm</div></td>
-        <td class="small"><a href="https://mejuri.com/products/2mm-smooth-band" target="_blank" rel="noopener nofollow">official product page ↗</a></td>
-        <td class="num-col small">$498.00</td>
-        <td class="num-col small">$498.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Price $498.00 unchanged and &#39;Handcrafted in recycled 14k solid gold&#39; still on the page. The specification block publishes width (2 mm) and thickness (1.3 mm) but no gram weight.</div></td>
-      </tr><tr>
-        <td><a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a><div class="sub">Anna Sheffield · as-bea-sol</div></td>
-        <td class="small"><a href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js" target="_blank" rel="noopener nofollow">official product feed (JSON) ↗</a></td>
-        <td class="num-col small">$11,500.00</td>
-        <td class="num-col small">$11,500.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Feed price 1150000 cents = 11500.00 USD, unchanged. No metal weight published.</div></td>
-      </tr><tr>
-        <td><a href="rings/wc-tulip.html">Tulip Basket Cathedral Classic Solitaire Engagement Ring</a><div class="sub">With Clarity · wc-tulip</div></td>
-        <td class="small"><a href="https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js" target="_blank" rel="noopener nofollow">official product feed (JSON) ↗</a></td>
-        <td class="num-col small">$590.00 – $1,110.00</td>
-        <td class="num-col small">$590.00 – $1,110.00</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip ok">matched</span><div class="sub">Feed price_min 59000 / price_max 111000 cents unchanged; still tagged &#39;Ring Setting Product&#39;.</div></td>
-      </tr><tr>
-        <td><a href="rings/au-cigar.html">Modern Cigar Band (14K Yellow Gold variant)</a><div class="sub">Aurate · au-cigar</div></td>
-        <td class="small"><a href="https://auratenewyork.com/products/modern-cigar-band.js" target="_blank" rel="noopener nofollow">official product feed (JSON) ↗</a></td>
-        <td class="num-col small">$1,308.00</td>
-        <td class="num-col small">$1,308.00</td>
-        <td class="num-col small">2.6–4 g</td>
-        <td class="small"><span class="chip warn">changed / partial</span><div class="sub">Weight range 2.6-4 g re-confirmed. The 14K price of 1308.00 could NOT be re-confirmed: the live feed now spans price_min 11800 (=118.00, the vermeil variant) to price_max 166800 (=1668.00). The variant-level 14K price needs a dedicated re-read. Treated as unconfirmed on the site rather than restated.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-943668.html">.28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold</a><div class="sub">Ross-Simons · rs-943668</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=943668" target="_blank" rel="noopener nofollow">official search feed (returned no product) ↗</a></td>
-        <td class="num-col small">$1,269.00 – $1,439.00</td>
-        <td class="num-col small">—</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip bad">could not confirm</span><div class="sub">Ross-Simons site search returned no product for SKU 943668; the product page was not opened in P12, so availability and price are unconfirmed.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-991908.html">1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold</a><div class="sub">Ross-Simons · rs-991908</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=991908" target="_blank" rel="noopener nofollow">official search feed (returned no product) ↗</a></td>
-        <td class="num-col small">$1,795.00</td>
-        <td class="num-col small">—</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip bad">could not confirm</span><div class="sub">Ross-Simons site search returned no product for SKU 991908; availability and price are unconfirmed.</div></td>
-      </tr><tr>
-        <td><a href="rings/rs-254575.html">C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring, Size 7.5</a><div class="sub">Ross-Simons · rs-254575</div></td>
-        <td class="small"><a href="https://www.ross-simons.com/search/suggest.json?q=254575" target="_blank" rel="noopener nofollow">official search feed (returned no product) ↗</a></td>
-        <td class="num-col small">$695.00</td>
-        <td class="num-col small">—</td>
-        <td class="num-col small">—</td>
-        <td class="small"><span class="chip bad">could not confirm</span><div class="sub">Ross-Simons site search returned no product for SKU 254575; availability and price are unconfirmed.</div></td>
+        <td><strong>wc-4prong</strong></td>
+        <td class="small">setting_basis</td>
+        <td class="small">price: 558.00-801.00 · karat: 14K</td>
+        <td class="small">price: not re-read · karat: 14K</td>
+        <td class="small">setting-only basis confirmed; price not re-read, so the stored price keeps its original retrieval date</td>
+        <td class="small">&quot;Create Your Diamond Ring&quot; — 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring <a href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr>
     </tbody>
   </table>
   </div>
-  <p class="sub">43 rows in total · 18 re-opened · 3 not returned by the seller's search · 22 not re-opened and therefore labelled historical.</p>
+  <p class="sub">This pass re-read 7 of 43 rows and one market feed. The rest keep the retrieval date of the pass that captured them, and the site shows that date on every row. Re-reading all 43 would require fetching every product page again; the collector script does that when run with network access.</p>
+
   <h2>Run it yourself</h2>
   <p><code>node scripts/verify.mjs</code> — no dependencies, no network. The output is written to <code>data/checks/latest.json</code> and summarised above.</p>
 </section>

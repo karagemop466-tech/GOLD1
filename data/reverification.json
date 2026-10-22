@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "pass": "P12",
+  "session": "sess-bc088451",
+  "read_at": "2026-10-22T23:22Z",
+  "method": "Each URL below was re-opened in this pass and the price, karat and (where published) the metal weight were read off the page again. The old value is what earlier passes stored; the new value is what the page said on this read. Where a value is unchanged the row keeps its original evidence string and gains reverified_at. Where a value moved, the row is corrected and the move is logged as a flag.",
+  "entries": [
+    {
+      "row": "rs-571221",
+      "source_url": "https://www.ross-simons.com/products/571221",
+      "checked": ["price", "karat", "metal_weight"],
+      "old": { "price": "400.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "400.00", "karat": "14kt", "weight_g": "1.7" },
+      "change": "weight published on the page as \"Gold Weight 1.7 grams\"; price and karat unchanged",
+      "verdict": "confirmed + weight added",
+      "quote": "Metal 14kt Yellow Gold · Gold Weight 1.7 grams · Finish Polished"
+    },
+    {
+      "row": "rs-571222",
+      "source_url": "https://www.ross-simons.com/products/571222",
+      "checked": ["price", "karat", "title"],
+      "old": { "price": "599.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "599.00", "karat": "14kt", "weight_g": null },
+      "change": "none to the values in scope; the page's shipping-weight field is not a metal weight, so no weight was added",
+      "verdict": "confirmed, weight still not published as a metal weight",
+      "quote": "Title \"Women's 3mm 14kt Yellow Gold Band\"; every size variant price 599.00"
+    },
+    {
+      "row": "rs-571223",
+      "source_url": "https://www.ross-simons.com/products/571223",
+      "checked": ["price", "karat", "metal_weight"],
+      "old": { "price": "799.00-849.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "849.00", "karat": "14kt", "weight_g": "3.8" },
+      "change": "all in-stock sizes now list 849.00, so the stored 799.00 floor is no longer on the page; weight published as \"Gold Weight 3.8 grams\"",
+      "verdict": "price corrected + weight added (see F31)",
+      "quote": "Size 5 $849.00 In-Stock ... Size 9 $849.00 In-Stock · Gold Weight 3.8 grams"
+    },
+    {
+      "row": "rs-981367",
+      "source_url": "https://www.ross-simons.com/products/981367",
+      "checked": ["price", "karat", "metal_weight"],
+      "old": { "price": "149.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "149.00", "karat": "14kt", "weight_g": "0.5" },
+      "change": "weight published as \"Gold Weight 0.5 grams\"; price and karat unchanged",
+      "verdict": "confirmed + weight added; the low-price flag can now be tested against real grams",
+      "quote": "Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 0.5 grams"
+    },
+    {
+      "row": "rs-907250",
+      "source_url": "https://www.ross-simons.com/products/907250",
+      "checked": ["price", "karat", "metal_weight"],
+      "old": { "price": "179.00", "karat": "18K", "weight_g": null },
+      "new": { "price": "179.00", "karat": "18kt", "weight_g": "0.5" },
+      "change": "weight published as \"Gold Weight 0.5 grams\"; price and karat unchanged",
+      "verdict": "confirmed + weight added",
+      "quote": "Metal 18kt Yellow Gold · Gold Weight 0.5 grams · Finish Polished"
+    },
+    {
+      "row": "rs-943668",
+      "source_url": "https://www.ross-simons.com/products/943668",
+      "checked": ["price", "karat", "metal_weight", "setting_basis"],
+      "old": { "price": "1269.00-1439.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "1269.00", "karat": "14kt", "weight_g": null },
+      "change": "clearance price 1269.00 is now the only price on the page (original 1795.00); sizes 5, 6 and 6.5 are sold out; no Gold Weight field is rendered for this product",
+      "verdict": "price range corrected to a single price; weight genuinely not published; setting-only basis re-confirmed",
+      "quote": "CLEARANCE · 29% Off · Original price $1,795 · Sale price $1,269 · \"Center stone and setting are sold separately.\""
+    },
+    {
+      "row": "mej-2mm",
+      "source_url": "https://mejuri.com/products/2mm-smooth-band",
+      "checked": ["price", "karat", "solid_wording", "metal_weight", "returns"],
+      "old": { "price": "498.00", "karat": "14K", "weight_g": null },
+      "new": { "price": "498.00", "karat": "14k", "weight_g": null },
+      "change": "no value moved; specs confirm width 2 mm / thickness 1.3 mm and no gram weight; returns page adds an exclusion for engraved pieces",
+      "verdict": "confirmed; return exclusion recorded as F33",
+      "quote": "\"Handcrafted in recycled 14k solid gold featuring streamlined edges.\" · Specifications: Width 2 mm, Thickness 1.3 mm · \"Engraved items are not eligible for return.\""
+    },
+    {
+      "row": "wc-4prong",
+      "source_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
+      "checked": ["setting_basis"],
+      "old": { "price": "558.00-801.00", "karat": "14K" },
+      "new": { "price": "not re-read", "karat": "14K" },
+      "change": "page opens with a three-step builder, so the product on this URL is the setting step, not a complete ring; the price range was not re-read in this pass and is left as previously captured",
+      "verdict": "setting-only basis confirmed; price not re-read, so the stored price keeps its original retrieval date",
+      "quote": "\"Create Your Diamond Ring\" — 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring"
+    }
+  ],
+  "not_reverified": {
+    "rows": 35,
+    "why": "This pass re-read 7 of 43 rows and one market feed. The rest keep the retrieval date of the pass that captured them, and the site shows that date on every row. Re-reading all 43 would require fetching every product page again; the collector script does that when run with network access."
+  }
+}

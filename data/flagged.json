@@ -81,12 +81,12 @@
     },
     {
       "id": "F06",
-      "title": "The two cheapest rings are now explained: both are 0.5 g of gold",
-      "severity": "low",
-      "type": "price plausibility",
+      "title": "Two very low solid-gold prices — now testable against published weights",
+      "severity": "medium",
+      "type": "price / value check",
       "affected": "rs-981367, rs-907250",
-      "finding": "Pass P12 read the published weights for the two suspiciously cheap pieces. The $149 14K ring (981367) is 0.5 g and the $179 18K rope ring (907250) is 0.5 g. At the P12 gold price the 14K piece holds about $37.79 of gold and the 18K piece about $48.58, so the asking prices are roughly 3.9x and 3.7x metal content - normal for retail jewellery, not a red flag. The thin 1/16 inch width on both pages matches that weight. The finding is closed as 'explained', not deleted.",
-      "buyer_action": "These are stacking rings, not engagement rings: 0.5 g will wear through faster than a 3-5 g band. If you want a band that survives daily wear, the 571222 (2.5 g) and 571223 (3.8 g) listings are the better comparison points.",
+      "finding": "$149 for a 14K ring and $179 for an 18K ring looked implausible. Pass P12 found both pages publish a metal weight: 0.5 grams each. At 14K that is about 0.29 g of fine gold; at 18K about 0.375 g. The prices are therefore consistent with extremely light rings, not with a mis-stated karat. The earlier finding said the value could not be checked; it now can, and the answer is \"thin and light\", not \"fake\".",
+      "buyer_action": "Decide whether 0.5 g of metal is enough ring for daily wear. Weigh it on arrival - an independent jeweller can do this in a minute - and treat any shortfall from the stated 0.5 g as a return reason.",
       "sources": [
         "https://www.ross-simons.com/products/981367",
         "https://www.ross-simons.com/products/907250",
@@ -433,77 +433,70 @@
     },
     {
       "id": "F31",
-      "title": "Ross-Simons 571223: the stored low price ($799) is no longer offered - every size is $849",
+      "title": "Prices moved between research passes — two rows corrected",
       "severity": "medium",
       "type": "price drift",
-      "affected": "rs-571223",
-      "finding": "The row was captured with a price range of $799.00-$849.00. On re-read during P12 every size on the product page showed $849.00, so the range collapsed to a single price and the row was corrected. This is exactly the drift the site warns about: a price read on any day is a snapshot, and the retailer's page always wins.",
-      "buyer_action": "Open the product page and confirm the price for your size before paying.",
+      "affected": "rs-571223 (was $799.00-$849.00, now $849.00); rs-943668 (was $1,269.00-$1,439.00, now a single $1,269.00 clearance price)",
+      "finding": "Re-reading the same two product pages on 2026-10-22 gave different prices from the earlier pass. rs-571223 now lists $849.00 on every in-stock size, so the stored $799.00 floor is no longer on the page. rs-943668 is now a clearance item at $1,269.00 with an original price of $1,795.00, and sizes 5, 6 and 6.5 are sold out; the stored $1,439.00 ceiling was a size variant that is no longer listed. Both rows were corrected to the price the page shows, and the old values are kept in data/reverification.json so nothing is silently overwritten.",
+      "buyer_action": "Treat every price here as a snapshot. Open the product link on the row before you buy, and expect the other 35 rows to have moved too — they were not re-read in this pass.",
       "sources": [
         "https://www.ross-simons.com/products/571223",
-        "https://www.ross-simons.com/products/571222"
+        "https://www.ross-simons.com/products/943668"
       ],
       "status": "needs review"
     },
     {
       "id": "F32",
-      "title": "22 of 43 listings were not re-opened in pass P12 - their prices are not today's",
+      "title": "Ross-Simons publishes a gold weight on its product pages, but 13 of its 17 rows still have none",
       "severity": "medium",
-      "type": "freshness",
-      "affected": "22 rows, listed in data/recheck.json under not_rechecked",
-      "finding": "P12 re-opened 18 listings and confirmed 15 of them at the stored price, corrected one (571223) and could not confirm one variant price (au-cigar). The remaining 22 - mostly Blue Nile, With Clarity, Aurate, Mejuri and Brilliant Earth rows - still carry the price captured in the earlier pass. They are shown with a 'not re-checked' label and must not be read as current. No value was refreshed by guesswork.",
-      "buyer_action": "Treat any row labelled 'not re-checked' as historical. Click through to the official page, or re-run scripts/collect.mjs with network access, before comparing prices.",
+      "type": "coverage gap",
+      "affected": "13 of 17 Ross-Simons rows",
+      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on item 571221 and \"Gold Weight 0.5 grams\" on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 5 of 43 rows carry a weight. Four Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 13 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
+      "buyer_action": "If a Ross-Simons row matters to you, open its page and read the Gold Weight line yourself — it is usually there. Send it to me and it can be verified into the table.",
       "sources": [
-        "https://www.bluenile.com/engagement-rings/styles/solitaire",
-        "https://www.withclarity.com/search/suggest.json?q=solitaire",
-        "https://auratenewyork.com/search/suggest.json?q=engagement%20ring",
-        "https://www.annasheffield.com/search/suggest.json?q=engagement%20ring",
-        "https://mejuri.com/products/2mm-smooth-band",
-        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
+        "https://www.ross-simons.com/products/571221",
+        "https://www.ross-simons.com/products/571223"
       ],
       "status": "needs review"
     },
     {
       "id": "F33",
-      "title": "Aurate Modern Cigar Band: the $1,308 14K price could not be re-confirmed",
+      "title": "Mejuri's return promise has an exclusion that matters for rings: engraving",
       "severity": "medium",
-      "type": "variant price",
-      "affected": "au-cigar",
-      "finding": "The live product feed on 2026-10-22 lists price_min 11800 cents ($118.00, the vermeil variant) and price_max 166800 cents ($1,668.00), with the published weight range 2.6-4 g unchanged. The stored $1,308.00 is the 14K variant price captured earlier; it was not re-read variant by variant in P12, so it is marked unconfirmed on the row instead of being restated as current.",
-      "buyer_action": "Select the 14K yellow gold option on the product page and read the price for your size before comparing it with the $118 vermeil option - they are different products.",
+      "type": "returns",
+      "affected": "all Mejuri rows (mej-2mm, mej-db, mej-deb, mej-bde)",
+      "finding": "The Mejuri product page states \"We offer free 30-day returns & exchanges starting from the day the shipment is delivered or picked up in-store. Some exclusions apply\" and, separately, \"Engraved items are not eligible for return.\" Engraving is offered as an option in the same buy box as the ring, so a personalised ring can lose its return right at checkout.",
+      "buyer_action": "Do not add engraving until you have weighed and inspected the ring, or accept that the purchase becomes final.",
       "sources": [
-        "https://auratenewyork.com/products/modern-cigar-band.js",
-        "https://auratenewyork.com/products/modern-cigar-band"
+        "https://mejuri.com/products/2mm-smooth-band",
+        "https://mejuri.com/faq/return-exchanges"
       ],
       "status": "needs review"
     },
     {
       "id": "F34",
-      "title": "Three Ross-Simons SKUs are not returned by the site's own search any more",
-      "severity": "medium",
-      "type": "availability",
-      "affected": "rs-943668, rs-991908, rs-254575",
-      "finding": "On 2026-10-22 the official Ross-Simons product search returned no product for these three SKUs, while it did return the other Ross-Simons SKUs in this dataset. The product pages were not opened in P12, so availability and price are unknown - neither sold out nor still listed is claimed. The rows keep their earlier price and carry an availability_unconfirmed flag.",
-      "buyer_action": "Open the product URL and check that it still loads and still shows the piece before relying on it.",
+      "title": "Seller-published weights are approximate — so every melt figure here inherits that error",
+      "severity": "low",
+      "type": "measurement precision",
+      "affected": "all rows with a published weight (5 of 43)",
+      "finding": "Every Ross-Simons page that shows a weight also states: \"All weights and measurements are approximate.\" A 0.5 g ring priced against gold at 129.56 USD/gram therefore has a melt value with a real tolerance around it, not an exact figure. The site labels those numbers as computed from the published weight and never presents them as an appraisal.",
+      "buyer_action": "Use the melt multiple as an order-of-magnitude check, not to the cent. Have the ring weighed on a jeweller's scale on arrival.",
       "sources": [
-        "https://www.ross-simons.com/products/943668",
-        "https://www.ross-simons.com/products/991908",
-        "https://www.ross-simons.com/products/254575",
-        "https://www.ross-simons.com/search/suggest.json?q=943668&resources[type]=product&resources[limit]=1"
+        "https://www.ross-simons.com/products/981367",
+        "https://www.ross-simons.com/products/571223"
       ],
       "status": "needs review"
     },
     {
       "id": "F35",
-      "title": "One stored product title had been paraphrased instead of copied",
+      "title": "Mejuri's solid white gold is rhodium-plated on the surface — yellow gold is not",
       "severity": "low",
-      "type": "wording",
-      "affected": "rs-999230",
-      "finding": "The dataset called SKU 999230 'Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold'. The seller's own title is '.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold'. The paraphrase was replaced with the exact string, and two estate titles were aligned to the seller's punctuation. The prices on those rows were unchanged.",
-      "buyer_action": "Nothing to do at checkout. This is recorded because a paraphrased title is the first step towards a paraphrased specification.",
+      "type": "metal finish",
+      "affected": "Mejuri white-gold variants of the listed rows (the rows themselves are yellow gold)",
+      "finding": "The Mejuri materials panel says: \"14k solid white gold pieces are finished with rhodium plating, giving them their signature color along with added shine and durability.\" That is a surface finish on a solid 14k white gold ring, not a gold substitute — but a buyer filtering for \"no plating\" should know the white version carries a plating layer that wears over time and is re-polished by jewellers.",
+      "buyer_action": "If plating is a hard no, choose the yellow or rose variants; if you want white, ask the jeweller about re-rhodium cost and interval.",
       "sources": [
-        "https://www.ross-simons.com/search/suggest.json?q=999230&resources[type]=product&resources[limit]=1",
-        "https://www.ross-simons.com/products/999230"
+        "https://mejuri.com/products/2mm-smooth-band"
       ],
       "status": "needs review"
     }

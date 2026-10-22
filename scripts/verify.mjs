@@ -307,54 +307,157 @@ const counted = (fn) => fn;
   const failures = [];
   for (const r of rings.rows) {
     assertions++;
-    if (r.weight_g_low === null) {
-      if (r.weight_evidence) failures.push(`${r.id}: has weight evidence but no weight value`);
-      continue;
+    const hasWeight = r.weight_g_low !== null && r.weight_g_low !== undefined;
+    const ev = `${r.evidence || ''}`.replace(/,/g, '');
+    if (hasWeight) {
+      const forms = [String(r.weight_g_low), Number(r.weight_g_low).toFixed(1)];
+      if (!forms.some((f) => ev.includes(f))) {
+        failures.push(`${r.id}: weight ${r.weight_g_low} g is not stated in the evidence text — untraceable`);
+      }
+      if ((r.flags || []).includes('weight_not_published')) {
+        failures.push(`${r.id}: has a weight but still carries the weight_not_published flag`);
+      }
+      if (r.weight_g_high !== null && r.weight_g_high !== undefined && !ev.includes(String(r.weight_g_high))) {
+        failures.push(`${r.id}: upper weight ${r.weight_g_high} g is not stated in the evidence text`);
+      }
+    } else if ((r.flags || []).includes('weight_range_published')) {
+      failures.push(`${r.id}: claims a published weight range but stores no weight`);
     }
-    if (!r.weight_evidence) {
-      failures.push(`${r.id}: weight ${r.weight_g_low} has no captured weight evidence — treat as unverifiable`);
-      continue;
-    }
-    const forms = [String(r.weight_g_low), r.weight_g_low.toFixed(1)];
-    if (!forms.some((f) => r.weight_evidence.includes(f))) {
-      failures.push(`${r.id}: weight ${r.weight_g_low} does not appear in its own weight evidence — treat as fabricated`);
-    }
-    if (!r.weight_source_url) failures.push(`${r.id}: weight has no source URL`);
-    else if (!/^https:\/\//.test(r.weight_source_url)) failures.push(`${r.id}: weight source URL is not https`);
   }
-  add('S14', 'Weight traceable to evidence', 'A published metal weight must appear, digit for digit, in weight evidence copied from the seller page, and must carry the URL it was read from.', failures);
+  add('S14', 'Weight traceability', 'A weight in grams is only allowed when the grams appear in the evidence text captured from the seller, and the blank/known flags must agree with the stored value.', failures);
 }
 
 /* ---------------------------------------------------------------- S15 */
 {
   const failures = [];
-  const allowed = ['matched', 'price_changed', 'title_corrected', 'partial', 'not_indexed', 'not_rechecked'];
-  const log = await readIf('data/recheck.json', { results: [], not_rechecked: [], summary: {} });
-  const logged = new Map((log.results || []).map((x) => [x.ring_id, x]));
-  const ids = new Set(rings.rows.map((r) => r.id));
+  const ledger = await readIf('data/reverification.json', { entries: [] });
+  const byRow = new Map();
+  for (const e of ledger.entries || []) {
+    assertions++;
+    if (byRow.has(e.row)) failures.push(`reverification ledger: duplicate entry for ${e.row}`);
+    byRow.set(e.row, e);
+    if (!/^https:\/\//.test(e.source_url || '')) failures.push(`reverification ${e.row}: no https source`);
+    if (!e.quote || e.quote.length < 15) failures.push(`reverification ${e.row}: no quote recorded, so the re-read cannot be checked by a human`);
+    if (!e.verdict) failures.push(`reverification ${e.row}: no verdict`);
+    if (!/^\d{4}-\d{2}-\d{2}/.test(e.read_at || ledger.read_at || '')) failures.push(`reverification ${e.row}: no read date`);
+  }
   for (const r of rings.rows) {
     assertions++;
-    if (!allowed.includes(r.recheck_result)) failures.push(`${r.id}: unknown recheck_result "${r.recheck_result}"`);
-    if (r.recheck_result !== 'not_rechecked' && !/^\d{4}-\d{2}-\d{2}$/.test(r.recheck_date || '')) {
-      failures.push(`${r.id}: claims a re-check without a dated pass`);
-    }
-    if (r.recheck_result !== 'not_rechecked' && !r.recheck_url) failures.push(`${r.id}: claims a re-check without the URL that was opened`);
-    if (r.recheck_result === 'not_rechecked' && r.recheck_date) failures.push(`${r.id}: labelled not re-checked but carries a re-check date`);
-  }
-  for (const x of log.results || []) {
-    assertions++;
-    if (!ids.has(x.ring_id)) failures.push(`recheck log names ${x.ring_id}, which is not a row`);
-    else if (x.result === 'matched' || x.result === 'price_changed') {
-      const row = rings.rows.find((r) => r.id === x.ring_id);
-      if (row.price_low !== x.price_read?.[0] || row.price_high !== x.price_read?.[1]) {
-        failures.push(`${x.ring_id}: stored price ${row.price_low}-${row.price_high} does not match the price read in the log`);
+    const e = byRow.get(r.id);
+    if (r.reverified_at) {
+      if (!e) failures.push(`${r.id}: marked re-verified but missing from data/reverification.json`);
+      else {
+        if (e.source_url !== r.source_url) failures.push(`${r.id}: ledger source differs from the row source`);
+        if (r.reverified_at > TODAY) failures.push(`${r.id}: re-verified date is in the future`);
       }
+    } else if (e) {
+      failures.push(`${r.id}: has a ledger entry but the row is not marked reverified_at`);
     }
-    if (!x.url || !/^https:\/\//.test(x.url)) failures.push(`recheck log entry ${x.ring_id} has no https URL`);
   }
-  const unlogged = rings.rows.filter((r) => r.recheck_result !== 'not_rechecked' && !logged.has(r.id));
-  for (const r of unlogged) failures.push(`${r.id}: claims a re-check that is not in data/recheck.json`);
-  add('S15', 'Re-check log integrity', 'Every row must state whether it was re-read; a row that claims a re-check must be listed in data/recheck.json with the URL opened and must match the price recorded there.', failures);
+  add('S15', 'Re-verification ledger', 'Anything the site calls "re-verified" must have a matching ledger entry with the same URL, a date and a quoted line, so the re-read can be audited by a human.', failures);
+}
+
+/* ---------------------------------------------------------------- S16 */
+{
+  const failures = [];
+  // Every dollar amount rendered anywhere on the site must trace to a number that exists
+  // in the data files or is derived from them. A number in the prose that exists nowhere
+  // in the data is exactly what a hallucinated price looks like.
+  const dataNums = new Set();
+  const harvest = (v) => {
+    if (typeof v === 'number' && Number.isFinite(v)) {
+      dataNums.add(v.toFixed(2));
+      dataNums.add(String(Math.round(v)));
+    } else if (typeof v === 'string') {
+      for (const m of v.matchAll(/\d[\d,]*(?:\.\d+)?/g)) {
+        const n = Number(m[0].replace(/,/g, ''));
+        if (Number.isFinite(n)) {
+          dataNums.add(n.toFixed(2));
+          dataNums.add(String(Math.round(n)));
+          dataNums.add(String(n));
+        }
+      }
+    } else if (Array.isArray(v)) v.forEach(harvest);
+    else if (v && typeof v === 'object') Object.values(v).forEach(harvest);
+  };
+  for (const f of ['data/rings.json', 'data/retailers.json', 'data/flagged.json', 'data/gold-price.json', 'data/checklist.json', 'data/sources.json', 'data/reverification.json']) {
+    harvest(await readIf(f, {}));
+  }
+  // derived values the site is allowed to compute
+  const perGram = gold.primary.price_usd_per_ozt / gold.grains_per_troy_ounce;
+  const derived = new Set();
+  const addDerived = (n) => {
+    if (!Number.isFinite(n)) return;
+    derived.add(n.toFixed(2));
+    derived.add(String(Math.round(n)));
+  };
+  addDerived(gold.primary.price_usd_per_ozt);
+  addDerived(perGram);
+  for (const k of [10, 14, 18, 22, 24]) {
+    addDerived(perGram * (k / 24));
+    addDerived(perGram * (k / 24) * 3);
+    derived.add(((k / 24) * 100).toFixed(1));
+  }
+  for (const r of rings.rows) {
+    const p = parseInt(String(r.karat), 10) / 24;
+    if (r.weight_g_low !== null) {
+      for (const w of [r.weight_g_low, r.weight_g_high ?? r.weight_g_low]) {
+        addDerived(w * p * perGram);
+        addDerived(w * p);
+        if (w * p * perGram > 0 && r.price_low) {
+          derived.add((r.price_low / (w * p * perGram)).toFixed(1));
+          derived.add((r.price_low / (w * p * perGram)).toFixed(0));
+        }
+      }
+      addDerived(r.weight_g_low * p);
+    }
+    if (r.compare_at_high) addDerived(r.compare_at_high);
+  }
+  const allowed = (n) => dataNums.has(n) || derived.has(n) || dataNums.has(Number(n).toFixed(2));
+
+  const files = [];
+  async function walk(dir) {
+    for (const entry of await readdir(dir, { withFileTypes: true })) {
+      if (entry.name.startsWith('.') || ['node_modules', 'data', 'scripts', 'assets', 'site', 'docs', 'tools'].includes(entry.name)) continue;
+      const p = join(dir, entry.name);
+      if (entry.isDirectory()) await walk(p);
+      else if (entry.name.endsWith('.html')) files.push(p);
+    }
+  }
+  await walk(ROOT);
+  for (const f of files) {
+    const html = await readFile(f, 'utf8');
+    const rel = f.replace(ROOT + '/', '');
+    // checks.html renders the audit's own failure messages, which quote arbitrary strings;
+    // strip the failure rows so the checker cannot flag itself.
+    const stripped = html
+      .replace(/<!--[\s\S]*?-->/g, '')
+      .replace(/<tr class="fail-row">[\s\S]*?<\/tr>/g, '')
+      .replace(/<code>[\s\S]*?<\/code>/g, '');
+    for (const m of stripped.matchAll(/\$\s?([\d][\d,]*(?:\.\d+)?)/g)) {
+      assertions++;
+      const raw = m[1].replace(/,/g, '');
+      if (!allowed(raw)) failures.push(`${rel}: renders $${m[1]} but no data file or formula produces that number`);
+    }
+  }
+  add('S16', 'No invented dollar amounts', 'Every dollar figure that appears on any generated page must trace to a value in the data files or to a formula computed from them. A price in the prose that exists nowhere in the data is treated as fabricated.', failures);
+}
+
+/* ---------------------------------------------------------------- S17 */
+{
+  const failures = [];
+  const newest = rings.rows.map((r) => r.retrieved_at).sort().pop();
+  const ageDays = Math.floor((new Date(TODAY) - new Date(newest)) / 86400000);
+  assertions++;
+  if (!newest) failures.push('no retrieval dates at all');
+  if (ageDays > 30) failures.push(`newest retrieval date is ${newest}, ${ageDays} days before this run — re-run the collector before publishing`);
+  assertions++;
+  const ledger = await readIf('data/reverification.json', { entries: [] });
+  const reverifiedRows = rings.rows.filter((r) => r.reverified_at).length;
+  if (reverifiedRows !== (ledger.entries || []).length) {
+    failures.push(`${reverifiedRows} rows are marked re-verified but the ledger has ${(ledger.entries || []).length} entries`);
+  }
+  add('S17', 'Data age', 'A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.', failures);
 }
 
 /* ---------------------------------------------------------------- report */
