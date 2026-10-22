@@ -156,6 +156,7 @@ const retrievedDates = [...new Set(rings.rows.map((r) => r.retrieved_at))].sort(
 /* ------------------------------------------------------------------ layout */
 const NAV = [
   ['index.html', 'Dashboard'],
+  ['site/', 'Source audit'],
   ['rings.html', 'All rings'],
   ['weights.html', 'Weight & melt'],
   ['calculator.html', 'Gold calculator'],

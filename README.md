@@ -47,19 +47,48 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
 | `COORDINATION.md` | Shared task board, verification log and integration record |
 
-Directories `site/` is reserved and currently empty; all generated pages live in the repo root because GitHub Pages serves this repository from `main` at `/`.
+All generated root pages live in the repo root because GitHub Pages serves this repository from `main` at `/`. The reserved `site/` directory now contains the separate fourth-pass review described below; it does not replace the root dashboard.
+
+---
+
+## Independent official-source review (`site/`)
+
+[Open the official-source audit dashboard](site/) — 13 directly reviewed product records, three seller-policy/reputation profiles, ten irregularity groups, nine verification gates, category pages, a prominent review matrix, and a nominal gold-weight calculator.
+
+This is a **separate evidence set**, not an automatic migration or a claim of 56 unique products. It may overlap seller/catalog coverage with the root set. Six rows have seller-stated solid-gold wording and listed item weights; seven leave those fields blank. All 13 remain flagged and **zero are purchase-ready**. Listed weight is not net metal weight, and nominal arithmetic is not actual raw-gold content, melt/resale value, or an appraisal.
+
+| Path | Purpose |
+|------|---------|
+| `research/candidates.json` | Field-level official product excerpts, prices, URLs, retrieval dates, blanks, and flags |
+| `research/sellers.json` | Official seller contact/payment/return/documentation findings and direct BBB snapshots |
+| `research/irregularities.json` | Source conflicts, mixed metals, size surcharges, exclusions, and policy cautions |
+| `research/policy/` | FTC/GIA/CFPB/LBMA guidance, nine gates, and the named Kitco market snapshot |
+| `site/` | Thirteen-page static audit dashboard and exact publication JSON copies |
+| `scripts/*.js`, `tests/` | Evidence, link, security, HTML, runtime, build, and published-byte parity checks |
+
+The only market input for this subsection is Kitco’s named **2026-10-22 19:11 NY** panel: bid **$4,025.00/troy oz**, 31.1034768 g/troy oz, derived reference **$129.4067549387/g** (displayed $129.41/g). The calculation contract and source quote are preserved in `research/policy/market.json`.
 
 ---
 
 ## Run it
 
+Root dashboard (Node 22, no npm install):
+
 ```bash
-node scripts/build.mjs      # regenerate every page from data/
-node scripts/verify.mjs     # audit the data and the generated HTML
-python3 -m http.server 8080 # preview at http://localhost:8080
+node scripts/build.mjs      # regenerate root pages from data/
+node scripts/verify.mjs     # audit root data and generated HTML; writes data/checks/
+python3 -m http.server 8080 # preview the complete repository, including site/
 ```
 
-Node 22, no npm install, no network calls at build time, no tracking scripts, no CDN.
+Official-source subsection and its publication-data parity checks:
+
+```bash
+npm ci
+npm test                  # evidence, security, HTML, runtime, links, build, and parity
+npm run serve             # preview the subsection build on 0.0.0.0:4173
+```
+
+Both dashboards are static, make no network calls at build time, use no tracking scripts or CDN, and have no production dependencies. The `site/data/` files must remain byte-identical to their audited `research/` sources; `npm test` enforces that contract.
 
 ---
 
@@ -121,7 +150,7 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 ## Limits
 
-Prices are a snapshot and retailers change them without notice — the retailer page always wins. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; the only real test is an independent jeweller with XRF. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
+Prices are a snapshot and retailers change them without notice — the retailer page always wins. Weight is mostly unpublished. Hallmarks and purity cannot be verified from a web page; use independent professional testing after delivery. Quantitative XRF can help verify precious-metal content and detect plating, but sampling area and professional interpretation matter, and no single reading proves every aspect of construction. Retailer "reputation" here means verifiable identity and contact details, not a rating. Nothing on this site is an appraisal or financial advice.
 
 ## License
 
