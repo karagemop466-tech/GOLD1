@@ -304,3 +304,9 @@ now carries a single T-number per pass and the next pass must claim it *before* 
 1. 23 rows still carry a capture from an earlier pass and are labelled as such; a `recheck` pass should open the Blue Nile, Brilliant Earth, With Clarity and Aurate rows again.
 2. `au-cigar` (Aurate Modern Cigar Band) 14K price is marked unconfirmed — the live range is $118 (vermeil) to $1,668; it needs a variant-level read.
 3. Two parallel sessions can still pick up the same pass. The board rule "claim before you open a page" needs to be followed literally, including for verification passes.
+
+---
+
+### 2026-10-22 — sess-cf46c7b9 close-out after P34/P36
+
+After several parallel pushes from `sess-bc088451` and `sess-b93ff7c6` landed PRs #11–#19, this session reset to `origin/main` at `a4270dc` (post PR #19), rebuilt the site with `scripts/build.mjs`, and ran the canonical audit. Result: **P36, 17/17 groups, 3,224 assertions, 0 failures** across 43 rows and 59 pages. An internal-link crawl reports 0 broken links. GitHub Pages build for `3e082d8` reported `built`; a newer build was in flight when checked. This session does not alter `data/rings.json` or any retailer evidence — it only records the verified state and confirms the site builds cleanly on top of the merged passes. Final state: **43 listings · 7 retailers · 6 categories · 7/43 published weights · 17/17 audit groups passing · 0 broken internal links**.
