@@ -26,8 +26,8 @@
       "severity": "high",
       "type": "missing data",
       "affected": "36 of 43 rows",
-      "finding": "Metal weight in grams is the number you need to check price against gold value. As of pass P12, seven listings publish one: six Ross-Simons rings that carry a \"Gold Weight\" line on their own product page - 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g - plus the Aurate Modern Cigar Band (\"Weight: 2.6-4g\", a range). That is up from 1 of 43 before the re-reads. The other 36 rows are deliberately blank rather than estimated; the site never fills a weight from a similar ring.",
-      "buyer_action": "Ask the seller for the gram weight of the exact size you are buying, in writing. Refuse to accept a carat weight as a substitute for metal weight. On Ross-Simons product pages the number is usually already there, in the spec panel under \"Gold Weight\".",
+      "finding": "Weight in grams is the number you need to test a price against gold content, and most of this list does not publish it. Seven rows do: six Ross-Simons bands read straight off the spec panel - 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g - plus the Aurate Modern Cigar Band, which publishes a 2.6-4 g range. Earlier passes reported 1 of 43 because they never captured Ross-Simons' \"Gold Weight\" field. The remaining 36 rows (every Mejuri, Blue Nile, Brilliant Earth, With Clarity and Anna Sheffield row, plus the 11 Ross-Simons rows not re-read) stay blank rather than estimated.",
+      "buyer_action": "For a listing with no published weight, ask the seller for the grams of your exact size in writing and run the calculator with it. For the seven that do publish a weight, treat the figure as the seller's claim until an independent jeweller weighs the ring.",
       "sources": [
         "https://www.ross-simons.com/products/571221",
         "https://www.ross-simons.com/products/571222",
@@ -446,7 +446,7 @@
       "severity": "medium",
       "type": "coverage gap",
       "affected": "13 of 17 Ross-Simons rows",
-      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on item 571221, \"Gold Weight 3.8 grams\" on 571223 and \"Gold Weight 0.5 grams\" on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 7 of 43 rows carry a weight. Six Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 11 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
+      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on 571221, \"Gold Weight 3.8 grams\" on 571223 and \"Gold Weight 0.5 grams\" on 981367 and 907250). The earlier passes captured prices and karats but not that field. Six Ross-Simons rows now carry a weight after the P12 re-reads; the other 11 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
       "buyer_action": "If a Ross-Simons row matters to you, open its page and read the Gold Weight line yourself — it is usually there. Send it to me and it can be verified into the table.",
       "sources": [
         "https://www.ross-simons.com/products/571221",

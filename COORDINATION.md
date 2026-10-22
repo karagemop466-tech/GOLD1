@@ -44,7 +44,7 @@ scope, one branch per session, no cross-session edits — were kept.
 | T11 | **Third pass**: extend the hallucination audit (weight traceability, melt recomputation, stale-data, no-invented-numbers) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
 | T12 | **Third pass**: site update (data-age banner, melt/value columns, weight-coverage page content) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
 | T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
-| T14 | **Reconciliation + publish**: merge `main`'s P12 into this branch, keep one ledger, fold in this session's extra reads, rebuild, re-audit, PR, merge, confirm Pages | **in progress** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `scripts/reconcile_second_read_p12.py`, `data/reverification.json`, `data/rings.json`, `data/flagged.json`, `scripts/build.mjs`, generated `*.html`, `README.md`, this board | 2026-10-22 |
+| T14 | **Reconciliation + publish**: merge `main`'s P12 into this branch, keep one ledger, fold in this session's extra reads, rebuild, re-audit, PR, merge, confirm Pages | **done** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `scripts/reconcile_second_read_p12.py`, `data/reverification.json`, `data/rings.json`, `data/flagged.json`, `scripts/build.mjs`, generated `*.html`, `README.md`, this board | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -277,3 +277,26 @@ The first pull request from this branch (#11) therefore reported `CONFLICTING`.
 
 **Lesson recorded for the next session:** two sessions must not both claim "the P12 re-read". The board
 now carries a single T-number per pass and the next pass must claim it *before* opening any page.
+
+---
+
+## 10. Publish record — reconciled P12 (`sess-b93ff7c6`)
+
+| Item | Value |
+|------|-------|
+| Branch | `arena/b93ff7c6-gold1` |
+| Pull request | [#11](https://github.com/karagemop466-tech/GOLD1/pull/11) — "P12: re-verified dataset, published-weight coverage corrected 1/43 -> 7/43, re-check log + 2 new audit groups" (title written before the merge with `main`; the body records the reconciliation) |
+| Merged into `main` | 2026-10-22T23:33:14Z |
+| Merge commit | `7d1127bc5e23657c3f8b556f72e4625c295a62fa` |
+| Pages build | `built` for commit `7d1127b`, 2026-10-22T23:33:36Z (`gh api repos/.../pages/builds/latest`) |
+| Live site | https://karagemop466-tech.github.io/GOLD1/ |
+| Post-deploy spot check | `rings/rs-571222.html` served with "Metal weight 2.5 g" and the 3.2x melt multiple computed from the published weight |
+| Audit at merge | 17/17 groups, 3,226 assertions, 0 failures, 75 pages |
+| Conflicts encountered | three `main` advances while this branch was open (PR #10, #12/#14, #15). Each was merged, never rebased away; conflicts were limited to `COORDINATION.md`, generated HTML and `data/checks/*`, and were resolved by union + regeneration |
+| One defect found after deploy | the reconciliation script had appended its evidence/note text twice for `rs-571222` and `rs-571213`; fixed in `scripts/reconcile_second_read_p12.py` (now idempotent, verified by running it twice) and the duplicated text was removed |
+
+**Open follow-ups for the next pass** (recorded, not fixed here):
+
+1. 23 rows still carry a capture from an earlier pass and are labelled as such; a `recheck` pass should open the Blue Nile, Brilliant Earth, With Clarity and Aurate rows again.
+2. `au-cigar` (Aurate Modern Cigar Band) 14K price is marked unconfirmed — the live range is $118 (vermeil) to $1,668; it needs a variant-level read.
+3. Two parallel sessions can still pick up the same pass. The board rule "claim before you open a page" needs to be followed literally, including for verification passes.
