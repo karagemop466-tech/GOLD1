@@ -346,7 +346,7 @@ const dashboard = layout({
     ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', 'the number you need for a value check')}
-    ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', 'karat is stated; the word solid is not')}
+    ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : 'all four are Mejuri; the rest state karat only')}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
   </div>
 </section>
@@ -387,7 +387,7 @@ const dashboard = layout({
       <h2>What the checklist got right</h2>
       <ul class="ticks">
         <li><strong>Karat is stated on every listing.</strong> All ${totalRows} rows name 14K or 18K in the official feed.</li>
-        <li><strong>Two return policies are confirmed in detail.</strong> Ross-Simons allows 30 days from receipt; Aurate allows 14 days from fulfilment for US orders.</li>
+        <li><strong>All four return policies are confirmed in detail.</strong> Ross-Simons allows 30 days from receipt and Aurate 14 days from fulfilment; With Clarity refuses returns after a third-party resize and Anna Sheffield charges a 10% restocking fee.</li>
         <li><strong>Plated metal was excluded, not ranked.</strong> Set &amp; Stones' engagement results were gold-filled and were rejected.</li>
       </ul>
     </div>
