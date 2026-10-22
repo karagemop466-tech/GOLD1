@@ -404,4 +404,7 @@ P12 follow-up "23 rows still carry an earlier capture" is now closed — all 43 
   `data/flagged.json`, `data/sources.json`, `data/gold-price.json` and this board were merged
   by union — no other session's data, evidence or archive was deleted or overwritten, and
   their audit groups kept their IDs (mine were renumbered to S18/S19 to avoid collision).
-- **Pull request / merge / deploy:** recorded below.
+- **Pull request:** [#23](https://github.com/karagemop466-tech/GOLD1/pull/23) — "Full 43-row line-by-line re-check: 39 confirmed, 3 partly verified, 1 price withdrawn as unverified".
+- **Merged into `main`:** 2026-10-22. Merge commit `9e1c51d117d0c4581c38b9b193dace2cefa16aef`.
+- **Pages build:** `built`, error `null`, for `9e1c51d` (`gh api repos/.../pages/builds/latest`).
+- **Live site:** https://karagemop466-tech.github.io/GOLD1/ (the sandbox cannot fetch `*.github.io`, so the deploy is evidenced by the Pages build status plus `git show origin/main:<file>` checks on the merged tree: 40 flagged items ending F37–F41, 8 rows with a published weight, all 43 rows `verified_at: 2026-10-22`, spot 4,026.699951 USD/ozt @ 23:38:41Z, latest audit report P21 19/19 groups / 3,337 assertions / 0 failures).
