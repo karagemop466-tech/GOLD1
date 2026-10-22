@@ -2,15 +2,27 @@
   "schema_version": "1.0.0",
   "pass": "P12",
   "session": "sess-bc088451",
-  "read_at": "2026-10-22T23:22Z",
+  "read_at": "2026-10-22T23:35Z",
   "method": "Each URL below was re-opened in this pass and the price, karat and (where published) the metal weight were read off the page again. The old value is what earlier passes stored; the new value is what the page said on this read. Where a value is unchanged the row keeps its original evidence string and gains reverified_at. Where a value moved, the row is corrected and the move is logged as a flag.",
   "entries": [
     {
       "row": "rs-571221",
       "source_url": "https://www.ross-simons.com/products/571221",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "400.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "400.00", "karat": "14kt", "weight_g": "1.7" },
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "400.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "400.00",
+        "karat": "14kt",
+        "weight_g": "1.7"
+      },
       "change": "weight published on the page as \"Gold Weight 1.7 grams\"; price and karat unchanged",
       "verdict": "confirmed + weight added",
       "quote": "Metal 14kt Yellow Gold · Gold Weight 1.7 grams · Finish Polished"
@@ -18,19 +30,44 @@
     {
       "row": "rs-571222",
       "source_url": "https://www.ross-simons.com/products/571222",
-      "checked": ["price", "karat", "title"],
-      "old": { "price": "599.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "599.00", "karat": "14kt", "weight_g": null },
-      "change": "none to the values in scope; the page's shipping-weight field is not a metal weight, so no weight was added",
-      "verdict": "confirmed, weight still not published as a metal weight",
-      "quote": "Title \"Women's 3mm 14kt Yellow Gold Band\"; every size variant price 599.00"
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight",
+        "title"
+      ],
+      "old": {
+        "price": "599.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "599.00",
+        "karat": "14kt",
+        "weight_g": "2.5"
+      },
+      "change": "a second read of the same page on 2026-10-22 found the metal weight published in the spec panel as \"Gold Weight 2.5 grams\"; price and karat unchanged. The first read in this pass missed the field and recorded no metal weight, which was wrong.",
+      "verdict": "confirmed + weight added on second read (corrects the entry above)",
+      "quote": "Metal \"14kt Yellow Gold\" · Gold Weight 2.5 grams · every size variant price 599.00"
     },
     {
       "row": "rs-571223",
       "source_url": "https://www.ross-simons.com/products/571223",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "799.00-849.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "849.00", "karat": "14kt", "weight_g": "3.8" },
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "799.00-849.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "849.00",
+        "karat": "14kt",
+        "weight_g": "3.8"
+      },
       "change": "all in-stock sizes now list 849.00, so the stored 799.00 floor is no longer on the page; weight published as \"Gold Weight 3.8 grams\"",
       "verdict": "price corrected + weight added (see F31)",
       "quote": "Size 5 $849.00 In-Stock ... Size 9 $849.00 In-Stock · Gold Weight 3.8 grams"
@@ -38,9 +75,21 @@
     {
       "row": "rs-981367",
       "source_url": "https://www.ross-simons.com/products/981367",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "149.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "149.00", "karat": "14kt", "weight_g": "0.5" },
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "149.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "149.00",
+        "karat": "14kt",
+        "weight_g": "0.5"
+      },
       "change": "weight published as \"Gold Weight 0.5 grams\"; price and karat unchanged",
       "verdict": "confirmed + weight added; the low-price flag can now be tested against real grams",
       "quote": "Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 0.5 grams"
@@ -48,9 +97,21 @@
     {
       "row": "rs-907250",
       "source_url": "https://www.ross-simons.com/products/907250",
-      "checked": ["price", "karat", "metal_weight"],
-      "old": { "price": "179.00", "karat": "18K", "weight_g": null },
-      "new": { "price": "179.00", "karat": "18kt", "weight_g": "0.5" },
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "179.00",
+        "karat": "18K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "179.00",
+        "karat": "18kt",
+        "weight_g": "0.5"
+      },
       "change": "weight published as \"Gold Weight 0.5 grams\"; price and karat unchanged",
       "verdict": "confirmed + weight added",
       "quote": "Metal 18kt Yellow Gold · Gold Weight 0.5 grams · Finish Polished"
@@ -58,9 +119,22 @@
     {
       "row": "rs-943668",
       "source_url": "https://www.ross-simons.com/products/943668",
-      "checked": ["price", "karat", "metal_weight", "setting_basis"],
-      "old": { "price": "1269.00-1439.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "1269.00", "karat": "14kt", "weight_g": null },
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight",
+        "setting_basis"
+      ],
+      "old": {
+        "price": "1269.00-1439.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "1269.00",
+        "karat": "14kt",
+        "weight_g": null
+      },
       "change": "clearance price 1269.00 is now the only price on the page (original 1795.00); sizes 5, 6 and 6.5 are sold out; no Gold Weight field is rendered for this product",
       "verdict": "price range corrected to a single price; weight genuinely not published; setting-only basis re-confirmed",
       "quote": "CLEARANCE · 29% Off · Original price $1,795 · Sale price $1,269 · \"Center stone and setting are sold separately.\""
@@ -68,9 +142,23 @@
     {
       "row": "mej-2mm",
       "source_url": "https://mejuri.com/products/2mm-smooth-band",
-      "checked": ["price", "karat", "solid_wording", "metal_weight", "returns"],
-      "old": { "price": "498.00", "karat": "14K", "weight_g": null },
-      "new": { "price": "498.00", "karat": "14k", "weight_g": null },
+      "checked": [
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight",
+        "returns"
+      ],
+      "old": {
+        "price": "498.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "498.00",
+        "karat": "14k",
+        "weight_g": null
+      },
       "change": "no value moved; specs confirm width 2 mm / thickness 1.3 mm and no gram weight; returns page adds an exclusion for engraved pieces",
       "verdict": "confirmed; return exclusion recorded as F33",
       "quote": "\"Handcrafted in recycled 14k solid gold featuring streamlined edges.\" · Specifications: Width 2 mm, Thickness 1.3 mm · \"Engraved items are not eligible for return.\""
@@ -78,16 +166,239 @@
     {
       "row": "wc-4prong",
       "source_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
-      "checked": ["setting_basis"],
-      "old": { "price": "558.00-801.00", "karat": "14K" },
-      "new": { "price": "not re-read", "karat": "14K" },
+      "checked": [
+        "setting_basis"
+      ],
+      "old": {
+        "price": "558.00-801.00",
+        "karat": "14K"
+      },
+      "new": {
+        "price": "not re-read",
+        "karat": "14K"
+      },
       "change": "page opens with a three-step builder, so the product on this URL is the setting step, not a complete ring; the price range was not re-read in this pass and is left as previously captured",
       "verdict": "setting-only basis confirmed; price not re-read, so the stored price keeps its original retrieval date",
       "quote": "\"Create Your Diamond Ring\" — 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring"
+    },
+    {
+      "row": "rs-571213",
+      "source_url": "https://www.ross-simons.com/products/571213",
+      "checked": [
+        "price",
+        "karat",
+        "metal_weight",
+        "compare_at_price"
+      ],
+      "old": {
+        "price": "959.00",
+        "karat": "14K",
+        "weight_g": null,
+        "compare_at": "1195.00"
+      },
+      "new": {
+        "price": "959.00",
+        "karat": "14kt",
+        "weight_g": "5.0",
+        "compare_at": "1195.00"
+      },
+      "change": "price and the 1,195.00 compare-at unchanged; metal weight published as \"Gold Weight 5.0 grams\"",
+      "verdict": "confirmed + weight added",
+      "quote": "Metal \"14kt Yellow Gold\" · Gold Weight 5.0 grams · \"20% Off · Original price $1,195 · Sale price $959\""
+    },
+    {
+      "row": "rs-879968",
+      "source_url": "https://www.ross-simons.com/products/879968",
+      "checked": [
+        "price",
+        "title"
+      ],
+      "old": {
+        "price": "2695.00"
+      },
+      "new": {
+        "price": "2695.00"
+      },
+      "change": "price unchanged; no metal weight is published for this diamond eternity band",
+      "verdict": "confirmed",
+      "quote": "Per-SKU official search feed: price \"2695.00\", title \"2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold\" (read via https://www.ross-simons.com/search/suggest.json?q=879968)"
+    },
+    {
+      "row": "rs-960952",
+      "source_url": "https://www.ross-simons.com/products/960952",
+      "checked": [
+        "price",
+        "title"
+      ],
+      "old": {
+        "price": "399.00"
+      },
+      "new": {
+        "price": "399.00"
+      },
+      "change": "price unchanged; no metal weight published in the feed entry",
+      "verdict": "confirmed",
+      "quote": "Per-SKU official search feed: price \"399.00\", title \"Italian 14kt Yellow Gold Dome Ring\" (read via https://www.ross-simons.com/search/suggest.json?q=960952)"
+    },
+    {
+      "row": "rs-999230",
+      "source_url": "https://www.ross-simons.com/products/999230",
+      "checked": [
+        "price",
+        "title"
+      ],
+      "old": {
+        "price": "489.00-559.00"
+      },
+      "new": {
+        "price": "489.00-559.00"
+      },
+      "change": "price range unchanged; the stored title was a paraphrase and was replaced with the seller's exact string",
+      "verdict": "confirmed + title corrected (see F36)",
+      "quote": "Per-SKU official search feed: price_min \"489.00\", price_max \"559.00\", title \".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold\" (read via https://www.ross-simons.com/search/suggest.json?q=999230)"
+    },
+    {
+      "row": "rs-993512",
+      "source_url": "https://www.ross-simons.com/products/993512",
+      "checked": [
+        "price",
+        "title"
+      ],
+      "old": {
+        "price": "2795.00"
+      },
+      "new": {
+        "price": "2795.00"
+      },
+      "change": "price unchanged",
+      "verdict": "confirmed",
+      "quote": "Per-SKU official search feed: price \"2795.00\", title \"2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold\" (read via https://www.ross-simons.com/search/suggest.json?q=993512)"
+    },
+    {
+      "row": "rs-864785",
+      "source_url": "https://www.ross-simons.com/products/864785",
+      "checked": [
+        "price",
+        "title"
+      ],
+      "old": {
+        "price": "2395.00"
+      },
+      "new": {
+        "price": "2395.00"
+      },
+      "change": "price unchanged; the row is a two-ring bridal set, not a single ring",
+      "verdict": "confirmed (basis note)",
+      "quote": "Per-SKU official search feed: price \"2395.00\", title \"1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold\" (read via https://www.ross-simons.com/search/suggest.json?q=864785)"
+    },
+    {
+      "row": "rs-242556",
+      "source_url": "https://www.ross-simons.com/products/242556",
+      "checked": [
+        "price",
+        "title"
+      ],
+      "old": {
+        "price": "2195.00"
+      },
+      "new": {
+        "price": "2195.00"
+      },
+      "change": "price unchanged; estate piece, size 6.5, one of a kind",
+      "verdict": "confirmed",
+      "quote": "Per-SKU official search feed: price \"2195.00\", title \"C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5\" (read via https://www.ross-simons.com/search/suggest.json?q=242556)"
+    },
+    {
+      "row": "rs-991907",
+      "source_url": "https://www.ross-simons.com/products/991907",
+      "checked": [
+        "price",
+        "karat",
+        "metal"
+      ],
+      "old": {
+        "price": "2795.00"
+      },
+      "new": {
+        "price": "2795.00"
+      },
+      "change": "price unchanged; metal re-confirmed as 14kt white gold",
+      "verdict": "confirmed",
+      "quote": "Product feed: price 279500 cents, title \"2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold\" (read via https://www.ross-simons.com/products/991907.js)"
+    },
+    {
+      "row": "rs-240912",
+      "source_url": "https://www.ross-simons.com/products/240912",
+      "checked": [
+        "price",
+        "karat",
+        "stone_certificate"
+      ],
+      "old": {
+        "price": "8995.00"
+      },
+      "new": {
+        "price": "8995.00"
+      },
+      "change": "price unchanged; GIA certificate number 7235079100 re-confirmed in the seller's own copy",
+      "verdict": "confirmed",
+      "quote": "Product feed: price 899500 cents, description \"GIA Cert #7235079100\", size 7 only (read via https://www.ross-simons.com/products/240912.js)"
+    },
+    {
+      "row": "as-bea-sol",
+      "source_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+      "checked": [
+        "price",
+        "metal"
+      ],
+      "old": {
+        "price": "11500.00"
+      },
+      "new": {
+        "price": "11500.00"
+      },
+      "change": "price unchanged (1,150,000 cents); 14k recycled gold description unchanged; no metal weight published",
+      "verdict": "confirmed",
+      "quote": "Product feed: price 1150000 cents, description \"1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank\" (read via https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js)"
+    },
+    {
+      "row": "wc-tulip",
+      "source_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
+      "checked": [
+        "price",
+        "setting_basis"
+      ],
+      "old": {
+        "price": "590.00-1110.00"
+      },
+      "new": {
+        "price": "590.00-1110.00"
+      },
+      "change": "price range unchanged; still tagged \"Ring Setting Product\", so the price is the setting only",
+      "verdict": "confirmed",
+      "quote": "Product feed: price_min 59000, price_max 111000 cents; tag \"Ring Setting Product\" (read via https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js)"
+    },
+    {
+      "row": "au-cigar",
+      "source_url": "https://auratenewyork.com/products/modern-cigar-band",
+      "checked": [
+        "weight_range",
+        "price_range"
+      ],
+      "old": {
+        "price": "1308.00 (14K variant)"
+      },
+      "new": {
+        "price": "not re-read variant by variant; feed spans 118.00-1668.00"
+      },
+      "change": "the published weight range 2.6-4 g is unchanged, but the stored 14K price of 1,308.00 was NOT re-confirmed: the live feed now spans 118.00 (vermeil variant) to 1,668.00. Left as historical rather than restated.",
+      "verdict": "weight confirmed / 14K price unconfirmed",
+      "quote": "Product feed: price_min 11800, price_max 166800 cents; description \"Weight: 2.6-4g\" (read via https://auratenewyork.com/products/modern-cigar-band.js)"
     }
   ],
   "not_reverified": {
     "rows": 35,
     "why": "This pass re-read 7 of 43 rows and one market feed. The rest keep the retrieval date of the pass that captured them, and the site shows that date on every row. Re-reading all 43 would require fetching every product page again; the collector script does that when run with network access."
-  }
+  },
+  "note": "One ledger for every live re-read in pass P12, written by two sessions that worked the same pass independently (bc088451 on main, b93ff7c6 on its own branch). The second session's extra reads were appended here rather than kept in a parallel log, and its correction to the rs-571222 entry is recorded in that entry rather than overwriting the history."
 }

@@ -22,16 +22,20 @@
     },
     {
       "id": "F02",
-      "title": "Weight is published for only 5 of 43 listings",
+      "title": "Metal weight is published for 7 of 43 listings - the other 36 cannot be value-checked",
       "severity": "high",
       "type": "missing data",
-      "affected": "38 of 43 rows",
-      "finding": "Metal weight in grams is the number you need to check price against gold value. As of pass P12, five listings publish one: the Aurate Modern Cigar Band (\"Weight: 2.6-4g\", a range) and four Ross-Simons rings that carry a \"Gold Weight\" line on their own product page (1.7 g, 3.8 g, 0.5 g, 0.5 g). That is up from 1 of 43 before the re-read. The other 38 rows are deliberately blank rather than estimated — the site never fills a weight from a similar ring.",
+      "affected": "36 of 43 rows",
+      "finding": "Metal weight in grams is the number you need to check price against gold value. As of pass P12, seven listings publish one: six Ross-Simons rings that carry a \"Gold Weight\" line on their own product page - 571221 1.7 g, 571222 2.5 g, 571223 3.8 g, 571213 5.0 g, 981367 0.5 g, 907250 0.5 g - plus the Aurate Modern Cigar Band (\"Weight: 2.6-4g\", a range). That is up from 1 of 43 before the re-reads. The other 36 rows are deliberately blank rather than estimated; the site never fills a weight from a similar ring.",
       "buyer_action": "Ask the seller for the gram weight of the exact size you are buying, in writing. Refuse to accept a carat weight as a substitute for metal weight. On Ross-Simons product pages the number is usually already there, in the spec panel under \"Gold Weight\".",
       "sources": [
         "https://www.ross-simons.com/products/571221",
+        "https://www.ross-simons.com/products/571222",
         "https://www.ross-simons.com/products/571223",
-        "https://auratenewyork.com/products/modern-cigar-band"
+        "https://www.ross-simons.com/products/571213",
+        "https://www.ross-simons.com/products/981367",
+        "https://www.ross-simons.com/products/907250",
+        "https://auratenewyork.com/products/modern-cigar-band.js"
       ],
       "status": "needs review"
     },
@@ -248,7 +252,7 @@
       "severity": "high",
       "type": "first-pass finding",
       "affected": "bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6",
-      "finding": "Historical finding from the first research pass over Blue Nile, Mejuri and Brilliant Earth: none of those 13 listings published a gram weight — pages gave width and thickness instead. It still holds for those 13 rows. Later passes did recover weights from Ross-Simons and Aurate, so the whole-dataset count is now 5 of 43 (F02). This entry is kept so the earlier claim is not silently rewritten.",
+      "finding": "Historical finding from the first research pass over Blue Nile, Mejuri and Brilliant Earth: none of those 13 listings published a gram weight — pages gave width and thickness instead. It still holds for those 13 rows. Later passes did recover weights from Ross-Simons and Aurate, so the whole-dataset count is now 7 of 43 (F02). This entry is kept so the earlier claim is not silently rewritten.",
       "buyer_action": "Ask for the gram weight before paying, in writing. A jeweller can weigh it in seconds on arrival.",
       "sources": [
         "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
@@ -438,11 +442,11 @@
     },
     {
       "id": "F32",
-      "title": "Ross-Simons publishes a gold weight on its product pages, but 13 of its 17 rows still have none",
+      "title": "Ross-Simons publishes a gold weight on its product pages, but 11 of its 17 rows still have none",
       "severity": "medium",
       "type": "coverage gap",
       "affected": "13 of 17 Ross-Simons rows",
-      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on item 571221 and \"Gold Weight 0.5 grams\" on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 5 of 43 rows carry a weight. Four Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 13 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
+      "finding": "Ross-Simons renders a \"Gold Weight\" line in the spec panel of its product pages (for example \"Gold Weight 1.7 grams\" on item 571221, \"Gold Weight 3.8 grams\" on 571223 and \"Gold Weight 0.5 grams\" on items 981367 and 907250). The earlier passes captured prices and karats but not that field, which is why only 7 of 43 rows carry a weight. Six Ross-Simons rows were filled in pass P12 by re-reading the page; the remaining 11 were not re-read, so their weight stays blank rather than being inferred from a sibling item.",
       "buyer_action": "If a Ross-Simons row matters to you, open its page and read the Gold Weight line yourself — it is usually there. Send it to me and it can be verified into the table.",
       "sources": [
         "https://www.ross-simons.com/products/571221",
@@ -488,6 +492,20 @@
       "buyer_action": "If plating is a hard no, choose the yellow or rose variants; if you want white, ask the jeweller about re-rhodium cost and interval.",
       "sources": [
         "https://mejuri.com/products/2mm-smooth-band"
+      ],
+      "status": "needs review"
+    },
+    {
+      "id": "F36",
+      "title": "One stored product title was a paraphrase, not the seller's string",
+      "severity": "low",
+      "type": "wording",
+      "affected": "rs-999230",
+      "finding": "The dataset called Ross-Simons SKU 999230 \"Pink Sapphire and Garnet Eternity Band in 14kt Yellow Gold\". The seller's own title is \".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold\". The paraphrase was replaced with the exact string on the P12 second read; the price (489.00-559.00) did not change.",
+      "buyer_action": "Nothing at checkout. It is recorded because a paraphrased title is the first step towards a paraphrased specification, and this project claims to copy rather than summarise.",
+      "sources": [
+        "https://www.ross-simons.com/search/suggest.json?q=999230&resources[type]=product&resources[limit]=1",
+        "https://www.ross-simons.com/products/999230"
       ],
       "status": "needs review"
     }

@@ -25,6 +25,12 @@ This is a bounded audit set, not an exhaustive crawl of every engagement ring on
 
 Verification-policy and gold-market sources are maintained separately under `research/policy/`.
 
+## Dashboard and verification
+
+[Open the 13-page official-source audit dashboard](../site/). It includes the complete catalog, five category subpages, a prominent Flagged for Review matrix, seller/policy findings, checklist, calculator, nominal-value analysis, and methodology. On the published GitHub Pages site it is available at `/GOLD1/site/`.
+
+The dashboard reads five exact JSON copies in `site/data/`; it does not migrate these rows into the separate root 43-row dataset. Run `npm ci && npm test` from the repository root to verify evidence, links, security, HTML, runtime interactions, the build, and byte-for-byte publication-data parity.
+
 ## Evidence method
 
 1. Open the official product or policy page directly.

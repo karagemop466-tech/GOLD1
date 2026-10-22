@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed) and `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — **active**), and `arena/c662efda-gold1` (fourth pass: independent official-source review + reserved `site/` integration — **active**)
-**Board owner:** `sess-bc088451` · **Board updated:** 2026-10-22
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed) and `sess-b93ff7c6` (parallel third pass + reconciliation + publish — **active**), and `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — **active**)
+**Board owner:** `sess-b93ff7c6` (reconciled board, §9) · **Board updated:** 2026-10-22
 
 ---
 
@@ -44,8 +44,9 @@ scope, one branch per session, no cross-session edits — were kept.
 | T11 | **Third pass**: extend the hallucination audit (weight traceability, melt recomputation, stale-data, no-invented-numbers) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/verify.mjs`, `data/checks/` | 2026-10-22 |
 | T12 | **Third pass**: site update (data-age banner, melt/value columns, weight-coverage page content) | **done** | sess-bc088451 | arena/bc088451-gold1 | `scripts/build.mjs`, `assets/`, generated `*.html` | 2026-10-22 |
 | T13 | **Third pass**: PR to `main`, merge, confirm Pages deploy, record links | **done** | sess-bc088451 | arena/bc088451-gold1 | §7 below | 2026-10-22 |
-| T14 | **Fourth pass**: independent official-source evidence, seller/policy review, 13-page audit dashboard, automated tests | **done** | arena/c662efda-gold1 | arena/c662efda-gold1 | `research/**`, `site/**` source, `scripts/*.js`, `tests/**`, `package*.json` | 2026-10-22 |
-| T15 | **Fourth-pass integration**: preserve the root publisher, publish synchronized evidence under reserved `site/`, add a generated root cross-link, combined audit, PR and Pages verification | **in progress** | arena/c662efda-gold1 | arena/c662efda-gold1 | `site/data/**`, `README.md`, `scripts/build.mjs` cross-link only, `scripts/verify.mjs` generated-output exclusion, generated root HTML, `.gitignore`, §8 below | 2026-10-22 |
+| T14 | **Reconciliation + publish**: merge `main`'s P12 into this branch, keep one ledger, fold in this session's extra reads, rebuild, re-audit, PR, merge, confirm Pages | **in progress** | sess-b93ff7c6 | arena/b93ff7c6-gold1 | `scripts/reconcile_second_read_p12.py`, `data/reverification.json`, `data/rings.json`, `data/flagged.json`, `scripts/build.mjs`, generated `*.html`, `README.md`, this board | 2026-10-22 |
+| T15 | **Independent official-source review**: 13 product rows, seller/policy evidence, 13-page `site/` dashboard and automated audits | **done** | arena/c662efda-gold1 | arena/c662efda-gold1 | `research/**`, `site/**`, `scripts/*.js`, `tests/**`, `package*.json` | 2026-10-22 |
+| T16 | **Standalone subsection publish**: preserve active T14 root scopes, synchronize `site/data/`, run combined audits without rewriting canonical root reports, PR, merge and verify `/site/` on Pages | **in progress** | arena/c662efda-gold1 | arena/c662efda-gold1 | `site/data/**`, `research/README.md` entry link, `scripts/verify.mjs` ignored-dist exclusion only, session archive, §10 below | 2026-10-22 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -92,6 +93,15 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | sess-d8f0544e | Gold price | gold-api.com 4,028.100098 USD/ozt at 2026-10-22T23:01:42Z; COMEX GC=F 4,043.00 | stored with publisher timestamps |
 | 2026-10-22 | sess-d8f0544e | US gold-marking rules | eCFR 16 CFR Part 23 (up to date 2026-10-21), § 23.3, § 23.4, § 23.10, § 23.18 headings | cited; body text not quoted |
 | 2026-10-22 | sess-d8f0544e | **Combined dataset**: 43 rows, 58 pages | `node scripts/verify.mjs` | 13/13 groups pass, 2,094 assertions, 0 failures |
+| 2026-10-22 | sess-b93ff7c6 | Ross-Simons 571221/571222/571223/571213/981367/907250 prices **and published gold weights** (1.7 / 2.5 / 3.8 / 5.0 / 0.5 / 0.5 g) | Official product pages, Details table "Gold Weight" | 6 prices confirmed except 571223 (moved $799→$849, corrected); 6 weights added |
+| 2026-10-22 | sess-b93ff7c6 | Ross-Simons 879968, 960952, 999230, 993512, 864785, 242556, 991907, 240912 | Official per-SKU search feed and product JSON | 8 prices matched; 999230 title replaced with the seller's exact string |
+| 2026-10-22 | sess-b93ff7c6 | Ross-Simons 943668, 991908, 254575 | Official search feed (no product returned for any of the three) | inconclusive by search; **superseded for 943668** by sess-bc088451, which opened the page and corrected it to $1,269 (F31). 991908 and 254575 remain unconfirmed and were left as captured — no flag raised, because the page was simply not opened |
+| 2026-10-22 | sess-b93ff7c6 | Mejuri 2mm Smooth Band | Official product page | $498 and "Handcrafted in recycled 14k solid gold" confirmed; width/thickness published, no grams |
+| 2026-10-22 | sess-b93ff7c6 | Anna Sheffield Bea Solitaire; With Clarity Tulip Basket | Official product JSON feeds | $11,500.00 and $590–$1,110 confirmed |
+| 2026-10-22 | sess-b93ff7c6 | Aurate Modern Cigar Band | Official product JSON | Weight range 2.6–4 g confirmed; 14K price **not** re-confirmed (live range $118–$1,668). Recorded in the ledger as `weight confirmed / 14K price unconfirmed`; no new flag, because F13 already covers unmapped variant prices |
+| 2026-10-22 | sess-b93ff7c6 | Gold spot refresh | gold-api.com `price` 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z | stored as primary; 4,028.100098 at 23:01:42Z kept in `previous_readings` |
+| 2026-10-22 | sess-b93ff7c6 | US gold-marking rules | eCFR 16 CFR Part 23, Subchapter B (corrected from "Subchapter C" in earlier notes) | headings §23.3, §23.4, §23.10, §23.18 confirmed on the official page |
+| 2026-10-22 | sess-b93ff7c6 | **Reconciliation + full suite after the merge** | `python3 scripts/reconcile_second_read_p12.py && node scripts/build.mjs && node scripts/verify.mjs` | **17/17 groups pass, 0 failures, 75 pages** (weights 7/43, 20 ledger entries, 35 flags, F36 added) |
 
 | 2026-10-22 | sess-bc088451 | Baseline: PR #9 merged, Pages `built`, `node scripts/verify.mjs` 13/13 on the inherited tree | `gh pr list`, `gh api .../pages`, local run | clean starting point | P11 |
 | 2026-10-22 | sess-bc088451 | 7 product pages re-read live (Ross-Simons 571221 / 571222 / 571223 / 981367 / 907250 / 943668, Mejuri 2mm Smooth Band, With Clarity 4-prong) | Each official product page opened again; prices, karats, `Gold Weight` lines and return wording copied off the page | 7 confirmations, **2 price changes**, **4 weights recovered**, 1 setting basis re-confirmed (price not re-read) | P12 |
@@ -219,7 +229,11 @@ Ross-Simons / Aurate / With Clarity / Anna Sheffield). No listing was collected 
 
 Combined state at integration: **43 listings · 7 retailers · 6 categories · 29 flags · 13/13 check groups passing (2,094 assertions)**. A further 14 third-pass rows are archived as leads (F30).
 
-**State after the third pass (live):** 43 listings · 7 retailers · 6 categories · **34 flags** · **5/43 rows with a published weight** · **17/17 check groups passing, 0 failures** (pass P22) · 75 generated pages. Open items a human may want to change: 38 rows still have no published weight, 35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
+**State after this session's PRs (commits `f94e2d2`, `fbfebfe`, `43e0e41`, `cd21db3`):** 43 listings · 7 retailers · 6 categories · **34 flags** · **5/43 rows with a published weight at the time of PR #15** · **17/17 check groups passing, 0 failures** · 75 generated pages · live at https://karagemop466-tech.github.io/GOLD1/
+
+**Current state after the parallel session's reconciliation (PR #11):** published-weight coverage **7/43** (two further Ross-Simons reads folded in: items 571213 and 571222), one merged ledger, 17/17 checks. That session's own record is §9 of this board.
+
+Open items a human may still want to change: **36 rows publish no weight**, 31-35 rows were not re-read in P12, retailer reputation research (F25) is unstarted, and F01 (the word "solid" absent from 39 listings) is unchanged.
 
 
 ### 2026-10-22 — independent source review (`arena/c56a7b27-gold1`)
@@ -230,14 +244,55 @@ Combined state at integration: **43 listings · 7 retailers · 6 categories · 2
 
 ---
 
-## 8. Fourth-pass official-source review and integration (`arena/c662efda-gold1`)
+## 9. Two sessions ran P12 in parallel — reconciliation record (`sess-b93ff7c6`)
 
-- **Scope claim:** T14 is complete; T15 is claimed for combined integration and publication. Existing T1–T13 records and the third-session publication records are preserved unchanged.
-- **Evidence set:** 13 official-product rows with direct links and 2026-10-22 retrieval dates, three seller-policy/reputation records, ten irregularity groups, nine verification gates, and a named Kitco snapshot. Six rows have seller-stated solid-gold wording and listed weights; seven leave those fields blank. **All 13 remain flagged; zero are purchase-ready.** This set remains separate from the root 43-row dataset and is not counted as unique or auto-migrated.
-- **Local audits before integration:** exact evidence/price/source checks, 257 static references, CSP/DOM/URL/secret/supply-chain checks, recommended HTML validation, 13-page DOM interaction tests, clean build, and source/output SHA-256 parity all passed. `npm audit --audit-level=high` reported zero vulnerabilities. Combined audits against the merged tree are still required.
-- **Publisher decision:** the existing GitHub Pages configuration remains `main` `/` with the root `.nojekyll`. The fourth-pass dashboard uses the reserved `site/` directory and will be available below that path. Its competing Actions Pages workflow was removed before integration; the existing collector workflow and all earlier dashboards/data/archives remain present.
-- **History:** this session's pre-integration coordination board is preserved at `data/archive/session-c662efda/COORDINATION.md`. No earlier session file is deleted or replaced by the fourth-pass dashboard.
-- **Combined integration audit:** added only a generated `Source audit` navigation link to the existing root pages and exact copies of the five fourth-pass datasets under `site/data/`. The root 43-row dataset, all 75 root pages, archives, collector, and existing Pages publisher remain present. `npm test` passed every fourth-pass gate; Branch-local **P28** passed **17/17 groups, 3,213 assertions, 43 rows, 75 root pages** with `dist/` present before the latest main merge. That branch report is archived; the canonical main history through P30 is preserved. After merging `origin/main` at `cd21db3`, canonical **P31** passed **17/17 groups, 3,217 assertions, 43 rows, 75 root pages** with `dist/` present, and the root builder regenerated `checks.html` from P31.
-- **Audit correction, not suppression:** P27 recorded two failures because the inherited walker scanned ignored `dist/calculator.html` under the root data schema. The walker now excludes only `dist/`; those bytes are still checked by the fourth-pass HTML/runtime/link/security/build-parity suites. The P27/P28 branch reports remain in `data/archive/session-c662efda/checks/`; canonical main pass numbers are not reused.
-- **HTTP smoke test:** the combined preview returned 200 for the root dashboard, nested root detail page, `site/`, catalog, flagged page, and calculator. Root and nested navigation reach `site/`; all five HTTP-served subsection JSON files matched the audited source SHA-256 hashes. Root README now distinguishes the two datasets and avoids treating XRF alone as proof of every construction detail.
-- **Publication:** T15 remains in progress pending the final PR, merge, legacy Pages deployment, live-URL verification, and final record below.
+**What happened.** `sess-b93ff7c6` claimed T9 at 23:24Z and started an independent third pass from
+`main@ef06225`. While it was working, `sess-bc088451` published the same kind of pass and merged it as
+PR #10 at 23:28Z, taking `main` to `f94e2d2`. Both sessions re-opened the same Ross-Simons pages and
+both reached the same numbers for 571223 ($849), 981367 (0.5 g), 907250 (0.5 g) and 571221 (1.7 g).
+The first pull request from this branch (#11) therefore reported `CONFLICTING`.
+
+**How it was resolved — neither side discarded:**
+
+1. `origin/main` was merged into `arena/b93ff7c6-gold1`. No file was reverted to a pre-P12 state.
+2. Where the two passes had built the same thing (a re-read ledger, check groups, a change log), the
+   **main-side implementation was kept** (`data/reverification.json`, `weights.html`, S14–S17) and this
+   session's parallel implementation (`data/recheck.json`, its own S14/S15 wording, its re-check column
+   and log) was **retired**, so the site has one ledger rather than two. The retired files are in the
+   git history of this branch, not deleted from history.
+3. This session's **additional facts were folded into the surviving ledger and dataset** by
+   `scripts/reconcile_second_read_p12.py`:
+   - **rs-571222 weight 2.5 g** — `main` recorded this SKU as having no metal weight; the spec panel
+     reads "Gold Weight 2.5 grams". The ledger entry was corrected *in place* with the quote and the
+     correction is described in the entry, so the first read is not hidden.
+   - **rs-571213 weight 5.0 g** — not captured on `main` at all.
+   - **12 further listings re-read** (879968, 960952, 999230, 993512, 864785, 242556, 991907, 240912,
+     as-bea-sol, wc-tulip, au-cigar, 571213), appended to the same ledger.
+   - **rs-999230 title** replaced with the seller's exact string (**F36**, new).
+   - **F02 rewritten** — it still said "weight is published for only 1 of 43" after `main` had already
+     added weights; the corrected count is **7 of 43**. **F32** re-counted from 13 to **11 of its 17**
+     Ross-Simons rows without a weight.
+4. Claims made by this session's first draft that `main` disproved were **withdrawn, not merged**:
+   the suggestion that 943668 was missing from the catalogue (it was opened and corrected to $1,269 by
+   `sess-bc088451`) and the draft F33/F34/F35 flags. What survives is F36 only.
+5. `main`'s hardcoded strings that this pass made stale were made dynamic: "seven product pages",
+   "four rows gained a weight", "the 38 rows without a weight" and "seven rows and one market feed".
+
+**Resulting state:** 43 rows · 7 retailers · **7 rows with a published weight** · **20 ledger entries** ·
+**35 findings** · **17/17 check groups, 0 failures, 75 pages**, every generated page link-checked.
+
+**Lesson recorded for the next session:** two sessions must not both claim "the P12 re-read". The board
+now carries a single T-number per pass and the next pass must claim it *before* opening any page.
+
+
+---
+
+## 10. Independent official-source review (`arena/c662efda-gold1`)
+
+- **Scope coordination:** T15 is complete and T16 is claimed for standalone publication. The active sess-b93ff7c6 T14 claim over `README.md`, `scripts/build.mjs`, generated root HTML and the root dataset is respected. Earlier branch-only cross-link/README edits were withdrawn during reconciliation; the final change set leaves those root files byte-identical to `main`. No T14 status or publication record is altered.
+- **Evidence set:** 13 official-product rows with direct links and 2026-10-22 retrieval dates, three seller-policy/reputation records, ten irregularity groups, nine verification gates, and a named Kitco snapshot. Six rows have seller-stated solid-gold wording and listed item weights; seven leave those fields blank. **All 13 remain flagged; zero are purchase-ready.** This remains a separate evidence set and is not counted as unique or auto-migrated into the root 43 rows.
+- **Standalone publication:** the existing legacy Pages publisher remains `main` `/`, so the reviewed dashboard publishes directly at `/GOLD1/site/` with its five exact JSON copies under `site/data/`. There is no competing Actions Pages workflow and no root navigation dependency. `research/README.md` and this record provide repository entry points.
+- **Final fourth-pass audits:** on the merged tree, exact evidence/price/source checks, 257 static references, CSP/DOM/URL/secret/supply-chain checks, recommended HTML validation, 13-page DOM interactions, clean build, and SHA-256 source/output parity all passed again. `npm audit --audit-level=high` reported zero vulnerabilities.
+- **Root-audit coordination:** the inherited verifier excludes only generated `dist/` (which the fourth-pass suite audits separately). Isolated **P32** passed **17/17 groups, 3,228 assertions, 43 rows, 75 root pages, zero failures** with `dist/` present; its report is archived at `data/archive/session-c662efda/checks/latest-isolated-P32.json`. The active session's canonical P31 `data/checks/` files and generated root pages remain byte-identical to `main`. Earlier branch-local reports through P28/P31 are also archived; canonical main numbering is not reused.
+- **History:** the pre-integration board is preserved at `data/archive/session-c662efda/COORDINATION.md`. No earlier session dataset, archive, workflow, or dashboard is deleted.
+- **Publication:** pending final PR, autonomous merge, legacy Pages deployment, live `/site/` verification, and final record below.
