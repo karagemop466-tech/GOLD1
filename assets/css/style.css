@@ -267,3 +267,23 @@ input:focus, select:focus { outline: 2px solid #e9d5a1; outline-offset: 1px; bor
   body { background: #fff; }
   .table-wrap { overflow: visible; }
 }
+
+/* --------------------------------------------------------------------------
+   Requirements scorecard & 2026-10-23 re-check (sixth pass)
+   -------------------------------------------------------------------------- */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .9rem; margin: 1.2rem 0 1.6rem; }
+.callout.good { background: var(--ok-bg, #f0fdf4); border-color: #bbf7d0; }
+.chip.good { background: var(--ok-bg); color: var(--ok); border-color: #bbf7d0; }
+
+.data-table.matrix th, .data-table.matrix td { text-align: center; }
+.data-table.matrix td.cell-title, .data-table.matrix td:nth-child(2) { text-align: left; }
+.data-table.matrix th:first-child, .data-table.matrix th:nth-child(2) { text-align: left; }
+
+.mark { font-weight: 700; font-variant-numeric: tabular-nums; cursor: help; }
+.mark-yes { color: var(--ok); }
+.mark-no { color: #9ca3af; }
+.mark-buyer { color: var(--info); }
+.mark-bad { color: var(--bad); }
+
+tr.row-alert td { background: var(--bad-bg, #fef2f2); }
+.data-table td.mark { width: 2rem; padding: .45rem .25rem; }

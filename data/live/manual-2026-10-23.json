@@ -1,0 +1,131 @@
+{
+  "pass": "P42-manual",
+  "note": "Manual reads performed in a browser-capable fetcher on 2026-10-23 for rows that the GitHub Actions runner could not retrieve (HTTP 403 bot wall), plus two rows where a full variant read was needed. Each entry quotes the page.",
+  "fetched_at": "2026-10-23T10:20:00Z",
+  "reads": [
+    {
+      "id": "rs-939479",
+      "url": "https://www.ross-simons.com/products/939479",
+      "method": "full product page",
+      "observed": {
+        "page_title": "Italian 14kt Yellow Gold Claddagh Ring",
+        "item_number": "Item 939479",
+        "price_usd": 499,
+        "metal": "14kt Yellow Gold",
+        "gold_weight": "1.5 grams",
+        "width": "3/8 inch",
+        "body": "This ring bears a very traditional Celtic symbol, known as the Claddagh. Crafted of polished 14kt yellow gold... Made in Italy. 3/8\" wide. 14kt yellow gold Claddagh ring."
+      },
+      "verdict": "source_mismatch",
+      "detail": "The URL and item number are unchanged, but the product now sold under SKU 939479 is an Italian 14kt yellow gold Claddagh ring. The curated row describes a \"1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold\" with \"Width 1/16 inch\". The title, the stone content and the published width all contradict the row. The price ($499) and the published gold weight (1.5 grams) coincidentally match, which is why the mismatch survived earlier passes."
+    },
+    {
+      "id": "wc-4prong",
+      "url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring.json",
+      "method": "official storefront product JSON (seller-published variant feed)",
+      "observed": {
+        "title": "Classic Four Prong Solitaire Diamond Engagement Ring",
+        "variant_prices_seen": [
+          "14KT White Gold / Round 590.00",
+          "14KT White Gold / Radiant 590.00",
+          "14KT White Gold / Cushion 590.00",
+          "14KT White Gold / Emerald 590.00",
+          "14KT White Gold / Oval 590.00",
+          "14KT White Gold / Heart 590.00",
+          "14KT White Gold / Pear 590.00",
+          "14KT Yellow Gold / Round 590.00"
+        ],
+        "note": "Only the first 14KT White Gold and the first 14KT Yellow Gold variants were read. The 18K and platinum variants, which produce the stored upper bound of 801.00, were not read in this pass."
+      },
+      "verdict": "lower_bound_drift",
+      "detail": "The 14K setting variants now list 590.00. The curated row stores a lower bound of 558.00 captured on 2026-10-22, and the previous feed also showed compare_at_price_min 620.00. The lower bound is therefore not reproducible at 558.00, but because the full variant set was not read the stored range is left in place and published as partly verified with a flag rather than silently rewritten."
+    },
+    {
+      "id": "as-bea-sol",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+      "method": "full product page",
+      "observed": {
+        "page_title": "Oval Solitaire Engagement Ring | Anna Sheffield | Champange Diamond",
+        "og_price_amount": "11,500.00",
+        "og_price_currency": "USD",
+        "visible_price": null,
+        "visible_price_note": "No dollar figure appears in the buy area of the rendered page; the buy box remains an enquiry form. 11,500.00 is present only in the seller's own og:price:amount metadata."
+      },
+      "verdict": "metadata_only",
+      "detail": "The seller's page metadata still carries 11,500.00, but the page itself does not display a price. F37 stands: the row remains published as price unverified."
+    },
+    {
+      "id": "rs-571223",
+      "url": "https://www.ross-simons.com/products/571223.json",
+      "method": "official storefront product JSON",
+      "observed": {
+        "title": "Women's 4mm 14kt Yellow Gold Band",
+        "variants": [
+          "Size 5 849.00",
+          "Size 5.5 799.00",
+          "Size 6 849.00",
+          "Size 6.5 799.00",
+          "Size 7 849.00",
+          "Size 7.5 799.00",
+          "Size 8 849.00",
+          "Size 8.5 799.00",
+          "Size 9 849.00"
+        ],
+        "gold_weight": "3.8 grams"
+      },
+      "verdict": "range_widens",
+      "detail": "Full sizes are 849.00 and half sizes are 799.00. The curated row stores a single 849.00. The seller's own feed therefore publishes a 799.00-849.00 range."
+    },
+    {
+      "id": "rs-943668",
+      "url": "https://www.ross-simons.com/products/943668.json",
+      "method": "official storefront product JSON",
+      "observed": {
+        "title": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
+        "variants_seen": ["Size 5 1439.00", "Size 6 1439.00", "Size 6.5 1439.00"],
+        "visible_price_line": "CLEARANCE 29% Off $1,795 $1,269"
+      },
+      "verdict": "range_widens",
+      "detail": "The page shows a sale price of 1,269 (compare-at 1,795) on the default variant, while other sizes are listed at 1,439. The seller's own feed therefore publishes a 1,269.00-1,439.00 range."
+    },
+    {
+      "id": "mej-deb",
+      "url": "https://mejuri.com/products/diamond-eternity-band",
+      "method": "full product page (JSON-LD AggregateOffer)",
+      "observed": {
+        "title": "Diamond Eternity Band",
+        "lowPrice": 1100,
+        "highPrice": 1700,
+        "visible": "From $1,100",
+        "material": "Solid Yellow Gold (14k), Natural Diamond"
+      },
+      "verdict": "range_widens",
+      "detail": "The seller's own structured data publishes lowPrice 1100 and highPrice 1700. The curated row stores only the 1,100 starting price."
+    },
+    {
+      "id": "mej-bde",
+      "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
+      "method": "full product page (JSON-LD AggregateOffer)",
+      "observed": {
+        "title": "Bold Diamond Eternity Ring",
+        "lowPrice": 2900,
+        "highPrice": 3500,
+        "visible": "From $2,900",
+        "material": "Solid White Gold (14k), Natural Diamond"
+      },
+      "verdict": "range_widens",
+      "detail": "The seller's own structured data publishes lowPrice 2900 and highPrice 3500. The curated row stores only the 2,900 starting price."
+    },
+    {
+      "id": "au-cigar",
+      "url": "https://auratenewyork.com/products/modern-cigar-band",
+      "method": "full product page",
+      "observed": {
+        "og_price_amount": "118",
+        "note": "The product-level price metadata is the vermeil variant (118). The 14K yellow gold variant price of 1,308.00 remains unreadable from the product-level feed, exactly as recorded in F39."
+      },
+      "verdict": "unchanged",
+      "detail": "No new evidence for the 14K variant price. F39 stands."
+    }
+  ]
+}

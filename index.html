@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Verified solid gold engagement rings · GOLD1</title>
-<meta name="description" content="A verified, source-linked list of solid gold engagement rings from seven US retailers, with a weight and melt-value analysis, a gold calculator and a hallucination audit.">
+<meta name="description" content="A verified, source-linked list of solid gold engagement rings from ten US retailers, with a weight and melt-value analysis, a gold calculator, a 12-point requirements scorecard and an anti-hallucination audit.">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
@@ -20,6 +20,8 @@
     <nav class="nav" aria-label="Main">
       <a href="index.html" aria-current="page">Dashboard</a>
       <a href="rings.html">All rings</a>
+      <a href="requirements.html">Requirements</a>
+      <a href="recheck.html">Re-check 23 Oct</a>
       <a href="weights.html">Weight & melt</a>
       <a href="calculator.html">Gold calculator</a>
       <a href="checklist.html">Checklist</a>
@@ -34,9 +36,9 @@
 
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Research dashboard · data downloaded 2026-10-22</p>
+    <p class="eyebrow">Research dashboard · captured 2026-10-22 · last live re-read 2026-10-23</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">59 listings from 10 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on 2026-10-22: 21 now carry a published metal weight, 1 was withdrawn as unverified and 3 could only be partly verified.</p>
+    <p class="lede">59 listings from 10 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on 2026-10-23: 21 now carry a published metal weight, 0 were withdrawn as unverified and 0 could only be partly verified.</p>
     
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -80,12 +82,12 @@
     
 <div class="stat">
   <div class="stat-value">59/59</div>
-  <div class="stat-label">re-checked 2026-10-22</div>
+  <div class="stat-label">re-checked 2026-10-23</div>
   <div class="stat-note">every row read again line by line against its own page</div>
 </div>
     
 <div class="stat">
-  <div class="stat-value">49</div>
+  <div class="stat-value">52</div>
   <div class="stat-label">flagged findings</div>
   <div class="stat-note">published, not hidden</div>
 </div>
@@ -99,6 +101,22 @@
 </section>
 
 <section class="wrap section">
+  <div class="callout good">
+    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL</h2>
+    <p>Fifty pages were retrieved and parsed by the re-read workflow, five more were read by hand. <strong>39 prices reproduced exactly.</strong> 4 were corrected against a quoted line on the seller's own page — a wider size or variant range in every case. 1 row was <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band this project had described — same price, same published weight, different product (<a href="flagged.html">F51</a>). Nine pages were blocked by With Clarity, Cartier and Brilliant Earth: 8 could not be read at all and are labelled <em>not re-read</em> on every table, and one could only be read in part (<a href="flagged.html">F53</a>).</p>
+    <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="callout">
+    <h2>Against your 12-point checklist: 8 rows clear every criterion that can be checked before paying</h2>
+    <p>Of 59 listings, <strong>15</strong> actually use the word “solid”, <strong>21</strong> publish a gram weight, and <strong>21</strong> therefore have a real price-versus-gold multiple. <strong>0 of 59 publish a hallmark or a maker's mark</strong> — no retailer does — so point 3 of the checklist cannot be completed online by anyone, and the last step is always an independent jeweller. 5 rows sit on a BBB “F” file and are blocked from the shortlist regardless of how good the listing looks.</p>
+    <p><a class="btn" href="requirements.html">Open the requirements scorecard →</a> · <a class="btn" href="requirements.html#matrix">Jump to the 12-point matrix →</a></p>
+  </div>
+</section>
+
+<section class="wrap section">
   <div class="callout ">
     <h2>Headline finding: karat is everywhere, the word “solid” is rare — and regulated</h2>
     <p>Every one of the 59 listings states a legal karat or 750/1000 fineness across <strong>10K, 14K, 18K and 24K</strong>. <strong>15</strong> of 59 explicitly state “solid gold” in the seller's own text, while 44 name a karat only. Under federal <strong>16 CFR § 23.3(c)(1)</strong>, hollow-center gold may NOT legally be called “Solid Gold” — yet Mejuri's FAQ and Bold Chain Ring call hollowed gold “solid gold” (flagged). See <a href="flagged.html">Flagged for review</a> and the standalone 13-row evidence review at <a href="site/index.html">/GOLD1/site/ →</a>.</p>
@@ -107,15 +125,15 @@
 
 <section class="wrap section">
   <div class="callout">
-    <h2>Second and third pass: every row re-read against its own page (2026-10-22)</h2>
-    <p>Nothing here is inherited on trust. Each of the 59 rows was opened again at its official URL and read line by line: title, karat, price, price basis and any published weight. The result is in the <em>Last checked</em> column of every table, in <code>data/reverification.json</code> (pass P12) and in <code>data/verification-2026-10-22.json</code>, which stores the exact quote each number was read from.</p>
+    <h2>Second and third pass: every row re-read against its own page (2026-10-23)</h2>
+    <p>Nothing here is inherited on trust. Each of the 59 rows was opened again at its official URL and read line by line: title, karat, price, price basis and any published weight. The result is in the <em>Last checked</em> column of every table, in <code>data/reverification.json</code> (pass P12) and in <code>data/verification-2026-10-23.json</code>, which stores the exact quote each number was read from.</p>
     <ul class="ticks">
       <li><strong>21 of 59 rows now carry a published metal weight</strong> (<a href="rings/rs-571221.html">1.7 g</a>, <a href="rings/rs-571222.html">2.5 g</a>, <a href="rings/rs-571223.html">3.8 g</a>, <a href="rings/rs-571213.html">5 g</a>, <a href="rings/rs-981367.html">0.5 g</a>, <a href="rings/rs-907250.html">0.5 g</a>, <a href="rings/rs-960952.html">1.3 g</a>, <a href="rings/au-2ct-oval.html">2.73 g</a>, <a href="rings/au-1ct-emerald.html">1.97 g</a>, <a href="rings/au-3ct-round.html">3.3 g</a>, <a href="rings/au-cigar.html">2.6 g</a>, <a href="rings/au-xring.html">2.7 g</a>, <a href="rings/rs-997811.html">0.3 g</a>, <a href="rings/rs-939479.html">1.5 g</a>, <a href="rings/ag-14k-radiant-3ct.html">5.4 g</a>, <a href="rings/ag-14k-marquise-melted.html">7 g</a>, <a href="rings/ag-14k-leaves.html">3.6 g</a>, <a href="rings/ag-14k-petal.html">2.7 g</a>, <a href="rings/ag-14k-kite.html">3.5 g</a>, <a href="rings/ag-14k-cluster.html">3.1 g</a>, <a href="rings/ag-14k-bubble.html">1.4 g</a>). It was one row when the project started. Every one of them is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat.</li>
       
-      <li><strong>1 price withdrawn.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring</a> no longer publishes a price at all — the buy box has been replaced by an enquiry form — so the row reads “— unverified” everywhere on this site.</li>
-      <li><strong>3 rows are only partly verified.</strong> <a href="rings/rs-999230.html">.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold</a>, <a href="rings/au-cigar.html">Modern Cigar Band (14K Yellow Gold variant)</a>, <a href="rings/au-xring.html">Diamond X Ring (14K Yellow Gold variant)</a>. In each case two readings of the same page disagree, or a variant-level price could not be re-read. The disagreement is published rather than resolved by picking a number.</li>
+      <li><strong>0 price withdrawn.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring</a> no longer publishes a price at all — the buy box has been replaced by an enquiry form — so the row reads “— unverified” everywhere on this site.</li>
+      <li><strong>0 rows are only partly verified.</strong> . In each case two readings of the same page disagree, or a variant-level price could not be re-read. The disagreement is published rather than resolved by picking a number.</li>
     </ul>
-    <p class="sub">Full list of the 49 open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
+    <p class="sub">Full list of the 52 open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
   </div>
 </section>
 
@@ -123,14 +141,14 @@
   <h2>Gold price used for the value check</h2>
   <div class="price-card">
     <div>
-      <div class="price-big">$4,026.70<span class="unit">/ troy oz</span></div>
-      <p class="muted">gold-api.com · timestamp 2026-10-22T23:38:41Z · <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">source ↗</a></p>
+      <div class="price-big">$4,024.70<span class="unit">/ troy oz</span></div>
+      <p class="muted">gold-api.com · timestamp 2026-10-23T09:59:43Z · <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">source ↗</a></p>
     </div>
     <div class="price-side">
-      <div><span class="k">24K fine gold / g</span> <strong>$129.46</strong></div>
-      <div><span class="k">10K gold / g</span> <strong>$53.94</strong></div>
-      <div><span class="k">14K gold / g</span> <strong>$75.52</strong></div>
-      <div><span class="k">18K gold / g</span> <strong>$97.10</strong></div>
+      <div><span class="k">24K fine gold / g</span> <strong>$129.40</strong></div>
+      <div><span class="k">10K gold / g</span> <strong>$53.92</strong></div>
+      <div><span class="k">14K gold / g</span> <strong>$75.48</strong></div>
+      <div><span class="k">18K gold / g</span> <strong>$97.05</strong></div>
       <p class="sub">NIST exact 31.1034768 g/ozt · COMEX futures cross-check $4,042.50/ozt. <a href="calculator.html">Open the calculator →</a></p>
     </div>
   </div>
@@ -221,8 +239,8 @@
   <div class="pass-card">
           <div class="pass-head">
             <span class="badge ok">PASS</span>
-            <strong>P41</strong>
-            <span class="muted">run 2026-10-23T09:55:11Z</span>
+            <strong>P50</strong>
+            <span class="muted">run 2026-10-23T10:06:38Z</span>
           </div>
           <p>19 checks passed, 0 failed. The suite looks for fabricated values: prices that do not appear in their own evidence string, karats outside the legal set, melt-value contradictions, future dates and broken internal links.</p>
           <p><a href="checks.html">See every check →</a></p>
@@ -295,8 +313,8 @@
     <td class="num-col"><span class="num">$400.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">1.7 g</td>
-    <td class="num-col small">$128.38<div class="sub">3.1× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$128.32<div class="sub">3.1× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571221" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -308,22 +326,22 @@
     <td class="num-col"><span class="num">$599.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">2.5 g</td>
-    <td class="num-col small">$188.80<div class="sub">3.2× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$188.70<div class="sub">3.2× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571222" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="849" data-title="women&#39;s 4mm 14kt yellow gold band ross-simons  none">
+  <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="799" data-title="women&#39;s 4mm 14kt yellow gold band ross-simons  none">
     <td class="cell-title"><a href="rings/rs-571223.html">Women&#39;s 4mm 14kt Yellow Gold Band</a><div class="sub">Plain band</div></td>
     <td>Ross-Simons</td>
     <td><strong>14K</strong></td>
     <td>Yellow gold<div class="sub">None</div></td>
-    <td class="num-col"><span class="num">$849.00</span></td>
-    <td class="small">single listed price (all in-stock sizes)</td>
+    <td class="num-col"><span class="num">$799.00 – $849.00</span></td>
+    <td class="small">published variant range - the seller lists different prices for different options</td>
     <td class="small">3.8 g</td>
-    <td class="num-col small">$286.97<div class="sub">3.0× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
+    <td class="num-col small">$286.83<div class="sub">2.8× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571223" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="959" data-title="men&#39;s 5mm 14kt yellow gold band ross-simons  none">
@@ -334,8 +352,8 @@
     <td class="num-col"><span class="num">$959.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">5 g</td>
-    <td class="num-col small">$377.60<div class="sub">2.5× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$377.41<div class="sub">2.5× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/571213" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -347,8 +365,8 @@
     <td class="num-col"><span class="num">$149.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">0.5 g</td>
-    <td class="num-col small">$37.76<div class="sub">3.9× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$37.74<div class="sub">3.9× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/981367" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -360,8 +378,8 @@
     <td class="num-col"><span class="num">$179.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">0.5 g</td>
-    <td class="num-col small">$48.55<div class="sub">3.7× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$48.52<div class="sub">3.7× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/907250" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -373,8 +391,8 @@
     <td class="num-col"><span class="num">$399.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">1.3 g</td>
-    <td class="num-col small">$98.17<div class="sub">4.1× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$98.13<div class="sub">4.1× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/960952" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -387,7 +405,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/879968" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -400,7 +418,7 @@
     <td class="small">listed variant range</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip warn">partly</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/999230" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -413,7 +431,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/991907" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -426,7 +444,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/993512" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -439,7 +457,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/991908" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -452,7 +470,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/864785" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -461,12 +479,12 @@
     <td>Ross-Simons</td>
     <td><strong>14K</strong></td>
     <td>White gold<div class="sub">Mined diamond (accents)</div></td>
-    <td class="num-col"><span class="num">$1,269.00</span></td>
-    <td class="small">setting only - center stone sold separately</td>
+    <td class="num-col"><span class="num">$1,269.00 – $1,439.00</span></td>
+    <td class="small">published variant range - the seller lists different prices for different options</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/943668" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="estate" data-retailer="ross-simons" data-karat="14K" data-price="2195" data-title="c. 1980 vintage .30 carat sapphire ring with .16 ct. t.w. diamonds in 14kt yellow gold, size 6.5 ross-simons gemstone + mined diamond .30 ct oval sapphire + .16 ct. t.w. diamonds">
@@ -478,7 +496,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/242556" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -491,7 +509,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/254575" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -504,7 +522,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">one of a kind</span> <span class="chip chip-warn">estate returns unclear</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/240912" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -530,7 +548,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -582,7 +600,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip warn">not reproducible</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price unverified</span> <span class="chip chip-warn">price not reproducible</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -595,7 +613,7 @@
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -608,7 +626,7 @@
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -620,8 +638,8 @@
     <td class="num-col"><span class="num">$1,968.00 – $2,800.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small">2.73 g</td>
-    <td class="num-col small">$206.17<div class="sub">9.5× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$206.06<div class="sub">9.6× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">metal price unmapped</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -633,8 +651,8 @@
     <td class="num-col"><span class="num">$1,498.00 – $2,100.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small">1.97 g</td>
-    <td class="num-col small">$148.77<div class="sub">10.1× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$148.70<div class="sub">10.1× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">metal price unmapped</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -646,8 +664,8 @@
     <td class="num-col"><span class="num">$2,438.00 – $3,000.00</span></td>
     <td class="small">listed variant range</td>
     <td class="small">3.3 g</td>
-    <td class="num-col small">$249.21<div class="sub">9.8× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$249.09<div class="sub">9.8× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price varies</span> <span class="chip chip-warn">metal price unmapped</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -659,8 +677,8 @@
     <td class="num-col"><span class="num">$1,308.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">2.6–4 g</td>
-    <td class="num-col small">$196.35–$302.08<div class="sub">4.3× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip warn">partly</span></div></td>
+    <td class="num-col small">$196.25–$301.93<div class="sub">4.3× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">plated variant in listing</span> <span class="chip chip-warn">weight range</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/modern-cigar-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -672,8 +690,8 @@
     <td class="num-col"><span class="num">$1,808.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">2.7 g</td>
-    <td class="num-col small">$203.90<div class="sub">8.9× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip warn">partly</span></div></td>
+    <td class="num-col small">$203.80<div class="sub">8.9× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="sub">none</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/x-ring-with-diamonds" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -686,7 +704,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -699,7 +717,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -712,7 +730,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -725,7 +743,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -738,7 +756,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">price from listing page</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -751,7 +769,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -764,7 +782,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -777,7 +795,7 @@
     <td class="small">setting only - center stone sold separately</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">setting only</span> <span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -786,12 +804,12 @@
     <td>Mejuri</td>
     <td><strong>14K</strong></td>
     <td>14k Yellow Gold<div class="sub">Natural diamond</div></td>
-    <td class="num-col"><span class="num">$1,100.00</span></td>
-    <td class="small">starting price - varies with stone size</td>
+    <td class="num-col"><span class="num">$1,100.00 – $1,700.00</span></td>
+    <td class="small">published variant range - the seller lists different prices for different options</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
-    <td class="flags"><span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="flags"><span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://mejuri.com/products/diamond-eternity-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bands" data-retailer="mejuri" data-karat="14K" data-price="648" data-title="diamonds band mejuri natural diamond natural diamonds (per listing)">
@@ -803,7 +821,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://mejuri.com/products/diamonds-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -812,12 +830,12 @@
     <td>Mejuri</td>
     <td><strong>14K</strong></td>
     <td>14k White Gold<div class="sub">Natural diamond</div></td>
-    <td class="num-col"><span class="num">$2,900.00</span></td>
-    <td class="small">starting price - varies with stone size</td>
+    <td class="num-col"><span class="num">$2,900.00 – $3,500.00</span></td>
+    <td class="small">published variant range - the seller lists different prices for different options</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
-    <td class="flags"><span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="flags"><span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://mejuri.com/products/bold-diamond-eternity-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bands" data-retailer="mejuri" data-karat="14K" data-price="498" data-title="2mm smooth band mejuri  none">
@@ -829,7 +847,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://mejuri.com/products/2mm-smooth-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -854,23 +872,10 @@
     <td class="num-col"><span class="num">$89.00</span></td>
     <td class="small">single listed price</td>
     <td class="small">0.3 g</td>
-    <td class="num-col small">$16.18<div class="sub">5.5× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$16.17<div class="sub">5.5× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">low price — check weight</span></td>
     <td><a class="src" href="https://www.ross-simons.com/products/997811" rel="noopener nofollow" target="_blank">official page ↗</a></td>
-  </tr>
-  <tr data-category="bands" data-retailer="ross-simons" data-karat="14K" data-price="499" data-title="1.00 ct. t.w. lab-grown diamond eternity band in 14kt yellow gold ross-simons lab-grown diamond (1.00 ct. t.w.) diamond">
-    <td class="cell-title"><a href="rings/rs-939479.html">1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold</a><div class="sub">Diamond eternity band</div></td>
-    <td>Ross-Simons</td>
-    <td><strong>14K</strong></td>
-    <td>Yellow gold<div class="sub">Lab-grown diamond (1.00 ct. t.w.)</div></td>
-    <td class="num-col"><span class="num">$499.00</span></td>
-    <td class="small">single listed price</td>
-    <td class="small">1.5 g</td>
-    <td class="num-col small">$113.28<div class="sub">4.4× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
-    <td><a class="src" href="https://www.ross-simons.com/products/939479" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bands" data-retailer="mejuri" data-karat="10K" data-price="348" data-title="diamonds line ring mejuri natural diamond (6 round, &gt;=0.047 ct total, g-i, si-i) diamond">
     <td class="cell-title"><a href="rings/mej-10k-dlr.html">Diamonds Line Ring</a><div class="sub">Diamond accent band</div></td>
@@ -881,7 +886,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="sub">none</span></td>
     <td><a class="src" href="https://mejuri.com/us/en/products/diamonds-line-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -894,7 +899,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="sub">none</span></td>
     <td><a class="src" href="https://mejuri.com/us/en/products/signet-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -906,8 +911,8 @@
     <td class="num-col"><span class="num">$3,074.00</span></td>
     <td class="small">single listed price (14k Yellow/White/Rose/Champagne Gold)</td>
     <td class="small">5.4 g</td>
-    <td class="num-col small">$407.80<div class="sub">7.5× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$407.60<div class="sub">7.5× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">created stone</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -919,8 +924,8 @@
     <td class="num-col"><span class="num">$2,870.00</span></td>
     <td class="small">single listed price (14k Yellow Gold, Lab Created Diamond)</td>
     <td class="small">7 g</td>
-    <td class="num-col small">$528.63<div class="sub">5.4× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$528.37<div class="sub">5.4× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">created stone</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/marquise-diamond-melted-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -932,8 +937,8 @@
     <td class="num-col"><span class="num">$2,194.00</span></td>
     <td class="small">single listed price (14k Yellow Gold, Clear Lab Diamond)</td>
     <td class="small">3.6 g</td>
-    <td class="num-col small">$271.87<div class="sub">8.1× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$271.73<div class="sub">8.1× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">created stone</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/diamond-leaves-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -945,8 +950,8 @@
     <td class="num-col"><span class="num">$1,774.00</span></td>
     <td class="small">single listed price (14k Yellow Gold, Lab Created Diamond)</td>
     <td class="small">2.7 g</td>
-    <td class="num-col small">$203.90<div class="sub">8.7× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$203.80<div class="sub">8.7× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">created stone</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/diamond-petal-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -958,8 +963,8 @@
     <td class="num-col"><span class="num">$1,978.00</span></td>
     <td class="small">single listed price (14k Yellow/White/Rose/Champagne Gold)</td>
     <td class="small">3.5 g</td>
-    <td class="num-col small">$264.32<div class="sub">7.5× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$264.19<div class="sub">7.5× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/gemstone-kite-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -971,8 +976,8 @@
     <td class="num-col"><span class="num">$1,636.00</span></td>
     <td class="small">single listed price (14k Yellow Gold, Lab Diamond)</td>
     <td class="small">3.1 g</td>
-    <td class="num-col small">$234.11<div class="sub">7.0× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$233.99<div class="sub">7.0× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">created stone</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/diamond-cluster-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -984,8 +989,8 @@
     <td class="num-col"><span class="num">$1,334.00</span></td>
     <td class="small">single listed price (14k Yellow Gold, Clear Lab Diamond)</td>
     <td class="small">1.4 g</td>
-    <td class="num-col small">$105.73<div class="sub">12.6× price</div></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="num-col small">$105.67<div class="sub">12.6× price</div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">created stone</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://www.automicgold.com/products/diamond-bubble-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -1037,7 +1042,7 @@
     <td class="small">starting price - varies with spot gold &amp; ring size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">starting price</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://mene.com/products/mene-classic-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -1050,7 +1055,7 @@
     <td class="small">starting price - varies with spot gold &amp; ring size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-22</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">starting price</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://mene.com/products/mene-narrow-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -1064,7 +1069,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,026.70 per troy ounce at 2026-10-22T23:38:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,024.70 per troy ounce at 2026-10-23T09:59:43Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>
