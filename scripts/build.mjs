@@ -233,7 +233,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S19 + A01–A10</a>); re-check the live source link before paying.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S19 + A01–A10</a>). <strong>Price snapshots are not live quotes:</strong> the latest product-page re-read was ${esc(recheckDate || 'not recorded')}; retailer prices and gold spot can change, so verify the linked official source immediately before buying.</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -382,7 +382,7 @@ const latestChecks = await read('data/checks/latest.json').catch(() => null);
 const dashboard = layout({
   title: 'Verified solid gold engagement rings',
   description:
-    'A verified, source-linked list of solid gold engagement rings from seven US retailers, with a weight and melt-value analysis, a gold calculator and a hallucination audit.',
+    `A source-linked research snapshot of solid gold engagement rings from ${retailersDoc.retailers.length} retailers, with a weight and melt-value analysis, a gold calculator and an anti-hallucination audit.`,
   current: 'root',
   active: 'Dashboard',
   body: `
