@@ -989,7 +989,21 @@
       ],
       "status": "needs review",
       "found_by": "sess-0a6df02e"
+    },
+    {
+      "id": "F67",
+      "title": "Site defect found & fixed: the NIST precious-metals conversion link on this site returned HTTP 404",
+      "severity": "medium",
+      "type": "dead source link (fixed 2026-10-23, T47)",
+      "affected": "checklist.html, sources.html, data/checklist.json, data/sources.json, data/gold-price.json (unit authority), scripts/integrate_0804e222.mjs, scripts/integrate_545688f3.mjs",
+      "finding": "Found by sess-356f1adf on 2026-10-23 during the eleventh-pass line-by-line link review. The canonical NIST authority for grams-per-troy-ounce (31.1034768, NIST Handbook 130 § 2.17) was stored and published as https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information. Opened live on 2026-10-23 that path returns a NIST “Page not found” response (the site's own 404 page). The working official page is https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information, which was opened live the same day and renders “Precious Metals Conversion Information” with Section 2.17 quoted. Effect on the data: none — the conversion constant 31.1034768 g/ozt is correct and is unchanged; only the link was dead. Fixed in this pass in data/checklist.json, data/sources.json, data/gold-price.json and both zero-loss integrator scripts, so a regeneration cannot re-introduce the retired path. scripts/verify.mjs S01 gained a regression assertion that fails the build if the retired NIST URL ever appears in a canonical data URL field again.",
+      "buyer_action": "No price or purity decision changes. If you followed the NIST link from this site before the fix and hit a 404, the working page is linked on sources.html and on the checklist card now. The 31.1034768 g/ozt conversion the calculator uses never depended on the link resolving.",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ],
+      "status": "needs review",
+      "disclosed_at": "2026-10-23T23:45:00Z"
     }
   ],
-  "generated_at": "2026-10-23T20:55:11Z"
+  "generated_at": "2026-10-23T23:45:00Z"
 }

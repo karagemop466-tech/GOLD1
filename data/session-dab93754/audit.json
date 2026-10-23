@@ -1,9 +1,9 @@
 {
   "pass": "P87-audit",
   "session": "sess-dab93754",
-  "generated_at": "2026-10-23T21:11:52Z",
+  "generated_at": "2026-10-23T23:42:40Z",
   "groups": 11,
-  "assertions": 1567,
+  "assertions": 1568,
   "failures": 0,
   "results": [
     {
@@ -66,7 +66,7 @@
       "id": "N09",
       "name": "Published HTML keeps its security posture",
       "ok": true,
-      "assertions": 787,
+      "assertions": 788,
       "failures": []
     },
     {
