@@ -27,6 +27,12 @@ const checklist = await read('data/checklist.json');
 const compliance = await read('data/compliance.json');
 const liveCheck = await read('data/verification-2026-10-23.json');
 const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
+const readCounts = {
+  automated: liveCheck.rows.filter((r) => String(r.read).startsWith('live')).length,
+  manual: liveCheck.rows.filter((r) => String(r.read).startsWith('hand')).length,
+  notRead: liveCheck.rows.filter((r) => String(r.read) === 'not re-read in this pass').length,
+  blocked: liveCheck.rows.filter((r) => r.http_status === 403).length,
+};
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const spot = gold.primary.price_usd_per_ozt;
@@ -422,7 +428,7 @@ const dashboard = layout({
 <section class="wrap section">
   <div class="callout good">
     <h2>Latest pass — 2026-10-23: every row opened again at its own official URL</h2>
-    <p>Fifty pages were retrieved and parsed by the re-read workflow, five more were read by hand. <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page — a wider size or variant range in every case. ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band this project had described — same price, same published weight, different product (<a href="flagged.html">F51</a>). Nine pages were blocked by With Clarity, Cartier and Brilliant Earth: ${liveCheck.summary.not_read} could not be read at all and are labelled <em>not re-read</em> on every table, and one could only be read in part (<a href="flagged.html">F53</a>).</p>
+    <p>${readCounts.automated} pages were retrieved and parsed automatically by the re-read workflow, ${readCounts.manual} more were read by hand — one of them through a site that refuses automation. <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page — a wider size or variant range in every case. ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band this project had described — same price, same published weight, different product (<a href="flagged.html">F51</a>). ${readCounts.blocked} pages were blocked by With Clarity, Cartier and Brilliant Earth: ${liveCheck.summary.not_read} could not be read at all and are labelled <em>not re-read</em> on every table, and one could only be read in part (<a href="flagged.html">F53</a>).</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -1362,7 +1368,7 @@ const recheckPage = layout({
   body: `
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.</p>
+  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${readCounts.automated} of 59 official product pages were retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner (full internet access). ${readCounts.manual} rows were read by hand where the runner was blocked, or where the full variant set mattered. ${readCounts.notRead} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.</p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">
