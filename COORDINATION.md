@@ -860,6 +860,8 @@ variant feeds) and to keep both `data/live/` timestamps.
 | Follow-up PR | [#48](https://github.com/karagemop466-tech/GOLD1/pull/48) — *Fix live-audit time range, add N10/N11 and the 20:27Z replication record* · merged **2026-10-23T20:28:39Z**, merge commit **`5baa2afff4a4c9dae676efb96d0b2befb7837ec0`** |
 | Pages after the follow-up | build **`built`**, `error: null`, for `5baa2af` (`updated_at` 2026-10-23T20:29:06Z) |
 | Live page re-read | `live-audit.html?deploy=5baa2af` rendered the full time range (`2026-10-23T20:21:46Z` → `2026-10-23T20:22:25Z`), the run id, the immutable evidence file, the replication line and all six findings |
+| Documentation PR | [#49](https://github.com/karagemop466-tech/GOLD1/pull/49) — banner now cites all four check families (`S01–S20 + A01–A10 + H01–H12 + N01–N11`) · merged **2026-10-23T20:29:27Z**, merge commit **`917a38352e87e93e4425d4de8c9390643d6c2c32`** |
+| Final Pages build | **`built`**, `error: null`, for `917a383` (`updated_at` 2026-10-23T20:29:51Z) — the site is live with the ninth-pass audit page |
 
 **Defect found by reading the deployed page (fixed in the follow-up PR).** The lede rendered
 *"…in a single automated run between **and** , then compared…"* — the ledger writer had omitted
