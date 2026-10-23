@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:50:53.575Z",
+  "generated_at": "2026-10-23T20:51:55.289Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {

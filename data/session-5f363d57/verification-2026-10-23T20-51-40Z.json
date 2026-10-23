@@ -1,0 +1,50 @@
+{
+  "session": "sess-5f363d57",
+  "recorded_at": "2026-10-23T20:51:40Z",
+  "tree": "current main plus isolated sess-5f363d57 audit/helper files; canonical product data unchanged by this session",
+  "root_build_and_verifier": {
+    "command": "npm run check",
+    "result": "pass",
+    "pass": "P111",
+    "rows": 71,
+    "pages": 106,
+    "assertions": 6856,
+    "groups": {
+      "S01-S20": "20/20",
+      "A01-A10": "10/10; 1,951 assertions",
+      "H01-H12": "12/12; 1,644 assertions"
+    }
+  },
+  "standalone_suite": {
+    "command": "npm test",
+    "result": "pass",
+    "coverage": [
+      "13/13 evidence rows",
+      "257 static links across 13 standalone pages",
+      "CSP, XSS, secret, affiliate and supply-chain scans",
+      "HTML validation",
+      "13 browser-style runtime pages",
+      "dist build parity and manifest hashes"
+    ]
+  },
+  "evening_audit": {
+    "command": "node scripts/audit_dab93754.mjs",
+    "result": "pass",
+    "groups": "N01-N11 11/11",
+    "assertions": 1551
+  },
+  "shared_math_helper": {
+    "command": "node scripts/test_evidence_math_5f363d57.mjs",
+    "result": "pass",
+    "assertions": 38
+  },
+  "independent_semantic_audit": {
+    "command": "node scripts/audit_5f363d57.mjs --no-fail",
+    "result": "needs review",
+    "groups_passed": "R01 only; 1/10",
+    "assertions": 1820,
+    "findings": 181,
+    "note": "Legacy green checks establish internal consistency, not agreement with every current official source or honest semantic label. Findings remain published and are not suppressed."
+  },
+  "workspace_handling": "Generated P111 churn in index.html, checks.html, data/checks/* and the peer N audit report was restored after recording the results here; no parallel session output was overwritten."
+}
