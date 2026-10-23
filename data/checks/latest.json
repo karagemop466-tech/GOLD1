@@ -1,14 +1,14 @@
 {
-  "pass": "P51",
-  "generated_at": "2026-10-23T10:06:48Z",
+  "pass": "P53",
+  "generated_at": "2026-10-23T10:07:30Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 19,
     "passed": 19,
     "failed": 0,
-    "assertions": 4747,
+    "assertions": 5302,
     "rows": 59,
-    "pages": 91
+    "pages": 93
   },
   "groups": [
     {
@@ -120,7 +120,7 @@
       "total_assertions": 0,
       "failures": [],
       "failure_count": 0,
-      "pages_checked": 91
+      "pages_checked": 93
     },
     {
       "id": "S12",

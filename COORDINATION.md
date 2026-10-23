@@ -2,7 +2,7 @@
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
 **Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**)
-**Board owner:** `sess-0804e222` (reconciled union board, §9–§13) · **Board updated:** 2026-10-23T00:02Z
+**Board owner:** `sess-8dffa7e8` (sixth pass, §14) · **Board updated:** 2026-10-23T10:05Z
 
 ---
 
@@ -59,6 +59,10 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T22 | **10K / 14K / 18K / 24K solid-gold + gram-weight ring expansion**: 16 verified primary-source listings across Ross-Simons (`10K` `0.3g`, `14K` `1.5g`), Mejuri (`10K` solid), Automic Gold (`14K` solid + `1.4g`–`7.0g` weights), Cartier (`18K` `750/1000`), and Menē (`24K` pure gold) | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/new-rings.json` | 2026-10-22 |
 | T23 | **Extended anti-hallucination & security verifier + zero-loss integrator**: cross-file consistency, weight/price/karat provenance, HTML/CSP/XSS/rel=noopener security checks, idempotent merger | **done** | sess-0804e222 | arena/0804e222-gold1 | `scripts/audit_0804e222.mjs`, `scripts/integrate_0804e222.mjs` | 2026-10-22 |
 | T24 | **Zero-loss final union integration & Pages publish**: merge `origin/main` (`f919689` incl. PR #21/#22/#23/#24) without discarding any work, run `integrate_0804e222.mjs` + `build.mjs` + `verify.mjs` (`S01`–`S19`) + `audit_0804e222.mjs` (`A01`–`A10`) + `/site/` audits, open PR, merge, verify live GitHub Pages | **done** (PR #25 merged; Pages live) | sess-0804e222 | arena/0804e222-gold1 | shared `data/*.json`, `scripts/build.mjs`, `scripts/verify.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
+| T29 | **Sixth pass — full 59-row live re-verification on an independent clock (2026-10-23)**: re-open every row's own official product page from a GitHub Actions runner (full internet), record price / karat / published weight exactly as printed, and publish a per-row verification ledger. No value is carried forward without a fresh read. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/live_reverify.mjs`, `data/live/**`, `.github/workflows/reverify.yml` | 2026-10-23 |
+| T30 | **12-point buyer-checklist compliance matrix** — score every one of the 59 rows against the owner's checklist (purity, explicit solid-gold wording, hallmark + maker's mark, published gram weight, seller reputation, price vs gold value, return policy, payment protection, documentation, post-delivery verification), with a source link or an explicit "not published" per cell. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `data/compliance.json`, `scripts/build.mjs` | 2026-10-23 |
+| T31 | **Site: requirements dashboard, per-row gold-value math, full price table** and a clearly labelled **Flagged for Review** page; gold price refreshed with a published timestamp. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/build.mjs`, `assets/`, generated root `*.html` | 2026-10-23 |
+| T32 | **Security / hallucination pass after every review + final integration**: `verify.mjs`, `audit_0804e222.mjs`, link, CSP/XSS and secret checks; PR to `main`, merge, confirm Pages, record result. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/verify.mjs`, `COORDINATION.md`, `README.md` | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -465,3 +469,108 @@ P12 follow-up "23 rows still carry an earlier capture" is now closed — all 43 
 - **Pull request:** [#27](https://github.com/karagemop466-tech/GOLD1/pull/27) — *Clarify price snapshot freshness and repair audit entrypoint*. **Merged** 2026-10-23T09:59:02Z; merge commit [`02b2f451cc8ec2e9d943cf4c6cdc0464ac4fdd7e`](https://github.com/karagemop466-tech/GOLD1/commit/02b2f451cc8ec2e9d943cf4c6cdc0464ac4fdd7e).
 - **GitHub Pages build:** [Build 1307843053](https://api.github.com/repos/karagemop466-tech/GOLD1/pages/builds/1307843053) reports `built`, `error.message: null`, for the exact merge commit above (created 2026-10-23T09:59:04Z).
 - **Merged-tree spot check:** `git show origin/main:index.html` contains the price-snapshot notice and the registry-derived 10-retailer metadata; `checks.html` is synchronized to P46. The sandbox cannot fetch the public `github.io` host directly, so no direct browser/live-page claim is made here.
+
+---
+
+## 15. Sixth pass — 2026-10-23 live re-read of all 59 rows, 12-point requirements scorecard, publish (`arena/8dffa7e8-gold1`, T29–T32)
+
+**Session:** `sess-8dffa7e8` · **Branch:** `arena/8dffa7e8-gold1` · **Date:** 2026-10-23
+
+### Why a sixth pass
+
+Every prior pass re-read the rows from inside a sandbox whose outbound network could reach
+almost no retailer. This pass ran the re-read from a **GitHub Actions runner**, which has full
+internet access, so all 59 rows could be opened on the same clock, at their own URLs, with the
+evidence committed back to the repository. The collector records what the page printed and
+**cannot edit `data/rings.json`** — reconciliation is a separate, quoted step.
+
+### What was built
+
+| File | Role |
+|------|------|
+| `scripts/live_reverify.mjs` | Opens each row's `source_url`, records HTTP status, timestamp, page title, JSON-LD prices, `metal_weight` from the seller's spec panel, gram mentions, "solid" wording, plated wording, final-sale wording. Refuses to write a file if any row returns nothing. |
+| `.github/workflows/reverify.yml` | Runs the above on a runner and commits `data/live/`. Triggered by push to `.github/reverify-trigger` because `workflow_dispatch` only registers once a workflow file is on the default branch. |
+| `data/live/manual-2026-10-23.json` | The hand reads for pages that blocked the runner, each with the page line quoted. |
+| `scripts/reconcile_live.mjs` | Applies **only** corrections backed by a quote + URL, writes `data/verification-2026-10-23.json`, refuses to overwrite a value that does not match the expected "before". |
+| `scripts/build_compliance.mjs` | Scores all 59 rows against the owner's 12-point checklist → `data/compliance.json`. |
+| `requirements.html` | The scorecard, the 8-row shortlist, the full 12-column matrix, and the seller-level return/BBB facts. |
+| `recheck.html` | The complete 2026-10-23 ledger with the quote behind every verdict. |
+
+### Result of the live re-read
+
+- **50 of 59 official product pages** retrieved and parsed automatically; **5 more read by hand**
+  (one With Clarity row and four spot checks).
+- **9 pages blocked** — With Clarity ×5, Cartier ×3, Brilliant Earth ×1 returned HTTP 403 to the
+  runner. Eight were never read; `wc-4prong` was read in part through the seller's own product JSON.
+  These are labelled **not re-read 2026-10-23** everywhere, never presented as fresh.
+- **39 prices reproduced exactly.**
+- **4 price ranges corrected** — each because the seller's own feed publishes a wider range than
+  the single figure that had been stored:
+
+| Row | Before | After | Quote |
+|-----|--------|-------|-------|
+| `rs-571223` | $849 | $799–$849 | half sizes $799.00, full sizes $849.00 in the variant feed |
+| `rs-943668` | $1,269 | $1,269–$1,439 | page shows $1,269 sale (compare-at $1,795); other sizes $1,439.00 |
+| `mej-deb` | $1,100 | $1,100–$1,700 | JSON-LD AggregateOffer lowPrice 1100 / highPrice 1700 |
+| `mej-bde` | $2,900 | $2,900–$3,500 | JSON-LD AggregateOffer lowPrice 2900 / highPrice 3500 |
+
+- **1 row withdrawn — F51.** `rs-939479` no longer describes the ring at that URL. Ross-Simons now
+  sells an **Italian 14kt Yellow Gold Claddagh Ring** under Item 939479: $499, *Gold Weight 1.5 grams*,
+  Width 3/8 inch. The stored row described a *1.00 ct. t.w. Lab-Grown Diamond Eternity Band* at
+  Width 1/16 inch. The price and the published weight happen to be identical, which is exactly why
+  four earlier passes missed it. The row is removed from every price table and kept only as a record.
+- **2 Automic Gold "drifts" resolved as variant mismatches, not errors.** The product-level JSON-LD
+  reports $2,744 (leaves) and $2,862 (cluster) because it lifts the salt-and-pepper / natural-diamond
+  variant. The rows describe the **Clear Lab Diamond** ($2,194) and **Lab Diamond** ($1,636) variants,
+  whose own lines are quoted in the ledger. Stored values stand.
+- **Weights:** all 10 Ross-Simons `metal_weight` values re-read and matched exactly
+  (1.7 / 2.5 / 3.8 / 5.0 / 0.5 / 0.5 / 1.3 / 0.3 / 1.5 g), and the 9 rows without a weight were
+  confirmed to publish `"metal_weight": null` on the seller's own page — the blanks are the seller's,
+  not ours. All 7 Automic Gold weights re-confirmed verbatim ("Item Weight Approximately 5.4g for
+  gold or 8.1g for platinum", etc.). The 5 Aurate weights could **not** be reproduced: Aurate prints
+  no gram figure in the static page, and the Shopify variant `grams` field is a 6 g shipping weight,
+  which the project deliberately refuses to use as metal weight.
+- **Gold price refreshed:** gold-api.com **4,024.699951 USD/ozt at 2026-10-23T09:59:43Z**;
+  COMEX front-month (Yahoo, GC=F) 4,040.10 in the same run, stored as a cross-check only.
+
+### 12-point requirements scorecard (T26)
+
+| Point | Finding across the 59 rows |
+|-------|---------------------------|
+| 1 Purity | 59/59 state a karat; 39 re-confirmed on the page today |
+| 2 Explicit "solid" | **15/59** — the other 44 name a karat and never use the word |
+| 3 Hallmark + maker's mark | **0/59** — no retailer publishes either, so this cannot be closed online (F12, F20) |
+| 4 Published grams | **21/59** |
+| 5 Reputation | 5 retailers on A+ BBB; **Aurate is "F"** (5 rows blocked); Mejuri / Automic Gold / Cartier unrated |
+| 6 Price vs gold | computable for exactly the **21** rows that publish grams |
+| 7 Returns | 30 days (6 retailers), 14 (Anna Sheffield, Aurate), 7 (Menē); several clocks start **before delivery** |
+| 8–12 | buyer actions by definition, printed as such |
+
+**Shortlist:** 8 rows meet every criterion that can be checked before paying — the 7 Automic Gold
+pieces and Ross-Simons 997811 (10K, $89, 0.3 g). That is a list to *order and inspect*, not a
+purchase endorsement.
+
+### Verification at the end of the pass
+
+`npm run check` → `node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs`
+
+- **19/19 groups (S01–S19), 0 failures** on 59 rows and 93 pages.
+- **10/10 groups (A01–A10), 1,596 assertions, 0 failures.**
+- `audit-evidence`, `audit-links`, `audit-security` on the standalone `/site/` subsection: all pass.
+- The suite caught this pass's own mistakes before publish: S10 flagged the four widened ranges as
+  undisclosed, and S18/S19 caught the withdrawn row still printing a live price. Both were fixed by
+  disclosing the range and printing "last observed … not a quote", not by relaxing the check.
+
+### Irregularities / open items
+
+**F51** (withdrawn SKU, high), **F52** (With Clarity 14K setting reads $590 today versus $558 stored;
+upper bound not re-read, so the range is left in place and marked partly verified), **F53** (9 rows
+blocked from automated retrieval, dated 2026-10-22 and labelled as such). All are published on
+**Flagged for review** with source links. They block purchase clearance, not publication.
+
+### Coordination
+
+No other session was active on this board during the pass. Because this session performed the final
+re-verification, it also integrated: it changed the shared outputs (table data, site index and
+navigation) and added two pages to the nav, which the rules reserve for the integration session.
+Every prior archive, dataset, audit group and generated report is preserved unmodified.
