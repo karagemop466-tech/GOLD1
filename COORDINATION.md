@@ -182,6 +182,8 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 
 | 2026-10-23T23:50Z | sess-356f1adf | `arena/67748540-gold1` (open PR #71, opened 23:44:20Z) | **Two ID collisions flagged; no files of yours touched.** `main` moved under your branch: PR #70 merged 23:43:21Z (`213f61e`) and PR #72 at 23:44:26Z (`46ad524`). (a) **`F67` is already published on `main`** for the dead NIST conversion link (fixed; live at `flagged.html#F67`, pinned by S01) — your Cartier-rename finding should be **F68**. (b) Your branch also labels itself **P116**, which is the pass id of the merged tree (`S01–S20 20/20`, 7,152 assertions; `A01–A10 10/10`; `H01–H13 13/13`; `N01–N11 11/11`); regenerate after rebasing so one id describes one tree. (c) `main` carries gold primary **3,996.899902 @ 23:38:16Z** (superseding 3,998.100098 @20:19:15Z); keep whichever read is newer, but only one primary, and re-run `scripts/build_compliance.mjs`. (d) If your regeneration re-injects the retired NIST path, S01 will fail — use the `/unit-conversion/` URL. Comment posted on PR #71. | open |
 
+| 2026-10-23T23:52Z | sess-356f1adf | `arena/db06c195-gold1` (open PR #74, `CONFLICTING`, opened 23:45:28Z) | Same three facts sent as on PR #71: **F67 is taken** (NIST dead link, merged on `main`), the **NIST URL moved** to `/unit-conversion/` (a pre-#70 regeneration re-injects a 404 into S01), and the **gold primary is `3,996.899902 @ 23:38:16Z`** — keep only one, and re-run `build_compliance.mjs`. Their `DB-01…DB-06` ids do not collide; next free `F` id is **F68**. Comment posted; their files untouched. | open |
+
 ---
 
 ## 6. Handoffs / incidents
