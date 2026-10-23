@@ -192,7 +192,7 @@
    "verbatim": "# Etincelle de Cartier ring, princess-cut diamond, paved ... - Yellow gold 750/1000 - Set with a princess-cut diamond centre stone of 0.16 carats ... $3,350 ... Ref.B4232900",
    "stored": {"price_low": 3350, "price_high": 3350, "karat": "18K"},
    "verdict": "stored_price_reproduced_name_changed",
-   "note": "Same product reference (B4232900) and the same $3,350 price, but Cartier now serves this reference under the 'Etincelle de Cartier' collection: the '/cartier-destinee/' URL redirects and the printed title no longer says 'Destinée'. The stored row title reflects the older seller naming. Published as F67 for review; the price is reproduced, so the row stays active."
+   "note": "Same product reference (B4232900) and the same $3,350 price, but Cartier now serves this reference under the 'Etincelle de Cartier' collection: the '/cartier-destinee/' URL redirects and the printed title no longer says 'Destinée'. The stored row title reflects the older seller naming. Published as F68 for review; the price is reproduced, so the row stays active."
   },
   {
    "id": "mene-24k-classic-band",
@@ -248,7 +248,7 @@
   "name_or_url_changes_found": 2,
   "notes": [
    "All ten rows the 2026-10-23T23:39Z runner could not read (HTTP 403: 5 With Clarity, 1 Brilliant Earth, 4 Cartier) were read through the second channel and every stored price reproduced exactly.",
-   "Two Cartier rows redirected: the 1895 band URL now 301s to a longer slug with the same reference and price; the Destinée princess-cut URL now serves an 'Etincelle de Cartier' product with the same reference B4232900 and the same $3,350 — published as F67."
+   "Two Cartier rows redirected: the 1895 band URL now 301s to a longer slug with the same reference and price; the Destinée princess-cut URL now serves an 'Etincelle de Cartier' product with the same reference B4232900 and the same $3,350 — published as F68."
   ]
  }
 }

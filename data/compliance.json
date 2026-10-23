@@ -4,7 +4,7 @@
  "gold_reference": {
   "price_usd_per_ozt": 3996.899902,
   "publisher": "gold-api.com",
-  "publisher_timestamp": "2026-10-23T23:39:15Z",
+  "publisher_timestamp": "2026-10-23T23:38:16Z",
   "source_url": "https://api.gold-api.com/price/XAU",
   "grams_per_troy_ounce": 31.1034768
  },

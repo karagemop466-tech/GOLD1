@@ -10,7 +10,7 @@
  *   Q03  a hand-read row may never claim more than the page printed
  *   Q04  the two gold channels agree, and both carry a publisher timestamp
  *   Q05  every melt figure on the site derives from the *stored* spot
- *   Q06  the new finding F67 exists, carries sources, and is rendered with an anchor
+ *   Q06  the new finding F68 exists, carries sources, and is rendered with an anchor
  *   Q07  no stale pass prose ("65 findings", "50 parsed by the automated runner")
  *   Q08  security posture of the regenerated HTML (inline script/handler, secrets)
  *
@@ -143,7 +143,15 @@ await group('Q04', 'Both gold channels agree and carry a publisher timestamp', a
   assert(!!runner && !!handGold, 'one of the two gold readings is missing');
   assert(runner.price_usd_per_ozt === handGold.price_usd_per_ozt, `channels disagree: ${runner.price_usd_per_ozt} vs ${handGold.price_usd_per_ozt}`);
   assert(gold.primary.price_usd_per_ozt === runner.price_usd_per_ozt, 'stored primary does not equal the runner reading');
-  assert(gold.primary.publisher_timestamp === runner.publisher_timestamp, 'stored publisher timestamp does not equal the runner timestamp');
+  // Post-union (see COORDINATION §23.0): the stored primary keeps the parallel
+  // session's read at 23:38:16Z, which is the same publisher timestamp this
+  // session's own channel saw. The runner sampled the same unchanged value one
+  // minute later. Either publisher stamp is legitimate — but both channels must
+  // have produced the same number, and the stored timestamp must be one of them.
+  assert(
+    [runner.publisher_timestamp, handGold.publisher_timestamp].includes(gold.primary.publisher_timestamp),
+    `stored publisher timestamp ${gold.primary.publisher_timestamp} matches neither channel (${runner.publisher_timestamp} / ${handGold.publisher_timestamp})`
+  );
   assert(/Z$/.test(gold.primary.publisher_timestamp), 'publisher timestamp is not an explicit UTC instant');
   const comex = hand.gold_price.find((g) => /Yahoo/.test(g.publisher));
   assert(gold.cross_check.price_usd_per_ozt === comex.price_usd_per_ozt, 'stored COMEX cross-check does not equal the read value');
@@ -170,34 +178,37 @@ await group('Q05', 'Every melt figure derives from the stored spot, not an older
   assert(checked >= 20, `only ${checked} melt figures were recomputable`);
 });
 
-await group('Q06', 'Finding F67 is real, sourced and rendered', async (assert) => {
-  const f = flagged.items.find((i) => i.id === 'F67');
-  assert(!!f, 'F67 missing from the registry');
-  assert(f.sources.length >= 2 && f.sources.every((u) => u.startsWith('https://www.cartier.com/')), 'F67 sources must be Cartier product URLs');
-  assert(f.status === 'needs review', 'F67 must be published, non-blocking');
-  assert(flagged.items.filter((i) => i.id === 'F67').length === 1, 'F67 duplicated');
+await group('Q06', 'Finding F68 is real, sourced and rendered', async (assert) => {
+  const f = flagged.items.find((i) => i.id === 'F68');
+  assert(!!f, 'F68 missing from the registry');
+  assert(f.sources.length >= 2 && f.sources.every((u) => u.startsWith('https://www.cartier.com/')), 'F68 sources must be Cartier product URLs');
+  assert(f.status === 'needs review', 'F68 must be published, non-blocking');
+  assert(flagged.items.filter((i) => i.id === 'F68').length === 1, 'F68 duplicated');
   const ids = flagged.items.map((i) => i.id);
   assert(new Set(ids).size === ids.length, 'duplicate finding ids in the registry');
   const html = await readText('flagged.html');
-  assert(html.includes('id="F67"'), 'flagged.html has no F67 anchor');
-  assert(/Etincelle/.test(html), 'flagged.html does not render the F67 wording');
+  assert(html.includes('id="F68"'), 'flagged.html has no F68 anchor');
+  assert(/Etincelle/.test(html), 'flagged.html does not render the F68 wording');
 });
 
 await group('Q07', 'No stale pass prose ships', async (assert) => {
   const readme = await readText('README.md');
   const board = await readText('COORDINATION.md');
-  assert(readme.includes('66 findings'), 'README does not state the current 66 findings');
+  assert(readme.includes('67 findings'), 'README does not state the current 67 findings');
   assert(!readme.includes('65 findings'), 'README still says 65 findings');
+  assert(!readme.includes('66 findings'), 'README still says 66 findings');
   assert(!readme.includes('50 parsed by the automated runner'), 'README still describes the old runner tally');
   assert(readme.includes('61 parsed by the automated 23:39Z runner'), 'README missing the current runner tally');
-  assert(board.includes('## 22.'), 'COORDINATION.md carries no §22 record for this pass');
-  const s22 = board.slice(board.indexOf('## 22.'));
+  assert(board.includes('## 23.'), 'COORDINATION.md carries no §23 record for this pass');
+  // §23 is this session's section: §22 belongs to the parallel eleventh pass
+  // (sess-356f1adf, PR #70), which landed first and owns F67 (NIST dead link).
+  const s22 = board.slice(board.indexOf('## 23.'));
   // Historical sections (§21 and earlier) keep their dated wording verbatim by
   // design — history is never rewritten. The *current-state* text must not still
   // advertise F67 as free, and must state the live registry size.
-  assert(!/next (new )?id\W{0,4}F67/i.test(s22), '§22 still advertises F67 as the next free id');
-  assert(/next new id \*\*F68\*\*|next new id F68/.test(board), 'the board does not state that F68 is now the next free id');
-  assert(/66 findings/.test(s22), '§22 does not state the current registry size');
+  assert(!/next (new )?id\W{0,4}F6[78]/i.test(s22), '§23 still advertises a used id as the next free one');
+  assert(/next new id \*\*F69\*\*|next new id F69/.test(board), 'the board does not state that F69 is now the next free id');
+  assert(/67 findings/.test(s22), '§23 does not state the current registry size');
 });
 
 await group('Q08', 'Regenerated HTML keeps its security posture', async (assert) => {

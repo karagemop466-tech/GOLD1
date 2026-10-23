@@ -126,7 +126,7 @@ for (const id of ['au-1ct-emerald', 'au-2ct-oval', 'au-3ct-round']) {
 {
   const row = rings.rows.find((r) => r.id === 'car-18k-destinee-princess');
   if (row) {
-    row.notes = `${row.notes} 2026-10-23T23:48Z (${PASS}): the seller now serves reference B4232900 under the "Etincelle de Cartier" collection — the stored Destinée URL redirects and the page no longer prints "Destinée". Price reproduced unchanged at $3,350; published as F67 rather than silently retitled.`;
+    row.notes = `${row.notes} 2026-10-23T23:48Z (${PASS}): the seller now serves reference B4232900 under the "Etincelle de Cartier" collection — the stored Destinée URL redirects and the page no longer prints "Destinée". Price reproduced unchanged at $3,350; published as F68 rather than silently retitled.`;
   }
 }
 
@@ -184,7 +184,7 @@ if (f13) {
 }
 
 const f67 = {
-  id: 'F67',
+  id: 'F68',
   title: 'Cartier reference B4232900 is now served as “Etincelle de Cartier”, not “Destinée” — stored URL redirects',
   severity: 'low',
   type: 'source identity (collection rename)',
@@ -201,7 +201,7 @@ const f67 = {
   found_by: 'sess-67748540',
 };
 
-if (!byId.has('F67')) flagged.items.push(f67);
+if (!byId.has('F68')) flagged.items.push(f67);
 flagged.as_of = DAY;
 flagged.generated_at = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
 await write('data/flagged.json', flagged);

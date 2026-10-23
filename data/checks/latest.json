@@ -1,12 +1,12 @@
 {
-  "pass": "P114",
-  "generated_at": "2026-10-23T23:44:02Z",
+  "pass": "P116",
+  "generated_at": "2026-10-23T23:46:07Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 20,
     "passed": 20,
     "failed": 0,
-    "assertions": 7121,
+    "assertions": 7354,
     "rows": 71,
     "pages": 106
   },
@@ -14,7 +14,7 @@
     {
       "id": "S01",
       "name": "Provenance",
-      "description": "Every row has an HTTPS source on the retailer's own domain, a retrieval date, and a usable evidence string.",
+      "description": "Every row has an HTTPS source on the retailer's own domain, a retrieval date, and a usable evidence string; no retired official-source URL (e.g. the moved NIST path, F67) is published anywhere in the canonical data.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,

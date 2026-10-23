@@ -1,100 +1,99 @@
 {
- "as_of": "2026-10-23T23:39:15Z",
- "note": "Published gold prices, each stored with the publisher's own timestamp. None is an estimate. The latest reading drives the melt arithmetic; the calculator lets you replace the price at any time.",
- "primary": {
-  "label": "Gold spot, USD per troy ounce",
-  "price_usd_per_ozt": 3996.899902,
-  "publisher": "gold-api.com",
-  "publisher_timestamp": "2026-10-23T23:39:15Z",
-  "source_url": "https://api.gold-api.com/price/XAU",
-  "observed_by": "sess-67748540",
-  "observed_at": "2026-10-23T23:39:25Z",
-  "corroboration": "Independently re-read through this session's second channel at 2026-10-23T23:38:16Z — identical value 3996.899902 USD/ozt, publisher timestamp 2026-10-23T23:38:16Z.",
-  "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3996.899902,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T23:39:15Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
- },
- "cross_check": {
-  "label": "COMEX gold futures, front month (GC=F), USD per troy ounce",
-  "price_usd_per_ozt": 4010,
-  "publisher": "Yahoo Finance",
-  "publisher_timestamp": "2026-10-23T20:59:58Z",
-  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
-  "source_type": "market data publisher",
-  "note": "Futures price cross-checked twice on 2026-10-23 (4,039.20 USD/ozt at 09:57:50Z in sess-545688f3; 4,040.10 USD/ozt at 10:00:08Z in sess-8dffa7e8). Refreshed 2026-10-23T23:40Z (sess-67748540) through the second channel, because the runner's own Yahoo call returned HTTP 429 at 23:39Z: regularMarketPrice 4010 USD/ozt, regularMarketTime epoch 1792789198 (= 2026-10-23T20:59:58Z); chartPreviousClose 4,160.1.",
-  "observed_by": "sess-8dffa7e8 + sess-545688f3 + sess-0a6df02e"
- },
- "grains_per_troy_ounce": 31.1034768,
- "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
- "readings": [
-  {
-   "label": "Gold spot, USD per troy ounce",
-   "price_usd_per_ozt": 3998.100098,
-   "publisher": "gold-api.com",
-   "publisher_timestamp": "2026-10-23T20:19:15Z",
-   "source_url": "https://api.gold-api.com/price/XAU",
-   "observed_by": "sess-0a6df02e",
-   "observed_at": "2026-10-23T20:22:00Z"
+  "as_of": "2026-10-23T23:38:16Z",
+  "note": "Published gold prices, each stored with the publisher's own timestamp. None is an estimate. The latest reading drives the melt arithmetic; the calculator lets you replace the price at any time.",
+  "primary": {
+    "label": "Gold spot, USD per troy ounce",
+    "price_usd_per_ozt": 3996.899902,
+    "publisher": "gold-api.com",
+    "publisher_timestamp": "2026-10-23T23:38:16Z",
+    "source_url": "https://api.gold-api.com/price/XAU",
+    "observed_by": "sess-356f1adf",
+    "observed_at": "2026-10-23T23:38:20Z",
+    "corroboration": "Independently corroborated by sess-67748540: this session's own retrieval channel read the same feed at 2026-10-23T23:38:16Z and got the identical value 3996.899902 USD/ozt, and the GitHub Actions live-re-read runner sampled it again at 2026-10-23T23:39:15Z (run 40040847705) — also 3996.899902 USD/ozt. Three reads, two network paths, one unchanged number."
   },
-  {
-   "label": "Gold spot, USD per troy ounce",
-   "price_usd_per_ozt": 3999.899902,
-   "publisher": "gold-api.com",
-   "publisher_timestamp": "2026-10-23T19:38:15Z",
-   "source_url": "https://api.gold-api.com/price/XAU",
-   "observed_by": "sess-5aa23937",
-   "observed_at": "2026-10-23T19:38:30Z"
+  "cross_check": {
+    "label": "COMEX gold futures, front month (GC=F), USD per troy ounce",
+    "price_usd_per_ozt": 4010.0,
+    "publisher": "Yahoo Finance",
+    "publisher_timestamp": "2026-10-23T20:59:58Z",
+    "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+    "source_type": "market data publisher",
+    "note": "Front-month COMEX GC=F, read 2026-10-23T23:40Z through this session's second channel because the Actions runner's own Yahoo call returned HTTP 429 at 23:39Z: regularMarketPrice 4010.00 USD/ozt, regularMarketTime epoch 1792789198 (= 2026-10-23T20:59:58Z), chartPreviousClose 4160.10. Supersedes the 20:17:18Z reading of 4010.70 USD/ozt recorded by sess-0a6df02e earlier the same evening (the value is a publisher snapshot, not a live quote). Earlier cross-checks the same day: 4,039.20 @09:57:50Z (sess-545688f3), 4,040.10 @10:00:08Z (sess-8dffa7e8).",
+    "observed_by": "sess-67748540"
   },
-  {
-   "label": "Gold spot, USD per troy ounce",
-   "price_usd_per_ozt": 4024.699951,
-   "publisher": "gold-api.com",
-   "publisher_timestamp": "2026-10-23T09:59:43Z",
-   "source_url": "https://api.gold-api.com/price/XAU",
-   "observed_by": "sess-8dffa7e8",
-   "observed_at": "2026-10-23T10:00:08Z"
-  },
-  {
-   "label": "Gold spot, USD per troy ounce",
-   "price_usd_per_ozt": 4025.600098,
-   "publisher": "gold-api.com",
-   "publisher_timestamp": "2026-10-23T09:51:43Z",
-   "source_url": "https://api.gold-api.com/price/XAU",
-   "observed_by": "sess-545688f3",
-   "observed_at": "2026-10-23T09:57:50Z"
-  },
-  {
-   "price_usd_per_ozt": 4028.100098,
-   "publisher_timestamp": "2026-10-22T23:01:42Z",
-   "publisher": "gold-api.com",
-   "observed_by": "sess-d8f0544e"
-  },
-  {
-   "price_usd_per_ozt": 4029.699951,
-   "publisher_timestamp": "2026-10-22T23:22:41Z",
-   "publisher": "gold-api.com",
-   "observed_by": "sess-bc088451"
-  },
-  {
-   "price_usd_per_ozt": 4026.699951,
-   "publisher_timestamp": "2026-10-22T23:38:41Z",
-   "publisher": "gold-api.com",
-   "observed_by": "sess-277867af"
-  },
-  {
-   "price_usd_per_ozt": 3996.899902,
-   "publisher_timestamp": "2026-10-23T23:39:15Z",
-   "publisher": "gold-api.com",
-   "observed_by": "sess-67748540"
+  "grains_per_troy_ounce": 31.1034768,
+  "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
+  "readings": [
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 3998.100098,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T20:19:15Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "sess-0a6df02e",
+      "observed_at": "2026-10-23T20:22:00Z"
+    },
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 3999.899902,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T19:38:15Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "sess-5aa23937",
+      "observed_at": "2026-10-23T19:38:30Z"
+    },
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 4024.699951,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T09:59:43Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "sess-8dffa7e8",
+      "observed_at": "2026-10-23T10:00:08Z"
+    },
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 4025.600098,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T09:51:43Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "sess-545688f3",
+      "observed_at": "2026-10-23T09:57:50Z"
+    },
+    {
+      "price_usd_per_ozt": 4028.100098,
+      "publisher_timestamp": "2026-10-22T23:01:42Z",
+      "publisher": "gold-api.com",
+      "observed_by": "sess-d8f0544e"
+    },
+    {
+      "price_usd_per_ozt": 4029.699951,
+      "publisher_timestamp": "2026-10-22T23:22:41Z",
+      "publisher": "gold-api.com",
+      "observed_by": "sess-bc088451"
+    },
+    {
+      "price_usd_per_ozt": 4026.699951,
+      "publisher_timestamp": "2026-10-22T23:38:41Z",
+      "publisher": "gold-api.com",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "price_usd_per_ozt": 3996.899902,
+      "publisher_timestamp": "2026-10-23T23:39:15Z",
+      "publisher": "gold-api.com",
+      "observed_by": "sess-67748540 (GitHub Actions runner, run 40040847705)"
+    }
+  ],
+  "readings_note": "Eight retained historical readings plus the current primary — nine distinct timestamped reads of the same published feed across 2026-10-22 and 2026-10-23, each stored with the publisher's own timestamp. The current primary, 3,996.899902 USD/ozt at 2026-10-23T23:38:16Z (sess-356f1adf, eleventh pass), was re-read identically through a second channel at 23:38:16Z and by the Actions runner at 23:39:15Z (sess-67748540). It supersedes the 20:19:15Z reading of 3,998.100098 USD/ozt (sess-0a6df02e). Every gold-value figure on the site is re-derived from the stored primary price by scripts/verify.mjs, so a change here changes every melt figure; no figure is typed by hand.",
+  "grams_per_troy_ounce": 31.1034768,
+  "true_grains_per_troy_ounce": 480,
+  "pennyweights_per_troy_ounce": 20,
+  "unit_authority": {
+    "publisher": "National Institute of Standards and Technology (NIST)",
+    "document": "NIST Handbook 130 (2025), Uniform Laws and Regulations, Section 2.17 — Precious Metals Conversion Information",
+    "source_url": "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information",
+    "retrieved_at": "2026-10-23",
+    "note": "31.1034768 is exact grams per troy ounce (1 ozt = 480 grains = 20 dwt). Legacy property \"grains_per_troy_ounce\" is retained for backwards script compatibility. URL corrected 2026-10-23 (sess-356f1adf): the previously stored /pml/owm/metric-si/precious-metals-conversion-information path returns HTTP 404; the working page is the /unit-conversion/ path, verified live on 2026-10-23 (F67)."
   }
- ],
- "readings_note": "Seven retained readings of the same published feed across 2026-10-22 and 2026-10-23, each with the publisher's own timestamp. The newest, 3,998.100098 USD/ozt at 2026-10-23T20:19:15Z (sess-0a6df02e), supersedes the 19:38:15Z reading of 3,999.899902 USD/ozt (sess-5aa23937). Every gold-value figure on the site is re-derived from the stored primary price by scripts/verify.mjs, so a change here changes every melt figure; no figure is typed by hand.",
- "grams_per_troy_ounce": 31.1034768,
- "true_grains_per_troy_ounce": 480,
- "pennyweights_per_troy_ounce": 20,
- "unit_authority": {
-  "publisher": "National Institute of Standards and Technology (NIST)",
-  "document": "NIST Handbook 130 (2025), Uniform Laws and Regulations, Section 2.17 — Precious Metals Conversion Information",
-  "source_url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
-  "retrieved_at": "2026-10-22",
-  "note": "31.1034768 is exact grams per troy ounce (1 ozt = 480 grains = 20 dwt). Legacy property \"grains_per_troy_ounce\" is retained for backwards script compatibility."
- }
 }
