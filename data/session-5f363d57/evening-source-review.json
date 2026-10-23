@@ -1,0 +1,53 @@
+{
+  "review_type": "direct official-page read through the Arena page-fetch channel; isolated evidence, not yet canonical integration",
+  "reviewed_by": "sess-5f363d57",
+  "retrieved_at": "2026-10-23T20:47:06Z",
+  "reads": [
+    {
+      "row": "bn-14k-petite-195639",
+      "official_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+      "observed": {
+        "page_title": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+        "stock_number": "501130y14",
+        "metal": "14K Yellow Gold",
+        "width_mm": 1.8,
+        "displayed_setting_price_usd": 1000,
+        "description": "Elegant in its simplicity, this petite solitaire crafted in 14k gold is a beautifully classic frame for your choice of center diamond."
+      },
+      "verdict": "source_mismatch_confirmed",
+      "reason": "The URL no longer shows the curated Petite Micropavé, item 195639, 1.50 mm, platinum-prong setting. Preserve the historical row as withdrawn and unverified; do not buy the current product expecting the archived specifications.",
+      "integration_note": "PR #61 independently captured the same mismatch. Its new F59 ID must be renumbered or unified because live-audit F59 already identifies Menē repricing."
+    },
+    {
+      "row": "mene-24k-classic-band",
+      "official_url": "https://mene.com/products/mene-classic-band-gold",
+      "observed": {
+        "page_title": "Classic Band",
+        "displayed_default_price_usd": 1694,
+        "currency": "USD",
+        "metal": "24k Gold",
+        "width_mm": 5,
+        "thickness_mm": 2,
+        "separate_from_card_usd": 1651
+      },
+      "verdict": "default_price_confirmed_basis_needs_correction",
+      "integration_note": "The $1,694 default display is confirmed. Do not call it the starting price while the same official page's From card is $1,651. Keep the default price explicitly labelled as configuration/spot/size dependent; do not invent a complete size range or gram weight."
+    },
+    {
+      "row": "mene-24k-narrow-band",
+      "official_url": "https://mene.com/products/mene-narrow-band-gold",
+      "observed": {
+        "page_title": "Narrow Classic Band",
+        "displayed_default_price_usd": 1350,
+        "currency": "USD",
+        "metal": "24k Gold",
+        "width_mm": 4,
+        "thickness_mm": 2,
+        "separate_from_card_usd": 1290
+      },
+      "verdict": "default_price_confirmed_basis_needs_correction",
+      "integration_note": "The $1,350 default display is confirmed. Do not call it the starting price while the same official page's From card is $1,290. Keep the default price explicitly labelled as configuration/spot/size dependent; do not invent a complete size range or gram weight."
+    }
+  ],
+  "no_hallucination_boundary": "Only the page-printed values above are confirmed. No metal gram weight, complete variant range, available size, or fine-gold content was inferred. Canonical files remain with their claimed integration owners."
+}

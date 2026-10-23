@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:46:24.628Z",
+  "generated_at": "2026-10-23T20:47:34.986Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -17,8 +17,8 @@
     "groups": 10,
     "passed": 1,
     "failed": 9,
-    "assertions": 1674,
-    "findings": 175
+    "assertions": 1745,
+    "findings": 177
   },
   "groups": [
     {
@@ -31,7 +31,7 @@
       "id": "R02",
       "name": "Verification verdicts agree with observed bounds and weights",
       "passed": false,
-      "failure_count": 6
+      "failure_count": 8
     },
     {
       "id": "R03",
@@ -134,6 +134,32 @@
     {
       "id": "R02-05",
       "group": "R02",
+      "irregularity_id": "PRICE_BASIS_CONTRADICTS_EVIDENCE",
+      "severity": "high",
+      "message": "mene-24k-classic-band: basis says starting price $1707, but the quoted size-floor card says From $1,664; identify the stored figure as the displayed default configuration, not the range floor",
+      "row": "mene-24k-classic-band",
+      "path": "data/rings.json",
+      "sources": [
+        "https://mene.com/products/mene-classic-band-gold",
+        "https://mene.com/products/mene-classic-band-gold"
+      ]
+    },
+    {
+      "id": "R02-06",
+      "group": "R02",
+      "irregularity_id": "PRICE_BASIS_CONTRADICTS_EVIDENCE",
+      "severity": "high",
+      "message": "mene-24k-narrow-band: basis says starting price $1361, but the quoted size-floor card says From $1,300; identify the stored figure as the displayed default configuration, not the range floor",
+      "row": "mene-24k-narrow-band",
+      "path": "data/rings.json",
+      "sources": [
+        "https://mene.com/products/mene-narrow-band-gold",
+        "https://mene.com/products/mene-narrow-band-gold"
+      ]
+    },
+    {
+      "id": "R02-07",
+      "group": "R02",
       "irregularity_id": "RECONCILER_IGNORES_UPPER_BOUND",
       "severity": "high",
       "message": "P42 reconciler never detects an observed range that fails to reproduce the stored upper bound",
@@ -142,7 +168,7 @@
       "sources": []
     },
     {
-      "id": "R02-06",
+      "id": "R02-08",
       "group": "R02",
       "irregularity_id": "RECONCILER_OVERSTATES_OVERALL_STATUS",
       "severity": "high",
