@@ -1,9 +1,9 @@
 {
  "pass": "P42-live",
  "purpose": "Independent live re-read of every curated row at its own official product URL. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.",
- "started_at": "2026-10-23T20:21:46Z",
- "finished_at": "2026-10-23T20:22:25Z",
- "run_context": "github-actions run 40018561423",
+ "started_at": "2026-10-23T20:27:00Z",
+ "finished_at": "2026-10-23T20:27:36Z",
+ "run_context": "github-actions run 40019285597",
  "row_count": 71,
  "fetch_ok": 61,
  "fetch_failed": [
@@ -63,16 +63,16 @@
    "publisher": "gold-api.com",
    "url": "https://api.gold-api.com/price/XAU",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:07Z",
-   "price_usd_per_ozt": 3997.600098,
-   "publisher_timestamp": "2026-10-23T20:21:45Z",
-   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3997.600098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:21:45Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+   "fetched_at": "2026-10-23T20:27:18Z",
+   "price_usd_per_ozt": 3997.699951,
+   "publisher_timestamp": "2026-10-23T20:27:15Z",
+   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3997.699951,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:27:15Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
   },
   {
    "publisher": "Yahoo Finance (COMEX GC=F front month)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
    "http_status": 0,
-   "fetched_at": "2026-10-23T20:22:25Z",
+   "fetched_at": "2026-10-23T20:27:36Z",
    "price_usd_per_ozt": null,
    "publisher_timestamp": null,
    "raw_excerpt": "HTTP 429"
@@ -85,9 +85,9 @@
    "url": "https://www.ross-simons.com/products/571221",
    "final_url": "https://www.ross-simons.com/products/571221",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:47Z",
+   "fetched_at": "2026-10-23T20:27:01Z",
    "ok": true,
-   "bytes": 943748,
+   "bytes": 944157,
    "extraction": {
     "h1": "Women's 2mm 14kt Yellow Gold Band",
     "title_tag": "Women's 2mm 14kt Yellow Gold Band",
@@ -367,10 +367,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/571221.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:48Z",
+    "fetched_at": "2026-10-23T20:27:01Z",
     "title": "Women's 2mm 14kt Yellow Gold Band",
     "handle": "571221",
-    "updated_at": "2026-10-23T16:21:48-04:00",
+    "updated_at": "2026-10-23T16:27:01-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -479,9 +479,9 @@
    "url": "https://www.ross-simons.com/products/571222",
    "final_url": "https://www.ross-simons.com/products/571222",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:47Z",
+   "fetched_at": "2026-10-23T20:27:01Z",
    "ok": true,
-   "bytes": 936973,
+   "bytes": 936784,
    "extraction": {
     "h1": "Women's 3mm 14kt Yellow Gold Band",
     "title_tag": "Women's 3mm 14kt Yellow Gold Band",
@@ -745,10 +745,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/571222.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:47Z",
+    "fetched_at": "2026-10-23T20:27:01Z",
     "title": "Women's 3mm 14kt Yellow Gold Band",
     "handle": "571222",
-    "updated_at": "2026-10-23T16:21:47-04:00",
+    "updated_at": "2026-10-23T16:27:01-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -857,9 +857,9 @@
    "url": "https://www.ross-simons.com/products/571223",
    "final_url": "https://www.ross-simons.com/products/571223",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:47Z",
+   "fetched_at": "2026-10-23T20:27:01Z",
    "ok": true,
-   "bytes": 935012,
+   "bytes": 935195,
    "extraction": {
     "h1": "Women's 4mm 14kt Yellow Gold Band",
     "title_tag": "Women's 4mm 14kt Yellow Gold Band",
@@ -1127,10 +1127,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/571223.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:48Z",
+    "fetched_at": "2026-10-23T20:27:01Z",
     "title": "Women's 4mm 14kt Yellow Gold Band",
     "handle": "571223",
-    "updated_at": "2026-10-23T16:21:48-04:00",
+    "updated_at": "2026-10-23T16:27:01-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -1236,9 +1236,9 @@
    "url": "https://www.ross-simons.com/products/571213",
    "final_url": "https://www.ross-simons.com/products/571213",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:47Z",
+   "fetched_at": "2026-10-23T20:27:01Z",
    "ok": true,
-   "bytes": 895907,
+   "bytes": 895904,
    "extraction": {
     "h1": "Men's 5mm 14kt Yellow Gold Band",
     "title_tag": "Men's 5mm 14kt Yellow Gold Band",
@@ -1486,10 +1486,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/571213.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:47Z",
+    "fetched_at": "2026-10-23T20:27:01Z",
     "title": "Men's 5mm 14kt Yellow Gold Band",
     "handle": "571213",
-    "updated_at": "2026-10-23T16:21:47-04:00",
+    "updated_at": "2026-10-23T16:27:01-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -1571,9 +1571,9 @@
    "url": "https://www.ross-simons.com/products/981367",
    "final_url": "https://www.ross-simons.com/products/981367",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:48Z",
+   "fetched_at": "2026-10-23T20:27:02Z",
    "ok": true,
-   "bytes": 937344,
+   "bytes": 937341,
    "extraction": {
     "h1": "14kt Yellow Gold Polished Ring",
     "title_tag": "14kt Yellow Gold Polished Ring",
@@ -1840,10 +1840,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/981367.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:49Z",
+    "fetched_at": "2026-10-23T20:27:02Z",
     "title": "14kt Yellow Gold Polished Ring",
     "handle": "981367",
-    "updated_at": "2026-10-23T16:21:49-04:00",
+    "updated_at": "2026-10-23T16:27:02-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -1938,9 +1938,9 @@
    "url": "https://www.ross-simons.com/products/907250",
    "final_url": "https://www.ross-simons.com/products/907250",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:48Z",
+   "fetched_at": "2026-10-23T20:27:02Z",
    "ok": true,
-   "bytes": 934829,
+   "bytes": 934826,
    "extraction": {
     "h1": "18kt Yellow Gold Roped Ring",
     "title_tag": "18kt Yellow Gold Roped Ring",
@@ -2190,10 +2190,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/907250.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:49Z",
+    "fetched_at": "2026-10-23T20:27:02Z",
     "title": "18kt Yellow Gold Roped Ring",
     "handle": "907250",
-    "updated_at": "2026-10-23T16:21:49-04:00",
+    "updated_at": "2026-10-23T16:27:02-04:00",
     "tags": [
      "18KT GOLD",
      "18KT YELLOW GOLD",
@@ -2285,9 +2285,9 @@
    "url": "https://www.ross-simons.com/products/960952",
    "final_url": "https://www.ross-simons.com/products/960952",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:49Z",
+   "fetched_at": "2026-10-23T20:27:02Z",
    "ok": true,
-   "bytes": 937710,
+   "bytes": 937893,
    "extraction": {
     "h1": "Italian 14kt Yellow Gold Dome Ring",
     "title_tag": "Italian 14kt Yellow Gold Dome Ring",
@@ -2533,10 +2533,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/960952.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:49Z",
+    "fetched_at": "2026-10-23T20:27:02Z",
     "title": "Italian 14kt Yellow Gold Dome Ring",
     "handle": "960952",
-    "updated_at": "2026-10-23T16:21:49-04:00",
+    "updated_at": "2026-10-23T16:27:02-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -2630,9 +2630,9 @@
    "url": "https://www.ross-simons.com/products/879968",
    "final_url": "https://www.ross-simons.com/products/879968",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:49Z",
+   "fetched_at": "2026-10-23T20:27:02Z",
    "ok": true,
-   "bytes": 916917,
+   "bytes": 916914,
    "extraction": {
     "h1": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
     "title_tag": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
@@ -2868,10 +2868,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/879968.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:49Z",
+    "fetched_at": "2026-10-23T20:27:02Z",
     "title": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
     "handle": "879968",
-    "updated_at": "2026-10-23T16:21:49-04:00",
+    "updated_at": "2026-10-23T16:27:02-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -2955,9 +2955,9 @@
    "url": "https://www.ross-simons.com/products/999230",
    "final_url": "https://www.ross-simons.com/products/999230",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:50Z",
+   "fetched_at": "2026-10-23T20:27:03Z",
    "ok": true,
-   "bytes": 910442,
+   "bytes": 911287,
    "extraction": {
     "h1": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold",
     "title_tag": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity",
@@ -3173,10 +3173,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/999230.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:50Z",
+    "fetched_at": "2026-10-23T20:27:03Z",
     "title": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold",
     "handle": "999230",
-    "updated_at": "2026-10-23T16:21:50-04:00",
+    "updated_at": "2026-10-23T16:27:03-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -3261,9 +3261,9 @@
    "url": "https://www.ross-simons.com/products/991907",
    "final_url": "https://www.ross-simons.com/products/991907",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:50Z",
+   "fetched_at": "2026-10-23T20:27:03Z",
    "ok": true,
-   "bytes": 914884,
+   "bytes": 915364,
    "extraction": {
     "h1": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "title_tag": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
@@ -3499,10 +3499,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/991907.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:50Z",
+    "fetched_at": "2026-10-23T20:27:03Z",
     "title": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "handle": "991907",
-    "updated_at": "2026-10-23T16:21:50-04:00",
+    "updated_at": "2026-10-23T16:27:03-04:00",
     "tags": [
      "14KT GOLD",
      "14KT WHITE GOLD",
@@ -3584,9 +3584,9 @@
    "url": "https://www.ross-simons.com/products/993512",
    "final_url": "https://www.ross-simons.com/products/993512",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:50Z",
+   "fetched_at": "2026-10-23T20:27:03Z",
    "ok": true,
-   "bytes": 915385,
+   "bytes": 915863,
    "extraction": {
     "h1": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
     "title_tag": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
@@ -3822,10 +3822,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/993512.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:50Z",
+    "fetched_at": "2026-10-23T20:27:03Z",
     "title": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
     "handle": "993512",
-    "updated_at": "2026-10-23T16:21:50-04:00",
+    "updated_at": "2026-10-23T16:27:03-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -3909,9 +3909,9 @@
    "url": "https://www.ross-simons.com/products/991908",
    "final_url": "https://www.ross-simons.com/products/991908",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:50Z",
+   "fetched_at": "2026-10-23T20:27:04Z",
    "ok": true,
-   "bytes": 911668,
+   "bytes": 912655,
    "extraction": {
     "h1": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "title_tag": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
@@ -4131,10 +4131,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/991908.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:50Z",
+    "fetched_at": "2026-10-23T20:27:04Z",
     "title": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "handle": "991908",
-    "updated_at": "2026-10-23T16:21:50-04:00",
+    "updated_at": "2026-10-23T16:27:04-04:00",
     "tags": [
      "14KT GOLD",
      "14KT WHITE GOLD",
@@ -4216,9 +4216,9 @@
    "url": "https://www.ross-simons.com/products/864785",
    "final_url": "https://www.ross-simons.com/products/864785",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:51Z",
+   "fetched_at": "2026-10-23T20:27:04Z",
    "ok": true,
-   "bytes": 937119,
+   "bytes": 937302,
    "extraction": {
     "h1": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold",
     "title_tag": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt",
@@ -4474,10 +4474,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/864785.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:52Z",
+    "fetched_at": "2026-10-23T20:27:04Z",
     "title": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold",
     "handle": "864785",
-    "updated_at": "2026-10-23T16:21:52-04:00",
+    "updated_at": "2026-10-23T16:27:04-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -4579,9 +4579,9 @@
    "url": "https://www.ross-simons.com/products/943668",
    "final_url": "https://www.ross-simons.com/products/943668",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:51Z",
+   "fetched_at": "2026-10-23T20:27:04Z",
    "ok": true,
-   "bytes": 898751,
+   "bytes": 898748,
    "extraction": {
     "h1": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
     "title_tag": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
@@ -4811,10 +4811,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/943668.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:52Z",
+    "fetched_at": "2026-10-23T20:27:04Z",
     "title": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
     "handle": "943668",
-    "updated_at": "2026-10-23T16:21:51-04:00",
+    "updated_at": "2026-10-23T16:27:04-04:00",
     "tags": [
      "14KT GOLD",
      "14KT WHITE GOLD",
@@ -4895,9 +4895,9 @@
    "url": "https://www.ross-simons.com/products/242556",
    "final_url": "https://www.ross-simons.com/products/242556",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:51Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": true,
-   "bytes": 868309,
+   "bytes": 868120,
    "extraction": {
     "h1": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
     "title_tag": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in",
@@ -5057,10 +5057,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/242556.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:52Z",
+    "fetched_at": "2026-10-23T20:27:05Z",
     "title": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
     "handle": "242556",
-    "updated_at": "2026-10-23T16:21:52-04:00",
+    "updated_at": "2026-10-23T16:27:05-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -5114,9 +5114,9 @@
    "url": "https://www.ross-simons.com/products/254575",
    "final_url": "https://www.ross-simons.com/products/254575",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:51Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": true,
-   "bytes": 854606,
+   "bytes": 854603,
    "extraction": {
     "h1": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
     "title_tag": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
@@ -5276,10 +5276,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/254575.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:52Z",
+    "fetched_at": "2026-10-23T20:27:05Z",
     "title": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
     "handle": "254575",
-    "updated_at": "2026-10-23T16:21:52-04:00",
+    "updated_at": "2026-10-23T16:27:05-04:00",
     "tags": [
      "14KT GOLD",
      "14KT MULTITONE",
@@ -5327,9 +5327,9 @@
    "url": "https://www.ross-simons.com/products/240912",
    "final_url": "https://www.ross-simons.com/products/240912",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:53Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": true,
-   "bytes": 862655,
+   "bytes": 862838,
    "extraction": {
     "h1": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
     "title_tag": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold",
@@ -5485,10 +5485,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/240912.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:53Z",
+    "fetched_at": "2026-10-23T20:27:06Z",
     "title": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
     "handle": "240912",
-    "updated_at": "2026-10-23T16:21:53-04:00",
+    "updated_at": "2026-10-23T16:27:06-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -5540,7 +5540,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -5552,7 +5552,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -5564,7 +5564,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -5576,7 +5576,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -5588,7 +5588,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -5601,9 +5601,9 @@
    "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": true,
-   "bytes": 806675,
+   "bytes": 806708,
    "extraction": {
     "h1": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)",
     "title_tag": "Oval Solitaire Engagement Ring | Anna Sheffield | Champange Diamond &ndash; Anna Sheffield Jewelry",
@@ -5725,10 +5725,10 @@
    "variant_feed": {
     "json_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:53Z",
+    "fetched_at": "2026-10-23T20:27:05Z",
     "title": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)",
     "handle": "bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
-    "updated_at": "2026-10-23T16:21:53-04:00",
+    "updated_at": "2026-10-23T16:27:05-04:00",
     "tags": [
      "_NYLA",
      "affiliate-exclude",
@@ -6136,9 +6136,9 @@
    "url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": true,
-   "bytes": 712832,
+   "bytes": 711517,
    "extraction": {
     "h1": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond",
     "title_tag": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond &ndash; Anna Sheffield Jewelry",
@@ -6248,10 +6248,10 @@
    "variant_feed": {
     "json_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:53Z",
+    "fetched_at": "2026-10-23T20:27:05Z",
     "title": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond",
     "handle": "hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
-    "updated_at": "2026-10-23T16:21:52-04:00",
+    "updated_at": "2026-10-23T16:27:05-04:00",
     "tags": [
      "14k rose gold solitaire",
      "_NYLA",
@@ -6323,9 +6323,9 @@
    "url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:52Z",
+   "fetched_at": "2026-10-23T20:27:05Z",
    "ok": true,
-   "bytes": 813098,
+   "bytes": 811783,
    "extraction": {
     "h1": "Bea Three Stone Ring - 14k Gold & White Diamond Center",
     "title_tag": "Three Diamond Ring | Anna Sheffield | White Diamond Bea Three Ring &ndash; Anna Sheffield Jewelry",
@@ -6456,10 +6456,10 @@
    "variant_feed": {
     "json_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:53Z",
+    "fetched_at": "2026-10-23T20:27:06Z",
     "title": "Bea Three Stone Ring - 14k Gold & White Diamond Center",
     "handle": "bea-three-stone-ring-gold-emerald-cut-white-diamond",
-    "updated_at": "2026-10-23T16:21:52-04:00",
+    "updated_at": "2026-10-23T16:27:06-04:00",
     "tags": [
      "14k",
      "14k Yellow gold",
@@ -6592,9 +6592,9 @@
    "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:54Z",
+   "fetched_at": "2026-10-23T20:27:07Z",
    "ok": true,
-   "bytes": 7197472,
+   "bytes": 7197469,
    "extraction": {
     "h1": "2ct Oval Lab Grown Diamond Bezel Ring",
     "title_tag": "2ct Oval Lab Grown Diamond Bezel Ring",
@@ -6777,10 +6777,10 @@
    "variant_feed": {
     "json_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:54Z",
+    "fetched_at": "2026-10-23T20:27:07Z",
     "title": "2ct Oval Lab Grown Diamond Bezel Ring",
     "handle": "2ct-oval-lab-grown-diamond-bezel-ring",
-    "updated_at": "2026-10-23T16:21:54-04:00",
+    "updated_at": "2026-10-23T16:27:07-04:00",
     "tags": [
      "14k",
      "18k",
@@ -7245,9 +7245,9 @@
    "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:54Z",
+   "fetched_at": "2026-10-23T20:27:07Z",
    "ok": true,
-   "bytes": 7186183,
+   "bytes": 7186180,
    "extraction": {
     "h1": "1ct Emerald Lab Grown Diamond Bezel Ring",
     "title_tag": "1ct Emerald Lab Grown Diamond Bezel Ring",
@@ -7430,10 +7430,10 @@
    "variant_feed": {
     "json_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:55Z",
+    "fetched_at": "2026-10-23T20:27:07Z",
     "title": "1ct Emerald Lab Grown Diamond Bezel Ring",
     "handle": "1ct-emerald-lab-grown-diamond-bezel-ring",
-    "updated_at": "2026-10-23T16:21:55-04:00",
+    "updated_at": "2026-10-23T16:27:07-04:00",
     "tags": [
      "14k",
      "18k",
@@ -7898,9 +7898,9 @@
    "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:54Z",
+   "fetched_at": "2026-10-23T20:27:07Z",
    "ok": true,
-   "bytes": 7181201,
+   "bytes": 7182368,
    "extraction": {
     "h1": "3ct Round Lab Grown Diamond Bezel Ring",
     "title_tag": "3ct Round Lab Grown Diamond Bezel Ring",
@@ -8083,10 +8083,10 @@
    "variant_feed": {
     "json_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:54Z",
+    "fetched_at": "2026-10-23T20:27:07Z",
     "title": "3ct Round Lab Grown Diamond Bezel Ring",
     "handle": "3ct-round-lab-grown-diamond-bezel-ring",
-    "updated_at": "2026-10-23T16:21:54-04:00",
+    "updated_at": "2026-10-23T16:27:07-04:00",
     "tags": [
      "14k",
      "18k",
@@ -8552,9 +8552,9 @@
    "url": "https://auratenewyork.com/products/modern-cigar-band",
    "final_url": "https://auratenewyork.com/products/modern-cigar-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:55Z",
+   "fetched_at": "2026-10-23T20:27:07Z",
    "ok": true,
-   "bytes": 7530853,
+   "bytes": 7553444,
    "extraction": {
     "h1": "Modern Cigar Band",
     "title_tag": "Modern Cigar Band in Yellow, Rose or White Gold",
@@ -8741,10 +8741,10 @@
    "variant_feed": {
     "json_url": "https://auratenewyork.com/products/modern-cigar-band.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:55Z",
+    "fetched_at": "2026-10-23T20:27:07Z",
     "title": "Modern Cigar Band",
     "handle": "modern-cigar-band",
-    "updated_at": "2026-10-23T16:21:55-04:00",
+    "updated_at": "2026-10-23T16:27:07-04:00",
     "tags": [
      "08.26 Sample Sale Classics PLP",
      "08.26 Sample Sale NEW",
@@ -9548,9 +9548,9 @@
    "url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "final_url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:55Z",
+   "fetched_at": "2026-10-23T20:27:09Z",
    "ok": true,
-   "bytes": 7544531,
+   "bytes": 7545698,
    "extraction": {
     "h1": "Diamond X Ring",
     "title_tag": "X Ring with White Diamonds in Yellow, Rose or White Gold",
@@ -9737,10 +9737,10 @@
    "variant_feed": {
     "json_url": "https://auratenewyork.com/products/x-ring-with-diamonds.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:56Z",
+    "fetched_at": "2026-10-23T20:27:09Z",
     "title": "Diamond X Ring",
     "handle": "x-ring-with-diamonds",
-    "updated_at": "2026-10-23T16:21:56-04:00",
+    "updated_at": "2026-10-23T16:27:09-04:00",
     "tags": [
      "10YEAR",
      "14k",
@@ -10348,7 +10348,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:55Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 676031,
    "extraction": {
@@ -10441,7 +10441,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:55Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 675197,
    "extraction": {
@@ -10542,7 +10542,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:55Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 674855,
    "extraction": {
@@ -10643,7 +10643,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:55Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 673944,
    "extraction": {
@@ -10740,7 +10740,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:56Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 619350,
    "extraction": {
@@ -10837,7 +10837,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:56Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 649592,
    "extraction": {
@@ -10938,7 +10938,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:56Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 645679,
    "extraction": {
@@ -11039,7 +11039,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:56Z",
+   "fetched_at": "2026-10-23T20:27:08Z",
    "ok": true,
    "bytes": 629844,
    "extraction": {
@@ -11140,9 +11140,9 @@
    "url": "https://mejuri.com/products/diamond-eternity-band",
    "final_url": "https://mejuri.com/products/diamond-eternity-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:58Z",
+   "fetched_at": "2026-10-23T20:27:09Z",
    "ok": true,
-   "bytes": 1707226,
+   "bytes": 1710828,
    "extraction": {
     "h1": "Diamond Eternity Band",
     "title_tag": "Diamond Eternity Band | Mejuri",
@@ -11268,8 +11268,8 @@
       "excerpt": "Free Returns & Exchanges Free Shipping Diamond Eternity Band 4.6 From $1,100 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2906,
-    "text_sha256": "301aaffc47d4854fbb96c032ec58c56a3ab3b2e2476cca1272f6d62d1ca2226f"
+    "text_length": 3063,
+    "text_sha256": "468f9a213f88001b9c3bb40ab8c7f622f6f4adf3f08ee6218a672932db3ced52"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/products/diamond-eternity-band.json",
@@ -11283,9 +11283,9 @@
    "url": "https://mejuri.com/products/diamonds-band",
    "final_url": "https://mejuri.com/products/diamonds-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:57Z",
+   "fetched_at": "2026-10-23T20:27:09Z",
    "ok": true,
-   "bytes": 1282425,
+   "bytes": 1286446,
    "extraction": {
     "h1": "Diamonds Band",
     "title_tag": "Diamond Band Ring | Mejuri",
@@ -11407,8 +11407,8 @@
       "excerpt": "ear Warranty Free Returns & Exchanges Free Shipping Diamonds Band 4.7 $648 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2944,
-    "text_sha256": "49663840205db097e9ee664e366250639a26f2b1e38eb8274fa3cbc120382749"
+    "text_length": 3101,
+    "text_sha256": "89d38bd03ed52e0d71bcfc4ad811ae33f86cdcb6fb55efeb8c08e0a0cacc8f87"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/products/diamonds-band.json",
@@ -11422,9 +11422,9 @@
    "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "final_url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:57Z",
+   "fetched_at": "2026-10-23T20:27:09Z",
    "ok": true,
-   "bytes": 1736313,
+   "bytes": 1741048,
    "extraction": {
     "h1": "Bold Diamond Eternity Ring",
     "title_tag": "Bold Diamond Eternity Ring | Mejuri",
@@ -11546,8 +11546,8 @@
       "excerpt": "Returns & Exchanges Free Shipping Bold Diamond Eternity Ring 4.8 From $2,900 Material & Stone Options Solid White Gold (14k), Natural Diamond Size"
      }
     ],
-    "text_length": 3213,
-    "text_sha256": "4fcc9b97d3fb8b1337f6bac8b41aa091a81af7b01029e92c3576da480784b91f"
+    "text_length": 3370,
+    "text_sha256": "01f40d40cb89192f8708ffba44e0dd6372ed44809712f1edb29aac2911faeece"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/products/bold-diamond-eternity-ring.json",
@@ -11561,9 +11561,9 @@
    "url": "https://mejuri.com/products/2mm-smooth-band",
    "final_url": "https://mejuri.com/products/2mm-smooth-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:58Z",
+   "fetched_at": "2026-10-23T20:27:10Z",
    "ok": true,
-   "bytes": 1534542,
+   "bytes": 1537165,
    "extraction": {
     "h1": "2mm Smooth Band",
     "title_tag": "14k Gold Smooth Band Ring - Jewelry | Mejuri",
@@ -11689,8 +11689,8 @@
       "excerpt": "r Warranty Free Returns & Exchanges Free Shipping 2mm Smooth Band 4.8 $498 Material Solid Yellow Gold (14k) Size Size Guide 4 4.5 5 5.5 6 6.5 7"
      }
     ],
-    "text_length": 2776,
-    "text_sha256": "cf69ee33b38dccb58186454f0a3372005bd84d15dd57c516db42a457d86a66d6"
+    "text_length": 2933,
+    "text_sha256": "7ff2b6b51aaf59ce0ac91f7ecc0f51d0586491e55e4b6410fa3117761188ca56"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/products/2mm-smooth-band.json",
@@ -11703,7 +11703,7 @@
    "retailer": "Brilliant Earth",
    "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:21:58Z",
+   "fetched_at": "2026-10-23T20:27:10Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -11716,9 +11716,9 @@
    "url": "https://www.ross-simons.com/products/997811",
    "final_url": "https://www.ross-simons.com/products/997811",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:59Z",
+   "fetched_at": "2026-10-23T20:27:11Z",
    "ok": true,
-   "bytes": 927318,
+   "bytes": 927315,
    "extraction": {
     "h1": "Italian 10kt Yellow Gold Textured Ring",
     "title_tag": "Italian 10kt Yellow Gold Textured Ring",
@@ -11969,10 +11969,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/997811.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:21:59Z",
+    "fetched_at": "2026-10-23T20:27:11Z",
     "title": "Italian 10kt Yellow Gold Textured Ring",
     "handle": "997811",
-    "updated_at": "2026-10-23T16:21:59-04:00",
+    "updated_at": "2026-10-23T16:27:11-04:00",
     "tags": [
      "10KT ALL GOLD",
      "10KT GOLD",
@@ -12061,9 +12061,9 @@
    "url": "https://www.ross-simons.com/products/939479",
    "final_url": "https://www.ross-simons.com/products/939479",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:21:59Z",
+   "fetched_at": "2026-10-23T20:27:11Z",
    "ok": true,
-   "bytes": 912767,
+   "bytes": 912764,
    "extraction": {
     "h1": "Italian 14kt Yellow Gold Claddagh Ring",
     "title_tag": "Italian 14kt Yellow Gold Claddagh Ring",
@@ -12297,10 +12297,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/939479.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:00Z",
+    "fetched_at": "2026-10-23T20:27:11Z",
     "title": "Italian 14kt Yellow Gold Claddagh Ring",
     "handle": "939479",
-    "updated_at": "2026-10-23T16:21:59-04:00",
+    "updated_at": "2026-10-23T16:27:11-04:00",
     "tags": [
      "14KT GOLD",
      "14KT YELLOW GOLD",
@@ -12389,9 +12389,9 @@
    "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "final_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:00Z",
+   "fetched_at": "2026-10-23T20:27:11Z",
    "ok": true,
-   "bytes": 1294807,
+   "bytes": 1298588,
    "extraction": {
     "h1": "Diamonds Line Ring",
     "title_tag": "Diamonds Line Ring | Mejuri",
@@ -12505,8 +12505,8 @@
       "excerpt": "arranty Free Returns & Exchanges Free Shipping Diamonds Line Ring 4.8 $348 Material & Stone Options Solid Yellow Gold (10k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2794,
-    "text_sha256": "7a91d20b545660b49c6bd5ffab3691f60c6ef71846ad3e5999c381f6a79b9512"
+    "text_length": 2951,
+    "text_sha256": "cac998e3e383817ac47dc25abc11459e2691adaef3be3ccdeb9dea5a0c5b6640"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/us/en/products/diamonds-line-ring.json",
@@ -12520,9 +12520,9 @@
    "url": "https://mejuri.com/us/en/products/signet-ring",
    "final_url": "https://mejuri.com/us/en/products/signet-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:00Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 1326370,
+   "bytes": 1328776,
    "extraction": {
     "h1": "Signet Ring",
     "title_tag": "Signet Pinky Ring",
@@ -12631,8 +12631,8 @@
       "excerpt": "Year Warranty Free Returns & Exchanges Free Shipping Signet Ring 4.6 $348 Material Solid Yellow Gold (10k) Size Size Guide 3 4 5 6 7 8 9 10 Eng"
      }
     ],
-    "text_length": 2593,
-    "text_sha256": "cdabc845a5f91953b4c555e747aa2b77d0b91e04087ba95ddf81206b1bef9961"
+    "text_length": 2750,
+    "text_sha256": "e6422639bfa3eba7108a3cbe2e5fbff341ada51833becce8335657bee4add017"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/us/en/products/signet-ring.json",
@@ -12646,9 +12646,9 @@
    "url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "final_url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:00Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 447389,
+   "bytes": 447386,
    "extraction": {
     "h1": "3ct Radiant Cut Lab Diamond Cathedral Ring",
     "title_tag": "3ct Radiant Cut Lab Diamond Cathedral Ring &ndash; Automic Gold",
@@ -12878,10 +12878,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:00Z",
+    "fetched_at": "2026-10-23T20:27:12Z",
     "title": "3ct Radiant Cut Lab Diamond Cathedral Ring",
     "handle": "radiant-cut-lab-diamond-cathedral-ring",
-    "updated_at": "2026-10-23T16:22:00-04:00",
+    "updated_at": "2026-10-23T16:27:12-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -12957,9 +12957,9 @@
    "url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "final_url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:00Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 474918,
+   "bytes": 474915,
    "extraction": {
     "h1": "1ct Marquise Diamond Melted Ring",
     "title_tag": "Automic Gold Marquise Diamond Melted Ring | Fine Jewelry",
@@ -13193,10 +13193,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/marquise-diamond-melted-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:00Z",
+    "fetched_at": "2026-10-23T20:27:12Z",
     "title": "1ct Marquise Diamond Melted Ring",
     "handle": "marquise-diamond-melted-ring",
-    "updated_at": "2026-10-23T16:22:00-04:00",
+    "updated_at": "2026-10-23T16:27:12-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -13309,9 +13309,9 @@
    "url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "final_url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:00Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 524605,
+   "bytes": 524602,
    "extraction": {
     "h1": "Diamond Leaves Ring",
     "title_tag": "Automic Gold Diamond Leaves Ring | Sustainable Fine Jewelry",
@@ -13545,10 +13545,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/diamond-leaves-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:01Z",
+    "fetched_at": "2026-10-23T20:27:12Z",
     "title": "Diamond Leaves Ring",
     "handle": "diamond-leaves-ring",
-    "updated_at": "2026-10-23T16:22:01-04:00",
+    "updated_at": "2026-10-23T16:27:12-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -13662,9 +13662,9 @@
    "url": "https://www.automicgold.com/products/diamond-petal-ring",
    "final_url": "https://www.automicgold.com/products/diamond-petal-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:00Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 500577,
+   "bytes": 500574,
    "extraction": {
     "h1": "0.6ct Round Diamond Petal Ring",
     "title_tag": "Automic Gold Round Diamond Petal Ring | Fine Jewelry",
@@ -13890,10 +13890,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/diamond-petal-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:01Z",
+    "fetched_at": "2026-10-23T20:27:12Z",
     "title": "0.6ct Round Diamond Petal Ring",
     "handle": "diamond-petal-ring",
-    "updated_at": "2026-10-23T16:22:01-04:00",
+    "updated_at": "2026-10-23T16:27:12-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -14006,9 +14006,9 @@
    "url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "final_url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:01Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 613811,
+   "bytes": 613808,
    "extraction": {
     "h1": "Gemstone Kite Ring",
     "title_tag": "Automic Gold Gemstone Kite Ring | Sustainable Fine Jewelry",
@@ -14234,10 +14234,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/gemstone-kite-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:01Z",
+    "fetched_at": "2026-10-23T20:27:12Z",
     "title": "Gemstone Kite Ring",
     "handle": "gemstone-kite-ring",
-    "updated_at": "2026-10-23T16:22:01-04:00",
+    "updated_at": "2026-10-23T16:27:12-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -14498,9 +14498,9 @@
    "url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "final_url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:01Z",
+   "fetched_at": "2026-10-23T20:27:12Z",
    "ok": true,
-   "bytes": 526402,
+   "bytes": 526399,
    "extraction": {
     "h1": "Diamond Cluster Ring",
     "title_tag": "Automic Gold Diamond Cluster Ring | Sustainable Fine Jewelry",
@@ -14730,10 +14730,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/diamond-cluster-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:01Z",
+    "fetched_at": "2026-10-23T20:27:13Z",
     "title": "Diamond Cluster Ring",
     "handle": "diamond-cluster-ring",
-    "updated_at": "2026-10-23T16:22:01-04:00",
+    "updated_at": "2026-10-23T16:27:13-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -14848,9 +14848,9 @@
    "url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "final_url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:01Z",
+   "fetched_at": "2026-10-23T20:27:13Z",
    "ok": true,
-   "bytes": 562831,
+   "bytes": 562828,
    "extraction": {
     "h1": "Diamond Bubble Ring",
     "title_tag": "Automic Gold Diamond Bubble Ring | Sustainable Fine Jewelry",
@@ -15071,10 +15071,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/diamond-bubble-ring.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:01Z",
+    "fetched_at": "2026-10-23T20:27:13Z",
     "title": "Diamond Bubble Ring",
     "handle": "diamond-bubble-ring",
-    "updated_at": "2026-10-23T16:22:01-04:00",
+    "updated_at": "2026-10-23T16:27:13-04:00",
     "tags": [
      "April birthstone",
      "band_width",
@@ -15257,7 +15257,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:22:01Z",
+   "fetched_at": "2026-10-23T20:27:13Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -15269,7 +15269,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:22:01Z",
+   "fetched_at": "2026-10-23T20:27:13Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -15281,7 +15281,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:22:02Z",
+   "fetched_at": "2026-10-23T20:27:13Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -15294,7 +15294,7 @@
    "url": "https://mene.com/products/mene-classic-band-gold",
    "final_url": "https://mene.com/products/mene-classic-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:01Z",
+   "fetched_at": "2026-10-23T20:27:13Z",
    "ok": true,
    "bytes": 675419,
    "extraction": {
@@ -15418,9 +15418,9 @@
    "url": "https://mene.com/products/mene-narrow-band-gold",
    "final_url": "https://mene.com/products/mene-narrow-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:02Z",
+   "fetched_at": "2026-10-23T20:27:14Z",
    "ok": true,
-   "bytes": 642072,
+   "bytes": 641940,
    "extraction": {
     "h1": "Narrow Classic Band",
     "title_tag": "Menē Narrow Classic Band - 24k Gold | Menē",
@@ -15542,7 +15542,7 @@
    "url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
    "final_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:02Z",
+   "fetched_at": "2026-10-23T20:27:14Z",
    "ok": true,
    "bytes": 565340,
    "extraction": {
@@ -15701,7 +15701,7 @@
    "url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
    "final_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:02Z",
+   "fetched_at": "2026-10-23T20:27:14Z",
    "ok": true,
    "bytes": 570751,
    "extraction": {
@@ -15864,7 +15864,7 @@
    "url": "https://auvere.com/product/diamond-bridge-ring-tall/",
    "final_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:03Z",
+   "fetched_at": "2026-10-23T20:27:14Z",
    "ok": true,
    "bytes": 568680,
    "extraction": {
@@ -16031,7 +16031,7 @@
    "url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
    "final_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:03Z",
+   "fetched_at": "2026-10-23T20:27:15Z",
    "ok": true,
    "bytes": 568269,
    "extraction": {
@@ -16198,9 +16198,9 @@
    "url": "https://www.ross-simons.com/products/222283",
    "final_url": "https://www.ross-simons.com/products/222283",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:03Z",
+   "fetched_at": "2026-10-23T20:27:15Z",
    "ok": true,
-   "bytes": 914547,
+   "bytes": 914544,
    "extraction": {
     "h1": "Italian 10kt Yellow Gold Polished Dome Ring",
     "title_tag": "Italian 10kt Yellow Gold Polished Dome Ring",
@@ -16422,10 +16422,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/222283.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:04Z",
+    "fetched_at": "2026-10-23T20:27:15Z",
     "title": "Italian 10kt Yellow Gold Polished Dome Ring",
     "handle": "222283",
-    "updated_at": "2026-10-23T16:22:04-04:00",
+    "updated_at": "2026-10-23T16:27:15-04:00",
     "tags": [
      "10KT ALL GOLD",
      "10KT GOLD",
@@ -16499,9 +16499,9 @@
    "url": "https://www.ross-simons.com/products/989853",
    "final_url": "https://www.ross-simons.com/products/989853",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:03Z",
+   "fetched_at": "2026-10-23T20:27:16Z",
    "ok": true,
-   "bytes": 932516,
+   "bytes": 932327,
    "extraction": {
     "h1": "Italian 18kt Yellow Gold Bypass Ring",
     "title_tag": "Italian 18kt Yellow Gold Bypass Ring",
@@ -16745,10 +16745,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/989853.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:04Z",
+    "fetched_at": "2026-10-23T20:27:16Z",
     "title": "Italian 18kt Yellow Gold Bypass Ring",
     "handle": "989853",
-    "updated_at": "2026-10-23T16:22:03-04:00",
+    "updated_at": "2026-10-23T16:27:16-04:00",
     "tags": [
      "18KT GOLD",
      "18KT YELLOW GOLD",
@@ -16844,9 +16844,9 @@
    "url": "https://www.ross-simons.com/products/997441",
    "final_url": "https://www.ross-simons.com/products/997441",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:04Z",
+   "fetched_at": "2026-10-23T20:27:16Z",
    "ok": true,
-   "bytes": 910798,
+   "bytes": 910981,
    "extraction": {
     "h1": "Italian 18kt Yellow Gold Dome Ring",
     "title_tag": "Italian 18kt Yellow Gold Dome Ring",
@@ -17070,10 +17070,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/997441.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:04Z",
+    "fetched_at": "2026-10-23T20:27:16Z",
     "title": "Italian 18kt Yellow Gold Dome Ring",
     "handle": "997441",
-    "updated_at": "2026-10-23T16:22:04-04:00",
+    "updated_at": "2026-10-23T16:27:16-04:00",
     "tags": [
      "18KT GOLD",
      "18KT YELLOW GOLD",
@@ -17158,9 +17158,9 @@
    "url": "https://www.ross-simons.com/products/255232",
    "final_url": "https://www.ross-simons.com/products/255232",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:04Z",
+   "fetched_at": "2026-10-23T20:27:16Z",
    "ok": true,
-   "bytes": 864380,
+   "bytes": 863387,
    "extraction": {
     "h1": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25",
     "title_tag": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold.",
@@ -17324,10 +17324,10 @@
    "variant_feed": {
     "json_url": "https://www.ross-simons.com/products/255232.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:04Z",
+    "fetched_at": "2026-10-23T20:27:16Z",
     "title": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25",
     "handle": "255232",
-    "updated_at": "2026-10-23T16:22:04-04:00",
+    "updated_at": "2026-10-23T16:27:16-04:00",
     "tags": [
      "18KT GOLD",
      "18KT YELLOW GOLD",
@@ -17378,9 +17378,9 @@
    "url": "https://www.automicgold.com/products/industrial-mirror-band",
    "final_url": "https://www.automicgold.com/products/industrial-mirror-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:04Z",
+   "fetched_at": "2026-10-23T20:27:16Z",
    "ok": true,
-   "bytes": 2634195,
+   "bytes": 2634192,
    "extraction": {
     "h1": "Industrial Mirror Band",
     "title_tag": "Automic Gold Industrial Mirror Band Ring | Sustainable Fine Jewelry",
@@ -17639,10 +17639,10 @@
    "variant_feed": {
     "json_url": "https://www.automicgold.com/products/industrial-mirror-band.json",
     "http_status": 200,
-    "fetched_at": "2026-10-23T20:22:04Z",
+    "fetched_at": "2026-10-23T20:27:16Z",
     "title": "Industrial Mirror Band",
     "handle": "industrial-mirror-band",
-    "updated_at": "2026-10-23T16:22:04-04:00",
+    "updated_at": "2026-10-23T16:27:16-04:00",
     "tags": [
      "1.7mm-wide",
      "14k-champagne-gold-band",
@@ -19199,7 +19199,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T20:22:04Z",
+   "fetched_at": "2026-10-23T20:27:16Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -19212,7 +19212,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:04Z",
+   "fetched_at": "2026-10-23T20:27:16Z",
    "ok": true,
    "bytes": 680122,
    "extraction": {
@@ -19313,9 +19313,9 @@
    "url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
    "final_url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T20:22:06Z",
+   "fetched_at": "2026-10-23T20:27:17Z",
    "ok": true,
-   "bytes": 1740331,
+   "bytes": 1743404,
    "extraction": {
     "h1": "Slim Diamond Eternity Band",
     "title_tag": "Slim Diamond Eternity Band - Mejuri",
@@ -19441,8 +19441,8 @@
       "excerpt": "Returns & Exchanges Free Shipping Slim Diamond Eternity Band 4.8 From $898 Material & Stone Options Solid White Gold (14k), Natural Diamond Size"
      }
     ],
-    "text_length": 2963,
-    "text_sha256": "817d1fac84b200b728f42d06451ea739aebe47c369d71813db7a33236deb1830"
+    "text_length": 3120,
+    "text_sha256": "1cde77508bde0233987cca30072dc645bdb4f7307246a65249b1ed5f91e44d61"
    },
    "variant_feed": {
     "json_url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band.json",
