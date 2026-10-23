@@ -30,7 +30,10 @@ const args = process.argv.slice(2);
 const onlyArg = args.find((a) => a.startsWith('--only='));
 const only = onlyArg ? new Set(onlyArg.slice(7).split(',').map((s) => s.trim())) : null;
 const concArg = args.find((a) => a.startsWith('--concurrency='));
-const CONCURRENCY = concArg ? Number(concArg.split('=')[1]) : 4;
+const CONCURRENCY = (() => {
+  const raw = concArg ? Number(concArg.split('=')[1].replace(/["']/g, '')) : 4;
+  return Number.isFinite(raw) && raw > 0 ? Math.floor(raw) : 4;
+})();
 const TIMEOUT_MS = 45000;
 const ATTEMPTS = 3;
 
@@ -261,7 +264,10 @@ async function goldSpot() {
   const readings = [];
   for (const src of [
     { url: 'https://api.gold-api.com/price/XAU', publisher: 'gold-api.com' },
-    { url: 'https://data-asg.goldprice.org/dbXRates/USD', publisher: 'goldprice.org' },
+    {
+      url: 'https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d',
+      publisher: 'Yahoo Finance (COMEX GC=F front month)',
+    },
   ]) {
     const res = await fetchPage(src.url);
     let payload = null;
@@ -278,9 +284,12 @@ async function goldSpot() {
       price_usd_per_ozt:
         payload && typeof payload.price === 'number'
           ? payload.price
-          : payload?.items?.[0]?.xauPrice ?? null,
-      publisher_timestamp:
-        payload?.updatedAt ?? payload?.ts ? new Date(payload?.ts ?? 0).toISOString?.() ?? null : null,
+          : payload?.chart?.result?.[0]?.meta?.regularMarketPrice ?? null,
+      publisher_timestamp: payload?.updatedAt
+        ? String(payload.updatedAt)
+        : payload?.ts
+          ? new Date(Number(payload.ts)).toISOString()
+          : null,
       raw_excerpt: res.text ? res.text.slice(0, 300) : res.error,
     });
   }
@@ -293,6 +302,9 @@ console.error(`live re-verification: ${rows.length} rows, concurrency ${CONCURRE
 
 const started_at = nowIso();
 const results = await pool(rows, runOne, CONCURRENCY);
+if (results.some((r) => r === null || r === undefined)) {
+  throw new Error('pool returned empty results — refusing to write an evidence file');
+}
 const gold = await goldSpot();
 
 await mkdir(OUT_DIR, { recursive: true });
