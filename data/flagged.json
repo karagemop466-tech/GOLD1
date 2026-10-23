@@ -773,7 +773,7 @@
       "severity": "low",
       "type": "data freshness",
       "affected": "wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera, be-18k-6p-121h6, car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia",
-      "finding": "The 2026-10-23 live pass re-opened 50 of 59 official product pages successfully from an independent network. With Clarity (5 rows), Cartier (3 rows) and Brilliant Earth (1 row) returned HTTP 403 to the automated runner. Those nine rows therefore still carry their 2026-10-22 values and are labelled \"not re-read 2026-10-23\" on every table and on the verification page instead of being presented as fresh. Seventh-pass resolution (sess-545688f3, 2026-10-23T10:08Z): all 5 With Clarity rows (via .json + suggest.json) and all 3 Cartier 18K rows (via direct US PDPs) reproduced exact stored USD prices; Brilliant Earth BE121H6-18KY confirmed 18K Yellow Gold + 14K White Gold prongs while Global-e rendered €1,250.00 on a non-US proxy IP ($1,090 US snapshot retained as partly verified).",
+      "finding": "The 2026-10-23 live pass re-opened 50 of 59 official product pages successfully from an independent network. With Clarity (5 rows), Cartier (3 rows) and Brilliant Earth (1 row) returned HTTP 403 to the automated runner. Those nine rows therefore still carry their 2026-10-22 values and are labelled \"not re-read 2026-10-23\" on every table and on the verification page instead of being presented as fresh. Seventh-pass resolution (sess-545688f3, 2026-10-23T10:08Z): all 5 With Clarity rows (via .json + suggest.json) and all 3 Cartier 18K rows (via direct US PDPs) reproduced exact stored USD prices; Brilliant Earth BE121H6-18KY confirmed 18K Yellow Gold + 14K White Gold prongs while Global-e rendered €1,250.00 on a non-US proxy IP ($1,090 US snapshot retained as partly verified). Ninth-pass addendum (sess-0a6df02e, 2026-10-23T20:22–20:24Z): the two rows sess-3020df54 could not reach (T37b) were read live — Cartier CRB4225700 prints 18K white gold (750/1000) at $3,600 and Brilliant Earth BE121H6-18KY prints $1,090 (Setting Only) in USD, both matching stored values; be-18k-6p-121h6 is upgraded partly_verified -> confirmed, closing the euro-rendering caveat. All nine formerly blocked rows now rest on at least two independent live reads.",
       "buyer_action": "Before paying on any of these nine rows, open the source link yourself and confirm the price on the page. The stored figure is dated, not wrong.",
       "sources": [
         "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
@@ -856,7 +856,7 @@
       "type": "price drift",
       "title": "2026-10-23 live re-read caught intraday repricing on Menē 24K (-$11/-$13), Automic Gold WG (+$42), Blue Nile (+$10) & Brilliant Earth Global-e (€1,250)",
       "affected": "mene-24k-classic-band, mene-24k-narrow-band, ag-14k-radiant-3ct, bn-14k-petite-195639, be-18k-6p-121h6",
-      "finding": "Re-checking official retailer pages on 2026-10-23 confirmed that prices move intraday: Menē Classic 24K moved $1,720 -> $1,707 USD and Narrow 24K $1,372 -> $1,361 USD alongside spot gold; Automic Gold's Nickel-Free 14K White Gold variant on Radiant 3ct moved $3,194 -> $3,236 (14K Yellow Gold unchanged at $3,074); Blue Nile item 195639 moved $990 -> $1,000; and Brilliant Earth BE121H6-18KY rendered €1,250.00 under non-US Global-e geo-IP localization ($1,090 US snapshot).",
+      "finding": "Re-checking official retailer pages on 2026-10-23 confirmed that prices move intraday: Menē Classic 24K moved $1,720 -> $1,707 USD and Narrow 24K $1,372 -> $1,361 USD alongside spot gold; Automic Gold's Nickel-Free 14K White Gold variant on Radiant 3ct moved $3,194 -> $3,236 (14K Yellow Gold unchanged at $3,074); Blue Nile item 195639 moved $990 -> $1,000; and Brilliant Earth BE121H6-18KY rendered €1,250.00 under non-US Global-e geo-IP localization ($1,090 US snapshot). Evening addendum (sess-0a6df02e, 2026-10-23T20:22Z): Menē repriced again with the falling spot — Classic 24K $1,707 -> $1,694 USD and Narrow 24K $1,361 -> $1,350 USD (spot 4,024.699951 at 09:59:43Z -> 3,998.100098 at 20:19:15Z); stored prices updated from the live PDPs. The Brilliant Earth €1,250 rendering is superseded by a direct USD read of $1,090 (see F53 addendum). Blue Nile item 195639 is separately withdrawn in F59 after the evening re-read found a different product at the URL.",
       "buyer_action": "Treat all catalog prices as dated snapshots rather than live quotes; always re-open the official product link in USD immediately before checkout.",
       "status": "needs review",
       "found_by": "sess-545688f3",
@@ -865,7 +865,38 @@
         "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
         "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639"
       ]
+    },
+    {
+      "id": "F59",
+      "title": "Blue Nile item 195639 URL now resolves to a different ring — Petite Micropavé replaced by a plain Petite Solitaire",
+      "temp_key": "F_SOURCE_ITEM_REPURPOSED_BN",
+      "severity": "high",
+      "type": "source mismatch",
+      "affected": "bn-14k-petite-195639",
+      "finding": "On 2026-10-23T20:25Z (sess-0a6df02e) the official page https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639 returned the title \"Petite Solitaire Engagement Ring in 14k Yellow Gold\", Stock Number 501130y14, Metal 14K Yellow Gold, Width 1.80mm and \"$1,000 (Setting Price)\" (\"this petite solitaire crafted in 14k gold\"). The curated row describes a \"Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)\", Item #195639, Width 1.50 mm, Prong Metal: Platinum, captured from this same URL earlier the same day by sess-545688f3 (which also caught its $990 -> $1,000 move, F58). Title, stock number, width, stone content and prong metal all contradict the row; only the $1,000 setting price and 14K metal coincide — the same coincidence pattern as F51, which is what makes a reused URL dangerous. Following the F51 precedent the row is withdrawn (withdrawn_source_mismatch, price_unverified) and removed from the buy tables rather than silently re-pointed at the successor product. Whether Blue Nile re-mapped the URL, retired the Micropavé, or routes by session/geo is not determinable from outside; until the seller confirms the item-195639 product in writing, this URL must not be used to buy the Micropavé ring.",
+      "buyer_action": "Do not order from this URL expecting the Petite Micropavé (1/10 ct. tw., Platinum prongs). Ask Blue Nile for the current item/stock number of that exact setting in writing, and only then compare prices.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0a6df02e"
+    },
+    {
+      "id": "F60",
+      "title": "Site defect found & fixed: partly-verified and withdrawn rows displayed a green \"confirmed\" status chip",
+      "temp_key": "F_RENDER_CONFIRMED_CHIP",
+      "severity": "medium",
+      "type": "site rendering defect (fixed 2026-10-23, T38)",
+      "affected": "as-bea-sol, as-hazeline, as-bea-3stone, au-cigar, rs-939479, bn-14k-petite-195639",
+      "finding": "Found by sess-0a6df02e on 2026-10-23 during the ninth-pass line-by-line review. scripts/build.mjs compared each row's verification_status against the string \"partially verified\", but the dataset's value is \"partly_verified\" — the comparison never matched, so the 4 partly_verified rows and the withdrawn rs-939479 rendered a green \"confirmed\" chip in tables and \"confirmed on the official page\" on their detail pages. The prices themselves were always rendered correctly: unverified prices printed \"— unverified\" throughout (enforced by verify.mjs S19), and no stored value was wrong — only the status label overstated the verification state. Fixed in T38: both chip sites now test the real status values (withdrawn renders \"withdrawn — source changed\"), and verify.mjs S18 gained a regression assertion that fails the run if a partly_verified or withdrawn detail page ever claims \"confirmed on the official page\" again. Published here, after the fix, so the inaccuracy is on the record rather than silently patched.",
+      "buyer_action": "No purchase decision changes: the affected rows' prices, evidence quotes and unverified markings were correct the whole time. If you read the site before this fix and saw a green \"confirmed\" chip on an Anna Sheffield, Aurate cigar-band or Ross-Simons 939479 page, re-open that row — it now shows its true partly-verified/withdrawn state.",
+      "sources": [
+        "https://github.com/karagemop466-tech/GOLD1/blob/main/scripts/build.mjs",
+        "https://github.com/karagemop466-tech/GOLD1/blob/main/scripts/verify.mjs"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0a6df02e"
     }
   ],
-  "generated_at": "2026-10-23T10:18:00Z"
+  "generated_at": "2026-10-23T20:36:04Z"
 }

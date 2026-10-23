@@ -488,6 +488,21 @@ const counted = (fn) => fn;
     if ((r.flags || []).includes('price_unverified') && !r.price_unverified) {
       failures.push(`${r.id}: carries the price_unverified flag but price_unverified is not set`);
     }
+    // T38 regression guard (sess-0a6df02e, F60): build.mjs previously compared
+    // verification_status against 'partially verified' — a value the data never
+    // uses — so partly_verified and withdrawn rows rendered a green "confirmed
+    // on the official page" chip on their detail pages. Prices were always
+    // correct (S19); the status label was not. Fail loudly if it recurs.
+    if (r.verification_status === 'partly_verified' || r.withdrawn) {
+      assertions++;
+      const page = join(ROOT, 'rings', `${r.id}.html`);
+      if (existsSync(page)) {
+        const text = await readFile(page, 'utf8');
+        if (text.includes('confirmed on the official page')) {
+          failures.push(`${r.id}: status is ${r.withdrawn ? 'withdrawn' : 'partly_verified'} but the detail page claims "confirmed on the official page" (F60 regression)`);
+        }
+      }
+    }
   }
   add('S18', 'Unverified values are published as unverified', 'A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.', failures);
 }

@@ -766,3 +766,90 @@ instead of a status-code table.
 57 findings remain on the Flagged page — none block publication but all block purchase clearance until resolved. Highlights: **F51** withdrawn SKU `rs-939479` (URL now sells different Claddagh ring), **F01** "solid" absent on 50/71, **F02** weight absent on 46/71, **F03** Aurate vermeil trap, **F54** Auvere ambiguous Approximate Fine Weight (kept null), **F55** Auvere 15-day vs 30-day contradiction, plus GIA XRF surface-only warning (F42) and CFPB FCBA dispute-right limits. Full list at `https://karagemop466-tech.github.io/GOLD1/flagged.html`.
 
 
+---
+
+## 18. Ninth pass — fresh evening re-reads, PR #41 zero-loss integration, F59 withdrawal, F60 chip-defect fix & publish (`arena/0a6df02e-gold1`, T38 + T37b)
+
+**Session:** `sess-0a6df02e` · **Branch:** `arena/0a6df02e-gold1` · **Date:** 2026-10-23 · **Status:** in progress → (publication record in §18.8)
+
+### 18.1 PR #41 (`sess-3020df54`, T37b) — zero-loss integration of a conflicting PR
+
+- PR #41 ("independent second-channel corroboration of the 9 F53-blocked rows — 7/9 read live, 7/7 exact match, 0 drift", opened 2026-10-23T11:08Z) was **CONFLICTING/DIRTY** vs `main` after PRs #42–#46, and its branch has **no merge base** (it was reset). A tree-to-tree diff proved its only unique content is `data/session-3020df54/blocked-reread-2026-10-23.json`; every shared file on that branch is **older** than `main`'s (spot `4024.699951` @09:59:43Z vs `3999.899902` @19:38:15Z; checks `P81-545688f3` vs `P96`; README lacks the eighth-pass paragraph), so none was taken.
+- The ledger was verified **line by line** against `data/rings.json` before carrying in: 5 With Clarity stored ranges equal current data and the verbatim Shopify quotes contain the price digits in cents (`59000/111000`, `55800/80100`, `55800/96300`, `56700/82800`, `121000/185000`); 2 Cartier confirmations match (`$1,140` CRB4057600, `$3,350` CRB4230400, both `750/1000`); 2 entries honestly `not_read` (Cartier emerald CRB4225700, Brilliant Earth BE121H6 — both since read by this pass, §18.2). **0 drift; 0 published values change.**
+- Their board claim collided with the eighth pass (`T37`/`§17` on main), so it is recorded renumbered as **T37b** with this §18.1 as its session record; their `data/live/` bot snapshots are already identical on `main`. PR #41 itself will be closed as superseded-by-integration once T38 merges (its content lands verbatim; nothing is discarded).
+
+### 18.2 Live official-source reads performed in this pass (2026-10-23T20:22–20:27Z)
+
+Full verbatim quotes: `data/session-0a6df02e/live-reads-2026-10-23.json`. 17 official sources opened (15 product pages/feeds + 2 market feeds) across all 11 retailers. Bash egress is allowlist-only, so reads used the page-fetch channel, as in §17. Shopify `weight` fields (parcel grams: RS `113`, Anna Sheffield `454`, Automic Gold `0`) were **never** used as metal weight.
+
+| Read | Official source opened | What it printed (verbatim, abridged) | Verdict / effect |
+|------|------------------------|---------------------------------------|------------------|
+| Gold spot | `api.gold-api.com/price/XAU` | `{"price":3998.100098,"updatedAt":"2026-10-23T20:19:15Z"}` | **new primary** (was `3999.899902` @19:38:15Z); all melt figures re-derived |
+| COMEX cross-check | Yahoo `GC=F` chart JSON | `"regularMarketPrice":4010.7,"regularMarketTime":1792786638` (= 2026-10-23T20:17:18Z) | cross-check refreshed (was `4040.1` @10:00:08Z) |
+| `car-18k-etincelle-emerald` | Cartier US PDP CRB4225700 | "18K white gold (750/1000)", "$3,600", "Ref.B4225700", "Unavailable online" | **confirmed — the second-channel read this row never had** (T37b `not_read`) |
+| `mene-24k-classic-band` | mene.com PDP | "$1,694 USD", floor "From $1,651" | **drift −$13: 1707 → 1694 corrected** (spot-linked, F58 addendum) |
+| `mene-24k-narrow-band` | mene.com PDP | "$1,350 USD", floor "From $1,290" | **drift −$11: 1361 → 1350 corrected** |
+| `be-18k-6p-121h6` | brilliantearth.com PDP | "$1,090(Setting Only)", "Style: BE121H6-18KY", "Prong metal: 14K White Gold" | **confirmed in USD; `partly_verified` → `confirmed`** (closes F53/F58 € caveat) |
+| `bn-14k-petite-195639` | bluenile.com item-195639 PDP | "Petite **Solitaire** Engagement Ring", "Stock Number 501130y14", "Width 1.80mm", "$1,000(Setting Price)" | **SOURCE MISMATCH → withdrawn (new Flag F59)** — curated Micropavé (Item #195639, 1.50 mm, Platinum prongs) replaced at the same URL |
+| `rs-997811` | Ross-Simons PDP | "$89", "Gold Weight 0.3 grams", 10kt | confirmed exact (shortlist row) |
+| `rs-222283` | Ross-Simons PDP | "$695", "Gold Weight 3.3 grams" (+25%-in-cart code; basis stays listed price) | confirmed exact |
+| `rs-571221` | Ross-Simons PDP | "$400", "Gold Weight 1.7 grams", 14kt | confirmed exact (calculator worked example re-anchored) |
+| `rs-939479` | Ross-Simons `.js` feed | `"title":"Italian 14kt Yellow Gold Claddagh Ring"`, `"price":49900` | **F51 re-confirmed**; withdrawal stands |
+| `ag-14k-industrial-band` | automicgold.com `.js` | variant "14k Yellow Gold / 1.7mm / No Gem" `"price":59800`; `price_min 22500` = silver variant (trap avoided) | confirmed at variant level (shortlist row); weight not in feed, not re-claimed |
+| `ag-14k-radiant-3ct` | automicgold.com `.js` | "14k Yellow Gold" `307400`; Nickel-Free WG `323600` (matches F58) | confirmed at variant level (shortlist row) |
+| `mej-2mm` | mejuri.com PDP | "$498", "Solid Yellow Gold (14k)", "Handcrafted in recycled 14k solid gold", no grams | confirmed exact |
+| `au-2ct-oval` | auratenewyork.com `.js` | `"price_min":196800,"price_max":280000` | confirmed range; weight not re-claimed |
+| `wc-gerbera` | withclarity.com `.js` | `"price_min":121000,"price_max":185000`, "Ring Setting Product" tag | confirmed range (3rd channel on an ex-F53 row) |
+| `as-bea-sol` | annasheffield.com `.js` | `"price":1150000` in feed while page shows no price | **status deliberately NOT upgraded** — a feed value shoppers can't see is not a quote |
+| `auv-22k-vneck-sm` | auvere.com PDP | "Approximate Fine Weight: 2.9 to 3.7 grams", "within 15 days" returns; **price block absent from fetched text** | **partial read** — F54/F55 corroborated; $900 **not** re-read, keeps earlier verification; evidence says so |
+
+### 18.3 Data changes (all traceable to §18.2 quotes)
+
+- `data/gold-price.json`: primary `3998.100098` @20:19:15Z (7 retained readings, newest-first); COMEX cross-check `4010.7` @20:17:18Z.
+- `data/rings.json`: Menē prices corrected (evidence lines rewritten to quote the new live figures, earlier readings kept as history); `be-18k-6p-121h6` upgraded to `confirmed`; `bn-14k-petite-195639` withdrawn in the exact F51 shape (`withdrawn_source_mismatch`, `price_unverified` + reason, removed from buy tables); 12 rows gained dated re-read evidence suffixes (no value changed where the seller agreed); dataset note now "69 active + 2 withdrawn". Compliance tiers regenerated: `withdrawn 2`, `setting_only 14`, shortlist unchanged at 9.
+- `data/flagged.json` (57 → **59**): **F59** (Blue Nile 195639 mismatch, high) and **F60** (chip defect, §18.4) added; dated addenda appended to **F53** (both `not_read` rows now read; BE upgraded) and **F58** (evening Menē repricing). Historical flag text is never rewritten — addenda only.
+
+### 18.4 F60 — a false "confirmed" label found by the line-by-line review (fixed + regression-pinned)
+
+`scripts/build.mjs` compared `verification_status` against `'partially verified'`; the data value is `'partly_verified'`, so the 4 partly-verified rows and withdrawn `rs-939479` rendered a green **"confirmed / confirmed on the official page"** chip. Prices were always correct (S19: unverified prices printed "— unverified" throughout) — only the status label overstated verification. Fixed in both chip sites (withdrawn now renders "withdrawn — source changed"), disclosed as **F60**, and pinned by new **S18 regression assertions** in `verify.mjs`. Those assertions immediately proved themselves: they caught an incident in this very session (several `build.mjs` edits issued in one parallel tool block clobbered each other, silently reverting 5 of 6 edits; the S18 guard failed the run, the edits were re-applied atomically, and the gates went green — no data lost, recorded here per the incident rule). Also fixed: `flagged.html` flag cards had **no `id` anchors**, so `flagged.html#F51`-style links never scrolled; all 59 now carry `id="Fxx"`. The README "freshness rule" sentence claiming the latest full re-read was 2026-10-22 was stale (the ledger it names is dated 2026-10-23) and is corrected.
+
+### 18.5 Owner's 12-point checklist — coverage audit (line by line)
+
+| # | Owner's checklist point | `data/checklist.json` item | `data/compliance.json` / `requirements.html` criterion | Gap? |
+|---|-------------------------|----------------------------|----------------------------------------------------------|------|
+| 1 | Gold purity / karat confirmed | 1 | `purity` | none |
+| 2 | Explicit "solid gold" (not plated/vermeil/filled/overlay/tone) | 2 | `solid` | none |
+| 3 | Hallmark **plus** maker's mark | 3 | `hallmark` (0/71 publish it — physical-ring check, stated on site) | none |
+| 4 | Weight in grams | 4 | `weight` (25/71 publish) | none |
+| 5 | Seller reputation + real contact info | 5 | `reputation` (BBB + contacts per retailer) | none |
+| 6 | Price vs gold weight/value | 6 | `price_vs_gold` (calculator + per-row multiples) | none |
+| 7 | Return policy incl. resized/custom exclusions | 7 | `returns` | none |
+| 8 | Credit card; avoid irreversible payment | 8 | `payment` | none |
+| 9 | Keep listing/receipt/purity claims | 9 | `documentation` | none |
+| 10 | Independent jeweler verification on arrival | 10 | `arrival_check` | none |
+| 11 | XRF/professional test; stamp alone ≠ proof | 11 | `xrf` (+ GIA surface-only limits F42/F47) | none |
+| 12 | No independent verification/return → don't buy | 12 | `return_if_refused` | none |
+
+12/12 mapped; no checklist edit needed. The "stamp by itself does not prove purity" key is printed on the pages that show karat (board ground rule, §2) and the **No-hallucinations rule + "look for hallucinations" recommendation** sit at the top of `index.html` (machine-checked by H10/A07) and in `README.md` §"Read this first".
+
+### 18.6 Verification & security passes (this pass)
+
+- **`node scripts/verify.mjs` (S01–S20)**: **20/20 groups, 6,395 assertions, 0 failures** (pass **P102**, 71 rows, 105 pages) — incl. the new S18 chip-regression assertions.
+- **`node scripts/audit_0804e222.mjs` (A01–A10)**: **10/10, 1,869 assertions, 0 failures** (HTTPS-only, `rel=noopener`, XSS/secret scan, CSP).
+- **`node scripts/audit_545688f3.mjs` (H01–H12)**: **12/12, 1,564 assertions, 0 failures** — H08's Menē freshness pins updated to this pass's live reads (1694/1350, supersession documented in-code; the guard failed loudly first, as designed) + new assertion that `bn-14k-petite-195639` stays withdrawn (F59).
+- **`npm test` (/site/ standalone suite)**: all green — evidence, links, security/CSP, `html-validate`, runtime 13/13 pages, build parity.
+- **Sabotage negative tests** (throwaway copy in `/tmp`, destroyed after): invented `$99,999` price → **S02/S04/S12 FAIL**; forged "confirmed" chip on a partly-verified page → **S18 FAIL**. The detectors fire; the real repo was never touched by the sabotage.
+- **Calculator hand-check**: `rs-571221` worked example at the new spot: `1.7 × (14/24) × (3998.100098/31.1034768) = $127.47` — `calculator.html` prints exactly `$127.47`, `3.1×`.
+
+### 18.7 Honest limit of this pass
+
+17 official sources were re-opened by this session (20:22–20:27Z). The other 56 rows were **not** re-opened tonight; they rest on today's earlier dated channels — the 09:59Z automated 71/71 ledger (`data/verification-2026-10-23.json`), `sess-3020df54`'s 10:26–10:39Z second-channel reads (T37b), `sess-5aa23937`'s 19:38Z reads (§17) — plus the mechanical evidence audit re-checking every stored value against its own stored quote on every run. Auvere's $900 was not re-read (price block absent from fetched text) and the row says so. Nothing captured earlier was relabelled "fresh" by this pass.
+
+### 18.8 Publication record (`sess-0a6df02e`)
+
+_To be completed on merge: PR link, merge commit, Pages build status, live-URL readbacks, PR #41 closure._
+
+### Irregularities / open items (carried forward, not hidden)
+
+**59 findings** now on the Flagged page — none block publication; all block purchase clearance until resolved. New this pass: **F59** (Blue Nile item 195639 URL repurposed — row withdrawn), **F60** (fixed "confirmed"-chip defect, published for the record). Carried highlights: **F51** (Ross-Simons 939479, re-confirmed tonight), **F01** "solid" absent on 50/71, **F02** weight absent on 46/71, **F03** Aurate vermeil trap, **F54/F55** Auvere weight-basis and 15-vs-30-day contradictions (15-day live policy re-corroborated tonight), GIA XRF surface-only warning. Full list: `https://karagemop466-tech.github.io/GOLD1/flagged.html`.
+
