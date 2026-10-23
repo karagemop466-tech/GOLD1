@@ -10,7 +10,7 @@
    "title": "\"Solid\" is not stated on 44 of 59 listings",
    "severity": "high",
    "type": "wording / specification",
-   "affected": "39 of 43 rows (all except mej-deb, mej-db, mej-bde, mej-2mm)",
+   "affected": "44 of 59 rows (every listing without the word solid): rs-571221, rs-571222, rs-571223, rs-571213, rs-981367, rs-907250, rs-960952, rs-879968, rs-999230, rs-991907, rs-993512, rs-991908, rs-864785, rs-943668, rs-242556, rs-254575, rs-240912, wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera, as-bea-sol, as-hazeline, as-bea-3stone, au-2ct-oval, au-1ct-emerald, au-3ct-round, au-cigar, bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, be-18k-6p-121h6, rs-939479, car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia, mene-24k-classic-band, mene-24k-narrow-band",
    "finding": "Across the integrated 59-row dataset, 15 listings explicitly include the word \"solid\" in the seller's own text (6 Mejuri, 7 Automic Gold, Ross-Simons 997811, and Aurate X Ring), while 44 state a karat mark or 750/1000 fineness without the word \"solid\". None carries plating language except Aurate products that also sell a separate vermeil option (flagged). Under FTC 16 CFR \u00a7 23.3(c)(1), \"Solid Gold\" legally requires non-hollow construction.",
    "buyer_action": "Before paying, get the seller to confirm in writing: \"solid 14K gold, not plated, not vermeil, not gold-filled, not gold over silver\". Keep that message with the receipt.",
    "sources": [
@@ -25,7 +25,7 @@
    "title": "Metal weight is unpublished on 38 of 59 listings (21 publish grams)",
    "severity": "high",
    "type": "missing data",
-   "affected": "36 of 43 rows",
+   "affected": "38 of 59 rows (no published gram weight): rs-879968, rs-999230, rs-991907, rs-993512, rs-991908, rs-864785, rs-943668, rs-242556, rs-254575, rs-240912, wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera, as-bea-sol, as-hazeline, as-bea-3stone, bn-14k-ccf-203284, bn-14k-tc-203288, bn-14k-leaf-192442, bn-14k-bezel-296643, bn-14k-ridge-304497, bn-14k-6p-203272, bn-18k-6p-194159, bn-18k-pn-203268, mej-deb, mej-db, mej-bde, mej-2mm, be-18k-6p-121h6, mej-10k-dlr, mej-10k-sig, car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia, mene-24k-classic-band, mene-24k-narrow-band",
    "finding": "After full-catalog HTML spec-panel reads across all 10 retailers, 21 of 59 listings publish an explicit gram weight (8 Ross-Simons, 5 Aurate, 7 Automic Gold, plus Ross-Simons 939479 \u2014 spanning 0.3 g to 7.0 g). The remaining 38 rows publish no gram weight in static HTML (including all Blue Nile, Mejuri, Brilliant Earth, With Clarity, Anna Sheffield, Cartier, and 10 stone-set Ross-Simons rows, plus 2 Men\u0113 bands whose gram breakdown is JS-rendered), so their weight remains blank rather than estimated.",
    "buyer_action": "For a listing with no published weight, ask the seller for the grams of your exact size in writing and run the calculator with it. For the seven that do publish a weight, treat the figure as the seller's claim until an independent jeweller weighs the ring.",
    "sources": [
