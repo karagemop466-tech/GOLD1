@@ -1,0 +1,72 @@
+{
+  "session": "sess-dab93754",
+  "channel": "page-fetch tool in the sandbox session (independent of the GitHub Actions runner)",
+  "note": "Every entry below was read directly from the URL shown at the time shown. The quote field is copied from what the page printed; nothing is paraphrased into a number.",
+  "reads": [
+    {
+      "id": "__gold__",
+      "url": "https://api.gold-api.com/price/XAU",
+      "publisher": "gold-api.com",
+      "read_at": "2026-10-23T20:19:15Z",
+      "observed": { "price_usd_per_ozt": 3998.100098 },
+      "quote": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3998.100098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:19:15Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+    },
+    {
+      "id": "rs-571221",
+      "url": "https://www.ross-simons.com/products/571221",
+      "read_at": "2026-10-23T20:19:40Z",
+      "observed": { "price_low": 400, "price_high": 400, "weight_g": 1.7, "karat": "14kt", "metal": "Yellow Gold" },
+      "quote": "Size 5$400.00In-Stock ... Size 6$400.00In-Stock ... Size 9$400.00In-Stock | Metal 14ktYellow Gold | Gold Weight 1.7 grams"
+    },
+    {
+      "id": "rs-997811",
+      "url": "https://www.ross-simons.com/products/997811",
+      "read_at": "2026-10-23T20:20:10Z",
+      "observed": { "price_low": 89, "price_high": 89, "weight_g": 0.3, "karat": "10kt", "metal": "Yellow Gold" },
+      "quote": "Italian 10kt Yellow Gold Textured Ring ... Size 5$89.00In-Stock ... Size 10$89.00In-Stock | Width 1/16 inch | Metal 10ktYellow Gold | Gold Weight 0.3 grams"
+    },
+    {
+      "id": "ag-14k-leaves",
+      "url": "https://www.automicgold.com/products/diamond-leaves-ring.json",
+      "read_at": "2026-10-23T20:24:30Z",
+      "observed": { "price_low": 2194, "price_high": 2194, "variant": "14k Yellow Gold / Clear Lab Diamond" },
+      "quote": "{\"title\":\"14k Yellow Gold \\/ Clear Lab Diamond\",\"price\":\"2194.00\"} — with the immediately preceding variant {\"title\":\"14k Yellow Gold \\/ Salt and Pepper Diamond\",\"price\":\"2744.00\"}"
+    },
+    {
+      "id": "au-1ct-emerald",
+      "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.js",
+      "read_at": "2026-10-23T20:28:00Z",
+      "observed": { "price_low": 1498, "price_high": 2100 },
+      "quote": "\"price\":149800,\"price_min\":149800,\"price_max\":210000,\"available\":true"
+    },
+    {
+      "id": "mene-24k-classic-band",
+      "url": "https://mene.com/products/mene-classic-band-gold",
+      "read_at": "2026-10-23T20:26:00Z",
+      "observed": { "price_low": 1694, "price_high": 1694 },
+      "quote": "# Classic Band | $1,694 | USD | ... Specifications - Width: 5mm Thickness: 2mm"
+    },
+    {
+      "id": "mene-24k-narrow-band",
+      "url": "https://mene.com/products/mene-narrow-band-gold",
+      "read_at": "2026-10-23T20:33:00Z",
+      "observed": { "price_low": 1350, "price_high": 1350 },
+      "quote": "# Narrow Classic Band | $1,350 | USD | ... Specifications - Width: 4mm Thickness: 2mm"
+    },
+    {
+      "id": "mej-14k-sdeb",
+      "url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+      "read_at": "2026-10-23T20:36:00Z",
+      "observed": { "price_low": 898, "price_high": 898, "price_basis": "From $898 for Solid White Gold (14k) / Natural Diamond" },
+      "quote": "# Slim Diamond Eternity Band | 4.8 | From$898 | Material & Stone Options: Solid White Gold (14k), Natural Diamond | Add to bagFrom$898"
+    },
+    {
+      "id": "auv-22k-hexagon-diamond",
+      "url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+      "read_at": "2026-10-23T20:35:00Z",
+      "observed": { "price_low": null, "price_high": null, "weight_text": "3.3 to 3.5 grams depending on size" },
+      "quote": "**Approximate Fine Weight:**3.3 to 3.5 grams depending on size | **Diamond Details:** - **Approximate Total Diamond Weight:**.20 carats",
+      "note": "The product page printed its specification panel but no product price in the text returned by this channel, so no price is claimed from it."
+    }
+  ]
+}

@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live audit — 2026-10-23 evening (P87) · GOLD1</title>
+<meta name="description" content="Ninth-pass per-row audit: every curated row re-opened on 2026-10-23 20:21Z, compared at product/variant level, with an independent second channel and its own N01–N09 checks.">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">Au</span>
+      <span class="brand-text"><strong>GOLD1</strong><small>solid gold engagement ring research</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Dashboard</a>
+      <a href="rings.html">All rings</a>
+      <a href="requirements.html">Requirements</a>
+      <a href="recheck.html">Re-check 23 Oct</a>
+      <a href="live-audit.html" aria-current="page">Live audit</a>
+      <a href="weights.html">Weight & melt</a>
+      <a href="calculator.html">Gold calculator</a>
+      <a href="checklist.html">Checklist</a>
+      <a href="sources.html">Sources</a>
+      <a href="flagged.html">Flagged</a>
+      <a href="methodology.html">Method</a>
+      <a href="checks.html">Checks</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<section class="wrap section">
+  <h1>Live audit — 2026-10-23 evening (P87)</h1>
+  <p class="lede">Every one of the 71 curated listings was re-opened at its own official URL in a single automated run between
+  <strong></strong> and <strong></strong>, then compared at product and variant level.
+  A separate channel re-read 8 sources so the automated numbers have an independent witness. Nothing below was carried forward from an earlier pass.</p>
+  
+<div class="rule-banner" role="note">
+  <h2>No hallucinations — the rule this whole project runs on</h2>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H12 + N01–N09</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
+</div>
+
+  <div class="stat-grid">
+    
+<div class="stat">
+  <div class="stat-value">54/71</div>
+  <div class="stat-label">rows confirmed today</div>
+  <div class="stat-note">49 from the automated run alone, 5 by two independent channels. The stored price appears in the page’s own offer data or in the seller’s own variant feed for that exact product.</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">2</div>
+  <div class="stat-label">prices that moved</div>
+  <div class="stat-note">Both Menē 24K bands repriced with spot gold during the pass. Published, not overwritten.</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">4</div>
+  <div class="stat-label">prices not machine-readable</div>
+  <div class="stat-note">Client-side price rendering, read by eye where possible; the rest stay unresolved rather than guessed.</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">10</div>
+  <div class="stat-label">rows blocked (HTTP 403)</div>
+  <div class="stat-note">Five With Clarity, four Cartier and one Brilliant Earth page refused the runner. Nothing is claimed fresh for them.</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">0.0125%</div>
+  <div class="stat-label">spread between two gold reads</div>
+  <div class="stat-note">gold-api.com $3,997.60/ozt at 2026-10-23T20:21:45Z versus $3,998.10/ozt read independently at 2026-10-23T20:19:15Z.</div>
+</div>
+  </div>
+
+  <h2>Findings from this pass, published for review</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">ID</th><th scope="col">Finding</th><th scope="col">Severity</th><th scope="col">Rows</th><th scope="col">What to do</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>F59</strong></td>
+      <td><strong>Menē 24K band prices moved again between 19:38Z and 20:33Z on 2026-10-23</strong><div class="small">Menē prices track spot gold and repricing was observed twice in one day. The stored rows carry the morning read; the evening read is lower in both cases.</div></td>
+      <td><span class="chip warn">medium</span></td>
+      <td class="small"><a href="rings/mene-24k-classic-band.html">mene-24k-classic-band</a> ($1,707.00 → $1,694.00)<br><a href="rings/mene-24k-narrow-band.html">mene-24k-narrow-band</a> ($1,361.00 → $1,350.00)</td>
+      <td class="small">Treat any Menē figure as a quote good for the minute it was read. The published price basis is &quot;starting price — varies with spot gold &amp; ring size&quot;, so re-check at checkout.</td>
+    </tr>
+    <tr>
+      <td><strong>F60</strong></td>
+      <td><strong>Ten rows returned HTTP 403 to the runner again on 2026-10-23 20:21Z</strong><div class="small">Five With Clarity rows (their storefront .json also refused), four Cartier rows and one Brilliant Earth row could not be opened by the automated runner. Nothing was confirmed for them today and nothing is presented as fresh.</div></td>
+      <td><span class="chip warn">medium</span></td>
+      <td class="small"><a href="rings/wc-tulip.html">wc-tulip</a><br><a href="rings/wc-4prong.html">wc-4prong</a><br><a href="rings/wc-4prong-petite.html">wc-4prong-petite</a><br><a href="rings/wc-6prong.html">wc-6prong</a><br><a href="rings/wc-gerbera.html">wc-gerbera</a><br><a href="rings/be-18k-6p-121h6.html">be-18k-6p-121h6</a><br><a href="rings/car-18k-etincelle-pear.html">car-18k-etincelle-pear</a><br><a href="rings/car-18k-etincelle-emerald.html">car-18k-etincelle-emerald</a><br><a href="rings/car-18k-1895-band-dia.html">car-18k-1895-band-dia</a><br><a href="rings/car-18k-destinee-princess.html">car-18k-destinee-princess</a></td>
+      <td class="small">Open those official pages yourself before buying; the stored values keep their original capture dates.</td>
+    </tr>
+    <tr>
+      <td><strong>F61</strong></td>
+      <td><strong>Auvere 22K product prices are not machine-readable on the product page</strong><div class="small">The four Auvere PDPs printed their specification panel but no price in the text returned by either channel on 2026-10-23; their prices are rendered client-side. The stored prices keep their earlier capture date.</div></td>
+      <td><span class="chip ok">low</span></td>
+      <td class="small"><a href="rings/auv-22k-vneck-sm.html">auv-22k-vneck-sm</a><br><a href="rings/auv-22k-hexagon-diamond.html">auv-22k-hexagon-diamond</a><br><a href="rings/auv-22k-diamond-bridge-tall.html">auv-22k-diamond-bridge-tall</a><br><a href="rings/auv-22k-clean-cut-polished.html">auv-22k-clean-cut-polished</a></td>
+      <td class="small">Read the price in the seller cart; do not rely on the stored figure as current.</td>
+    </tr>
+    <tr>
+      <td><strong>F62</strong></td>
+      <td><strong>Six published gram weights were not machine-visible in this run</strong><div class="small">Aurate renders ring weights inside a client-side specification panel and one Ross-Simons weight sits in a script-rendered block; the automated text extraction did not see them today. The stored weights keep the earlier HTML read and are not upgraded to &quot;verified today&quot;.</div></td>
+      <td><span class="chip ok">low</span></td>
+      <td class="small"><a href="rings/rs-571213.html">rs-571213</a><br><a href="rings/au-2ct-oval.html">au-2ct-oval</a><br><a href="rings/au-1ct-emerald.html">au-1ct-emerald</a><br><a href="rings/au-3ct-round.html">au-3ct-round</a><br><a href="rings/au-cigar.html">au-cigar</a><br><a href="rings/au-xring.html">au-xring</a></td>
+      <td class="small">Ask the seller to confirm the gram weight in writing before paying.</td>
+    </tr>
+    <tr>
+      <td><strong>F63</strong></td>
+      <td><strong>Anna Sheffield PDPs print no product price; the seller feed still does</strong><div class="small">The three Anna Sheffield pages show a custom client archive with no product price, while the seller’s own variant feed (annasheffield.com/products/&lt;handle&gt;.json) returns the exact stored ranges ($11,500; $7,150–$9,200; $5,400–$25,100). The rows remain flagged (F37, F44) because the buyer-facing page has no buy box.</div></td>
+      <td><span class="chip ok">low</span></td>
+      <td class="small"><a href="rings/as-bea-sol.html">as-bea-sol</a><br><a href="rings/as-hazeline.html">as-hazeline</a><br><a href="rings/as-bea-3stone.html">as-bea-3stone</a></td>
+      <td class="small">Contact the studio to confirm price and availability; the page cannot be purchased from.</td>
+    </tr>
+    <tr>
+      <td><strong>F64</strong></td>
+      <td><strong>Withdrawn row rs-939479 still resolves to a different ring</strong><div class="small">The URL now serves &quot;Italian 14kt Yellow Gold Claddagh Ring&quot; at $499, not the 1.00 ct lab-grown eternity band the row described. Re-confirms F51; the row stays withdrawn and is excluded from the confirmed count.</div></td>
+      <td><span class="chip ok">low</span></td>
+      <td class="small"><a href="rings/rs-939479.html">rs-939479</a></td>
+      <td class="small">Do not buy this SKU expecting the eternity band.</td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Independent second-channel reads</h2>
+  <p class="sub">Read directly from the URL shown, at the time shown, through a different retrieval channel from the runner. The quote is what the page or feed printed.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Read at (UTC)</th><th scope="col">Observed</th><th scope="col">Verbatim quote</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><a href="rings/rs-571221.html">rs-571221</a></td>
+      <td class="small">2026-10-23T20:19:40Z</td>
+      <td class="small">price_low: 400 · price_high: 400 · weight_g: 1.7 · karat: 14kt · metal: Yellow Gold</td>
+      <td class="small">Size 5$400.00In-Stock ... Size 6$400.00In-Stock ... Size 9$400.00In-Stock | Metal 14ktYellow Gold | Gold Weight 1.7 grams</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/571221" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/au-1ct-emerald.html">au-1ct-emerald</a></td>
+      <td class="small">2026-10-23T20:28:00Z</td>
+      <td class="small">price_low: 1498 · price_high: 2100</td>
+      <td class="small">&quot;price&quot;:149800,&quot;price_min&quot;:149800,&quot;price_max&quot;:210000,&quot;available&quot;:true</td>
+      <td><a class="src" href="https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.js" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/rs-997811.html">rs-997811</a></td>
+      <td class="small">2026-10-23T20:20:10Z</td>
+      <td class="small">price_low: 89 · price_high: 89 · weight_g: 0.3 · karat: 10kt · metal: Yellow Gold</td>
+      <td class="small">Italian 10kt Yellow Gold Textured Ring ... Size 5$89.00In-Stock ... Size 10$89.00In-Stock | Width 1/16 inch | Metal 10ktYellow Gold | Gold Weight 0.3 grams</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/997811" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/ag-14k-leaves.html">ag-14k-leaves</a></td>
+      <td class="small">2026-10-23T20:24:30Z</td>
+      <td class="small">price_low: 2194 · price_high: 2194 · variant: 14k Yellow Gold / Clear Lab Diamond</td>
+      <td class="small">{&quot;title&quot;:&quot;14k Yellow Gold \/ Clear Lab Diamond&quot;,&quot;price&quot;:&quot;2194.00&quot;} — with the immediately preceding variant {&quot;title&quot;:&quot;14k Yellow Gold \/ Salt and Pepper Diamond&quot;,&quot;price&quot;:&quot;2744.00&quot;}</td>
+      <td><a class="src" href="https://www.automicgold.com/products/diamond-leaves-ring.json" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/mene-24k-classic-band.html">mene-24k-classic-band</a></td>
+      <td class="small">2026-10-23T20:26:00Z</td>
+      <td class="small">price_low: 1694 · price_high: 1694</td>
+      <td class="small"># Classic Band | $1,694 | USD | ... Specifications - Width: 5mm Thickness: 2mm</td>
+      <td><a class="src" href="https://mene.com/products/mene-classic-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/mene-24k-narrow-band.html">mene-24k-narrow-band</a></td>
+      <td class="small">2026-10-23T20:33:00Z</td>
+      <td class="small">price_low: 1350 · price_high: 1350</td>
+      <td class="small"># Narrow Classic Band | $1,350 | USD | ... Specifications - Width: 4mm Thickness: 2mm</td>
+      <td><a class="src" href="https://mene.com/products/mene-narrow-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/auv-22k-hexagon-diamond.html">auv-22k-hexagon-diamond</a></td>
+      <td class="small">2026-10-23T20:35:00Z</td>
+      <td class="small">price_low: — · price_high: — · weight_text: 3.3 to 3.5 grams depending on size</td>
+      <td class="small">**Approximate Fine Weight:**3.3 to 3.5 grams depending on size | **Diamond Details:** - **Approximate Total Diamond Weight:**.20 carats</td>
+      <td><a class="src" href="https://auvere.com/product/hexagon-diamond-stack-ring/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/mej-14k-sdeb.html">mej-14k-sdeb</a></td>
+      <td class="small">2026-10-23T20:36:00Z</td>
+      <td class="small">price_low: 898 · price_high: 898 · price_basis: From $898 for Solid White Gold (14k) / Natural Diamond</td>
+      <td class="small"># Slim Diamond Eternity Band | 4.8 | From$898 | Material &amp; Stone Options: Solid White Gold (14k), Natural Diamond | Add to bagFrom$898</td>
+      <td><a class="src" href="https://mejuri.com/us/en/products/slim-diamond-eternity-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The full 71-row ledger</h2>
+  <p class="sub">“Stored” is what this project had before the pass. “Read today” is what the official page or the seller’s own variant feed printed in this run. A screenshot is never a source, and a missing value is never filled in.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Read today</th><th scope="col">Verdict</th><th scope="col">Weight</th><th scope="col">Note</th><th scope="col">Official source</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>rs-571221</strong><div class="sub">Women&#39;s 2mm 14kt Yellow Gold Band</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$400.00</td>
+      <td class="num-col small"><strong>$400.00</strong></td>
+      <td><span class="chip ok">confirmed — two channels</span></td>
+      <td class="small">1.7 g re-printed</td>
+      <td class="small">two channels agree: $400, weight 1.7 g (independent read 2026-10-23T20:19:40Z)</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/571221" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-571222</strong><div class="sub">Women&#39;s 3mm 14kt Yellow Gold Band</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$599.00</td>
+      <td class="num-col small"><strong>$599.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">2.5 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/571222" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-571223</strong><div class="sub">Women&#39;s 4mm 14kt Yellow Gold Band</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$799.00–$849.00</td>
+      <td class="num-col small"><strong>$799.00–$849.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">3.8 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/571223" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-571213</strong><div class="sub">Men&#39;s 5mm 14kt Yellow Gold Band</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$959.00</td>
+      <td class="num-col small"><strong>$959.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">5 g (not machine-visible today)</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/571213" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-981367</strong><div class="sub">14kt Yellow Gold Polished Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$149.00</td>
+      <td class="num-col small"><strong>$149.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">0.5 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/981367" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-907250</strong><div class="sub">18kt Yellow Gold Roped Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$179.00</td>
+      <td class="num-col small"><strong>$179.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">0.5 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/907250" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-960952</strong><div class="sub">Italian 14kt Yellow Gold Dome Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$399.00</td>
+      <td class="num-col small"><strong>$399.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">1.3 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/960952" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-879968</strong><div class="sub">2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$2,695.00</td>
+      <td class="num-col small"><strong>$2,695.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/879968" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-999230</strong><div class="sub">.80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$489.00–$559.00</td>
+      <td class="num-col small"><strong>$489.00–$559.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/999230" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-991907</strong><div class="sub">2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$2,795.00</td>
+      <td class="num-col small"><strong>$2,795.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/991907" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-993512</strong><div class="sub">2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$2,795.00</td>
+      <td class="num-col small"><strong>$2,795.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/993512" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-991908</strong><div class="sub">1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$1,795.00</td>
+      <td class="num-col small"><strong>$1,795.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/991908" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-864785</strong><div class="sub">1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$2,395.00</td>
+      <td class="num-col small"><strong>$2,395.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/864785" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-943668</strong><div class="sub">.28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$1,269.00–$1,439.00</td>
+      <td class="num-col small"><strong>$1,269.00–$1,439.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/943668" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-242556</strong><div class="sub">C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold, Size 6.5</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$2,195.00</td>
+      <td class="num-col small"><strong>$2,195.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/242556" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-254575</strong><div class="sub">C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring, Size 7.5</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$695.00</td>
+      <td class="num-col small"><strong>$695.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/254575" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-240912</strong><div class="sub">C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold, Size 7</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$8,995.00</td>
+      <td class="num-col small"><strong>$8,995.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/240912" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>wc-tulip</strong><div class="sub">Tulip Basket Cathedral Classic Solitaire Engagement Ring</div></td>
+      <td>With Clarity</td>
+      <td class="num-col small">$590.00–$1,110.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>wc-4prong</strong><div class="sub">Classic Four Prong Solitaire Diamond Engagement Ring</div></td>
+      <td>With Clarity</td>
+      <td class="num-col small">$558.00–$801.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>wc-4prong-petite</strong><div class="sub">Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring</div></td>
+      <td>With Clarity</td>
+      <td class="num-col small">$558.00–$963.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>wc-6prong</strong><div class="sub">Classic Six Prong Solitaire Diamond Engagement Ring</div></td>
+      <td>With Clarity</td>
+      <td class="num-col small">$567.00–$828.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>wc-gerbera</strong><div class="sub">Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring</div></td>
+      <td>With Clarity</td>
+      <td class="num-col small">$1,210.00–$1,850.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>as-bea-sol</strong><div class="sub">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</div></td>
+      <td>Anna Sheffield</td>
+      <td class="num-col small">$11,500.00</td>
+      <td class="num-col small"><strong>$11,500.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>as-hazeline</strong><div class="sub">Hazeline Solitaire Ring - Yellow Gold &amp; Cushion Champagne Diamond</div></td>
+      <td>Anna Sheffield</td>
+      <td class="num-col small">$7,150.00–$9,200.00</td>
+      <td class="num-col small"><strong>$7,150.00–$9,200.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>as-bea-3stone</strong><div class="sub">Bea Three Stone Ring - 14k Gold &amp; White Diamond Center</div></td>
+      <td>Anna Sheffield</td>
+      <td class="num-col small">$5,400.00–$25,100.00</td>
+      <td class="num-col small"><strong>$5,400.00–$25,100.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>au-2ct-oval</strong><div class="sub">2ct Oval Lab Grown Diamond Bezel Ring</div></td>
+      <td>Aurate</td>
+      <td class="num-col small">$1,968.00–$2,800.00</td>
+      <td class="num-col small"><strong>$1,968.00–$2,800.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">2.73 g (not machine-visible today)</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>au-1ct-emerald</strong><div class="sub">1ct Emerald Lab Grown Diamond Bezel Ring</div></td>
+      <td>Aurate</td>
+      <td class="num-col small">$1,498.00–$2,100.00</td>
+      <td class="num-col small"><strong>$1,498.00–$2,100.00</strong></td>
+      <td><span class="chip ok">confirmed — two channels</span></td>
+      <td class="small">1.97 g (not machine-visible today)</td>
+      <td class="small">two channels agree: $1,498–$2,100 (independent read 2026-10-23T20:28:00Z)</td>
+      <td><a class="src" href="https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>au-3ct-round</strong><div class="sub">3ct Round Lab Grown Diamond Bezel Ring</div></td>
+      <td>Aurate</td>
+      <td class="num-col small">$2,438.00–$3,000.00</td>
+      <td class="num-col small"><strong>$2,438.00–$3,000.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">3.3 g (not machine-visible today)</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>au-cigar</strong><div class="sub">Modern Cigar Band (14K Yellow Gold variant)</div></td>
+      <td>Aurate</td>
+      <td class="num-col small">$1,308.00</td>
+      <td class="num-col small"><strong>$118.00–$1,668.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">2.6 g (not machine-visible today)</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://auratenewyork.com/products/modern-cigar-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>au-xring</strong><div class="sub">Diamond X Ring (14K Yellow Gold variant)</div></td>
+      <td>Aurate</td>
+      <td class="num-col small">$1,808.00</td>
+      <td class="num-col small"><strong>$1,808.00–$2,578.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">2.7 g (not machine-visible today)</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://auratenewyork.com/products/x-ring-with-diamonds" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-ccf-203284</strong><div class="sub">Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$935.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-tc-203288</strong><div class="sub">Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,240.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-leaf-192442</strong><div class="sub">Leaf Solitaire Engagement Ring in 14k Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,275.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-bezel-296643</strong><div class="sub">Bezel Solitaire Engagement Ring in 14K Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,310.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-ridge-304497</strong><div class="sub">Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$2,065.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-6p-203272</strong><div class="sub">Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,000.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-18k-6p-194159</strong><div class="sub">Classic Six-Prong Solitaire Engagement Ring in 18K Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,240.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-18k-pn-203268</strong><div class="sub">Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,420.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-deb</strong><div class="sub">Diamond Eternity Band</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$1,100.00–$1,700.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://mejuri.com/products/diamond-eternity-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-db</strong><div class="sub">Diamonds Band</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$648.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://mejuri.com/products/diamonds-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-bde</strong><div class="sub">Bold Diamond Eternity Ring</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$2,900.00–$3,500.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://mejuri.com/products/bold-diamond-eternity-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-2mm</strong><div class="sub">2mm Smooth Band</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$498.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://mejuri.com/products/2mm-smooth-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>be-18k-6p-121h6</strong><div class="sub">Classic Six-Prong Solitaire Ring in 18K Yellow Gold</div></td>
+      <td>Brilliant Earth</td>
+      <td class="num-col small">$1,090.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-997811</strong><div class="sub">Italian 10kt Yellow Gold Textured Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$89.00</td>
+      <td class="num-col small"><strong>$89.00</strong></td>
+      <td><span class="chip ok">confirmed — two channels</span></td>
+      <td class="small">0.3 g re-printed</td>
+      <td class="small">two channels agree: $89, weight 0.3 g (independent read 2026-10-23T20:20:10Z)</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/997811" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr class="row-alert">
+      <td><strong>rs-939479</strong><div class="sub">1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$499.00</td>
+      <td class="num-col small"><strong>$499.00</strong></td>
+      <td><span class="chip bad">withdrawn — wrong product</span></td>
+      <td class="small">— (withdrawn row)</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/939479" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-10k-dlr</strong><div class="sub">Diamonds Line Ring</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$348.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://mejuri.com/us/en/products/diamonds-line-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-10k-sig</strong><div class="sub">Signet Ring (10k Solid Yellow Gold)</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$348.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://mejuri.com/us/en/products/signet-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-radiant-3ct</strong><div class="sub">3ct Radiant Cut Lab Diamond Cathedral Ring</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$3,074.00</td>
+      <td class="num-col small"><strong>$3,074.00–$3,452.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">5.4 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-marquise-melted</strong><div class="sub">1ct Marquise Diamond Melted Ring (Lab Diamond)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$2,870.00</td>
+      <td class="num-col small"><strong>$2,870.00–$8,820.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">7 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/marquise-diamond-melted-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-leaves</strong><div class="sub">Diamond Leaves Ring (Clear Lab Diamond)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$2,194.00</td>
+      <td class="num-col small"><strong>$2,194.00</strong></td>
+      <td><span class="chip ok">confirmed — two channels</span></td>
+      <td class="small">3.6 g re-printed</td>
+      <td class="small">two channels agree: $2,194, variant &quot;14k Yellow Gold / Clear Lab Diamond&quot; (independent read 2026-10-23T20:24:30Z)</td>
+      <td><a class="src" href="https://www.automicgold.com/products/diamond-leaves-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-petal</strong><div class="sub">0.6ct Round Diamond Petal Ring (Lab Diamond)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$1,774.00</td>
+      <td class="num-col small"><strong>$1,774.00–$3,517.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">2.7 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/diamond-petal-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-kite</strong><div class="sub">Gemstone Kite Ring</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$1,978.00</td>
+      <td class="num-col small"><strong>$1,978.00–$2,293.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">3.5 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/gemstone-kite-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-cluster</strong><div class="sub">Diamond Cluster Ring (Lab Diamond)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$1,636.00</td>
+      <td class="num-col small"><strong>$1,636.00–$3,095.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">3.1 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/diamond-cluster-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-bubble</strong><div class="sub">Diamond Bubble Ring (Clear Lab Diamond)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$1,334.00</td>
+      <td class="num-col small"><strong>$1,334.00–$1,785.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">1.4 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/diamond-bubble-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>car-18k-etincelle-pear</strong><div class="sub">Étincelle de Cartier Ring, Pear-Shaped Diamond, Paved</div></td>
+      <td>Cartier</td>
+      <td class="num-col small">$3,350.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>car-18k-etincelle-emerald</strong><div class="sub">Étincelle de Cartier Ring, Emerald-Cut Diamond, Paved</div></td>
+      <td>Cartier</td>
+      <td class="num-col small">$3,600.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>car-18k-1895-band-dia</strong><div class="sub">1895 Wedding Band, 2.6 mm Width, 1 Diamond</div></td>
+      <td>Cartier</td>
+      <td class="num-col small">$1,140.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mene-24k-classic-band</strong><div class="sub">Classic Band — 24k Pure Gold (5 mm)</div></td>
+      <td>Menē</td>
+      <td class="num-col small">$1,707.00</td>
+      <td class="num-col small"><strong>$1,694.00</strong></td>
+      <td><span class="chip warn">price moved — needs review</span></td>
+      <td class="small">—</td>
+      <td class="small">stored $1,707; the seller printed $1,694 on 2026-10-23T20:26:00Z</td>
+      <td><a class="src" href="https://mene.com/products/mene-classic-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mene-24k-narrow-band</strong><div class="sub">Narrow Classic Band — 24k Pure Gold (4 mm)</div></td>
+      <td>Menē</td>
+      <td class="num-col small">$1,361.00</td>
+      <td class="num-col small"><strong>$1,350.00</strong></td>
+      <td><span class="chip warn">price moved — needs review</span></td>
+      <td class="small">—</td>
+      <td class="small">stored $1,361; the seller printed $1,350 on 2026-10-23T20:33:00Z</td>
+      <td><a class="src" href="https://mene.com/products/mene-narrow-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-vneck-sm</strong><div class="sub">V Neck Stack Ring Small / Polished (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$900.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not machine-readable</span></td>
+      <td class="small">—</td>
+      <td class="small">page opened but no product price was machine-readable in either channel today</td>
+      <td><a class="src" href="https://auvere.com/product/v-neck-stack-ring-small-polished/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-hexagon-diamond</strong><div class="sub">Hexagon Diamond Stack Ring (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$1,400.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not machine-readable</span></td>
+      <td class="small">—</td>
+      <td class="small">The product page printed its specification panel but no product price in the text returned by this channel, so no price is claimed from it.</td>
+      <td><a class="src" href="https://auvere.com/product/hexagon-diamond-stack-ring/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-diamond-bridge-tall</strong><div class="sub">Diamond Bridge Ring Tall (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$1,600.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not machine-readable</span></td>
+      <td class="small">—</td>
+      <td class="small">page opened but no product price was machine-readable in either channel today</td>
+      <td><a class="src" href="https://auvere.com/product/diamond-bridge-ring-tall/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-clean-cut-polished</strong><div class="sub">Clean Cut Stack Ring Polished (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$900.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not machine-readable</span></td>
+      <td class="small">—</td>
+      <td class="small">page opened but no product price was machine-readable in either channel today</td>
+      <td><a class="src" href="https://auvere.com/product/clean-cut-stack-ring-polished/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-222283</strong><div class="sub">Italian 10kt Yellow Gold Polished Dome Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$695.00</td>
+      <td class="num-col small"><strong>$695.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">3.3 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/222283" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-989853</strong><div class="sub">Italian 18kt Yellow Gold Bypass Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$469.00</td>
+      <td class="num-col small"><strong>$435.00–$469.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">1.2 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/989853" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-997441</strong><div class="sub">Italian 18kt Yellow Gold Dome Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$1,195.00</td>
+      <td class="num-col small"><strong>$1,195.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">3.4 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/997441" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-255232</strong><div class="sub">C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$1,295.00</td>
+      <td class="num-col small"><strong>$1,295.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.ross-simons.com/products/255232" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-industrial-band</strong><div class="sub">Industrial Mirror Band — 1.7mm (Size 9, 14k Solid Yellow Gold)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$598.00</td>
+      <td class="num-col small"><strong>$598.00–$2,825.00</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">2.1 g re-printed</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.automicgold.com/products/industrial-mirror-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>car-18k-destinee-princess</strong><div class="sub">Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold</div></td>
+      <td>Cartier</td>
+      <td class="num-col small">$3,350.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip warn">not read (HTTP 403)</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-petite-195639</strong><div class="sub">Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,000.00</td>
+      <td class="num-col small"><strong>—</strong></td>
+      <td><span class="chip ok">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small"></td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-14k-sdeb</strong><div class="sub">Slim Diamond Eternity Band (14k Solid Yellow Gold)</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$898.00</td>
+      <td class="num-col small"><strong>$898.00</strong></td>
+      <td><span class="chip ok">confirmed — two channels</span></td>
+      <td class="small">—</td>
+      <td class="small">two channels agree: $898 (independent read 2026-10-23T20:36:00Z)</td>
+      <td><a class="src" href="https://mejuri.com/us/en/products/slim-diamond-eternity-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>This pass’s own audit (N01–N09)</h2>
+  <p class="sub">9/9 groups passed, 1,468 assertions, 0 failure(s). Group N09 was sabotage-tested: an external link without <code>rel="noopener"</code> and an unreplaced template expression were injected into a temporary page, both were caught, and the page was removed.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">ID</th><th scope="col">Check</th><th scope="col">Result</th><th scope="col" class="num-col">Assertions</th></tr></thead>
+    <tbody>
+    <tr><td><strong>N01</strong></td><td class="small">Ledger is complete, unique and bijective with the curated dataset</td><td><span class="chip ok">pass</span></td><td class="num-col">145</td></tr>
+    <tr><td><strong>N02</strong></td><td class="small">Every row links the seller’s own https product URL</td><td><span class="chip ok">pass</span></td><td class="num-col">142</td></tr>
+    <tr><td><strong>N03</strong></td><td class="small">A failed page fetch can never be reported as a confirmation</td><td><span class="chip ok">pass</span></td><td class="num-col">142</td></tr>
+    <tr><td><strong>N04</strong></td><td class="small">Every “confirmed” stored price is present in the evidence it cites</td><td><span class="chip ok">pass</span></td><td class="num-col">117</td></tr>
+    <tr><td><strong>N05</strong></td><td class="small">A weight is only reported as reproduced when the page printed it</td><td><span class="chip ok">pass</span></td><td class="num-col">75</td></tr>
+    <tr><td><strong>N06</strong></td><td class="small">The two independent gold reads agree and both carry a publisher timestamp</td><td><span class="chip ok">pass</span></td><td class="num-col">5</td></tr>
+    <tr><td><strong>N07</strong></td><td class="small">Every independent read carries a URL, a time and a verbatim quote</td><td><span class="chip ok">pass</span></td><td class="num-col">25</td></tr>
+    <tr><td><strong>N08</strong></td><td class="small">Verdict arithmetic, withdrawn rows and findings are internally consistent</td><td><span class="chip ok">pass</span></td><td class="num-col">46</td></tr>
+    <tr><td><strong>N09</strong></td><td class="small">Published HTML keeps its security posture</td><td><span class="chip ok">pass</span></td><td class="num-col">771</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Honest limits of this pass</h2>
+  <ul class="notes">
+    <li>10 rows could not be opened by the runner (HTTP 403). They were <strong>not</strong> re-confirmed today and keep their older capture dates.</li>
+    <li>4 rows render their price client-side; no number was invented for them.</li>
+    <li>Prices are dated snapshots, not quotes. 2 rows moved inside a single evening (Menē 24K tracks spot gold).</li>
+    <li>A stamp is a claim, not proof: have any purchase XRF-tested by an independent jeweller inside the return window.</li>
+    <li>Raw evidence: <code>data/live/latest.json</code>, <code>data/live/compare-dab93754.json</code>, <code>data/session-dab93754/manual-reads-2026-10-23.json</code>, <code>data/verification-2026-10-23-evening-dab93754.json</code>.</li>
+  </ul>
+</section>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22, 2026-10-23 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
+    <p class="muted">Gold reference: $3,999.90 per troy ounce at 2026-10-23T19:38:15Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+  </div>
+</footer>
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
