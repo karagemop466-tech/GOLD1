@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:42:33.709Z",
+  "generated_at": "2026-10-23T20:46:24.628Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -17,8 +17,8 @@
     "groups": 10,
     "passed": 1,
     "failed": 9,
-    "assertions": 1666,
-    "findings": 169
+    "assertions": 1674,
+    "findings": 175
   },
   "groups": [
     {
@@ -73,7 +73,7 @@
       "id": "R09",
       "name": "Flag and requirements source coverage",
       "passed": false,
-      "failure_count": 5
+      "failure_count": 11
     },
     {
       "id": "R10",
@@ -2049,6 +2049,78 @@
       "row": null,
       "path": "data/flagged.json",
       "sources": []
+    },
+    {
+      "id": "R09-06",
+      "group": "R09",
+      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
+      "severity": "high",
+      "message": "F59: published live-audit irregularity is absent from the main Flagged for Review registry",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "live-audit.html"
+      ]
+    },
+    {
+      "id": "R09-07",
+      "group": "R09",
+      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
+      "severity": "high",
+      "message": "F60: published live-audit irregularity is absent from the main Flagged for Review registry",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "live-audit.html"
+      ]
+    },
+    {
+      "id": "R09-08",
+      "group": "R09",
+      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
+      "severity": "high",
+      "message": "F61: published live-audit irregularity is absent from the main Flagged for Review registry",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "live-audit.html"
+      ]
+    },
+    {
+      "id": "R09-09",
+      "group": "R09",
+      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
+      "severity": "high",
+      "message": "F62: published live-audit irregularity is absent from the main Flagged for Review registry",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "live-audit.html"
+      ]
+    },
+    {
+      "id": "R09-10",
+      "group": "R09",
+      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
+      "severity": "high",
+      "message": "F63: published live-audit irregularity is absent from the main Flagged for Review registry",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "live-audit.html"
+      ]
+    },
+    {
+      "id": "R09-11",
+      "group": "R09",
+      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
+      "severity": "high",
+      "message": "F64: published live-audit irregularity is absent from the main Flagged for Review registry",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "live-audit.html"
+      ]
     },
     {
       "id": "R10-01",
