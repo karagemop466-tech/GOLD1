@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:31:41.263Z",
+  "generated_at": "2026-10-23T20:43:04.703Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -9,7 +9,7 @@
     "active_rows": 70,
     "withdrawn_rows": 1,
     "verification_ledger": "data/verification-2026-10-23.json",
-    "gold_publisher_timestamp": "2026-10-23T19:38:15Z"
+    "gold_publisher_timestamp": "2026-10-23T20:19:15Z"
   },
   "summary": {
     "groups": 10,
@@ -1270,7 +1270,7 @@
       "group": "R05",
       "irregularity_id": "STALE_CHECKLIST_SPOT_PRICE",
       "severity": "high",
-      "message": "Checklist spot prose does not contain current $3,999.90/ozt",
+      "message": "Checklist spot prose does not contain current $3,998.10/ozt",
       "row": null,
       "path": "data/checklist.json",
       "sources": [
