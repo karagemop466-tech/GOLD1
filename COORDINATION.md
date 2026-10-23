@@ -709,6 +709,25 @@ Every prior archive, dataset, audit group and generated report is preserved unmo
 
 6. **Pass-ID synchronization** — the initial `P81-545688f3` from main was stale (2 verifications behind). Re-ran `build → verify → build` to advance to **P86 at 2026-10-23T19:35:44Z**; `index.html`, `checks.html`, `data/checks/latest.json` and `data/checks/history.json` all now show the same pass ID and 0 failures. A10/H12 now pass.
 
+### Live official reads performed in this pass (not carried forward)
+
+Bash in this sandbox can only reach a small allowlist of hosts, so retailer pages were opened through the
+page-fetch tool rather than by script. Each read below is a direct official-source read made today, and each
+one is quoted here so a reader can check it without trusting the summary:
+
+| Read | Official source opened | What it printed | Effect on the data |
+|------|------------------------|-----------------|--------------------|
+| Gold spot | `https://api.gold-api.com/price/XAU` | `{"price":3999.899902,"updatedAt":"2026-10-23T19:38:15Z"}` | **primary price refreshed** from the 09:59:43Z reading of 4,024.699951; every melt figure re-derived; previous readings kept in `readings[]` |
+| Ross-Simons `571223` | `https://www.ross-simons.com/products/571223.json` (seller's own variant feed) | Size 5/6/7/8/9 `849.00`, Size 5.5/6.5/7.5/8.5 `799.00`; parcel `grams:113` (0.25 lb shipping weight, **not** metal weight) | stored range **$799–$849 confirmed unchanged**; the `grams:113` parcel field was ignored, not turned into a metal weight |
+| Ross-Simons `943668` | `https://www.ross-simons.com/products/943668.js` | `price_min 126900`, `price_max 143900`, `compare_at_price 179500`; Sizes 5, 6, 6.5 `available:false`, Sizes 7, 8, 9 `available:true` at the $1,269 clearance price; description "Center stone and setting are sold separately" | stored **$1,269–$1,439 confirmed**, compare-at $1,795 confirmed, and Flag **F05** (setting-only + sold-out sizes) re-confirmed live |
+| Aurate `au-cigar` | `https://auratenewyork.com/products/modern-cigar-band.js` | description "Width: 20mm, Thickness: 1mm, Height: 5mm, **Weight: 2.6-4g**"; product tags include `vermeil`; `price_min 11800` (the vermeil variant) and `price_max 166800` | published **weight basis 2.6–4 g confirmed**; Flag **F03** (a $118 vermeil variant sitting on a solid-gold page) re-confirmed live; the 14K variant price was **not** re-read, so the stored $1,308 is still the earlier capture and is not claimed fresh |
+
+**Honest limit of this pass:** 4 live official sources were opened today. The other 67 rows were **not**
+re-opened by this session; they rest on the automated 2026-10-23 09:59Z re-read recorded in
+`data/verification-2026-10-23.json` (71/71 rows, each with a verbatim quote and HTTP status), plus the
+mechanical evidence audit which re-checks every stored price against its own stored quote. The site continues
+to state, per row, when it was last read — nothing here upgrades a 2026-10-22 capture to "fresh".
+
 ### Verification & security passes (Pass P86)
 
 - **`node scripts/verify.mjs` (S01–S20)**: **20/20 groups passed, 6,360 assertions, 0 failures** across **71 rows** and **105 root HTML pages**.
