@@ -30,7 +30,7 @@
         "weight_not_published",
         "hallmark_not_published"
       ],
-      "notes": "Closes the 22K (91.7% gold) purity tier gap with explicit \"Handcrafted from solid 22 karat gold\" wording. Because Auvere's live PDP labels its size-dependent range \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" (ambiguous between gross 22K alloy mass and net 24K fine-gold content), weight_g_low is kept null rather than guessed (Flag F52). Strict 15-day return window from delivery with security tag untouched (Flag F53).",
+      "notes": "Closes the 22K (91.7% gold) purity tier gap with explicit \"Handcrafted from solid 22 karat gold\" wording. Because Auvere's live PDP labels its size-dependent range \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" (ambiguous between gross 22K alloy mass and net 24K fine-gold content), weight_g_low is kept null rather than guessed (Flag F54). Strict 15-day return window from delivery with security tag untouched (Flag F55).",
       "reverified_at": "2026-10-23",
       "reverified_pass": "P50-545688f3",
       "verified_at": "2026-10-23",
@@ -63,7 +63,7 @@
         "weight_not_published",
         "hallmark_not_published"
       ],
-      "notes": "Verified 22K solid-gold diamond band ($1,400) with 0.20 ct G/VS natural diamonds. Note high-karat 22K gold (91.7% pure) is softer than 14K/18K around stone seats — inspect bezel/flush seats carefully. Weight kept null due to ambiguous \"Approximate Fine Weight: 3.3 to 3.5 grams\" label (Flag F52); 15-day return window with tag intact (Flag F53).",
+      "notes": "Verified 22K solid-gold diamond band ($1,400) with 0.20 ct G/VS natural diamonds. Note high-karat 22K gold (91.7% pure) is softer than 14K/18K around stone seats — inspect bezel/flush seats carefully. Weight kept null due to ambiguous \"Approximate Fine Weight: 3.3 to 3.5 grams\" label (Flag F54); 15-day return window with tag intact (Flag F55).",
       "reverified_at": "2026-10-23",
       "reverified_pass": "P50-545688f3",
       "verified_at": "2026-10-23",
@@ -96,7 +96,7 @@
         "weight_not_published",
         "hallmark_not_published"
       ],
-      "notes": "Verified sculptural 22K solid-gold architectural diamond ring ($1,600). Weight kept null in calculator because PDP labels 5–6.1 g as \"Approximate Fine Weight\" without specifying whether gross 22K alloy or 24K fine-gold content is meant (Flag F52). Check Auvere's 15-day delivery return rule before removing tag (Flag F53).",
+      "notes": "Verified sculptural 22K solid-gold architectural diamond ring ($1,600). Weight kept null in calculator because PDP labels 5–6.1 g as \"Approximate Fine Weight\" without specifying whether gross 22K alloy or 24K fine-gold content is meant (Flag F54). Check Auvere's 15-day delivery return rule before removing tag (Flag F55).",
       "reverified_at": "2026-10-23",
       "reverified_pass": "P50-545688f3",
       "verified_at": "2026-10-23",
@@ -131,7 +131,7 @@
         "price_from_listing_page",
         "hallmark_not_published"
       ],
-      "notes": "Plain 2 mm 22K solid-gold wedding/stacking band listed at \"From $900\" on Auvere's official Rings catalog (larger ring sizes step up in price; select exact size in cart). Weight kept null due to \"Approximate Fine Weight: 2.8 to 3.7 grams\" wording ambiguity (Flag F52).",
+      "notes": "Plain 2 mm 22K solid-gold wedding/stacking band listed at \"From $900\" on Auvere's official Rings catalog (larger ring sizes step up in price; select exact size in cart). Weight kept null due to \"Approximate Fine Weight: 2.8 to 3.7 grams\" wording ambiguity (Flag F54).",
       "reverified_at": "2026-10-23",
       "reverified_pass": "P50-545688f3",
       "verified_at": "2026-10-23",
@@ -397,7 +397,7 @@
         "weight_not_published",
         "hallmark_not_published"
       ],
-      "notes": "Converts research lead R08 at $898 with explicit \"14k solid gold\" wording. Full-eternity diamond bands cannot be resized — confirm exact finger size first, note gallery alt-text anomaly (\"silver/platinum\" on 14k yellow gold gallery image, Flag F54), and weigh on arrival since Mejuri publishes no gram weight.",
+      "notes": "Converts research lead R08 at $898 with explicit \"14k solid gold\" wording. Full-eternity diamond bands cannot be resized — confirm exact finger size first, note gallery alt-text anomaly (\"silver/platinum\" on 14k yellow gold gallery image, Flag F56), and weigh on arrival since Mejuri publishes no gram weight.",
       "reverified_at": "2026-10-23",
       "reverified_pass": "P50-545688f3",
       "verified_at": "2026-10-23",

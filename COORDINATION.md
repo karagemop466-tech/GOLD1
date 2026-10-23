@@ -673,3 +673,19 @@ Every prior archive, dataset, audit group and generated report is preserved unmo
 - **`node scripts/audit_545688f3.mjs` (`H01`–`H12`)**: **12/12 groups passed, 1,562 assertions, 0 failures**.
 - **Standalone `/site/` audits (`audit-evidence.js`, `audit-links.js`, `audit-security.js`, `build.js`, `audit-build.js`)**: **100% passing** (**9,791+ combined assertions, 42/42 groups, 0 failures**).
 
+### Publication & live GitHub Pages verification (`sess-545688f3`)
+
+| PR | Purpose | Merge commit | Pages |
+|----|---------|--------------|-------|
+| [#39](https://github.com/karagemop466-tech/GOLD1/pull/39) | Seventh pass: 71 verified rings across all 5 karats (`10K`–`24K`, `+22K` Auvere), 9 bot-walled PDPs resolved, `15 U.S.C. §§ 295/297`, `S01`–`S20` + `A01`–`A10` + `H01`–`H12` (`P80-545688f3`) | `9bb7506c232a82b2a4e8515bcf55e520532ecb1c` | `built` (`32,126 ms`, `error: null`) |
+| [#40](https://github.com/karagemop466-tech/GOLD1/pull/40) | Post-deploy live-read polish (`F54`–`F56` cross-references on Auvere/Mejuri detail pages & `0 rows remain unread` wording on `index.html`) + §16 publication log (`P81-545688f3`) | _merged autonomously — see `git log main`_ | `built` |
+
+- **Live deployed GitHub Pages URLs verified directly (`?deploy=9bb7506`, HTTP 200):**
+  - `https://karagemop466-tech.github.io/GOLD1/` — rendering **71 verified listings**, **11 retailers**, **all 5 karat tiers (`10K, 14K, 18K, 22K & 24K`)**, **25/71 published weights**, **21/71 `"solid gold"`**, **57 flagged findings**, **9-ring `ready_to_inspect` shortlist**, and the top-of-page **No hallucinations** rule + active reader check notice.
+  - `https://karagemop466-tech.github.io/GOLD1/requirements.html` — rendering 12-point scorecard across all 71 rows + 9-ring shortlist (incl. `ag-14k-industrial-band` `$598`, `2.1 g`).
+  - `https://karagemop466-tech.github.io/GOLD1/recheck.html` — rendering 71-row 2026-10-23 ledger (`59/71` exact, `6` corrected incl. Menē 24K `$1,707`/`$1,361`, `1` withdrawn `rs-939479`, `0` unread).
+  - `https://karagemop466-tech.github.io/GOLD1/flagged.html` — rendering all 57 findings (`F01`–`F58`, exact row IDs in `F01`/`F02`).
+  - `https://karagemop466-tech.github.io/GOLD1/rings/auv-22k-vneck-sm.html` — rendering 22K Auvere V Neck Stack Ring (`$900`, `BBB A+`, 15-day return window).
+  - `https://karagemop466-tech.github.io/GOLD1/checks.html` & `https://karagemop466-tech.github.io/GOLD1/site/` — both live HTTP 200 and synchronized.
+
+
