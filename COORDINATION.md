@@ -85,7 +85,7 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T49 | **Twelfth-pass continuity + fresh 2026-10-23T23:39Z live re-read of all 71 rows (`arena/67748540-gold1`)**: take over the *stale* ninth-pass integration tails — `T39`–`T43` (`sess-7626fc93`, branch tip `6d0a879` @20:55Z, no commits for >2 h) and `T44` (`sess-5f363d57`, branch tip `3e2a1bf` @20:52Z, >2 h) under the §0 rule 6 — and finish them additively on top of `main` (`1f98639`). Their unique artifacts are carried in verbatim, never diff-replaced: `data/live/2026-10-23T{20-21-36,20-25-27,20-29-52,20-32-44}Z.json`, `data/live/2026-10-23T20-46-30Z.json` (from `arena/b4adf01a-gold1`), `data/session-7626fc93/**`, `scripts/{audit,reconcile}_7626fc93.mjs`. Then: a **new** official-source read of every row on this session's own clock, reconcile line by line, correct only with a verbatim quote, leave the rest blank + flagged. | **done** | sess-67748540 | arena/67748540-gold1 | `data/live/**` (new timestamps only), `data/verification-2026-10-23-night-67748540.json`, `data/session-67748540/**`, `data/session-7626fc93/**`, `scripts/audit_67748540.mjs`, `scripts/reconcile_67748540.mjs` | 2026-10-23T23:40Z |
 | T50 | **Twelfth-pass gate + publish (`arena/67748540-gold1`)**: `S01`–`S20` + `A01`–`A10` + `H01`–`H13` + `N01`–`N11` + new `Q01`–`Q08` fresh-pass/anti-hallucination/security group, `npm test`, link check, PR → merge → confirm GitHub Pages `built`, record links here. Only this session edits the shared outputs during its window. | **done** | sess-67748540 | arena/67748540-gold1 | `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `scripts/{build,verify}.mjs` (additive only), generated root `*.html`, `README.md`, this board | 2026-10-23T23:40Z |
 
-| T51 | **Independent third-channel verification & publication QA (read-only on shared outputs)**: re-read the gold feed and a cross-retailer sample of stored `source_url`s through this session's page-fetch channel, transcribe verbatim quotes with timestamps, diff every quoted figure against `data/rings.json`, audit the published HTML for unverified-value rendering, broken links, CSP/`rel=noopener`/secret leaks, and record every irregularity as an isolated finding. Corrections to shared files are **requested** in §5, never edited directly. | **in progress** | sess-db06c195 | arena/db06c195-gold1 | `data/session-db06c195/**`, `scripts/audit_db06c195.mjs`, this board (§24); **not** `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `scripts/build.mjs`, generated `*.html` | 2026-10-23T23:45Z |
+| T51 | **Independent third-channel verification & publication QA (read-only on shared outputs)**: re-read the gold feed and a cross-retailer sample of stored `source_url`s through this session's page-fetch channel, transcribe verbatim quotes with timestamps, diff every quoted figure against `data/rings.json`, audit the published HTML for unverified-value rendering, broken links, CSP/`rel=noopener`/secret leaks, and record every irregularity as an isolated finding. Corrections to shared files are **requested** in §5, never edited directly. | **done** (PR #74 merged 2026-10-23T23:50:13Z, `c8d4dd0`; Pages `built`) | sess-db06c195 | arena/db06c195-gold1 | `data/session-db06c195/**`, `scripts/audit_db06c195.mjs`, `scripts/db06c195_ledger.mjs`, `data/live/**` (own runs only), this board (§24); **not** `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `scripts/build.mjs`, generated `*.html` | 2026-10-23T23:45Z |
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
 
@@ -1395,18 +1395,18 @@ Two genuine seller-side changes were caught by reading variant level rather than
 
 **Session:** `sess-db06c195` · **Claimed:** 2026-10-23T23:45Z · **Status:** done · **Read-only:** no shared dataset, gold price, build script or generated page was edited by this session.
 
-### 23.1 Why this pass exists and what it deliberately did not do
+### 24.1 Why this pass exists and what it deliberately did not do
 
 At 23:38–23:39Z four sessions started on the same owner brief. `arena/356f1adf-gold1` already held T47 and merged PR #70 at 23:43Z; `arena/67748540-gold1`, `arena/e33f8670-gold1` and `arena/a4b3c19b-gold1` had each just claimed T47/T47/T47. Rather than join that race on the shared outputs, this session claimed **T51**: an independent, read-only verification whose only writes are its own evidence files. It is a *third* channel — a GitHub Actions runner read (`data/live/2026-10-23T23-41-17Z.json`) plus five reads through this sandbox's page-fetch channel — checked against `data/rings.json` with an auditor written from scratch (`scripts/audit_db06c195.mjs`, groups `D01`–`D09`) that shares no code with `scripts/verify.mjs`, `audit_0804e222.mjs`, `audit_545688f3.mjs`, `audit_dab93754.mjs` or `audit_5f363d57.mjs`.
 
-### 23.2 The read (2026-10-23T23:41:17Z, own clock)
+### 24.2 The read (2026-10-23T23:41:17Z, own clock)
 
 - **61 of 71 rows answered** with HTTP 200 on this run; **10 refused with HTTP 403** (5 With Clarity, 4 Cartier, 1 Brilliant Earth) and are recorded as `not_read`, never as confirmed.
 - **61 of 61 answered rows reproduced their stored price exactly** — every `price_low`/`price_high` appears among the prices the seller printed on that read (visible text, JSON-LD offers, or the seller's own variant/product feed). **Zero drift.** The only non-matches are the three Anna Sheffield rows already published as price-unverified and `au-cigar` (partly verified, vermeil variant in the same listing) — both states are already flagged on `flagged.html`.
 - **Gold spot: `3,996.899902 USD/ozt` at `2026-10-23T23:38:16Z`** — read identically through this session's page-fetch channel and the Actions runner (`23:40:45Z`), and now the value merged on `main` by PR #70. Three channels, one number, no reconciliation needed. The COMEX cross-check returned **HTTP 429** on this attempt and is therefore *not* claimed for this clock (DB-04).
 - **Weights:** 8 of the 25 published weights reproduced live tonight; the other 17 rest on dated verbatim quotes in their own `evidence` strings (D05 checks that each quote actually contains the number).
 
-### 23.3 What the independent auditor proves (4,252 assertions, all passing on `main` @ `213f61e`)
+### 24.3 What the independent auditor proves (4,252 assertions, all passing on `main` @ `213f61e`)
 
 | Group | Question | Result |
 |-------|----------|--------|
@@ -1420,7 +1420,7 @@ At 23:38–23:39Z four sessions started on the same owner brief. `arena/356f1adf
 | D08 | no secret-shaped strings, `rel=noopener` on catalog links, no inline script without CSP | 1,434/1,434 |
 | D09 | every relative link and in-page anchor in 88 published pages resolves | 2,145/2,145 |
 
-### 23.4 Negative tests (throwaway copies in `/tmp`, deleted afterwards — the repo was never touched)
+### 24.4 Negative tests (throwaway copies in `/tmp`, deleted afterwards — the repo was never touched)
 
 | Sabotage | Detected by |
 |----------|-------------|
@@ -1429,11 +1429,11 @@ At 23:38–23:39Z four sessions started on the same owner brief. `arena/356f1adf
 | unverified price replaced with a dollar figure on its detail page | `S12` + `S19` **and** `D07` |
 | a partly-verified row left with the old green "confirmed" chip | `S18` (`F66` regression guard) |
 
-### 23.5 Findings raised (not fixed here — this session owns no shared file)
+### 24.5 Findings raised (not fixed here — this session owns no shared file)
 
-**DB-01** (medium) a legacy `docs/` dashboard is still published on the Pages domain with prices outside the 71-row verified dataset and outside every audit · **DB-02** (low) 10 rows refused tonight's read (HTTP 403) · **DB-03** (low) no CSP meta on the root pages (all scripts are same-origin external files, so no inline execution today) · **DB-04** (info) COMEX cross-check rate-limited · **DB-05** (low) duplicate T44 board rows and three simultaneous T47 claims · **DB-06** (low) stale second flag ledger `data/flags.json` (12 items, 2026-10-22) contradicting the canonical `data/flagged.json` (66 items). Full evidence and recommendations: `data/session-db06c195/findings-2026-10-23.json`. None of them blocks a purchase decision that the Flagged page has not already blocked, and none blocks publication.
+**DB-01** (medium) a legacy `docs/` dashboard is still published on the Pages domain with prices outside the 71-row verified dataset and outside every audit · **DB-02** (low) 10 rows refused tonight's read (HTTP 403) · **DB-03** (low) no CSP meta on the root pages (all scripts are same-origin external files, so no inline execution today) · **DB-04** (info) COMEX cross-check rate-limited · **DB-05** (low) duplicate T44 board rows and three simultaneous T47 claims · **DB-06** (low) stale second flag ledger `data/flags.json` (12 items, 2026-10-22) contradicting the canonical `data/flagged.json` (67 items at the time of writing). Full evidence and recommendations: `data/session-db06c195/findings-2026-10-23.json`. None of them blocks a purchase decision that the Flagged page has not already blocked, and none blocks publication.
 
-### 23.6 Artifacts
+### 24.6 Artifacts
 
 | File | What it is |
 |------|------------|
@@ -1445,6 +1445,14 @@ At 23:38–23:39Z four sessions started on the same owner brief. `arena/356f1adf
 | `scripts/audit_db06c195.mjs` | the auditor (D01–D09), runnable after every future review |
 | `scripts/db06c195_ledger.mjs` | turns any `data/live/<timestamp>.json` into the per-row third-channel ledger |
 
-### 23.7 Publication
+### 24.7 Publication
 
-PR and merge recorded in §24.8 at merge time (no number is written here before the PR exists).
+| Step | Result |
+|------|--------|
+| Pull request | [#74](https://github.com/karagemop466-tech/GOLD1/pull/74) |
+| Merged into `main` | **2026-10-23T23:50:13Z**, merge commit **`c8d4dd0c41a3139ade416e76e0d9975ef4ee4e00`** |
+| GitHub Pages | build **`built`**, `error: null`, for that exact merge commit (`updated_at` 2026-10-23T23:50:18Z) |
+| Live readback | `flagged.html` serves **67 findings** with the no-hallucination banner and the "look for hallucinations yourself" instruction; `checks.html` carries the S/A/H/N/Q group summary |
+| Renumbering at merge | the parallel twelfth pass (`arena/67748540-gold1`) merged **PR #71** minutes earlier and took board **T49/T50** and **§23**, so this session's row and section are **T51/§24** — both records stand, nothing was overwritten |
+| Zero-loss | two live reads that landed on this branch mid-flight (`2026-10-23T23-46-04Z`, `2026-10-23T23-47-13Z`) are kept in `data/live/` rather than dropped by the rebases |
+| Not published on `flagged.html` | DB-01…DB-06 are **not** in `data/flagged.json`. The registry, the `README.md` count line and two audit pins in `audit_67748540.mjs` are shared outputs owned by other sessions; the findings are requested in §5 and live in `data/session-db06c195/findings-2026-10-23.json` |
