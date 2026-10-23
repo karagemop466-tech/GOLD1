@@ -838,6 +838,12 @@ Plus per-row provenance for all 65 rows this pass reached: `last_read_at`, `read
 
 **Readers are asked to look for hallucinations:** the rule is stated on the front page, every `$` traces to a quote, `recheck.html` prints this pass's before/after table with the sentence each value came from, and `methodology.html` says how to re-open a row's own source and diff it against the cell.
 
+### Publishing notes
+
+- Published as verification pass **P98** via `PASS_NAME=P98 node scripts/verify.mjs`. The counter in `scripts/verify.mjs` is `history.runs.length + 1`, so this pass's own repeated test runs had already pushed the next number to P99; pinning keeps the id in the pages equal to the id used in the data (`P98-ninth`) and in this section. The intermediate dev runs (including that P99 entry) are left in `data/checks/history.json` rather than pruned — the audit trail is append-only.
+- `data/verification-2026-10-23.json` keeps the 10:00Z columns exactly as the earlier session wrote them; the ninth pass adds `ninth_pass_*` fields beside them. One of those older cells renders a raw JSON fragment of a Ross-Simons spec panel in the ledger's "What was read" column — pre-existing, escaped, and left as that session recorded it.
+- `scripts/reconcile_7626fc93.mjs` compares a fresh read against **two** references on purpose: the pre-pass value for the gate (did the source disagree with what we had?) and the post-change value for the published verdict (does the number in the table appear on the page today?). Without that split, correcting a price would leave the row labelled as disagreeing with itself.
+
 ### Irregularities / open items after this pass
 
 - `F59` Cartier reference-number discrepancy (URL slug `CRB4232900` vs page `B4232900`) — unresolved by design; only Cartier can say which is authoritative.
