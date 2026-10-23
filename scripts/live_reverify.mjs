@@ -187,8 +187,10 @@ function extract(html, row) {
     if (m) meta[key] = decodeEntities(m[1]);
   }
   const titleTag = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [, ''])[1];
+  const h1 = toText((html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i) || [, ''])[1]).slice(0, 200);
 
   return {
+    h1,
     title_tag: decodeEntities(titleTag).replace(/\s+/g, ' ').trim().slice(0, 200),
     jsonld_titles: [...new Set(ldTitles)].slice(0, 4),
     jsonld_prices: ldPrices.slice(0, 12),
@@ -199,12 +201,11 @@ function extract(html, row) {
       14,
       70
     ),
-    weight_mentions: occurrences(
-      text,
-      /\b\d{1,3}(?:\.\d{1,2})?\s?(?:grams?|g|G)\b(?=[^]{0,30}(?:weight|Weight|approx))|\b(?:metal|Metal|gold|Gold)\s?weight[^.]{0,40}?\d{1,3}(?:\.\d{1,2})?\s?(?:grams?|g)\b/g,
-      10,
-      110
-    ),
+    // Every appearance of the word "weight" with a verbatim window, plus every
+    // number followed by a gram unit with its own window. Both are recorded
+    // raw; deciding what they mean is the reconciliation step's job.
+    weight_keyword_context: occurrences(text, /weight/gi, 12, 130),
+    gram_mentions: occurrences(text, /\b\d{1,3}(?:\.\d{1,2})?\s?(?:grams?|g)\b/g, 16, 80),
     solid_mentions: occurrences(text, /\bsolid\s+(?:\d{1,2}\s?(?:kt|k|karat)\s+)?(?:yellow\s+|white\s+|rose\s+)?gold\b|\bsolid gold\b/gi, 8, 90),
     plated_mentions: occurrences(text, /\b(?:vermeil|gold[- ]?filled|gold[- ]?plated|gold tone|gold-tone|plated over|over sterling|sterling silver)\b/gi, 8, 90),
     sale_mentions: occurrences(text, /\bfinal sale\b|\bexchange for size only\b|\ball sales final\b/gi, 4, 90),
