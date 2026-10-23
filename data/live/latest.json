@@ -1,47 +1,56 @@
 {
  "pass": "P42-live",
  "purpose": "Independent live re-read of every curated row at its own official product URL. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.",
- "started_at": "2026-10-23T09:58:49Z",
- "finished_at": "2026-10-23T09:59:19Z",
- "run_context": "github-actions run 39935767503",
+ "started_at": "2026-10-23T09:59:55Z",
+ "finished_at": "2026-10-23T10:00:08Z",
+ "run_context": "github-actions run 39935890400",
  "row_count": 59,
  "fetch_ok": 50,
  "fetch_failed": [
   {
    "id": "wc-tulip",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "wc-4prong",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "wc-4prong-petite",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "wc-6prong",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "wc-gerbera",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "be-18k-6p-121h6",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "car-18k-etincelle-pear",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "car-18k-etincelle-emerald",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   },
   {
    "id": "car-18k-1895-band-dia",
-   "status": 403
+   "status": 403,
+   "error": "HTTP 403"
   }
  ],
  "gold_price_readings": [
@@ -49,19 +58,19 @@
    "publisher": "gold-api.com",
    "url": "https://api.gold-api.com/price/XAU",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:01Z",
+   "fetched_at": "2026-10-23T10:00:08Z",
    "price_usd_per_ozt": 4024.699951,
-   "publisher_timestamp": "2026-10-23T09:58:43Z",
-   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":4024.699951,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T09:58:43Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+   "publisher_timestamp": "2026-10-23T09:59:43Z",
+   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":4024.699951,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T09:59:43Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
   },
   {
    "publisher": "Yahoo Finance (COMEX GC=F front month)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
-   "http_status": 0,
-   "fetched_at": "2026-10-23T09:59:19Z",
-   "price_usd_per_ozt": null,
+   "http_status": 200,
+   "fetched_at": "2026-10-23T10:00:08Z",
+   "price_usd_per_ozt": 4040.1,
    "publisher_timestamp": null,
-   "raw_excerpt": "HTTP 429"
+   "raw_excerpt": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"GC=F\",\"exchangeName\":\"CMX\",\"fullExchangeName\":\"COMEX\",\"instrumentType\":\"FUTURE\",\"firstTradeDate\":967608000,\"regularMarketTime\":1792748992,\"hasPrePostMarketData\":false,\"gmtoffset\":-14400,\"timezone\":\"EDT\",\"exchangeTimezoneName\":\"America/New_York\""
   }
  ],
  "rows": [
@@ -71,7 +80,7 @@
    "url": "https://www.ross-simons.com/products/571221",
    "final_url": "https://www.ross-simons.com/products/571221",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:50Z",
+   "fetched_at": "2026-10-23T09:59:57Z",
    "ok": true,
    "bytes": 939120,
    "extraction": {
@@ -234,6 +243,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 2mm 14kt Yellow Gold Band - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 2mm 14kt Yellow Gold Band - Size 5.5\",\"public_title\":\"Size 5.5\",\"options\":[\"Size 5.5\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 2mm 14kt Yellow Gold Band - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 2mm 14kt Yellow Gold Band - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 2mm 14kt Yellow Gold Band - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 2mm 14kt Yellow Gold Band - Size 7.5\",\"public_title\":\"Size 7.5\",\"options\":[\"Size 7.5\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 2mm 14kt Yellow Gold Band - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 2mm 14kt Yellow Gold Band - Size 8.5\",\"public_title\":\"Size 8.5\",\"options\":[\"Size 8.5\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 2mm 14kt Yellow Gold Band - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":40000,\"weight\":113,\"compare_at_price\":40000,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.7 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.7 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$400",
@@ -254,7 +313,7 @@
    "url": "https://www.ross-simons.com/products/571222",
    "final_url": "https://www.ross-simons.com/products/571222",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:50Z",
+   "fetched_at": "2026-10-23T09:59:57Z",
    "ok": true,
    "bytes": 931933,
    "extraction": {
@@ -401,6 +460,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 3mm 14kt Yellow Gold Band - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 3mm 14kt Yellow Gold Band - Size 5.5\",\"public_title\":\"Size 5.5\",\"options\":[\"Size 5.5\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 3mm 14kt Yellow Gold Band - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 3mm 14kt Yellow Gold Band - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 3mm 14kt Yellow Gold Band - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 3mm 14kt Yellow Gold Band - Size 7.5\",\"public_title\":\"Size 7.5\",\"options\":[\"Size 7.5\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 3mm 14kt Yellow Gold Band - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 3mm 14kt Yellow Gold Band - Size 8.5\",\"public_title\":\"Size 8.5\",\"options\":[\"Size 8.5\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 3mm 14kt Yellow Gold Band - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":59900,\"weight\":113,\"compare_at_price\":59900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"2.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"2.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$599",
@@ -421,7 +530,7 @@
    "url": "https://www.ross-simons.com/products/571223",
    "final_url": "https://www.ross-simons.com/products/571223",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:50Z",
+   "fetched_at": "2026-10-23T09:59:57Z",
    "ok": true,
    "bytes": 930158,
    "extraction": {
@@ -572,6 +681,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 4mm 14kt Yellow Gold Band - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":84900,\"weight\":113,\"compare_at_price\":84900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 4mm 14kt Yellow Gold Band - Size 5.5\",\"public_title\":\"Size 5.5\",\"options\":[\"Size 5.5\"],\"price\":79900,\"weight\":113,\"compare_at_price\":79900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 4mm 14kt Yellow Gold Band - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":84900,\"weight\":113,\"compare_at_price\":84900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 4mm 14kt Yellow Gold Band - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":79900,\"weight\":113,\"compare_at_price\":79900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 4mm 14kt Yellow Gold Band - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":84900,\"weight\":113,\"compare_at_price\":84900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 4mm 14kt Yellow Gold Band - Size 7.5\",\"public_title\":\"Size 7.5\",\"options\":[\"Size 7.5\"],\"price\":79900,\"weight\":113,\"compare_at_price\":79900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 4mm 14kt Yellow Gold Band - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":84900,\"weight\":113,\"compare_at_price\":84900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Women's 4mm 14kt Yellow Gold Band - Size 8.5\",\"public_title\":\"Size 8.5\",\"options\":[\"Size 8.5\"],\"price\":79900,\"weight\":113,\"compare_at_price\":79900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"Women's 4mm 14kt Yellow Gold Band - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":84900,\"weight\":113,\"compare_at_price\":84900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"3.8 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"3.8 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$849",
@@ -592,9 +751,9 @@
    "url": "https://www.ross-simons.com/products/571213",
    "final_url": "https://www.ross-simons.com/products/571213",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:50Z",
+   "fetched_at": "2026-10-23T09:59:57Z",
    "ok": true,
-   "bytes": 892043,
+   "bytes": 890867,
    "extraction": {
     "h1": "Men's 5mm 14kt Yellow Gold Band",
     "title_tag": "Men's 5mm 14kt Yellow Gold Band",
@@ -739,6 +898,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": ",\"name\":\"Men's 5mm 14kt Yellow Gold Band - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":95900,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": ",\"name\":\"Men's 5mm 14kt Yellow Gold Band - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":95900,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Men's 5mm 14kt Yellow Gold Band - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":95900,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Men's 5mm 14kt Yellow Gold Band - Size 11\",\"public_title\":\"Size 11\",\"options\":[\"Size 11\"],\"price\":95900,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Men's 5mm 14kt Yellow Gold Band - Size 12\",\"public_title\":\"Size 12\",\"options\":[\"Size 12\"],\"price\":95900,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"5.0 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"5.0 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"5.0 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"5.0 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     }
+    ],
     "prices": [
      {
       "match": "$1,195",
@@ -763,7 +972,7 @@
    "url": "https://www.ross-simons.com/products/981367",
    "final_url": "https://www.ross-simons.com/products/981367",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:51Z",
+   "fetched_at": "2026-10-23T09:59:58Z",
    "ok": true,
    "bytes": 932446,
    "extraction": {
@@ -928,6 +1137,56 @@
       "excerpt": ". Elemental Detail Giving 14kt gold jewelry means giving something real: 58.3% pure gold by weight, stamped to a globally recognized standard, with the credibility that makes the gift special. A Notable Qual"
      }
     ],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e,\"name\":\"14kt Yellow Gold Polished Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":14900,\"weight\":113,\"compare_at_price\":14900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e,\"name\":\"14kt Yellow Gold Polished Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":14900,\"weight\":113,\"compare_at_price\":14900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e,\"name\":\"14kt Yellow Gold Polished Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":14900,\"weight\":113,\"compare_at_price\":14900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e,\"name\":\"14kt Yellow Gold Polished Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":14900,\"weight\":113,\"compare_at_price\":14900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e,\"name\":\"14kt Yellow Gold Polished Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":14900,\"weight\":113,\"compare_at_price\":14900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "name\":\"14kt Yellow Gold Polished Ring - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":14900,\"weight\":113,\"compare_at_price\":14900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$149",
@@ -948,7 +1207,7 @@
    "url": "https://www.ross-simons.com/products/907250",
    "final_url": "https://www.ross-simons.com/products/907250",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:51Z",
+   "fetched_at": "2026-10-23T09:59:58Z",
    "ok": true,
    "bytes": 929932,
    "extraction": {
@@ -1096,6 +1355,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "true,\"name\":\"18kt Yellow Gold Roped Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":17900,\"weight\":113,\"compare_at_price\":17900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "true,\"name\":\"18kt Yellow Gold Roped Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":17900,\"weight\":113,\"compare_at_price\":17900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "true,\"name\":\"18kt Yellow Gold Roped Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":17900,\"weight\":113,\"compare_at_price\":17900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "true,\"name\":\"18kt Yellow Gold Roped Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":17900,\"weight\":113,\"compare_at_price\":17900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "true,\"name\":\"18kt Yellow Gold Roped Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":17900,\"weight\":113,\"compare_at_price\":17900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e,\"name\":\"18kt Yellow Gold Roped Ring - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":17900,\"weight\":113,\"compare_at_price\":17900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "_image\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"0.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$179",
@@ -1116,7 +1425,7 @@
    "url": "https://www.ross-simons.com/products/960952",
    "final_url": "https://www.ross-simons.com/products/960952",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:51Z",
+   "fetched_at": "2026-10-23T09:59:58Z",
    "ok": true,
    "bytes": 932856,
    "extraction": {
@@ -1260,6 +1569,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Italian 14kt Yellow Gold Dome Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":39900,\"weight\":113,\"compare_at_price\":39900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Italian 14kt Yellow Gold Dome Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":39900,\"weight\":113,\"compare_at_price\":39900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Italian 14kt Yellow Gold Dome Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":39900,\"weight\":113,\"compare_at_price\":39900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Italian 14kt Yellow Gold Dome Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":39900,\"weight\":113,\"compare_at_price\":39900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ame\":\"Italian 14kt Yellow Gold Dome Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":39900,\"weight\":113,\"compare_at_price\":39900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\":\"Italian 14kt Yellow Gold Dome Ring - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":39900,\"weight\":113,\"compare_at_price\":39900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$399",
@@ -1280,7 +1639,7 @@
    "url": "https://www.ross-simons.com/products/879968",
    "final_url": "https://www.ross-simons.com/products/879968",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:51Z",
+   "fetched_at": "2026-10-23T09:59:58Z",
    "ok": true,
    "bytes": 912334,
    "extraction": {
@@ -1419,6 +1778,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "amond Eternity Band in 14kt Yellow Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":269500,\"weight\":113,\"compare_at_price\":269500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "amond Eternity Band in 14kt Yellow Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":269500,\"weight\":113,\"compare_at_price\":269500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "amond Eternity Band in 14kt Yellow Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":269500,\"weight\":113,\"compare_at_price\":269500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "amond Eternity Band in 14kt Yellow Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":269500,\"weight\":113,\"compare_at_price\":269500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "amond Eternity Band in 14kt Yellow Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":269500,\"weight\":113,\"compare_at_price\":269500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"2.00",
+      "excerpt": "\"\n          },\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Diamond\",\"quantity\":\"24\",\"weight\":\"2.00 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"I2-I2\",\"colorgrade\":\"I-J\"}]\n        },\n      \n        {"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"2.00",
+      "excerpt": "\"\n          },\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Diamond\",\"quantity\":\"24\",\"weight\":\"2.00 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"I2-I2\",\"colorgrade\":\"I-J\"}]\n        },\n      \n        {"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     }
+    ],
     "prices": [
      {
       "match": "$2,695",
@@ -1439,7 +1848,7 @@
    "url": "https://www.ross-simons.com/products/999230",
    "final_url": "https://www.ross-simons.com/products/999230",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:52Z",
+   "fetched_at": "2026-10-23T09:59:59Z",
    "ok": true,
    "bytes": 906250,
    "extraction": {
@@ -1554,6 +1963,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "metric Eternity Band in 14kt Yellow Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":48900,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "metric Eternity Band in 14kt Yellow Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":55900,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "metric Eternity Band in 14kt Yellow Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":55900,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "metric Eternity Band in 14kt Yellow Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":48900,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "metric Eternity Band in 14kt Yellow Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":48900,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.80",
+      "excerpt": "\"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Garnet\",\"quantity\":\"7\",\"size\":\"2.0x4.0 mm\",\"weight\":\"0.80 ct. t.w.\",\"cutshape\":\"Marquise\",\"color\":\"Red\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Sapphire\",\"quanti"
+     },
+     {
+      "match": "\"weight\":\"0.30",
+      "excerpt": "arquise\",\"color\":\"Red\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Sapphire\",\"quantity\":\"7\",\"size\":\"2.0 mm\",\"weight\":\"0.30 ct. t.w.\",\"cutshape\":\"Round\",\"color\":\"Pink\"}]\n        },\n      \n        {\n          \"id\": 43876230103175,"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.80",
+      "excerpt": "\"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Garnet\",\"quantity\":\"7\",\"size\":\"2.0x4.0 mm\",\"weight\":\"0.80 ct. t.w.\",\"cutshape\":\"Marquise Single-Cut\",\"color\":\"Red\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Sapphi"
+     }
+    ],
     "prices": [
      {
       "match": "$695",
@@ -1578,7 +2037,7 @@
    "url": "https://www.ross-simons.com/products/991907",
    "final_url": "https://www.ross-simons.com/products/991907",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:52Z",
+   "fetched_at": "2026-10-23T09:59:59Z",
    "ok": true,
    "bytes": 910327,
    "extraction": {
@@ -1717,6 +2176,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"2.00",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"1\",\"weight\":\"2.00 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemston"
+     },
+     {
+      "match": "\"weight\":\"0.30",
+      "excerpt": "\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"10\",\"weight\":\"0.30 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"}]\n        },\n      \n        {"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"2.00",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"1\",\"weight\":\"2.00 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemston"
+     }
+    ],
     "prices": [
      {
       "match": "$2,795",
@@ -1737,7 +2246,7 @@
    "url": "https://www.ross-simons.com/products/993512",
    "final_url": "https://www.ross-simons.com/products/993512",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:52Z",
+   "fetched_at": "2026-10-23T09:59:59Z",
    "ok": true,
    "bytes": 910826,
    "extraction": {
@@ -1876,6 +2385,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ond Engagement Ring in 14kt Yellow Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ond Engagement Ring in 14kt Yellow Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ond Engagement Ring in 14kt Yellow Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ond Engagement Ring in 14kt Yellow Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "ond Engagement Ring in 14kt Yellow Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":279500,\"weight\":113,\"compare_at_price\":279500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"2.00",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"1\",\"weight\":\"2.00 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemston"
+     },
+     {
+      "match": "\"weight\":\"0.30",
+      "excerpt": "\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"10\",\"weight\":\"0.30 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"}]\n        },\n      \n        {"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"2.00",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"1\",\"weight\":\"2.00 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemston"
+     }
+    ],
     "prices": [
      {
       "match": "$2,795",
@@ -1896,7 +2455,7 @@
    "url": "https://www.ross-simons.com/products/991908",
    "final_url": "https://www.ross-simons.com/products/991908",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:52Z",
+   "fetched_at": "2026-10-23T09:59:59Z",
    "ok": true,
    "bytes": 906628,
    "extraction": {
@@ -2019,6 +2578,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":179500,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":179500,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":179500,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":179500,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "mond Engagement Ring in 14kt White Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":179500,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": \"_blank\",\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": \"_blank\",\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"1.00",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"1\",\"weight\":\"1.00 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemston"
+     },
+     {
+      "match": "\"weight\":\"0.20",
+      "excerpt": "\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"10\",\"weight\":\"0.20 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"}]\n        },\n      \n        {"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"1.00",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Lab-Grown Diamond\",\"quantity\":\"1\",\"weight\":\"1.00 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"G-H\"},{\"position\":\"2\",\"label\":\"Gemston"
+     }
+    ],
     "prices": [
      {
       "match": "$1,795",
@@ -2039,7 +2648,7 @@
    "url": "https://www.ross-simons.com/products/864785",
    "final_url": "https://www.ross-simons.com/products/864785",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T09:59:59Z",
    "ok": true,
    "bytes": 932265,
    "extraction": {
@@ -2178,6 +2787,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "t and Wedding Rings in 14kt Yellow Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "Wedding Rings in 14kt Yellow Gold - Size 5.5\",\"public_title\":\"Size 5.5\",\"options\":[\"Size 5.5\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "t and Wedding Rings in 14kt Yellow Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "Wedding Rings in 14kt Yellow Gold - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "t and Wedding Rings in 14kt Yellow Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "Wedding Rings in 14kt Yellow Gold - Size 7.5\",\"public_title\":\"Size 7.5\",\"options\":[\"Size 7.5\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "t and Wedding Rings in 14kt Yellow Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "Wedding Rings in 14kt Yellow Gold - Size 8.5\",\"public_title\":\"Size 8.5\",\"options\":[\"Size 8.5\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "t and Wedding Rings in 14kt Yellow Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":239500,\"weight\":113,\"compare_at_price\":239500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.20",
+      "excerpt": "},\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Center Gemstone\",\"type\":\"Diamond\",\"quantity\":\"1\",\"weight\":\"0.20 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"I1\",\"colorgrade\":\"H-I\"},{\"position\":\"2\",\"label\":\"Accent Gemst"
+     }
+    ],
     "prices": [
      {
       "match": "$2,395",
@@ -2198,7 +2857,7 @@
    "url": "https://www.ross-simons.com/products/943668",
    "final_url": "https://www.ross-simons.com/products/943668",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 893711,
    "extraction": {
@@ -2322,6 +2981,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "agement Ring Setting in 14kt White Gold - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":143900,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "agement Ring Setting in 14kt White Gold - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":143900,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "t Ring Setting in 14kt White Gold - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":143900,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "agement Ring Setting in 14kt White Gold - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":126900,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "agement Ring Setting in 14kt White Gold - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":126900,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "agement Ring Setting in 14kt White Gold - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":126900,\"weight\":113,\"compare_at_price\":179500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.28",
+      "excerpt": "\"\n          },\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Diamond\",\"quantity\":\"10\",\"weight\":\"0.28 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"F-G\"}]\n        },\n      \n        {"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt White Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.28",
+      "excerpt": "\"\n          },\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Diamond\",\"quantity\":\"10\",\"weight\":\"0.28 ct. t.w.\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"F-G\"}]\n        },\n      \n        {"
+     }
+    ],
     "prices": [
      {
       "match": "$1,795",
@@ -2346,7 +3055,7 @@
    "url": "https://www.ross-simons.com/products/242556",
    "final_url": "https://www.ross-simons.com/products/242556",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 863269,
    "extraction": {
@@ -2445,6 +3154,40 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "nds in 14kt Yellow Gold. Size 6.5 - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":219500,\"weight\":113,\"compare_at_price\":219500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.30",
+      "excerpt": "\"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Sapphire\",\"quantity\":\"1\",\"size\":\"5.5x4 mm\",\"weight\":\"0.30 carats\",\"cutshape\":\"Oval\",\"color\":\"Blue\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Diamond\",\"quantity\":\"1"
+     },
+     {
+      "match": "\"weight\":\"0.16",
+      "excerpt": "rats\",\"cutshape\":\"Oval\",\"color\":\"Blue\"},{\"position\":\"2\",\"label\":\"Gemstone 2\",\"type\":\"Diamond\",\"quantity\":\"16\",\"weight\":\"0.16 ct. t.w.\",\"cutshape\":\"Round Single-Cut\",\"clarity\":\"VS2-SI1\",\"colorgrade\":\"H-I\"}]\n        }\n      ],\n      \"pr"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value = specs[key];\n          if (!value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase());"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "nds in 14kt Yellow Gold. Size 6.5 - Size 6.5\",\"public_title\":\"Size 6.5\",\"options\":[\"Size 6.5\"],\"price\":219500,\"weight\":113,\"compare_at_price\":219500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     }
+    ],
     "prices": [
      {
       "match": "$2,195",
@@ -2465,7 +3208,7 @@
    "url": "https://www.ross-simons.com/products/254575",
    "final_url": "https://www.ross-simons.com/products/254575",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 849566,
    "extraction": {
@@ -2572,6 +3315,32 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "wo-Tone Gold Bypass Ring. Size 7.5 - Size 7.5\",\"public_title\":\"Size 7.5\",\"options\":[\"Size 7.5\"],\"price\":69500,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Two-Tone Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Two-Tone Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value = specs[key];\n          if (!value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase());"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "wo-Tone Gold Bypass Ring. Size 7.5 - Size 7.5\",\"public_title\":\"Size 7.5\",\"options\":[\"Size 7.5\"],\"price\":69500,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     }
+    ],
     "prices": [
      {
       "match": "$695",
@@ -2592,7 +3361,7 @@
    "url": "https://www.ross-simons.com/products/240912",
    "final_url": "https://www.ross-simons.com/products/240912",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:54Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 857801,
    "extraction": {
@@ -2691,6 +3460,36 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "pphire Ring in 14kt Yellow Gold. Size 7 - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":899500,\"weight\":113,\"compare_at_price\":899500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"1.36",
+      "excerpt": "\"\n          },\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Sapphire\",\"quantity\":\"1\",\"weight\":\"1.36 carats\",\"cutshape\":\"Oval Cushion\",\"color\":\"Blue\"}]\n        }\n      ],\n      \"preselect\":false,\n      \"history"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value = specs[key];\n          if (!value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase());"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "pphire Ring in 14kt Yellow Gold. Size 7 - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":899500,\"weight\":113,\"compare_at_price\":899500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     }
+    ],
     "prices": [
      {
       "match": "$8,995",
@@ -2709,136 +3508,56 @@
    "id": "wc-tulip",
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
-   "final_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": false,
-   "bytes": 5999,
-   "extraction": {
-    "h1": "",
-    "title_tag": "Just a moment...",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 16,
-    "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "wc-4prong",
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
-   "final_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": false,
-   "bytes": 5965,
-   "extraction": {
-    "h1": "",
-    "title_tag": "Just a moment...",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 16,
-    "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "wc-4prong-petite",
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
-   "final_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": false,
-   "bytes": 6020,
-   "extraction": {
-    "h1": "",
-    "title_tag": "Just a moment...",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 16,
-    "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "wc-6prong",
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
-   "final_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": false,
-   "bytes": 5962,
-   "extraction": {
-    "h1": "",
-    "title_tag": "Just a moment...",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 16,
-    "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "wc-gerbera",
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
-   "final_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:58:53Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": false,
-   "bytes": 6029,
-   "extraction": {
-    "h1": "",
-    "title_tag": "Just a moment...",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 16,
-    "text_sha256": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "as-bea-sol",
@@ -2846,7 +3565,7 @@
    "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:54Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 805031,
    "extraction": {
@@ -2914,6 +3633,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$500",
@@ -2974,7 +3694,7 @@
    "url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:54Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 709840,
    "extraction": {
@@ -3030,6 +3750,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$500",
@@ -3090,7 +3811,7 @@
    "url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:54Z",
+   "fetched_at": "2026-10-23T10:00:00Z",
    "ok": true,
    "bytes": 810106,
    "extraction": {
@@ -3162,6 +3883,12 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":454",
+      "excerpt": "ral White Diamond\",\"options\":[\"Yellow Gold\",\"8x6mm (Approx. 2.00ct)\",\"Natural White Diamond\"],\"price\":2510000,\"weight\":454,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -3222,7 +3949,7 @@
    "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:55Z",
+   "fetched_at": "2026-10-23T10:00:02Z",
    "ok": true,
    "bytes": 7169623,
    "extraction": {
@@ -3296,6 +4023,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 3\",\"public_title\":\"14k \\/ Yellow \\/ 3\",\"options\":[\"14k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 3\",\"public_title\":\"14k \\/ White \\/ 3\",\"options\":[\"14k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 3\",\"public_title\":\"18k \\/ Yellow \\/ 3\",\"options\":[\"18k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 3\",\"public_title\":\"18k \\/ White \\/ 3\",\"options\":[\"18k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 14k \\/ Yellow \\/ 3.5\",\"public_title\":\"14k \\/ Yellow \\/ 3.5\",\"options\":[\"14k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 14k \\/ White \\/ 3.5\",\"public_title\":\"14k \\/ White \\/ 3.5\",\"options\":[\"14k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 18k \\/ Yellow \\/ 3.5\",\"public_title\":\"18k \\/ Yellow \\/ 3.5\",\"options\":[\"18k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 18k \\/ White \\/ 3.5\",\"public_title\":\"18k \\/ White \\/ 3.5\",\"options\":[\"18k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 4\",\"public_title\":\"14k \\/ Yellow \\/ 4\",\"options\":[\"14k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 4\",\"public_title\":\"14k \\/ White \\/ 4\",\"options\":[\"14k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 4\",\"public_title\":\"18k \\/ Yellow \\/ 4\",\"options\":[\"18k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 4\",\"public_title\":\"18k \\/ White \\/ 4\",\"options\":[\"18k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -3348,9 +4125,9 @@
    "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:56Z",
+   "fetched_at": "2026-10-23T10:00:01Z",
    "ok": true,
-   "bytes": 7181069,
+   "bytes": 7201890,
    "extraction": {
     "h1": "1ct Emerald Lab Grown Diamond Bezel Ring",
     "title_tag": "1ct Emerald Lab Grown Diamond Bezel Ring",
@@ -3422,6 +4199,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 3\",\"public_title\":\"14k \\/ Yellow \\/ 3\",\"options\":[\"14k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 3\",\"public_title\":\"14k \\/ White \\/ 3\",\"options\":[\"14k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 3\",\"public_title\":\"18k \\/ Yellow \\/ 3\",\"options\":[\"18k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 3\",\"public_title\":\"18k \\/ White \\/ 3\",\"options\":[\"18k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 14k \\/ Yellow \\/ 3.5\",\"public_title\":\"14k \\/ Yellow \\/ 3.5\",\"options\":[\"14k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 14k \\/ White \\/ 3.5\",\"public_title\":\"14k \\/ White \\/ 3.5\",\"options\":[\"14k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 18k \\/ Yellow \\/ 3.5\",\"public_title\":\"18k \\/ Yellow \\/ 3.5\",\"options\":[\"18k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 18k \\/ White \\/ 3.5\",\"public_title\":\"18k \\/ White \\/ 3.5\",\"options\":[\"18k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 4\",\"public_title\":\"14k \\/ Yellow \\/ 4\",\"options\":[\"14k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 4\",\"public_title\":\"14k \\/ White \\/ 4\",\"options\":[\"14k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 4\",\"public_title\":\"18k \\/ Yellow \\/ 4\",\"options\":[\"18k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 4\",\"public_title\":\"18k \\/ White \\/ 4\",\"options\":[\"18k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -3474,7 +4301,7 @@
    "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:55Z",
+   "fetched_at": "2026-10-23T10:00:01Z",
    "ok": true,
    "bytes": 7198825,
    "extraction": {
@@ -3548,6 +4375,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 3\",\"public_title\":\"14k \\/ Yellow \\/ 3\",\"options\":[\"14k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 3\",\"public_title\":\"14k \\/ White \\/ 3\",\"options\":[\"14k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 3\",\"public_title\":\"18k \\/ Yellow \\/ 3\",\"options\":[\"18k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 3\",\"public_title\":\"18k \\/ White \\/ 3\",\"options\":[\"18k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 14k \\/ Yellow \\/ 3.5\",\"public_title\":\"14k \\/ Yellow \\/ 3.5\",\"options\":[\"14k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 14k \\/ White \\/ 3.5\",\"public_title\":\"14k \\/ White \\/ 3.5\",\"options\":[\"14k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 18k \\/ Yellow \\/ 3.5\",\"public_title\":\"18k \\/ Yellow \\/ 3.5\",\"options\":[\"18k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 18k \\/ White \\/ 3.5\",\"public_title\":\"18k \\/ White \\/ 3.5\",\"options\":[\"18k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 4\",\"public_title\":\"14k \\/ Yellow \\/ 4\",\"options\":[\"14k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 4\",\"public_title\":\"14k \\/ White \\/ 4\",\"options\":[\"14k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 4\",\"public_title\":\"18k \\/ Yellow \\/ 4\",\"options\":[\"18k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 4\",\"public_title\":\"18k \\/ White \\/ 4\",\"options\":[\"18k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -3600,9 +4477,9 @@
    "url": "https://auratenewyork.com/products/modern-cigar-band",
    "final_url": "https://auratenewyork.com/products/modern-cigar-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:55Z",
+   "fetched_at": "2026-10-23T10:00:02Z",
    "ok": true,
-   "bytes": 7525739,
+   "bytes": 7548333,
    "extraction": {
     "h1": "Modern Cigar Band",
     "title_tag": "Modern Cigar Band in Yellow, Rose or White Gold",
@@ -3674,6 +4551,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 3\",\"public_title\":\"14k \\/ Yellow \\/ 3\",\"options\":[\"14k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 3\",\"public_title\":\"14k \\/ White \\/ 3\",\"options\":[\"14k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 3\",\"public_title\":\"18k \\/ Yellow \\/ 3\",\"options\":[\"18k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 3\",\"public_title\":\"18k \\/ White \\/ 3\",\"options\":[\"18k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 14k \\/ Yellow \\/ 3.5\",\"public_title\":\"14k \\/ Yellow \\/ 3.5\",\"options\":[\"14k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 14k \\/ White \\/ 3.5\",\"public_title\":\"14k \\/ White \\/ 3.5\",\"options\":[\"14k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 18k \\/ Yellow \\/ 3.5\",\"public_title\":\"18k \\/ Yellow \\/ 3.5\",\"options\":[\"18k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 18k \\/ White \\/ 3.5\",\"public_title\":\"18k \\/ White \\/ 3.5\",\"options\":[\"18k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 4\",\"public_title\":\"14k \\/ Yellow \\/ 4\",\"options\":[\"14k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 4\",\"public_title\":\"14k \\/ White \\/ 4\",\"options\":[\"14k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 4\",\"public_title\":\"18k \\/ Yellow \\/ 4\",\"options\":[\"18k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 4\",\"public_title\":\"18k \\/ White \\/ 4\",\"options\":[\"18k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -3730,7 +4657,7 @@
    "url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "final_url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:57Z",
+   "fetched_at": "2026-10-23T10:00:03Z",
    "ok": true,
    "bytes": 7539417,
    "extraction": {
@@ -3804,6 +4731,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 3\",\"public_title\":\"14k \\/ Yellow \\/ 3\",\"options\":[\"14k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 3\",\"public_title\":\"14k \\/ White \\/ 3\",\"options\":[\"14k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 3\",\"public_title\":\"18k \\/ Yellow \\/ 3\",\"options\":[\"18k\",\"Yellow\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 3\",\"public_title\":\"18k \\/ White \\/ 3\",\"options\":[\"18k\",\"White\",\"3\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 14k \\/ Yellow \\/ 3.5\",\"public_title\":\"14k \\/ Yellow \\/ 3.5\",\"options\":[\"14k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 14k \\/ White \\/ 3.5\",\"public_title\":\"14k \\/ White \\/ 3.5\",\"options\":[\"14k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "- 18k \\/ Yellow \\/ 3.5\",\"public_title\":\"18k \\/ Yellow \\/ 3.5\",\"options\":[\"18k\",\"Yellow\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "ng - 18k \\/ White \\/ 3.5\",\"public_title\":\"18k \\/ White \\/ 3.5\",\"options\":[\"18k\",\"White\",\"3.5\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 14k \\/ Yellow \\/ 4\",\"public_title\":\"14k \\/ Yellow \\/ 4\",\"options\":[\"14k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 14k \\/ White \\/ 4\",\"public_title\":\"14k \\/ White \\/ 4\",\"options\":[\"14k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "Ring - 18k \\/ Yellow \\/ 4\",\"public_title\":\"18k \\/ Yellow \\/ 4\",\"options\":[\"18k\",\"Yellow\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     },
+     {
+      "match": "\"weight\":4",
+      "excerpt": "age Ring - 18k \\/ White \\/ 4\",\"public_title\":\"18k \\/ White \\/ 4\",\"options\":[\"18k\",\"White\",\"4\"],\"price\":198800,\"weight\":4,\"compare_at_price\":null,\"inventory_quantity\":0,\"inventory_management\":\"shopify\",\"inventory_policy\":\"continue\""
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -3860,7 +4837,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:56Z",
+   "fetched_at": "2026-10-23T10:00:02Z",
    "ok": true,
    "bytes": 676032,
    "extraction": {
@@ -3914,6 +4891,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -3938,7 +4916,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:56Z",
+   "fetched_at": "2026-10-23T10:00:02Z",
    "ok": true,
    "bytes": 675198,
    "extraction": {
@@ -3992,6 +4970,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4024,7 +5003,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:56Z",
+   "fetched_at": "2026-10-23T10:00:02Z",
    "ok": true,
    "bytes": 674856,
    "extraction": {
@@ -4078,6 +5057,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4110,7 +5090,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:57Z",
+   "fetched_at": "2026-10-23T10:00:03Z",
    "ok": true,
    "bytes": 673945,
    "extraction": {
@@ -4160,6 +5140,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4192,7 +5173,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:56Z",
+   "fetched_at": "2026-10-23T10:00:03Z",
    "ok": true,
    "bytes": 619351,
    "extraction": {
@@ -4242,6 +5223,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4274,9 +5256,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:57Z",
+   "fetched_at": "2026-10-23T10:00:03Z",
    "ok": true,
-   "bytes": 649592,
+   "bytes": 649593,
    "extraction": {
     "h1": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
@@ -4328,6 +5310,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4360,7 +5343,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:57Z",
+   "fetched_at": "2026-10-23T10:00:03Z",
    "ok": true,
    "bytes": 645680,
    "extraction": {
@@ -4414,6 +5397,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4446,7 +5430,7 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:57Z",
+   "fetched_at": "2026-10-23T10:00:03Z",
    "ok": true,
    "bytes": 629845,
    "extraction": {
@@ -4500,6 +5484,7 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1000",
@@ -4532,9 +5517,9 @@
    "url": "https://mejuri.com/products/diamond-eternity-band",
    "final_url": "https://mejuri.com/products/diamond-eternity-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:58Z",
+   "fetched_at": "2026-10-23T10:00:04Z",
    "ok": true,
-   "bytes": 1702632,
+   "bytes": 1706659,
    "extraction": {
     "h1": "Diamond Eternity Band",
     "title_tag": "Diamond Eternity Band | Mejuri",
@@ -4624,14 +5609,15 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$1,100",
       "excerpt": "Free Returns & Exchanges Free Shipping Diamond Eternity Band 4.6 From $1,100 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2906,
-    "text_sha256": "301aaffc47d4854fbb96c032ec58c56a3ab3b2e2476cca1272f6d62d1ca2226f"
+    "text_length": 3079,
+    "text_sha256": "9a1adc081f424d5ecaa871e22efe8d5b46c237d3a21330963ad0ecfcdc9ed33a"
    }
   },
   {
@@ -4640,9 +5626,9 @@
    "url": "https://mejuri.com/products/diamonds-band",
    "final_url": "https://mejuri.com/products/diamonds-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:58Z",
+   "fetched_at": "2026-10-23T10:00:04Z",
    "ok": true,
-   "bytes": 1278780,
+   "bytes": 1282729,
    "extraction": {
     "h1": "Diamonds Band",
     "title_tag": "Diamond Band Ring | Mejuri",
@@ -4728,14 +5714,15 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$648",
       "excerpt": "ear Warranty Free Returns & Exchanges Free Shipping Diamonds Band 4.7 $648 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2944,
-    "text_sha256": "49663840205db097e9ee664e366250639a26f2b1e38eb8274fa3cbc120382749"
+    "text_length": 3117,
+    "text_sha256": "160336eff29475d88ab01b3a193c7fb65065fed25ecff4b9035cbc708145f966"
    }
   },
   {
@@ -4744,9 +5731,9 @@
    "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "final_url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:58Z",
+   "fetched_at": "2026-10-23T10:00:04Z",
    "ok": true,
-   "bytes": 1733770,
+   "bytes": 1737432,
    "extraction": {
     "h1": "Bold Diamond Eternity Ring",
     "title_tag": "Bold Diamond Eternity Ring | Mejuri",
@@ -4832,14 +5819,15 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$2,900",
       "excerpt": "Returns & Exchanges Free Shipping Bold Diamond Eternity Ring 4.8 From $2,900 Material & Stone Options Solid White Gold (14k), Natural Diamond Size"
      }
     ],
-    "text_length": 3213,
-    "text_sha256": "4fcc9b97d3fb8b1337f6bac8b41aa091a81af7b01029e92c3576da480784b91f"
+    "text_length": 3386,
+    "text_sha256": "8769843fa8233b588fcb9c2693574c056183b0504b92099e5207df33b84c2020"
    }
   },
   {
@@ -4848,9 +5836,9 @@
    "url": "https://mejuri.com/products/2mm-smooth-band",
    "final_url": "https://mejuri.com/products/2mm-smooth-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:59Z",
+   "fetched_at": "2026-10-23T10:00:04Z",
    "ok": true,
-   "bytes": 1529749,
+   "bytes": 1533705,
    "extraction": {
     "h1": "2mm Smooth Band",
     "title_tag": "14k Gold Smooth Band Ring - Jewelry | Mejuri",
@@ -4940,42 +5928,27 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$498",
       "excerpt": "r Warranty Free Returns & Exchanges Free Shipping 2mm Smooth Band 4.8 $498 Material Solid Yellow Gold (14k) Size Size Guide 4 4.5 5 5.5 6 6.5 7"
      }
     ],
-    "text_length": 2776,
-    "text_sha256": "cf69ee33b38dccb58186454f0a3372005bd84d15dd57c516db42a457d86a66d6"
+    "text_length": 2949,
+    "text_sha256": "7b243fdd4523ca9da062785205686f9cea2dde103ebfa6d7d8c9897743732e8f"
    }
   },
   {
    "id": "be-18k-6p-121h6",
    "retailer": "Brilliant Earth",
    "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
-   "final_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:58:58Z",
+   "fetched_at": "2026-10-23T10:00:04Z",
    "ok": false,
-   "bytes": 615593,
-   "extraction": {
-    "h1": "",
-    "title_tag": "Brilliant Earth - Verifying",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 50,
-    "text_sha256": "5423a72b8943f31146d16e84b4f55a4eef4ce67a8e7e8e13c48d15d7a3039750"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "rs-997811",
@@ -4983,7 +5956,7 @@
    "url": "https://www.ross-simons.com/products/997811",
    "final_url": "https://www.ross-simons.com/products/997811",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:59Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 922278,
    "extraction": {
@@ -5132,6 +6105,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\":\"Italian 10kt Yellow Gold Textured Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":8900,\"weight\":113,\"compare_at_price\":8900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sellin"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\":\"Italian 10kt Yellow Gold Textured Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":8900,\"weight\":113,\"compare_at_price\":8900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sellin"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\":\"Italian 10kt Yellow Gold Textured Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":8900,\"weight\":113,\"compare_at_price\":8900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sellin"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\":\"Italian 10kt Yellow Gold Textured Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":8900,\"weight\":113,\"compare_at_price\":8900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sellin"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\":\"Italian 10kt Yellow Gold Textured Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":8900,\"weight\":113,\"compare_at_price\":8900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sellin"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "Italian 10kt Yellow Gold Textured Ring - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":8900,\"weight\":113,\"compare_at_price\":8900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sellin"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"0.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"0.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"0.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"0.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$89",
@@ -5152,7 +6175,7 @@
    "url": "https://www.ross-simons.com/products/939479",
    "final_url": "https://www.ross-simons.com/products/939479",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:59Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 907723,
    "extraction": {
@@ -5284,6 +6307,56 @@
     ],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": ":\"Italian 14kt Yellow Gold Claddagh Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":49900,\"weight\":113,\"compare_at_price\":49900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": ":\"Italian 14kt Yellow Gold Claddagh Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":49900,\"weight\":113,\"compare_at_price\":49900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": ":\"Italian 14kt Yellow Gold Claddagh Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":49900,\"weight\":113,\"compare_at_price\":49900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": ":\"Italian 14kt Yellow Gold Claddagh Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":49900,\"weight\":113,\"compare_at_price\":49900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": ":\"Italian 14kt Yellow Gold Claddagh Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":49900,\"weight\":113,\"compare_at_price\":49900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "talian 14kt Yellow Gold Claddagh Ring - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":49900,\"weight\":113,\"compare_at_price\":49900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"14kt Yellow Gold\",\n            \"metal_weight\": \"1.5 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     }
+    ],
     "prices": [
      {
       "match": "$499",
@@ -5304,9 +6377,9 @@
    "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "final_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:04Z",
    "ok": true,
-   "bytes": 1291176,
+   "bytes": 1295101,
    "extraction": {
     "h1": "Diamonds Line Ring",
     "title_tag": "Diamonds Line Ring | Mejuri",
@@ -5384,14 +6457,15 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$348",
       "excerpt": "arranty Free Returns & Exchanges Free Shipping Diamonds Line Ring 4.8 $348 Material & Stone Options Solid Yellow Gold (10k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2794,
-    "text_sha256": "7a91d20b545660b49c6bd5ffab3691f60c6ef71846ad3e5999c381f6a79b9512"
+    "text_length": 2967,
+    "text_sha256": "601a8002b381c0c5b012e387cdd50ad23a42c7a1da3120174100389861d121f8"
    }
   },
   {
@@ -5400,9 +6474,9 @@
    "url": "https://mejuri.com/us/en/products/signet-ring",
    "final_url": "https://mejuri.com/us/en/products/signet-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
-   "bytes": 1321592,
+   "bytes": 1325185,
    "extraction": {
     "h1": "Signet Ring",
     "title_tag": "Signet Pinky Ring",
@@ -5475,14 +6549,15 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [],
     "prices": [
      {
       "match": "$348",
       "excerpt": "Year Warranty Free Returns & Exchanges Free Shipping Signet Ring 4.6 $348 Material Solid Yellow Gold (10k) Size Size Guide 3 4 5 6 7 8 9 10 Eng"
      }
     ],
-    "text_length": 2593,
-    "text_sha256": "cdabc845a5f91953b4c555e747aa2b77d0b91e04087ba95ddf81206b1bef9961"
+    "text_length": 2766,
+    "text_sha256": "b13f056aa5e922849f5546dc71d048c954f845096be259e8ce57c8f355677c8e"
    }
   },
   {
@@ -5491,7 +6566,7 @@
    "url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "final_url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:58:59Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 441200,
    "extraction": {
@@ -5604,6 +6679,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "thedral Ring - 14k Yellow Gold\",\"public_title\":\"14k Yellow Gold\",\"options\":[\"14k Yellow Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Cathedral Ring - 14k White Gold\",\"public_title\":\"14k White Gold\",\"options\":[\"14k White Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ite Gold\",\"public_title\":\"Nickel Free 14k White Gold\",\"options\":[\"Nickel Free 14k White Gold\"],\"price\":323600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ond Cathedral Ring - 14k Rose Gold\",\"public_title\":\"14k Rose Gold\",\"options\":[\"14k Rose Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ing - 14k Champagne Gold\",\"public_title\":\"14k Champagne Gold\",\"options\":[\"14k Champagne Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "iamond Cathedral Ring - 950 Platinum\",\"public_title\":\"950 Platinum\",\"options\":[\"950 Platinum\"],\"price\":345200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "thedral Ring - 14k Yellow Gold\",\"public_title\":\"14k Yellow Gold\",\"options\":[\"14k Yellow Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Cathedral Ring - 14k White Gold\",\"public_title\":\"14k White Gold\",\"options\":[\"14k White Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ite Gold\",\"public_title\":\"Nickel Free 14k White Gold\",\"options\":[\"Nickel Free 14k White Gold\"],\"price\":323600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ond Cathedral Ring - 14k Rose Gold\",\"public_title\":\"14k Rose Gold\",\"options\":[\"14k Rose Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ing - 14k Champagne Gold\",\"public_title\":\"14k Champagne Gold\",\"options\":[\"14k Champagne Gold\"],\"price\":307400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "iamond Cathedral Ring - 950 Platinum\",\"public_title\":\"950 Platinum\",\"options\":[\"950 Platinum\"],\"price\":345200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -5664,7 +6789,7 @@
    "url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "final_url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 468729,
    "extraction": {
@@ -5781,6 +6906,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\":\"14k Yellow Gold \\/ Lab Created Diamond\",\"options\":[\"14k Yellow Gold\",\"Lab Created Diamond\"],\"price\":287000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ic_title\":\"14k Yellow Gold \\/ Natural Diamond\",\"options\":[\"14k Yellow Gold\",\"Natural Diamond\"],\"price\":819000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "le\":\"14k White Gold \\/ Lab Created Diamond\",\"options\":[\"14k White Gold\",\"Lab Created Diamond\"],\"price\":287000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":227",
+      "excerpt": "blic_title\":\"14k White Gold \\/ Natural Diamond\",\"options\":[\"14k White Gold\",\"Natural Diamond\"],\"price\":819000,\"weight\":227,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "te Gold \\/ Lab Created Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Lab Created Diamond\"],\"price\":308000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "14k White Gold \\/ Natural Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Natural Diamond\"],\"price\":840000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "itle\":\"14k Rose Gold \\/ Lab Created Diamond\",\"options\":[\"14k Rose Gold\",\"Lab Created Diamond\"],\"price\":287000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "public_title\":\"14k Rose Gold \\/ Natural Diamond\",\"options\":[\"14k Rose Gold\",\"Natural Diamond\"],\"price\":819000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Champagne Gold \\/ Lab Created Diamond\",\"options\":[\"14k Champagne Gold\",\"Lab Created Diamond\"],\"price\":287000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "le\":\"14k Champagne Gold \\/ Natural Diamond\",\"options\":[\"14k Champagne Gold\",\"Natural Diamond\"],\"price\":819000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "_title\":\"950 Platinum \\/ Lab Created Diamond\",\"options\":[\"950 Platinum\",\"Lab Created Diamond\"],\"price\":336000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": ",\"public_title\":\"950 Platinum \\/ Natural Diamond\",\"options\":[\"950 Platinum\",\"Natural Diamond\"],\"price\":882000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -5841,7 +7016,7 @@
    "url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "final_url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 518416,
    "extraction": {
@@ -5958,6 +7133,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ellow Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k Yellow Gold\",\"Salt and Pepper Diamond\"],\"price\":274400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "itle\":\"14k Yellow Gold \\/ Clear Lab Diamond\",\"options\":[\"14k Yellow Gold\",\"Clear Lab Diamond\"],\"price\":219400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":227",
+      "excerpt": "White Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k White Gold\",\"Salt and Pepper Diamond\"],\"price\":274400,\"weight\":227,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "_title\":\"14k White Gold \\/ Clear Lab Diamond\",\"options\":[\"14k White Gold\",\"Clear Lab Diamond\"],\"price\":219400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\\/ Salt and Pepper Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Salt and Pepper Diamond\"],\"price\":285200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "White Gold \\/ Clear Lab Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Clear Lab Diamond\"],\"price\":241000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "4k Rose Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k Rose Gold\",\"Salt and Pepper Diamond\"],\"price\":274400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ic_title\":\"14k Rose Gold \\/ Clear Lab Diamond\",\"options\":[\"14k Rose Gold\",\"Clear Lab Diamond\"],\"price\":219400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ne Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k Champagne Gold\",\"Salt and Pepper Diamond\"],\"price\":274400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\"14k Champagne Gold \\/ Clear Lab Diamond\",\"options\":[\"14k Champagne Gold\",\"Clear Lab Diamond\"],\"price\":219400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\"950 Platinum \\/ Salt and Pepper Diamond\",\"options\":[\"950 Platinum\",\"Salt and Pepper Diamond\"],\"price\":306800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "blic_title\":\"950 Platinum \\/ Clear Lab Diamond\",\"options\":[\"950 Platinum\",\"Clear Lab Diamond\"],\"price\":251800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -6018,7 +7243,7 @@
    "url": "https://www.automicgold.com/products/diamond-petal-ring",
    "final_url": "https://www.automicgold.com/products/diamond-petal-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 494388,
    "extraction": {
@@ -6127,6 +7352,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\":\"14k Yellow Gold \\/ Lab Created Diamond\",\"options\":[\"14k Yellow Gold\",\"Lab Created Diamond\"],\"price\":177400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":1,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ic_title\":\"14k Yellow Gold \\/ Natural Diamond\",\"options\":[\"14k Yellow Gold\",\"Natural Diamond\"],\"price\":327400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "le\":\"14k White Gold \\/ Lab Created Diamond\",\"options\":[\"14k White Gold\",\"Lab Created Diamond\"],\"price\":177400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "blic_title\":\"14k White Gold \\/ Natural Diamond\",\"options\":[\"14k White Gold\",\"Natural Diamond\"],\"price\":327400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "te Gold \\/ Lab Created Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Lab Created Diamond\"],\"price\":185500,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "14k White Gold \\/ Natural Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Natural Diamond\"],\"price\":335500,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "itle\":\"14k Rose Gold \\/ Lab Created Diamond\",\"options\":[\"14k Rose Gold\",\"Lab Created Diamond\"],\"price\":177400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":1,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "public_title\":\"14k Rose Gold \\/ Natural Diamond\",\"options\":[\"14k Rose Gold\",\"Natural Diamond\"],\"price\":327400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Champagne Gold \\/ Lab Created Diamond\",\"options\":[\"14k Champagne Gold\",\"Lab Created Diamond\"],\"price\":177400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "le\":\"14k Champagne Gold \\/ Natural Diamond\",\"options\":[\"14k Champagne Gold\",\"Natural Diamond\"],\"price\":327400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "_title\":\"950 Platinum \\/ Lab Created Diamond\",\"options\":[\"950 Platinum\",\"Lab Created Diamond\"],\"price\":197700,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": ",\"public_title\":\"950 Platinum \\/ Natural Diamond\",\"options\":[\"950 Platinum\",\"Natural Diamond\"],\"price\":351700,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -6187,7 +7462,7 @@
    "url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "final_url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 607622,
    "extraction": {
@@ -6296,6 +7571,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ellow Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k Yellow Gold\",\"Salt and Pepper Diamond\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "/ Emerald\",\"public_title\":\"14k Yellow Gold \\/ Emerald\",\"options\":[\"14k Yellow Gold\",\"Emerald\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ic_title\":\"14k Yellow Gold \\/ Lab Alexandrite\",\"options\":[\"14k Yellow Gold\",\"Lab Alexandrite\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "itle\":\"14k Yellow Gold \\/ Clear Lab Diamond\",\"options\":[\"14k Yellow Gold\",\"Clear Lab Diamond\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "apphire\",\"public_title\":\"14k Yellow Gold \\/ Sapphire\",\"options\":[\"14k Yellow Gold\",\"Sapphire\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ow Gold \\/ Ruby\",\"public_title\":\"14k Yellow Gold \\/ Ruby\",\"options\":[\"14k Yellow Gold\",\"Ruby\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":227",
+      "excerpt": "White Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k White Gold\",\"Salt and Pepper Diamond\"],\"price\":197800,\"weight\":227,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\\/ Emerald\",\"public_title\":\"14k White Gold \\/ Emerald\",\"options\":[\"14k White Gold\",\"Emerald\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "blic_title\":\"14k White Gold \\/ Lab Alexandrite\",\"options\":[\"14k White Gold\",\"Lab Alexandrite\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "_title\":\"14k White Gold \\/ Clear Lab Diamond\",\"options\":[\"14k White Gold\",\"Clear Lab Diamond\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Sapphire\",\"public_title\":\"14k White Gold \\/ Sapphire\",\"options\":[\"14k White Gold\",\"Sapphire\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "hite Gold \\/ Ruby\",\"public_title\":\"14k White Gold \\/ Ruby\",\"options\":[\"14k White Gold\",\"Ruby\"],\"price\":197800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -6356,7 +7681,7 @@
    "url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "final_url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 520213,
    "extraction": {
@@ -6469,6 +7794,56 @@
      }
     ],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ic_title\":\"14k Yellow Gold \\/ Natural Diamond\",\"options\":[\"14k Yellow Gold\",\"Natural Diamond\"],\"price\":286200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "d\",\"public_title\":\"14k Yellow Gold \\/ Lab Diamond\",\"options\":[\"14k Yellow Gold\",\"Lab Diamond\"],\"price\":163600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":227",
+      "excerpt": "blic_title\":\"14k White Gold \\/ Natural Diamond\",\"options\":[\"14k White Gold\",\"Natural Diamond\"],\"price\":286200,\"weight\":227,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ond\",\"public_title\":\"14k White Gold \\/ Lab Diamond\",\"options\":[\"14k White Gold\",\"Lab Diamond\"],\"price\":163600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "14k White Gold \\/ Natural Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Natural Diamond\"],\"price\":295500,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "kel Free 14k White Gold \\/ Lab Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Lab Diamond\"],\"price\":172900,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "public_title\":\"14k Rose Gold \\/ Natural Diamond\",\"options\":[\"14k Rose Gold\",\"Natural Diamond\"],\"price\":286200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "amond\",\"public_title\":\"14k Rose Gold \\/ Lab Diamond\",\"options\":[\"14k Rose Gold\",\"Lab Diamond\"],\"price\":163600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "le\":\"14k Champagne Gold \\/ Natural Diamond\",\"options\":[\"14k Champagne Gold\",\"Natural Diamond\"],\"price\":286200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "blic_title\":\"14k Champagne Gold \\/ Lab Diamond\",\"options\":[\"14k Champagne Gold\",\"Lab Diamond\"],\"price\":163600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": ",\"public_title\":\"950 Platinum \\/ Natural Diamond\",\"options\":[\"950 Platinum\",\"Natural Diamond\"],\"price\":309500,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Diamond\",\"public_title\":\"950 Platinum \\/ Lab Diamond\",\"options\":[\"950 Platinum\",\"Lab Diamond\"],\"price\":191500,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -6529,7 +7904,7 @@
    "url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "final_url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": true,
    "bytes": 556642,
    "extraction": {
@@ -6633,6 +8008,56 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "itle\":\"14k Yellow Gold \\/ Clear Lab Diamond\",\"options\":[\"14k Yellow Gold\",\"Clear Lab Diamond\"],\"price\":133400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "4k Yellow Gold \\/ Clear Natural Diamond\",\"options\":[\"14k Yellow Gold\",\"Clear Natural Diamond\"],\"price\":168000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ellow Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k Yellow Gold\",\"Salt and Pepper Diamond\"],\"price\":133400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "public_title\":\"14k Yellow Gold \\/ Black Diamond\",\"options\":[\"14k Yellow Gold\",\"Black Diamond\"],\"price\":133400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "_title\":\"14k White Gold \\/ Clear Lab Diamond\",\"options\":[\"14k White Gold\",\"Clear Lab Diamond\"],\"price\":133400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\"14k White Gold \\/ Clear Natural Diamond\",\"options\":[\"14k White Gold\",\"Clear Natural Diamond\"],\"price\":168000,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "White Gold \\/ Salt and Pepper Diamond\",\"options\":[\"14k White Gold\",\"Salt and Pepper Diamond\"],\"price\":133400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": ",\"public_title\":\"14k White Gold \\/ Black Diamond\",\"options\":[\"14k White Gold\",\"Black Diamond\"],\"price\":133400,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "White Gold \\/ Clear Lab Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Clear Lab Diamond\"],\"price\":137600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "old \\/ Clear Natural Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Clear Natural Diamond\"],\"price\":172200,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\\/ Salt and Pepper Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Salt and Pepper Diamond\"],\"price\":137600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Free 14k White Gold \\/ Black Diamond\",\"options\":[\"Nickel Free 14k White Gold\",\"Black Diamond\"],\"price\":137600,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
     "prices": [
      {
       "match": "$350",
@@ -6691,82 +8116,34 @@
    "id": "car-18k-etincelle-pear",
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
-   "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": false,
-   "bytes": 556,
-   "extraction": {
-    "h1": "Access Denied",
-    "title_tag": "Access Denied",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 328,
-    "text_sha256": "6f10181198dd9b7f955e2021fb203171fd973e7a98c91f0a6a3ae42aa8a5189a"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "car-18k-etincelle-emerald",
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
-   "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": false,
-   "bytes": 556,
-   "extraction": {
-    "h1": "Access Denied",
-    "title_tag": "Access Denied",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 328,
-    "text_sha256": "102ccc1f4da28a56dbc54f233ec5862e077641320bb6285e71996f19409d194f"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "car-18k-1895-band-dia",
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
-   "final_url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:59:00Z",
+   "fetched_at": "2026-10-23T10:00:05Z",
    "ok": false,
-   "bytes": 473,
-   "extraction": {
-    "h1": "Access Denied",
-    "title_tag": "Access Denied",
-    "jsonld_titles": [],
-    "jsonld_prices": [],
-    "meta": {},
-    "karat_mentions": [],
-    "weight_keyword_context": [],
-    "gram_mentions": [],
-    "solid_mentions": [],
-    "plated_mentions": [],
-    "sale_mentions": [],
-    "hallmark_mentions": [],
-    "prices": [],
-    "text_length": 273,
-    "text_sha256": "147a0c39e6e6e68a95ee89f71757302f25bd42dfa9f6b8c8faa64ca28970e3ce"
-   }
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
   },
   {
    "id": "mene-24k-classic-band",
@@ -6774,9 +8151,9 @@
    "url": "https://mene.com/products/mene-classic-band-gold",
    "final_url": "https://mene.com/products/mene-classic-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:01Z",
+   "fetched_at": "2026-10-23T10:00:06Z",
    "ok": true,
-   "bytes": 675533,
+   "bytes": 675403,
    "extraction": {
     "h1": "Classic Band",
     "title_tag": "Menē Classic Band - 24k Gold | Menē",
@@ -6816,6 +8193,16 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "goldWeight",
+      "excerpt": "llectionInvestmentTotals.goldValue\\\",\\\"Gold value\\\",\\\"app/app/Account/components/MyCollectionInvestmentTotals.goldWeight\\\",\\\"Gold weight\\\",\\\"app/app/Account/components/MyCollectionInvestmentTotals.platinumValue\\\",\\\"Platinum value\\"
+     },
+     {
+      "match": "MetalWeight",
+      "excerpt": ".MultiMetalValue\\\",\\\"Metal Value\\\",\\\"src/app/Catalog/components/ProductDetail/Price/PriceDetailItems.tsx.MultiMetalWeight\\\",\\\"Metal Weight\\\",\\\"src/app/Catalog/components/ProductDetail/Price/PriceDetailItems.tsx.Weight\\\",\\\"src/app/C"
+     }
+    ],
     "prices": [
      {
       "match": "$500",
@@ -6876,9 +8263,9 @@
    "url": "https://mene.com/products/mene-narrow-band-gold",
    "final_url": "https://mene.com/products/mene-narrow-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:59:01Z",
+   "fetched_at": "2026-10-23T10:00:06Z",
    "ok": true,
-   "bytes": 641921,
+   "bytes": 641923,
    "extraction": {
     "h1": "Narrow Classic Band",
     "title_tag": "Menē Narrow Classic Band - 24k Gold | Menē",
@@ -6918,6 +8305,16 @@
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "goldWeight",
+      "excerpt": "llectionInvestmentTotals.goldValue\\\",\\\"Gold value\\\",\\\"app/app/Account/components/MyCollectionInvestmentTotals.goldWeight\\\",\\\"Gold weight\\\",\\\"app/app/Account/components/MyCollectionInvestmentTotals.platinumValue\\\",\\\"Platinum value\\"
+     },
+     {
+      "match": "MetalWeight",
+      "excerpt": ".MultiMetalValue\\\",\\\"Metal Value\\\",\\\"src/app/Catalog/components/ProductDetail/Price/PriceDetailItems.tsx.MultiMetalWeight\\\",\\\"Metal Weight\\\",\\\"src/app/Catalog/components/ProductDetail/Price/PriceDetailItems.tsx.Weight\\\",\\\"src/app/C"
+     }
+    ],
     "prices": [
      {
       "match": "$500",
