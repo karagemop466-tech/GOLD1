@@ -307,6 +307,41 @@ await checkGroup('H12', 'Zero-loss peer preservation & pass-ID synchronization',
   }
 });
 
+/* H13: README "Current findings" bullets are derived from the live dataset (anti-stale-prose guard) */
+await checkGroup('H13', 'README current-findings counts derived from the dataset, no stale 59-row prose', async (assert) => {
+  const readme = await readFile(join(ROOT, 'README.md'), 'utf8');
+  const n = rings.rows.length;
+  const kc = rings.rows.reduce((a, r) => ((a[r.karat] = (a[r.karat] || 0) + 1), a), {});
+  const solid = rings.rows.filter((r) => r.solid_stated).length;
+  const weighted = rings.rows.filter((r) => r.weight_g_low !== null).length;
+  const ready = compliance.summary.tiers.ready_to_inspect;
+  const nRetailers = retailersDoc.retailers.length;
+  assert(
+    readme.includes(`${n} verified listings across 10K (${kc['10K']}), 14K (${kc['14K']}), 18K (${kc['18K']}), 22K (${kc['22K']}) and 24K (${kc['24K']})`),
+    `README findings bullet missing the exact ${n}-row per-karat summary`
+  );
+  assert(readme.includes(`**${nRetailers} retailers**`), `README findings bullet missing "${nRetailers} retailers"`);
+  assert(readme.includes(`${ready} of ${n} rows clear every criterion`), `README findings bullet missing "${ready} of ${n} rows clear every criterion"`);
+  assert(readme.includes(`**0 of ${n} publish a hallmark`), `README findings bullet missing "0 of ${n} publish a hallmark"`);
+  assert(readme.includes(`${solid} of ${n} listings explicitly state`), `README findings bullet missing the solid-gold count ${solid} of ${n}`);
+  assert(readme.includes(`${weighted} of ${n} listings publish a weight`), `README findings bullet missing the weight count ${weighted} of ${n}`);
+  assert(readme.includes(`The remaining ${n - weighted} rows`), `README findings bullet missing "remaining ${n - weighted} rows"`);
+  assert(readme.includes('all 71 rows re-read on 2026-10-23'), 'README findings bullet missing the all-rows re-read statement');
+  for (const stale of [
+    '59 verified listings',
+    '10 retailers',
+    '50 of 59',
+    '8 of 59 rows',
+    '15 of 59 listings',
+    '21 of 59 listings',
+    '38 rows',
+    'seven Automic Gold pieces',
+    'six Mejuri',
+  ]) {
+    assert(!readme.includes(stale), `README.md still contains stale pre-71-row prose: "${stale}"`);
+  }
+});
+
 const failedGroups = results.filter((g) => !g.passed);
 for (const g of results) {
   console.log(`[${g.passed ? 'PASS' : 'FAIL'}] ${g.id} ${g.name}${g.failures.length ? ' — ' + g.failures.join('; ') : ''}`);
