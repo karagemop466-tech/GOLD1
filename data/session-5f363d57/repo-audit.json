@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:40:47.200Z",
+  "generated_at": "2026-10-23T20:42:33.709Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -17,8 +17,8 @@
     "groups": 10,
     "passed": 1,
     "failed": 9,
-    "assertions": 1664,
-    "findings": 167
+    "assertions": 1666,
+    "findings": 169
   },
   "groups": [
     {
@@ -31,7 +31,7 @@
       "id": "R02",
       "name": "Verification verdicts agree with observed bounds and weights",
       "passed": false,
-      "failure_count": 4
+      "failure_count": 6
     },
     {
       "id": "R03",
@@ -130,6 +130,26 @@
       "sources": [
         "https://auratenewyork.com/products/x-ring-with-diamonds"
       ]
+    },
+    {
+      "id": "R02-05",
+      "group": "R02",
+      "irregularity_id": "RECONCILER_IGNORES_UPPER_BOUND",
+      "severity": "high",
+      "message": "P42 reconciler never detects an observed range that fails to reproduce the stored upper bound",
+      "row": null,
+      "path": "scripts/reconcile_live.mjs",
+      "sources": []
+    },
+    {
+      "id": "R02-06",
+      "group": "R02",
+      "irregularity_id": "RECONCILER_OVERSTATES_OVERALL_STATUS",
+      "severity": "high",
+      "message": "P42 reconciler marks rows confirmed from price alone, even when a stored weight was not reproduced or a range-widening observation was not explicitly applied",
+      "row": null,
+      "path": "scripts/reconcile_live.mjs",
+      "sources": []
     },
     {
       "id": "R03-01",
