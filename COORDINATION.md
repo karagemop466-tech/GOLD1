@@ -408,6 +408,23 @@ product URL remains linked from the table.
 - **Live pages verified:** `https://karagemop466-tech.github.io/GOLD1/requirements.html` rendered the 12-point scorecard and the 8-row shortlist from the merged data.
 - **Follow-up found on the live page and fixed:** the "computable gold value" stat note printed a literal `${usd(spot)}` because the string was single-quoted instead of a template. Fixed in `scripts/build.mjs`, and a **new audit group S20** ("no template leaks or undefined values") now fails the build if any generated page ever contains an unreplaced `${…}` expression or the word "undefined". Sabotage-tested by re-injecting the leak: S20 failed as intended, then passed again after the fix. The suite is therefore **20 groups (S01–S20)**.
 
+### Independent replication of the re-read
+
+The workflow fired a second time at **2026-10-23T10:08:14Z**, eight minutes after the run the ledger
+is built on. Comparing the two evidence files row by row: **all 50 retrieved pages agreed on every
+JSON-LD price — zero disagreements.** Gold spot moved from 4,024.699951 to 4,024.899902 USD/ozt
+between the two runs, which is the expected market jitter. The ledger is built on the earlier run
+because that is the one that produced the corrections; the later run is kept beside it as an
+independent replication, not as a replacement.
+
+### Publication of the follow-up (2026-10-23)
+
+- **Pull request:** [#31](https://github.com/karagemop466-tech/GOLD1/pull/31) — *Fix template leak on the live scorecard; add audit group S20*.
+- **Merged:** merge commit **`1432958b7b95489a0f80004fb3972f8947205abf`**.
+- **GitHub Pages:** `built`, `error: null`, for `1432958`.
+- **Live re-check:** `requirements.html` now renders the computed gold price instead of a placeholder, and the banner reads S01–S20. A stale CDN copy briefly served the pre-fix page after the merge; the merged tree (`git show origin/main:requirements.html`) contains no `usd(spot)` string, which is the authoritative check.
+- **Check count:** the canonical suite is now **20 groups (S01–S20)** and the extended suite **10 groups (A01–A10)**.
+
 ### Irregularities / open items
 
 F37 (unverified Anna Sheffield price), F38 (Blue Nile karat contradictions), F39 (Aurate
