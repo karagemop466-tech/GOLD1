@@ -36,6 +36,24 @@ const readOptional = async (p) => {
   }
 };
 const eveningLedger = await readOptional('data/verification-2026-10-23-evening-dab93754.json');
+// Twelfth pass (sess-67748540): the newest 71-row reconciliation, produced at
+// 2026-10-23T23:39Z from the runner plus a second channel. Optional: if absent,
+// the landing block falls back to the older ledger rather than inventing counts.
+const nightLedger = await readOptional('data/session-67748540/reconcile-67748540.json');
+const nightVerdicts = nightLedger?.verdict_counts ?? null;
+const nightConfirmed = nightVerdicts
+  ? (nightVerdicts.stored_price_reproduced ?? 0) +
+    (nightVerdicts.stored_range_reproduced_seller_feed ?? 0) +
+    (nightVerdicts.stored_variant_price_reproduced_seller_feed ?? 0)
+  : null;
+const nightByDesign = nightVerdicts?.price_unverified_by_design ?? null;
+// hand_read_resolved = rows the runner could NOT read and the second channel did.
+// (Two further hand reads corroborate rows the runner did read; they are not a gap.)
+const nightUnread = nightLedger?.hand_read_resolved ?? null;
+const nightRunnerRead = nightLedger ? nightLedger.row_count - (nightUnread ?? 0) : null;
+const nightRunnerFinished = nightLedger?.runner_finished_at ?? null;
+const nightHandRead = nightLedger?.hand_read_resolved ?? 0;
+const nightTotalConfirmed = nightConfirmed === null ? null : nightConfirmed + nightHandRead;
 const eveningAudit = await readOptional('data/session-dab93754/audit.json');
 const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
 const readCounts = {
@@ -267,7 +285,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -447,8 +465,13 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="callout good">
-    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
+    <h2>Latest pass — 2026-10-23T23:39Z: all ${totalRows} rows accounted for on one clock, 0 drift</h2>
+    <p>${
+      nightLedger && nightConfirmed !== null
+        ? `The automated re-read runner opened all ${totalRows} official URLs at <strong>${esc(nightRunnerFinished)}</strong> and read <strong>${nightRunnerRead}</strong> of them; the other <strong>${nightUnread}</strong> refused the runner with HTTP 403 (seller-side blocking, not a data defect — <a href="flagged.html#F60">F60</a>) and were re-opened by hand through an independent channel in the same hour. Every price that channel printed matched the stored value: <strong>${nightTotalConfirmed} of ${totalRows} rows reproduced exactly (${nightConfirmed} by the runner, ${nightHandRead} by the second channel), ${nightLedger.price_drift?.length ?? 0} contradictions, ${nightByDesign} rows unverified by design</strong> (two withdrawn source mismatches and one partly-verified listing whose price is never rendered as a number). The gold spot was read twice, <strong>59 seconds apart through two different network paths, and both reads returned the identical $${gold.primary.price_usd_per_ozt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 6 })}/ozt</strong>, so every melt figure below is re-derived rather than retyped.`
+        : `All ${totalRows} listings across ${retailersDoc.retailers.length} retailers were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread).`
+    } Two reused product URLs are kept as withdrawn records rather than deleted: Ross-Simons SKU 939479 now sells an Italian 14kt Claddagh ring (<a href="flagged.html#F51">F51</a>) and Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>).</p>
+    <p>Full ledger: <code>data/session-67748540/reconcile-67748540.json</code> (verdict per row) and <code>data/session-67748540/hand-reads-2026-10-23.json</code> (the ten second-channel reads with verbatim quotes).</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -474,7 +497,7 @@ const dashboard = layout({
     <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and ${liveFetchOk} of ${totalRows} were opened again on ${esc(compliance.as_of)} by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-${esc(compliance.as_of)}.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
       <li><strong>${publishedWeights.length} of ${totalRows} rows publish a metal weight</strong> (${publishedWeights.slice(0, 12).map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}${publishedWeights.length > 12 ? `, and ${publishedWeights.length - 12} more` : ''}). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. ${compliance.summary.weight_published - 5 === 16 ? 'Sixteen were re-read verbatim today; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.' : ''}</li>
-      ${recheckPartial.length ? `<li><strong>${recheckPartial.length} rows are partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')} — in each case the seller's page did not fully reproduce the stored figure, and the reason is printed on the row.</li>` : ''}
+      ${recheckPartial.length ? `<li><strong>${recheckPartial.length} rows are partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')} — a partly-verified row is one where the seller's page did not reproduce <em>every</em> stored field, which is not the same as an unconfirmed price: <a href="rings/au-cigar.html">the Modern Cigar Band's</a> stored $1,308 was reproduced at variant level on 2026-10-23T23:39Z (the seller's own feed prints 14K / Yellow / 3 = 1308.00) even though its published weight stays a 2.6–4 g model range. Each row prints exactly what was and was not reproduced.</li>` : ''}
       <li><strong>${priceUnverifiedRows.length} rows carry no usable price.</strong> ${priceUnverifiedRows.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a> — ${esc((r.price_unverified_reason || '').split(':')[0])}`).join('; ')}. Both read “— unverified” everywhere on this site.</li>
       ${notRereadToday ? `<li><strong>${notRereadToday} rows were not re-read today</strong> because With Clarity, Cartier and Brilliant Earth block automated retrieval (<a href="flagged.html">F53</a>). Their stored values keep the 2026-10-22 date and are labelled <em>not re-read 2026-10-23</em> on every table.</li>` : `<li><strong>0 rows remain unread today</strong> — all 9 pages previously blocked on the automated runner (With Clarity, Cartier and Brilliant Earth; <a href="flagged.html">F53</a>) were verified via direct storefront JSON &amp; PDP fetches.</li>`}
     </ul>

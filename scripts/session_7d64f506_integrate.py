@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sess-7d64f506 (board T50) — fold the 2026-10-23 live re-reads into the /site/ evidence register.
+"""sess-7d64f506 (board T52) — fold the 2026-10-23 live re-reads into the /site/ evidence register.
 
 Rules this script obeys (and that scripts/audit-evidence.js enforces afterwards):
 
@@ -22,7 +22,7 @@ import shutil
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATE = "2026-10-23"
-PASS_ID = "T50-7d64f506"
+PASS_ID = "T52-7d64f506"
 SESSION = "sess-7d64f506"
 
 
@@ -47,7 +47,7 @@ def main() -> None:
     candidates["retrievedDate"] = DATE
     candidates["coverageNote"] = (
         "Thirteen active candidates inspected line by line on official product pages and re-opened live on "
-        "2026-10-23 (session sess-7d64f506, board T50): all 13 stored prices were reproduced, 11 exactly and 2 "
+        "2026-10-23 (session sess-7d64f506, board T52): all 13 stored prices were reproduced, 11 exactly and 2 "
         "at the base configuration with the seller's own size surcharges disclosed. This is a bounded audit "
         "set, not an exhaustive list of every ring for sale, and it is not the canonical 71-row catalogue on "
         "the dashboard root."
@@ -228,7 +228,7 @@ def main() -> None:
                 "overwritten 71-row pages with 14-row pages."
             ),
             "action": (
-                "Fixed on 2026-10-23 (board T50): the script now refuses to write to the repository root and "
+                "Fixed on 2026-10-23 (board T52): the script now refuses to write to the repository root and "
                 "requires an explicit --allow-regenerate flag; its default output is docs/. No generated page "
                 "was overwritten by this change."
             ),

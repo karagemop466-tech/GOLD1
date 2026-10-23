@@ -21,7 +21,7 @@ The calculator uses the **Kitco “Live GoldPrice” panel** retrieved October 2
 
 The page contained dynamically updated panels with slightly different timestamps/values. They are not blended. The named panel’s bid and timestamp are preserved, and the variance is documented in `market.json`.
 
-**Second, independent reading published beside it (2026-10-23, `sess-7d64f506`, board `T50`):** the calculator reference above is a **dated snapshot**, so a separate gold-api.com spot read was taken and stored in `market.json` as `liveFeed`, with the publisher's own timestamp:
+**Second, independent reading published beside it (2026-10-23, `sess-7d64f506`, board `T52`):** the calculator reference above is a **dated snapshot**, so a separate gold-api.com spot read was taken and stored in `market.json` as `liveFeed`, with the publisher's own timestamp:
 
 - Source: <https://api.gold-api.com/price/XAU>, publisher timestamp **2026-10-23T23:38:16Z**.
 - Spot: **3996.899902 USD per troy ounce** ($3,996.899902), read twice with the same value.

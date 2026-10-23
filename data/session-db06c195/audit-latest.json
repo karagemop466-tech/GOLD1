@@ -1,0 +1,191 @@
+{
+  "pass": "D-290213",
+  "generated_at": "2026-10-23T23:48:10Z",
+  "session": "sess-db06c195",
+  "task": "T49 — independent third-channel verification & publication QA",
+  "ledger": "data/live/2026-10-23T23-47-13Z.json",
+  "ledger_finished_at": "2026-10-23T23:47:13Z",
+  "rows": 71,
+  "html_pages": 88,
+  "internal_links_checked": 2134,
+  "external_links_checked": 1004,
+  "assertions": 4252,
+  "groups": [
+    {
+      "id": "D01",
+      "total": 284,
+      "failed": 0
+    },
+    {
+      "id": "D02",
+      "total": 4,
+      "failed": 0
+    },
+    {
+      "id": "D03",
+      "total": 69,
+      "failed": 0
+    },
+    {
+      "id": "D04",
+      "total": 71,
+      "failed": 0
+    },
+    {
+      "id": "D05",
+      "total": 71,
+      "failed": 0
+    },
+    {
+      "id": "D06",
+      "total": 30,
+      "failed": 0
+    },
+    {
+      "id": "D07",
+      "total": 142,
+      "failed": 0
+    },
+    {
+      "id": "D08",
+      "total": 1436,
+      "failed": 0
+    },
+    {
+      "id": "D09",
+      "total": 2145,
+      "failed": 0
+    }
+  ],
+  "failed": [],
+  "price_drift": [],
+  "weight_drift": [],
+  "melt_sample": [
+    {
+      "id": "rs-571221",
+      "melt_low": 127.43,
+      "melt_high": 127.43
+    },
+    {
+      "id": "rs-571222",
+      "melt_low": 187.4,
+      "melt_high": 187.4
+    },
+    {
+      "id": "rs-571223",
+      "melt_low": 284.85,
+      "melt_high": 284.85
+    },
+    {
+      "id": "rs-571213",
+      "melt_low": 374.8,
+      "melt_high": 374.8
+    },
+    {
+      "id": "rs-981367",
+      "melt_low": 37.48,
+      "melt_high": 37.48
+    },
+    {
+      "id": "rs-907250",
+      "melt_low": 48.19,
+      "melt_high": 48.19
+    },
+    {
+      "id": "rs-960952",
+      "melt_low": 97.45,
+      "melt_high": 97.45
+    },
+    {
+      "id": "au-2ct-oval",
+      "melt_low": 204.64,
+      "melt_high": 204.64
+    },
+    {
+      "id": "au-1ct-emerald",
+      "melt_low": 147.67,
+      "melt_high": 147.67
+    },
+    {
+      "id": "au-3ct-round",
+      "melt_low": 247.37,
+      "melt_high": 247.37
+    },
+    {
+      "id": "au-cigar",
+      "melt_low": 194.9,
+      "melt_high": 299.84
+    },
+    {
+      "id": "au-xring",
+      "melt_low": 202.39,
+      "melt_high": 202.39
+    },
+    {
+      "id": "rs-997811",
+      "melt_low": 16.06,
+      "melt_high": 16.06
+    },
+    {
+      "id": "rs-939479",
+      "melt_low": 112.44,
+      "melt_high": 112.44
+    },
+    {
+      "id": "ag-14k-radiant-3ct",
+      "melt_low": 404.79,
+      "melt_high": 404.79
+    },
+    {
+      "id": "ag-14k-marquise-melted",
+      "melt_low": 524.72,
+      "melt_high": 524.72
+    },
+    {
+      "id": "ag-14k-leaves",
+      "melt_low": 269.86,
+      "melt_high": 269.86
+    },
+    {
+      "id": "ag-14k-petal",
+      "melt_low": 202.39,
+      "melt_high": 202.39
+    },
+    {
+      "id": "ag-14k-kite",
+      "melt_low": 262.36,
+      "melt_high": 262.36
+    },
+    {
+      "id": "ag-14k-cluster",
+      "melt_low": 232.38,
+      "melt_high": 232.38
+    },
+    {
+      "id": "ag-14k-bubble",
+      "melt_low": 104.94,
+      "melt_high": 104.94
+    },
+    {
+      "id": "rs-222283",
+      "melt_low": 176.69,
+      "melt_high": 176.69
+    },
+    {
+      "id": "rs-989853",
+      "melt_low": 115.65,
+      "melt_high": 115.65
+    },
+    {
+      "id": "rs-997441",
+      "melt_low": 327.68,
+      "melt_high": 327.68
+    },
+    {
+      "id": "ag-14k-industrial-band",
+      "melt_low": 157.42,
+      "melt_high": 157.42
+    }
+  ],
+  "note": "Independent re-implementation: no check in this file calls scripts/verify.mjs or the other canonical auditors. A failure here is a request for the dataset owner, not an automatic edit."
+}

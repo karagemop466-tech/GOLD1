@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sess-7d64f506 (board T50) — write the live re-read ledger for the /site/ register.
+"""sess-7d64f506 (board T52) — write the live re-read ledger for the /site/ register.
 
 Every quote below was transcribed from the seller's own official page (or the
 seller's own product JSON feed for that same product) during the 2026-10-23
@@ -214,8 +214,8 @@ LEDGER = {
     "schemaVersion": 1,
     "session": "sess-7d64f506",
     "branch": "arena/7d64f506-gold1",
-    "boardTask": "T50",
-    "pass": "T50-7d64f506",
+    "boardTask": "T52",
+    "pass": "T52-7d64f506",
     "date": "2026-10-23",
     "scope": (
         "Every row of the standalone /site/ 13-row evidence review (research/candidates.json) re-opened on "

@@ -113,7 +113,7 @@ for (const row of rows) {
     if (/(rawGold|actualGold|meltValue)/i.test(key)) check(row[key] === null, `${id}: unsupported actual/raw-gold value in ${key}.`);
   }
 
-  // ---- freshness pin (board T50, sess-7d64f506) -------------------------
+  // ---- freshness pin (board T52, sess-7d64f506) -------------------------
   // Every row must carry its own dated live re-read, and that re-read must
   // reproduce the stored price. A row whose page was not re-opened cannot be
   // presented as current, and a stored price the seller no longer prints
@@ -188,7 +188,7 @@ check(issues.some((issue) => issue.id === 'trax-bbb-search-conflict'), 'BBB sour
 
 // ---- 2026-10-23 findings must stay published ----------------------------
 // Findings are never silently dropped: each one below was raised by a direct
-// read on 2026-10-23 (board T50) and is pinned here so a future edit has to
+// read on 2026-10-23 (board T52) and is pinned here so a future edit has to
 // remove it deliberately, with the audit failing until the record is updated.
 const pinnedFindings = [
   'market-reference-snapshot-age',
@@ -237,7 +237,7 @@ check(https(market.benchmarkMethodology.url), 'Invalid LBMA methodology URL.');
 check(!Object.hasOwn(market.benchmarkMethodology, 'numericPrice'), 'LBMA methodology must not contain a substituted numeric price.');
 
 // ---- independent spot reading published beside the audited snapshot ------
-// (board T50, sess-7d64f506). The Kitco panel stays the calculator reference so
+// (board T52, sess-7d64f506). The Kitco panel stays the calculator reference so
 // the arithmetic remains reproducible; a second, dated publisher reading is
 // published next to it so the gap is visible instead of hidden.
 const live = market.liveFeed;

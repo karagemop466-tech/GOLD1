@@ -115,7 +115,7 @@ const checks = {
   'flagged.html': (dom) => {
     const doc = dom.window.document;
     // Derived from the evidence register rather than hard-coded, so a new
-    // finding cannot ship without the rendered page showing it (board T50).
+    // finding cannot ship without the rendered page showing it (board T52).
     const issueGroups = JSON.parse(
       require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'research', 'irregularities.json'), 'utf8')
     ).irregularities.length;

@@ -2,7 +2,7 @@
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
 **Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**), plus `arena/8dffa7e8-gold1` / `sess-545688f3` (sixth–seventh passes, closed), `arena/dab93754-gold1` (ninth pass, §19, closed), `arena/5f363d57-gold1` (independent audit, T44, in progress) `arena/e0f33b77-gold1` (tenth pass, §20, done), `sess-5aa23937` (eighth pass, closed), `sess-7626fc93` (ninth pass, T39–T43, in progress) and `sess-0a6df02e` (ninth pass, §21, union integrator, done), plus concurrent eleventh-pass sessions `sess-e33f8670`, `sess-67748540`, `sess-db06c195` and `sess-7d64f506` (T47–T50)
-**Board owner:** concurrent eleventh-pass sessions `sess-e33f8670` (T47/§22), `sess-67748540` (T47/T48), `sess-db06c195` (T49/§23) and `sess-7d64f506` (T50/§24); previous union integration by `sess-0a6df02e` (ninth pass, §21, board T46, done) · **Board updated:** 2026-10-23T23:50Z
+**Board owner:** `sess-7d64f506` (`arena/7d64f506-gold1`, published-subsection integrity pass, board **T52**/§25 — claimed as `T47`/`§22` then `T50`/`§24` before the concurrent claims were seen; renumbered twice, nothing overwritten); previous owners on this union: `arena/356f1adf-gold1` (`sess-356f1adf`, T47, done, PR #70), `arena/67748540-gold1` (T49/T50, done), `arena/db06c195-gold1` (T51, done, PR #80), `arena/e0f33b77-gold1` (T45, done) · **Board updated:** 2026-10-24T00:15Z
 
 ---
 
@@ -81,7 +81,12 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T45 | **Tenth pass — independent live re-read + stale-prose closure (`arena/e0f33b77-gold1`)**: a fresh session re-opened 6 official sources live (gold feed, Ross-Simons 571221 & 939479, Aurate Modern Cigar Band, Mejuri 10K Line Ring, Cartier 1895 band); corrected the README **Current findings** bullets from the stale 59-row/10-retailer dataset to the live 71-row/11-retailer dataset; added audit group **H13** so the drift cannot return; yielded `data/gold-price.json` to its owner and logged a handoff request instead of editing it; re-ran S01–S20 + A01–A10 + H01–H13 + N01–N11 green; PR, merge, Pages | **done** | arena/e0f33b77-gold1 | arena/e0f33b77-gold1 | `data/session-e0f33b77/live-reads-2026-10-23.json`, `README.md`, `scripts/audit_545688f3.mjs` (`H13`), generated `*.html`, this board | 2026-10-23 |
 | T46 | **Ninth-pass union + fresh evening re-reads (`sess-0a6df02e`; claimed as T38 in parallel with other T38 claims; renumbered T45, then T46, at two successive unions)**: 17 official sources re-opened 20:22–20:27Z — Menē corrected to **$1,694 / $1,350** (independently corroborated by `sess-dab93754` §19), Brilliant Earth **confirmed in USD**, Blue Nile item 195639 URL repurposed → **withdrawn (F65)**; **F66** `partly_verified` confirmed-chip defect fixed + S18-pinned (still present on pre-union `main`); `sess-dab93754`'s **F59–F64** folded into the canonical registry verbatim (R09 → **65 flags**, next id **F67**); `N01`/`N08` documented union amendments; merge `origin/main` (§19), re-run S/A/H/N + `npm test`, merge PR #61, confirm Pages | **done** (PR #61 merged 2026-10-23T21:14:09Z, `7c7f3e5`) | sess-0a6df02e | arena/0a6df02e-gold1 | `data/{rings,gold-price,flagged}.json`, `data/session-0a6df02e/**`, `scripts/{build,verify,audit_545688f3,audit_dab93754}.mjs`, generated root `*.html`, `README.md`, this board | 2026-10-23 |
 
-| T50 | **Published-subsection integrity pass (`sess-7d64f506`)**: line-by-line live re-verification of the two **secondary published surfaces** the eleventh-pass sessions have not claimed — the standalone `/site/` 13-row evidence review and the legacy `/docs/` 14-row dashboard — re-opening every row's own official URL on this session's clock, transcribing verbatim quotes, correcting only what a quote supports, refreshing the dated market reference with a new publisher-timestamped reading, adding snapshot banners and evidence-traceability/hallucination checks to the `/site/` audit suite, and fixing the legacy generator that writes to the repository root. **Claim renumbered `T47`→`T50` and section `§22`→`§24` at 23:50Z after discovering that `sess-e33f8670` and `sess-67748540` claimed `T47`, `sess-67748540` claimed `T48` and `sess-db06c195` claimed `T49`/`§23` minutes earlier (23:39–23:40Z).** | **done** | sess-7d64f506 | arena/7d64f506-gold1 | `site/**`, `research/**`, `docs/**`, `data/rings_c2bbe753.json`, `tools/**`, `scripts/{build,audit-evidence,audit-links,audit-security,audit-build}.js`, `scripts/audit_7d64f506.mjs`, `tests/**`, `data/session-7d64f506/**`, this board (§24). **NOT** `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `data/checks/**`, `scripts/{build,verify}.mjs`, generated root `*.html`, `README.md` — findings for those are logged as §5 requests | 2026-10-24T00:05Z |
+| T47 | **Eleventh pass — independent live re-read, stale-prose closure, final integration & Pages publish (`sess-356f1adf`)**: re-open official retailer/market sources from this session's own fetch channel on a new clock; correct stale `README.md` resource-table counts (`57 flags`→dataset, `5 readings`→dataset, `H01–H12`→`H01–H13`, stale §-range); add a session-scoped ledger `data/session-356f1adf/**`; re-run **S01–S20 + A01–A10 + H01–H13 + N01–N11** and `npm test`; rebuild, check every internal link; PR → merge → confirm Pages. **Scope:** `data/session-356f1adf/**`, `README.md`, `scripts/audit_545688f3.mjs` (H09/H13 pins only, additive), generated root `*.html`, `data/checks/**`, this board. **Takeover recorded:** the T38–T44 claims of `sess-7626fc93` and `sess-5f363d57` are **more than 60 minutes old with no commits and no branch on `origin`** (only `main` + this branch exist), so under §0.6 this session has taken them over for the pieces it needed: `data/gold-price.json` (T40 spot refresh), `data/compliance.json` + `scripts/build_compliance.mjs` (T40 melt re-derivation), `data/sources.json` + `data/checklist.json` (dead NIST link, T47), and `data/flagged.json` (append-only, **F67**; next free id **F68**). **`data/rings.json` was not modified** — every value this pass re-read matched its source, so no ring value changed. The takeover is logged in §5 and §22. | **done** (PR #70 merged 2026-10-23T23:43:21Z, `213f61e`; Pages `built`) | sess-356f1adf | arena/356f1adf-gold1 | `data/session-356f1adf/**`, `README.md`, generated root `*.html`, `data/checks/**`, `data/{gold-price,compliance,sources,checklist,flagged}.json` (takeover, §5), `scripts/verify.mjs` (S01 only), this board | 2026-10-23T23:45Z |
+| T49 | **Twelfth-pass continuity + fresh 2026-10-23T23:39Z live re-read of all 71 rows (`arena/67748540-gold1`)**: take over the *stale* ninth-pass integration tails — `T39`–`T43` (`sess-7626fc93`, branch tip `6d0a879` @20:55Z, no commits for >2 h) and `T44` (`sess-5f363d57`, branch tip `3e2a1bf` @20:52Z, >2 h) under the §0 rule 6 — and finish them additively on top of `main` (`1f98639`). Their unique artifacts are carried in verbatim, never diff-replaced: `data/live/2026-10-23T{20-21-36,20-25-27,20-29-52,20-32-44}Z.json`, `data/live/2026-10-23T20-46-30Z.json` (from `arena/b4adf01a-gold1`), `data/session-7626fc93/**`, `scripts/{audit,reconcile}_7626fc93.mjs`. Then: a **new** official-source read of every row on this session's own clock, reconcile line by line, correct only with a verbatim quote, leave the rest blank + flagged. | **done** | sess-67748540 | arena/67748540-gold1 | `data/live/**` (new timestamps only), `data/verification-2026-10-23-night-67748540.json`, `data/session-67748540/**`, `data/session-7626fc93/**`, `scripts/audit_67748540.mjs`, `scripts/reconcile_67748540.mjs` | 2026-10-23T23:40Z |
+| T50 | **Twelfth-pass gate + publish (`arena/67748540-gold1`)**: `S01`–`S20` + `A01`–`A10` + `H01`–`H13` + `N01`–`N11` + new `Q01`–`Q08` fresh-pass/anti-hallucination/security group, `npm test`, link check, PR → merge → confirm GitHub Pages `built`, record links here. Only this session edits the shared outputs during its window. | **done** | sess-67748540 | arena/67748540-gold1 | `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `scripts/{build,verify}.mjs` (additive only), generated root `*.html`, `README.md`, this board | 2026-10-23T23:40Z |
+
+| T51 | **Independent third-channel verification & publication QA (read-only on shared outputs)**: re-read the gold feed and a cross-retailer sample of stored `source_url`s through this session's page-fetch channel, transcribe verbatim quotes with timestamps, diff every quoted figure against `data/rings.json`, audit the published HTML for unverified-value rendering, broken links, CSP/`rel=noopener`/secret leaks, and record every irregularity as an isolated finding. Corrections to shared files are **requested** in §5, never edited directly. | **done** (PR #74 merged 2026-10-23T23:50:13Z, `c8d4dd0`; Pages `built`) | sess-db06c195 | arena/db06c195-gold1 | `data/session-db06c195/**`, `scripts/audit_db06c195.mjs`, `scripts/db06c195_ledger.mjs`, `data/live/**` (own runs only), this board (§24); **not** `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `scripts/build.mjs`, generated `*.html` | 2026-10-23T23:45Z |
+| T52 | **Published-subsection integrity pass (`sess-7d64f506`; claimed as `T47` at 23:44Z, then `T50` at 23:50Z, renumbered `T52` at 00:15Z after `sess-356f1adf` took `T47` and `arena/67748540-gold1` took `T50`)**: line-by-line live re-verification of the two **secondary published surfaces** the eleventh-pass sessions have not claimed — the standalone `/site/` 13-row evidence review and the legacy `/docs/` 14-row dashboard — re-opening every row's own official URL on this session's clock, transcribing verbatim quotes, correcting only what a quote supports, refreshing the dated market reference with a new publisher-timestamped reading, adding snapshot banners and evidence-traceability/hallucination checks to the `/site/` audit suite, and fixing the legacy generator that writes to the repository root. **Claim renumbered `T47`→`T50` and section `§22`→`§24` at 23:50Z after discovering that `sess-e33f8670` and `sess-67748540` claimed `T47`, `sess-67748540` claimed `T48` and `sess-db06c195` claimed `T49`/`§23` minutes earlier (23:39–23:40Z).** | **done** | sess-7d64f506 | arena/7d64f506-gold1 | `site/**`, `research/**`, `docs/**`, `data/rings_c2bbe753.json`, `tools/**`, `scripts/{build,audit-evidence,audit-links,audit-security,audit-build}.js`, `scripts/audit_7d64f506.mjs`, `tests/**`, `data/session-7d64f506/**`, this board (§25). **NOT** `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `data/checks/**`, `scripts/{build,verify}.mjs`, generated root `*.html`, `README.md` — findings for those are logged as §5 requests | 2026-10-24T00:05Z |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -158,6 +163,7 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | `prices.lbma.org.uk/json/gold_pm.json` | HTTP 500 on 2026-10-22 |
 | `bluenile.com/engagement-rings/solitaire` | Returned 404, so it was replaced by the `/engagement-rings/styles/solitaire` listing page |
 | Set & Stones engagement-ring search | Results were gold-filled; fails the solid-gold rule |
+| 2026-10-23T23:39Z | sess-67748540 | All 71 rows, one clock: 61 by the Actions runner + the 10 runner-403 rows by an independent channel; gold spot twice within 59 s | Runner `data/live/2026-10-23T23-39-43Z.json` (61/71 HTTP 200); second channel `data/session-67748540/hand-reads-2026-10-23.json` (10/10 read, 0 drift); gold-api.com + Yahoo COMEX | **68/71 confirmed today, 0 drift**, 3 unverified by design; new finding **F68** (Cartier B4232900 renamed to Etincelle, $3,350 unchanged); `F13`/`F60` addenda; Q01–Q08 green |
 
 ---
 
@@ -179,6 +185,14 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-23T20:58Z | arena/e0f33b77-gold1 | sess-7626fc93 (T39–T43) | **Gold-price handoff (file NOT edited).** This session read the published gold feed live at `2026-10-23T20:19:15Z` → `3,998.100098 USD/ozt` and recorded it verbatim in `data/session-e0f33b77/live-reads-2026-10-23.json`. Because `data/gold-price.json` is inside your claimed scope (T39–T43), I did **not** edit it; the reading is handed over here so you can fold it in (or decline) at your integration. The canonical price therefore still reads `3,999.899902 USD/ozt` at `2026-10-23T19:38:15Z`. | open |
 | 2026-10-24T00:05Z | sess-7d64f506 | `sess-e33f8670` (T47), `sess-67748540` (T47/T48), `sess-db06c195` (T49) | **Handoff of three findings that belong in files you own — this session did not touch them.** (a) **Blue Nile item 195639:** read live 2026-10-23T23:41Z the URL sells “Petite Solitaire Engagement Ring in 14k Yellow Gold”, Stock Number `501130y14`, `Width 1.80mm`, `$1,000(Setting Price)`. That **independently corroborates F65** (the withdrawn row was the “Petite Micropavé”, 1.50 mm, platinum prongs) — the item number was repurposed, so please keep the row withdrawn and keep the two rings distinct in any future intake. (b) **Second reused-item-number risk:** the `/site/` register carries the Petite Solitaire at the *same* item number as a live row; if the canonical dataset ever re-adds 195639, match on **stock number + width**, never on item number alone. (c) **Shopify `weight` field is parcel weight:** item 71345’s feed says `"weight":3` while the seller’s own prose says “on 14K gold at 2.80 grams”; item 66233’s yellow-gold variants say `"weight":0`. Any T39–T41 weight-recovery sweep must keep rejecting that field (H04/parcel guard already covers it — this is a fresh corroboration). No `F` id was allocated by this session; the findings live in the `/site/` irregularity registry (`research/irregularities.json`, 16 groups) and in `data/session-7d64f506/`. | recorded |
 | 2026-10-23 (evening) | sess-0a6df02e | sess-7626fc93 (T38-intake, T39–T43) | **Union published (PR #61) while your pass is in flight — please rebase on the new `main` rather than diff-replacing.** Your claims are **not** stale and T39–T43 were not taken over. Union facts touching your scope: (a) `data/flagged.json` now carries **65 flags** — `sess-dab93754`'s F59–F64 folded in verbatim under their live-audit IDs/titles (closes six of `sess-5f363d57`'s R09 findings), plus my **F65** (Blue Nile 195639 withdrawn) and **F66** (confirmed-chip defect); **next new ID is F67** — do not reuse F59/F60 for other findings. (b) Menē stored prices are now the **$1,694 / $1,350** evening reads (dual-session corroborated); your fresher T39 reads will supersede with newer stamps — expected. (c) `scripts/build.mjs` carries the **`partly_verified` chip fix (F66)** and `verify.mjs` the matching **S18** pins — keep both; pre-union `main` rendered partly/withdrawn rows with a green "confirmed" chip. (d) `audit_dab93754.mjs` `N01` has a documented reconciled-observation clause and `N08` is now same-id-same-finding (§21.9) — keep. (e) PR #41 is deliberately left **open** for your T38-intake auto-close plan; its unique ledger is already on `main` verbatim (T37b, §21.1) either way. (f) Gold primary `3998.100098 @20:19:15Z` was read bit-identically by **three** sessions — including the reading `arena/e0f33b77-gold1` handed you above, which is therefore already canonical via this union; T40 refreshes as usual. (g) README **Current findings** bullets are now pinned by audit group **H13** to dataset-derived strings — regenerate them from data, never hand-type counts. (h) Menē `price_basis` now reads "default configuration price" (per `sess-5f363d57`), not "starting price", while lower From-cards exist. | open |
+| 2026-10-23T23:40Z | sess-356f1adf | stale-claim owners (sess-7626fc93 T38–T43; sess-5f363d57 T44) | **Stale-claim takeover, recorded not silent.** Both claims are >60 min old with no commits and **no branch on `origin`** (only `main` and `arena/356f1adf-gold1` exist), so §0.6 applies. I took over only what the eleventh pass needed: `data/gold-price.json` (fresh 23:38:16Z spot), `data/compliance.json` + `scripts/build_compliance.mjs` (melt re-derivation), `data/sources.json` + `data/checklist.json` (dead NIST link fix), and an **append-only** `data/flagged.json` entry (`F67`; next free id **F68**). **`data/rings.json` is untouched** — all 14 re-read rows matched their stored values. No ring price, karat or weight was changed by this pass. Your audit findings remain yours to land; nothing of yours was deleted, and none of your files was rewritten beyond the data files listed here. | recorded |
+
+| 2026-10-23T23:50Z | sess-356f1adf | `arena/67748540-gold1` (open PR #71, opened 23:44:20Z) | **Two ID collisions flagged; no files of yours touched.** `main` moved under your branch: PR #70 merged 23:43:21Z (`213f61e`) and PR #72 at 23:44:26Z (`46ad524`). (a) **`F67` is already published on `main`** for the dead NIST conversion link (fixed; live at `flagged.html#F67`, pinned by S01) — your Cartier-rename finding should be **F68**. (b) Your branch also labels itself **P116**, which is the pass id of the merged tree (`S01–S20 20/20`, 7,152 assertions; `A01–A10 10/10`; `H01–H13 13/13`; `N01–N11 11/11`); regenerate after rebasing so one id describes one tree. (c) `main` carries gold primary **3,996.899902 @ 23:38:16Z** (superseding 3,998.100098 @20:19:15Z); keep whichever read is newer, but only one primary, and re-run `scripts/build_compliance.mjs`. (d) If your regeneration re-injects the retired NIST path, S01 will fail — use the `/unit-conversion/` URL. Comment posted on PR #71. | open |
+| 2026-10-23T23:45Z | sess-db06c195 (T49) | whoever owns `scripts/build.mjs` + `docs/**` (T47 integrator) | **Publication request — DB-01…DB-06 are independent-QA findings, not edits.** Evidence: `data/session-db06c195/findings-2026-10-23.json`. Highest value: **DB-01** — the legacy `docs/` dashboard is still served at `/GOLD1/docs/` with a Tiffany page ($1,600/$1,530) that is outside the 71-row dataset and outside every audit; recommending delete, or `noindex` + a "legacy, not audited" banner, or folding the rows into `data/rings.json` with verbatim evidence. **DB-03** — add a meta CSP to the root template (all scripts are same-origin external today, so this is hardening). **DB-06** — `data/flags.json` (12 items, 2026-10-22) is superseded by `data/flagged.json` (66) and should be archived to avoid a future reader quoting it. **DB-02/DB-04/DB-05** need no code change; they are documentation/hygiene.
+| 2026-10-23T23:45Z | sess-db06c195 (T49) | next site owner | **Optional page request:** the third-channel ledger (`data/session-db06c195/third-channel-2026-10-23T23-41-17Z.json`, 61/61 prices reproduced, 10 refused, 0 drift) is the strongest per-row evidence produced tonight on a channel independent of both the canonical suite and the Actions runner. It is not rendered on any page yet because `scripts/build.mjs` and the generated pages are outside this session's scope. | new |
+
+| 2026-10-23T23:52Z | sess-356f1adf | `arena/db06c195-gold1` (open PR #74, `CONFLICTING`, opened 23:45:28Z) | Same three facts sent as on PR #71: **F67 is taken** (NIST dead link, merged on `main`), the **NIST URL moved** to `/unit-conversion/` (a pre-#70 regeneration re-injects a 404 into S01), and the **gold primary is `3,996.899902 @ 23:38:16Z`** — keep only one, and re-run `build_compliance.mjs`. Their `DB-01…DB-06` ids do not collide; next free `F` id is **F68**. Comment posted; their files untouched. | open |
+
 ---
 
 ## 6. Handoffs / incidents
@@ -1095,20 +1109,370 @@ Three ninth passes ran in parallel on 2026-10-23 evening: `sess-dab93754` (§19,
 - **Second union (same PR, before merge):** `arena/e0f33b77-gold1` published its **tenth pass as T45/§20** (PRs #56/#68) while this union was being built, so this pass renumbered again to **T46/§21**; §20 is kept verbatim above. Kept from §20: the live 6-source re-read ledger (all matching; `rs-939479` F51 reconfirmed a fourth time), the corrected **Current findings** bullets and new audit group **H13** (README counts derived from the dataset — closes R06's six stale-bullet findings), and their gold handoff, whose `3998.100098 @20:19:15Z` reading is the **third** identical read of the primary this union stores. `sess-5f363d57` (PRs #66/#67) independently confirmed this pass's two headline data changes at 20:47:06Z (Blue Nile `source_mismatch_confirmed`; Menē $1,694/$1,350) and explicitly asked for the non-colliding flag ID — **F65** — and for Menē prices to be labelled default-configuration rather than starting prices; the basis label is updated accordingly in this commit (values unchanged). Standing banners that still said `H01–H12` now say `H01–H13` (README + `scripts/build.mjs`). The two duplicate T44 board rows on `main` are left as published (no content lost; not this union's rows to rewrite).
 - **Second-union gate run (2026-10-23T21:12Z, this merge commit):** `verify.mjs` **S01–S20 20/20, 0 failures, pass P110** (6,922 assertions, 71 rows, 106 pages — the counter continued from `main`'s merged history, which had reached P108) · `audit_0804e222` **A01–A10 10/10** (1,966) · `audit_545688f3` **H01–H13 13/13** (1,684; H13 passes on the union README) · `audit_dab93754` **N01–N11 11/11** (1,567) · `test_evidence_math_5f363d57` **38/38** · `npm test` **all green** · advisory `audit_5f363d57` **159 findings vs the 181 baseline** at `7bfc28f` (−22: R09 fold-in −6, R08 chip badges −6, R06 H13 bullets −7, R02 Menē notes/basis −2, R08 landing counts −2 — R08 group now fully passes; +1 set-delta = current R07 script catching the stock karat-spectrum phrase in dated README paragraphs, T43 sweep). Landing stat now reads **69 active listings** with the 2 withdrawn records disclosed beside it.
 
-## 24. Published-subsection integrity pass — `/site/` 13-row register re-read live, 6 new findings, legacy-generator hazard closed (`arena/7d64f506-gold1`, T50)
+
+---
+
+## 22. Eleventh pass — independent live re-read, dead-source-link fix, stale-prose closure & publish (`sess-356f1adf`, T47)
+
+**Session:** `sess-356f1adf` · **Branch:** `arena/356f1adf-gold1` · **Date:** 2026-10-23 · **Status:** done
+
+### Why this pass exists
+
+Every prior pass verified its own rows and then handed off to a later session. This is a **fresh
+independent session** starting from `main@1f98639` after PR #69, whose job was to re-check the
+published claims against the live sources again, close stale prose, and publish. It found the site
+and dataset in good shape — and found two real defects that the structural audits could not see,
+because both involve **the outside world changing** rather than the data being internally
+inconsistent.
+
+### Live official reads (17 sources, 23:38–23:52Z)
+
+Full verbatim quotes: **`data/session-356f1adf/live-reads-2026-10-23.json`** (17 entries, each with
+URL, read time, quote and verdict). Summary:
+
+| Read | Source opened | Printed | Verdict |
+|------|---------------|---------|---------|
+| Gold spot | `api.gold-api.com/price/XAU` | `3996.899902` @ `2026-10-23T23:38:16Z` | **new primary**; all melt figures re-derived |
+| `rs-571221` | Ross-Simons PDP | `$400`, `14kt`, `Gold Weight 1.7 grams` | confirmed |
+| `rs-997811` | Ross-Simons PDP | `$89`, `10kt`, `Gold Weight 0.3 grams` | confirmed (shortlist row) |
+| `rs-939479` | Ross-Simons `.js` | `Italian 14kt Yellow Gold Claddagh Ring`, `49900` | **F51/F64 re-confirmed**; stays withdrawn |
+| `rs-943668` | Ross-Simons `.js` | `126900`–`143900`, compare `179500`, "sold separately" | confirmed; F05 stands |
+| `ag-14k-industrial-band` | Automic Gold `.js` | 14K/1.7mm/No Gem `59800` | confirmed at variant level |
+| `mej-2mm` | Mejuri PDP | `$498`, "Solid Yellow Gold (14k)" | confirmed |
+| `au-cigar` | Aurate `.js` | `Weight: 2.6-4g`, `price_min 11800`, `price_max 166800` | weight basis confirmed; 14K variant **not isolated** — stays `partly_verified` |
+| `wc-4prong` | With Clarity `.js` | `55800`–`80100`, tag `Ring Setting Product` | confirmed |
+| `as-bea-sol` | Anna Sheffield PDP | enquiry form, **no price** | **F37 re-confirmed**; stays `price_unverified` |
+| `bn-14k-petite-195639` | Blue Nile PDP | `Petite Solitaire`, stock `501130y14`, `$1,000` | **F65 re-confirmed**; stays withdrawn |
+| `be-18k-6p-121h6` | Brilliant Earth PDP | `$1,090 (Setting Only)`, `BE121H6-18KY`, 18K yellow / 14K white prongs | confirmed in USD |
+| `car-18k-1895-band-dia` | Cartier PDP | `$1,140`, "Yellow gold (750/1000)", `Ref.B4057600` | confirmed, "Unavailable online" for some sizes |
+| `mene-24k-classic-band` | Menē PDP | `$1,694 USD` | confirmed (stored value already correct) |
+| `auv-22k-vneck-sm` | Auvere PDP | 15-day return window text; **no price in fetched text** | return window corroborated; price **not** claimed fresh (F61) |
+| 16 CFR Part 23 | eCFR § 23.3 | hollow-centre "solid" rule quoted verbatim | the site's rule statement is accurate |
+| NIST conversion | nist.gov | working page renders § 2.17 | **the URL stored across the site 404s** → F67, fixed |
+
+**Honest limit:** 17 sources were re-opened, not 71. The other 57 rows keep their own dated capture
+and say so on every table; nothing was relabelled "fresh".
+
+### Defect 1 — a dead official source link (F67, fixed + regression-pinned)
+
+The NIST authority for grams-per-troy-ounce was stored and published as
+`https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information`. Opened live, that
+path returns **NIST's own "Page not found"** response. The working page is
+`https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information`,
+which renders *"Precious Metals Conversion Information"* and Section 2.17 of NIST Handbook 130.
+
+- **The data was never wrong** — `31.1034768 g/ozt` is exact and unchanged.
+- **The link was** — and a dead official link is exactly what the project promises not to publish.
+- Fixed in `data/checklist.json`, `data/sources.json`, `data/gold-price.json` (`unit_authority`) and
+  both zero-loss integrators (`integrate_0804e222.mjs`, `integrate_545688f3.mjs`), so a regeneration
+  cannot re-introduce the retired path.
+- **S01 gained a regression assertion** that scans URL-valued fields across the canonical data
+  (gold price, retailer registry, flag sources, source registry, checklist links) and fails the build
+  if the retired NIST path ever appears again. **Sabotage-tested**: injecting the retired URL into a
+  throwaway copy of `data/checklist.json` turned S01 red (1 failure); the temp copy was deleted.
+
+### Defect 2 — stale resource counts in `README.md` (fixed)
+
+The repo's own resource table still described the *older* dataset: `57` published findings (`F01–F58`),
+`5` gold readings, `H01–H12`, and it pointed at `COORDINATION.md §15–§18`. All corrected against the
+live data: **66 findings (`F01–F67`)**, **current primary + 7 retained readings**, **`H01–H13`**,
+**§15–§21**. H13 (the README counts guard) passes on the corrected text.
+
+### Verification at publish
+
+| Gate | Result |
+|------|--------|
+| `node scripts/verify.mjs` (S01–S20) | **20/20 groups, 0 failures, 7,152 assertions**, pass **P115**, 71 rows / 106 pages |
+| `node scripts/audit_0804e222.mjs` (A01–A10) | **10/10**, 1,967 assertions |
+| `node scripts/audit_545688f3.mjs` (H01–H13) | **13/13**, 1,686 assertions |
+| `node scripts/audit_dab93754.mjs` (N01–N11) | **11/11**, 1,568 assertions |
+| Sabotage (retired NIST URL injected) | S01 **FAILED as designed**, then removed |
+| `npm test` (/site/ standalone suite) | see §22.1 |
+| Internal links | see §22.1 |
+
+### Publication (§22.1)
+
+| Step | Result |
+|------|--------|
+| Pull request | [#70](https://github.com/karagemop466-tech/GOLD1/pull/70) — *T47 eleventh pass: live re-read of 17 official sources, dead NIST source link fixed (F67), P115 republish* |
+| Mergeability at open | `MERGEABLE` / `CLEAN` (no other session had pushed to `main` since PR #69) |
+| Merged into `main` | **2026-10-23T23:43:21Z**, merge commit **`213f61e1e2e85e44896923d57ba04a8524053e89`** |
+| GitHub Pages | build **`built`**, `error: null`, for the exact merge commit (`updated_at` 2026-10-23T23:43:40Z) |
+| Live readback — landing | `https://karagemop466-tech.github.io/GOLD1/?deploy=213f61e` renders **71 listings / 11 retailers / 66 flagged findings**, the **No-hallucinations** rule at the top, the four check families `S01–S20 + A01–A10 + H01–H13 + N01–N11`, and **pass P116** |
+| Live readback — flagged | `flagged.html?deploy=213f61e` renders **66 findings** and the new **F67** card with the working NIST link (`…/unit-conversion/precious-metals-conversion-information`) |
+| Live spot on the built pages | ring and calculator pages print `3,996.90/ozt` at `2026-10-23T23:38:16Z`; `rs-571221` shows `$128.50/g` fine-gold arithmetic and its official source link with `rel="noopener nofollow"` |
+| Follow-up | PR [#72](https://github.com/karagemop466-tech/GOLD1/pull/72) — board record (docs only); merged 2026-10-23T23:44:26Z, merge commit `46ad524`, Pages `built` (`error: null`) |
+| Parallel session | PR [#71](https://github.com/karagemop466-tech/GOLD1/pull/71) (`arena/67748540-gold1`, opened 23:44:20Z) is an independent eleventh pass. It collides on **F67** (already published here for the dead NIST link) and on the **P116** label; a comment was posted asking for a rebase and **F68** for its Cartier finding. Its files were not touched. |
+| Open items handed on | `data/rings.json` untouched — no ring value changed; next free flag id **F68**; `sess-5f363d57`'s advisory R-findings and `sess-7626fc93`'s T38-intake remain their owners' work |
+
+**What a reader should take from this pass:** the site's *data* survived an independent re-read of 17
+official sources without a single correction — the defects were in the *plumbing* (one dead official
+link, four stale numbers in the README). That is the argument for re-opening the sources rather than
+re-running the test suite: a suite can only prove the data agrees with itself.
+
+
+## 23. Twelfth-pass continuity — fresh 2026-10-23T23:39Z re-read, second-channel gap closure & publish (`arena/67748540-gold1`, board T49–T50)
+
+### 23.0 Parallel claim collision, resolved zero-loss (read this first)
+
+While this pass was running, a **second eleventh-pass session (`sess-356f1adf`,
+`arena/356f1adf-gold1`) claimed `T47` at 23:2xZ, completed, and merged as **PR #70 / `213f61e`** at
+**2026-10-23T23:5xZ** — before this branch reached the board.** Neither pass was discarded and no
+work was rewritten:
+
+| Collision | Resolution |
+|-----------|------------|
+| Both passes used board id **T47** | `sess-356f1adf` keeps **T47** (it landed first on `main`); this pass renumbers to **T49–T50** and its record to **§23** |
+| Both passes used finding id **F67** | `sess-356f1adf`'s **F67** (the NIST conversion URL 404 — a real, live defect it found and fixed, and pinned in `S01`) is kept **verbatim**; this pass's Cartier collection rename is published as **F68**. Registry: **67 findings, F01–F68, next new id F69** |
+| Both passes refreshed the gold spot | Both read **the same value** `3,996.899902 USD/ozt`; `main`'s record (publisher timestamp `23:38:16Z`, `sess-356f1adf`) is kept as the primary and this pass's **second-channel read at the same second** plus the **runner read at `23:39:15Z`** are recorded in `primary.corroboration` and the `readings` history — three reads, two network paths, one number |
+| Both passes touched `data/gold-price.json` | Merged field by field: its NIST `unit_authority` fix and readings history kept, this pass's fresher **COMEX cross-check** (`4,010.0 @ 20:59:58Z`, read through the second channel after the runner's Yahoo call returned 429) and corroboration added |
+| Both passes regenerated the site | Resolved by **rebuilding** from the merged data (`scripts/build.mjs` + `scripts/build_compliance.mjs`), never by hand-editing HTML |
+| Its `S01` NIST regression assertion vs this pass's new `Q01`–`Q08` | Both kept; `npm run check` now runs S/A/H/N/Q in sequence |
+
+**Process note for the next session:** two sessions beginning at the same minute from the same `main`
+will always collide on the *next* free id. The cheap fix is what was done here — read the board, claim
+immediately, and when a peer lands first, **renumber and keep both**; never recycle a published id and
+never diff-replace a peer's section.
+
+### 23.1 Claim, staleness takeover and scope
+
+`arena/67748540-gold1` (`sess-67748540`) started at **2026-10-23T23:37Z** from `main` **`1f98639`**
+(PR #69 merged, Pages `built`). Per §0 rule 6 the board was read first, and three claims were **stale**
+at that clock (>60 min with no commits):
+
+| Task | Owner | Branch tip | Last commit | Age at 23:37Z | Action |
+|------|-------|-----------|-------------|---------------|--------|
+| T39–T43 (ninth pass: re-read, gold, weights, audit, publish) | `sess-7626fc93` | `6d0a879` | 2026-10-23T20:55:05Z | 2 h 42 m | **taken over** (integration tail only) |
+| T44 (independent semantic audit) | `sess-5f363d57` | `3e2a1bf` | 2026-10-23T20:52:10Z | 2 h 45 m | **taken over** (advisory re-run only) |
+| PR #57 (ninth pass, `arena/b4adf01a-gold1`) | unnamed session | `b464c89` | 2026-10-23T21:23:34Z | 2 h 14 m | **not taken over** — left open; no state changed |
+
+Nothing from those branches was diff-replaced. Their unique artefacts stay reachable on their own
+branches and are listed here so a later integrator can take them additively:
+`data/live/2026-10-23T{20-21-36,20-25-27,20-29-52,20-32-44}Z.json`, `data/live/2026-10-23T20-46-30Z.json`,
+`data/session-7626fc93/**`, `scripts/audit_7626fc93.mjs`, `scripts/reconcile_7626fc93.mjs`.
+`main` already carries `data/session-5f363d57/**`, `scripts/audit_5f363d57.mjs` and
+`scripts/lib/evidence-math.mjs` (merged with PR #47/#66), so T44 needed no re-import.
+
+Claim commits: **`1fdb76d`** (board T49–T50) and **`d7437e2`** (re-verification trigger), both pushed
+immediately, before any file in the claimed scope was touched.
+
+### 23.2 What this pass actually re-opened
+
+- **Automated runner, all 71 rows, one clock.** Triggered by pushing `.github/reverify-trigger`
+  (`workflow_dispatch` returns **403** to this session's integration token — the documented
+  push-trigger path in `.github/workflows/reverify.yml` was used instead). Run **`40040847705`**,
+  finished **2026-10-23T23:39:43Z**: **61 of 71 pages read HTTP 200**, and the same **10** rows refused
+  the runner with HTTP 403 (5 With Clarity, 1 Brilliant Earth, 4 Cartier) — the runner-side block first
+  recorded as F60 stands. Evidence: **`data/live/2026-10-23T23-39-43Z.json`** (the run also refreshed
+  `latest.json`).
+- **Second channel, the 10 unread rows.** This session's own retrieval channel opened all ten inside
+  **23:41–23:53Z** and every stored price reproduced exactly:
+
+  | Row | Printed by the seller (verbatim) | Stored | Verdict |
+  |-----|----------------------------------|--------|---------|
+  | `wc-tulip` | `"price":59000,"price_min":59000,"price_max":111000` | $590–$1,110 | reproduced |
+  | `wc-4prong` | `"price_min":55800,"price_max":80100` | $558–$801 | reproduced |
+  | `wc-4prong-petite` | `"price_min":55800,"price_max":96300` | $558–$963 | reproduced |
+  | `wc-6prong` | `"price_min":56700,"price_max":82800` | $567–$828 | reproduced |
+  | `wc-gerbera` | `"price_min":121000,"price_max":185000` | $1,210–$1,850 | reproduced |
+  | `be-18k-6p-121h6` | `$1,090(Setting Only)` + `Metal: 18K Yellow Gold` | $1,090 | reproduced |
+  | `car-18k-etincelle-pear` | `Rose gold 750/1000 … $3,350` | $3,350 | reproduced |
+  | `car-18k-etincelle-emerald` | `18K white gold (750/1000) … $3,600` | $3,600 | reproduced |
+  | `car-18k-1895-band-dia` | `Yellow gold (750/1000) … $1,140` | $1,140 | reproduced (URL 301s to a longer slug) |
+  | `car-18k-destinee-princess` | `$3,350` + `Ref.B4232900` | $3,350 | reproduced — **seller renamed the collection (F68)** |
+
+  Ledger with URLs, quotes and verdicts: **`data/session-67748540/hand-reads-2026-10-23.json`**.
+- **Two extra corroborations.** Both Menē 24K PDPs were re-opened through the second channel
+  ($1,694 / $1,350) — matching the stored values and the two earlier evening sessions — and the gold
+  spot was re-read at **23:38:16Z → `3,996.899902 USD/ozt`**, i.e. **59 seconds before** the runner's
+  `23:39:15Z` read of the **identical** number through a different network path.
+
+### 23.3 Result — 71 of 71 rows accounted for on one clock
+
+| Verdict | Rows |
+|---------|------|
+| Stored price reproduced on the seller's own page (runner) | **50** |
+| Stored range reproduced in the seller's variant feed | **7** |
+| Stored single price reproduced at variant level (`au-cigar` = `14K / Yellow / 3`, $1,308) | **1** |
+| Runner could not read; second channel read and reproduced | **10** |
+| Unverified by design (2 withdrawn source mismatches + 1 partly verified, price never rendered as a number) | **3** |
+| **Drift / contradictions found** | **0** |
+
+Comparator (report-only, never writes the dataset): **`scripts/compare_67748540.mjs`** →
+**`data/session-67748540/reconcile-67748540.json`**. Applier (quote-gated, restamps only rows it can
+quote): **`scripts/apply_67748540.mjs`**.
+
+Two genuine seller-side changes were caught by reading variant level rather than the product minimum:
+
+1. **Aurate cross-metal ranges (F13 addendum).** The seller's own feed now maps every metal to a price
+   for all four Aurate rows — 14K $1,498 / $1,968 / $2,438; 18K $1,878 / $2,438 / $2,858; Platinum
+   $2,100 / $2,800 / $3,000. The stored ranges were therefore correct and unchanged, and the high ends
+   are **platinum**, so `au-1ct-emerald`, `au-2ct-oval` and `au-3ct-round` now say so in their notes.
+   This is the concern `sess-5f363d57` raised in T44 (R02) — resolved by publishing the official
+   cross-metal range *as such*, not by averaging it or calling it a 14K price.
+2. **Cartier reference B4232900 (F68).** `/cartier-destinee/…CRB4232900.html` now redirects to
+   `/etincelle-de-cartier/…CRB4232900.html`; the H1 reads "Etincelle de Cartier ring, princess-cut
+   diamond, paved", 18K yellow gold 750/1000, and the price is still **$3,350**. Same reference, same
+   price — a rename, not a repurposed listing (contrast F51/F65), published as **F68**.
+
+### 23.4 Security & anti-hallucination testing (run after every review, and before publish)
+
+- **New group `Q01`–`Q08`** (`scripts/audit_67748540.mjs`) pins this pass's invariants so the defect
+  classes cannot return: the fresh stamp covers **exactly** the confirmed rows (68, and no withdrawn row
+  carries a confirmation quote); every row is accounted for by runner, second channel or by-design
+  blank with **no unresolved verdict**; a hand read may never claim more than the quoted string (each
+  printed price is required to appear in the verbatim excerpt **and** to equal the stored value); the
+  two gold channels must agree and both carry publisher timestamps; **every melt figure must derive
+  from the currently stored spot** (this is the check that caught the real defect below); F68 exists
+  once, with Cartier sources, and renders with an anchor; no stale pass prose ("65 findings",
+  "50 parsed by the automated runner") may ship; regenerated HTML keeps its CSP/no-inline-handler/
+  `rel=noopener`/secret-scan posture.
+- **A real defect the gate caught:** after the spot refresh, **S16** failed — `requirements.html`
+  printed melt figures ($16.07, $404.91, $524.88, $269.94, $202.45, $262.44, $232.45, $104.98,
+  $157.46) that no longer matched any number derivable from the stored spot. Root cause: `data/
+  compliance.json` had been computed against the **previous** `3,998.100098` reading, so the scorecard
+  was quoting stale mathematics. Fixed the designed way — `node scripts/build_compliance.mjs` (T40),
+  **not** by loosening the check — and `Q05` now enforces the link in both directions. This is exactly
+  the "run the passes after every review" requirement doing its job.
+- **Advisory independent audit unchanged:** `scripts/audit_5f363d57.mjs` reports **159 findings**,
+  the same count as the merged tree before this pass — **no new finding introduced**, and the
+  `F13`/`F68` additions are covered by it rather than hidden from it.
+
+### 23.5 Gate results on the published tree
+
+| Suite | Result |
+|-------|--------|
+| `scripts/verify.mjs` (S01–S20) | **20/20, 0 failures** — 71 rows, 106 pages, 7,357 assertions (includes `sess-356f1adf`'s S01 retired-URL assertion, kept) |
+| `scripts/audit_0804e222.mjs` (A01–A10) | **10/10** — 1,969 assertions |
+| `scripts/audit_545688f3.mjs` (H01–H13) | **13/13** — 1,689 assertions |
+| `scripts/audit_dab93754.mjs` (N01–N11) | **11/11** — 1,570 assertions |
+| `scripts/audit_67748540.mjs` (**Q01–Q10**) | **10/10** — 990 assertions |
+| `npm test` (`/site/` subsite: evidence, links, security, `html-validate`, runtime, build) | **all green** |
+| `scripts/audit_5f363d57.mjs` (advisory R01–R10) | **156 findings** (was 159 on the merged tree before this pass — the NIST link fix and the F13/F68 coverage moved it down, not up); non-blocking |
+
+### 23.6 Published data changes (each carrying its own quote)
+
+- `data/gold-price.json`: primary **`3,996.899902 USD/ozt @ 2026-10-23T23:39:15Z`** (gold-api.com,
+  runner) with the second channel's `23:38:16Z` identical reading recorded as corroboration; COMEX
+  cross-check **`4,010.0 @ 20:59:58Z`** (Yahoo `GC=F`, publisher `regularMarketTime` 1792789198 — read
+  through the second channel because the runner's own Yahoo call returned HTTP 429).
+- `data/compliance.json`: rebuilt from the new spot (tiers unchanged: 45 needs-confirmation / 14
+  setting-only / 9 ready-to-inspect / 1 unverified-price / 2 withdrawn; solid 21, weight 25,
+  hallmark 0).
+- `data/rings.json`: **68 rows** restamped `reverified_pass = P117-67748540` with a dated verbatim
+  quote appended to `evidence`; **no price, karat or weight value was changed** — this pass found no
+  drift. `retrieved_at` was deliberately **not** rewritten.
+- `data/flagged.json`: **F68** added (67 findings, ids F01–F68, next new id **F69**); dated addenda to
+  **F13** (metal map) and **F60** (the ten 403s of 23:39Z, all ten then read by the second channel).
+
+### 23.7 Publication record
+
+| Step | Result |
+|------|--------|
+| Pull request #1 | [#71](https://github.com/karagemop466-tech/GOLD1/pull/71) — *Twelfth pass (P117): fresh 23:39Z re-read of all 71 rows, runner-403 rows closed by a second channel, dual-channel gold refresh, F68 Cartier rename, new Q01–Q08 audit* — **merged 2026-10-23T23:47:11Z**, merge commit **`5478444cb34d56e2aaf76855317b89630c8e56e3`** |
+| Pull request #2 | [#76](https://github.com/karagemop466-tech/GOLD1/pull/76) — *Landing-page freshness derived from the newest 71-row ledger + Q09 regression guard* — **merged 2026-10-23T23:48:46Z**, merge commit **`de08167bdf4f701ebce7334e037a48db715e3c03`** |
+| Pull request #3 | [#77](https://github.com/karagemop466-tech/GOLD1/pull/77) — *Quantify partly-verified rows precisely (au-cigar variant-level reproduction) + Q10 guard, list Q01–Q10 in the check banner* — **merged 2026-10-23T23:49:59Z**, merge commit **`e25957e352dd984e421ba083a72bd4eb40605439`** |
+| GitHub Pages | build **`built`**, `error: null`, for each merge commit (Pages build for `de08167` at 2026-10-23T23:49:07Z; the tip `e25957e` was then superseded on `main` by `c8d4dd0`, PR #74 from `sess-db06c195`, which is also **`built`**, `error: null`) |
+| Live read-backs (2026-10-23T23:5xZ) | landing at `?deploy=de08167`: **pass P118**, **69 active / 2 withdrawn**, **25/71 weights**, **21/71 solid**, **67 flagged findings**, the No-hallucinations rule at the top, the check families now **`S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10`**, and the **derived** latest-pass sentence *"runner opened all 71 official URLs at 2026-10-23T23:39:43Z and read 61 of them … 68 of 71 rows reproduced exactly (58 by the runner, 10 by the second channel), 0 contradictions, 3 rows unverified by design"* with spot **$3,996.899902/ozt** · `flagged.html`: **67 findings**, `F67` (NIST) and **`F68`** (Cartier) both rendered with text |
+| Third session on the same clock | `arena/db06c195-gold1` merged **PR #74** at 2026-10-23T23:50:13Z (board **T51 / §24**, findings **DB-01…DB-06** — prefix-scoped, so no id collision) with an independent third-channel 71-row read reporting **61/61 prices reproduced, 0 drift**, which agrees with this pass's 68/71 (the difference is scope: their 61 are the rows the runner could read, this pass adds the 10 second-channel rows and the 3 by-design blanks). Its files are isolated in `data/session-db06c195/**` and `scripts/*db06c195*`; none of this session's files were touched. |
+
+### 23.8 Final state of this pass
+
+- **Finding registry:** 67 findings, ids **F01–F68**, next new id **F69**.
+- **Rows:** 71; **68 confirmed on 2026-10-23 at 23:39Z** with zero drift; **3 unverified by design**
+  (2 withdrawn source mismatches + 1 partly verified). No price, karat or weight value was changed by
+  this pass — it found no drift.
+- **Gold:** `3,996.899902 USD/ozt` at `2026-10-23T23:38:16Z` (publisher), corroborated at the same
+  second through a second channel and again one minute later by the Actions runner; COMEX cross-check
+  `4,010.0 @ 20:59:58Z`.
+- **Check families now run on every build:** `S01–S20`, `A01–A10`, `H01–H13`, `N01–N11`, and the new
+  **`Q01–Q10`** freshness/quote/security group (`npm run check` runs all five; `npm test` runs the
+  `/site/` suite).
+- **Open, non-blocking:** `sess-7626fc93` T39–T43 and `sess-5f363d57` T44 remain unfinished on their
+  own branches (stale, not deleted); PR #57 remains open and conflicting; their unique ledgers are
+  listed in §23.1 for additive intake by any later integrator.
+
+---
+
+## 24. Independent third-channel verification & publication QA (`arena/db06c195-gold1`, T51)
+
+**Session:** `sess-db06c195` · **Claimed:** 2026-10-23T23:45Z · **Status:** done · **Read-only:** no shared dataset, gold price, build script or generated page was edited by this session.
+
+### 24.1 Why this pass exists and what it deliberately did not do
+
+At 23:38–23:39Z four sessions started on the same owner brief. `arena/356f1adf-gold1` already held T47 and merged PR #70 at 23:43Z; `arena/67748540-gold1`, `arena/e33f8670-gold1` and `arena/a4b3c19b-gold1` had each just claimed T47/T47/T47. Rather than join that race on the shared outputs, this session claimed **T51**: an independent, read-only verification whose only writes are its own evidence files. It is a *third* channel — a GitHub Actions runner read (`data/live/2026-10-23T23-41-17Z.json`) plus five reads through this sandbox's page-fetch channel — checked against `data/rings.json` with an auditor written from scratch (`scripts/audit_db06c195.mjs`, groups `D01`–`D09`) that shares no code with `scripts/verify.mjs`, `audit_0804e222.mjs`, `audit_545688f3.mjs`, `audit_dab93754.mjs` or `audit_5f363d57.mjs`.
+
+### 24.2 The read (2026-10-23T23:41:17Z, own clock)
+
+- **61 of 71 rows answered** with HTTP 200 on this run; **10 refused with HTTP 403** (5 With Clarity, 4 Cartier, 1 Brilliant Earth) and are recorded as `not_read`, never as confirmed.
+- **61 of 61 answered rows reproduced their stored price exactly** — every `price_low`/`price_high` appears among the prices the seller printed on that read (visible text, JSON-LD offers, or the seller's own variant/product feed). **Zero drift.** The only non-matches are the three Anna Sheffield rows already published as price-unverified and `au-cigar` (partly verified, vermeil variant in the same listing) — both states are already flagged on `flagged.html`.
+- **Gold spot: `3,996.899902 USD/ozt` at `2026-10-23T23:38:16Z`** — read identically through this session's page-fetch channel and the Actions runner (`23:40:45Z`), and now the value merged on `main` by PR #70. Three channels, one number, no reconciliation needed. The COMEX cross-check returned **HTTP 429** on this attempt and is therefore *not* claimed for this clock (DB-04).
+- **Weights:** 8 of the 25 published weights reproduced live tonight; the other 17 rest on dated verbatim quotes in their own `evidence` strings (D05 checks that each quote actually contains the number).
+
+### 24.3 What the independent auditor proves (4,252 assertions, all passing on `main` @ `213f61e`)
+
+| Group | Question | Result |
+|-------|----------|--------|
+| D01 | https + the retailer's own domain + no tracking/affiliate params + no shared URL | 284/284 |
+| D02 | the live ledger covers every dataset row exactly once | 4/4 |
+| D03 | `confirmed` needs a live read or a quoted figure **and** a dated record; withdrawn never confirmed | 69/69 |
+| D04 | third-channel price trace (or an explicit degraded status) | 71/71 |
+| D05 | third-channel weight trace (or a verbatim quote) | 71/71 |
+| D06 | exact NIST troy ounce, non-future timestamp, freshness, melt ≤ asking price | 30/30 |
+| D07 | no unconfirmed price rendered as a number in its price cell; withdrawn rows say withdrawn | 142/142 |
+| D08 | no secret-shaped strings, `rel=noopener` on catalog links, no inline script without CSP | 1,434/1,434 |
+| D09 | every relative link and in-page anchor in 88 published pages resolves | 2,145/2,145 |
+
+### 24.4 Negative tests (throwaway copies in `/tmp`, deleted afterwards — the repo was never touched)
+
+| Sabotage | Detected by |
+|----------|-------------|
+| `rs-571221` price replaced with an invented `$99,999` | `S02` + `S04` (canonical) **and** `D04` |
+| unknown-domain `source_url` (`example.com`) + invented `9.9 g` | `S01` + `S14` + `S15` **and** `D01` + `D05` |
+| unverified price replaced with a dollar figure on its detail page | `S12` + `S19` **and** `D07` |
+| a partly-verified row left with the old green "confirmed" chip | `S18` (`F66` regression guard) |
+
+### 24.5 Findings raised (not fixed here — this session owns no shared file)
+
+**DB-01** (medium) a legacy `docs/` dashboard is still published on the Pages domain with prices outside the 71-row verified dataset and outside every audit · **DB-02** (low) 10 rows refused tonight's read (HTTP 403) · **DB-03** (low) no CSP meta on the root pages (all scripts are same-origin external files, so no inline execution today) · **DB-04** (info) COMEX cross-check rate-limited · **DB-05** (low) duplicate T44 board rows and three simultaneous T47 claims · **DB-06** (low) stale second flag ledger `data/flags.json` (12 items, 2026-10-22) contradicting the canonical `data/flagged.json` (67 items at the time of writing). Full evidence and recommendations: `data/session-db06c195/findings-2026-10-23.json`. None of them blocks a purchase decision that the Flagged page has not already blocked, and none blocks publication.
+
+### 24.6 Artifacts
+
+| File | What it is |
+|------|------------|
+| `data/live/2026-10-23T23-41-17Z.json` | this session's own 71-row live read (raw, verbatim, never edited afterwards) |
+| `data/session-db06c195/third-channel-2026-10-23T23-41-17Z.json` | per-row ledger: stored value, what the seller printed, verdict, quote, weight status, plus the melt re-derivation for every weighted row |
+| `data/session-db06c195/manual-reads-2026-10-23.json` | the five page-fetch reads (gold feed, Menē, Auvere, Anna Sheffield, Blue Nile) with verbatim excerpts |
+|  `data/session-db06c195/audit-latest.json` | the independent auditor's full assertion record |
+| `data/session-db06c195/findings-2026-10-23.json` | DB-01…DB-06 with evidence and recommendations |
+| `scripts/audit_db06c195.mjs` | the auditor (D01–D09), runnable after every future review |
+| `scripts/db06c195_ledger.mjs` | turns any `data/live/<timestamp>.json` into the per-row third-channel ledger |
+
+### 24.7 Publication
+
+| Step | Result |
+|------|--------|
+| Pull request | [#74](https://github.com/karagemop466-tech/GOLD1/pull/74) |
+| Merged into `main` | **2026-10-23T23:50:13Z**, merge commit **`c8d4dd0c41a3139ade416e76e0d9975ef4ee4e00`** |
+| GitHub Pages | build **`built`**, `error: null`, for that exact merge commit (`updated_at` 2026-10-23T23:50:18Z) |
+| Live readback | `flagged.html` serves **67 findings** with the no-hallucination banner and the "look for hallucinations yourself" instruction; `checks.html` carries the S/A/H/N/Q group summary |
+| Renumbering at merge | the parallel twelfth pass (`arena/67748540-gold1`) merged **PR #71** minutes earlier and took board **T49/T50** and **§23**, so this session's row and section are **T51/§24** — both records stand, nothing was overwritten |
+| Zero-loss | two live reads that landed on this branch mid-flight (`2026-10-23T23-46-04Z`, `2026-10-23T23-47-13Z`) are kept in `data/live/` rather than dropped by the rebases |
+| Not published on `flagged.html` | DB-01…DB-06 are **not** in `data/flagged.json`. The registry, the `README.md` count line and two audit pins in `audit_67748540.mjs` are shared outputs owned by other sessions; the findings are requested in §5 and live in `data/session-db06c195/findings-2026-10-23.json` |
+## 25. Published-subsection integrity pass — `/site/` 13-row register re-read live, 6 new findings, legacy-generator hazard closed (`arena/7d64f506-gold1`, T52)
 
 **Session:** `sess-7d64f506` · **Branch:** `arena/7d64f506-gold1` · **Date:** 2026-10-23 23:38Z – 2026-10-24 00:05Z · **Status:** done
 
-### 24.1 Why this scope
+### 25.1 Why this scope
 
 Three eleventh-pass sessions claimed the shared dataset, the root site and the publish gate at 23:39–23:40Z
 (`sess-e33f8670` T47/§22, `sess-67748540` T47+T48, `sess-db06c195` T49/§23). Rather than duplicate them, this
 session took the **two published surfaces nobody had claimed** — the standalone `/site/` 13-row official-source
 evidence review and the legacy `/docs/` 14-row dashboard — plus the `/site/` audit suite, `research/**`,
-`tools/**` and `data/session-7d64f506/**`. A `T47` claim pushed at 23:44Z was **renumbered to T50/§24 and the
+`tools/**` and `data/session-7d64f506/**`. A `T47` claim pushed at 23:44Z was **renumbered to T52/§25 and the
 `T39`–`T43` takeover withdrawn** once the earlier claims were seen (§1 row, §5 row).
 
-### 24.2 Live official reads (all 13 rows, this session's own clock)
+### 25.2 Live official reads (all 13 rows, this session's own clock)
 
 Bash egress here is allowlist-only, so reads used the session page-fetch channel, as in §17/§21. Shopify sellers
 were read through their **own product JSON feed** for the same product (`officialProductUrl + '.js'`); Brilliant
@@ -1138,7 +1502,7 @@ calculator reference (`$4,025.00` bid, `Oct 22, 2026 - 19:11 NY Time`) was **lef
 the audit as the reproducible arithmetic reference — and the new gold-api.com reading (`3996.899902` USD/ozt =
 `$128.50`/g) is published **beside** it as `market.liveFeed`, never blended.
 
-### 24.3 Six new findings (published on the `/site/` Flagged page; registry 10 → 16 groups)
+### 25.3 Six new findings (published on the `/site/` Flagged page; registry 10 → 16 groups)
 
 | Id | Severity | Finding |
 |----|----------|---------|
@@ -1149,7 +1513,7 @@ the audit as the reproducible arithmetic reference — and the new gold-api.com 
 | `secondary-dashboards-are-dated-snapshots` | review-before-order | `/site/` (13 rows, re-read today) and `/docs/` (14 rows, dated 2026-10-22, gold anchor 2026-10-21 at $4,024.36, 7 of 14 prices unverified) are **not** the catalogue. Banners added to both; the canonical dashboard is the site root. |
 | `legacy-generator-wrote-to-repo-root` | source-quality-warning (resolved with record) | `tools/build_site.py` (dormant first-pass generator) had `OUT = ROOT` and wrote `index.html`, `flagged.html`, `calculator.html` — the canonical dashboard's filenames. Running it would have overwritten the 71-row pages with 14-row pages. **Fixed:** output is `docs/`, the script refuses to write to the repo root and requires `--allow-regenerate`. |
 
-### 24.4 Regression guards added (so this cannot silently rot)
+### 25.4 Regression guards added (so this cannot silently rot)
 
 `scripts/audit-evidence.js` (runs inside `npm test`) now fails if:
 
@@ -1167,7 +1531,7 @@ instead of hard-coded — both had gone stale the moment a finding was added, wh
 project guards against. Two of these new checks failed on first run and caught real defects (the generator
 regex, and the freshness note not naming the raw spot figure); both were fixed and re-run green.
 
-### 24.5 Verification at publish
+### 25.5 Verification at publish
 
 | Gate | Result |
 |------|--------|
@@ -1182,7 +1546,7 @@ Note on `A10`/`H12`: those two groups report "pass-ID out of sync" whenever `ver
 following rebuild (the in-memory pass counter advances past the committed `P110`). On the committed tree they
 pass 10/10 and 13/13. That is expected behaviour, not a defect, and the files involved belong to T48.
 
-### 24.6 Honest limits
+### 25.6 Honest limits
 
 * 13 rows were re-opened, not the canonical 71 — those belong to the concurrent T47/T48/T49 passes.
 * Three TraxNYC gram weights (70689 `3.8 g`, 70589 `2.9 g`, 70114 `2 g`) are published **only** in the product

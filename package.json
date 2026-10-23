@@ -13,9 +13,11 @@
     "test:build": "node scripts/audit-build.js",
     "build": "node scripts/build.js",
     "serve": "node scripts/serve.js",
-    "check": "node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs && node scripts/audit_545688f3.mjs",
+    "check": "node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs && node scripts/audit_545688f3.mjs && node scripts/audit_dab93754.mjs && node scripts/audit_67748540.mjs",
     "reverify": "node scripts/live_reverify.mjs",
-    "reconcile": "node scripts/build_compliance.mjs"
+    "reconcile": "node scripts/build_compliance.mjs",
+    "audit:q": "node scripts/audit_67748540.mjs",
+    "reconcile:q": "node scripts/compare_67748540.mjs"
   },
   "engines": {
     "node": ">=22"

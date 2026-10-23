@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sess-7d64f506 (board T50) — publish the 2026-10-23 re-read on the two secondary surfaces.
+"""sess-7d64f506 (board T52) — publish the 2026-10-23 re-read on the two secondary surfaces.
 
 Text-only changes. No number on any page is invented here: every date and figure
 written below comes from data/session-7d64f506/live-reads-2026-10-23.json or
