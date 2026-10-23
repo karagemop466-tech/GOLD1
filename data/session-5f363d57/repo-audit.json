@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:27:01.022Z",
+  "generated_at": "2026-10-23T20:28:21.088Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -16,7 +16,7 @@
     "passed": 2,
     "failed": 8,
     "assertions": 1344,
-    "findings": 135
+    "findings": 134
   },
   "groups": [
     {
@@ -59,7 +59,7 @@
       "id": "R07",
       "name": "No unsupported retail-price or wearability generalisations",
       "passed": false,
-      "failure_count": 14
+      "failure_count": 13
     },
     {
       "id": "R08",
@@ -1542,18 +1542,6 @@
       "group": "R07",
       "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
       "severity": "high",
-      "message": "README.md calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
-      ]
-    },
-    {
-      "id": "R07-07",
-      "group": "R07",
-      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
-      "severity": "high",
       "message": "data/checklist.json calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
       "row": null,
       "path": "data/checklist.json",
@@ -1562,7 +1550,7 @@
       ]
     },
     {
-      "id": "R07-08",
+      "id": "R07-07",
       "group": "R07",
       "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
       "severity": "high",
@@ -1574,7 +1562,7 @@
       ]
     },
     {
-      "id": "R07-09",
+      "id": "R07-08",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1586,7 +1574,7 @@
       ]
     },
     {
-      "id": "R07-10",
+      "id": "R07-09",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1598,7 +1586,7 @@
       ]
     },
     {
-      "id": "R07-11",
+      "id": "R07-10",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1610,7 +1598,7 @@
       ]
     },
     {
-      "id": "R07-12",
+      "id": "R07-11",
       "group": "R07",
       "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
       "severity": "high",
@@ -1622,7 +1610,7 @@
       ]
     },
     {
-      "id": "R07-13",
+      "id": "R07-12",
       "group": "R07",
       "irregularity_id": "UNSUPPORTED_XRF_DEPTH_CLAIM",
       "severity": "high",
@@ -1634,7 +1622,7 @@
       ]
     },
     {
-      "id": "R07-14",
+      "id": "R07-13",
       "group": "R07",
       "irregularity_id": "UNSUPPORTED_TEST_GUARANTEE",
       "severity": "high",
