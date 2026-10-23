@@ -2,7 +2,7 @@
 
 > **NO HALLUCINATIONS.** Never infer, estimate, or fill a catalog value. If an official source does not confirm a value, it stays blank (`null`) and unverified. Search-result snippets are discovery aids, never catalog evidence.
 
-Retrieval date for this register: **2026-10-22 (UTC)**.
+Retrieval date for this register: **2026-10-23 (UTC)** — first read line by line on 2026-10-22, then **re-opened live row by row on 2026-10-23** (session `sess-7d64f506`, board `T52`): all **13 stored prices were reproduced** by the seller's own page or product feed (11 exactly, 2 at the base configuration with the seller's own size surcharges disclosed), so **no stored value changed**. Verbatim quotes for every row are in [`data/session-7d64f506/live-reads-2026-10-23.json`](../data/session-7d64f506/live-reads-2026-10-23.json), and `scripts/audit-evidence.js` now fails if any row loses that dated re-read or if a re-read stops reproducing the stored price.
 
 ## Current audit result
 

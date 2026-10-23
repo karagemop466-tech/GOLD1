@@ -112,6 +112,34 @@ for (const row of rows) {
   for (const key of Object.keys(row)) {
     if (/(rawGold|actualGold|meltValue)/i.test(key)) check(row[key] === null, `${id}: unsupported actual/raw-gold value in ${key}.`);
   }
+
+  // ---- freshness pin (board T52, sess-7d64f506) -------------------------
+  // Every row must carry its own dated live re-read, and that re-read must
+  // reproduce the stored price. A row whose page was not re-opened cannot be
+  // presented as current, and a stored price the seller no longer prints
+  // cannot survive this check.
+  const re = row.reverification;
+  check(re && typeof re === 'object', `${id}: missing live re-verification block.`);
+  if (re) {
+    check(isIsoDate(re.at), `${id}: re-verification date is not an ISO date.`);
+    check(re.at === candidateData.retrievedDate, `${id}: re-verified ${re.at} but the register says ${candidateData.retrievedDate}.`);
+    check(re.at >= '2026-10-23', `${id}: re-verification ${re.at} is stale; the register was re-read on 2026-10-23.`);
+    check(typeof re.pass === 'string' && re.pass.length > 0, `${id}: re-verification pass id missing.`);
+    check(https(re.readUrl), `${id}: re-verification URL is not clean HTTPS.`);
+    const readUrl = new URL(re.readUrl);
+    check(readUrl.hostname === sellerHosts[row.sellerId], `${id}: re-read was not performed on the seller's own host.`);
+    check(!/(utm_|a_aid|affiliate|aff=)/i.test(re.readUrl), `${id}: tracking/affiliate parameter in re-read URL.`);
+    check(Array.isArray(re.quotes) && re.quotes.length > 0, `${id}: re-verification has no verbatim quotes.`);
+    (re.quotes || []).forEach((quote) => check(typeof quote === 'string' && quote.trim().length > 0, `${id}: empty re-verification quote.`));
+    const cents = String(Math.round(row.priceUsd * 100));
+    const reproduced = (re.quotes || []).some((quote) => quote.includes(moneyText(row.priceUsd)) || quote.includes(cents));
+    check(reproduced, `${id}: the 2026-10-23 re-read does not reproduce the stored price ${moneyText(row.priceUsd)}.`);
+    if (typeof row.listedWeightGrams === 'number') {
+      const gramsText = String(row.listedWeightGrams);
+      const gramsInQuotes = (re.quotes || []).some((quote) => quote.includes(gramsText));
+      check(gramsInQuotes || /PDP spec table/i.test(re.note || ''), `${id}: stored weight ${gramsText} g is neither reproduced by the re-read nor disclosed as spec-table-only.`);
+    }
+  }
 }
 for (const id of Object.keys(expected)) check(ids.has(id), `Audited candidate ${id} is missing.`);
 
@@ -158,6 +186,45 @@ for (const issue of issues) {
 check(issues.some((issue) => issue.id === 'be-14k-six-prong-currency-conflict' && issue.status === 'excluded'), 'Currency-conflict exclusion missing.');
 check(issues.some((issue) => issue.id === 'trax-bbb-search-conflict'), 'BBB source conflict record missing.');
 
+// ---- 2026-10-23 findings must stay published ----------------------------
+// Findings are never silently dropped: each one below was raised by a direct
+// read on 2026-10-23 (board T52) and is pinned here so a future edit has to
+// remove it deliberately, with the audit failing until the record is updated.
+const pinnedFindings = [
+  'market-reference-snapshot-age',
+  'blue-nile-item-195639-repurposed',
+  'compare-at-price-not-market-value',
+  'shopify-weight-field-is-parcel-weight',
+  'secondary-dashboards-are-dated-snapshots',
+  'legacy-generator-wrote-to-repo-root'
+];
+pinnedFindings.forEach((issueId) => check(issues.some((issue) => issue.id === issueId), `2026-10-23 finding ${issueId} is no longer published.`));
+check(issues.every((issue) => issue.status === 'open' || issue.status === 'excluded' || issue.status === 'resolved-with-record'), 'Unknown irregularity status value.');
+
+// ---- published copy parity ----------------------------------------------
+// site/data/** is what GitHub Pages actually serves at /site/. It must be
+// byte-identical to the audited research/** source, or the published dashboard
+// would show numbers this audit never checked.
+const crypto = require('node:crypto');
+const sha = (relative) => crypto.createHash('sha256').update(fs.readFileSync(path.join(root, relative))).digest('hex');
+for (const [source, published] of [
+  ['research/candidates.json', 'site/data/candidates.json'],
+  ['research/sellers.json', 'site/data/sellers.json'],
+  ['research/irregularities.json', 'site/data/irregularities.json'],
+  ['research/policy/market.json', 'site/data/market.json'],
+  ['research/policy/verification.json', 'site/data/verification.json']
+]) {
+  check(fs.existsSync(path.join(root, published)), `Published copy ${published} is missing.`);
+  if (fs.existsSync(path.join(root, published))) {
+    check(sha(source) === sha(published), `Published ${published} differs from its audited source ${source}.`);
+  }
+}
+
+// ---- the legacy generator must not be able to overwrite the dashboard ----
+const legacyGenerator = fs.readFileSync(path.join(root, 'tools/build_site.py'), 'utf8');
+check(!/^OUT = ROOT\s*$/m.test(legacyGenerator), 'tools/build_site.py still writes generated pages to the repository root.');
+check(/allow-regenerate/.test(legacyGenerator), 'tools/build_site.py lost its explicit regeneration guard.');
+
 const rate = market.source.bidPerTroyOunce / market.conversion.gramsPerTroyOunce;
 check(https(market.source.url) && new URL(market.source.url).hostname === 'www.kitco.com', 'Invalid Kitco source.');
 check(market.source.sourceTimestamp === 'Oct 22, 2026 - 19:11 NY Time', 'Kitco panel timestamp differs from audited snapshot.');
@@ -168,6 +235,25 @@ check(market.source.quotes.some((quote) => quote.includes('4,025.00')), 'Kitco b
 check(market.source.quotes.some((quote) => quote.includes('Estimated metal value only')), 'Kitco metal-value limitation missing.');
 check(https(market.benchmarkMethodology.url), 'Invalid LBMA methodology URL.');
 check(!Object.hasOwn(market.benchmarkMethodology, 'numericPrice'), 'LBMA methodology must not contain a substituted numeric price.');
+
+// ---- independent spot reading published beside the audited snapshot ------
+// (board T52, sess-7d64f506). The Kitco panel stays the calculator reference so
+// the arithmetic remains reproducible; a second, dated publisher reading is
+// published next to it so the gap is visible instead of hidden.
+const live = market.liveFeed;
+check(live && typeof live === 'object', 'Missing liveFeed: a dated second gold reading must be published beside the calculator snapshot.');
+if (live) {
+  check(https(live.url), 'Invalid liveFeed source URL.');
+  check(typeof live.sourceTimestamp === 'string' && live.sourceTimestamp.length > 0, 'liveFeed has no publisher timestamp.');
+  check(Number.isFinite(live.spotPerTroyOunce) && live.spotPerTroyOunce > 0, 'liveFeed spot price missing.');
+  check(typeof live.quote === 'string' && live.quote.includes(String(live.spotPerTroyOunce)), 'liveFeed quote does not contain the stored spot figure.');
+  check(live.quote.includes(live.sourceTimestamp), 'liveFeed quote does not contain its own publisher timestamp.');
+  const liveRate = live.spotPerTroyOunce / market.conversion.gramsPerTroyOunce;
+  check(Math.abs(liveRate - live.derivedPerGram) < 1e-9, 'liveFeed derived per-gram value is not spot / 31.1034768.');
+  check(typeof live.snapshotWarning === 'string' && live.snapshotWarning.length > 0, 'liveFeed must state that it is not a dealer quote or appraisal.');
+  check(live.sourceTimestamp > market.source.sourceTimestamp.slice(0, 3) || /\d{4}-\d{2}-\d{2}T/.test(live.sourceTimestamp), 'liveFeed timestamp is not machine-comparable.');
+  check(typeof market.freshnessNote === 'string' && market.freshnessNote.includes(String(live.spotPerTroyOunce)), 'freshnessNote must name both readings.');
+}
 for (const row of rows) {
   if (row.listedWeightGrams === null) continue;
   const fine = row.listedWeightGrams * row.karat / 24;
@@ -205,5 +291,6 @@ if (errors.length) {
 console.log('PASS evidence: 13/13 audited rows, exact prices, field-level official excerpts, valid blanks and flags');
 console.log('PASS sellers: 3 contact/payment/return/documentation/reputation records and direct source scopes');
 console.log(`PASS market: $4,025.00 / 31.1034768 = $${rate.toFixed(10)}/g, rounds to $${rate.toFixed(2)}/g`);
-console.log('PASS policy: 9 gates, 10 irregularity groups, 0 purchase-ready candidates');
+console.log(`PASS freshness: ${rows.length}/${rows.length} rows carry a dated ${candidateData.retrievedDate} live re-read that reproduces the stored price`);
+console.log(`PASS policy: ${verification.gates.length} gates, ${issues.length} irregularity groups, 0 purchase-ready candidates`);
 console.log('NOTE structural audit complements—not replaces—direct source re-fetch and human/manual review.');

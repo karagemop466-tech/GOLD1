@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "retrievedDate": "2026-10-22",
+  "retrievedDate": "2026-10-23",
   "source": {
     "publisher": "Kitco Metals Inc.",
     "pageTitle": "Gold Price Today | Price of Gold Per Ounce | 24 Hour Spot Chart",
@@ -36,5 +36,21 @@
     "url": "https://www.lbma.org.uk/prices-and-data/about-lbma-daily-auction-prices",
     "quote": "The internationally recognised benchmark price for gold delivered in London; Set twice daily (at 10:30 and 15:00 London UK time) in US dollars per troy ounce; Administered independently by ICE Benchmark Administration (IBA).",
     "use": "Methodology context only. No current LBMA numeric price was obtained or used in the calculator."
-  }
+  },
+  "liveFeed": {
+    "publisher": "gold-api.com",
+    "url": "https://api.gold-api.com/price/XAU",
+    "sourceTimestamp": "2026-10-23T23:38:16Z",
+    "currency": "USD",
+    "spotPerTroyOunce": 3996.899902,
+    "derivedPerGram": 128.5033158094,
+    "quote": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3996.899902,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T23:38:16Z\"}",
+    "observedBy": "sess-7d64f506",
+    "observedAt": [
+      "2026-10-23T23:38Z",
+      "2026-10-23T23:41Z"
+    ],
+    "snapshotWarning": "A spot feed reading, not a dealer quote, a resale offer or an appraisal. The calculator still uses the named Kitco Live GoldPrice panel below so its arithmetic stays reproducible against the audited snapshot; this reading is published beside it so the gap between the two is visible instead of hidden."
+  },
+  "freshnessNote": "The calculator reference (source) is the Kitco Live GoldPrice panel as of Oct 22, 2026 - 19:11 NY Time (bid $4,025.00 per troy ounce, displayed $129.41 per gram). An independent gold-api.com spot read on 2026-10-23T23:38:16Z published 3996.899902 USD per troy ounce ($3,996.899902 = 128.50 per gram). Both carry their own publisher timestamps; neither is blended, averaged or substituted."
 }
