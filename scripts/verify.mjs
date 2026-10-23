@@ -538,14 +538,14 @@ const counted = (fn) => fn;
     // Only a value position counts: an unset field renders as a bare "undefined"
     // immediately after a tag or at the start of the document. Prose that merely
     // mentions the word (such as this group's own description) is not a leak.
-    if (/(^|>)undefined(?=[<\s])/.test(text.replace(/<script[\s\S]*?<\/script>/g, ''))) {
-      failures.push(`${f.replace(ROOT + '/', '')}: a value rendered as undefined`);
+    if (/(^|[>\s])undefined(?=[\s<.,;:]|$)/.test(text.replace(/<script[\s\S]*?<\/script>/g, ''))) {
+      failures.push(`${f.replace(ROOT + '/', '')}: a value resolved to nothing (unset field printed)`);
     }
   }
   add(
     'S20',
-    'No template leaks or undefined values',
-    'A page must never show an unreplaced ${…} expression or the word "undefined": either one means a value was meant to be printed and was not, which reads as a fabricated figure to the buyer.',
+    'No template leaks or unset values',
+    'A page must never show an unreplaced ${…} expression or a value that resolved to nothing: either one means a number was meant to be printed and was not, which reads as a fabricated figure to the buyer.',
     failures
   );
 }

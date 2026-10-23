@@ -38,7 +38,7 @@
   <div class="wrap">
     <p class="eyebrow">Research dashboard · captured 2026-10-22 · last live re-read 2026-10-23</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">59 listings from 10 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on 2026-10-23: 21 now carry a published metal weight, 0 were withdrawn as unverified and 0 could only be partly verified.</p>
+    <p class="lede">59 listings from 10 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on 2026-10-23: 51 carry a verdict from that pass, 8 could not be re-read at all because the seller blocks automated retrieval, and 2 carry no usable price — one because the seller displays none, one because the SKU now sells a different ring.</p>
     
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -81,9 +81,9 @@
 </div>
     
 <div class="stat">
-  <div class="stat-value">59/59</div>
-  <div class="stat-label">re-checked 2026-10-23</div>
-  <div class="stat-note">every row read again line by line against its own page</div>
+  <div class="stat-value">51/59</div>
+  <div class="stat-label">verdict from 2026-10-23</div>
+  <div class="stat-note">re-read live today, or documented as not re-readable</div>
 </div>
     
 <div class="stat">
@@ -93,9 +93,9 @@
 </div>
     
 <div class="stat">
-  <div class="stat-value">54/59</div>
-  <div class="stat-label">live PDP re-reads</div>
-  <div class="stat-note">every row traced in reverification.json</div>
+  <div class="stat-value">50/59</div>
+  <div class="stat-label">pages re-read 2026-10-23</div>
+  <div class="stat-note">the rest are behind bot walls and say so</div>
 </div>
   </div>
 </section>
@@ -125,13 +125,13 @@
 
 <section class="wrap section">
   <div class="callout">
-    <h2>Second and third pass: every row re-read against its own page (2026-10-23)</h2>
-    <p>Nothing here is inherited on trust. Each of the 59 rows was opened again at its official URL and read line by line: title, karat, price, price basis and any published weight. The result is in the <em>Last checked</em> column of every table, in <code>data/reverification.json</code> (pass P12) and in <code>data/verification-2026-10-23.json</code>, which stores the exact quote each number was read from.</p>
+    <h2>How current each row is — pass P42, 2026-10-23</h2>
+    <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and 50 of 59 were opened again on 2026-10-23 by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-2026-10-23.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
-      <li><strong>21 of 59 rows now carry a published metal weight</strong> (<a href="rings/rs-571221.html">1.7 g</a>, <a href="rings/rs-571222.html">2.5 g</a>, <a href="rings/rs-571223.html">3.8 g</a>, <a href="rings/rs-571213.html">5 g</a>, <a href="rings/rs-981367.html">0.5 g</a>, <a href="rings/rs-907250.html">0.5 g</a>, <a href="rings/rs-960952.html">1.3 g</a>, <a href="rings/au-2ct-oval.html">2.73 g</a>, <a href="rings/au-1ct-emerald.html">1.97 g</a>, <a href="rings/au-3ct-round.html">3.3 g</a>, <a href="rings/au-cigar.html">2.6 g</a>, <a href="rings/au-xring.html">2.7 g</a>, <a href="rings/rs-997811.html">0.3 g</a>, <a href="rings/rs-939479.html">1.5 g</a>, <a href="rings/ag-14k-radiant-3ct.html">5.4 g</a>, <a href="rings/ag-14k-marquise-melted.html">7 g</a>, <a href="rings/ag-14k-leaves.html">3.6 g</a>, <a href="rings/ag-14k-petal.html">2.7 g</a>, <a href="rings/ag-14k-kite.html">3.5 g</a>, <a href="rings/ag-14k-cluster.html">3.1 g</a>, <a href="rings/ag-14k-bubble.html">1.4 g</a>). It was one row when the project started. Every one of them is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat.</li>
-      
-      <li><strong>0 price withdrawn.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring</a> no longer publishes a price at all — the buy box has been replaced by an enquiry form — so the row reads “— unverified” everywhere on this site.</li>
-      <li><strong>0 rows are only partly verified.</strong> . In each case two readings of the same page disagree, or a variant-level price could not be re-read. The disagreement is published rather than resolved by picking a number.</li>
+      <li><strong>21 of 59 rows publish a metal weight</strong> (<a href="rings/rs-571221.html">1.7 g</a>, <a href="rings/rs-571222.html">2.5 g</a>, <a href="rings/rs-571223.html">3.8 g</a>, <a href="rings/rs-571213.html">5 g</a>, <a href="rings/rs-981367.html">0.5 g</a>, <a href="rings/rs-907250.html">0.5 g</a>, <a href="rings/rs-960952.html">1.3 g</a>, <a href="rings/au-2ct-oval.html">2.73 g</a>, <a href="rings/au-1ct-emerald.html">1.97 g</a>, <a href="rings/au-3ct-round.html">3.3 g</a>, <a href="rings/au-cigar.html">2.6 g</a>, <a href="rings/au-xring.html">2.7 g</a>, and 9 more). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. Sixteen were re-read verbatim today; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.</li>
+      <li><strong>7 rows are partly verified.</strong> <a href="rings/wc-4prong.html">Classic Four Prong Solitaire Diamond Engagement Ring</a>, <a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a>, <a href="rings/as-hazeline.html">Hazeline Solitaire Ring - Yellow Gold &amp; Cushion Champagne Diamond</a>, <a href="rings/as-bea-3stone.html">Bea Three Stone Ring - 14k Gold &amp; White Diamond Center</a>, <a href="rings/au-cigar.html">Modern Cigar Band (14K Yellow Gold variant)</a>, <a href="rings/mene-24k-classic-band.html">Classic Band — 24k Pure Gold (5 mm)</a>, <a href="rings/mene-24k-narrow-band.html">Narrow Classic Band — 24k Pure Gold (4 mm)</a> — in each case the seller's page did not fully reproduce the stored figure, and the reason is printed on the row.</li>
+      <li><strong>2 rows carry no usable price.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a> — The official product page still resolves and still describes the 1.50ct oval champagne diamond in 14k recycled gold, but it no longer displays any price; <a href="rings/rs-939479.html">1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold</a> — Withdrawn on 2026-10-23. Both read “— unverified” everywhere on this site.</li>
+      <li><strong>8 rows were not re-read today</strong> because With Clarity, Cartier and Brilliant Earth block automated retrieval (<a href="flagged.html">F53</a>). Their stored values keep the 2026-10-22 date and are labelled <em>not re-read 2026-10-23</em> on every table.</li>
     </ul>
     <p class="sub">Full list of the 52 open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
   </div>
@@ -239,8 +239,8 @@
   <div class="pass-card">
           <div class="pass-head">
             <span class="badge ok">PASS</span>
-            <strong>P68</strong>
-            <span class="muted">run 2026-10-23T10:12:25Z</span>
+            <strong>P76</strong>
+            <span class="muted">run 2026-10-23T10:13:59Z</span>
           </div>
           <p>20 checks passed, 0 failed. The suite looks for fabricated values: prices that do not appear in their own evidence string, karats outside the legal set, melt-value contradictions, future dates and broken internal links.</p>
           <p><a href="checks.html">See every check →</a></p>
