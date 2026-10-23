@@ -98,7 +98,7 @@ await checkGroup('A04', 'Solid-gold boolean vs flags & FTC § 23.3(c)(1) rule', 
 
 /* A05: 100% retailer policy, contact & BBB traceability */
 await checkGroup('A05', 'Retailer policy, contact, BBB & row-count parity', async (assert) => {
-  assert(retailersDoc.retailers.length === 10, `Expected 10 retailers, got ${retailersDoc.retailers.length}`);
+  assert(retailersDoc.retailers.length >= 10, `Expected >= 10 retailers, got ${retailersDoc.retailers.length}`);
   let sumRows = 0;
   for (const ret of retailersDoc.retailers) {
     const actual = rings.rows.filter((r) => r.retailer_id === ret.id).length;

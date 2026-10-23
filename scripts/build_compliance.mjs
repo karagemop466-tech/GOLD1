@@ -91,6 +91,12 @@ const RETURNS = {
     source: 'https://mene.com/terms-of-service',
     caveat: 'only 7 days; up to 10% restocking fee; lifetime buyback at daily metal value minus 10%',
   },
+  auvere: {
+    days: 15,
+    from: 'delivery',
+    source: 'https://auvere.com/shipping-returns/',
+    caveat: '15 days from delivery (10-day carrier dropoff after label); security tag must remain attached and untouched; Rare, bespoke, engraved and Sale items are final sale',
+  },
 };
 
 const FEDERAL = {
@@ -121,7 +127,7 @@ const CRITERIA = [
     key: 'purity',
     n: 1,
     label: 'Gold purity confirmed',
-    ask: 'Karat stated for the exact item (10K / 14K / 18K / 24K).',
+    ask: 'Karat stated for the exact item (10K / 14K / 18K / 22K / 24K).',
   },
   {
     key: 'solid',
@@ -188,7 +194,7 @@ const rows = rings.rows.map((r) => {
     hallmark: {
       status: 'not_published',
       detail:
-        "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+        "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
       source: FEDERAL.hallmark.url,
     },
     weight: {

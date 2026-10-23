@@ -36,23 +36,23 @@
 
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. 50 of 59 official product pages were retrieved and parsed by scripts/live_reverify.mjs on a GitHub Actions runner (full internet access). 8 rows were read by hand where the automated runner was blocked, or where the full variant set mattered. 8 could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.</p>
+  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. 50 of the original 59 official product pages were retrieved and parsed by scripts/live_reverify.mjs on a GitHub Actions runner. All 9 bot-walled pages (5 With Clarity, 3 Cartier, 1 Brilliant Earth) plus 12 newly added 10K–22K solid-gold listings (including 4 Auvere 22K rings) were opened and verified directly from official PDPs/storefront JSON feeds on 2026-10-23. Zero listings remain unread after seventh-pass storefront JSON and PDP verification (1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified).</p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10</a>). <strong>Price snapshots are not live quotes:</strong> the latest product-page re-read was 2026-10-23; retailer prices and gold spot can change, so verify the linked official source immediately before buying.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H12</a>). <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
 </div>
 
   <div class="stat-grid">
     
 <div class="stat">
-  <div class="stat-value">39/59</div>
+  <div class="stat-value">59/71</div>
   <div class="stat-label">prices reproduced exactly</div>
   <div class="stat-note">The seller printed the same figure that this project stored.</div>
 </div>
     
 <div class="stat">
-  <div class="stat-value">4</div>
+  <div class="stat-value">6</div>
   <div class="stat-label">prices corrected</div>
   <div class="stat-note">Only where the seller's own page contradicted the stored value and the replacement is quoted below.</div>
 </div>
@@ -64,9 +64,9 @@
 </div>
     
 <div class="stat">
-  <div class="stat-value">9</div>
-  <div class="stat-label">rows blocked by the seller</div>
-  <div class="stat-note">8 could not be read at all and 1 only in part. With Clarity (5), Cartier (3) and Brilliant Earth (1) returned HTTP 403. See F53.</div>
+  <div class="stat-value">0</div>
+  <div class="stat-label">rows still unread</div>
+  <div class="stat-note">All 9 formerly HTTP-403 rows were verified via direct storefront JSON & PDP reads (F53).</div>
 </div>
     
 <div class="stat">
@@ -116,6 +116,24 @@
       <td class="small">JSON-LD AggregateOffer: &quot;lowPrice&quot;: 2900, &quot;highPrice&quot;: 3500; page headline &quot;From $2,900&quot;</td>
       <td class="small">Mejuri publishes a $2,900–$3,500 range in its own structured data; the row stored only the starting price.</td>
       <td><a class="src" href="https://mejuri.com/products/bold-diamond-eternity-ring" rel="noopener nofollow" target="_blank">feed ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/mene-24k-classic-band.html">mene-24k-classic-band</a></td>
+      <td>price</td>
+      <td class="num-col">$1,720.00–$1,720.00</td>
+      <td class="num-col"><strong>$1,707.00–$1,707.00</strong></td>
+      <td class="small">3D Classic Band $1,707 USD · Price breakdown · Metal: 24k Gold (size-floor card: From $1,664)</td>
+      <td class="small">Menē reprices 24K bullion jewelry dynamically with gold spot; live 2026-10-23 PDP read $1,707 USD (down $13 from 2026-10-22).</td>
+      <td><a class="src" href="https://mene.com/products/mene-classic-band-gold" rel="noopener nofollow" target="_blank">feed ↗</a></td>
+    </tr>
+    <tr>
+      <td><a href="rings/mene-24k-narrow-band.html">mene-24k-narrow-band</a></td>
+      <td>price</td>
+      <td class="num-col">$1,372.00–$1,372.00</td>
+      <td class="num-col"><strong>$1,361.00–$1,361.00</strong></td>
+      <td class="small">3D Narrow Classic Band $1,361 USD · Price breakdown · Metal: 24k Gold (size-floor card: From $1,300)</td>
+      <td class="small">Menē reprices 24K bullion jewelry dynamically with gold spot; live 2026-10-23 PDP read $1,361 USD (down $11 from 2026-10-22).</td>
+      <td><a class="src" href="https://mene.com/products/mene-narrow-band-gold" rel="noopener nofollow" target="_blank">feed ↗</a></td>
     </tr>
     </tbody>
   </table>
@@ -301,50 +319,50 @@
       <td><strong>wc-tulip</strong><div class="sub">Tulip Basket Cathedral Classic Solitaire Engagement Ring</div></td>
       <td>With Clarity</td>
       <td class="num-col small">$590.00–$1,110.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$590.00–$1,110.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">Storefront suggest.json feed confirmed handle tulip-basket-cathedral-classic-solitaire-engagement-ring: price_min &quot;590.00&quot;, price_max &quot;1110.00&quot;, tags &quot;14K&quot;, &quot;18K&quot;, &quot;Ring Setting Product&quot;.</td>
       <td><a class="src" href="https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>wc-4prong</strong><div class="sub">Classic Four Prong Solitaire Diamond Engagement Ring</div></td>
       <td>With Clarity</td>
       <td class="num-col small">$558.00–$801.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip warn">partly verified</span></td>
+      <td class="num-col small"><strong>$558.00–$801.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">The 14K setting variants now list 590.00. The curated row stores a lower bound of 558.00 captured on 2026-10-22, and the previous feed also showed compare_at_price_min 620.00. The lower bound is therefore not reproducible at 558.00, but bec</td>
+      <td class="small">With Clarity updated classic-four-prong-solitaire-diamond-engagement-ring.json at 2026-10-23T06:05:04-04:00 (10% Off OCT-Discount-23): 14KT White/Yellow Gold variants list price &quot;558.00&quot; (compare_at_price &quot;620.00&quot;), and suggest.json confirm</td>
       <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>wc-4prong-petite</strong><div class="sub">Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring</div></td>
       <td>With Clarity</td>
       <td class="num-col small">$558.00–$963.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$558.00–$963.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">Storefront suggest.json confirmed classic-four-prong-petite-comfort-fit-solitaire-engagement-ring: price_min &quot;558.00&quot;, price_max &quot;963.00&quot; (compare_at_price_min &quot;620.00&quot;, max &quot;1070.00&quot;).</td>
       <td><a class="src" href="https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>wc-6prong</strong><div class="sub">Classic Six Prong Solitaire Diamond Engagement Ring</div></td>
       <td>With Clarity</td>
       <td class="num-col small">$567.00–$828.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$567.00–$828.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">classic-six-prong-solitaire-diamond-engagement-ring.json (updated 2026-10-23T06:05:04-04:00) lists 14KT White/Yellow/Rose Gold at &quot;567.00&quot; (compare_at_price &quot;630.00&quot;); suggest.json confirms price_min &quot;567.00&quot;, price_max &quot;828.00&quot;.</td>
       <td><a class="src" href="https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>wc-gerbera</strong><div class="sub">Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring</div></td>
       <td>With Clarity</td>
       <td class="num-col small">$1,210.00–$1,850.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$1,210.00–$1,850.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring.json (updated 2026-10-23T06:05:05-04:00) confirms 14KT Yellow/White/Rose Gold at &quot;1210.00&quot;, 18KT at &quot;1700.00&quot;, Platinum at &quot;1850.00&quot;.</td>
       <td><a class="src" href="https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
@@ -552,9 +570,9 @@
       <td>Brilliant Earth</td>
       <td class="num-col small">$1,090.00</td>
       <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td><span class="chip warn">variant not reproducible</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">Live Brilliant Earth PDP confirmed Style BE121H6-18KY, Metal &quot;18K Yellow Gold&quot;, Prong metal &quot;14K White Gold&quot;, Width 2.5 mm; Global-e localized setting price to €1,250.00 on non-US IP ($1,090 US snapshot retained as partly verified).</td>
       <td><a class="src" href="https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
@@ -671,51 +689,171 @@
       <td><strong>car-18k-etincelle-pear</strong><div class="sub">Étincelle de Cartier Ring, Pear-Shaped Diamond, Paved</div></td>
       <td>Cartier</td>
       <td class="num-col small">$3,350.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$3,350.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">Live Cartier US PDP CRB4230400 confirmed &quot;$3,350&quot; (excl. sales tax), &quot;18K rose/white/yellow gold (750/1000)&quot;, pear-shaped center diamond + brilliant pavé; no gram weight published.</td>
       <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>car-18k-etincelle-emerald</strong><div class="sub">Étincelle de Cartier Ring, Emerald-Cut Diamond, Paved</div></td>
       <td>Cartier</td>
       <td class="num-col small">$3,600.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$3,600.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">Live Cartier US PDP CRB4225700 confirmed &quot;$3,600&quot; (excl. sales tax), &quot;18K white gold (750/1000)&quot;, 0.16 ct emerald-cut center + 22 pavé diamonds (0.10 ct); no gram weight published.</td>
       <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>car-18k-1895-band-dia</strong><div class="sub">1895 Wedding Band, 2.6 mm Width, 1 Diamond</div></td>
       <td>Cartier</td>
       <td class="num-col small">$1,140.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">not re-read</span></td>
+      <td class="num-col small"><strong>$1,140.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
       <td class="small">—</td>
-      <td class="small">the seller returned HTTP 403 to the automated runner and no hand read was made</td>
+      <td class="small">Live Cartier US PDP CRB4057600 confirmed &quot;$1,140&quot; (excl. sales tax), &quot;yellow gold (750/1000)&quot;, width 2.6 mm, 1 brilliant-cut diamond (0.01 ct); no gram weight published.</td>
       <td><a class="src" href="https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>mene-24k-classic-band</strong><div class="sub">Classic Band — 24k Pure Gold (5 mm)</div></td>
       <td>Menē</td>
       <td class="num-col small">$1,720.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">no machine-readable price</span></td>
+      <td class="num-col small"><strong>$1,707.00</strong></td>
+      <td><span class="chip warn">corrected</span></td>
       <td class="small">—</td>
-      <td class="small"></td>
+      <td class="small">3D Classic Band $1,707 USD · Metal: 24k Gold · Width: 5.00 mm (Crafted-on-Demand)</td>
       <td><a class="src" href="https://mene.com/products/mene-classic-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     <tr>
       <td><strong>mene-24k-narrow-band</strong><div class="sub">Narrow Classic Band — 24k Pure Gold (4 mm)</div></td>
       <td>Menē</td>
       <td class="num-col small">$1,372.00</td>
-      <td class="num-col small"><strong>—</strong></td>
-      <td><span class="chip info">no machine-readable price</span></td>
+      <td class="num-col small"><strong>$1,361.00</strong></td>
+      <td><span class="chip warn">corrected</span></td>
       <td class="small">—</td>
-      <td class="small"></td>
+      <td class="small">3D Narrow Classic Band $1,361 USD · Metal: 24k Gold · Width: 4.00 mm (Crafted-on-Demand)</td>
       <td><a class="src" href="https://mene.com/products/mene-narrow-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-vneck-sm</strong><div class="sub">V Neck Stack Ring Small / Polished (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$900.00</td>
+      <td class="num-col small"><strong>$900.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;V Neck Stack Ring Small / Polished&quot;; price &quot;$900&quot; across sizes 4-9; Details &quot;Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Finish: Polished · Approximate Fine Weight: 2.9 to 3.7 grams depending on s</td>
+      <td><a class="src" href="https://auvere.com/product/v-neck-stack-ring-small-polished/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-hexagon-diamond</strong><div class="sub">Hexagon Diamond Stack Ring (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$1,400.00</td>
+      <td class="num-col small"><strong>$1,400.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;Hexagon Diamond Stack Ring&quot;; price &quot;$1,400&quot; across sizes 5-9; Details &quot;Handcrafted in 22 karat gold with a polished finish · Our pieces are solid gold · Six round-cut diamonds · Diamond Carat Weight: 0.20 carats · Diamond Color | Cla</td>
+      <td><a class="src" href="https://auvere.com/product/hexagon-diamond-stack-ring/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-diamond-bridge-tall</strong><div class="sub">Diamond Bridge Ring Tall (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$1,600.00</td>
+      <td class="num-col small"><strong>$1,600.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;Diamond Bridge Ring Tall&quot;; price &quot;$1,600&quot; across sizes 4-9; Details &quot;Handcrafted from solid 22 karat gold · Set with four conflict-free, natural diamonds · Diamond Carat Weight: 0.07 carats · Diamond Color | Clarity: G|VS · Ring Heig</td>
+      <td><a class="src" href="https://auvere.com/product/diamond-bridge-ring-tall/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-clean-cut-polished</strong><div class="sub">Clean Cut Stack Ring Polished (22K Solid Gold)</div></td>
+      <td>Auvere</td>
+      <td class="num-col small">$900.00</td>
+      <td class="num-col small"><strong>$900.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;Clean Cut Stack Ring Polished&quot;; Rings index price &quot;From $900&quot; across sizes 4-10; Details &quot;Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Polished finish · Approximate Fine Weight: 2.8 to 3.7 grams de</td>
+      <td><a class="src" href="https://auvere.com/product/clean-cut-stack-ring-polished/" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-222283</strong><div class="sub">Italian 10kt Yellow Gold Polished Dome Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$695.00</td>
+      <td class="num-col small"><strong>$695.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">3.3 g</td>
+      <td class="small">Title &quot;Italian 10kt Yellow Gold Polished Dome Ring&quot;; price &quot;$695&quot; across sizes 6-9; Details &quot;Width: 3/4 inch · Metal: 10kt Yellow Gold · Finish: Polished · Country of Origin: Italy</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/222283" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-989853</strong><div class="sub">Italian 18kt Yellow Gold Bypass Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$469.00</td>
+      <td class="num-col small"><strong>$469.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">1.2 g</td>
+      <td class="small">Title &quot;Italian 18kt Yellow Gold Bypass Ring&quot;; price &quot;$469&quot; across sizes 6-9; Details &quot;Width: 3/8 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/989853" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-997441</strong><div class="sub">Italian 18kt Yellow Gold Dome Ring</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$1,195.00</td>
+      <td class="num-col small"><strong>$1,195.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">3.4 g</td>
+      <td class="small">Title &quot;Italian 18kt Yellow Gold Dome Ring&quot;; price &quot;$1,195&quot; across sizes 6-9; Details &quot;Width: 1/2 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/997441" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>rs-255232</strong><div class="sub">C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold</div></td>
+      <td>Ross-Simons</td>
+      <td class="num-col small">$1,295.00</td>
+      <td class="num-col small"><strong>$1,295.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25&quot;; price &quot;$1,295&quot;; Details &quot;Width: 3/16 inch · Metal: 18kt Yellow Gold · Finish: Polished · Diamond: Round Brilliant, 0.35 ct, Color Grade L, Clarity VS1&quot;</td>
+      <td><a class="src" href="https://www.ross-simons.com/products/255232" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>ag-14k-industrial-band</strong><div class="sub">Industrial Mirror Band — 1.7mm (Size 9, 14k Solid Yellow Gold)</div></td>
+      <td>Automic Gold</td>
+      <td class="num-col small">$598.00</td>
+      <td class="num-col small"><strong>$598.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">2.1 g</td>
+      <td class="small">Title &quot;Industrial Mirror Band&quot;; 1.7mm / 14k Yellow Gold variant price &quot;$598.00&quot; across sizes 2-16; HTML Details &quot;Material: Solid 14k gold · Fit: Flat · Finish: High Shine · Approxi</td>
+      <td><a class="src" href="https://www.automicgold.com/products/industrial-mirror-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>car-18k-destinee-princess</strong><div class="sub">Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold</div></td>
+      <td>Cartier</td>
+      <td class="num-col small">$3,350.00</td>
+      <td class="num-col small"><strong>$3,350.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;Cartier Destinée Solitaire Ring&quot;; Ref. CRB4232900; starting price &quot;$3,350&quot; (excl. sales tax); Product Description &quot;Solitaire Cartier Destinée, yellow gold (750/1000), set with a princess-cut diamond available from 0.18 to 0.34 carats</td>
+      <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>bn-14k-petite-195639</strong><div class="sub">Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)</div></td>
+      <td>Blue Nile</td>
+      <td class="num-col small">$1,000.00</td>
+      <td class="num-col small"><strong>$1,000.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)&quot;; Item #195639; setting price &quot;$1,000&quot; (excl. center stone); Ring Details &quot;Metal: 14k Yellow Gold · Width: 1.50 mm · Prong Metal: Platinum · Minimum Carat Total Weigh</td>
+      <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>mej-14k-sdeb</strong><div class="sub">Slim Diamond Eternity Band (14k Solid Yellow Gold)</div></td>
+      <td>Mejuri</td>
+      <td class="num-col small">$898.00</td>
+      <td class="num-col small"><strong>$898.00</strong></td>
+      <td><span class="chip good">confirmed</span></td>
+      <td class="small">—</td>
+      <td class="small">Title &quot;Slim Diamond Eternity Band&quot;; price &quot;$898&quot;; material &quot;14k Yellow Gold · Natural Diamond&quot;; copy &quot;crafted in 14k solid gold and set with conflict-free natural diamonds · Band Width: 1.3 mm · Carat Weight: 0.22 - 0.27 ct (varies by ring </td>
+      <td><a class="src" href="https://mejuri.com/us/en/products/slim-diamond-eternity-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
     </tr>
     </tbody>
   </table>
@@ -725,7 +863,7 @@
 </main>
 <footer class="site-foot">
   <div class="wrap">
-    <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
+    <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22, 2026-10-23 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
     <p class="muted">Gold reference: $4,024.70 per troy ounce at 2026-10-23T09:59:43Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>

@@ -1,30 +1,18 @@
 {
   "schema_version": "1.0.0",
   "session": "sess-545688f3",
-  "generated_at": "2026-10-23T10:05:00Z",
+  "generated_at": "2026-10-23T10:18:00Z",
   "flags": [
-    {
-      "temp_key": "rs939479-hallucination-corrected",
-      "severity": "high",
-      "category": "verification-audit",
-      "title": "Anti-hallucination catch: Ross-Simons SKU 939479 mislabeled as a 1.00 ct diamond eternity band — corrected to Claddagh Ring",
-      "affected": "rs-939479 (Ross-Simons SKU 939479) and COORDINATION.md §13 prose citations",
-      "finding": "Line-by-line primary-source re-verification on 2026-10-23 caught a genuine identity hallucination in data/rings.json: SKU 939479 (https://www.ross-simons.com/products/939479) had been recorded with the right price ($499), karat (14kt), and gold weight (1.5 g), but with a fabricated title and stone ('1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold', Width 1/16 in). The live official Ross-Simons page is actually 'Italian 14kt Yellow Gold Claddagh Ring' ($499, 14kt Yellow Gold, Gold Weight 1.5 grams, Width 3/8 inch, stone-free). The same audit pass also caught and fixed 16 prose-only price typos in COORDINATION.md §13.",
-      "action": "Corrected rs-939479 across data/rings.json, data/reverification.json, and data/sources.json, added automated title-token cross-check H02 in scripts/audit_545688f3.mjs, and corrected COORDINATION.md §13.",
-      "status": "needs review",
-      "sources": [
-        "https://www.ross-simons.com/products/939479"
-      ]
-    },
     {
       "temp_key": "auvere-22k-fine-weight-ambiguity",
       "severity": "high",
-      "category": "missing-data",
+      "type": "missing data",
       "title": "Auvere 22K PDPs label size-dependent gram ranges \"Approximate Fine Weight\" — kept blank rather than guessed",
       "affected": "auv-22k-vneck-sm, auv-22k-hexagon-diamond, auv-22k-diamond-bridge-tall, auv-22k-clean-cut-polished",
-      "finding": "Auvere closes the 22K (91.7% gold) tier with explicit 'Handcrafted from solid 22 karat gold' disclosures, and its live PDPs print gram ranges by ring size (e.g. 'Approximate Fine Weight: 2.9 to 3.7 grams depending on size' on V Neck Small; '3.3 to 3.5 grams' on Hexagon Diamond; '5 to 6.1 grams' on Diamond Bridge Tall; '2.8 to 3.7 grams' on Clean Cut Polished). However, whereas older search-indexed snippets read 'Approximate Gold Weight', Auvere's live PDP template labels the field 'Approximate Fine Weight'. In precious-metals terminology, 'fine weight' means 24K pure gold content, whereas 'gold weight' means 22K alloy mass — an 8.3% difference. Under our strict No-Hallucinations rule, weight_g_low/weight_g_high are kept null so the calculator never guesses which basis Auvere intended.",
-      "action": "Ask concierge@auvere.com (1-866-317-7779) in writing before checkout for the exact gross 22K alloy gram weight of your specific ring size, and weigh on a calibrated 0.01 g scale upon delivery.",
+      "finding": "Auvere closes the 22K (91.7% gold) tier with explicit \"Handcrafted from solid 22 karat gold\" disclosures, and its live PDPs print gram ranges by ring size (\"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" on V Neck Small; \"3.3 to 3.5 grams\" on Hexagon Diamond; \"5 to 6.1 grams\" on Diamond Bridge Tall; \"2.8 to 3.7 grams\" on Clean Cut Polished). However, whereas older search-indexed snippets read \"Approximate Gold Weight\", Auvere's live PDP template labels the field \"Approximate Fine Weight\". In precious-metals terminology, \"fine weight\" means 24K pure gold content while \"gold weight\" means 22K alloy mass — an 8.3% difference. Under our No-Hallucinations rule, weight_g_low/weight_g_high are kept null so the calculator never guesses which basis Auvere intended.",
+      "buyer_action": "Ask concierge@auvere.com (1-866-317-7779) in writing before checkout whether the quoted grams represent gross 22K alloy weight or net 24K fine-gold content for your exact ring size, and weigh on a calibrated 0.01 g scale upon delivery.",
       "status": "needs review",
+      "found_by": "sess-545688f3",
       "sources": [
         "https://auvere.com/product/v-neck-stack-ring-small-polished/",
         "https://auvere.com/product/hexagon-diamond-stack-ring/",
@@ -34,12 +22,13 @@
     {
       "temp_key": "auvere-15day-vs-30day-returns",
       "severity": "high",
-      "category": "policy-verification",
+      "type": "policy contradiction",
       "title": "Auvere live Returns modal enforces a 15-day delivery window + intact-tag rule (contradicting 30-day Journal post)",
-      "affected": "all 4 Auvere 22K listings (retailer: auvere)",
-      "finding": "Opening Auvere's live Shipping & Returns policy (auvere.com/shipping-returns/) on 2026-10-23 confirmed that US buyers have only 15 days from delivery to request a free FedEx return or exchange, must tender the package within 10 days of receiving the label, must leave the original jewelry security tag attached and untouched, and cannot return Rare, bespoke, engraved, or Sale pieces. Meanwhile, Auvere's own editorial guide (auvere.com/journal/how-to-buy-gold-jewelry-online/) still refers to a '30-day return policy'.",
-      "action": "Treat the 15-day delivery deadline as binding, keep the security tag completely untouched during day-one independent XRF + scale inspection, and confirm return eligibility in writing before ordering.",
+      "affected": "auv-22k-vneck-sm, auv-22k-hexagon-diamond, auv-22k-diamond-bridge-tall, auv-22k-clean-cut-polished",
+      "finding": "Opening Auvere's live Shipping & Returns policy (auvere.com/shipping-returns/) on 2026-10-23 confirmed that US buyers have only 15 days from delivery to request a free FedEx return or exchange, must tender the package within 10 days of receiving the label, must leave the original jewelry security tag attached and untouched, and cannot return Rare, bespoke, engraved, or Sale pieces. Meanwhile, Auvere's own editorial buying guide (auvere.com/journal/how-to-buy-gold-jewelry-online/) still refers to a \"30-day return policy\".",
+      "buyer_action": "Treat the 15-day delivery deadline as binding, keep the security tag completely untouched during day-one independent XRF + scale inspection, and confirm return eligibility in writing before ordering.",
       "status": "needs review",
+      "found_by": "sess-545688f3",
       "sources": [
         "https://auvere.com/shipping-returns/",
         "https://auvere.com/help/customer-support/"
@@ -48,12 +37,13 @@
     {
       "temp_key": "mejuri-gallery-alt-metal-mismatch",
       "severity": "medium",
-      "category": "page-contradiction",
-      "title": "Mejuri gallery image alt text misstates metal ('14k solid gold' on 10k rings; 'silver/platinum' on 14k eternity band)",
+      "type": "page contradiction",
+      "title": "Mejuri gallery image alt text misstates metal (\"14k solid gold\" on 10k rings; \"silver/platinum\" on 14k eternity band)",
       "affected": "mej-10k-dlr, mej-10k-sig, mej-14k-sdeb",
-      "finding": "Live HTML inspection on 2026-10-23 showed that Mejuri's 10k Solid Yellow Gold Diamonds Line Ring ($348) and 10k Signet Ring ($348) carry gallery image alt text stating 'crafted in 14k solid gold', while the 14k Yellow Gold Slim Diamond Eternity Band ($898) carries gallery alt text referencing 'silver/platinum'. In addition, two unverified thickness numbers ('Band Thickness: 1.45 mm' and 'Thickness: 1.2 mm') not present on the live Mejuri PDPs were removed from stored evidence.",
-      "action": "Verify the selected metal dropdown and order-confirmation SKU (10k vs 14k vs sterling silver) before paying, and confirm the 10K/417 or 14K/585 stamp + XRF reading upon delivery.",
+      "finding": "Live HTML inspection on 2026-10-23 showed that Mejuri's 10k Solid Yellow Gold Diamonds Line Ring ($348) and 10k Signet Ring ($348) carry gallery image alt text stating \"crafted in 14k solid gold\", while the 14k Yellow Gold Slim Diamond Eternity Band ($898) carries gallery alt text referencing \"silver/platinum\". In addition, two unverified thickness numbers (\"Band Thickness: 1.45 mm\" and \"Thickness: 1.2 mm\") not present on the live Mejuri PDPs were removed from stored evidence.",
+      "buyer_action": "Verify the selected metal dropdown and order-confirmation SKU (10k vs 14k vs sterling silver) before paying, and confirm the 10K/417 or 14K/585 stamp + XRF reading upon delivery.",
       "status": "needs review",
+      "found_by": "sess-545688f3",
       "sources": [
         "https://mejuri.com/us/en/products/diamonds-line-ring",
         "https://mejuri.com/us/en/products/signet-ring",
@@ -63,12 +53,13 @@
     {
       "temp_key": "ross-simons-gold-over-sterling-search-traps",
       "severity": "medium",
-      "category": "plated-trap",
-      "title": "Ross-Simons high-karat search results mix solid gold with '18kt/22kt Gold Over Sterling' plated rings (excluded)",
+      "type": "plated trap",
+      "title": "Ross-Simons high-karat search results mix solid gold with \"18kt/22kt Gold Over Sterling\" plated rings (excluded)",
       "affected": "Excluded Ross-Simons search results (SKUs 992287, 907222, 834119, 907229)",
-      "finding": "Querying Ross-Simons' storefront search API for '18kt gold ring' and '22kt gold ring' on 2026-10-23 surfaced electroplated silver rings titled '18kt Gold Over Sterling' and '22kt Gold Over Sterling' alongside genuine solid-karat rings. Under 16 CFR § 23.3 & § 23.4, gold-over-sterling is plated silver (or vermeil only if ≥2.5 microns), NOT solid gold — all such SKUs were rejected from the canonical table.",
-      "action": "Always inspect the Metal line in Ross-Simons' Details panel for 'Sterling' or 'Gold Over' before buying; any listing mentioning 'Gold Over Sterling' is plated silver, not solid gold.",
+      "finding": "Querying Ross-Simons' storefront search API for \"18kt gold ring\" and \"22kt gold ring\" on 2026-10-23 surfaced electroplated silver rings titled \"18kt Gold Over Sterling\" and \"22kt Gold Over Sterling\" alongside genuine solid-karat rings. Under 16 CFR § 23.3 & § 23.4, gold-over-sterling is plated silver (or vermeil only if ≥2.5 microns), NOT solid gold — all such SKUs were rejected from the canonical table.",
+      "buyer_action": "Always inspect the Metal line in Ross-Simons' Details panel for \"Sterling\" or \"Gold Over\" before buying; any listing mentioning \"Gold Over Sterling\" is plated silver, not solid gold.",
       "status": "needs review",
+      "found_by": "sess-545688f3",
       "sources": [
         "https://www.ross-simons.com/products/989853",
         "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
@@ -77,12 +68,13 @@
     {
       "temp_key": "spot-repricing-2026-10-23",
       "severity": "low",
-      "category": "verification-audit",
-      "title": "2026-10-23 live re-read caught same-week price shifts on Menē 24K bands (-$11/-$13), Automic Gold WG (+$42) & Blue Nile (+$10)",
+      "type": "price drift",
+      "title": "2026-10-23 live re-read caught intraday repricing on Menē 24K (-$11/-$13), Automic Gold WG (+$42), Blue Nile (+$10) & Brilliant Earth Global-e (€1,250)",
       "affected": "mene-24k-classic-band, mene-24k-narrow-band, ag-14k-radiant-3ct, bn-14k-petite-195639, be-18k-6p-121h6",
-      "finding": "Re-checking official retailer pages on 2026-10-23 against the 2026-10-22 baseline confirmed that prices move intraday: Menē Classic 24K moved $1,720 -> $1,707 and Narrow 24K $1,372 -> $1,361 alongside spot gold ($4,026.70 -> $4,025.60/ozt); Automic Gold's Nickel-Free 14K White Gold variant on Radiant 3ct moved $3,194 -> $3,236 (14K Yellow Gold unchanged at $3,074); Blue Nile item 195639 moved $990 -> $1,000; and Brilliant Earth BE121H6-18KY rendered €1,250.00 under non-US Global-e geo-IP localization ($1,090 US snapshot).",
-      "action": "Treat all catalog prices as dated snapshots rather than live quotes; always re-open the official product link in USD immediately before checkout.",
+      "finding": "Re-checking official retailer pages on 2026-10-23 confirmed that prices move intraday: Menē Classic 24K moved $1,720 -> $1,707 USD and Narrow 24K $1,372 -> $1,361 USD alongside spot gold; Automic Gold's Nickel-Free 14K White Gold variant on Radiant 3ct moved $3,194 -> $3,236 (14K Yellow Gold unchanged at $3,074); Blue Nile item 195639 moved $990 -> $1,000; and Brilliant Earth BE121H6-18KY rendered €1,250.00 under non-US Global-e geo-IP localization ($1,090 US snapshot).",
+      "buyer_action": "Treat all catalog prices as dated snapshots rather than live quotes; always re-open the official product link in USD immediately before checkout.",
       "status": "needs review",
+      "found_by": "sess-545688f3",
       "sources": [
         "https://mene.com/products/mene-classic-band-gold",
         "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",

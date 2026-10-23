@@ -3,7 +3,7 @@
  * Deep anti-hallucination, title-identity, 5-karat-tier, prose-parity & security audit
  * for session 545688f3 (`H01`–`H12`).
  *
- * Runs alongside `scripts/verify.mjs` (`S01`–`S19`), `scripts/audit_0804e222.mjs` (`A01`–`A10`),
+ * Runs alongside `scripts/verify.mjs` (`S01`–`S20`), `scripts/audit_0804e222.mjs` (`A01`–`A10`),
  * and `npm test` (`/site/` suite). Exits non-zero if ANY assertion fails.
  */
 import { readFile, readdir } from 'node:fs/promises';
@@ -19,7 +19,8 @@ const sourcesDoc = await readJson('data/sources.json');
 const flagged = await readJson('data/flagged.json');
 const gold = await readJson('data/gold-price.json');
 const checklist = await readJson('data/checklist.json');
-const reverification = await readJson('data/reverification.json');
+const compliance = await readJson('data/compliance.json');
+const ver23 = await readJson('data/verification-2026-10-23.json');
 const latestChecks = await readJson('data/checks/latest.json');
 
 const results = [];
@@ -38,30 +39,28 @@ async function checkGroup(id, name, fn) {
 /* H01: Complete 5-tier legal karat spectrum (10K / 14K / 18K / 22K / 24K) */
 await checkGroup('H01', 'Complete 5-tier karat spectrum (10K / 14K / 18K / 22K / 24K)', async (assert) => {
   for (const k of ['10K', '14K', '18K', '22K', '24K']) {
-    const count = rings.rows.filter((r) => r.karat === k).length;
-    assert(count >= 2, `Expected >= 2 verified rows in ${k}, got ${count}`);
+    const count = rings.rows.filter((r) => !r.withdrawn && r.karat === k).length;
+    assert(count >= 2, `Expected >= 2 active verified rows in ${k}, got ${count}`);
   }
-  assert(rings.rows.length >= 71, `Expected >= 71 verified rows, got ${rings.rows.length}`);
+  assert(rings.rows.length >= 71, `Expected >= 71 total rows, got ${rings.rows.length}`);
 });
 
-/* H02: Title-to-evidence identity guard (prevents rs-939479-style title hallucinations) */
-await checkGroup('H02', 'Title-to-evidence identity guard & rs-939479 Claddagh verification', async (assert) => {
+/* H02: Title-to-evidence identity guard & rs-939479 withdrawal verification */
+await checkGroup('H02', 'Title-to-evidence identity guard & rs-939479 F51 withdrawal', async (assert) => {
   const rs939479 = rings.rows.find((r) => r.id === 'rs-939479');
   assert(Boolean(rs939479), 'Missing rs-939479');
   if (rs939479) {
-    assert(
-      rs939479.title === 'Italian 14kt Yellow Gold Claddagh Ring',
-      `rs-939479 must be Claddagh Ring, got "${rs939479.title}"`
-    );
-    assert(rs939479.stone === 'None', `rs-939479 must have stone="None", got "${rs939479.stone}"`);
-    assert(!/eternity/i.test(rs939479.title), 'rs-939479 title still contains fabricated "Eternity"');
+    assert(rs939479.withdrawn === true, 'rs-939479 must stay withdrawn=true (F51)');
+    assert(rs939479.price_unverified === true, 'rs-939479 must carry price_unverified=true');
   }
+  assert(flagged.items.some((f) => f.id === 'F51' && /Claddagh/i.test(f.finding)), 'Flag F51 must document SKU 939479 Claddagh mismatch');
   const stop = new Set([
     'the', 'and', 'for', 'with', 'in', 'of', 'ring', 'band', 'gold', 'yellow', 'white',
     'rose', 'solid', 'variant', 'size', 'pure', '10k', '14k', '18k', '22k', '24k',
     '10kt', '14kt', '18kt', '22kt', '24kt',
   ]);
   for (const r of rings.rows) {
+    if (r.withdrawn) continue;
     const cleanTitle = r.title.replace(/\(.*?\)/g, ' ').replace(/[—–\-/,.:]/g, ' ');
     const tokens = cleanTitle
       .toLowerCase()
@@ -104,11 +103,13 @@ await checkGroup('H03', 'Non-guessing discipline on Auvere 22K & Menē 24K weigh
 
 /* H04: Multi-karat published weight breadth & parcel-weight anti-trap */
 await checkGroup('H04', 'Published gram weights across 10K/14K/18K & Shopify parcel guard', async (assert) => {
-  const weighted = rings.rows.filter((r) => r.weight_g_low !== null);
-  assert(weighted.length >= 25, `Expected >= 25 weighted rings, got ${weighted.length}`);
+  const totalWeighted = rings.rows.filter((r) => r.weight_g_low !== null);
+  const weighted = rings.rows.filter((r) => !r.withdrawn && r.weight_g_low !== null);
+  assert(totalWeighted.length >= 25, `Expected >= 25 total weighted rings, got ${totalWeighted.length}`);
+  assert(weighted.length >= 24, `Expected >= 24 active weighted rings, got ${weighted.length}`);
   for (const k of ['10K', '14K', '18K']) {
     const kWeighted = weighted.filter((r) => r.karat === k).length;
-    assert(kWeighted >= 2, `Expected >= 2 weighted rings in ${k}, got ${kWeighted}`);
+    assert(kWeighted >= 2, `Expected >= 2 active weighted rings in ${k}, got ${kWeighted}`);
   }
   for (const r of weighted) {
     assert(
@@ -118,9 +119,12 @@ await checkGroup('H04', 'Published gram weights across 10K/14K/18K & Shopify par
   }
 });
 
-/* H05: 11-retailer policy, contact, BBB & source-registry parity */
-await checkGroup('H05', '11-retailer policy, contact, BBB & row-count parity', async (assert) => {
-  assert(retailersDoc.retailers.length >= 11, `Expected >= 11 retailers, got ${retailersDoc.retailers.length}`);
+/* H05: 11-retailer policy, contact, BBB, compliance & ver23 parity */
+await checkGroup('H05', '11-retailer policy, contact, BBB, compliance & ver23 parity', async (assert) => {
+  assert(retailersDoc.retailers.length === 11, `Expected 11 retailers, got ${retailersDoc.retailers.length}`);
+  assert(compliance.rows.length === rings.rows.length, `compliance.rows (${compliance.rows.length}) != rings (${rings.rows.length})`);
+  assert(ver23.rows.length === rings.rows.length, `ver23.rows (${ver23.rows.length}) != rings (${rings.rows.length})`);
+  assert(ver23.summary.not_read === 0, `Expected 0 unread rows on 2026-10-23 after seventh-pass fetches, got ${ver23.summary.not_read}`);
   const auvere = retailersDoc.retailers.find((r) => r.id === 'auvere');
   assert(Boolean(auvere), 'Missing auvere in data/retailers.json');
   if (auvere) {
@@ -150,7 +154,7 @@ await checkGroup('H06', 'Unverified Mejuri thickness purge & new Flagged disclos
   assert(!/1\.45\s*mm/i.test(dlr?.evidence || ''), 'mej-10k-dlr still contains unverified 1.45 mm thickness');
   assert(!/1\.2\s*mm/i.test(sig?.evidence || ''), 'mej-10k-sig still contains unverified 1.2 mm thickness');
   for (const key of [
-    'rs939479-hallucination-corrected',
+    'F_SOURCE_SKU_REPURPOSED',
     'auvere-22k-fine-weight-ambiguity',
     'auvere-15day-vs-30day-returns',
     'mejuri-gallery-alt-metal-mismatch',
@@ -161,6 +165,9 @@ await checkGroup('H06', 'Unverified Mejuri thickness purge & new Flagged disclos
       flagged.items.some((f) => f.temp_key === key),
       `Missing mandatory audit flag temp_key="${key}" in data/flagged.json`
     );
+  }
+  for (const f of flagged.items) {
+    assert(Boolean(f.type && f.buyer_action), `Flag ${f.id} missing type or buyer_action`);
   }
 });
 
@@ -182,6 +189,7 @@ await checkGroup('H08', '2026-10-23 live gold spot & Menē/Blue Nile price fresh
     (gold.primary.publisher_timestamp || '').startsWith('2026-10-23T'),
     `Expected 2026-10-23 gold timestamp, got ${gold.primary.publisher_timestamp}`
   );
+  assert(/^https:\/\//.test(gold.primary.source_url || ''), 'gold.primary.source_url missing');
   assert(gold.grams_per_troy_ounce === 31.1034768, 'Exact NIST grams_per_troy_ounce broken');
   assert(gold.true_grains_per_troy_ounce === 480, 'Exact troy grains_per_troy_ounce broken');
   const mc = rings.rows.find((r) => r.id === 'mene-24k-classic-band');
@@ -198,8 +206,8 @@ await checkGroup('H09', 'Prose-to-JSON synchronization in README.md & COORDINATI
   const coord = await readFile(join(ROOT, 'COORDINATION.md'), 'utf8');
   const kc = rings.rows.reduce((a, r) => ((a[r.karat] = (a[r.karat] || 0) + 1), a), {});
   assert(
-    readme.includes(`${rings.rows.length} verified listings`),
-    `README.md missing exact "${rings.rows.length} verified listings" count`
+    readme.includes(`${rings.rows.length} listings`) || readme.includes(`${rings.rows.length} verified listings`),
+    `README.md missing exact "${rings.rows.length}" total listing count`
   );
   for (const k of ['10K', '14K', '18K', '22K', '24K']) {
     assert(
@@ -211,8 +219,20 @@ await checkGroup('H09', 'Prose-to-JSON synchronization in README.md & COORDINATI
     readme.includes(`${retailersDoc.retailers.length} retailers`),
     `README.md missing "${retailersDoc.retailers.length} retailers"`
   );
-  // Ensure the 16 fabricated §13 prose prices were corrected in COORDINATION.md
-  for (const bad of ['997811` ($119', '($3,890, `5.4 g`)', '`CRB4230400` ($2,620)', 'Classic Band ($2,489)']) {
+  for (const bad of [
+    '(`10K`, `$129`',
+    '(`14K`, `$569`',
+    'Ring, `$298`)',
+    'Ring, `$398`)',
+    '(`$479`, `1.62 g`)',
+    '(`$750`, `1.4 g`)',
+    '(`$1,550`, `3.7 g`)',
+    '(`$1,650`, `3.7 g`)',
+    '(`$1,390`)',
+    '(`$4,150`)',
+    '(`$860`)',
+    '(`$1,590`)',
+  ]) {
     assert(!coord.includes(bad), `COORDINATION.md still contains uncorrected hallucinated price string: ${bad}`);
   }
 });
@@ -224,11 +244,10 @@ await checkGroup('H10', 'Front-page No-Hallucinations rule & look-for-hallucinat
   const rulePos = indexHtml.indexOf('No hallucinations — the rule this whole project runs on');
   assert(rulePos > mainPos && rulePos - mainPos < 1600, 'No-hallucinations banner missing from top of index.html');
   assert(
-    /look for hallucinations|spot[- ]check|verify every claim/i.test(indexHtml),
+    /look for hallucinations/i.test(indexHtml),
     'index.html must explicitly recommend looking for hallucinations against official links'
   );
-  const karatsHtml = await readFile(join(ROOT, 'karats.html'), 'utf8');
-  assert(!karatsHtml.includes('<td>22K</td><td>91.7%</td><td>916 / 917</td><td class="num">0</td>'), 'karats.html still shows 0 rings in 22K');
+  assert(indexHtml.includes('<option value="22K">22K</option>'), 'index.html karat filter missing 22K');
 });
 
 /* H11: HTML/JSON/Markdown security, XSS, rel=noopener & credential-leak scan */
@@ -275,6 +294,10 @@ await checkGroup('H12', 'Zero-loss peer preservation & pass-ID synchronization',
     'site/index.html',
     'docs/index.html',
     'research/candidates.json',
+    'requirements.html',
+    'recheck.html',
+    'data/compliance.json',
+    'data/verification-2026-10-23.json',
     'data/session-0804e222/new-rings.json',
     'data/session-545688f3/new-rings.json',
     'data/session-545688f3/retailer-auvere.json',

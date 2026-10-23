@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-10-22",
-  "note": "Retailer identity, contact details, official return/resize policies, and independent Better Business Bureau (bbb.org) records verified from primary pages on 2026-10-22 across all 10 retailers.",
+  "as_of": "2026-10-23",
+  "note": "Retailer identity, contact details, official return/resize policies, and independent Better Business Bureau (bbb.org) records verified from primary pages through 2026-10-23 across all 11 retailers (including 22K solid-gold house Auvere).",
   "retailers": [
     {
       "id": "ross-simons",
@@ -16,7 +16,7 @@
       "return_summary": "30 days from receipt for refund or exchange; items must be original and unused; shipping non-refundable; merchandise damaged, altered, or resized by a jeweler other than Ross-Simons cannot be returned; all returns are inspected by QA/gemologist before credit.",
       "return_source": "https://www.ross-simons.com/policies/refund-policy",
       "checkout_note": "Card processing handled by the retailer; pay by credit card so you keep chargeback rights.",
-      "rows": 19,
+      "rows": 23,
       "bbb_rating": "A+",
       "bbb_status": "BBB Accredited Business (since 2017-03-15)",
       "bbb_summary": "4.42/5 across 579 BBB customer reviews",
@@ -98,7 +98,7 @@
       "return_summary": "30 days starting from shipment date (NOT delivery date). Free insured US return shipping via RMA (maximum 2 complimentary US returns per customer per year). Exclusions: Rings resized after purchase, engraved items (except rings where engraving removal applies), custom-designed jewelry, Diamond Upgrade Program items, and final-sale items are non-returnable; missing diamond grading report incurs $150 replacement fee.",
       "return_source": "https://www.bluenile.com/policies/returns",
       "checkout_note": "Product pages carry a 'Free Returns' badge but the window was not stated, so no return window is claimed here. Get it in writing.",
-      "rows": 8,
+      "rows": 9,
       "bbb_rating": "A+",
       "bbb_status": "BBB Accredited Business (since 1999-03-01)",
       "bbb_summary": "A+ BBB grade on Seattle HQ file (121 complaints in 3 yrs; separate Newport Beach CA file averages 1.09/5 across 256 customer reviews)",
@@ -118,7 +118,7 @@
       "return_summary": "30 days starting from delivery or in-store pickup date. Free 30-day returns & exchanges in US/CA/UK/AU/DE on unworn items with original packaging. Exclusions: Engraved/monogrammed items, \"Before We Melt\" sale items, gift cards, and worn/altered pieces are final sale and non-returnable; lab-grown diamond items must include original SCS certificate.",
       "return_source": "https://mejuri.com/company/returns-terms",
       "checkout_note": "'From' prices move with ring size and metal - read the price for your exact selection.",
-      "rows": 6,
+      "rows": 7,
       "bbb_rating": "NR / Unaccredited (16 complaints closed on Chicago US file)",
       "bbb_status": "Not BBB Accredited",
       "bbb_summary": "Toronto HQ file opened 2018-12-18; US retail complaints tracked on regional BBB files",
@@ -162,7 +162,7 @@
       "bbb_summary": "BBB NY file opened 2021-03-08; founded 2017-04-21",
       "bbb_source": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097",
       "checkout_note": "In-house NYC solid 14K gold with published gram weights; engraved (+$60) and custom orders are final sale.",
-      "rows": 7
+      "rows": 8
     },
     {
       "id": "cartier",
@@ -182,7 +182,7 @@
       "bbb_summary": "BBB NY Headquarters file opened 2002-10-28",
       "bbb_source": "https://www.bbb.org/us/ny/new-york/profile/jewelry-designers/cartier-0121-356",
       "checkout_note": "Engraved or altered rings are strictly non-returnable; keep tags, Maison box, and certificate intact.",
-      "rows": 3
+      "rows": 4
     },
     {
       "id": "mene",
@@ -203,6 +203,26 @@
       "bbb_source": "https://mene.com/terms-of-service",
       "checkout_note": "7-day return window; up to 10% refund restocking fee; verify delivered Certificate of Authenticity gram weight immediately.",
       "rows": 2
+    },
+    {
+      "id": "auvere",
+      "name": "Auvere",
+      "domain": "auvere.com",
+      "site": "https://auvere.com",
+      "contact_verified": true,
+      "phone": "1-866-317-7779",
+      "email": "concierge@auvere.com",
+      "address_verified": "485 Lexington Ave, Suite 304, New York, NY 10017 (Mon–Fri 9am–5pm EST)",
+      "contact_source": "https://auvere.com/help/customer-support/",
+      "return_policy_verified": true,
+      "return_summary": "15 days from delivery for complimentary US FedEx return or exchange (must ship within 10 days of RMA label issuance); original jewelry tag must remain attached and untouched; Rare, bespoke, engraved, and Sale items are final sale. Note: Auvere's older Journal article still mentions 30 days — live Shipping & Returns modal governs at 15 days (flagged F53).",
+      "return_source": "https://auvere.com/shipping-returns/",
+      "bbb_rating": "A+",
+      "bbb_status": "Not BBB Accredited",
+      "bbb_summary": "Auvere LLC (file opened 2023-06-21, business started 2020-06-05, New York, NY) holds an A+ BBB rating (Not BBB Accredited).",
+      "bbb_source": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132",
+      "checkout_note": "Strict 15-day return window from delivery and original security tag MUST stay attached; ask Concierge in writing for exact gross 22K gram weight for your ring size ('Approximate Fine Weight' on PDPs is ambiguous — see F52).",
+      "rows": 4
     }
   ]
 }

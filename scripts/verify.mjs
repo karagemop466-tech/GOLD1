@@ -468,7 +468,11 @@ const counted = (fn) => fn;
     failures.push(`${reverifiedRows} rows are marked re-verified but the ledger has ${(ledger.entries || []).length} entries`);
   }
   add('S17', 'Data age', 'A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.', failures);
-  const flaggedIds = new Set(flagged.items.map((i) => i.id));
+}
+
+/* ---------------------------------------------------------------- S18 */
+{
+  const failures = [];
   for (const r of rings.rows) {
     assertions++;
     if (r.price_unverified) {
@@ -486,16 +490,11 @@ const counted = (fn) => fn;
     }
   }
   add('S18', 'Unverified values are published as unverified', 'A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.', failures);
-  const htmlFiles = [];
-  const walk = async (dir) => {
-    for (const e of await readdir(dir, { withFileTypes: true })) {
-      if (e.name.startsWith('.') || e.name === 'node_modules' || e.name === 'dist') continue;
-      const full = join(dir, e.name);
-      if (e.isDirectory()) await walk(full);
-      else if (e.name.endsWith('.html')) htmlFiles.push(full);
-    }
-  };
-  await walk(ROOT);
+}
+
+/* ---------------------------------------------------------------- S19 */
+{
+  const failures = [];
   for (const r of rings.rows) {
     if (!r.price_unverified) continue;
     assertions++;

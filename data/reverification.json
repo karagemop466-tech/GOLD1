@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "pass": "P12",
   "session": "sess-bc088451",
-  "read_at": "2026-10-22T23:39Z",
+  "read_at": "2026-10-23T10:18Z",
   "method": "Each URL below was re-opened in this pass and the price, karat and (where published) the metal weight were read off the page again. The old value is what earlier passes stored; the new value is what the page said on this read. Where a value is unchanged the row keeps its original evidence string and gains reverified_at. Where a value moved, the row is corrected and the move is logged as a flag.",
   "entries": [
     {
@@ -992,9 +992,10 @@
         "karat": "10K",
         "weight_g": null
       },
-      "change": "Added in pass P26-0804e222 from live official PDP; metal weight not in static HTML, kept null.",
-      "verdict": "verified (10K, weight null)",
-      "quote": "Title \"Diamonds Line Ring\"; price \"$348\"; material \"Solid Yellow Gold (10k), Natural Diamond\"; specs \"Band Width: 1.3 mm · Band Thickness: 1.45 mm · Stone Quantity: 6 · Total Carat Weight: >=0.047 ct\"."
+      "change": "Re-verified 2026-10-23 ($348, Solid Yellow Gold 10k, Band Width 1.3 mm); removed unverified thickness string and flagged \"14k solid gold\" gallery alt-text mismatch (Flag F56).",
+      "verdict": "confirmed ($348, 10K solid gold; alt-text mismatch flagged)",
+      "quote": "Title \"Diamonds Line Ring\"; price \"$348\"; material \"Solid Yellow Gold (10k), Natural Diamond\"; specs \"Band Width: 1.3 mm · Stone Quantity: 6 · Total Carat Weight: >=0.047 ct\".",
+      "read_at": "2026-10-23"
     },
     {
       "row": "mej-10k-sig",
@@ -1015,9 +1016,10 @@
         "karat": "10K",
         "weight_g": null
       },
-      "change": "Added in pass P26-0804e222 from live official PDP; metal weight not in static HTML, kept null.",
-      "verdict": "verified (10K, weight null)",
-      "quote": "Title \"Signet Ring\"; price \"$348\"; material \"Solid Yellow Gold (10k)\"; specs \"Top Width: 6 mm · Shank Width: 1 mm · Thickness: 1.2 mm · Handcrafted in 10k solid gold\"; free engraving offered (non-returnable if engraved)."
+      "change": "Re-verified 2026-10-23 ($348, Solid Yellow Gold 10k, Band Width 2.3 mm, Width 5.5 mm); removed unverified thickness string and flagged \"14k solid gold\" gallery alt-text mismatch (Flag F56).",
+      "verdict": "confirmed ($348, 10K solid gold; alt-text mismatch flagged)",
+      "quote": "Title \"Signet Ring\"; price \"$348\"; material \"Solid Yellow Gold (10k)\"; specs \"Band Width: 2.3 mm · Width: 5.5 mm\".",
+      "read_at": "2026-10-23"
     },
     {
       "row": "ag-14k-radiant-3ct",
@@ -1264,13 +1266,14 @@
         "weight_g": null
       },
       "new": {
-        "price": "1720.00",
+        "price": "1707.00",
         "karat": "24K",
         "weight_g": null
       },
-      "change": "Added in pass P26-0804e222 from live official PDP; metal weight not in static HTML, kept null.",
-      "verdict": "verified (24K, weight null)",
-      "quote": "Title \"Classic Band - 24k Gold\"; live price \"$1,720\"; specs \"Metal: 24k Gold · Width: 5.00 mm · Height: 2.00 mm · Crafted-on-Demand\"; Menē Terms state items are 24 karat pure gold priced by precious metal weight plus design/manufacturing fee, with exact delivered gram weight printed on the Certificate of Authenticity (±1.0 g variance)."
+      "change": "Live 2026-10-23 re-read caught -$13 spot-linked repricing ($1,720.00 -> $1,707.00 USD; size-floor card From $1,664); gram weight remains JS-rendered (kept null).",
+      "verdict": "updated live spot-linked price ($1,707 USD, 24K, weight null)",
+      "quote": "Title \"Classic Band - 24k Gold\"; live price \"$1,707 USD\"; specs \"Metal: 24k Gold · Width: 5.00 mm · Height: 2.00 mm · Crafted-on-Demand\".",
+      "read_at": "2026-10-23"
     },
     {
       "row": "mene-24k-narrow-band",
@@ -1287,18 +1290,319 @@
         "weight_g": null
       },
       "new": {
-        "price": "1372.00",
+        "price": "1361.00",
         "karat": "24K",
         "weight_g": null
       },
-      "change": "Added in pass P26-0804e222 from live official PDP; metal weight not in static HTML, kept null.",
-      "verdict": "verified (24K, weight null)",
-      "quote": "Title \"Narrow Classic Band - 24k Gold\"; live price \"$1,372\"; specs \"Metal: 24k Gold · Width: 4.00 mm · Height: 2.00 mm · Crafted-on-Demand\"; Menē Terms state exact delivered gram weight is printed on the Certificate of Authenticity (±1.0 g variance)."
+      "change": "Live 2026-10-23 re-read caught -$11 spot-linked repricing ($1,372.00 -> $1,361.00 USD; size-floor card From $1,300); gram weight remains JS-rendered (kept null).",
+      "verdict": "updated live spot-linked price ($1,361 USD, 24K, weight null)",
+      "quote": "Title \"Narrow Classic Band - 24k Gold\"; live price \"$1,361 USD\"; specs \"Metal: 24k Gold · Width: 4.00 mm · Height: 2.00 mm · Crafted-on-Demand\".",
+      "read_at": "2026-10-23"
+    },
+    {
+      "row": "auv-22k-vneck-sm",
+      "source_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "900.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "900.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official 22K PDP; size-range \"Approximate Fine Weight\" kept null rather than guessed (Flag F54).",
+      "verdict": "verified (22K, weight null)",
+      "quote": "Title \"V Neck Stack Ring Small / Polished\"; price \"$900\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Finish: Polished · Approximate Fine Weight: 2.9 to 3.7 grams depending on size\"."
+    },
+    {
+      "row": "auv-22k-hexagon-diamond",
+      "source_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "1400.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "1400.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official 22K PDP; size-range \"Approximate Fine Weight\" kept null rather than guessed (Flag F54).",
+      "verdict": "verified (22K, weight null)",
+      "quote": "Title \"Hexagon Diamond Stack Ring\"; price \"$1,400\" across sizes 5-9; Details \"Handcrafted in 22 karat gold with a polished finish · Our pieces are solid gold · Six round-cut diamonds · Diamond Carat Weight: 0.20 carats · Diamond Color | Clarity: G|VS · Ring Width: Approximately 4 mm · Approximate Fine Weight: 3.3 to 3.5 grams depending on size\"."
+    },
+    {
+      "row": "auv-22k-diamond-bridge-tall",
+      "source_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "1600.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "1600.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official 22K PDP; size-range \"Approximate Fine Weight\" kept null rather than guessed (Flag F54).",
+      "verdict": "verified (22K, weight null)",
+      "quote": "Title \"Diamond Bridge Ring Tall\"; price \"$1,600\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Set with four conflict-free, natural diamonds · Diamond Carat Weight: 0.07 carats · Diamond Color | Clarity: G|VS · Ring Height: 20 mm · Polished finish · Approximate Fine Weight: 5 to 6.1 grams depending on size\"."
+    },
+    {
+      "row": "auv-22k-clean-cut-polished",
+      "source_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "900.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "900.00",
+        "karat": "22K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official 22K PDP; size-range \"Approximate Fine Weight\" kept null rather than guessed (Flag F54).",
+      "verdict": "verified (22K, weight null)",
+      "quote": "Title \"Clean Cut Stack Ring Polished\"; Rings index price \"From $900\" across sizes 4-10; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Polished finish · Approximate Fine Weight: 2.8 to 3.7 grams depending on size\"."
+    },
+    {
+      "row": "rs-222283",
+      "source_url": "https://www.ross-simons.com/products/222283",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "695.00",
+        "karat": "10K",
+        "weight_g": "3.3"
+      },
+      "new": {
+        "price": "695.00",
+        "karat": "10K",
+        "weight_g": "3.3"
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP with published weight 3.3 g.",
+      "verdict": "verified (10K, 3.3 g)",
+      "quote": "Title \"Italian 10kt Yellow Gold Polished Dome Ring\"; price \"$695\" across sizes 6-9; Details \"Width: 3/4 inch · Metal: 10kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold Weight: 3.3 grams\"."
+    },
+    {
+      "row": "rs-989853",
+      "source_url": "https://www.ross-simons.com/products/989853",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "469.00",
+        "karat": "18K",
+        "weight_g": "1.2"
+      },
+      "new": {
+        "price": "469.00",
+        "karat": "18K",
+        "weight_g": "1.2"
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP with published weight 1.2 g.",
+      "verdict": "verified (18K, 1.2 g)",
+      "quote": "Title \"Italian 18kt Yellow Gold Bypass Ring\"; price \"$469\" across sizes 6-9; Details \"Width: 3/8 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold Weight: 1.2 grams\"."
+    },
+    {
+      "row": "rs-997441",
+      "source_url": "https://www.ross-simons.com/products/997441",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "1195.00",
+        "karat": "18K",
+        "weight_g": "3.4"
+      },
+      "new": {
+        "price": "1195.00",
+        "karat": "18K",
+        "weight_g": "3.4"
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP with published weight 3.4 g.",
+      "verdict": "verified (18K, 3.4 g)",
+      "quote": "Title \"Italian 18kt Yellow Gold Dome Ring\"; price \"$1,195\" across sizes 6-9; Details \"Width: 1/2 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold Weight: 3.4 grams\"."
+    },
+    {
+      "row": "rs-255232",
+      "source_url": "https://www.ross-simons.com/products/255232",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "1295.00",
+        "karat": "18K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "1295.00",
+        "karat": "18K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP; metal weight unpublished online, kept null.",
+      "verdict": "verified (18K, weight null)",
+      "quote": "Title \"C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25\"; price \"$1,295\"; Details \"Width: 3/16 inch · Metal: 18kt Yellow Gold · Finish: Polished · Diamond: Round Brilliant, 0.35 ct, Color Grade L, Clarity VS1\"."
+    },
+    {
+      "row": "ag-14k-industrial-band",
+      "source_url": "https://www.automicgold.com/products/industrial-mirror-band",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "598.00",
+        "karat": "14K",
+        "weight_g": "2.1"
+      },
+      "new": {
+        "price": "598.00",
+        "karat": "14K",
+        "weight_g": "2.1"
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP with published weight 2.1 g.",
+      "verdict": "verified (14K, 2.1 g)",
+      "quote": "Title \"Industrial Mirror Band\"; 1.7mm / 14k Yellow Gold variant price \"$598.00\" across sizes 2-16; HTML Details \"Material: Solid 14k gold · Fit: Flat · Finish: High Shine · Approximate Gold Weight (for size 9): 1.7mm: 2.1g, 2mm: 2.4g, 3mm: 3.6g, 4mm: 4.8g, 5mm: 6g, 6mm: 7.2g, 8mm: 9.6g\"."
+    },
+    {
+      "row": "car-18k-destinee-princess",
+      "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "3350.00",
+        "karat": "18K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "3350.00",
+        "karat": "18K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP; metal weight unpublished online, kept null.",
+      "verdict": "verified (18K, weight null)",
+      "quote": "Title \"Cartier Destinée Solitaire Ring\"; Ref. CRB4232900; starting price \"$3,350\" (excl. sales tax); Product Description \"Solitaire Cartier Destinée, yellow gold (750/1000), set with a princess-cut diamond available from 0.18 to 0.34 carats and paved with brilliant-cut diamonds.\""
+    },
+    {
+      "row": "bn-14k-petite-195639",
+      "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "1000.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "1000.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP; metal weight unpublished online, kept null.",
+      "verdict": "verified (14K, weight null)",
+      "quote": "Title \"Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)\"; Item #195639; setting price \"$1,000\" (excl. center stone); Ring Details \"Metal: 14k Yellow Gold · Width: 1.50 mm · Prong Metal: Platinum · Minimum Carat Total Weight: 0.11 · Average Color: I · Average Clarity: SI2\"."
+    },
+    {
+      "row": "mej-14k-sdeb",
+      "source_url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+      "read_at": "2026-10-23",
+      "checked": [
+        "title",
+        "price",
+        "karat",
+        "solid_wording",
+        "metal_weight"
+      ],
+      "old": {
+        "price": "898.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "new": {
+        "price": "898.00",
+        "karat": "14K",
+        "weight_g": null
+      },
+      "change": "Added in pass P50-545688f3 (2026-10-23) from live official PDP; metal weight unpublished online, kept null.",
+      "verdict": "verified (14K, weight null)",
+      "quote": "Title \"Slim Diamond Eternity Band\"; price \"$898\"; material \"14k Yellow Gold · Natural Diamond\"; copy \"crafted in 14k solid gold and set with conflict-free natural diamonds · Band Width: 1.3 mm · Carat Weight: 0.22 - 0.27 ct (varies by ring size)\"."
     }
   ],
   "not_reverified": {
     "rows": 0,
-    "why": "All 59 curated listings (43 inherited + 16 added in sess-0804e222) have now been opened and verified against their official retailer URLs on 2026-10-22."
+    "why": "All 71 listings across 11 retailers have been opened and verified against their official primary URLs through 2026-10-23."
   },
   "note": "Unified re-verification ledger combining P12 reads (sess-bc088451 and sess-b93ff7c6) with sess-0804e222 full-catalog HTML PDP reads across all 59 rows."
 }

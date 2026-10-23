@@ -363,9 +363,9 @@
       "publisher": "Ross-Simons",
       "type": "official product pages (HTML spec tables)",
       "url": "https://www.ross-simons.com/products/997811",
-      "verified": "Full HTML Details spec read across all 17 inherited Ross-Simons SKUs (recovering 960952 1.3 g) plus 10kt ring 997811 ($89, 0.3 g, solid gold alloy) and 14kt eternity band 939479 ($499, 1.5 g)",
+      "verified": "Full HTML Details spec read across all 17 inherited Ross-Simons SKUs (recovering 960952 1.3 g) plus 10kt ring 997811 ($89, 0.3 g, solid gold alloy); note SKU 939479 now sells an Italian 14kt Claddagh Ring ($499, 1.5 g) and is withdrawn under Flag F51.",
       "status": "retrieved",
-      "retrieved_at": "2026-10-22"
+      "retrieved_at": "2026-10-23"
     },
     {
       "id": "bn-return-policy",
@@ -426,9 +426,9 @@
       "publisher": "Menē",
       "type": "official product pages & Terms of Service",
       "url": "https://mene.com/terms-of-service",
-      "verified": "2 verified 24K pure gold bands (Classic $1,720, Narrow $1,372); ±1.0 g Crafted-on-Demand COA weight disclosure; 7-day return window (up to 10% refund restocking fee; 5% missing COA fee) + Lifetime Buyback; 1-833-636-3245",
+      "verified": "2 verified 24K pure gold bands (Classic $1,707 on 2026-10-23 / $1,720 on 2026-10-22; Narrow $1,361 on 2026-10-23 / $1,372 on 2026-10-22); ±1.0 g Crafted-on-Demand COA weight disclosure; 7-day return window (up to 10% refund restocking fee; 5% missing COA fee) + Lifetime Buyback; 1-833-636-3245",
       "status": "retrieved",
-      "retrieved_at": "2026-10-22"
+      "retrieved_at": "2026-10-23"
     },
     {
       "id": "nist-handbook-130",
@@ -492,6 +492,42 @@
       "verified": "Nothing — returned HTTP 404 on 2026-10-22; excluded.",
       "status": "rejected (404)",
       "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "auvere-22k-solid-gold",
+      "publisher": "Auvere LLC",
+      "type": "official 22K product pages, philosophy & return policy",
+      "url": "https://auvere.com/shipping-returns/",
+      "verified": "4 verified 22K (91.7%) solid-gold rings ($900–$1,600; explicit \"Handcrafted from solid 22 karat gold\"); ambiguous \"Approximate Fine Weight\" size ranges kept null & flagged (F54); 15-day delivery return window with intact tag required (contradicting 30-day Journal post, F55); 1-866-317-7779; concierge@auvere.com; 485 Lexington Ave Suite 304, NYC",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-23"
+    },
+    {
+      "id": "bbb-auvere-llc",
+      "publisher": "Better Business Bureau (BBB)",
+      "type": "independent complaint & accreditation registry",
+      "url": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132",
+      "verified": "Auvere LLC BBB profile (0121-87168132, New York, NY; started 2020-06-05, file opened 2023-06-21): A+ rating, Not BBB Accredited",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-23"
+    },
+    {
+      "id": "usc-15-295-297",
+      "publisher": "Office of the Law Revision Counsel / Cornell LII (U.S. Code)",
+      "type": "federal precious-metals stamping statute",
+      "url": "https://www.law.cornell.edu/uscode/text/15/295",
+      "verified": "National Gold and Silver Stamping Act (15 U.S.C. §§ 295, 297): 3/1000 unsoldered and 7/1000 soldered gold fineness tolerances (§ 295) plus mandatory U.S. registered/applied-for trademark or legal manufacturer name closely accompanying every quality mark (§ 297(b))",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-23"
+    },
+    {
+      "id": "rs-weighted-2026-10-23",
+      "publisher": "Ross-Simons",
+      "type": "official product pages (10K & 18K weighted + estate)",
+      "url": "https://www.ross-simons.com/products/997441",
+      "verified": "Verified 2026-10-23: SKU 222283 (10kt, 3.3 g, $695), SKU 989853 (18kt, 1.2 g, $469), SKU 997441 (18kt, 3.4 g, $1,195), and vintage SKU 255232 (18kt .35 ct solitaire, $1,295, weight unpublished)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-23"
     }
   ]
 }

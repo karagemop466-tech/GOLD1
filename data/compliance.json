@@ -14,7 +14,7 @@
    "key": "purity",
    "n": 1,
    "label": "Gold purity confirmed",
-   "ask": "Karat stated for the exact item (10K / 14K / 18K / 24K)."
+   "ask": "Karat stated for the exact item (10K / 14K / 18K / 22K / 24K)."
   },
   {
    "key": "solid",
@@ -164,24 +164,30 @@
    "from": "receipt",
    "source": "https://mene.com/terms-of-service",
    "caveat": "only 7 days; up to 10% restocking fee; lifetime buyback at daily metal value minus 10%"
+  },
+  "auvere": {
+   "days": 15,
+   "from": "delivery",
+   "source": "https://auvere.com/shipping-returns/",
+   "caveat": "15 days from delivery (10-day carrier dropoff after label); security tag must remain attached and untouched; Rare, bespoke, engraved and Sale items are final sale"
   }
  },
  "summary": {
-  "rows": 59,
+  "rows": 71,
   "tiers": {
-   "needs_confirmation": 35,
-   "setting_only": 14,
+   "needs_confirmation": 45,
+   "setting_only": 15,
    "unverified_price": 1,
-   "ready_to_inspect": 8,
+   "ready_to_inspect": 9,
    "withdrawn": 1
   },
-  "solid_stated": 15,
-  "weight_published": 21,
+  "solid_stated": 21,
+  "weight_published": 25,
   "hallmark_published": 0,
-  "return_window_14_plus": 57,
-  "bbb_a_grade": 36,
+  "return_window_14_plus": 69,
+  "bbb_a_grade": 45,
   "bbb_f": 5,
-  "gold_value_computable": 21
+  "gold_value_computable": 25
  },
  "rows": [
   {
@@ -216,7 +222,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -301,7 +307,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -386,7 +392,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -471,7 +477,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -556,7 +562,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -641,7 +647,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -726,7 +732,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -812,7 +818,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -898,7 +904,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -984,7 +990,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1070,7 +1076,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1156,7 +1162,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1242,7 +1248,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1329,7 +1335,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1415,7 +1421,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1501,7 +1507,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1587,7 +1593,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1663,7 +1669,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "14K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring"
     },
@@ -1674,7 +1680,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1725,7 +1731,7 @@
     }
    },
    "source_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "wc-4prong",
@@ -1761,7 +1767,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1812,7 +1818,7 @@
     }
    },
    "source_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
-   "live_verdict": "lower_bound_not_reproduced"
+   "live_verdict": "confirmed"
   },
   {
    "id": "wc-4prong-petite",
@@ -1837,7 +1843,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "14K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring"
     },
@@ -1848,7 +1854,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1899,7 +1905,7 @@
     }
    },
    "source_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "wc-6prong",
@@ -1924,7 +1930,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "14K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring"
     },
@@ -1935,7 +1941,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -1986,7 +1992,7 @@
     }
    },
    "source_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "wc-gerbera",
@@ -2010,7 +2016,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "14K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring"
     },
@@ -2021,7 +2027,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2072,7 +2078,7 @@
     }
    },
    "source_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "as-bea-sol",
@@ -2108,7 +2114,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2194,7 +2200,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2280,7 +2286,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2366,7 +2372,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2452,7 +2458,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2538,7 +2544,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2624,7 +2630,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2709,7 +2715,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2796,7 +2802,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2883,7 +2889,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -2970,7 +2976,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3057,7 +3063,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3144,7 +3150,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3231,7 +3237,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3318,7 +3324,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3405,7 +3411,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3490,7 +3496,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3575,7 +3581,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3660,7 +3666,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3745,7 +3751,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3821,7 +3827,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "18K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
     },
@@ -3832,7 +3838,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -3883,7 +3889,7 @@
     }
    },
    "source_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
-   "live_verdict": "not_read"
+   "live_verdict": "variant_price_not_reproducible"
   },
   {
    "id": "rs-997811",
@@ -3915,7 +3921,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4002,7 +4008,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4087,7 +4093,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4172,7 +4178,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4255,7 +4261,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4338,7 +4344,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4421,7 +4427,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4504,7 +4510,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4587,7 +4593,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4670,7 +4676,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4753,7 +4759,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4828,7 +4834,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "18K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html"
     },
@@ -4839,7 +4845,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4890,7 +4896,7 @@
     }
    },
    "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "car-18k-etincelle-emerald",
@@ -4914,7 +4920,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "18K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html"
     },
@@ -4925,7 +4931,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -4976,7 +4982,7 @@
     }
    },
    "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "car-18k-1895-band-dia",
@@ -5000,7 +5006,7 @@
    ],
    "checks": {
     "purity": {
-     "status": "stated_not_reread",
+     "status": "confirmed",
      "detail": "18K stated on the seller's page and quoted in the row evidence",
      "source": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html"
     },
@@ -5011,7 +5017,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -5062,7 +5068,7 @@
     }
    },
    "source_url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
-   "live_verdict": "not_read"
+   "live_verdict": "confirmed"
   },
   {
    "id": "mene-24k-classic-band",
@@ -5070,8 +5076,8 @@
    "retailer_id": "mene",
    "title": "Classic Band — 24k Pure Gold (5 mm)",
    "karat": "24K",
-   "price_low": 1720,
-   "price_high": 1720,
+   "price_low": 1707,
+   "price_high": 1707,
    "weight_g": null,
    "solid_stated": false,
    "bbb_rating": null,
@@ -5098,7 +5104,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -5149,7 +5155,7 @@
     }
    },
    "source_url": "https://mene.com/products/mene-classic-band-gold",
-   "live_verdict": "no_structured_price"
+   "live_verdict": "range_widens"
   },
   {
    "id": "mene-24k-narrow-band",
@@ -5157,8 +5163,8 @@
    "retailer_id": "mene",
    "title": "Narrow Classic Band — 24k Pure Gold (4 mm)",
    "karat": "24K",
-   "price_low": 1372,
-   "price_high": 1372,
+   "price_low": 1361,
+   "price_high": 1361,
    "weight_g": null,
    "solid_stated": false,
    "bbb_rating": null,
@@ -5185,7 +5191,7 @@
     },
     "hallmark": {
      "status": "not_published",
-     "detail": "None of the ten retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
      "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
     },
     "weight": {
@@ -5236,7 +5242,1029 @@
     }
    },
    "source_url": "https://mene.com/products/mene-narrow-band-gold",
-   "live_verdict": "no_structured_price"
+   "live_verdict": "range_widens"
+  },
+  {
+   "id": "auv-22k-vneck-sm",
+   "retailer": "Auvere",
+   "retailer_id": "auvere",
+   "title": "V Neck Stack Ring Small / Polished (22K Solid Gold)",
+   "karat": "22K",
+   "price_low": 900,
+   "price_high": 900,
+   "weight_g": null,
+   "solid_stated": true,
+   "bbb_rating": "A+",
+   "return_days": 15,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "22K stated on the seller's page and quoted in the row evidence",
+     "source": "https://auvere.com/product/v-neck-stack-ring-small-polished/"
+    },
+    "solid": {
+     "status": "confirmed",
+     "detail": "The listing itself uses the word solid for this metal.",
+     "source": "https://auvere.com/product/v-neck-stack-ring-small-polished/"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://auvere.com/product/v-neck-stack-ring-small-polished/"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "15 days from delivery. 15 days from delivery (10-day carrier dropoff after label); security tag must remain attached and untouched; Rare, bespoke, engraved and Sale items are final sale",
+     "source": "https://auvere.com/shipping-returns/",
+     "days": 15
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 15-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://auvere.com/shipping-returns/"
+    }
+   },
+   "source_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "auv-22k-hexagon-diamond",
+   "retailer": "Auvere",
+   "retailer_id": "auvere",
+   "title": "Hexagon Diamond Stack Ring (22K Solid Gold)",
+   "karat": "22K",
+   "price_low": 1400,
+   "price_high": 1400,
+   "weight_g": null,
+   "solid_stated": true,
+   "bbb_rating": "A+",
+   "return_days": 15,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "22K stated on the seller's page and quoted in the row evidence",
+     "source": "https://auvere.com/product/hexagon-diamond-stack-ring/"
+    },
+    "solid": {
+     "status": "confirmed",
+     "detail": "The listing itself uses the word solid for this metal.",
+     "source": "https://auvere.com/product/hexagon-diamond-stack-ring/"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://auvere.com/product/hexagon-diamond-stack-ring/"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "15 days from delivery. 15 days from delivery (10-day carrier dropoff after label); security tag must remain attached and untouched; Rare, bespoke, engraved and Sale items are final sale",
+     "source": "https://auvere.com/shipping-returns/",
+     "days": 15
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 15-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://auvere.com/shipping-returns/"
+    }
+   },
+   "source_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "auv-22k-diamond-bridge-tall",
+   "retailer": "Auvere",
+   "retailer_id": "auvere",
+   "title": "Diamond Bridge Ring Tall (22K Solid Gold)",
+   "karat": "22K",
+   "price_low": 1600,
+   "price_high": 1600,
+   "weight_g": null,
+   "solid_stated": true,
+   "bbb_rating": "A+",
+   "return_days": 15,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "22K stated on the seller's page and quoted in the row evidence",
+     "source": "https://auvere.com/product/diamond-bridge-ring-tall/"
+    },
+    "solid": {
+     "status": "confirmed",
+     "detail": "The listing itself uses the word solid for this metal.",
+     "source": "https://auvere.com/product/diamond-bridge-ring-tall/"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://auvere.com/product/diamond-bridge-ring-tall/"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "15 days from delivery. 15 days from delivery (10-day carrier dropoff after label); security tag must remain attached and untouched; Rare, bespoke, engraved and Sale items are final sale",
+     "source": "https://auvere.com/shipping-returns/",
+     "days": 15
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 15-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://auvere.com/shipping-returns/"
+    }
+   },
+   "source_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "auv-22k-clean-cut-polished",
+   "retailer": "Auvere",
+   "retailer_id": "auvere",
+   "title": "Clean Cut Stack Ring Polished (22K Solid Gold)",
+   "karat": "22K",
+   "price_low": 900,
+   "price_high": 900,
+   "weight_g": null,
+   "solid_stated": true,
+   "bbb_rating": "A+",
+   "return_days": 15,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "22K stated on the seller's page and quoted in the row evidence",
+     "source": "https://auvere.com/product/clean-cut-stack-ring-polished/"
+    },
+    "solid": {
+     "status": "confirmed",
+     "detail": "The listing itself uses the word solid for this metal.",
+     "source": "https://auvere.com/product/clean-cut-stack-ring-polished/"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://auvere.com/product/clean-cut-stack-ring-polished/"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "15 days from delivery. 15 days from delivery (10-day carrier dropoff after label); security tag must remain attached and untouched; Rare, bespoke, engraved and Sale items are final sale",
+     "source": "https://auvere.com/shipping-returns/",
+     "days": 15
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 15-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://auvere.com/shipping-returns/"
+    }
+   },
+   "source_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "rs-222283",
+   "retailer": "Ross-Simons",
+   "retailer_id": "ross-simons",
+   "title": "Italian 10kt Yellow Gold Polished Dome Ring",
+   "karat": "10K",
+   "price_low": 695,
+   "price_high": 695,
+   "weight_g": 3.3,
+   "solid_stated": false,
+   "bbb_rating": "A+",
+   "return_days": 30,
+   "gold_value_usd": 177.92,
+   "fine_gold_g": 1.375,
+   "price_to_gold": 3.91,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "the listing never says \"solid gold\""
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "10K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.ross-simons.com/products/222283"
+    },
+    "solid": {
+     "status": "not_published",
+     "detail": "The listing names the karat but never says \"solid\". Under 16 CFR Part 23 hollow gold may not be called solid, so a karat alone does not settle it.",
+     "source": "https://www.ross-simons.com/products/222283"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "confirmed",
+     "detail": "3.3 g published by the seller and re-read on the page on 2026-10-23.",
+     "source": "https://www.ross-simons.com/products/222283"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000"
+    },
+    "price_vs_gold": {
+     "status": "confirmed",
+     "detail": "3.3 g at 10K holds 1.375 g fine gold, worth 177.92 USD at the stored spot. Price ÷ gold = 3.91×.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from receipt.",
+     "source": "https://www.ross-simons.com/policies/refund-policy",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.ross-simons.com/policies/refund-policy"
+    }
+   },
+   "source_url": "https://www.ross-simons.com/products/222283",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "rs-989853",
+   "retailer": "Ross-Simons",
+   "retailer_id": "ross-simons",
+   "title": "Italian 18kt Yellow Gold Bypass Ring",
+   "karat": "18K",
+   "price_low": 469,
+   "price_high": 469,
+   "weight_g": 1.2,
+   "solid_stated": false,
+   "bbb_rating": "A+",
+   "return_days": 30,
+   "gold_value_usd": 116.46,
+   "fine_gold_g": 0.9,
+   "price_to_gold": 4.03,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "the listing never says \"solid gold\""
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "18K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.ross-simons.com/products/989853"
+    },
+    "solid": {
+     "status": "not_published",
+     "detail": "The listing names the karat but never says \"solid\". Under 16 CFR Part 23 hollow gold may not be called solid, so a karat alone does not settle it.",
+     "source": "https://www.ross-simons.com/products/989853"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "confirmed",
+     "detail": "1.2 g published by the seller and re-read on the page on 2026-10-23.",
+     "source": "https://www.ross-simons.com/products/989853"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000"
+    },
+    "price_vs_gold": {
+     "status": "confirmed",
+     "detail": "1.2 g at 18K holds 0.9 g fine gold, worth 116.46 USD at the stored spot. Price ÷ gold = 4.03×.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from receipt.",
+     "source": "https://www.ross-simons.com/policies/refund-policy",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.ross-simons.com/policies/refund-policy"
+    }
+   },
+   "source_url": "https://www.ross-simons.com/products/989853",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "rs-997441",
+   "retailer": "Ross-Simons",
+   "retailer_id": "ross-simons",
+   "title": "Italian 18kt Yellow Gold Dome Ring",
+   "karat": "18K",
+   "price_low": 1195,
+   "price_high": 1195,
+   "weight_g": 3.4,
+   "solid_stated": false,
+   "bbb_rating": "A+",
+   "return_days": 30,
+   "gold_value_usd": 329.96,
+   "fine_gold_g": 2.55,
+   "price_to_gold": 3.62,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "the listing never says \"solid gold\""
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "18K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.ross-simons.com/products/997441"
+    },
+    "solid": {
+     "status": "not_published",
+     "detail": "The listing names the karat but never says \"solid\". Under 16 CFR Part 23 hollow gold may not be called solid, so a karat alone does not settle it.",
+     "source": "https://www.ross-simons.com/products/997441"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "confirmed",
+     "detail": "3.4 g published by the seller and re-read on the page on 2026-10-23.",
+     "source": "https://www.ross-simons.com/products/997441"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000"
+    },
+    "price_vs_gold": {
+     "status": "confirmed",
+     "detail": "3.4 g at 18K holds 2.55 g fine gold, worth 329.96 USD at the stored spot. Price ÷ gold = 3.62×.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from receipt.",
+     "source": "https://www.ross-simons.com/policies/refund-policy",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.ross-simons.com/policies/refund-policy"
+    }
+   },
+   "source_url": "https://www.ross-simons.com/products/997441",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "rs-255232",
+   "retailer": "Ross-Simons",
+   "retailer_id": "ross-simons",
+   "title": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold",
+   "karat": "18K",
+   "price_low": 1295,
+   "price_high": 1295,
+   "weight_g": null,
+   "solid_stated": false,
+   "bbb_rating": "A+",
+   "return_days": 30,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "the listing never says \"solid gold\"",
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "18K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.ross-simons.com/products/255232"
+    },
+    "solid": {
+     "status": "not_published",
+     "detail": "The listing names the karat but never says \"solid\". Under 16 CFR Part 23 hollow gold may not be called solid, so a karat alone does not settle it.",
+     "source": "https://www.ross-simons.com/products/255232"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://www.ross-simons.com/products/255232"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from receipt.",
+     "source": "https://www.ross-simons.com/policies/refund-policy",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.ross-simons.com/policies/refund-policy"
+    }
+   },
+   "source_url": "https://www.ross-simons.com/products/255232",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "ag-14k-industrial-band",
+   "retailer": "Automic Gold",
+   "retailer_id": "automic-gold",
+   "title": "Industrial Mirror Band — 1.7mm (Size 9, 14k Solid Yellow Gold)",
+   "karat": "14K",
+   "price_low": 598,
+   "price_high": 598,
+   "weight_g": 2.1,
+   "solid_stated": true,
+   "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
+   "return_days": 30,
+   "gold_value_usd": 158.51,
+   "fine_gold_g": 1.225,
+   "price_to_gold": 3.77,
+   "tier": "ready_to_inspect",
+   "blockers": [],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "14K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.automicgold.com/products/industrial-mirror-band"
+    },
+    "solid": {
+     "status": "confirmed",
+     "detail": "The listing itself uses the word solid for this metal.",
+     "source": "https://www.automicgold.com/products/industrial-mirror-band"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "confirmed",
+     "detail": "2.1 g published by the seller and re-read on the page on 2026-10-23.",
+     "source": "https://www.automicgold.com/products/industrial-mirror-band"
+    },
+    "reputation": {
+     "status": "not_published",
+     "detail": "BBB file: NR (0 unanswered complaints shown on NY overview). Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+    },
+    "price_vs_gold": {
+     "status": "confirmed",
+     "detail": "2.1 g at 14K holds 1.225 g fine gold, worth 158.51 USD at the stored spot. Price ÷ gold = 3.77×.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from delivery. engraved items final sale; return label must be used within 14 days",
+     "source": "https://www.automicgold.com/pages/returns-exchange-policy",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.automicgold.com/pages/returns-exchange-policy"
+    }
+   },
+   "source_url": "https://www.automicgold.com/products/industrial-mirror-band",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "car-18k-destinee-princess",
+   "retailer": "Cartier",
+   "retailer_id": "cartier",
+   "title": "Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold",
+   "karat": "18K",
+   "price_low": 3350,
+   "price_high": 3350,
+   "weight_g": null,
+   "solid_stated": false,
+   "bbb_rating": "Unaccredited NY HQ file (founded 1847)",
+   "return_days": 30,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "the listing never says \"solid gold\"",
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "18K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html"
+    },
+    "solid": {
+     "status": "not_published",
+     "detail": "The listing names the karat but never says \"solid\". Under 16 CFR Part 23 hollow gold may not be called solid, so a karat alone does not settle it.",
+     "source": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html"
+    },
+    "reputation": {
+     "status": "not_published",
+     "detail": "BBB file: Unaccredited NY HQ file (founded 1847). Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/ny/new-york/profile/jewelry-designers/cartier-0121-356"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from delivery. personalised/engraved pieces excluded; Maison quality-control inspection",
+     "source": "https://www.cartier.com/en-us/conditions-of-sales-pay-by-link.html",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.cartier.com/en-us/conditions-of-sales-pay-by-link.html"
+    }
+   },
+   "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "bn-14k-petite-195639",
+   "retailer": "Blue Nile",
+   "retailer_id": "blue-nile",
+   "title": "Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)",
+   "karat": "14K",
+   "price_low": 1000,
+   "price_high": 1000,
+   "weight_g": null,
+   "solid_stated": false,
+   "bbb_rating": "A+",
+   "return_days": 30,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "setting_only",
+   "blockers": [
+    "the price is for the setting only",
+    "the listing never says \"solid gold\"",
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "14K stated on the seller's page and quoted in the row evidence",
+     "source": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639"
+    },
+    "solid": {
+     "status": "not_published",
+     "detail": "The listing names the karat but never says \"solid\". Under 16 CFR Part 23 hollow gold may not be called solid, so a karat alone does not settle it.",
+     "source": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639"
+    },
+    "reputation": {
+     "status": "confirmed",
+     "detail": "BBB file: A+. Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from shipment (not delivery). clock starts at shipment, so transit time is inside the window; resized rings excluded",
+     "source": "https://www.bluenile.com/policies/returns",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://www.bluenile.com/policies/returns"
+    }
+   },
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+   "live_verdict": "confirmed"
+  },
+  {
+   "id": "mej-14k-sdeb",
+   "retailer": "Mejuri",
+   "retailer_id": "mejuri",
+   "title": "Slim Diamond Eternity Band (14k Solid Yellow Gold)",
+   "karat": "14K",
+   "price_low": 898,
+   "price_high": 898,
+   "weight_g": null,
+   "solid_stated": true,
+   "bbb_rating": "NR / Unaccredited (16 complaints closed on Chicago US file)",
+   "return_days": 30,
+   "gold_value_usd": null,
+   "fine_gold_g": null,
+   "price_to_gold": null,
+   "tier": "needs_confirmation",
+   "blockers": [
+    "no published gram weight"
+   ],
+   "checks": {
+    "purity": {
+     "status": "confirmed",
+     "detail": "14K stated on the seller's page and quoted in the row evidence",
+     "source": "https://mejuri.com/us/en/products/slim-diamond-eternity-band"
+    },
+    "solid": {
+     "status": "confirmed",
+     "detail": "The listing itself uses the word solid for this metal.",
+     "source": "https://mejuri.com/us/en/products/slim-diamond-eternity-band"
+    },
+    "hallmark": {
+     "status": "not_published",
+     "detail": "None of the eleven retailers publishes the stamp or the maker's mark on the product page. This has to be read off the physical ring.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "weight": {
+     "status": "not_published",
+     "detail": "No gram weight published, so the gold-value check cannot be run for this row.",
+     "source": "https://mejuri.com/us/en/products/slim-diamond-eternity-band"
+    },
+    "reputation": {
+     "status": "not_published",
+     "detail": "BBB file: NR / Unaccredited (16 complaints closed on Chicago US file). Verified contact details are recorded in the seller table with the source link.",
+     "source": "https://www.bbb.org/ca/on/toronto/profile/jewelry-manufacturers/mejuri-0107-1370644"
+    },
+    "price_vs_gold": {
+     "status": "cannot_compute",
+     "detail": "Needs a published gram weight; without one no gold-value comparison is possible.",
+     "source": "https://api.gold-api.com/price/XAU"
+    },
+    "returns": {
+     "status": "confirmed",
+     "detail": "30 days from delivery. engraved/monogrammed items excluded",
+     "source": "https://mejuri.com/company/returns-terms",
+     "days": 30
+    },
+    "payment": {
+     "status": "buyer_action",
+     "detail": "The FTC recommends paying by credit card online because card payments carry dispute rights.",
+     "source": "https://consumer.ftc.gov/articles/online-shopping"
+    },
+    "documentation": {
+     "status": "confirmed",
+     "detail": "This project stores the product URL, the verbatim evidence string and the retrieval date for this row; keep the order confirmation and the seller's purity statement with it.",
+     "source": "methodology.html"
+    },
+    "arrival_check": {
+     "status": "buyer_action",
+     "detail": "Independent jeweller check before wearing or resizing. Resizing at a third-party jeweller can void the return window.",
+     "source": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+    },
+    "xrf": {
+     "status": "buyer_action",
+     "detail": "GIA documented a resin-cored electroformed piece that read 17.99K-22.47K on XRF, so a surface XRF reading alone is not proof.",
+     "source": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+    },
+    "return_if_refused": {
+     "status": "buyer_action",
+     "detail": "The seller publishes a 30-day window. If they will not honour an independent check inside it, walk away.",
+     "source": "https://mejuri.com/company/returns-terms"
+    }
+   },
+   "source_url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+   "live_verdict": "confirmed"
   }
  ]
 }

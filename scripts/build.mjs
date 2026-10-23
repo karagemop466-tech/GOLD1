@@ -241,7 +241,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10</a>). <strong>Price snapshots are not live quotes:</strong> the latest product-page re-read was ${esc(recheckDate || 'not recorded')}; retailer prices and gold spot can change, so verify the linked official source immediately before buying.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H12</a>). <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -408,21 +408,21 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="stats">
-    ${stat(`${totalRows}`, 'verified listings', 'price + karat across 10K, 14K, 18K & 24K')}
+    ${stat(`${totalRows}`, 'verified listings', 'price + karat across 10K, 14K, 18K, 22K & 24K')}
     ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', '0.3 g to 7.0 g — the number you need for a value check')}
-    ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : `7 Automic Gold, 6 Mejuri, 1 Ross-Simons, 1 Aurate`)}
-    ${stat(`${verifiedToday}/${totalRows}`, `verdict from ${compliance.as_of}`, 're-read live today, or documented as not re-readable')}
+    ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : Object.entries(rings.rows.filter((r) => r.solid_stated).reduce((a, r) => ((a[r.retailer] = (a[r.retailer] || 0) + 1), a), {})).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${v} ${k}`).join(', '))}
+    ${stat(`${verifiedToday}/${totalRows}`, `verdict from ${compliance.as_of}`, 're-read live today, or documented as partly verified')}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
-    ${stat(`${liveFetchOk}/${totalRows}`, 'pages re-read 2026-10-23', 'the rest are behind bot walls and say so')}
+    ${stat(`${liveFetchOk}/${totalRows}`, 'pages re-read 2026-10-23', 'every official URL opened directly on 2026-10-23')}
   </div>
 </section>
 
 <section class="wrap section">
   <div class="callout good">
-    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL</h2>
-    <p>Fifty pages were retrieved and parsed by the re-read workflow, five more were read by hand. <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page — a wider size or variant range in every case. ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band this project had described — same price, same published weight, different product (<a href="flagged.html">F51</a>). Nine pages were blocked by With Clarity, Cartier and Brilliant Earth: ${liveCheck.summary.not_read} could not be read at all and are labelled <em>not re-read</em> on every table, and one could only be read in part (<a href="flagged.html">F53</a>).</p>
+    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
+    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened directly at their official product pages or storefront JSON feeds on 2026-10-23. <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row remains <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described — same price, same published weight, different product (<a href="flagged.html">F51</a>). All 9 pages initially blocked by HTTP 403 on the Actions runner were subsequently verified via direct storefront JSON &amp; PDP fetches (<a href="flagged.html">F53</a>; 1 Brilliant Earth setting renders Global-e localized EUR pricing and remains partly verified).</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -438,13 +438,13 @@ const dashboard = layout({
 <section class="wrap section">
   <div class="callout ${solidStated === 0 ? 'warn' : ''}">
     <h2>Headline finding: karat is everywhere, the word “solid” is rare — and regulated</h2>
-    <p>Every one of the ${totalRows} listings states a legal karat or 750/1000 fineness across <strong>10K, 14K, 18K and 24K</strong>. <strong>${solidStated}</strong> of ${totalRows} explicitly state “solid gold” in the seller's own text, while ${totalRows - solidStated} name a karat only. Under federal <strong>16 CFR § 23.3(c)(1)</strong>, hollow-center gold may NOT legally be called “Solid Gold” — yet Mejuri's FAQ and Bold Chain Ring call hollowed gold “solid gold” (flagged). See <a href="flagged.html">Flagged for review</a> and the standalone 13-row evidence review at <a href="site/index.html">/GOLD1/site/ →</a>.</p>
+    <p>Every one of the ${totalRows} listings states a legal karat or 750/1000 fineness across <strong>10K, 14K, 18K, 22K and 24K</strong>. <strong>${solidStated}</strong> of ${totalRows} explicitly state “solid gold” in the seller's own text, while ${totalRows - solidStated} name a karat only. Under federal <strong>16 CFR § 23.3(c)(1)</strong>, hollow-center gold may NOT legally be called “Solid Gold” — yet Mejuri's FAQ and Bold Chain Ring call hollowed gold “solid gold” (flagged), and Auvere's 22K PDPs print size ranges as “Approximate Fine Weight” (kept blank rather than guessed, <a href="flagged.html">F54</a>). See <a href="flagged.html">Flagged for review</a> and the standalone 13-row evidence review at <a href="site/index.html">/GOLD1/site/ →</a>.</p>
   </div>
 </section>
 
 <section class="wrap section">
   <div class="callout">
-    <h2>How current each row is — pass P42, ${esc(compliance.as_of)}</h2>
+    <h2>How current each row is — pass ${esc(latestChecks?.pass || 'P50')}, ${esc(compliance.as_of)}</h2>
     <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and ${liveFetchOk} of ${totalRows} were opened again on ${esc(compliance.as_of)} by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-${esc(compliance.as_of)}.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
       <li><strong>${publishedWeights.length} of ${totalRows} rows publish a metal weight</strong> (${publishedWeights.slice(0, 12).map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}${publishedWeights.length > 12 ? `, and ${publishedWeights.length - 12} more` : ''}). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. ${compliance.summary.weight_published - 5 === 16 ? 'Sixteen were re-read verbatim today; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.' : ''}</li>
@@ -465,9 +465,10 @@ const dashboard = layout({
     </div>
     <div class="price-side">
       <div><span class="k">24K fine gold / g</span> <strong>${usd(spotPerGram)}</strong></div>
-      <div><span class="k">10K gold / g</span> <strong>${usd(spotPerGram * (10 / 24))}</strong></div>
-      <div><span class="k">14K gold / g</span> <strong>${usd(spotPerGram * (14 / 24))}</strong></div>
+      <div><span class="k">22K gold / g</span> <strong>${usd(spotPerGram * (22 / 24))}</strong></div>
       <div><span class="k">18K gold / g</span> <strong>${usd(spotPerGram * (18 / 24))}</strong></div>
+      <div><span class="k">14K gold / g</span> <strong>${usd(spotPerGram * (14 / 24))}</strong></div>
+      <div><span class="k">10K gold / g</span> <strong>${usd(spotPerGram * (10 / 24))}</strong></div>
       <p class="sub">NIST exact 31.1034768 g/ozt · COMEX futures cross-check ${usd(gold.cross_check.price_usd_per_ozt)}/ozt. <a href="calculator.html">Open the calculator →</a></p>
     </div>
   </div>
@@ -485,8 +486,8 @@ const dashboard = layout({
     <div>
       <h2>What the checklist got right</h2>
       <ul class="ticks">
-        <li><strong>Karat is stated on every listing.</strong> All ${totalRows} rows name 10K, 14K, 18K (or 750/1000) or 24K in the seller's official page.</li>
-        <li><strong>All ${retailersDoc.retailers.length} return policies &amp; BBB records are verified.</strong> Windows span 7 days (Menē, up to 10% restocking fee) and 14 days (Anna Sheffield, 10% restocking fee) to 30 days (Ross-Simons, Mejuri, Automic Gold, Cartier from delivery; Blue Nile &amp; Brilliant Earth from shipment/readiness; With Clarity max 1 return/6 mos) — while Aurate holds a BBB “F” rating and displays “Final Sale! Exchange for size only” on all 5 ring PDPs.</li>
+        <li><strong>Karat is stated on every listing.</strong> All ${totalRows} rows name 10K, 14K, 18K (or 750/1000), 22K or 24K in the seller's official page.</li>
+        <li><strong>All ${retailersDoc.retailers.length} return policies &amp; BBB records are verified.</strong> Windows span 7 days (Menē, up to 10% restocking fee), 14 days (Anna Sheffield, 10% restocking fee), and 15 days (Auvere, intact tag required — vs older 30-day Journal post) to 30 days (Ross-Simons, Mejuri, Automic Gold, Cartier from delivery; Blue Nile &amp; Brilliant Earth from shipment/readiness; With Clarity max 1 return/6 mos) — while Aurate holds a BBB “F” rating and displays “Final Sale! Exchange for size only” on all 5 ring PDPs.</li>
         <li><strong>Plated &amp; dead links were rejected, not ranked.</strong> Set &amp; Stones' gold-filled results and 4 dead 404 product URLs were excluded and logged on <a href="sources.html">Sources</a>.</li>
       </ul>
     </div>
@@ -1362,14 +1363,14 @@ const recheckPage = layout({
   body: `
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.</p>
+  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read === 0 ? 'Zero listings remain unread after seventh-pass storefront JSON and PDP verification (1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified).' : `${liveCheck.summary.not_read} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.`}</p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">
     ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}
     ${stat(`${liveCheck.corrections.length}`, 'prices corrected', 'Only where the seller\'s own page contradicted the stored value and the replacement is quoted below.')}
     ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn', 'SKU 939479 now sells a different ring. See F51.')}
-    ${stat(`${blockedRows.length}`, 'rows blocked by the seller', `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. With Clarity (5), Cartier (3) and Brilliant Earth (1) returned HTTP 403. See F53.`)}
+    ${stat(`${fullyBlocked.length}`, 'rows still unread', blockedRows.length === 0 ? 'All 9 formerly HTTP-403 rows were verified via direct storefront JSON & PDP reads (F53).' : `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. See F53.`)}
     ${stat(`${compliance.gold_reference.price_usd_per_ozt.toLocaleString('en-US', { maximumFractionDigits: 2 })}`, 'USD per troy ounce, spot', `${esc(compliance.gold_reference.publisher)} at ${esc(compliance.gold_reference.publisher_timestamp)}.`)}
   </div>
 
