@@ -2,7 +2,7 @@
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
 **Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**)
-**Board owner:** `sess-8dffa7e8` (sixth pass, §14) · **Board updated:** 2026-10-23T10:05Z
+**Board owner:** `sess-8dffa7e8` (sixth pass, §15) · **Board updated:** 2026-10-23T10:40Z
 
 ---
 
@@ -59,10 +59,10 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T22 | **10K / 14K / 18K / 24K solid-gold + gram-weight ring expansion**: 16 verified primary-source listings across Ross-Simons (`10K` `0.3g`, `14K` `1.5g`), Mejuri (`10K` solid), Automic Gold (`14K` solid + `1.4g`–`7.0g` weights), Cartier (`18K` `750/1000`), and Menē (`24K` pure gold) | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/new-rings.json` | 2026-10-22 |
 | T23 | **Extended anti-hallucination & security verifier + zero-loss integrator**: cross-file consistency, weight/price/karat provenance, HTML/CSP/XSS/rel=noopener security checks, idempotent merger | **done** | sess-0804e222 | arena/0804e222-gold1 | `scripts/audit_0804e222.mjs`, `scripts/integrate_0804e222.mjs` | 2026-10-22 |
 | T24 | **Zero-loss final union integration & Pages publish**: merge `origin/main` (`f919689` incl. PR #21/#22/#23/#24) without discarding any work, run `integrate_0804e222.mjs` + `build.mjs` + `verify.mjs` (`S01`–`S19`) + `audit_0804e222.mjs` (`A01`–`A10`) + `/site/` audits, open PR, merge, verify live GitHub Pages | **done** (PR #25 merged; Pages live) | sess-0804e222 | arena/0804e222-gold1 | shared `data/*.json`, `scripts/build.mjs`, `scripts/verify.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
-| T29 | **Sixth pass — full 59-row live re-verification on an independent clock (2026-10-23)**: re-open every row's own official product page from a GitHub Actions runner (full internet), record price / karat / published weight exactly as printed, and publish a per-row verification ledger. No value is carried forward without a fresh read. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/live_reverify.mjs`, `data/live/**`, `.github/workflows/reverify.yml` | 2026-10-23 |
-| T30 | **12-point buyer-checklist compliance matrix** — score every one of the 59 rows against the owner's checklist (purity, explicit solid-gold wording, hallmark + maker's mark, published gram weight, seller reputation, price vs gold value, return policy, payment protection, documentation, post-delivery verification), with a source link or an explicit "not published" per cell. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `data/compliance.json`, `scripts/build.mjs` | 2026-10-23 |
-| T31 | **Site: requirements dashboard, per-row gold-value math, full price table** and a clearly labelled **Flagged for Review** page; gold price refreshed with a published timestamp. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/build.mjs`, `assets/`, generated root `*.html` | 2026-10-23 |
-| T32 | **Security / hallucination pass after every review + final integration**: `verify.mjs`, `audit_0804e222.mjs`, link, CSP/XSS and secret checks; PR to `main`, merge, confirm Pages, record result. | **in progress** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/verify.mjs`, `COORDINATION.md`, `README.md` | 2026-10-23 |
+| T29 | **Sixth pass — full 59-row live re-verification on an independent clock (2026-10-23)**: re-open every row's own official product page from a GitHub Actions runner (full internet), record price / karat / published weight exactly as printed, and publish a per-row verification ledger. No value is carried forward without a fresh read. | **done** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/live_reverify.mjs`, `data/live/**`, `.github/workflows/reverify.yml` | 2026-10-23 |
+| T30 | **12-point buyer-checklist compliance matrix** — score every one of the 59 rows against the owner's checklist (purity, explicit solid-gold wording, hallmark + maker's mark, published gram weight, seller reputation, price vs gold value, return policy, payment protection, documentation, post-delivery verification), with a source link or an explicit "not published" per cell. | **done** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `data/compliance.json`, `scripts/build.mjs` | 2026-10-23 |
+| T31 | **Site: requirements dashboard, per-row gold-value math, full price table** and a clearly labelled **Flagged for Review** page; gold price refreshed with a published timestamp. | **done** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/build.mjs`, `assets/`, generated root `*.html` | 2026-10-23 |
+| T32 | **Security / hallucination pass after every review + final integration**: `verify.mjs`, `audit_0804e222.mjs`, link, CSP/XSS and secret checks; PR to `main`, merge, confirm Pages, record result. | **done** | arena/8dffa7e8-gold1 | arena/8dffa7e8-gold1 | `scripts/verify.mjs`, `COORDINATION.md`, `README.md` | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -586,6 +586,20 @@ purchase endorsement.
 - The suite caught this pass's own mistakes before publish: S10 flagged the four widened ranges as
   undisclosed, and S18/S19 caught the withdrawn row still printing a live price. Both were fixed by
   disclosing the range and printing "last observed … not a quote", not by relaxing the check.
+
+### Final publication record
+
+| PR | Purpose | Merge commit | Pages |
+|----|---------|--------------|-------|
+| [#30](https://github.com/karagemop466-tech/GOLD1/pull/30) | The sixth pass: live re-read, corrections, F51 withdrawal, requirements scorecard, re-check ledger | `f0be1a79c81bfe80f6b4eb6a0f78d3c8ed281668` | `built` |
+| [#31](https://github.com/karagemop466-tech/GOLD1/pull/31) | Fix the template leak found on the live page; add audit group S20 | `1432958b7b95489a0f80004fb3972f8947205abf` | `built` |
+| [#32](https://github.com/karagemop466-tech/GOLD1/pull/32) | Record the independent replication (50/50 prices identical eight minutes later) | `417720234779bd0604ea112994949eb9311476ef` | `built` |
+| [#33](https://github.com/karagemop466-tech/GOLD1/pull/33) | Correct the blocked-row count to 9 blocked / 8 unreadable / 1 partial | `9f458bff9b6863b7fa342fc945553f6852c1ce16` | `built` |
+| [#34](https://github.com/karagemop466-tech/GOLD1/pull/34) | Align F01/F02 "Affects" with the 59-row dataset (44 and 38, exact ids) | `86b5f8174d2910e886c985a858ced381b4986279` | `built` |
+
+All five merged without waiting for approval. Every Pages build reported `built` with `error: null` for the
+exact merge commit, and the deployed pages were re-read live (cache-busted) after each one.
+`npm run check` was green — **20/20 (S01–S20)** and **10/10 (A01–A10)** — before every merge.
 
 ### Irregularities / open items
 
