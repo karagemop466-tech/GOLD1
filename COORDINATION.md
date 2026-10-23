@@ -752,9 +752,13 @@ reads and the **same** 9-row HTTP 403 list, corroborating `F53` from a third clo
 
 - Every value in the table above is a verbatim field/line from the URL named, read at the timestamp
   recorded, stored in `data/session-3020df54/blocked-reread-2026-10-23.json`.
-- Canonical suite re-run on this branch's tree (result recorded in the PR description):
+- Canonical suite re-run on this branch's tree (71 rows, 105 pages):
   `node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs && node scripts/audit_545688f3.mjs`
-  — see PR for the exact pass output.
+  — **`P83` 2026-10-23T11:02:24Z: `S01`–`S20` 20/20 groups, 6,360 assertions, 0 failures; `A01`–`A10` 10/10, 1,869 assertions, 0 failures; `H01`–`H12` 12/12, 1,562 assertions, 0 failures.**
+  The gate's regenerated artefacts (`data/checks/*`, `index.html`, `checks.html`) were deliberately
+  **not** committed: this PR is strictly additive, the published `P81` artefacts remain canonical,
+  and no pass-ID churn is pushed to shared files while the board's standing integration owner may
+  still publish. The gate proves the additive evidence files break nothing.
 
 ### Irregularities flagged
 
