@@ -1,0 +1,78 @@
+name: Live re-verification of every curated row
+
+# Re-opens the seller's own product page for every row in data/rings.json and
+# records exactly what the page printed (price, karat, published weight,
+# plated/final-sale wording) with verbatim excerpts.
+#
+# This workflow only *records* evidence. It never edits data/rings.json, so it
+# cannot silently change a published value.
+
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: Optional comma-separated row ids (blank = all rows)
+        required: false
+        default: ''
+      concurrency:
+        description: Parallel fetches
+        required: false
+        default: '4'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: live-reverify
+  cancel-in-progress: false
+
+jobs:
+  reverify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Re-open every official product page
+        run: |
+          node scripts/live_reverify.mjs \
+            ${ONLY:+--only="$ONLY"} \
+            --concurrency="${CONCURRENCY}"
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+          CONCURRENCY: ${{ github.event.inputs.concurrency }}
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Live re-verification" >> "$GITHUB_STEP_SUMMARY"
+          node -e '
+            const d = require("./data/live/latest.json");
+            console.log(`- finished_at: ${d.finished_at}`);
+            console.log(`- pages fetched OK: ${d.fetch_ok}/${d.row_count}`);
+            for (const g of d.gold_price_readings) {
+              console.log(`- gold ${g.publisher}: ${g.price_usd_per_ozt} USD/ozt (HTTP ${g.http_status})`);
+            }
+            for (const f of d.fetch_failed) {
+              console.log(`- FAILED ${f.id} HTTP ${f.status} ${f.error}`);
+            }
+          ' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the evidence file
+        run: |
+          git config user.name "gold1-reverify"
+          git config user.email "gold1-reverify@users.noreply.github.com"
+          git add data/live
+          if git diff --cached --quiet; then
+            echo "No change."
+          else
+            git commit -m "data(live): re-read $(date -u +%Y-%m-%dT%H:%MZ) primary-source evidence"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
