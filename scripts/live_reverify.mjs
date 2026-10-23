@@ -255,12 +255,113 @@ async function shopifyFallback(url) {
   };
 }
 
+/**
+ * Variant-level read from the seller's own product JSON (`<product-url>.js`).
+ *
+ * Why this exists: a product-level price (JSON-LD `offers.price`, or the page
+ * headline "From $x") is the **cheapest variant**, which for these retailers is
+ * often a different metal — a vermeil variant on a solid-gold page, or an 18K
+ * variant on a 14K row. Reading the product minimum and treating it as the row's
+ * price would be exactly the mistake this project forbids. The variant table lets
+ * reconciliation match the stored karat to a variant whose own option title
+ * states that karat, and record the rest as a disclosed range.
+ *
+ * Shipping-weight fields (`grams`, `weight`, `weight_unit`) are copied into a
+ * clearly separated `shipping_weight_fields` block marked `not_metal_weight`.
+ * They are parcel weights (e.g. Ross-Simons lists `grams: 113` = 0.25 lb) and
+ * must never be reconciled into `weight_g_low`/`weight_g_high`.
+ */
+async function shopifyVariantTable(url) {
+  const jsonUrl = url.replace(/[?#].*$/, '').replace(/\/$/, '') + '.js';
+  const res = await fetchPage(jsonUrl);
+  if (res.status !== 200 || !res.text) {
+    return { ok: false, json_url: jsonUrl, http_status: res.status, error: res.error || `HTTP ${res.status}`, fetched_at: nowIso() };
+  }
+  let prod = null;
+  try {
+    prod = JSON.parse(res.text);
+  } catch {
+    return { ok: false, json_url: jsonUrl, http_status: 200, error: 'response is not JSON (not a Shopify storefront)', fetched_at: nowIso() };
+  }
+  const variants = Array.isArray(prod?.variants) ? prod.variants : [];
+  if (!variants.length) {
+    return { ok: false, json_url: jsonUrl, http_status: 200, error: 'no variants array', fetched_at: nowIso() };
+  }
+  const cents = (v) => {
+    const n = Number(v);
+    return Number.isFinite(n) ? n / 100 : null;
+  };
+  const descText = toText(String(prod.description || ''));
+  const table = variants.map((v) => ({
+    title: v.title,
+    option1: v.option1 ?? null,
+    option2: v.option2 ?? null,
+    option3: v.option3 ?? null,
+    price_usd: cents(v.price),
+    compare_at_usd: v.compare_at_price === null || v.compare_at_price === undefined ? null : cents(v.compare_at_price),
+    available: v.available ?? null,
+    sku: v.sku ?? null,
+  }));
+  const prices = table.map((v) => v.price_usd).filter((n) => Number.isFinite(n) && n > 0);
+  const byMetal = {};
+  for (const v of table) {
+    const k = String(v.option1 ?? '(none)');
+    if (!byMetal[k]) byMetal[k] = { option1: k, prices: [], variants: 0, available: 0, sample_titles: [] };
+    byMetal[k].variants++;
+    if (v.available) byMetal[k].available++;
+    if (Number.isFinite(v.price_usd)) byMetal[k].prices.push(v.price_usd);
+    if (byMetal[k].sample_titles.length < 3) byMetal[k].sample_titles.push(`${v.title} = $${v.price_usd}`);
+  }
+  for (const k of Object.keys(byMetal)) {
+    const p = byMetal[k].prices;
+    byMetal[k].price_min = p.length ? Math.min(...p) : null;
+    byMetal[k].price_max = p.length ? Math.max(...p) : null;
+    byMetal[k].prices = [...new Set(p)].sort((a, b) => a - b).slice(0, 12);
+  }
+  return {
+    ok: true,
+    json_url: jsonUrl,
+    http_status: 200,
+    fetched_at: nowIso(),
+    title: prod.title,
+    handle: prod.handle,
+    vendor: prod.vendor,
+    type: prod.type,
+    product_updated_at: prod.updated_at ?? null,
+    product_published_at: prod.published_at ?? null,
+    tags: String(prod.tags || '').split(',').map((t) => t.trim()).filter(Boolean).slice(0, 60),
+    price_usd: cents(prod.price),
+    price_min_usd: cents(prod.price_min),
+    price_max_usd: cents(prod.price_max),
+    variant_count: table.length,
+    price_min_variant: prices.length ? Math.min(...prices) : null,
+    price_max_variant: prices.length ? Math.max(...prices) : null,
+    options: (prod.options || []).map((o) => ({ name: o.name, values: o.values })),
+    metal_groups: byMetal,
+    variants: table.slice(0, 220),
+    description_text: descText.slice(0, 2600),
+    description_gram_mentions: occurrences(descText, /\b\d{1,3}(?:\.\d{1,2})?\s?(?:grams?|g)\b/g, 20, 120),
+    description_weight_context: occurrences(descText, /weight/gi, 12, 140),
+    description_solid_mentions: occurrences(descText, /\bsolid\b|\bvermeil\b|\bplated\b|\bgold[- ]filled\b/gi, 10, 90),
+    shipping_weight_fields: {
+      not_metal_weight: true,
+      note: 'Parcel/shipping weights published on the variant record. Copied only so a later pass never mistakes them for metal weight.',
+      values: [...new Set(variants.map((v) => `${v.weight ?? 'null'} ${v.weight_unit ?? ''}`.trim()).filter((s) => s !== 'null'))].slice(0, 6),
+      grams_field_values: [...new Set(variants.map((v) => v.grams).filter((n) => n !== undefined && n !== null))].slice(0, 6),
+    },
+  };
+}
+
 async function runOne(row) {
   const t0 = Date.now();
   const res = await fetchPage(row.source_url);
   const fetched_at = nowIso();
+  // The variant table is read for every row, whether or not the HTML page was
+  // reachable: the seller's own JSON endpoint is the same official source and is
+  // usually served even when the HTML page is bot-walled.
+  const variants = await shopifyVariantTable(row.source_url);
   if (!res.text || res.status >= 400) {
-    const fb = await shopifyFallback(row.source_url);
+    const fb = variants.ok ? null : await shopifyFallback(row.source_url);
     return {
       id: row.id,
       retailer: row.retailer,
@@ -269,6 +370,7 @@ async function runOne(row) {
       fetched_at,
       ok: false,
       error: res.error || `HTTP ${res.status}`,
+      shopify_variant_table: variants,
       shopify_json_fallback: fb,
       extraction: null,
     };
@@ -282,6 +384,7 @@ async function runOne(row) {
     fetched_at,
     ok: res.status >= 200 && res.status < 300,
     bytes: res.text.length,
+    shopify_variant_table: variants,
     extraction: extract(res.text, row),
   };
 }
@@ -352,8 +455,9 @@ const gold = await goldSpot();
 await mkdir(OUT_DIR, { recursive: true });
 const doc = {
   pass: 'P42-live',
+  script_version: 'v4 shopify variant table + description grams (ninth pass, sess-7626fc93)',
   purpose:
-    'Independent live re-read of every curated row at its own official product URL. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.',
+    'Independent live re-read of every curated row at its own official product URL, plus a variant-level read of the seller product JSON. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.',
   started_at,
   finished_at: nowIso(),
   run_context: process.env.GITHUB_RUN_ID ? `github-actions run ${process.env.GITHUB_RUN_ID}` : 'local',
@@ -365,8 +469,17 @@ const doc = {
 };
 
 const stamp = doc.finished_at.replace(/[:.]/g, '-');
-await writeFile(join(OUT_DIR, 'latest.json'), JSON.stringify(doc, null, 1));
 await writeFile(join(OUT_DIR, `${stamp}.json`), JSON.stringify(doc, null, 1));
+// Guard: a run that reached nothing (e.g. executed inside a sandbox with no
+// outbound network) must not overwrite the published evidence pointer. The
+// timestamped file is still written, so the failed attempt is visible.
+if (doc.fetch_ok === 0 && !doc.rows.some((r) => r?.shopify_variant_table?.ok || r?.shopify_json_fallback)) {
+  console.error(
+    `live re-verification: 0/${doc.row_count} pages reachable — writing data/live/${stamp}.json only, latest.json left untouched`
+  );
+} else {
+  await writeFile(join(OUT_DIR, 'latest.json'), JSON.stringify(doc, null, 1));
+}
 
 console.log(
   `live re-verification: ${doc.fetch_ok}/${doc.row_count} pages fetched OK -> data/live/${stamp}.json`
