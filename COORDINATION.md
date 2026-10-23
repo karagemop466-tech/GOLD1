@@ -2,7 +2,7 @@
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
 **Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**)
-**Board owner:** `sess-8dffa7e8` (sixth pass, §15) · **Board updated:** 2026-10-23T10:40Z
+**Board owner:** `sess-5aa23937` (eighth pass, §17) · **Board updated:** 2026-10-23T19:34Z
 
 ---
 
@@ -67,6 +67,7 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T34 | **22K tier gap closure (Auvere LLC) + 12 solid-gold ring & statute expansion (`15 U.S.C. §§ 295, 297`)**: add 11th vetted solid-gold retailer `auvere` (`22K` `91.7%` solid gold, BBB `A+`, 15-day return window) + 12 live-verified rings (`10K`/`14K`/`18K`/`22K`, incl. 4 new published gram weights) | **done** | sess-545688f3 | arena/545688f3-gold1 | `data/session-545688f3/retailer-auvere.json`, `data/session-545688f3/new-rings.json`, `data/session-545688f3/market-spot-2026-10-23.json` | 2026-10-23 |
 | T35 | **Extended anti-hallucination, title-identity & 5-karat verifier (`H01`–`H12`) + zero-loss union integrator**: automated title-token cross-check, ambiguous fine-weight guard, 11-retailer parity & prose-price audit | **done** | sess-545688f3 | arena/545688f3-gold1 | `scripts/audit_545688f3.mjs`, `scripts/integrate_545688f3.mjs` | 2026-10-23 |
 | T36 | **Seventh pass — zero-loss union integration & Pages publish (`sess-545688f3`)**: merge `origin/main` (`baf9ab3`, preserving all P42/`S20`/`compliance.json`/`recheck.html`/`requirements.html` work), integrate 71 rows across 11 retailers & all 5 karat tiers (`10K`–`24K`), run `S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `npm test`, PR, merge, verify live GitHub Pages | **done** | sess-545688f3 | arena/545688f3-gold1 | shared `data/*.json`, `scripts/{build,build_compliance,verify,audit_0804e222}.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
+| T37 | **Eighth pass — full verification & publish (P84)**: line-by-line re-check of 71 rows, gold-price freshness, calculator & weight-melt math, S01–S20 + A01–A10 + H01–H12 sync, security/CSP/XSS/secret audit, no-hallucination banner, GH Pages publish | **in progress** | sess-5aa23937 | arena/5aa23937-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, `scripts/audit_*.mjs`, generated `*.html`, `data/checks/**`, this board | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
