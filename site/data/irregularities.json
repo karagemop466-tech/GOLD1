@@ -1,13 +1,27 @@
 {
   "schemaVersion": 1,
-  "retrievedDate": "2026-10-22",
+  "retrievedDate": "2026-10-23",
   "irregularities": [
     {
       "id": "physical-marks-unverified",
       "severity": "blocks-purchase-clearance",
       "status": "open",
       "title": "Physical purity stamp and maker’s mark are not verified",
-      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589", "bn-502690y14", "bn-501130y14", "bn-500000y14", "bn-501140y", "be-BE1199H6-18KY", "be-BE1D1009-18KY", "be-BE1D1009-14KY"],
+      "affectedCandidateIds": [
+        "trax-71345",
+        "trax-70114",
+        "trax-71851",
+        "trax-70689",
+        "trax-66233",
+        "trax-70589",
+        "bn-502690y14",
+        "bn-501130y14",
+        "bn-500000y14",
+        "bn-501140y",
+        "be-BE1199H6-18KY",
+        "be-BE1D1009-18KY",
+        "be-BE1D1009-14KY"
+      ],
       "finding": "No readable, item-specific physical purity-stamp plus maker’s-mark evidence was verified on the official listings. Product photography was not treated as hallmark proof.",
       "action": "Request close-up, item-specific hallmark photographs and inspect the delivered piece. A karat stamp alone is not proof; independently verify before the return window closes.",
       "sourceBasis": "Absence finding after line-by-line review of every officialProductUrl in research/candidates.json."
@@ -17,7 +31,14 @@
       "severity": "blocks-raw-gold-claim",
       "status": "open",
       "title": "Listed weight does not establish net metal weight",
-      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589"],
+      "affectedCandidateIds": [
+        "trax-71345",
+        "trax-70114",
+        "trax-71851",
+        "trax-70689",
+        "trax-66233",
+        "trax-70589"
+      ],
       "finding": "The six listings state a gram weight and warn that sizing can change it. They do not state whether gemstones are included in that weight.",
       "action": "Keep netMetalWeightGrams blank. Any karat/24 calculation must be labeled nominal listed-weight math, never actual raw-gold content or a valuation.",
       "sourceBasis": "Each affected candidate's listedWeightGrams and listedWeightBasis evidence in research/candidates.json."
@@ -27,7 +48,15 @@
       "severity": "blocks-purchase-clearance",
       "status": "open",
       "title": "Explicit solid-gold wording and gram weight are absent",
-      "affectedCandidateIds": ["bn-502690y14", "bn-501130y14", "bn-500000y14", "bn-501140y", "be-BE1199H6-18KY", "be-BE1D1009-18KY", "be-BE1D1009-14KY"],
+      "affectedCandidateIds": [
+        "bn-502690y14",
+        "bn-501130y14",
+        "bn-500000y14",
+        "bn-501140y",
+        "be-BE1199H6-18KY",
+        "be-BE1D1009-18KY",
+        "be-BE1D1009-14KY"
+      ],
       "finding": "These official pages state karat and gold color, but the audit did not find explicit solid-gold wording or a gram weight. Karat wording alone was not promoted to a solid-gold claim.",
       "action": "Leave solidGold and all weight fields blank. Obtain written solid-gold confirmation and a metal-only weight for the exact configuration.",
       "sourceBasis": "Absence finding after line-by-line review of every affected officialProductUrl in research/candidates.json."
@@ -37,7 +66,9 @@
       "severity": "review-before-order",
       "status": "open",
       "title": "URL slug and official item number differ",
-      "affectedCandidateIds": ["trax-71345"],
+      "affectedCandidateIds": [
+        "trax-71345"
+      ],
       "finding": "The official URL slug ends in 70845, while the official page and item specifics identify item 71345.",
       "action": "Use item 71345 in seller correspondence and confirm the item number on the invoice and appraisal before payment.",
       "sourceUrl": "https://traxnyc.com/products/3-ct-marquise-diamond-engagement-ring-70845",
@@ -48,7 +79,12 @@
       "severity": "review-before-order",
       "status": "open",
       "title": "Displayed base price is not the price of every size",
-      "affectedCandidateIds": ["trax-70114", "trax-71851", "trax-66233", "trax-70589"],
+      "affectedCandidateIds": [
+        "trax-70114",
+        "trax-71851",
+        "trax-66233",
+        "trax-70589"
+      ],
       "finding": "These official pages display size-specific surcharges next to the base price.",
       "action": "Do not treat the base price as a final configured quote. Recheck the exact size, metal color, stone and final total before payment.",
       "sourceBasis": "Each affected candidate's priceUsd and priceBasis evidence in research/candidates.json."
@@ -58,7 +94,10 @@
       "severity": "blocks-raw-gold-claim",
       "status": "open",
       "title": "Some settings include a different prong metal",
-      "affectedCandidateIds": ["bn-500000y14", "be-BE1199H6-18KY"],
+      "affectedCandidateIds": [
+        "bn-500000y14",
+        "be-BE1199H6-18KY"
+      ],
       "finding": "Blue Nile item 500000y14 lists platinum prongs. Brilliant Earth style BE1199H6-18KY lists 14K white-gold prongs on an 18K yellow-gold setting.",
       "action": "Do not apply one karat fraction to an entire future weight. Request component-level metal weights or have a jeweler assess the actual piece.",
       "sourceBasis": "Each affected candidate's style evidence in research/candidates.json."
@@ -79,7 +118,14 @@
       "severity": "source-quality-warning",
       "status": "open",
       "title": "BBB search summary was not reproducible on the direct profile",
-      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589"],
+      "affectedCandidateIds": [
+        "trax-71345",
+        "trax-70114",
+        "trax-71851",
+        "trax-70689",
+        "trax-66233",
+        "trax-70589"
+      ],
       "finding": "A discovery search summary exposed a letter grade and complaint counts that the direct BBB profile did not reproduce. Direct pages confirmed non-accreditation and the complaint counts recorded in research/sellers.json, but did not expose a letter grade.",
       "action": "The letter grade remains blank and unverified. Search snippets are excluded as evidence; manually review the live BBB profile.",
       "sourceUrl": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/traxnyc-corp-0121-97319",
@@ -90,7 +136,14 @@
       "severity": "review-before-order",
       "status": "open",
       "title": "Seller policy discusses chargebacks and disputes",
-      "affectedCandidateIds": ["trax-71345", "trax-70114", "trax-71851", "trax-70689", "trax-66233", "trax-70589"],
+      "affectedCandidateIds": [
+        "trax-71345",
+        "trax-70114",
+        "trax-71851",
+        "trax-70689",
+        "trax-66233",
+        "trax-70589"
+      ],
       "finding": "TraxNYC's policy says initiating a chargeback instead of following its return process violates purchase terms and that it may submit records to contest disputes.",
       "action": "Read the clause and card issuer terms before payment. This dashboard records the seller wording and makes no legal conclusion about cardholder rights.",
       "sourceUrl": "https://traxnyc.com/policies/refund-policy",
@@ -101,11 +154,88 @@
       "severity": "review-before-order",
       "status": "open",
       "title": "Return clock can start before delivery",
-      "affectedCandidateIds": ["be-BE1199H6-18KY", "be-BE1D1009-18KY", "be-BE1D1009-14KY"],
+      "affectedCandidateIds": [
+        "be-BE1199H6-18KY",
+        "be-BE1D1009-18KY",
+        "be-BE1D1009-14KY"
+      ],
       "finding": "Brilliant Earth's policy starts the return/exchange timeline when the purchase is available for shipment or pickup, not upon delivery.",
       "action": "Get the exact start date in writing and arrange independent inspection immediately after delivery; do not assume 30 days from receipt.",
       "sourceUrl": "https://www.brilliantearth.com/30-Day-Returns/",
       "quote": "Please note our return and exchange policy timelines begin when your purchase is available for shipment or pickup."
+    },
+    {
+      "id": "market-reference-snapshot-age",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "The calculator's gold reference is a dated snapshot, not a live quote",
+      "affectedCandidateIds": [],
+      "finding": "The calculator reference is the Kitco Live GoldPrice panel at Oct 22, 2026 - 19:11 NY Time (bid $4,025.00 per troy ounce, displayed $129.41 per gram). An independent gold-api.com spot read on 2026-10-23T23:38:16Z published 3996.899902 USD per troy ounce (128.50 per gram). Both are stored with their own publisher timestamps in research/policy/market.json.",
+      "action": "Read the timestamp next to any gold figure before using it. The calculator prints the named Kitco panel and its timestamp and never blends the two readings; re-open the official page before relying on a melt figure, and remember melt value is a floor, not a price.",
+      "sourceBasis": "research/policy/market.json (source and liveFeed), each with a publisher timestamp."
+    },
+    {
+      "id": "blue-nile-item-195639-repurposed",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "Blue Nile item 195639 has been repurposed to a different ring",
+      "affectedCandidateIds": [
+        "bn-501130y14"
+      ],
+      "finding": "Read live on 2026-10-23T23:41Z, the official item-195639 URL sells 'Petite Solitaire Engagement Ring in 14k Yellow Gold', Stock Number 501130y14, Metal 14K Yellow Gold, Width 1.80mm, $1,000 (Setting Price) — which is this row. The canonical 71-row dataset on the dashboard root held a different ring at the same item number ('Petite Micropave', 1.50 mm, platinum prongs) and withdrew that row as a source mismatch (root flag F65). A seller may reuse an item number or URL for a different product.",
+      "action": "Never trust an item number or URL alone. Re-open the official page immediately before ordering and check the product name, stock number and width against what you intend to buy; keep the listing text with the receipt.",
+      "sourceUrl": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
+      "quote": "Stock Number 501130y14; Metal 14K Yellow Gold; Width 1.80mm; $1,000(Setting Price)"
+    },
+    {
+      "id": "compare-at-price-not-market-value",
+      "severity": "source-quality-warning",
+      "status": "open",
+      "title": "A seller's strikethrough 'compare at' price is not evidence of value",
+      "affectedCandidateIds": [
+        "trax-70689"
+      ],
+      "finding": "The seller's own product feed for item 70689 publishes price 300000 ($3,000) beside compare_at_price 570000 ($5,700). The larger figure is a seller-set marketing reference; it was read on 2026-10-23T23:46Z and is deliberately not stored as a catalog value.",
+      "action": "Judge price against the ring's published gold weight and the current gold price, not against a strikethrough figure. No discount claim on this dashboard is based on a compare-at price.",
+      "sourceUrl": "https://traxnyc.com/products/ladies-rings-radiant-spark-engagement-ring-item70689.js",
+      "quote": "\"price\":300000,\"price_min\":300000,\"price_max\":300000,\"available\":true,\"price_varies\":false,\"compare_at_price\":570000"
+    },
+    {
+      "id": "shopify-weight-field-is-parcel-weight",
+      "severity": "blocks-raw-gold-claim",
+      "status": "open",
+      "title": "The machine-readable weight field is shipping weight, not gold weight",
+      "affectedCandidateIds": [
+        "trax-71345",
+        "trax-70114",
+        "trax-71851",
+        "trax-70689",
+        "trax-66233",
+        "trax-70589"
+      ],
+      "finding": "Read on 2026-10-23, the seller's own product feeds carry a variant weight field of 3 or 4 grams (and 0 on some yellow-gold variants of item 66233) while the seller's own prose states the metal weight: item 71345 'on 14K gold at 2.80 grams', item 71851 'the ring weighs 3.00 grams', item 66233 'The ring weighs 3.20 grams'. The feed field is the parcel/shipment weight. Three stored weights (70689 3.8 g, 70589 2.9 g, 70114 2 g) appear only in the product page spec table and not in the feed.",
+      "action": "Never read a platform weight field as gold weight. Only a weight the seller states for the piece, with its basis disclosed, is used here — and a listed weight is still not a verified net metal weight.",
+      "sourceBasis": "data/session-7d64f506/live-reads-2026-10-23.json: feed weight fields versus the seller's own gram statements for the same products."
+    },
+    {
+      "id": "secondary-dashboards-are-dated-snapshots",
+      "severity": "review-before-order",
+      "status": "open",
+      "title": "Two published dashboards beside the root are bounded, dated snapshots",
+      "affectedCandidateIds": [],
+      "finding": "Besides the canonical dashboard at the site root, GitHub Pages also serves /site/ (this 13-row official-source review, re-read 2026-10-23) and /docs/ (a 14-row dashboard dated 2026-10-22 whose gold anchor is dated 2026-10-21 at $4,024.36 per troy ounce and where 7 of 14 prices are marked unverified). Neither is the full catalogue.",
+      "action": "Treat /site/ and /docs/ as dated evidence snapshots. For the full verified catalogue use the dashboard root, and always re-open the seller's own page before ordering.",
+      "sourceBasis": "site/index.html, docs/index.html and data/rings_c2bbe753.json as published on GitHub Pages."
+    },
+    {
+      "id": "legacy-generator-wrote-to-repo-root",
+      "severity": "source-quality-warning",
+      "status": "resolved-with-record",
+      "title": "A dormant first-pass generator could overwrite the published dashboard",
+      "affectedCandidateIds": [],
+      "finding": "tools/build_site.py (the first-pass generator, dormant since 2026-10-22) had OUT set to the repository root and listed index.html, flagged.html and calculator.html among the pages it writes — the same filenames as the canonical published dashboard. Running it would have overwritten 71-row pages with 14-row pages.",
+      "action": "Fixed on 2026-10-23 (board T50): the script now refuses to write to the repository root and requires an explicit --allow-regenerate flag; its default output is docs/. No generated page was overwritten by this change.",
+      "sourceBasis": "tools/build_site.py before and after the 2026-10-23 change in this branch."
     }
   ]
 }
