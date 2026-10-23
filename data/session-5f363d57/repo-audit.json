@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:23:58.224Z",
+  "generated_at": "2026-10-23T20:27:01.022Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -13,10 +13,10 @@
   },
   "summary": {
     "groups": 10,
-    "passed": 3,
-    "failed": 7,
-    "assertions": 1332,
-    "findings": 123
+    "passed": 2,
+    "failed": 8,
+    "assertions": 1344,
+    "findings": 135
   },
   "groups": [
     {
@@ -59,7 +59,7 @@
       "id": "R07",
       "name": "No unsupported retail-price or wearability generalisations",
       "passed": false,
-      "failure_count": 5
+      "failure_count": 14
     },
     {
       "id": "R08",
@@ -76,8 +76,8 @@
     {
       "id": "R10",
       "name": "Source registry and audit-reference integrity",
-      "passed": true,
-      "failure_count": 0
+      "passed": false,
+      "failure_count": 3
     }
   ],
   "findings": [
@@ -1538,6 +1538,115 @@
       "sources": []
     },
     {
+      "id": "R07-06",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
+      "message": "README.md calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-07",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
+      "message": "data/checklist.json calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-08",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
+      "message": "S03 describes only 10/14/18/22/24 as legal marks, although the official guides give other examples including 9K",
+      "row": null,
+      "path": "scripts/verify.mjs",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-09",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "README.md strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-10",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "data/checklist.json strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-11",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "scripts/build.mjs strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-12",
+      "group": "R07",
+      "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
+      "severity": "high",
+      "message": "Checklist misidentifies GIA 2025 item/pendant examples as rings",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-13",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_XRF_DEPTH_CLAIM",
+      "severity": "high",
+      "message": "Checklist asserts an X-ray-depth claim not established by its cited GIA articles",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-14",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_TEST_GUARANTEE",
+      "severity": "high",
+      "message": "Checklist presents a specific hydrostatic test regimen as catching these cases; the cited GIA articles call for additional appropriate testing but do not establish that blanket guarantee",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
       "id": "R08-01",
       "group": "R08",
       "irregularity_id": "WITHDRAWN_COUNTED_AS_VERIFIED",
@@ -1559,6 +1668,42 @@
       "path": "scripts/build.mjs",
       "sources": [
         "data/rings.json"
+      ]
+    },
+    {
+      "id": "R10-01",
+      "group": "R10",
+      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
+      "severity": "high",
+      "message": "Gold unit authority still uses the NIST URL that returned a 404 on 2026-10-23",
+      "row": null,
+      "path": "data/gold-price.json",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ]
+    },
+    {
+      "id": "R10-02",
+      "group": "R10",
+      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
+      "severity": "high",
+      "message": "Source registry still uses the retired NIST conversion URL",
+      "row": null,
+      "path": "data/sources.json",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ]
+    },
+    {
+      "id": "R10-03",
+      "group": "R10",
+      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
+      "severity": "high",
+      "message": "Checklist still links the retired NIST conversion URL",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
       ]
     }
   ],

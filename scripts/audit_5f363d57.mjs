@@ -31,13 +31,15 @@ const [ringsDoc, retailersDoc, flagsDoc, gold, checklist, compliance, verificati
     readJson('data/verification-2026-10-23.json'),
     readJson('data/sources.json'),
   ]);
-const [readme, complianceBuilder, siteBuilder, appJs, indexHtml] = await Promise.all([
+const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, verifySource] = await Promise.all([
   readText('README.md'),
   readText('scripts/build_compliance.mjs'),
   readText('scripts/build.mjs'),
   readText('assets/js/app.js'),
   readText('index.html'),
+  readText('scripts/verify.mjs'),
 ]);
+const checklistText = JSON.stringify(checklist);
 
 const rows = ringsDoc.rows;
 const active = rows.filter((r) => !r.withdrawn);
@@ -264,6 +266,37 @@ await group('R07', 'No unsupported retail-price or wearability generalisations',
       id: 'UNSUPPORTED_KARAT_GENERALISATION', path: 'scripts/build.mjs',
     });
   }
+  for (const [path, text] of [['README.md', readme], ['data/checklist.json', checklistText]]) {
+    check(!/(?:all five legal karat tiers|covering every legal tier)/i.test(text), failure, `${path} calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples`, {
+      id: 'FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM', path,
+      sources: ['https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3'],
+    });
+  }
+  check(!/Karat must be a legal mark \(10\/14\/18\/22\/24\)/.test(verifySource), failure, 'S03 describes only 10/14/18/22/24 as legal marks, although the official guides give other examples including 9K', {
+    id: 'FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM', path: 'scripts/verify.mjs',
+    sources: ['https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3'],
+  });
+  for (const [path, text] of [['README.md', readme], ['data/checklist.json', checklistText], ['scripts/build.mjs', siteBuilder]]) {
+    check(!/(?:may NOT legally|may not legally|Solid Gold.{0,20}barred)/i.test(text), failure, `${path} strengthens eCFR “should not” into an unqualified legal prohibition`, {
+      id: 'ECFR_LEGAL_STRENGTH_OVERSTATED', path,
+      sources: ['https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3'],
+    });
+  }
+  check(!checklistText.includes('9K/10K gold rings'), failure, 'Checklist misidentifies GIA 2025 item/pendant examples as rings', {
+    id: 'GIA_EXAMPLE_IDENTITY_ERROR', path: 'data/checklist.json',
+    sources: ['https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold'],
+  });
+  check(!checklistText.includes('X-rays penetrate only microns'), failure, 'Checklist asserts an X-ray-depth claim not established by its cited GIA articles', {
+    id: 'UNSUPPORTED_XRF_DEPTH_CLAIM', path: 'data/checklist.json',
+    sources: ['https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold'],
+  });
+  check(!/hydrostatic specific-gravity \(density\) testing catches/i.test(checklistText), failure, 'Checklist presents a specific hydrostatic test regimen as catching these cases; the cited GIA articles call for additional appropriate testing but do not establish that blanket guarantee', {
+    id: 'UNSUPPORTED_TEST_GUARANTEE', path: 'data/checklist.json',
+    sources: [
+      'https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet',
+      'https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold',
+    ],
+  });
 });
 
 /* R08 — active tables and headline counts must not include a withdrawn SKU silently. */
@@ -297,6 +330,17 @@ await group('R10', 'Source registry and audit-reference integrity', async (failu
   for (const s of sourcesDoc.sources) {
     check(/^https:\/\//.test(s.url), failure, `${s.id}: registry URL is not HTTPS`, { id: 'REGISTRY_URL', path: 'data/sources.json' });
   }
+  const workingNist = 'https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information';
+  const retiredNist = 'https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information';
+  check(gold.unit_authority?.source_url === workingNist, failure, 'Gold unit authority still uses the NIST URL that returned a 404 on 2026-10-23', {
+    id: 'BROKEN_NIST_AUTHORITY_LINK', path: 'data/gold-price.json', sources: [workingNist],
+  });
+  check(sourcesDoc.sources.find((s) => s.id === 'nist-handbook-130')?.url === workingNist, failure, 'Source registry still uses the retired NIST conversion URL', {
+    id: 'BROKEN_NIST_AUTHORITY_LINK', path: 'data/sources.json', sources: [workingNist],
+  });
+  check(!checklistText.includes(retiredNist), failure, 'Checklist still links the retired NIST conversion URL', {
+    id: 'BROKEN_NIST_AUTHORITY_LINK', path: 'data/checklist.json', sources: [workingNist],
+  });
   check(/look for hallucinations/i.test(indexHtml), failure, 'Landing does not actively recommend a reader hallucination review', {
     id: 'READER_REVIEW_RECOMMENDATION_MISSING', path: 'scripts/build.mjs',
   });
