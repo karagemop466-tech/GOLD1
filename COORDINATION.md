@@ -1339,11 +1339,11 @@ Two genuine seller-side changes were caught by reading variant level rather than
 
 | Suite | Result |
 |-------|--------|
-| `scripts/verify.mjs` (S01–S20) | **20/20, 0 failures** — 71 rows, 106 pages, 7,354 assertions (includes `sess-356f1adf`'s S01 retired-URL assertion, kept) |
+| `scripts/verify.mjs` (S01–S20) | **20/20, 0 failures** — 71 rows, 106 pages, 7,357 assertions (includes `sess-356f1adf`'s S01 retired-URL assertion, kept) |
 | `scripts/audit_0804e222.mjs` (A01–A10) | **10/10** — 1,969 assertions |
 | `scripts/audit_545688f3.mjs` (H01–H13) | **13/13** — 1,689 assertions |
 | `scripts/audit_dab93754.mjs` (N01–N11) | **11/11** — 1,570 assertions |
-| `scripts/audit_67748540.mjs` (**Q01–Q08**) | **8/8** — 980 assertions |
+| `scripts/audit_67748540.mjs` (**Q01–Q10**) | **10/10** — 990 assertions |
 | `npm test` (`/site/` subsite: evidence, links, security, `html-validate`, runtime, build) | **all green** |
 | `scripts/audit_5f363d57.mjs` (advisory R01–R10) | **156 findings** (was 159 on the merged tree before this pass — the NIST link fix and the F13/F68 coverage moved it down, not up); non-blocking |
 
@@ -1366,14 +1366,28 @@ Two genuine seller-side changes were caught by reading variant level rather than
 
 | Step | Result |
 |------|--------|
-| Pull request | see §23.8 |
-| Merge into `main` | see §23.8 |
-| GitHub Pages | see §23.8 |
+| Pull request #1 | [#71](https://github.com/karagemop466-tech/GOLD1/pull/71) — *Twelfth pass (P117): fresh 23:39Z re-read of all 71 rows, runner-403 rows closed by a second channel, dual-channel gold refresh, F68 Cartier rename, new Q01–Q08 audit* — **merged 2026-10-23T23:47:11Z**, merge commit **`5478444cb34d56e2aaf76855317b89630c8e56e3`** |
+| Pull request #2 | [#76](https://github.com/karagemop466-tech/GOLD1/pull/76) — *Landing-page freshness derived from the newest 71-row ledger + Q09 regression guard* — **merged 2026-10-23T23:48:46Z**, merge commit **`de08167bdf4f701ebce7334e037a48db715e3c03`** |
+| Pull request #3 | [#77](https://github.com/karagemop466-tech/GOLD1/pull/77) — *Quantify partly-verified rows precisely (au-cigar variant-level reproduction) + Q10 guard, list Q01–Q10 in the check banner* — **merged 2026-10-23T23:49:59Z**, merge commit **`e25957e352dd984e421ba083a72bd4eb40605439`** |
+| GitHub Pages | build **`built`**, `error: null`, for each merge commit (Pages build for `de08167` at 2026-10-23T23:49:07Z; the tip `e25957e` was then superseded on `main` by `c8d4dd0`, PR #74 from `sess-db06c195`, which is also **`built`**, `error: null`) |
+| Live read-backs (2026-10-23T23:5xZ) | landing at `?deploy=de08167`: **pass P118**, **69 active / 2 withdrawn**, **25/71 weights**, **21/71 solid**, **67 flagged findings**, the No-hallucinations rule at the top, the check families now **`S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10`**, and the **derived** latest-pass sentence *"runner opened all 71 official URLs at 2026-10-23T23:39:43Z and read 61 of them … 68 of 71 rows reproduced exactly (58 by the runner, 10 by the second channel), 0 contradictions, 3 rows unverified by design"* with spot **$3,996.899902/ozt** · `flagged.html`: **67 findings**, `F67` (NIST) and **`F68`** (Cartier) both rendered with text |
+| Third session on the same clock | `arena/db06c195-gold1` merged **PR #74** at 2026-10-23T23:50:13Z (board **T51 / §24**, findings **DB-01…DB-06** — prefix-scoped, so no id collision) with an independent third-channel 71-row read reporting **61/61 prices reproduced, 0 drift**, which agrees with this pass's 68/71 (the difference is scope: their 61 are the rows the runner could read, this pass adds the 10 second-channel rows and the 3 by-design blanks). Its files are isolated in `data/session-db06c195/**` and `scripts/*db06c195*`; none of this session's files were touched. |
 
-### 23.8 Fill-in after merge
+### 23.8 Final state of this pass
 
-Recorded below by the follow-up board commit: PR link, merge commit, Pages build state and the live
-read-backs (pass id, 67 findings, F68 anchor, the `3,996.899902` spot).
+- **Finding registry:** 67 findings, ids **F01–F68**, next new id **F69**.
+- **Rows:** 71; **68 confirmed on 2026-10-23 at 23:39Z** with zero drift; **3 unverified by design**
+  (2 withdrawn source mismatches + 1 partly verified). No price, karat or weight value was changed by
+  this pass — it found no drift.
+- **Gold:** `3,996.899902 USD/ozt` at `2026-10-23T23:38:16Z` (publisher), corroborated at the same
+  second through a second channel and again one minute later by the Actions runner; COMEX cross-check
+  `4,010.0 @ 20:59:58Z`.
+- **Check families now run on every build:** `S01–S20`, `A01–A10`, `H01–H13`, `N01–N11`, and the new
+  **`Q01–Q10`** freshness/quote/security group (`npm run check` runs all five; `npm test` runs the
+  `/site/` suite).
+- **Open, non-blocking:** `sess-7626fc93` T39–T43 and `sess-5f363d57` T44 remain unfinished on their
+  own branches (stale, not deleted); PR #57 remains open and conflicting; their unique ledgers are
+  listed in §23.1 for additive intake by any later integrator.
 
 ---
 
