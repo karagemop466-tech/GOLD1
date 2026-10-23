@@ -740,6 +740,8 @@ to state, per row, when it was last read — nothing here upgrades a 2026-10-22 
 | PR | Purpose | Merge commit | Pages |
 |----|---------|--------------|-------|
 | [#42](https://github.com/karagemop466-tech/GOLD1/pull/42) | Eighth pass: sync P86 (71 rings, 11 retailers, 5 karat tiers, 20/20 + 10/10 + 12/12, No-hallucinations verified) | `629d8608d186997f2c548bf7258399da188e8c8a` | `built` (2026-10-23T19:36:56Z, `error: null`) |
+| [#43](https://github.com/karagemop466-tech/GOLD1/pull/43) | Board: T37 closed, §17 eighth-pass record added | `517923aff6c2a0b0bab380b746e87b952478caa7` | `built` (`error: null`) |
+| [#44](https://github.com/karagemop466-tech/GOLD1/pull/44) | **Live gold-spot refresh** to `3,999.899902 USD/ozt` at `2026-10-23T19:38:15Z` (gold-api.com) + `build_compliance.mjs` re-run so every melt figure is re-derived + §17 live-read table | `4d5d671cc2e1b567a3230d4aa41cb7218145fa7c` | `built` (`error: null`) |
 
 - **Live Pages URLs verified (Pages status `built`, commit `629d860`):**
   - `https://karagemop466-tech.github.io/GOLD1/` — rendering **71 verified listings**, **11 retailers**, **all 5 karat tiers**, **25/71 published weights**, **21/71 "solid gold"**, **57 flagged findings**, **P86 banner** and No-hallucinations rule.
@@ -748,6 +750,16 @@ to state, per row, when it was last read — nothing here upgrades a 2026-10-22 
   - `https://karagemop466-tech.github.io/GOLD1/flagged.html` — all 57 findings with source links.
   - `https://karagemop466-tech.github.io/GOLD1/checks.html` — 20/20 S-groups, P86, history table through P86.
   - `https://karagemop466-tech.github.io/GOLD1/calculator.html` — gold calculator with 4024.70/ozt prefill and worked examples (rs-571221 1.7g $400 → $128.32 gold, 3.1×).
+
+### Post-deploy live read of the deployed pages (this pass)
+
+- `https://karagemop466-tech.github.io/GOLD1/calculator.html` — served the regenerated price: *“Pre-filled with the published spot price at 2026-10-23T19:38:15Z”*, karat table headed *“Gold per gram at $3,999.90/ozt”*, worked example *“1.7 g at 14K … $127.53 of gold, or 3.1× the metal value”*. The arithmetic matches `grams × (karat ÷ 24) × (spot ÷ 31.1034768)` recomputed by hand: `1.7 × (14/24) × (3999.899902/31.1034768) = 127.53`.
+- `https://karagemop466-tech.github.io/GOLD1/rings/rs-571221.html` — served the No-hallucinations banner, the verbatim evidence quote, the official-source link, the `1.7 g` published weight, the flag *“solid not stated”*, and the recomputed gold-value block (`$127.53`, `3.1×`).
+- Pages build API for the deploy commit `4d5d671`: status `built`, `error.message = null`.
+
+Direct HTTP from the sandbox shell is blocked by the environment's host allowlist, so the deployed pages were
+read with the page-fetch tool rather than `curl`. That is why the live checks are quoted page text above
+instead of a status-code table.
 
 ### Irregularities / open items (carried forward, not hidden)
 
