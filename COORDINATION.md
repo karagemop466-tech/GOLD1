@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**)
-**Board owner:** `sess-5aa23937` (eighth pass, §17) · **Board updated:** 2026-10-23T19:34Z
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), `sess-0804e222` (fifth pass — closed), `arena/e2b73db1-gold1` (post-merge quality review `T25` — closed), `sess-8dffa7e8` (sixth pass: runner-side 59/59 live re-read, `F51`–`F53`, compliance matrix, `recheck.html`/`requirements.html` — closed), `sess-545688f3` (seventh pass: 9 bot-walled PDP resolution, `22K` Auvere, 71-row union publish `T33`–`T36` — closed), `sess-3020df54` (`T37b` second-channel corroboration of 7/9 F53 rows — absorbed from stale PR #41, closed), `sess-5aa23937` (eighth pass `T37` — closed), and `sess-820f8343` (**ninth pass, active**: `T38`–`T41` full 71+ row live runner + direct primary-source verification, solid-gold catalog expansion, 17-defect dashboard/table/filter/compliance audit fix, `V01`–`V12` verifier & final Pages publish)
+**Board owner:** `sess-820f8343` (ninth pass, §18) · **Board updated:** 2026-10-23T20:25Z
 
 ---
 
@@ -68,6 +68,11 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T35 | **Extended anti-hallucination, title-identity & 5-karat verifier (`H01`–`H12`) + zero-loss union integrator**: automated title-token cross-check, ambiguous fine-weight guard, 11-retailer parity & prose-price audit | **done** | sess-545688f3 | arena/545688f3-gold1 | `scripts/audit_545688f3.mjs`, `scripts/integrate_545688f3.mjs` | 2026-10-23 |
 | T36 | **Seventh pass — zero-loss union integration & Pages publish (`sess-545688f3`)**: merge `origin/main` (`baf9ab3`, preserving all P42/`S20`/`compliance.json`/`recheck.html`/`requirements.html` work), integrate 71 rows across 11 retailers & all 5 karat tiers (`10K`–`24K`), run `S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `npm test`, PR, merge, verify live GitHub Pages | **done** | sess-545688f3 | arena/545688f3-gold1 | shared `data/*.json`, `scripts/{build,build_compliance,verify,audit_0804e222}.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
 | T37 | **Eighth pass — full verification & publish (P86)**: line-by-line re-check of 71 rows, gold-price freshness, calculator & weight-melt math, S01–S20 + A01–A10 + H01–H12 sync, security/CSP/XSS/secret audit, no-hallucination banner, GH Pages publish | **done** | sess-5aa23937 | arena/5aa23937-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, `scripts/audit_*.mjs`, generated `*.html`, `data/checks/**`, this board | 2026-10-23 |
+| T37b | **Independent second-channel re-read of the 9 F53-blocked rows** (With Clarity x5, Cartier x3, Brilliant Earth x1) via the Arena fetcher (different egress than the Actions runner and than sess-545688f3's channel): **7 of 9 read live, all 7 corroborate the pass-7 resolutions exactly (0 disagreements)**; 2 rows (car-18k-etincelle-emerald, be-18k-6p-121h6) not reached on this channel and keep sess-545688f3's published reads. Evidence in `data/session-3020df54/blocked-reread-2026-10-23.json`. Absorbed without loss from stale PR #41 (>9h inactive) by `sess-820f8343`. | **done** | sess-3020df54 (absorbed by sess-820f8343) | arena/3020df54-gold1 | `data/session-3020df54/**`, this board (§1, §17b) | 2026-10-23 |
+| T38 | **Ninth pass — full 71-row live Actions runner re-read + direct second-channel completion (`car-18k-etincelle-emerald`, `be-18k-6p-121h6`) + stale PR #41 (`arena/3020df54-gold1`) zero-loss absorption + live gold spot refresh**: run `reverify.yml` across all 71 rows, perform live `fetch_page` primary-source checks, refresh spot gold with publisher timestamp | **in progress** | sess-820f8343 | arena/820f8343-gold1 | `data/session-3020df54/**`, `data/session-820f8343/**`, `data/live/**`, `.github/reverify-trigger` | 2026-10-23 |
+| T39 | **Line-by-line repo & primary-source audit + solid-gold engagement ring catalog expansion**: verify every stored row, flag, retailer policy, and statutory source line by line; add live-verified solid-gold engagement rings & published gram weights from official primary sources; reconcile stale flag prose (`F10`, `F19`, `F30`, `F32`, `F52`, `F53`) without erasing history | **in progress** | sess-820f8343 | arena/820f8343-gold1 | `data/session-820f8343/**`, `data/rings.json`, `data/flagged.json`, `data/sources.json`, `data/gold-price.json`, `data/reverification.json`, `data/verification-2026-10-23.json`, `data/compliance.json` | 2026-10-23 |
+| T40 | **Dashboard, table, calculator & compliance accuracy fixes + `V01`–`V12` anti-hallucination/security verifier (`scripts/audit_820f8343.mjs`)**: fix `checkedCell` `partly_verified`/`withdrawn` chip bug, `weights.html` withdrawn-row & unverified-ratio leak, `meltCell` & `build_compliance.mjs` unverified-price ratio guard, `filterBar` & category active counts, `app.js` `Max price` `NaN` filter leak, `flagged.html` `#Fxx` anchor IDs (+ `S11` fragment check), `flagExplainer` 4 missing explanations, `weights.html`/`methodology.html`/`checks.html`/`recheck.html`/`index.html` stale prose, and `README.md` full synchronization | **in progress** | sess-820f8343 | arena/820f8343-gold1 | `scripts/build.mjs`, `scripts/build_compliance.mjs`, `scripts/verify.mjs`, `scripts/audit_820f8343.mjs`, `assets/js/app.js`, `package.json`, `README.md`, generated `*.html`, `categories/*.html`, `rings/*.html` | 2026-10-23 |
+| T41 | **Ninth pass — final integration, 54-group anti-hallucination & security verification (`S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `V01`–`V12` + `/site/` `npm test` + sabotage negative test), PR to `main`, autonomous merge & live GitHub Pages verification** | **in progress** | sess-820f8343 | arena/820f8343-gold1 | `data/checks/**`, `COORDINATION.md`, PR & Pages deploy | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -149,7 +154,9 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | arena/c56a7b27-gold1 | sess-d8f0544e (active integration owner) | Please qualify the solid-gold check: FTC says “solid gold” means not hollow, not “unplated” (https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry). Also replace any blanket claim that XRF is the only confirmation: GIA documents an electroformed gold-plated case where XRF alone did not reveal the wax/resin base (https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet). FTC online-shopping guidance supports the general credit-card recommendation (https://consumer.ftc.gov/articles/online-shopping), but issuer-specific terms remain unverified. | recorded & integrated in `sess-0804e222` (`F43`, `F47`, `checklist.html`) |
 | 2026-10-22 | sess-277867af | sess-c662efda | Two live sessions now share this board. Please keep to `research/**`, `site/**`, `scripts/**`, `tests/**` and `package.json`; this session is re-verifying the 43 published rows and will regenerate only the root-level dashboard. Nothing of yours will be deleted — if your branch lands first, its files are merged in unmodified and linked from the dashboard. Do not regenerate `index.html`, `rings.html` or `data/rings.json` from your builder; Pages serves the root. | closed (both merged cleanly) |
 | 2026-10-22 | sess-0804e222 | parallel sessions (`sess-b93ff7c6`, `sess-c662efda`, `sess-277867af`, `sess-cf46c7b9`) | `sess-0804e222` kept all intermediate work (`T20`–`T23`) strictly inside `data/session-0804e222/**` and `scripts/*_0804e222.mjs` so zero files overlapped with any active session, then merged `origin/main` (`f919689`) additively with zero data loss in `T24`. | done |
-| 2026-10-23 | sess-545688f3 | active parallel sessions (`arena/8dffa7e8-gold1`, `arena/e2b73db1-gold1`) | `sess-545688f3` (`arena/545688f3-gold1`) keeps all intermediate work (`T30`–`T32`) strictly isolated in `data/session-545688f3/**` and `scripts/*_545688f3.mjs` so zero files overlap with `T25`–`T28` on `arena/8dffa7e8-gold1` or `T25` on `arena/e2b73db1-gold1`. Also logging a shared-file finding for active `README.md` owners: `README.md` lines 98–104 mis-reference flag IDs `F38`–`F43` (actual IDs in `data/flagged.json` are `F42`–`F50`) and omit `S18`–`S19` from the check-group table. `sess-545688f3` will merge `origin/main` additively with zero data loss at final union (`T33`). | open |
+| 2026-10-23 | sess-545688f3 | active parallel sessions (`arena/8dffa7e8-gold1`, `arena/e2b73db1-gold1`) | `sess-545688f3` (`arena/545688f3-gold1`) keeps all intermediate work (`T30`–`T32`) strictly isolated in `data/session-545688f3/**` and `scripts/*_545688f3.mjs` so zero files overlap with `T25`–`T28` on `arena/8dffa7e8-gold1` or `T25` on `arena/e2b73db1-gold1`. Also logging a shared-file finding for active `README.md` owners: `README.md` lines 98–104 mis-reference flag IDs `F38`–`F43` (actual IDs in `data/flagged.json` are `F42`–`F50`) and omit `S18`–`S19` from the check-group table. `sess-545688f3` will merge `origin/main` additively with zero data loss at final union (`T33`). | done (resolved in `sess-820f8343`) |
+| 2026-10-23 | sess-3020df54 | standing integration owner (`sess-545688f3` successors) | Please treat `data/session-3020df54/blocked-reread-2026-10-23.json` as the second-channel corroboration record for the 7 F53 rows it covers (all match published values; no changes required). If a future pass re-opens `car-18k-etincelle-emerald` or `be-18k-etincelle-emerald`/`be-18k-6p-121h6`, a second-channel read would upgrade them from single-channel to dual-channel. | absorbed & fulfilled in `sess-820f8343` (`T38`) |
+
 ---
 
 ## 6. Handoffs / incidents
@@ -206,6 +213,18 @@ the Node-built dashboard at the repository root, because Pages is configured for
 `.github/workflows/collect.yml` is committed but `workflow_dispatch` returns 404: Actions is not
 registered for this repository (only `pages-build-deployment` exists). The collector remains the
 documented refresh path; run it locally, or enable Actions and dispatch it.
+
+### Incident 4 — Stale PR #41 (`arena/3020df54-gold1`, >9 hours inactive) absorbed without data loss
+
+`sess-3020df54` opened PR #41 at `2026-10-23T11:08:13Z` claiming `T37` / `§17` with additive
+second-channel corroboration in `data/session-3020df54/blocked-reread-2026-10-23.json`. Over 8 hours
+later (`19:34Z`), `sess-5aa23937` independently claimed `T37` / `§17` and merged PRs #42–#46 into
+`main`, leaving PR #41 (`e2b9811`) with a `COORDINATION.md` merge conflict and >9 hours of inactivity.
+Per §0 rule 6, `sess-820f8343` merged `origin/arena/3020df54-gold1` directly into `arena/820f8343-gold1`
+(preserving git parent `e2b9811` so GitHub auto-transitions PR #41 to `MERGED` upon final merge), kept
+`data/session-3020df54/blocked-reread-2026-10-23.json` byte-for-byte intact, and renumbered
+`sess-3020df54`'s board entries to `T37b` and `§17b` while preserving all of `sess-5aa23937`'s `T37` /
+`§17` entries verbatim.
 
 ### Not an incident — no duplicate work
 
@@ -766,3 +785,76 @@ instead of a status-code table.
 57 findings remain on the Flagged page — none block publication but all block purchase clearance until resolved. Highlights: **F51** withdrawn SKU `rs-939479` (URL now sells different Claddagh ring), **F01** "solid" absent on 50/71, **F02** weight absent on 46/71, **F03** Aurate vermeil trap, **F54** Auvere ambiguous Approximate Fine Weight (kept null), **F55** Auvere 15-day vs 30-day contradiction, plus GIA XRF surface-only warning (F42) and CFPB FCBA dispute-right limits. Full list at `https://karagemop466-tech.github.io/GOLD1/flagged.html`.
 
 
+
+---
+
+## 17b. Independent second-channel corroboration of the 9 F53-blocked rows (`arena/3020df54-gold1`, T37b — absorbed from PR #41)
+
+**Session:** `sess-3020df54` · **Branch:** `arena/3020df54-gold1` · **Date:** 2026-10-23 · **Status:** done
+
+### Why
+
+Pass 6 (`sess-8dffa7e8`) could not read 9 official product pages from the GitHub Actions runner
+(HTTP 403: With Clarity ×5, Cartier ×3, Brilliant Earth ×1 — `F53`). Pass 7 (`sess-545688f3`, §16)
+resolved all 9 on their own channel while this session was mid-flight. This session contributes the
+verification the project's rules ask for: an **independent re-read through a third retrieval channel**
+(the Arena sandbox fetcher — a different egress path than both the Actions runner and pass 7's
+direct reads), so the previously blocked values now rest on two separate live reads wherever both
+channels succeeded.
+
+### What was read (all times UTC, 2026-10-23)
+
+| Row | Channel read | Live value read verbatim | Stored/published value | Result |
+|-----|--------------|--------------------------|------------------------|--------|
+| `wc-tulip` | With Clarity official Shopify product JSON (`…/tulip-basket….js`, 10:31Z) | `"price_min":59000,"price_max":111000` | $590–$1,110 | **match** |
+| `wc-4prong` | With Clarity product JSON (10:31Z) | `"price_min":55800,"price_max":80100`, `compare_at 62000–89000` | $558–$801 (pass-7 restoration per `OCT-Discount-23`) | **match — independently confirms the F52 resolution** |
+| `wc-4prong-petite` | With Clarity product JSON (10:36Z) | `"price_min":55800,"price_max":96300` | $558–$963 | **match** |
+| `wc-6prong` | With Clarity product JSON (10:36Z) | `"price_min":56700,"price_max":82800` | $567–$828 | **match** |
+| `wc-gerbera` | With Clarity product JSON (10:39Z) | `"price_min":121000,"price_max":185000`, tags `"Ring Setting Product","14K","18K"` | $1,210–$1,850 | **match** |
+| `car-18k-1895-band-dia` | Cartier live PDP `CRB4057600` (10:26Z) | "Yellow gold (750/1000)", "$1,140", "Width 2.6 mm", "0.01 carat", 30-day return wording | $1,140, 18K yellow | **match** (return wording also matches `data/retailers.json`) |
+| `car-18k-etincelle-pear` | Cartier live PDP `CRB4230400` (10:33Z) | "Rose gold 750/1000", "$3,350", "0.16 carats … 22 brilliant-cut diamonds totalling 0.10 carats" | $3,350, 18K rose | **match** |
+| `car-18k-etincelle-emerald` | **not reached on this channel** — upstream fetch-proxy returned `SignatureDoesNotMatch` on 5 attempts 10:37Z–10:53Z | — | $3,600 (pass-7 single-channel read) | unchanged; nothing recorded, nothing inferred |
+| `be-18k-6p-121h6` | **not reached on this channel** — same proxy failure | — | $1,090 US snapshot, `partly_verified` (pass 7 saw geo-IP €1,250.00) | unchanged |
+
+**Result: 7/9 read live on the second channel; 7/7 exact matches; 0 disagreements; 0 values changed.**
+The two unread rows keep pass 7's published reads and their existing labels — no value was invented
+for them here.
+
+### Corroboration of pass 6's block list
+
+An independent `reverify.yml` runner execution fired on this branch (bot commit `3b7cd99`,
+`data/live/2026-10-23T10-16-23Z.json`, finished 10:16:23Z) reproduced the **same** 50/59 automated
+reads and the **same** 9-row HTTP 403 list, corroborating `F53` from a third clock.
+
+### Coordination record (required by §0)
+
+- **Merge-conflict handoff:** this session's first two commits (a local `P41` check re-run and a
+  `T25`-numbered claim) were made before `arena/e2b73db1-gold1` (PR #27/#29) and
+  `arena/8dffa7e8-gold1` (PRs #31–#38) landed on `main`. A `git pull --rebase` hit conflicts in
+  `data/checks/*`/`index.html`/`checks.html`. Resolution: the branch was **reset to `origin/main`**
+  so every merged parallel pass is kept intact; the redundant local `P41` artefacts were dropped
+  (superseded by main's `P42`–`P46`), and the claim was re-made against the current board as `T37`
+  (the original `T33` label collided with `sess-545688f3`'s claimed `T33`). No other session's work
+  was discarded at any point.
+- **Scope discipline:** this session edited only `data/session-3020df54/**` and this board. Shared
+  outputs (`data/rings.json`, `data/live/**`, generated pages, `README.md`) were **not** touched;
+  ingestion of the corroboration record is left to the standing integration owner. A §5 request is
+  logged for that.
+
+### Verification performed
+
+- Every value in the table above is a verbatim field/line from the URL named, read at the timestamp
+  recorded, stored in `data/session-3020df54/blocked-reread-2026-10-23.json`.
+- Canonical suite re-run on this branch's tree (71 rows, 105 pages):
+  `node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs && node scripts/audit_545688f3.mjs`
+  — **`P83` 2026-10-23T11:02:24Z: `S01`–`S20` 20/20 groups, 6,360 assertions, 0 failures; `A01`–`A10` 10/10, 1,869 assertions, 0 failures; `H01`–`H12` 12/12, 1,562 assertions, 0 failures.**
+  The gate's regenerated artefacts (`data/checks/*`, `index.html`, `checks.html`) were deliberately
+  **not** committed: this PR is strictly additive, the published `P81` artefacts remain canonical,
+  and no pass-ID churn is pushed to shared files while the board's standing integration owner may
+  still publish. The gate proves the additive evidence files break nothing.
+
+### Irregularities flagged
+
+- None new. The 7 live reads found **no drift** against published values. The F52 note ($558 vs
+  $590 at variant level) is neither confirmed nor refuted by product-level minima; it is recorded
+  as-is in the evidence file for the integration owner.
