@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:47:34.986Z",
+  "generated_at": "2026-10-23T20:50:53.575Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -17,8 +17,8 @@
     "groups": 10,
     "passed": 1,
     "failed": 9,
-    "assertions": 1745,
-    "findings": 177
+    "assertions": 1820,
+    "findings": 181
   },
   "groups": [
     {
@@ -43,7 +43,7 @@
       "id": "R04",
       "name": "Requirements tiers and buyer-action labels are honest",
       "passed": false,
-      "failure_count": 87
+      "failure_count": 91
     },
     {
       "id": "R05",
@@ -723,6 +723,19 @@
     {
       "id": "R04-27",
       "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-2ct-oval: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-2ct-oval",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-28",
+      "group": "R04",
       "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
       "severity": "high",
       "message": "au-2ct-oval: final-sale/exchange-only product is marked as having a confirmed usable return policy",
@@ -733,7 +746,7 @@
       ]
     },
     {
-      "id": "R04-28",
+      "id": "R04-29",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -745,7 +758,20 @@
       ]
     },
     {
-      "id": "R04-29",
+      "id": "R04-30",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-1ct-emerald: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-1ct-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-31",
       "group": "R04",
       "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
       "severity": "high",
@@ -757,7 +783,7 @@
       ]
     },
     {
-      "id": "R04-30",
+      "id": "R04-32",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -769,7 +795,20 @@
       ]
     },
     {
-      "id": "R04-31",
+      "id": "R04-33",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-3ct-round: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-3ct-round",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-34",
       "group": "R04",
       "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
       "severity": "high",
@@ -781,7 +820,7 @@
       ]
     },
     {
-      "id": "R04-32",
+      "id": "R04-35",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -793,7 +832,7 @@
       ]
     },
     {
-      "id": "R04-33",
+      "id": "R04-36",
       "group": "R04",
       "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
       "severity": "high",
@@ -805,7 +844,7 @@
       ]
     },
     {
-      "id": "R04-34",
+      "id": "R04-37",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -817,7 +856,20 @@
       ]
     },
     {
-      "id": "R04-35",
+      "id": "R04-38",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-xring: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-xring",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds",
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R04-39",
       "group": "R04",
       "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
       "severity": "high",
@@ -829,7 +881,7 @@
       ]
     },
     {
-      "id": "R04-36",
+      "id": "R04-40",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -841,7 +893,7 @@
       ]
     },
     {
-      "id": "R04-37",
+      "id": "R04-41",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -853,7 +905,7 @@
       ]
     },
     {
-      "id": "R04-38",
+      "id": "R04-42",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -865,7 +917,7 @@
       ]
     },
     {
-      "id": "R04-39",
+      "id": "R04-43",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -877,7 +929,7 @@
       ]
     },
     {
-      "id": "R04-40",
+      "id": "R04-44",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -889,7 +941,7 @@
       ]
     },
     {
-      "id": "R04-41",
+      "id": "R04-45",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -901,7 +953,7 @@
       ]
     },
     {
-      "id": "R04-42",
+      "id": "R04-46",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -913,7 +965,7 @@
       ]
     },
     {
-      "id": "R04-43",
+      "id": "R04-47",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -925,7 +977,7 @@
       ]
     },
     {
-      "id": "R04-44",
+      "id": "R04-48",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -937,7 +989,7 @@
       ]
     },
     {
-      "id": "R04-45",
+      "id": "R04-49",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -949,7 +1001,7 @@
       ]
     },
     {
-      "id": "R04-46",
+      "id": "R04-50",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -961,7 +1013,7 @@
       ]
     },
     {
-      "id": "R04-47",
+      "id": "R04-51",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -973,7 +1025,7 @@
       ]
     },
     {
-      "id": "R04-48",
+      "id": "R04-52",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -985,7 +1037,7 @@
       ]
     },
     {
-      "id": "R04-49",
+      "id": "R04-53",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -997,7 +1049,7 @@
       ]
     },
     {
-      "id": "R04-50",
+      "id": "R04-54",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1009,7 +1061,7 @@
       ]
     },
     {
-      "id": "R04-51",
+      "id": "R04-55",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1021,7 +1073,7 @@
       ]
     },
     {
-      "id": "R04-52",
+      "id": "R04-56",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1033,11 +1085,11 @@
       ]
     },
     {
-      "id": "R04-53",
+      "id": "R04-57",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-radiant-3ct: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-radiant-3ct: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-radiant-3ct",
       "path": "data/compliance.json",
       "sources": [
@@ -1046,7 +1098,7 @@
       ]
     },
     {
-      "id": "R04-54",
+      "id": "R04-58",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1058,11 +1110,11 @@
       ]
     },
     {
-      "id": "R04-55",
+      "id": "R04-59",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-marquise-melted: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-marquise-melted: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-marquise-melted",
       "path": "data/compliance.json",
       "sources": [
@@ -1071,7 +1123,7 @@
       ]
     },
     {
-      "id": "R04-56",
+      "id": "R04-60",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1083,11 +1135,11 @@
       ]
     },
     {
-      "id": "R04-57",
+      "id": "R04-61",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-leaves: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-leaves: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-leaves",
       "path": "data/compliance.json",
       "sources": [
@@ -1096,7 +1148,7 @@
       ]
     },
     {
-      "id": "R04-58",
+      "id": "R04-62",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1108,11 +1160,11 @@
       ]
     },
     {
-      "id": "R04-59",
+      "id": "R04-63",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-petal: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-petal: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-petal",
       "path": "data/compliance.json",
       "sources": [
@@ -1121,7 +1173,7 @@
       ]
     },
     {
-      "id": "R04-60",
+      "id": "R04-64",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1133,11 +1185,11 @@
       ]
     },
     {
-      "id": "R04-61",
+      "id": "R04-65",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-kite: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-kite: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-kite",
       "path": "data/compliance.json",
       "sources": [
@@ -1146,7 +1198,7 @@
       ]
     },
     {
-      "id": "R04-62",
+      "id": "R04-66",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1158,11 +1210,11 @@
       ]
     },
     {
-      "id": "R04-63",
+      "id": "R04-67",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-cluster: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-cluster: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-cluster",
       "path": "data/compliance.json",
       "sources": [
@@ -1171,7 +1223,7 @@
       ]
     },
     {
-      "id": "R04-64",
+      "id": "R04-68",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1183,11 +1235,11 @@
       ]
     },
     {
-      "id": "R04-65",
+      "id": "R04-69",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-bubble: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-bubble: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-bubble",
       "path": "data/compliance.json",
       "sources": [
@@ -1196,7 +1248,7 @@
       ]
     },
     {
-      "id": "R04-66",
+      "id": "R04-70",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1208,7 +1260,7 @@
       ]
     },
     {
-      "id": "R04-67",
+      "id": "R04-71",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1220,7 +1272,7 @@
       ]
     },
     {
-      "id": "R04-68",
+      "id": "R04-72",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1232,7 +1284,7 @@
       ]
     },
     {
-      "id": "R04-69",
+      "id": "R04-73",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1244,7 +1296,7 @@
       ]
     },
     {
-      "id": "R04-70",
+      "id": "R04-74",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1256,7 +1308,7 @@
       ]
     },
     {
-      "id": "R04-71",
+      "id": "R04-75",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1268,7 +1320,7 @@
       ]
     },
     {
-      "id": "R04-72",
+      "id": "R04-76",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1280,7 +1332,7 @@
       ]
     },
     {
-      "id": "R04-73",
+      "id": "R04-77",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1292,7 +1344,7 @@
       ]
     },
     {
-      "id": "R04-74",
+      "id": "R04-78",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1304,7 +1356,7 @@
       ]
     },
     {
-      "id": "R04-75",
+      "id": "R04-79",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1316,7 +1368,7 @@
       ]
     },
     {
-      "id": "R04-76",
+      "id": "R04-80",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1328,7 +1380,7 @@
       ]
     },
     {
-      "id": "R04-77",
+      "id": "R04-81",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1340,7 +1392,7 @@
       ]
     },
     {
-      "id": "R04-78",
+      "id": "R04-82",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1352,7 +1404,7 @@
       ]
     },
     {
-      "id": "R04-79",
+      "id": "R04-83",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1364,11 +1416,11 @@
       ]
     },
     {
-      "id": "R04-80",
+      "id": "R04-84",
       "group": "R04",
       "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
       "severity": "high",
-      "message": "ag-14k-industrial-band: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution",
+      "message": "ag-14k-industrial-band: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
       "row": "ag-14k-industrial-band",
       "path": "data/compliance.json",
       "sources": [
@@ -1377,7 +1429,7 @@
       ]
     },
     {
-      "id": "R04-81",
+      "id": "R04-85",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1389,7 +1441,7 @@
       ]
     },
     {
-      "id": "R04-82",
+      "id": "R04-86",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1401,7 +1453,7 @@
       ]
     },
     {
-      "id": "R04-83",
+      "id": "R04-87",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1413,7 +1465,7 @@
       ]
     },
     {
-      "id": "R04-84",
+      "id": "R04-88",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1425,7 +1477,7 @@
       ]
     },
     {
-      "id": "R04-85",
+      "id": "R04-89",
       "group": "R04",
       "irregularity_id": "RETURN_SUMMARY_INCLUDES_FINAL_SALE_OR_WITHDRAWN",
       "severity": "high",
@@ -1435,7 +1487,7 @@
       "sources": []
     },
     {
-      "id": "R04-86",
+      "id": "R04-90",
       "group": "R04",
       "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
       "severity": "high",
@@ -1445,7 +1497,7 @@
       "sources": []
     },
     {
-      "id": "R04-87",
+      "id": "R04-91",
       "group": "R04",
       "irregularity_id": "SHORTLIST_OVERCLAIM",
       "severity": "high",
