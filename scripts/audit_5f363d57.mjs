@@ -268,20 +268,29 @@ await group('R03', 'Requirements math never averages or reuses unverified values
 
 /* R04 — checklist states must not claim unfinished buyer work or unknown reputation. */
 await group('R04', 'Requirements tiers and buyer-action labels are honest', async (failure) => {
+  const f46 = flagsDoc.items.find((f) => f.id === 'F46');
+  const ambiguousWeightIds = new Set(f46?.affected?.match(/au-[a-z0-9-]+/g) || []);
   for (const r of rows) {
     const c = complianceById[r.id];
     const v = verById[r.id];
     if (!c) continue;
     if (c.tier === 'ready_to_inspect') {
       const reputation = c.checks.reputation;
-      const unratedIsExplicit = reputation.status === 'unrated' && c.blockers.some((b) => /unrated|not rated|\bNR\b/i.test(b));
-      check(reputation.status === 'confirmed' || unratedIsExplicit, failure, `${r.id}: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution`, {
+      check(reputation.status === 'confirmed', failure, `${r.id}: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier`, {
         row: r.id, id: 'SHORTLIST_REPUTATION_OPEN', path: 'data/compliance.json', sources: [retailers[r.retailer_id]?.bbb_source].filter(Boolean),
       });
     }
     check(c.checks.documentation.status !== 'confirmed', failure, `${r.id}: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet`, {
       row: r.id, id: 'DOCUMENTATION_BUYER_ACTION_MISLABELED', path: 'data/compliance.json',
     });
+    check(!(c.price_to_gold === null && c.checks.price_vs_gold.status === 'confirmed'), failure, `${r.id}: price-versus-gold is marked confirmed although no valid scalar comparison was computed`, {
+      row: r.id, id: 'PRICE_COMPARISON_OVERSTATED', path: 'data/compliance.json',
+    });
+    if (ambiguousWeightIds.has(r.id)) {
+      check(/basis|stone|metal-only|total.item|not established/i.test(c.checks.weight.detail || ''), failure, `${r.id}: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight`, {
+        row: r.id, id: 'WEIGHT_BASIS_CAVEAT_MISSING', path: 'data/compliance.json', sources: [r.source_url],
+      });
+    }
     if (/exchange only!|exchange for size only/i.test(v?.final_sale_quote || '')) {
       check(c.checks.returns.status === 'negative', failure, `${r.id}: final-sale/exchange-only product is marked as having a confirmed usable return policy`, {
         row: r.id, id: 'FINAL_SALE_RETURN_MISLABELED', path: 'data/compliance.json',
