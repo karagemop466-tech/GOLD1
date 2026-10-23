@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "session": "sess-0804e222",
+  "generated_at": "2026-10-22T23:39:00Z",
+  "note": "New primary-source verified findings from session 0804e222. Numbering is assigned collision-free starting after the highest existing F-number in data/flagged.json.",
+  "flags": [
+    {
+      "temp_key": "F_BN_203284_CONFLICT",
+      "title": "Blue Nile 14K comfort-fit solitaire ($935) says \"18k yellow gold\" in prose and misses $1,000 warranty floor",
+      "severity": "high",
+      "type": "spec contradiction",
+      "affected": "bn-14k-ccf-203284",
+      "finding": "On item 203284 (Stock 501146y14), the title and Metal specification state \"14K Yellow Gold\" at \"$935 (Setting Price)\", but the Product Details paragraph on the same page states \"crafted in 18k yellow gold\". On the same page, Blue Nile's Limited Lifetime Warranty states: \"We warrant all gold and platinum jewelry items with a purchase price of $1,000 or more from manufacturer's defect\" — leaving a standalone $935 setting below that stated $1,000 threshold.",
+      "buyer_action": "Get written confirmation of 14K vs 18K alloy and confirm whether warranty coverage applies when the setting is purchased below $1,000.",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_MEJURI_HOLLOW_FTC",
+      "title": "Mejuri labels hollowed rings \"solid gold\" — directly conflicting with FTC 16 CFR § 23.3(c)(1)",
+      "severity": "high",
+      "type": "regulatory conflict",
+      "affected": "Mejuri catalog & FAQ (e.g. bold-chain-ring; verify non-hollow construction on mej-2mm, mej-db, mej-deb, mej-bde, mej-10k-dlr, mej-10k-sig)",
+      "finding": "Under eCFR 16 CFR § 23.3(c)(1) (current 2026-10-21), FTC Jewelry Guides state it is unfair or deceptive to mark, describe, or otherwise represent any karat gold item with a hollow center as \"Solid Gold\". Yet Mejuri's official FAQ states hollow-form pieces are \"still considered solid gold\", and Mejuri's live Bold Chain Ring page ($348) simultaneously lists \"Material: 10k Yellow Gold\", \"Specifications: Hollowed 14K gold\" (a 10K vs 14K internal contradiction), and image alt text \"handcrafted in hollowed 14k solid gold\".",
+      "buyer_action": "Ask any seller in writing whether a ring is solid throughout (non-hollow, non-electroformed) — not merely unplated — and verify expected mass by gram weight and specific gravity.",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+        "https://mejuri.com/us/en/products/bold-chain-ring",
+        "https://mejuri.com/faq/product-info/do-you-ever-use-gold-plated-or-lower-karat-gold-in-pieces-labeled-14k-or-10k"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_AS_INQUIRY_ONLY",
+      "title": "Two Anna Sheffield listings have no live HTML price or Add-to-Bag button (custom client archive pages)",
+      "severity": "medium",
+      "type": "price basis",
+      "affected": "as-bea-sol, as-hazeline",
+      "finding": "Opening the live HTML pages for as-bea-sol ($11,500.00 in feed) and as-hazeline ($7,150.00–$9,200.00 in feed) reveals no visible retail price and no checkout button; instead both display a custom inquiry form stating: \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" Their recorded prices exist only in Shopify's underlying product JSON feed for previously sold pieces, whereas as-bea-3stone ($5,400.00–$25,100.00) has a live Add-to-Bag button.",
+      "buyer_action": "Treat as-bea-sol and as-hazeline prices as historical archive figures; request a current written quote and return eligibility before commissioning a custom build (custom Anna Sheffield orders are final sale).",
+      "sources": [
+        "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+        "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_AURATE_BBB_AND_FINAL_SALE",
+      "title": "Aurate New York holds a BBB \"F\" rating and displays \"Final Sale! Exchange for size only\" on all 5 ring PDPs",
+      "severity": "high",
+      "type": "reputation & returns",
+      "affected": "au-2ct-oval, au-1ct-emerald, au-3ct-round, au-cigar, au-xring",
+      "finding": "Independent BBB verification (bbb.org, NY profile 0121-170321) shows Aurate New York is Not BBB Accredited and carries an \"F\" rating due to \"Failure to respond to 8 complaint(s) filed against business\" (23 complaints filed; 1.22/5 across 18 customer reviews). Furthermore, all 5 live HTML product pages for Aurate rings in this dataset display \"Final Sale! / Exchange only! / Exchange for size only\" directly above a generic \"Free Returns\" marketing icon, and opening au-cigar without a variant query string defaults to the $118.00 Vermeil / Sterling Silver option.",
+      "buyer_action": "Do not assume Aurate rings are refundable from the \"Free Returns\" badge. Screenshot checkout terms, verify the 14K/18K gold variant is selected (never Vermeil), and pay only with a credit card.",
+      "sources": [
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/aurate-new-york-0121-170321",
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_AURATE_ITEM_VS_METAL_WEIGHT",
+      "title": "Aurate's published \"Weight\" on diamond rings includes stone mass (~0.09–0.57 g), unlike Ross-Simons \"Gold Weight\"",
+      "severity": "low",
+      "type": "measurement precision",
+      "affected": "au-2ct-oval (2.73 g, 2.25 tcw), au-1ct-emerald (1.97 g, 0.85 tcw), au-3ct-round (3.3 g, 2.85 tcw), au-xring (2.7 g, 0.44 tcw)",
+      "finding": "Opening Aurate's HTML pages recovered four published weights missed by JSON-only reads: 2.73 g (au-2ct-oval), 1.97 g (au-1ct-emerald), 3.3 g (au-3ct-round), and 2.7 g (au-xring). Unlike Ross-Simons (\"Gold Weight\") and Automic Gold (\"Approximately X.Xg (gold)\"), Aurate labels the field simply \"Weight:\", which for stone-set rings can include diamond mass (under 16 CFR § 23.18, 1 metric carat = 0.200 g, so a 2.85 tcw diamond weighs 0.57 g).",
+      "buyer_action": "When using the Gold Calculator on stone-set rings whose seller states total item weight rather than gold-only weight, subtract 0.20 g per carat of stones.",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_WC_RETURN_LIMIT_AND_ALT",
+      "title": "With Clarity caps returns at 1 per 6 months and labels white-gold gallery views \"14KT Platinum\"",
+      "severity": "medium",
+      "type": "returns & wording",
+      "affected": "wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera",
+      "finding": "With Clarity's official Terms & Conditions (Renaissance FMI Inc., Long Island City, NY) allow 1 return or exchange per customer every 6 months within 30 calendar days of receipt; any additional orders placed within 6 months of a prior return are automatically final sale. In addition, live HTML gallery alt text on wc-tulip, wc-6prong, and wc-gerbera labels white-metal views \"in 14KT Platinum\" (platinum is 950/900 fine, never 14KT). Similarly, Blue Nile caps free US returns at 2 per year and starts its 30-day clock at shipment rather than delivery, while Brilliant Earth starts its 30-day clock when the order is available for shipment/pickup.",
+      "buyer_action": "Check comparative-purchasing and return-frequency caps before ordering multiple rings, and verify 14K White Gold vs 950 Platinum in the written order summary.",
+      "sources": [
+        "https://www.withclarity.com/pages/terms-conditions",
+        "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
+        "https://www.bluenile.com/policies/returns",
+        "https://www.brilliantearth.com/30-Day-Returns/"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_GIA_XRF_LIMITS",
+      "title": "Surface XRF alone can be fooled by electroformed resin cores and \"gold-plated gold\" (GIA Lab Notes 2024–2025)",
+      "severity": "high",
+      "type": "testing limit",
+      "affected": "all rows (Checklist #10 & #11)",
+      "finding": "GIA Gems & Gemology Lab Notes document two critical failure modes of standalone XRF testing because X-ray fluorescence reads only a shallow surface layer (microns): (1) Spring 2024 (Vol. 60, No. 1): a 41 g electroformed gold-plated resin bracelet with a glued-on 14K stamped disk read 17.99K–22.47K on XRF with no plating alert; (2) Summer 2025 (Vol. 61, No. 2, \"Gold-Plated Gold\"): 9K and 10K rings/chains plated with higher-karat yellow gold read 13.5K–18K on XRF without triggering a plating warning.",
+      "buyer_action": "Ask your independent jeweller/appraiser to pair XRF with precision gram weighing + hydrostatic specific-gravity (density) testing and microscopic inspection inside the return window.",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_MENE_WEIGHT_COA",
+      "title": "Menē 24K pure-gold bands omit static HTML gram numbers and carry ±1 g Crafted-on-Demand weight variance + 10% refund restocking fee",
+      "severity": "medium",
+      "type": "weight & returns",
+      "affected": "mene-24k-classic-band, mene-24k-narrow-band",
+      "finding": "Menē prices 24K Investment Jewelry principally by precious-metal weight, but its server-rendered HTML product pages display the USD price ($1,720 Classic Band; $1,372 Narrow Classic Band) while placing the gram breakdown behind a client-side script. Under the zero-hallucination rule, gram weight is left blank rather than back-calculated from spot. Menē's Terms of Service (effective Sep 2, 2026) also state Crafted-on-Demand weights may vary by ±1.0 g (final weight printed on the Certificate of Authenticity), discretionary returns must be initiated within 7 days of receipt, original-payment refunds may deduct up to a 10% restocking fee (100% value for Menē Credit), and missing the Certificate of Authenticity triggers a 5% assessment fee.",
+      "buyer_action": "Read the exact gram weight from the live Price Breakdown before checkout, verify it against the Certificate of Authenticity and a jeweller's scale within 7 days of delivery, and note the 10% cash-refund restocking fee.",
+      "sources": [
+        "https://mene.com/products/mene-classic-band-gold",
+        "https://mene.com/products/mene-narrow-band-gold",
+        "https://mene.com/terms-of-service"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    },
+    {
+      "temp_key": "F_LUXURY_LEADS_AUDIT",
+      "title": "Third-pass luxury leads re-audited: 3 Cartier 18K (750/1000) rings verified, Cartier CRN4744700 dead, Brilliant Earth archived $990 stale",
+      "severity": "low",
+      "type": "archive reconciliation",
+      "affected": "car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia, data/rings_c2bbe753.json",
+      "finding": "Line-by-line inspection of archived third-pass leads (data/rings_c2bbe753.json) found: (1) Cartier CRB4230400 ($3,350, Rose gold 750/1000) and CRB4225700 ($3,600, 18K white gold 750/1000) explicitly state 750/1000 (18K) fineness on their canonical Étincelle de Cartier PDPs (plus CRB4057600 $1,140 in Yellow gold 750/1000), so those 3 rows are now promoted with verified karats; (2) Cartier CRN4744700 returns a removed-page error on cartier.com; (3) Brilliant Earth BE121H6 in the archive listed $990 whereas live BE121H6-18KY is $1,090; (4) Tiffany & Co. GRP10863 ($1,600 starting price in archive, 18k Yellow Gold and Platinum) states \"This product is currently unavailable\" online and carries \"non returnable / can only be exchanged\" notices, so it remains excluded from purchasable listings.",
+      "buyer_action": "On luxury house websites, open the canonical reference PDP (look for 750/1000 fineness), confirm online availability, and check whether engagement rings are exchange-only before ordering.",
+      "sources": [
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+        "https://www.tiffany.com/engagement/engagement-rings/the-tiffany-setting-engagement-ring-in-18k-yellow-gold-GRP10863/"
+      ],
+      "status": "needs review",
+      "found_by": "sess-0804e222"
+    }
+  ]
+}

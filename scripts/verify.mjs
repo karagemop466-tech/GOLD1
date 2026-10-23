@@ -103,10 +103,14 @@ const counted = (fn) => fn;
     if (!ALLOWED_KARAT.includes(r.karat)) failures.push(`${r.id}: karat "${r.karat}" is not a legal karat mark`);
     const k = String(r.karat).replace(/[^0-9]/g, '');
     const ev = `${r.evidence || ''} ${r.title || ''}`.toLowerCase();
-    const hit = new RegExp(`\\b${k}\\s?k`, 'i').test(ev) || ev.includes(`${k}kt`) || ev.includes(`${k}k `);
+    const hit =
+      new RegExp(`\\b${k}\\s?k`, 'i').test(ev) ||
+      ev.includes(`${k}kt`) ||
+      ev.includes(`${k}k `) ||
+      (k === '18' && (ev.includes('750/1000') || /\b750\b/.test(ev)));
     if (!hit) failures.push(`${r.id}: karat ${r.karat} is not stated in the evidence text`);
   }
-  add('S03', 'Karat validity and traceability', 'Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row\'s own evidence text.', failures);
+  add('S03', 'Karat validity and traceability', 'Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row\'s own evidence text (including 750/1000 fineness for 18K).', failures);
 }
 
 /* ---------------------------------------------------------------- S04 */
@@ -146,7 +150,7 @@ const counted = (fn) => fn;
 /* ---------------------------------------------------------------- S06 */
 {
   const failures = [];
-  const perGram = gold.primary.price_usd_per_ozt / gold.grains_per_troy_ounce;
+  const perGram = gold.primary.price_usd_per_ozt / (gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce);
   for (const r of rings.rows) {
     assertions++;
     if (r.weight_g_low === null || r.price_low === null) continue;
@@ -390,7 +394,7 @@ const counted = (fn) => fn;
     harvest(await readIf(f, {}));
   }
   // derived values the site is allowed to compute
-  const perGram = gold.primary.price_usd_per_ozt / gold.grains_per_troy_ounce;
+  const perGram = gold.primary.price_usd_per_ozt / (gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce);
   const derived = new Set();
   const addDerived = (n) => {
     if (!Number.isFinite(n)) return;
@@ -485,6 +489,7 @@ const counted = (fn) => fn;
   const htmlFiles = [];
   const walk = async (dir) => {
     for (const e of await readdir(dir, { withFileTypes: true })) {
+      if (e.name.startsWith('.') || e.name === 'node_modules' || e.name === 'dist') continue;
       const full = join(dir, e.name);
       if (e.isDirectory()) await walk(full);
       else if (e.name.endsWith('.html')) htmlFiles.push(full);

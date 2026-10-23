@@ -43,5 +43,15 @@
       "observed_by": "sess-277867af"
     }
   ],
-  "readings_note": "Three separate readings of the same published feed, 37 minutes end to end, each stored with the publisher's own timestamp: 4,028.100098 (23:01:42Z), 4,029.699951 (23:22:41Z), 4,026.699951 (23:38:41Z). The latest reading drives the melt arithmetic on this site. Spread across all three readings: 3.60 USD/ozt (0.09%). The melt figures are re-derived from this stored price by scripts/verify.mjs, so changing the price here changes every gold-value figure on the site."
+  "readings_note": "Three separate readings of the same published feed, 37 minutes end to end, each stored with the publisher's own timestamp: 4,028.100098 (23:01:42Z), 4,029.699951 (23:22:41Z), 4,026.699951 (23:38:41Z). The latest reading drives the melt arithmetic on this site. Spread across all three readings: 3.60 USD/ozt (0.09%). The melt figures are re-derived from this stored price by scripts/verify.mjs, so changing the price here changes every gold-value figure on the site.",
+  "grams_per_troy_ounce": 31.1034768,
+  "true_grains_per_troy_ounce": 480,
+  "pennyweights_per_troy_ounce": 20,
+  "unit_authority": {
+    "publisher": "National Institute of Standards and Technology (NIST)",
+    "document": "NIST Handbook 130 (2025), Uniform Laws and Regulations, Section 2.17 — Precious Metals Conversion Information",
+    "source_url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
+    "retrieved_at": "2026-10-22",
+    "note": "31.1034768 is exact grams per troy ounce (1 ozt = 480 grains = 20 dwt). Legacy property \"grains_per_troy_ounce\" is retained for backwards script compatibility."
+  }
 }
