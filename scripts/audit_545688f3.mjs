@@ -195,8 +195,17 @@ await checkGroup('H08', '2026-10-23 live gold spot & Menē/Blue Nile price fresh
   const mc = rings.rows.find((r) => r.id === 'mene-24k-classic-band');
   const mn = rings.rows.find((r) => r.id === 'mene-24k-narrow-band');
   const bn = rings.rows.find((r) => r.id === 'bn-14k-petite-195639');
-  assert(mc?.price_low === 1707, `Expected mene-24k-classic-band=1707, got ${mc?.price_low}`);
-  assert(mn?.price_low === 1361, `Expected mene-24k-narrow-band=1361, got ${mn?.price_low}`);
+  // Pins updated by sess-0a6df02e (board T46): Menē is spot-linked and repriced again
+  // on 2026-10-23 evening (spot 4024.699951 @09:59:43Z -> 3998.100098 @20:19:15Z).
+  // Live PDPs read 2026-10-23T20:22Z printed $1,694 / $1,350 USD — verbatim in
+  // data/session-0a6df02e/live-reads-2026-10-23.json; superseded pins 1707/1361
+  // were sess-545688f3's same-day morning reads. The guard stays strict: any
+  // future silent drift fails here until a session re-reads the PDPs.
+  assert(mc?.price_low === 1694, `Expected mene-24k-classic-band=1694, got ${mc?.price_low}`);
+  assert(mn?.price_low === 1350, `Expected mene-24k-narrow-band=1350, got ${mn?.price_low}`);
+  // bn-14k-petite-195639 keeps its last-observed 1000 in the data file, but the
+  // row was withdrawn in T38 (F65): the URL now sells a different ring.
+  assert(bn?.withdrawn === true && bn?.price_unverified === true, 'bn-14k-petite-195639 must stay withdrawn + price_unverified (F65)');
   assert(bn?.price_low === 1000, `Expected bn-14k-petite-195639=1000, got ${bn?.price_low}`);
 });
 

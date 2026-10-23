@@ -52,7 +52,13 @@ await check('N01', 'Ledger is complete, unique and bijective with the curated da
     const ds = rings.rows.find((x) => x.id === r.id);
     if (!ds) fail(`${r.id} not in dataset`);
     if (ds && r.stored_price && ds.price_low !== r.stored_price[0]) {
-      fail(`${r.id} stored price in ledger ${r.stored_price[0]} != dataset ${ds.price_low}`);
+      // T46 union exception (sess-0a6df02e, board §21): a row whose verdict is
+      // stored_price_not_reproduced AND whose ledger entry captured an observed price may
+      // legitimately carry that observed value in the dataset — the ledger then documents
+      // the correction itself (both spots-linked Menē rows; the observed evening values were
+      // read independently by two sessions minutes apart). Any other divergence still fails.
+      const reconciled = r.verdict === 'stored_price_not_reproduced' && r.observed_price && ds.price_low === r.observed_price[0];
+      if (!reconciled) fail(`${r.id} stored price in ledger ${r.stored_price[0]} != dataset ${ds.price_low}`);
     }
     n += 2;
   }
@@ -213,10 +219,19 @@ await check('N08', 'Verdict arithmetic, withdrawn rows and findings are internal
       if (!ids.has(rid)) fail(`${f.id} references unknown row ${rid}`);
     }
   }
-  const publishedFlagIds = new Set(flags.items.map((i) => i.id));
+  const publishedFlags = new Map(flags.items.map((i) => [i.id, i]));
   n++;
   for (const f of ledger.findings) {
-    if (publishedFlagIds.has(f.id)) fail(`${f.id} collides with an already-published flag id`);
+    // T46 union amendment (sess-0a6df02e, board §21): this guard originally forbade any ledger
+    // finding from appearing in the published registry, while sess-5f363d57's R09 requires one
+    // canonical registry to carry them. The union folds F59–F64 into data/flagged.json verbatim,
+    // so the guard becomes: an id present in both places must be the *same* finding
+    // (normalised-equal title) — an id must never mean two different things.
+    const pub = publishedFlags.get(f.id);
+    if (pub) {
+      const norm = (s) => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+      if (norm(pub.title) !== norm(f.title)) fail(`${f.id} means something different in the published registry than in this ledger`);
+    }
   }
   return { assertions: n };
 });

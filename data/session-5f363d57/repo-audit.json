@@ -1,24 +1,24 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:51:55.289Z",
+  "generated_at": "2026-10-23T21:12:15.381Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
     "rows": 71,
-    "active_rows": 70,
-    "withdrawn_rows": 1,
+    "active_rows": 69,
+    "withdrawn_rows": 2,
     "verification_ledger": "data/verification-2026-10-23.json",
     "evening_verification_ledger": "data/verification-2026-10-23-evening-dab93754.json",
     "official_standards_review": "data/session-5f363d57/standards-review.json",
-    "gold_publisher_timestamp": "2026-10-23T19:38:15Z"
+    "gold_publisher_timestamp": "2026-10-23T20:19:15Z"
   },
   "summary": {
     "groups": 10,
-    "passed": 1,
-    "failed": 9,
-    "assertions": 1820,
-    "findings": 181
+    "passed": 2,
+    "failed": 8,
+    "assertions": 1842,
+    "findings": 159
   },
   "groups": [
     {
@@ -31,7 +31,7 @@
       "id": "R02",
       "name": "Verification verdicts agree with observed bounds and weights",
       "passed": false,
-      "failure_count": 8
+      "failure_count": 6
     },
     {
       "id": "R03",
@@ -55,25 +55,25 @@
       "id": "R06",
       "name": "README current-state prose is synchronized",
       "passed": false,
-      "failure_count": 12
+      "failure_count": 5
     },
     {
       "id": "R07",
       "name": "No unsupported retail-price or wearability generalisations",
       "passed": false,
-      "failure_count": 25
+      "failure_count": 26
     },
     {
       "id": "R08",
       "name": "Published counts and verification badges distinguish partial and withdrawn rows",
-      "passed": false,
-      "failure_count": 8
+      "passed": true,
+      "failure_count": 0
     },
     {
       "id": "R09",
       "name": "Flag and requirements source coverage",
       "passed": false,
-      "failure_count": 11
+      "failure_count": 5
     },
     {
       "id": "R10",
@@ -134,32 +134,6 @@
     {
       "id": "R02-05",
       "group": "R02",
-      "irregularity_id": "PRICE_BASIS_CONTRADICTS_EVIDENCE",
-      "severity": "high",
-      "message": "mene-24k-classic-band: basis says starting price $1707, but the quoted size-floor card says From $1,664; identify the stored figure as the displayed default configuration, not the range floor",
-      "row": "mene-24k-classic-band",
-      "path": "data/rings.json",
-      "sources": [
-        "https://mene.com/products/mene-classic-band-gold",
-        "https://mene.com/products/mene-classic-band-gold"
-      ]
-    },
-    {
-      "id": "R02-06",
-      "group": "R02",
-      "irregularity_id": "PRICE_BASIS_CONTRADICTS_EVIDENCE",
-      "severity": "high",
-      "message": "mene-24k-narrow-band: basis says starting price $1361, but the quoted size-floor card says From $1,300; identify the stored figure as the displayed default configuration, not the range floor",
-      "row": "mene-24k-narrow-band",
-      "path": "data/rings.json",
-      "sources": [
-        "https://mene.com/products/mene-narrow-band-gold",
-        "https://mene.com/products/mene-narrow-band-gold"
-      ]
-    },
-    {
-      "id": "R02-07",
-      "group": "R02",
       "irregularity_id": "RECONCILER_IGNORES_UPPER_BOUND",
       "severity": "high",
       "message": "P42 reconciler never detects an observed range that fails to reproduce the stored upper bound",
@@ -168,7 +142,7 @@
       "sources": []
     },
     {
-      "id": "R02-08",
+      "id": "R02-06",
       "group": "R02",
       "irregularity_id": "RECONCILER_OVERSTATES_OVERALL_STATUS",
       "severity": "high",
@@ -1481,7 +1455,7 @@
       "group": "R04",
       "irregularity_id": "RETURN_SUMMARY_INCLUDES_FINAL_SALE_OR_WITHDRAWN",
       "severity": "high",
-      "message": "Return summary must count 63 active rows with a usable 14+ day window, excluding final-sale and withdrawn records",
+      "message": "Return summary must count 62 active rows with a usable 14+ day window, excluding final-sale and withdrawn records",
       "row": null,
       "path": "data/compliance.json",
       "sources": []
@@ -1535,7 +1509,7 @@
       "group": "R05",
       "irregularity_id": "STALE_CHECKLIST_SPOT_PRICE",
       "severity": "high",
-      "message": "Checklist spot prose does not contain current $3,999.90/ozt",
+      "message": "Checklist spot prose does not contain current $3,998.10/ozt",
       "row": null,
       "path": "data/checklist.json",
       "sources": [
@@ -1544,96 +1518,6 @@
     },
     {
       "id": "R06-01",
-      "group": "R06",
-      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
-      "severity": "high",
-      "message": "README Current findings contains stale dataset phrase “8 of 59”",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/rings.json",
-        "data/compliance.json"
-      ]
-    },
-    {
-      "id": "R06-02",
-      "group": "R06",
-      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
-      "severity": "high",
-      "message": "README Current findings contains stale dataset phrase “59 verified listings”",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/rings.json",
-        "data/compliance.json"
-      ]
-    },
-    {
-      "id": "R06-03",
-      "group": "R06",
-      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
-      "severity": "high",
-      "message": "README Current findings contains stale dataset phrase “15 of 59”",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/rings.json",
-        "data/compliance.json"
-      ]
-    },
-    {
-      "id": "R06-04",
-      "group": "R06",
-      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
-      "severity": "high",
-      "message": "README Current findings contains stale dataset phrase “21 of 59”",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/rings.json",
-        "data/compliance.json"
-      ]
-    },
-    {
-      "id": "R06-05",
-      "group": "R06",
-      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
-      "severity": "high",
-      "message": "README Current findings contains stale dataset phrase “50 of 59”",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/rings.json",
-        "data/compliance.json"
-      ]
-    },
-    {
-      "id": "R06-06",
-      "group": "R06",
-      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
-      "severity": "high",
-      "message": "README Current findings contains stale dataset phrase “0 of 59”",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/rings.json",
-        "data/compliance.json"
-      ]
-    },
-    {
-      "id": "R06-07",
-      "group": "R06",
-      "irregularity_id": "STALE_README_FULL_REREAD_DATE",
-      "severity": "high",
-      "message": "README freshness rule names 2026-10-22 although a 2026-10-23 full ledger exists",
-      "row": null,
-      "path": "README.md",
-      "sources": [
-        "data/verification-2026-10-23.json"
-      ]
-    },
-    {
-      "id": "R06-08",
       "group": "R06",
       "irregularity_id": "README_WRONG_FINDING_LINK",
       "severity": "high",
@@ -1645,7 +1529,7 @@
       ]
     },
     {
-      "id": "R06-09",
+      "id": "R06-02",
       "group": "R06",
       "irregularity_id": "MELT_ANOMALY_CALLED_IMPOSSIBLE",
       "severity": "high",
@@ -1655,7 +1539,7 @@
       "sources": []
     },
     {
-      "id": "R06-10",
+      "id": "R06-03",
       "group": "R06",
       "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
       "severity": "high",
@@ -1667,7 +1551,7 @@
       ]
     },
     {
-      "id": "R06-11",
+      "id": "R06-04",
       "group": "R06",
       "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
       "severity": "high",
@@ -1679,7 +1563,7 @@
       ]
     },
     {
-      "id": "R06-12",
+      "id": "R06-05",
       "group": "R06",
       "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
       "severity": "high",
@@ -1785,6 +1669,18 @@
       "group": "R07",
       "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
       "severity": "high",
+      "message": "README.md calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-11",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
       "message": "data/checklist.json calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
       "row": null,
       "path": "data/checklist.json",
@@ -1793,7 +1689,7 @@
       ]
     },
     {
-      "id": "R07-11",
+      "id": "R07-12",
       "group": "R07",
       "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
       "severity": "high",
@@ -1805,7 +1701,7 @@
       ]
     },
     {
-      "id": "R07-12",
+      "id": "R07-13",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1817,7 +1713,7 @@
       ]
     },
     {
-      "id": "R07-13",
+      "id": "R07-14",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1829,7 +1725,7 @@
       ]
     },
     {
-      "id": "R07-14",
+      "id": "R07-15",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1841,7 +1737,7 @@
       ]
     },
     {
-      "id": "R07-15",
+      "id": "R07-16",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1853,7 +1749,7 @@
       ]
     },
     {
-      "id": "R07-16",
+      "id": "R07-17",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1865,7 +1761,7 @@
       ]
     },
     {
-      "id": "R07-17",
+      "id": "R07-18",
       "group": "R07",
       "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
       "severity": "high",
@@ -1877,7 +1773,7 @@
       ]
     },
     {
-      "id": "R07-18",
+      "id": "R07-19",
       "group": "R07",
       "irregularity_id": "QUALITY_MARK_SCOPE_OVERSTATED",
       "severity": "high",
@@ -1889,7 +1785,7 @@
       ]
     },
     {
-      "id": "R07-19",
+      "id": "R07-20",
       "group": "R07",
       "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
       "severity": "high",
@@ -1901,7 +1797,7 @@
       ]
     },
     {
-      "id": "R07-20",
+      "id": "R07-21",
       "group": "R07",
       "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
       "severity": "high",
@@ -1913,7 +1809,7 @@
       ]
     },
     {
-      "id": "R07-21",
+      "id": "R07-22",
       "group": "R07",
       "irregularity_id": "UNSUPPORTED_XRF_DEPTH_CLAIM",
       "severity": "high",
@@ -1925,7 +1821,7 @@
       ]
     },
     {
-      "id": "R07-22",
+      "id": "R07-23",
       "group": "R07",
       "irregularity_id": "UNSUPPORTED_TEST_GUARANTEE",
       "severity": "high",
@@ -1938,7 +1834,7 @@
       ]
     },
     {
-      "id": "R07-23",
+      "id": "R07-24",
       "group": "R07",
       "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
       "severity": "high",
@@ -1950,7 +1846,7 @@
       ]
     },
     {
-      "id": "R07-24",
+      "id": "R07-25",
       "group": "R07",
       "irregularity_id": "UNSUPPORTED_XRF_DEPTH_CLAIM",
       "severity": "high",
@@ -1962,7 +1858,7 @@
       ]
     },
     {
-      "id": "R07-25",
+      "id": "R07-26",
       "group": "R07",
       "irregularity_id": "UNSUPPORTED_TEST_PRESCRIPTION",
       "severity": "high",
@@ -1972,108 +1868,6 @@
       "sources": [
         "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
         "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
-      ]
-    },
-    {
-      "id": "R08-01",
-      "group": "R08",
-      "irregularity_id": "WITHDRAWN_COUNTED_AS_VERIFIED",
-      "severity": "high",
-      "message": "Landing calls all 71 records verified listings although 1 is withdrawn",
-      "row": "rs-939479",
-      "path": "scripts/build.mjs",
-      "sources": [
-        "https://www.ross-simons.com/products/939479"
-      ]
-    },
-    {
-      "id": "R08-02",
-      "group": "R08",
-      "irregularity_id": "ACTIVE_WITHDRAWN_COUNT_NOT_DISCLOSED",
-      "severity": "high",
-      "message": "Landing must explicitly distinguish 70 active listings and 1 withdrawn record",
-      "row": null,
-      "path": "scripts/build.mjs",
-      "sources": [
-        "data/rings.json"
-      ]
-    },
-    {
-      "id": "R08-03",
-      "group": "R08",
-      "irregularity_id": "VERIFICATION_STATUS_RENDER_FALLTHROUGH",
-      "severity": "high",
-      "message": "as-bea-sol: detail page falls through to “confirmed on the official page” instead of partly verified",
-      "row": "as-bea-sol",
-      "path": "rings/as-bea-sol.html",
-      "sources": [
-        "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
-        "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond"
-      ]
-    },
-    {
-      "id": "R08-04",
-      "group": "R08",
-      "irregularity_id": "VERIFICATION_STATUS_RENDER_FALLTHROUGH",
-      "severity": "high",
-      "message": "as-hazeline: detail page falls through to “confirmed on the official page” instead of partly verified",
-      "row": "as-hazeline",
-      "path": "rings/as-hazeline.html",
-      "sources": [
-        "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
-        "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond"
-      ]
-    },
-    {
-      "id": "R08-05",
-      "group": "R08",
-      "irregularity_id": "VERIFICATION_STATUS_RENDER_FALLTHROUGH",
-      "severity": "high",
-      "message": "as-bea-3stone: detail page falls through to “confirmed on the official page” instead of partly verified",
-      "row": "as-bea-3stone",
-      "path": "rings/as-bea-3stone.html",
-      "sources": [
-        "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
-        "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond"
-      ]
-    },
-    {
-      "id": "R08-06",
-      "group": "R08",
-      "irregularity_id": "VERIFICATION_STATUS_RENDER_FALLTHROUGH",
-      "severity": "high",
-      "message": "au-cigar: detail page falls through to “confirmed on the official page” instead of partly verified",
-      "row": "au-cigar",
-      "path": "rings/au-cigar.html",
-      "sources": [
-        "https://auratenewyork.com/products/modern-cigar-band",
-        "https://auratenewyork.com/products/modern-cigar-band"
-      ]
-    },
-    {
-      "id": "R08-07",
-      "group": "R08",
-      "irregularity_id": "VERIFICATION_STATUS_RENDER_FALLTHROUGH",
-      "severity": "high",
-      "message": "be-18k-6p-121h6: detail page falls through to “confirmed on the official page” instead of partly verified",
-      "row": "be-18k-6p-121h6",
-      "path": "rings/be-18k-6p-121h6.html",
-      "sources": [
-        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
-        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
-      ]
-    },
-    {
-      "id": "R08-08",
-      "group": "R08",
-      "irregularity_id": "VERIFICATION_STATUS_RENDER_FALLTHROUGH",
-      "severity": "high",
-      "message": "rs-939479: detail page falls through to “confirmed on the official page” instead of withdrawn/source mismatch",
-      "row": "rs-939479",
-      "path": "rings/rs-939479.html",
-      "sources": [
-        "https://www.ross-simons.com/products/939479",
-        "https://www.ross-simons.com/products/939479"
       ]
     },
     {
@@ -2127,78 +1921,6 @@
       "row": null,
       "path": "data/flagged.json",
       "sources": []
-    },
-    {
-      "id": "R09-06",
-      "group": "R09",
-      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
-      "severity": "high",
-      "message": "F59: published live-audit irregularity is absent from the main Flagged for Review registry",
-      "row": null,
-      "path": "data/flagged.json",
-      "sources": [
-        "live-audit.html"
-      ]
-    },
-    {
-      "id": "R09-07",
-      "group": "R09",
-      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
-      "severity": "high",
-      "message": "F60: published live-audit irregularity is absent from the main Flagged for Review registry",
-      "row": null,
-      "path": "data/flagged.json",
-      "sources": [
-        "live-audit.html"
-      ]
-    },
-    {
-      "id": "R09-08",
-      "group": "R09",
-      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
-      "severity": "high",
-      "message": "F61: published live-audit irregularity is absent from the main Flagged for Review registry",
-      "row": null,
-      "path": "data/flagged.json",
-      "sources": [
-        "live-audit.html"
-      ]
-    },
-    {
-      "id": "R09-09",
-      "group": "R09",
-      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
-      "severity": "high",
-      "message": "F62: published live-audit irregularity is absent from the main Flagged for Review registry",
-      "row": null,
-      "path": "data/flagged.json",
-      "sources": [
-        "live-audit.html"
-      ]
-    },
-    {
-      "id": "R09-10",
-      "group": "R09",
-      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
-      "severity": "high",
-      "message": "F63: published live-audit irregularity is absent from the main Flagged for Review registry",
-      "row": null,
-      "path": "data/flagged.json",
-      "sources": [
-        "live-audit.html"
-      ]
-    },
-    {
-      "id": "R09-11",
-      "group": "R09",
-      "irregularity_id": "LIVE_FINDING_MISSING_FROM_FLAGGED",
-      "severity": "high",
-      "message": "F64: published live-audit irregularity is absent from the main Flagged for Review registry",
-      "row": null,
-      "path": "data/flagged.json",
-      "sources": [
-        "live-audit.html"
-      ]
     },
     {
       "id": "R10-01",
