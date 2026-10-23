@@ -1609,7 +1609,7 @@ const eveningPage = eveningLedger
 
   <h2>Honest limits of this pass</h2>
   <ul class="notes">
-    <li>${eveningLedger.summary.not_read} rows could not be opened by the runner (HTTP 403). They were <strong>not</strong> re-confirmed today and keep their older capture dates.</li>
+    <li>${eveningLedger.summary.not_read} rows could not be opened by this run (HTTP 403). They were <strong>not</strong> re-confirmed by this run and keep their older capture dates. The dashboard can still show a 2026-10-23 verdict for them because an <em>earlier</em> read on the same day reached those sellers by a different route (direct storefront JSON and product-page fetches, recorded as F53). That is a different clock and a different method — this page never presents it as this run's evidence.</li>
     <li>${eveningLedger.summary.unresolved_price} rows render their price client-side; no number was invented for them.</li>
     <li>Prices are dated snapshots, not quotes. ${eveningLedger.summary.stored_price_not_reproduced} rows moved inside a single evening (Menē 24K tracks spot gold).</li>
     <li>A stamp is a claim, not proof: have any purchase XRF-tested by an independent jeweller inside the return window.</li>
