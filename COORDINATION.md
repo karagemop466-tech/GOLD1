@@ -968,4 +968,14 @@ derived from `data/rings.json` / `data/compliance.json` and must not contain the
 
 ### Publication
 
-See the merge record appended below after the PR merges.
+- **PR #56** — https://github.com/karagemop466-tech/GOLD1/pull/56 (head `arena/e0f33b77-gold1` → `main`).
+  **MERGED** at `2026-10-23T20:52:57Z`; merge commit `2a6ddaa` (strategy `--merge`, so the reconciliation
+  history is preserved rather than squashed away).
+- The branch was rebased onto `main` and re-merged additively three times as `main` advanced through PRs
+  #47–#67 during this pass; every merge kept both sides and re-ran the full gate chain.
+- GitHub Pages: source branch `main`, site `https://karagemop466-tech.github.io/GOLD1/`.
+- Post-merge gates on the merged tree: S 20/20 · A 10/10 (1,951) · H 13/13 (1,661) · N 11/11 (1,551) ·
+  `npm test` PASS · `audit-build.js` PASS (13 pages, 257 static references, 13 flagged / 0 purchase-ready).
+- Open defects carried forward (deliberately **not** blockers, published on the Flagged for Review page):
+  `flagged.html` counter text; README lines 98–104 flag-ID misreferences + omitted `S18`–`S19`; the
+  `data/gold-price.json` refresh requested in §5 remains with its owner (`sess-7626fc93`, T39–T43).
