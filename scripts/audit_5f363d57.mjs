@@ -31,12 +31,13 @@ const [ringsDoc, retailersDoc, flagsDoc, gold, checklist, compliance, verificati
     readJson('data/verification-2026-10-23.json'),
     readJson('data/sources.json'),
   ]);
-const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, verifySource, reconciler] = await Promise.all([
+const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, liveAuditHtml, verifySource, reconciler] = await Promise.all([
   readText('README.md'),
   readText('scripts/build_compliance.mjs'),
   readText('scripts/build.mjs'),
   readText('assets/js/app.js'),
   readText('index.html'),
+  readText('live-audit.html'),
   readText('scripts/verify.mjs'),
   readText('scripts/reconcile_live.mjs'),
 ]);
@@ -185,6 +186,12 @@ await group('R02', 'Verification verdicts agree with observed bounds and weights
     check(!(staleCeiling && new RegExp(`Re-checked 2026-10-23[\\s\\S]*${staleCeiling[1]}`, 'i').test(r.evidence || '')), failure, `${r.id}: notes say ${staleCeiling?.[1]} is no longer listed but the later evidence quotes it`, {
       row: r.id, id: 'CANONICAL_PROSE_CONTRADICTS_SCHEMA', path: 'data/rings.json',
     });
+    for (const claim of (r.notes || '').matchAll(/re-?verified[^.\n]*?\bat\s*\$([\d,]+(?:\.\d{2})?)/gi)) {
+      const claimed = Number(claim[1].replace(/,/g, ''));
+      check(claimed === r.price_low || claimed === r.price_high, failure, `${r.id}: notes still claim re-verification at $${claimed}, but schema stores $${r.price_low}–$${r.price_high}`, {
+        row: r.id, id: 'STALE_NOTE_PRICE', path: 'data/rings.json', sources: [r.source_url],
+      });
+    }
   }
   check(/prices\.max < hi/.test(reconciler), failure, 'P42 reconciler never detects an observed range that fails to reproduce the stored upper bound', {
     id: 'RECONCILER_IGNORES_UPPER_BOUND', path: 'scripts/reconcile_live.mjs',
@@ -456,6 +463,20 @@ await group('R09', 'Flag and requirements source coverage', async (failure) => {
   check(!(/includes stone mass/i.test(f46?.title || '') && /can include diamond mass/i.test(f46?.finding || '')), failure, 'F46 title asserts stone inclusion while its own finding only says the weight can include stones; keep the basis unconfirmed', {
     id: 'WEIGHT_BASIS_OVERSTATED', path: 'data/flagged.json',
   });
+  const normalizeTitle = (s) => String(s || '').replace(/&quot;/g, '"').replace(/&(?:#39|apos);/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  const liveFindings = [...liveAuditHtml.matchAll(/<tr>\s*<td><strong>(F\d+)<\/strong><\/td>\s*<td><strong>([\s\S]*?)<\/strong>/g)];
+  for (const match of liveFindings) {
+    const [, id, htmlTitle] = match;
+    const registry = flagsDoc.items.find((f) => f.id === id);
+    check(Boolean(registry), failure, `${id}: published live-audit irregularity is absent from the main Flagged for Review registry`, {
+      id: 'LIVE_FINDING_MISSING_FROM_FLAGGED', path: 'data/flagged.json', sources: ['live-audit.html'],
+    });
+    if (registry) {
+      check(normalizeTitle(registry.title) === normalizeTitle(htmlTitle), failure, `${id}: Flagged for Review and live-audit assign different titles to the same finding ID`, {
+        id: 'FINDING_ID_COLLISION', path: 'data/flagged.json', sources: ['live-audit.html'],
+      });
+    }
+  }
 });
 
 /* R10 — registry and report references are real and security expectations stay visible. */
