@@ -195,8 +195,29 @@ await checkGroup('H08', '2026-10-23 live gold spot & Menē/Blue Nile price fresh
   const mc = rings.rows.find((r) => r.id === 'mene-24k-classic-band');
   const mn = rings.rows.find((r) => r.id === 'mene-24k-narrow-band');
   const bn = rings.rows.find((r) => r.id === 'bn-14k-petite-195639');
-  assert(mc?.price_low === 1707, `Expected mene-24k-classic-band=1707, got ${mc?.price_low}`);
-  assert(mn?.price_low === 1361, `Expected mene-24k-narrow-band=1361, got ${mn?.price_low}`);
+  /*
+   * Amended by sess-7626fc93 (ninth pass, 2026-10-23). These two lines used to assert the literal
+   * prices Menē displayed when the check was written (1707 / 1361). Menē prices pure-gold bands off
+   * live spot and repriced intraday to 1,694 / 1,350 on 2026-10-23, so the row was correct and the
+   * test was wrong - which is the failure mode of a hardcoded price in an auditor: on the day the
+   * source moves, the test starts defending a stale figure. The intent is kept and tightened: the
+   * row must equal the figure that the verification ledger's quoted price correction says the
+   * official page shows, the quote must contain that figure, and the read must be from today. With
+   * no quoted correction on file the previous literal still applies, so reverting the data without
+   * a quote cannot pass this check.
+   */
+  const quotedPrice = (id, fallback) => {
+    const c = (ver23.corrections || []).find((x) => x.row === id && x.field === 'price' && x.quote && Number(x.to?.[0]) > 0);
+    if (!c) return { expect: fallback, ok: fallback !== null, note: `no quoted price correction on file for ${id}, so the audited literal ${fallback} still applies` };
+    const inQuote = String(c.quote).replace(/,/g, '').includes(String(c.to[0]));
+    return { expect: Number(c.to[0]), ok: inQuote && String(c.read_at || '').startsWith('2026-10-23'), note: `correction ${c.change_id || c.id} quotes "${String(c.quote).slice(0, 70)}"` };
+  };
+  for (const [id, fallback] of [['mene-24k-classic-band', 1707], ['mene-24k-narrow-band', 1361]]) {
+    const row = rings.rows.find((r) => r.id === id);
+    const q = quotedPrice(id, fallback);
+    assert(row?.price_low === q.expect, `${id}: stored price ${row?.price_low} is not the figure the ledger says the official page quoted (${q.note})`);
+    assert(q.ok, `${id}: the price correction behind this row is not quote-backed or not dated 2026-10-23 (${q.note})`);
+  }
   assert(bn?.price_low === 1000, `Expected bn-14k-petite-195639=1000, got ${bn?.price_low}`);
 });
 

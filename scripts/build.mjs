@@ -99,14 +99,77 @@ const priceCell = (r) => {
 /** Numeric price for sorting and filtering. Unverified rows are excluded from price filters. */
 const sortPrice = (r) => (r.price_unverified ? null : r.price_low);
 
+/**
+ * The verification chip that sits next to every "Last checked" date.
+ *
+ * Ninth-pass fix (sess-7626fc93). This widget compared the strings 'unverified' and
+ * 'partially verified', which no row in data/rings.json has ever used - the vocabulary in the file
+ * is 'confirmed', 'partly_verified', 'withdrawn_source_mismatch' and 'not_reread_2026-10-23'. Every
+ * row therefore fell through to the "confirmed on the official page" branch, including the row that
+ * was withdrawn because the seller's page sells a different ring, and the five rows another session
+ * had deliberately marked only partly verified. The site was claiming verifications it had not made.
+ * The map below is keyed on the values the data actually carries, and anything unrecognised prints
+ * its own value instead of defaulting to success. Auditor group N03 asserts this mapping.
+ */
+const STATUS_CHIP = {
+  confirmed: ['ok', 'confirmed'],
+  partly_verified: ['warn', 'partly verified'],
+  'partially verified': ['warn', 'partly verified'],
+  unverified: ['warn', 'not reproducible'],
+  withdrawn_source_mismatch: ['bad', 'withdrawn — page sells a different item'],
+  not_reread_2026_10_23: ['info', 'not re-read on the 23rd'],
+};
+const STATUS_CHIP_LONG = {
+  confirmed: ['ok', 'confirmed on the official page'],
+  partly_verified: ['warn', 'partly verified — see the note below'],
+  'partially verified': ['warn', 'partly verified — see the note below'],
+  unverified: ['warn', 'price not reproducible from the official page'],
+  withdrawn_source_mismatch: ['bad', 'withdrawn — the page at this URL sells a different item'],
+  not_reread_2026_10_23: ['info', 'not re-read on 2026-10-23'],
+};
+const verificationChip = (r, long = false) => {
+  const map = long ? STATUS_CHIP_LONG : STATUS_CHIP;
+  const [kind, label] = map[r.verification_status] || ['info', r.verification_status || 'status not recorded'];
+  return `<span class="chip ${kind}">${esc(label)}</span>`;
+};
+
+const NINTH_LABEL = {
+  match: 'confirmed against the seller feed',
+  match_page_text_price: 'confirmed from the page text',
+  match_within_karat_band: "confirmed inside this karat's option prices",
+  within_product_variant_range: "inside the product's option prices",
+  differs: 'seller printed a different price',
+  low_matches_high_differs: 'low end holds, top end moved',
+  no_machine_readable_price: 'no machine-readable price on the page',
+  not_read_this_pass: 'not reached by this pass',
+  not_read: 'not reached by this pass',
+};
+const NINTH_CHIP_KIND = {
+  match: 'ok',
+  match_page_text_price: 'ok',
+  match_within_karat_band: 'ok',
+  within_product_variant_range: 'info',
+  differs: 'bad',
+  low_matches_high_differs: 'warn',
+  no_machine_readable_price: 'info',
+  not_read_this_pass: 'info',
+  not_read: 'info',
+};
+
+/** How fresh this row's numbers are, in the site's own words. */
+const freshnessLine = (r) =>
+  !r.last_read_at
+    ? ''
+    : `<dt>Last read</dt><dd><span class="num">${esc(r.last_read_at)}</span> <span class="small">${esc(r.read_channel || 'official product page')}</span>` +
+      (r.price_verdict_2026_10_23
+        ? `<div class="sub">price verdict: <span class="chip ${NINTH_CHIP_KIND[r.price_verdict_2026_10_23] || 'info'}">${esc(NINTH_LABEL[r.price_verdict_2026_10_23] || r.price_verdict_2026_10_23)}</span></div>`
+        : '') +
+      (r.weight_verdict_2026_10_23 ? `<div class="sub">published weight: ${esc(String(r.weight_verdict_2026_10_23).replace(/_/g, ' '))}</div>` : '') +
+      `</dd>`;
+
 const checkedCell = (r) => {
   const when = r.verified_at || r.retrieved_at;
-  const pass = r.verification_status === 'unverified'
-    ? '<span class="chip warn">not reproducible</span>'
-    : r.verification_status === 'partially verified'
-      ? '<span class="chip warn">partly</span>'
-      : '<span class="chip ok">confirmed</span>';
-  return `<span class="num">${esc(when)}</span><div class="sub">${pass}</div>`;
+  return `<span class="num">${esc(when)}</span><div class="sub">${verificationChip(r)}</div>`;
 };
 
 const purityOf = (karat) => {
@@ -579,7 +642,7 @@ const ringsPage = layout({
     <dt>Price basis</dt><dd>Whether the price buys a complete ring, a setting only, or a starting configuration.</dd>
     <dt>Weight</dt><dd>Metal weight in grams. Almost never published. Blank = unverified, not estimated.</dd>
     <dt>Gold value</dt><dd>What the published weight is worth in raw gold at the spot price above: grams × karat ÷ 24 × gold price. It is a floor, not an appraisal — it excludes labour, stones and margin.</dd>
-    <dt>Last checked</dt><dd>The date the row was last opened and re-read at its own official page, and whether that re-read confirmed, corrected or could not reproduce the stored numbers.</dd>
+    <dt>Last checked</dt><dd>The date the row was last opened and re-read at its own official page, and whether that re-read confirmed, corrected or could not reproduce the stored numbers. Below it, the ninth pass adds the exact time and channel of the newest read.</dd>
     <dt>Flags</dt><dd>Problems found while verifying. The full explanation of each is on <a href="flagged.html">Flagged for review</a>.</dd>
     <dt>Source</dt><dd>The official product page. Check it yourself before paying.</dd>
   </dl>
@@ -648,7 +711,8 @@ for (const r of rings.rows) {
         <dt>Price</dt><dd>${priceCell(r)} <div class="sub">${esc(r.price_basis)}</div></dd>
         <dt>Metal weight</dt><dd>${r.weight_g_low === null ? dash : `${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g <span class="sub">as published</span>`}</dd>
         <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}${r.inherited ? ' <span class="chip info">carried over from the first research pass</span>' : ''}${r.reverified_at ? ` <span class="chip ok">re-read ${esc(r.reverified_at)}</span>` : ''}</dd>
-        <dt>Last checked</dt><dd>${esc(r.verified_at || r.retrieved_at)} ${r.verification_status === 'unverified' ? '<span class="chip warn">not reproducible</span>' : r.verification_status === 'partially verified' ? '<span class="chip warn">partly verified</span>' : '<span class="chip ok">confirmed on the official page</span>'}</dd>
+        <dt>Last checked</dt><dd>${esc(r.verified_at || r.retrieved_at)} ${verificationChip(r, true)}</dd>
+        ${freshnessLine(r)}
         <dt>Read from</dt><dd>${esc(r.source_type || 'official product page')}</dd>
       </dl>
       <p><a class="btn" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">Open the official product page ↗</a></p>
@@ -1028,7 +1092,8 @@ const flaggedPage = layout({
       <p>${esc(f.finding)}</p>
       <p class="small"><strong>Affects:</strong> ${esc(f.affected)}</p>
       <p class="action"><strong>What to do:</strong> ${esc(f.buyer_action)}</p>
-      <p class="sub">${f.sources.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener nofollow">${esc(new URL(u).hostname)} ↗</a>`).join(' · ')}</p>
+      <p class="sub">${f.sources.map((u) => `<a href="${esc(u)}" target="_blank" rel="noopener nofollow">${esc(typeof u === 'string' ? new URL(u).hostname : String(u))} ↗</a>`).join(' · ')}</p>
+      ${(f.source_citations || []).map((c) => `<p class="quote"><span class="small">${esc([c.publisher, c.date, c.title].filter(Boolean).join(' · '))}</span>${c.quote ? `<div>“${esc(c.quote)}”</div>` : ''}${c.url ? `<div class="sub"><a href="${esc(c.url)}" target="_blank" rel="noopener nofollow">open the cited page ↗</a></div>` : ''}</p>`).join('\n      ')}
       <p class="sub">Status: <strong>${esc(f.status)}</strong> — published, does not block.</p>
     </article>`,
       )
@@ -1359,6 +1424,35 @@ const VERDICT_LABEL = {
   not_read: { t: 'not re-read', k: 'info' },
 };
 
+/** Every field the ninth pass wrote, with the verbatim quote behind it. */
+const liveChangesTable = () => {
+  const list = liveCheck.ninth_pass_changes || [];
+  if (!list.length) return '';
+  return `
+  <h2>Ninth pass (${esc(String(liveCheck.ninth_pass ? liveCheck.ninth_pass.pass : '').replace('-ninth', ''))}) — every value this pass wrote, and the sentence it came from</h2>
+  <p class="sub">Nothing here was inferred. Each line shows the field, the value before, the value after, and the quotation from the seller's own page or feed the new value was copied from. A change whose number does not appear in its own quote is refused by <code>scripts/reconcile_7626fc93.mjs</code> and never reaches this table.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Field</th><th scope="col" class="num-col">Before</th><th scope="col" class="num-col">After</th><th scope="col">Quote</th><th scope="col">Why</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    ${list
+      .map(
+        (c) => `<tr>
+      <td><a href="rings/${esc(c.row)}.html">${esc(c.row)}</a>${c.change_id ? `<div class="sub">${esc(c.change_id)}</div>` : ''}</td>
+      <td class="small">${esc((c.fields || []).join(', '))}</td>
+      <td class="num-col small">${esc(c.before)}</td>
+      <td class="num-col small"><strong>${esc(c.after)}</strong></td>
+      <td class="small">“${esc(c.quote)}”</td>
+      <td class="small">${esc(c.why)}</td>
+      <td><a class="src" href="${esc(c.url)}" rel="noopener nofollow" target="_blank">${esc((c.channel || 'official source').slice(0, 42))} ↗</a></td>
+    </tr>`
+      )
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>`;
+};
+
 const blockedRows = liveCheck.rows.filter((r) => r.http_status === 403);
 const fullyBlocked = liveCheck.rows.filter((r) => r.price_verdict === 'not_read');
 const recheckPage = layout({
@@ -1370,11 +1464,12 @@ const recheckPage = layout({
   body: `
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing (${totalRows} total) was opened at its own official product URL on 2026-10-23: ${readCounts.automated} retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner, ${readCounts.manual} read by hand, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread; 1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified).</p>
+  <p class="lede">Every listing (${totalRows} total) was opened at its own official product URL on 2026-10-23: ${readCounts.automated} retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner, ${readCounts.manual} read by hand, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread; 1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified). The ninth pass at 20:29–20:32Z re-read every row again with a newer collector, confirmed ${liveCheck.summary.ninth_confirmed} prices at variant or page level, re-confirmed 21 of the 25 published gram weights, and labelled the 4 Aurate weights that a browserless read cannot see instead of dropping them.</p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">
     ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}
+    ${liveCheck.ninth_pass ? stat(`${liveCheck.ninth_pass.rows_read_ok}/${liveCheck.rows.length}`, 'rows re-read on the ninth pass', `Runner ${esc(liveCheck.ninth_pass.run_started_at)} to ${esc(liveCheck.ninth_pass.run_finished_at)}, ${liveCheck.ninth_pass.hand_reads} hand reads on this session's own channel, ${liveCheck.summary.ninth_confirmed} prices confirmed, ${liveCheck.summary.ninth_corrections} quoted corrections, ${liveCheck.ninth_pass.rows_unreachable_http403} rows refused by the seller's CDN.`) : ''}
     ${stat(`${liveCheck.corrections.length}`, 'prices corrected', 'Only where the seller\'s own page contradicted the stored value and the replacement is quoted below.')}
     ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn', 'SKU 939479 now sells a different ring. See F51.')}
     ${stat(`${fullyBlocked.length}`, 'rows still unread', blockedRows.length === 0 ? 'All 9 formerly HTTP-403 rows were verified via direct storefront JSON & PDP reads (F53).' : `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. See F53.`)}
@@ -1393,7 +1488,7 @@ const recheckPage = layout({
       <td>${esc(c.field)}</td>
       <td class="num-col">${c.from.map((n) => usd(n)).join('–')}</td>
       <td class="num-col"><strong>${c.to.map((n) => usd(n)).join('–')}</strong></td>
-      <td class="small">${esc(c.quote)}</td>
+      <td class="small">“${esc(c.quote)}”</td>
       <td class="small">${esc(c.why)}</td>
       <td><a class="src" href="${esc(c.url)}" rel="noopener nofollow" target="_blank">feed ↗</a></td>
     </tr>`
@@ -1407,7 +1502,7 @@ const recheckPage = layout({
   <p class="sub">One line per listing. "Stored" is what this project had before the pass; "seller printed" is what the page showed on 2026-10-23; the verdict says whether they agree.</p>
   <div class="table-wrap">
   <table class="data-table">
-    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Seller printed</th><th scope="col">Verdict</th><th scope="col">Weight on page</th><th scope="col">What was read</th><th scope="col">Source</th></tr></thead>
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Seller printed</th><th scope="col">Verdict</th><th scope="col">Ninth pass, 20:29-20:32Z</th><th scope="col">Weight on page</th><th scope="col">What was read</th><th scope="col">Source</th></tr></thead>
     <tbody>
     ${liveCheck.rows
       .map((r) => {
@@ -1425,6 +1520,13 @@ const recheckPage = layout({
       <td class="num-col small">${r.stored_price.low === null ? '—' : usd(r.stored_price.low) + (r.stored_price.high !== r.stored_price.low ? '–' + usd(r.stored_price.high) : '')}</td>
       <td class="num-col small"><strong>${obs}</strong></td>
       <td><span class="chip ${v.k}">${esc(v.t)}</span></td>
+      <td class="small">${
+        r.ninth_pass_price_verdict
+          ? `<span class="chip ${NINTH_CHIP_KIND[r.ninth_pass_price_verdict] || 'info'}">${esc(NINTH_LABEL[r.ninth_pass_price_verdict] || r.ninth_pass_price_verdict)}</span><div class="sub">${
+              r.ninth_pass_observed_prices_after ? esc(usd(r.ninth_pass_observed_prices_after.low) + (r.ninth_pass_observed_prices_after.high !== r.ninth_pass_observed_prices_after.low ? '–' + usd(r.ninth_pass_observed_prices_after.high) : '')) : '—'
+            } <span class="small">${esc(String(r.ninth_pass_read || '').slice(0, 64))}</span></div>`
+          : '<span class="chip info">not re-read on the ninth pass</span>'
+      }</td>
       <td class="small">${esc(wv)}</td>
       <td class="small">${esc((quote || '').slice(0, 240))}</td>
       <td><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
@@ -1434,7 +1536,8 @@ const recheckPage = layout({
     </tbody>
   </table>
   </div>
-  <p class="sub">Raw evidence: <code>data/live/${esc((liveCheck.rows[0] && liveCheck.rows[0].fetched_at) || '2026-10-23')}</code> · <code>data/live/manual-2026-10-23.json</code> · <code>data/verification-2026-10-23.json</code>. The re-read runs from <code>.github/workflows/reverify.yml</code> against a runner with full internet access, so it is reproducible.</p>
+  ${liveChangesTable()}
+  <p class="sub">Raw evidence: ${((liveCheck.ninth_pass || {}).evidence_files || ['data/live/latest.json']).map((p) => `<code>${esc(p)}</code>`).join(' · ')} · <code>data/verification-2026-10-23.json</code> · <code>data/session-7626fc93/reconcile-report-2026-10-23.json</code>. The re-read runs from <code>.github/workflows/reverify.yml</code> against a runner with full internet access, so it is reproducible.</p>
 </section>`,
 });
 

@@ -1,0 +1,3345 @@
+{
+  "pass": "P98-ninth",
+  "generated_at_note": "generated_at is the time the evidence run finished, so re-running this script reproduces this file byte for byte.",
+  "session": "sess-7626fc93",
+  "branch": "arena/7626fc93-gold1",
+  "generated_at": "2026-10-23T20:32:44Z",
+  "rule": "No hallucinations: a value is written only when it appears in the verbatim quote stored with it, and the gate below re-checks every row afterwards.",
+  "evidence_run": {
+    "file": "data/live/latest.json",
+    "version": "v6 seller structured specs (JSON-LD additionalProperty) + whole metal-weight sentences (ninth pass, sess-7626fc93)",
+    "started_at": "2026-10-23T20:32:02Z",
+    "finished_at": "2026-10-23T20:32:44Z",
+    "ok": 61,
+    "total": 71,
+    "context": "github-actions run 40019939999"
+  },
+  "counts": {
+    "rows": 71,
+    "re_read_this_pass": 65,
+    "via_runner": 61,
+    "via_hand_read": 6,
+    "not_reachable_this_pass": 6,
+    "verdict_match": 51,
+    "verdict_match_page_text_price": 6,
+    "verdict_match_within_karat_band": 8,
+    "verdict_within_product_variant_range": 0,
+    "verdict_differs": 0,
+    "verdict_low_matches_high_differs": 0,
+    "verdict_no_machine_readable_price": 0,
+    "verdict_not_read": 6,
+    "weights_reconfirmed": 21,
+    "weights_stored_total": 25,
+    "weights_not_reconfirmed": [
+      {
+        "row": "au-2ct-oval",
+        "stored_weight": 2.73,
+        "why": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong."
+      },
+      {
+        "row": "au-1ct-emerald",
+        "stored_weight": 1.97,
+        "why": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong."
+      },
+      {
+        "row": "au-3ct-round",
+        "stored_weight": 3.3,
+        "why": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong."
+      },
+      {
+        "row": "au-xring",
+        "stored_weight": 2.7,
+        "why": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong."
+      }
+    ],
+    "no_machine_readable_price_rows": [],
+    "not_read_rows": [
+      "wc-4prong",
+      "wc-4prong-petite",
+      "wc-6prong",
+      "wc-gerbera",
+      "car-18k-etincelle-pear",
+      "car-18k-1895-band-dia"
+    ],
+    "weight_high_not_reproduced": [],
+    "verdict_differs_rows": [],
+    "weights_stored": 25,
+    "changes_applied": 17,
+    "rejected_by_quote_gate": 0
+  },
+  "gold": {
+    "primary": {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 3997.399902,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T20:32:16Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "sess-7626fc93",
+      "observed_at": "2026-10-23T20:32:44Z",
+      "http_status": 200
+    },
+    "cross_check": 4010.2,
+    "cross_check_timestamp": "2026-10-23T20:32:44Z (payload carries no publisher timestamp; this is when the runner read it)",
+    "attempts": [
+      {
+        "file": "data/live/latest.json",
+        "publisher": "gold-api.com",
+        "http_status": 200,
+        "price_usd_per_ozt": 3997.399902,
+        "publisher_timestamp": "2026-10-23T20:32:16Z",
+        "fetched_at": "2026-10-23T20:32:26Z"
+      },
+      {
+        "file": "data/live/latest.json",
+        "publisher": "Yahoo Finance (COMEX GC=F front month)",
+        "http_status": 0,
+        "price_usd_per_ozt": null,
+        "publisher_timestamp": null,
+        "fetched_at": "2026-10-23T20:32:44Z"
+      },
+      {
+        "file": "data/live/2026-10-23T20-29-52Z.json",
+        "publisher": "gold-api.com",
+        "http_status": 200,
+        "price_usd_per_ozt": 3998.5,
+        "publisher_timestamp": "2026-10-23T20:29:15Z",
+        "fetched_at": "2026-10-23T20:29:33Z"
+      },
+      {
+        "file": "data/live/2026-10-23T20-29-52Z.json",
+        "publisher": "Yahoo Finance (COMEX GC=F front month)",
+        "http_status": 0,
+        "price_usd_per_ozt": null,
+        "publisher_timestamp": null,
+        "fetched_at": "2026-10-23T20:29:52Z"
+      },
+      {
+        "file": "data/live/2026-10-23T20-25-27Z.json",
+        "publisher": "gold-api.com",
+        "http_status": 200,
+        "price_usd_per_ozt": 3998.5,
+        "publisher_timestamp": "2026-10-23T20:25:15Z",
+        "fetched_at": "2026-10-23T20:25:26Z"
+      },
+      {
+        "file": "data/live/2026-10-23T20-25-27Z.json",
+        "publisher": "Yahoo Finance (COMEX GC=F front month)",
+        "http_status": 200,
+        "price_usd_per_ozt": 4010.2,
+        "publisher_timestamp": null,
+        "fetched_at": "2026-10-23T20:25:27Z"
+      }
+    ]
+  },
+  "rejected_reads": {
+    "nav_label_solid_mentions": "as-bea-sol, as-hazeline and as-bea-3stone contain the words \"SOLID GOLD\" in today's page text — inside the store navigation (\"BANDS … GEMSTONE BANDS SOLID GOLD BEST SELLERS\"), a collection menu label, not a claim about the ring. A keyword rule would have marked all three rows \"solid gold stated\"; none was changed, because a menu item is not the seller stating that this item is solid.",
+    "parcel_weight": "Ross-Simons variant records publish \"grams\":113 on every size of every product ($89 ring and $695 ring alike) — the parcel weight (0.25 lb). Never used as a metal weight; scripts/live_reverify.mjs copies it into shipping_weight_fields with not_metal_weight: true."
+  },
+  "observations": [
+    {
+      "row": "rs-571221",
+      "stored": {
+        "price_low": 400,
+        "price_high": 400,
+        "karat": "14K",
+        "weight_g_low": 1.7,
+        "weight_g_high": 1.7,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/571221",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:03Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        },
+        {
+          "channel": "arena sandbox fetch (hand read)",
+          "url": "https://www.ross-simons.com/products/571221",
+          "read_at": "2026-10-23T20:36:00Z",
+          "verbatim": "H1 \"Women's 2mm 14kt Yellow Gold Band\"; \"$400\"; size list \"Size 5$400.00In-Stock / Size 5.5Sold Out / Size 6$400.00In-Stock / Size 6.5Sold Out / Size 7$400.00In-Stock / Size 7.5Sold Out / Size 8$400.00In-Stock / Size 8.5Sold Out / Size 9$400.00In-Stock\"; spec panel \"Metal 14ktYellow Gold\", \"Gold Weight 1.7 grams\", \"Finish Polished\"; disclaimer \"All weights and measurements are approximate.\"; \"Item",
+          "verdict": "confirmed — price and the published metal weight are both printed on the page read through a second channel. Important method finding: the runner's parser did NOT surface the \"Gold Weight 1.7 grams\" line in its first pass (its keyword windows were capped and the spec panel sits late in a ~940 KB document). scripts/live_reverify.mjs v5 adds an explicit labelled metal-weight search over both the stripped text and the raw HTML for that reason."
+        }
+      ],
+      "observed_price": {
+        "low": 400,
+        "high": 400
+      },
+      "price_basis": "hand read of the official page (verbatim quote recorded in the ledger)",
+      "options": {},
+      "verdict": "match",
+      "quote": "H1 \"Women's 2mm 14kt Yellow Gold Band\"; \"$400\"; size list \"Size 5$400.00In-Stock / Size 5.5Sold Out / Size 6$400.00In-Stock / Size 6.5Sold Out / Size 7$400.00In-Stock / Size 7.5Sold Out / Size 8$400.00In-Stock / Size 8.5Sold Out / Size 9$400.00In-Stock\"; spec panel \"Metal 14ktYellow Gold\", \"Gold Weight 1.7 grams\", \"Finish Polished\"; disclaimer \"All weights and measurements are approximate.\"; \"Item",
+      "weight_reproduced_today": {
+        "low": 1.7,
+        "high": 1.7,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 1.7 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 400,
+        "high": 400
+      }
+    },
+    {
+      "row": "rs-571222",
+      "stored": {
+        "price_low": 599,
+        "price_high": 599,
+        "karat": "14K",
+        "weight_g_low": 2.5,
+        "weight_g_high": 2.5,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/571222",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:03Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 599,
+        "high": 599
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/571222 :: \"price\":599",
+      "weight_reproduced_today": {
+        "low": 2.5,
+        "high": 2.5,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 2.5 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 599,
+        "high": 599
+      }
+    },
+    {
+      "row": "rs-571223",
+      "stored": {
+        "price_low": 799,
+        "price_high": 849,
+        "karat": "14K",
+        "weight_g_low": 3.8,
+        "weight_g_high": 3.8,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/571223",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:03Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        },
+        {
+          "channel": "arena sandbox fetch (hand read)",
+          "url": "https://www.ross-simons.com/products/571223.json",
+          "read_at": "2026-10-23T20:20:00Z",
+          "verbatim": "\"title\":\"Women's 4mm 14kt Yellow Gold Band\"; \"updated_at\":\"2026-10-23T16:21:35-04:00\"; variants Size 5/6/7/8/9 \"price\":\"849.00\" and Size 5.5/6.5/7.5/8.5 \"price\":\"799.00\" (compare_at_price equals price on every variant); every variant \"grams\":113,\"weight\":0.25,\"weight_unit\":\"lb\"",
+          "verdict": "confirmed — the $799–$849 size split stored on the row is exactly what the seller's own variant feed prints, and the seller touched the product today (updated_at 2026-10-23T16:21:35-04:00) without moving either number. compare_at_price now equals price, so there is no strikethrough discount on this item today."
+        }
+      ],
+      "observed_price": {
+        "low": 799,
+        "high": 849
+      },
+      "price_basis": "hand read of the official page (verbatim quote recorded in the ledger)",
+      "options": {},
+      "verdict": "match",
+      "quote": "\"title\":\"Women's 4mm 14kt Yellow Gold Band\"; \"updated_at\":\"2026-10-23T16:21:35-04:00\"; variants Size 5/6/7/8/9 \"price\":\"849.00\" and Size 5.5/6.5/7.5/8.5 \"price\":\"799.00\" (compare_at_price equals price on every variant); every variant \"grams\":113,\"weight\":0.25,\"weight_unit\":\"lb\"",
+      "weight_reproduced_today": {
+        "low": 3.8,
+        "high": 3.8,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 3.8 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 799,
+        "high": 849
+      }
+    },
+    {
+      "row": "rs-571213",
+      "stored": {
+        "price_low": 959,
+        "price_high": 959,
+        "karat": "14K",
+        "weight_g_low": 5,
+        "weight_g_high": 5,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/571213",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:03Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 959,
+        "high": 959
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/571213 :: \"price\":959",
+      "weight_reproduced_today": {
+        "low": 5,
+        "high": 5,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 5.0 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 959,
+        "high": 959
+      }
+    },
+    {
+      "row": "rs-981367",
+      "stored": {
+        "price_low": 149,
+        "price_high": 149,
+        "karat": "14K",
+        "weight_g_low": 0.5,
+        "weight_g_high": 0.5,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/981367",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:04Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 149,
+        "high": 149
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/981367 :: \"price\":149",
+      "weight_reproduced_today": {
+        "low": 0.5,
+        "high": 0.5,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 0.5 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 149,
+        "high": 149
+      }
+    },
+    {
+      "row": "rs-907250",
+      "stored": {
+        "price_low": 179,
+        "price_high": 179,
+        "karat": "18K",
+        "weight_g_low": 0.5,
+        "weight_g_high": 0.5,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/907250",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:05Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 179,
+        "high": 179
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/907250 :: \"price\":179",
+      "weight_reproduced_today": {
+        "low": 0.5,
+        "high": 0.5,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 0.5 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 179,
+        "high": 179
+      }
+    },
+    {
+      "row": "rs-960952",
+      "stored": {
+        "price_low": 399,
+        "price_high": 399,
+        "karat": "14K",
+        "weight_g_low": 1.3,
+        "weight_g_high": 1.3,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/960952",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:05Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 399,
+        "high": 399
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/960952 :: \"price\":399",
+      "weight_reproduced_today": {
+        "low": 1.3,
+        "high": 1.3,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 1.3 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 399,
+        "high": 399
+      }
+    },
+    {
+      "row": "rs-879968",
+      "stored": {
+        "price_low": 2695,
+        "price_high": 2695,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/879968",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:05Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2695,
+        "high": 2695
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/879968 :: \"price\":2695",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2695,
+        "high": 2695
+      }
+    },
+    {
+      "row": "rs-999230",
+      "stored": {
+        "price_low": 489,
+        "price_high": 559,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/999230",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:06Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 489,
+        "high": 489
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/999230 :: \"price\":489",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 489,
+        "high": 489
+      }
+    },
+    {
+      "row": "rs-991907",
+      "stored": {
+        "price_low": 2795,
+        "price_high": 2795,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/991907",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:06Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2795,
+        "high": 2795
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/991907 :: \"price\":2795",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2795,
+        "high": 2795
+      }
+    },
+    {
+      "row": "rs-993512",
+      "stored": {
+        "price_low": 2795,
+        "price_high": 2795,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/993512",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:06Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2795,
+        "high": 2795
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/993512 :: \"price\":2795",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2795,
+        "high": 2795
+      }
+    },
+    {
+      "row": "rs-991908",
+      "stored": {
+        "price_low": 1795,
+        "price_high": 1795,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/991908",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:07Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1795,
+        "high": 1795
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/991908 :: \"price\":1795",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1795,
+        "high": 1795
+      }
+    },
+    {
+      "row": "rs-864785",
+      "stored": {
+        "price_low": 2395,
+        "price_high": 2395,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/864785",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2395,
+        "high": 2395
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/864785 :: \"price\":2395",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2395,
+        "high": 2395
+      }
+    },
+    {
+      "row": "rs-943668",
+      "stored": {
+        "price_low": 1269,
+        "price_high": 1439,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/943668",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1269,
+        "high": 1269
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/943668 :: \"price\":1269",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1269,
+        "high": 1269
+      }
+    },
+    {
+      "row": "rs-242556",
+      "stored": {
+        "price_low": 2195,
+        "price_high": 2195,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/242556",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2195,
+        "high": 2195
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/242556 :: \"price\":2195",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2195,
+        "high": 2195
+      }
+    },
+    {
+      "row": "rs-254575",
+      "stored": {
+        "price_low": 695,
+        "price_high": 695,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/254575",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 695,
+        "high": 695
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/254575 :: \"price\":695",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 695,
+        "high": 695
+      }
+    },
+    {
+      "row": "rs-240912",
+      "stored": {
+        "price_low": 8995,
+        "price_high": 8995,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/240912",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:09Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 8995,
+        "high": 8995
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/240912 :: \"price\":8995",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 8995,
+        "high": 8995
+      }
+    },
+    {
+      "row": "wc-tulip",
+      "stored": {
+        "price_low": 590,
+        "price_high": 1110,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 403"
+        },
+        {
+          "channel": "arena sandbox fetch (hand read)",
+          "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
+          "read_at": "2026-10-23T20:33:00Z",
+          "verbatim": "\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\"; \"price\":59000,\"price_min\":59000,\"price_max\":111000; \"available\":true,\"price_varies\":true; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"OCT-Discount-23\"; variant \"14KT White Gold / Round\" \"price\":59000,\"compare_at_price\":null,\"barcode\":\"RB1501094A-round\"",
+          "verdict": "confirmed — price_min 59000 / price_max 111000 (cents) equals the stored $590–$1,110, and the \"Ring Setting Product\" tag re-confirms that this is a setting price, not a finished ring price. Third independent channel today (runner 403, sess-3020df54 10:31Z match, this 20:33Z match)."
+        }
+      ],
+      "observed_price": {
+        "low": 590,
+        "high": 1110
+      },
+      "price_basis": "hand read of the official page (verbatim quote recorded in the ledger)",
+      "options": {},
+      "verdict": "match",
+      "quote": "\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\"; \"price\":59000,\"price_min\":59000,\"price_max\":111000; \"available\":true,\"price_varies\":true; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"OCT-Discount-23\"; variant \"14KT White Gold / Round\" \"price\":59000,\"compare_at_price\":null,\"barcode\":\"RB1501094A-round\"",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 590,
+        "high": 1110
+      }
+    },
+    {
+      "row": "wc-4prong",
+      "stored": {
+        "price_low": 558,
+        "price_high": 801,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 403"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "not reachable from this pass's runner channel",
+      "options": {},
+      "verdict": "not_read",
+      "quote": "",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "not_read",
+      "observed_price_final": null
+    },
+    {
+      "row": "wc-4prong-petite",
+      "stored": {
+        "price_low": 558,
+        "price_high": 963,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 403"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "not reachable from this pass's runner channel",
+      "options": {},
+      "verdict": "not_read",
+      "quote": "",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "not_read",
+      "observed_price_final": null
+    },
+    {
+      "row": "wc-6prong",
+      "stored": {
+        "price_low": 567,
+        "price_high": 828,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 403"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "not reachable from this pass's runner channel",
+      "options": {},
+      "verdict": "not_read",
+      "quote": "",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "not_read",
+      "observed_price_final": null
+    },
+    {
+      "row": "wc-gerbera",
+      "stored": {
+        "price_low": 1210,
+        "price_high": 1850,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:08Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 403"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "not reachable from this pass's runner channel",
+      "options": {},
+      "verdict": "not_read",
+      "quote": "",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "not_read",
+      "observed_price_final": null
+    },
+    {
+      "row": "as-bea-sol",
+      "stored": {
+        "price_low": 11500,
+        "price_high": 11500,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:09Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 11500,
+        "high": 11500
+      },
+      "price_basis": "seller variant feed, product-wide band across 2 option groups (labels do not name the karat)",
+      "options": {},
+      "verdict": "match",
+      "quote": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js :: Yellow Gold 11500-11500; Rose Gold 11500-11500",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 11500,
+        "high": 11500
+      }
+    },
+    {
+      "row": "as-hazeline",
+      "stored": {
+        "price_low": 7150,
+        "price_high": 9200,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:09Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 7150,
+        "high": 9200
+      },
+      "price_basis": "seller variant feed, product-wide band across 1 option groups (labels do not name the karat)",
+      "options": {},
+      "verdict": "match",
+      "quote": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond.js :: Yellow Gold 7150-9200",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 7150,
+        "high": 9200
+      }
+    },
+    {
+      "row": "as-bea-3stone",
+      "stored": {
+        "price_low": 5400,
+        "price_high": 25100,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:09Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 5400,
+        "high": 25100
+      },
+      "price_basis": "seller variant feed, product-wide band across 3 option groups (labels do not name the karat)",
+      "options": {},
+      "verdict": "match",
+      "quote": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond.js :: Yellow Gold 5400-25100; White Gold 5400-25100; Rose Gold 5400-25100",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 5400,
+        "high": 25100
+      }
+    },
+    {
+      "row": "au-2ct-oval",
+      "stored": {
+        "price_low": 1968,
+        "price_high": 2800,
+        "karat": "14K",
+        "weight_g_low": 2.73,
+        "weight_g_high": 2.73,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:10Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1968,
+        "high": 1968
+      },
+      "price_basis": "seller variant feed, option \"14k\" (28 variants, 28 available)",
+      "options": {
+        "karat_option": "14k",
+        "variants": 28,
+        "available": 28,
+        "other_options": [
+          "18k 2438-2438",
+          "Platinum 2800-2800"
+        ]
+      },
+      "verdict": "match",
+      "quote": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.js :: 14k variants priced 1968.00",
+      "weight_reproduced_today": null,
+      "weight_channel_note": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong.",
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1968,
+        "high": 1968
+      }
+    },
+    {
+      "row": "au-1ct-emerald",
+      "stored": {
+        "price_low": 1498,
+        "price_high": 2100,
+        "karat": "14K",
+        "weight_g_low": 1.97,
+        "weight_g_high": 1.97,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:10Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1498,
+        "high": 1498
+      },
+      "price_basis": "seller variant feed, option \"14k\" (28 variants, 28 available)",
+      "options": {
+        "karat_option": "14k",
+        "variants": 28,
+        "available": 28,
+        "other_options": [
+          "18k 1878-1878",
+          "Platinum 2100-2100"
+        ]
+      },
+      "verdict": "match",
+      "quote": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.js :: 14k variants priced 1498.00",
+      "weight_reproduced_today": null,
+      "weight_channel_note": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong.",
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1498,
+        "high": 1498
+      }
+    },
+    {
+      "row": "au-3ct-round",
+      "stored": {
+        "price_low": 2438,
+        "price_high": 3000,
+        "karat": "14K",
+        "weight_g_low": 3.3,
+        "weight_g_high": 3.3,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:11Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2438,
+        "high": 2438
+      },
+      "price_basis": "seller variant feed, option \"14k\" (28 variants, 28 available)",
+      "options": {
+        "karat_option": "14k",
+        "variants": 28,
+        "available": 28,
+        "other_options": [
+          "18k 2858-2858",
+          "Platinum 3000-3000"
+        ]
+      },
+      "verdict": "match",
+      "quote": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring.js :: 14k variants priced 2438.00",
+      "weight_reproduced_today": null,
+      "weight_channel_note": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong.",
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2438,
+        "high": 2438
+      }
+    },
+    {
+      "row": "au-cigar",
+      "stored": {
+        "price_low": 1308,
+        "price_high": 1308,
+        "karat": "14K",
+        "weight_g_low": 2.6,
+        "weight_g_high": 4,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auratenewyork.com/products/modern-cigar-band",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:12Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1308,
+        "high": 1308
+      },
+      "price_basis": "seller variant feed, option \"14K\" (45 variants, 45 available)",
+      "options": {
+        "karat_option": "14K",
+        "variants": 45,
+        "available": 45,
+        "other_options": [
+          "Vermeil 118-118",
+          "18K 1668-1668"
+        ]
+      },
+      "verdict": "match",
+      "quote": "https://auratenewyork.com/products/modern-cigar-band.js :: 14K variants priced 1308.00",
+      "weight_reproduced_today": {
+        "low": 2.6,
+        "high": 4,
+        "where": "seller JSON-LD product spec",
+        "quote": "Feature: Lightweight at just 2.6-4g, so you'll barely notice it's there"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1308,
+        "high": 1308
+      }
+    },
+    {
+      "row": "au-xring",
+      "stored": {
+        "price_low": 1808,
+        "price_high": 1808,
+        "karat": "14K",
+        "weight_g_low": 2.7,
+        "weight_g_high": 2.7,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auratenewyork.com/products/x-ring-with-diamonds",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:12Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1808,
+        "high": 1808
+      },
+      "price_basis": "seller variant feed, option \"14k\" (54 variants, 54 available)",
+      "options": {
+        "karat_option": "14k",
+        "variants": 54,
+        "available": 54,
+        "other_options": [
+          "18k 2578-2578"
+        ]
+      },
+      "verdict": "match",
+      "quote": "https://auratenewyork.com/products/x-ring-with-diamonds.js :: 14k variants priced 1808.00",
+      "weight_reproduced_today": null,
+      "weight_channel_note": "Aurate publishes this figure in a spec panel the browser renders client-side; neither the runner page-text capture nor a non-JavaScript fetch of the page contains it, so it stays a 2026-10-22 reading (F61) rather than being called wrong.",
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1808,
+        "high": 1808
+      }
+    },
+    {
+      "row": "bn-14k-ccf-203284",
+      "stored": {
+        "price_low": 935,
+        "price_high": 935,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:11Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 935,
+        "high": 935
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284 :: \"price\":935",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 935,
+        "high": 935
+      }
+    },
+    {
+      "row": "bn-14k-tc-203288",
+      "stored": {
+        "price_low": 1240,
+        "price_high": 1240,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:12Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1240,
+        "high": 1240
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288 :: \"price\":1240",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1240,
+        "high": 1240
+      }
+    },
+    {
+      "row": "bn-14k-leaf-192442",
+      "stored": {
+        "price_low": 1275,
+        "price_high": 1275,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:12Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1275,
+        "high": 1275
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442 :: \"price\":1275",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1275,
+        "high": 1275
+      }
+    },
+    {
+      "row": "bn-14k-bezel-296643",
+      "stored": {
+        "price_low": 1310,
+        "price_high": 1310,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:13Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1310,
+        "high": 1310
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643 :: \"price\":1310",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1310,
+        "high": 1310
+      }
+    },
+    {
+      "row": "bn-14k-ridge-304497",
+      "stored": {
+        "price_low": 2065,
+        "price_high": 2065,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:13Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 2065,
+        "high": 2065
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497 :: \"price\":2065",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2065,
+        "high": 2065
+      }
+    },
+    {
+      "row": "bn-14k-6p-203272",
+      "stored": {
+        "price_low": 1000,
+        "price_high": 1000,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:13Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1000,
+        "high": 1000
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272 :: \"price\":1000",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1000,
+        "high": 1000
+      }
+    },
+    {
+      "row": "bn-18k-6p-194159",
+      "stored": {
+        "price_low": 1240,
+        "price_high": 1240,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:13Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1240,
+        "high": 1240
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159 :: \"price\":1240",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1240,
+        "high": 1240
+      }
+    },
+    {
+      "row": "bn-18k-pn-203268",
+      "stored": {
+        "price_low": 1420,
+        "price_high": 1420,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:13Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1420,
+        "high": 1420
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268 :: \"price\":1420",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1420,
+        "high": 1420
+      }
+    },
+    {
+      "row": "mej-deb",
+      "stored": {
+        "price_low": 1100,
+        "price_high": 1700,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/products/diamond-eternity-band",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:14Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1100,
+        "high": 1100
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "1100-1700"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/products/diamond-eternity-band :: \"price\":1100, \"lowPrice\":1100, \"highPrice\":1700",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1100,
+        "high": 1100
+      }
+    },
+    {
+      "row": "mej-db",
+      "stored": {
+        "price_low": 648,
+        "price_high": 648,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/products/diamonds-band",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:14Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 648,
+        "high": 648
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "648-648"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/products/diamonds-band :: \"price\":648, \"lowPrice\":648, \"highPrice\":648",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 648,
+        "high": 648
+      }
+    },
+    {
+      "row": "mej-bde",
+      "stored": {
+        "price_low": 2900,
+        "price_high": 3500,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:15Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 2900,
+        "high": 2900
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "2900-3500"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/products/bold-diamond-eternity-ring :: \"price\":2900, \"lowPrice\":2900, \"highPrice\":3500",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 2900,
+        "high": 2900
+      }
+    },
+    {
+      "row": "mej-2mm",
+      "stored": {
+        "price_low": 498,
+        "price_high": 498,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/products/2mm-smooth-band",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:15Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 498,
+        "high": 498
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "498-498"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/products/2mm-smooth-band :: \"price\":498, \"lowPrice\":498, \"highPrice\":498",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 498,
+        "high": 498
+      }
+    },
+    {
+      "row": "be-18k-6p-121h6",
+      "stored": {
+        "price_low": 1090,
+        "price_high": 1090,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:15Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 403"
+        },
+        {
+          "channel": "arena sandbox fetch (hand read)",
+          "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+          "read_at": "2026-10-23T20:29:00Z",
+          "verbatim": "H1 \"Classic Six-Prong Solitaire Ring in 18K Yellow Gold\"; \"$1,090(Setting Only)\"; \"Metal:18K Yellow Gold\" with alternatives \"14K White Gold\", \"18K White Gold\", \"14K Yellow Gold\", \"14K Rose Gold\", \"Platinum\"; \"Ring Information - Style: BE121H6-18KY - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm - Setting: Six-Prong\"; \"Free Shipping & Returns / Free Lifetime Warranty / Lifeti",
+          "verdict": "confirmed — the page renders \"$1,090\" in USD to this channel, so the row is no longer resting on the geo-localised EUR read (\"€1,250.00\") that made sess-545688f3 label it partly_verified. \"(Setting Only)\" and \"Prong metal: 14K White Gold\" are also printed, so the setting_only and mixed_karat_components flags are re-confirmed rather than relaxed."
+        }
+      ],
+      "observed_price": {
+        "low": 1090,
+        "high": 1090
+      },
+      "price_basis": "hand read of the official page (verbatim quote recorded in the ledger)",
+      "options": {},
+      "verdict": "match",
+      "quote": "H1 \"Classic Six-Prong Solitaire Ring in 18K Yellow Gold\"; \"$1,090(Setting Only)\"; \"Metal:18K Yellow Gold\" with alternatives \"14K White Gold\", \"18K White Gold\", \"14K Yellow Gold\", \"14K Rose Gold\", \"Platinum\"; \"Ring Information - Style: BE121H6-18KY - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm - Setting: Six-Prong\"; \"Free Shipping & Returns / Free Lifetime Warranty / Lifeti",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1090,
+        "high": 1090
+      }
+    },
+    {
+      "row": "rs-997811",
+      "stored": {
+        "price_low": 89,
+        "price_high": 89,
+        "karat": "10K",
+        "weight_g_low": 0.3,
+        "weight_g_high": 0.3,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/997811",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:16Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 89,
+        "high": 89
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/997811 :: \"price\":89",
+      "weight_reproduced_today": {
+        "low": 0.3,
+        "high": 0.3,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 0.3 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 89,
+        "high": 89
+      }
+    },
+    {
+      "row": "rs-939479",
+      "stored": {
+        "price_low": 499,
+        "price_high": 499,
+        "karat": "14K",
+        "weight_g_low": 1.5,
+        "weight_g_high": 1.5,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/939479",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:17Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 499,
+        "high": 499
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/939479 :: \"price\":499",
+      "weight_reproduced_today": {
+        "low": 1.5,
+        "high": 1.5,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 1.5 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 499,
+        "high": 499
+      }
+    },
+    {
+      "row": "mej-10k-dlr",
+      "stored": {
+        "price_low": 348,
+        "price_high": 348,
+        "karat": "10K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 348,
+        "high": 348
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "348-348"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/us/en/products/diamonds-line-ring :: \"price\":348, \"lowPrice\":348, \"highPrice\":348",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 348,
+        "high": 348
+      }
+    },
+    {
+      "row": "mej-10k-sig",
+      "stored": {
+        "price_low": 348,
+        "price_high": 348,
+        "karat": "10K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/us/en/products/signet-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:17Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 348,
+        "high": 348
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "348-348"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/us/en/products/signet-ring :: \"price\":348, \"lowPrice\":348, \"highPrice\":348",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 348,
+        "high": 348
+      }
+    },
+    {
+      "row": "ag-14k-radiant-3ct",
+      "stored": {
+        "price_low": 3074,
+        "price_high": 3074,
+        "karat": "14K",
+        "weight_g_low": 5.4,
+        "weight_g_high": 5.4,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:17Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 3074,
+        "high": 3236
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 3074-3236 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 3074-3074",
+          "14k White Gold 3074-3074",
+          "Nickel Free 14k White Gold 3236-3236",
+          "14k Rose Gold 3074-3074",
+          "14k Champagne Gold 3074-3074"
+        ],
+        "other_options": [
+          "950 Platinum 3452-3452"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring.js :: options 14k Yellow Gold 3074-3074; 14k White Gold 3074-3074; Nickel Free 14k White Gold 3236-3236; 14k Rose Gold 3074-3074; 14k Champagne Gold 3074-3074",
+      "weight_reproduced_today": {
+        "low": 5.4,
+        "high": 5.4,
+        "where": "page text",
+        "quote": "ons Stone is 9.7mm x 7.3mm Width Engagement band is 3mm, wedding band is 3mm Height Approximately 1.7mm - 6mm Item Weight Approximately 5.4g for gold or 8.1g for platinum Stone Lab created diamond Diamond clarity VS/VVS Diamond color D/E/F Diamond we"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 3074,
+        "high": 3236
+      }
+    },
+    {
+      "row": "ag-14k-marquise-melted",
+      "stored": {
+        "price_low": 2870,
+        "price_high": 2870,
+        "karat": "14K",
+        "weight_g_low": 7,
+        "weight_g_high": 7,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2870,
+        "high": 8400
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 2870-8400 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 2870-8190",
+          "14k White Gold 2870-8190",
+          "Nickel Free 14k White Gold 3080-8400",
+          "14k Rose Gold 2870-8190",
+          "14k Champagne Gold 2870-8190"
+        ],
+        "other_options": [
+          "950 Platinum 3360-8820"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/marquise-diamond-melted-ring.js :: options 14k Yellow Gold 2870-8190; 14k White Gold 2870-8190; Nickel Free 14k White Gold 3080-8400; 14k Rose Gold 2870-8190; 14k Champagne Gold 2870-8190",
+      "weight_reproduced_today": {
+        "low": 7,
+        "high": 7,
+        "where": "page text",
+        "quote": "ils Dimensions Stone is 10mm x 5mm Width Band is tapered 2.8mm to 8.5mm wide Height Approximately 2mm - 3.5mm Item Weight Approximately 7g (gold) or 10.5g (platinum) Stone Reclaimed natural diamond or Lab-created diamond with the highest cut qualit"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 2870,
+        "high": 8400
+      }
+    },
+    {
+      "row": "ag-14k-leaves",
+      "stored": {
+        "price_low": 2194,
+        "price_high": 2194,
+        "karat": "14K",
+        "weight_g_low": 3.6,
+        "weight_g_high": 3.6,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/diamond-leaves-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 2194,
+        "high": 2852
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 2194-2852 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 2194-2744",
+          "14k White Gold 2194-2744",
+          "Nickel Free 14k White Gold 2410-2852",
+          "14k Rose Gold 2194-2744",
+          "14k Champagne Gold 2194-2744"
+        ],
+        "other_options": [
+          "950 Platinum 2518-3068"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/diamond-leaves-ring.js :: options 14k Yellow Gold 2194-2744; 14k White Gold 2194-2744; Nickel Free 14k White Gold 2410-2852; 14k Rose Gold 2194-2744; 14k Champagne Gold 2194-2744",
+      "weight_reproduced_today": {
+        "low": 3.6,
+        "high": 3.6,
+        "where": "page text",
+        "quote": "diameter is 6mm. Ring is 7mm at widest part Width Band is 2mm to 5mm wide Height Approximately 1.7mm - 3.2mm Item Weight Approximate item weight: gold 3.6g, platinum 5.4g Stone Ethically sourced natural diamond, clear lab-created diamond Diamond clarity Clear diamo"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 2194,
+        "high": 2852
+      }
+    },
+    {
+      "row": "ag-14k-petal",
+      "stored": {
+        "price_low": 1774,
+        "price_high": 1774,
+        "karat": "14K",
+        "weight_g_low": 2.7,
+        "weight_g_high": 2.7,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/diamond-petal-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1774,
+        "high": 3355
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 1774-3355 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 1774-3274",
+          "14k White Gold 1774-3274",
+          "Nickel Free 14k White Gold 1855-3355",
+          "14k Rose Gold 1774-3274",
+          "14k Champagne Gold 1774-3274"
+        ],
+        "other_options": [
+          "950 Platinum 1977-3517"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/diamond-petal-ring.js :: options 14k Yellow Gold 1774-3274; 14k White Gold 1774-3274; Nickel Free 14k White Gold 1855-3355; 14k Rose Gold 1774-3274; 14k Champagne Gold 1774-3274",
+      "weight_reproduced_today": {
+        "low": 2.7,
+        "high": 2.7,
+        "where": "page text",
+        "quote": "s Dimensions Stone diameter is 5.5mm Width Graduating band from 1mm to 3mm Height Approximately 1.5mm - 3.3mm Item Weight Approximately 2.7g (gold) or 4.1g (platinum) Stone Reclaimed natural diamond or Lab created diamond Diamond clarity Natural is V"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 1774,
+        "high": 3355
+      }
+    },
+    {
+      "row": "ag-14k-kite",
+      "stored": {
+        "price_low": 1978,
+        "price_high": 1978,
+        "karat": "14K",
+        "weight_g_low": 3.5,
+        "weight_g_high": 3.5,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/gemstone-kite-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1978,
+        "high": 2083
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 1978-2083 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 1978-1978",
+          "14k White Gold 1978-1978",
+          "Nickel Free 14k White Gold 2083-2083",
+          "14k Rose Gold 1978-1978",
+          "14k Champagne Gold 1978-1978"
+        ],
+        "other_options": [
+          "950 Platinum 2293-2293"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/gemstone-kite-ring.js :: options 14k Yellow Gold 1978-1978; 14k White Gold 1978-1978; Nickel Free 14k White Gold 2083-2083; 14k Rose Gold 1978-1978; 14k Champagne Gold 1978-1978",
+      "weight_reproduced_today": {
+        "low": 3.5,
+        "high": 3.5,
+        "where": "page text",
+        "quote": "out our blog ! Details Dimensions Stone is 7.2mm x 5.5mm Width Band is 2.4mm Height Approximately 1.7mm - 4mm Item Weight Approximately 3.5g (gold) or 5.3g (platinum) Stone Ethically sourced natural salt and pepper diamond, lab-created alexandrite an"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 1978,
+        "high": 2083
+      }
+    },
+    {
+      "row": "ag-14k-cluster",
+      "stored": {
+        "price_low": 1636,
+        "price_high": 1636,
+        "karat": "14K",
+        "weight_g_low": 3.1,
+        "weight_g_high": 3.1,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/diamond-cluster-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1636,
+        "high": 2955
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 1636-2955 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 1636-2862",
+          "14k White Gold 1636-2862",
+          "Nickel Free 14k White Gold 1729-2955",
+          "14k Rose Gold 1636-2862",
+          "14k Champagne Gold 1636-2862"
+        ],
+        "other_options": [
+          "950 Platinum 1915-3095"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/diamond-cluster-ring.js :: options 14k Yellow Gold 1636-2862; 14k White Gold 1636-2862; Nickel Free 14k White Gold 1729-2955; 14k Rose Gold 1636-2862; 14k Champagne Gold 1636-2862",
+      "weight_reproduced_today": {
+        "low": 3.1,
+        "high": 3.1,
+        "where": "page text",
+        "quote": "imensions Stones range in diameter from 1.5mm-4mm Width 8mm at widest part Height Approximately 1.7mm - 2.4mm Item Weight Approximately 3.1g (gold) or 4.7g (platinum) Stone Reclaimed natural diamond or Lab-created diamond Diamond clarity Natural is V"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 1636,
+        "high": 2955
+      }
+    },
+    {
+      "row": "ag-14k-bubble",
+      "stored": {
+        "price_low": 1334,
+        "price_high": 1334,
+        "karat": "14K",
+        "weight_g_low": 1.4,
+        "weight_g_high": 1.4,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/diamond-bubble-ring",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1334,
+        "high": 1722
+      },
+      "price_basis": "seller variant feed, 5 options carrying this karat (band 1334-1722 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 1334-1680",
+          "14k White Gold 1334-1680",
+          "Nickel Free 14k White Gold 1376-1722",
+          "14k Rose Gold 1334-1680",
+          "14k Champagne Gold 1334-1680"
+        ],
+        "other_options": [
+          "950 Platinum 1460-1785"
+        ]
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/diamond-bubble-ring.js :: options 14k Yellow Gold 1334-1680; 14k White Gold 1334-1680; Nickel Free 14k White Gold 1376-1722; 14k Rose Gold 1334-1680; 14k Champagne Gold 1334-1680",
+      "weight_reproduced_today": {
+        "low": 1.4,
+        "high": 1.4,
+        "where": "page text",
+        "quote": "Dimensions Stones are 1.5mm and 2mm in diameter Width Band is 3mm at widest parts Height Approximately 1.7mm Item Weight Approximately 1.4g (gold) or 2.1g (platinum) Stone Reclaimed clear natural diamond, clear lab-created diamond, ethically sourced"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 1334,
+        "high": 1722
+      }
+    },
+    {
+      "row": "car-18k-etincelle-pear",
+      "stored": {
+        "price_low": 3350,
+        "price_high": 3350,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "not reachable from this pass's runner channel",
+      "options": {},
+      "verdict": "not_read",
+      "quote": "",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "not_read",
+      "observed_price_final": null
+    },
+    {
+      "row": "car-18k-etincelle-emerald",
+      "stored": {
+        "price_low": 3600,
+        "price_high": 3600,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:18Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        },
+        {
+          "channel": "arena sandbox fetch (hand read)",
+          "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+          "read_at": "2026-10-23T20:26:00Z",
+          "verbatim": "H1 \"Etincelle de Cartier ring, emerald-cut diamond, paved\"; \"- Étincelle de Cartier ring\" / \"- 18K white gold (750/1000)\" / \"- Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat\" / \"- Width: 1.52 mm\" / \"- Thickness: 1.35 mm (for size 52)\"; price block \"$3,600\"; \"Ref.B4225700\"; \"You may return or exchange your Cartier creation within 30 days",
+          "verdict": "confirmed — the price, the 750/1000 fineness and the metal colour the row stores are exactly what the page prints. This is the second independent channel to read this row today (sess-3020df54 could not reach it at 10:37Z-11:05Z; it was the one F53 row still single-channel after that pass)."
+        }
+      ],
+      "observed_price": {
+        "low": 3600,
+        "high": 3600
+      },
+      "price_basis": "hand read of the official page (verbatim quote recorded in the ledger)",
+      "options": {},
+      "verdict": "match",
+      "quote": "H1 \"Etincelle de Cartier ring, emerald-cut diamond, paved\"; \"- Étincelle de Cartier ring\" / \"- 18K white gold (750/1000)\" / \"- Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat\" / \"- Width: 1.52 mm\" / \"- Thickness: 1.35 mm (for size 52)\"; price block \"$3,600\"; \"Ref.B4225700\"; \"You may return or exchange your Cartier creation within 30 days",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 3600,
+        "high": 3600
+      }
+    },
+    {
+      "row": "car-18k-1895-band-dia",
+      "stored": {
+        "price_low": 1140,
+        "price_high": 1140,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:19Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "not reachable from this pass's runner channel",
+      "options": {},
+      "verdict": "not_read",
+      "quote": "",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "not_read",
+      "observed_price_final": null
+    },
+    {
+      "row": "mene-24k-classic-band",
+      "stored": {
+        "price_low": 1707,
+        "price_high": 1707,
+        "karat": "24K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mene.com/products/mene-classic-band-gold",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:19Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "page retrieved, no readable price on it",
+      "options": {},
+      "verdict": "no_machine_readable_price",
+      "quote": "Classic Band — ewest pure metal. Free shipping within U.S. and Canada on orders over $500. Cart Cart Shop World of Menē About 3D Classic Band $1,694 USD Price",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match_page_text_price",
+      "observed_price_final": {
+        "low": 1694,
+        "high": 1694
+      }
+    },
+    {
+      "row": "mene-24k-narrow-band",
+      "stored": {
+        "price_low": 1361,
+        "price_high": 1361,
+        "karat": "24K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mene.com/products/mene-narrow-band-gold",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:19Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": null,
+      "price_basis": "page retrieved, no readable price on it",
+      "options": {},
+      "verdict": "no_machine_readable_price",
+      "quote": "Narrow Classic Band — ewest pure metal. Free shipping within U.S. and Canada on orders over $500. Cart Cart Shop World of Menē About 3D Narrow Classic Band $1,350 USD",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match_page_text_price",
+      "observed_price_final": {
+        "low": 1350,
+        "high": 1350
+      }
+    },
+    {
+      "row": "auv-22k-vneck-sm",
+      "stored": {
+        "price_low": 900,
+        "price_high": 900,
+        "karat": "22K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:20Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 900,
+        "high": 900
+      },
+      "price_basis": "price printed in the page text the runner captured (no machine-readable price block on this page)",
+      "options": {},
+      "verdict": "match_page_text_price",
+      "quote": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN | @auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15% | applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Disco",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": {
+        "low": 2.8,
+        "high": 2.8,
+        "where": "raw page HTML (spec blob)",
+        "quote": "29\",\"name\":\"Description\",\"value\":\"Our Small V Neck Stack Ring is precisely on point in 22 karat polished gold with an approximate gold weight of 2.8 grams. Designed to be worn solo, in multiples or with our Clean Cut and Large V Neck Stack Rings.\"},{\"id\":\"11930\",\"name\":\"Finish\",\"valu"
+      },
+      "verdict_final": "match_page_text_price",
+      "observed_price_final": {
+        "low": 900,
+        "high": 900
+      }
+    },
+    {
+      "row": "auv-22k-hexagon-diamond",
+      "stored": {
+        "price_low": 1400,
+        "price_high": 1400,
+        "karat": "22K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:20Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1400,
+        "high": 1400
+      },
+      "price_basis": "price printed in the page text the runner captured (no machine-readable price block on this page)",
+      "options": {},
+      "verdict": "match_page_text_price",
+      "quote": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN | @auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15% | applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Disco",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": {
+        "low": 3.3,
+        "high": 3.5,
+        "where": "page text, weight keyword windows",
+        "quote": "amond Stack Ring pairs well with the Hexagon Sapphire Stack Ring and the Hexagon Ruby Stack Ring . Details Diamond Details: Approximate Total Diamond Weight: .20 carats Diamond Color/Clarity: G|VS Dimensions: Width: 5/32\" (4 mm) Thickness: 3/64\" (1 mm) Approximate Fine Weight : 3.3 to 3.5 grams depe"
+      },
+      "verdict_final": "match_page_text_price",
+      "observed_price_final": {
+        "low": 1400,
+        "high": 1400
+      }
+    },
+    {
+      "row": "auv-22k-diamond-bridge-tall",
+      "stored": {
+        "price_low": 1600,
+        "price_high": 1600,
+        "karat": "22K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:20Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1600,
+        "high": 1600
+      },
+      "price_basis": "price printed in the page text the runner captured (no machine-readable price block on this page)",
+      "options": {},
+      "verdict": "match_page_text_price",
+      "quote": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN | @auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15% | applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Disco",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": {
+        "low": 2.7,
+        "high": 2.7,
+        "where": "raw page HTML (spec blob)",
+        "quote": "d Bridge Ring is a symbolic ode to the interconnected path of Orion’s Belt. Handcrafted from solid 22 karat polished gold with a gold weight of approximately 2.7 grams. A duo of brilliant round cut diamonds represents two o\"},{\"id\":13333,\"name\":\"Finish\",\"value\":\"Polished\"},{\"id\":13334,\"name\":\"@fi"
+      },
+      "verdict_final": "match_page_text_price",
+      "observed_price_final": {
+        "low": 1600,
+        "high": 1600
+      }
+    },
+    {
+      "row": "auv-22k-clean-cut-polished",
+      "stored": {
+        "price_low": 900,
+        "price_high": 900,
+        "karat": "22K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:20Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 900,
+        "high": 900
+      },
+      "price_basis": "price printed in the page text the runner captured (no machine-readable price block on this page)",
+      "options": {},
+      "verdict": "match_page_text_price",
+      "quote": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN | @auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15% | applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Disco",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": {
+        "low": 2.7,
+        "high": 2.7,
+        "where": "raw page HTML (spec blob)",
+        "quote": "ur Clean Cut Stack Ring makes a bold statement with minimal effort. Handcrafted from 22 karat polished gold with an approximate gold weight of 2.7 grams, this ring is best worn in multiples or with our Large and Small V Neck Stack Rings.\"},{\"id\":\"11840\",\"name\":\"Finish\",\"value\":\"Pol"
+      },
+      "verdict_final": "match_page_text_price",
+      "observed_price_final": {
+        "low": 900,
+        "high": 900
+      }
+    },
+    {
+      "row": "rs-222283",
+      "stored": {
+        "price_low": 695,
+        "price_high": 695,
+        "karat": "10K",
+        "weight_g_low": 3.3,
+        "weight_g_high": 3.3,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/222283",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:22Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 695,
+        "high": 695
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/222283 :: \"price\":695",
+      "weight_reproduced_today": {
+        "low": 3.3,
+        "high": 3.3,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 3.3 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 695,
+        "high": 695
+      }
+    },
+    {
+      "row": "rs-989853",
+      "stored": {
+        "price_low": 469,
+        "price_high": 469,
+        "karat": "18K",
+        "weight_g_low": 1.2,
+        "weight_g_high": 1.2,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/989853",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:22Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 469,
+        "high": 469
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/989853 :: \"price\":469",
+      "weight_reproduced_today": {
+        "low": 1.2,
+        "high": 1.2,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 1.2 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 469,
+        "high": 469
+      }
+    },
+    {
+      "row": "rs-997441",
+      "stored": {
+        "price_low": 1195,
+        "price_high": 1195,
+        "karat": "18K",
+        "weight_g_low": 3.4,
+        "weight_g_high": 3.4,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/997441",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:22Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1195,
+        "high": 1195
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/997441 :: \"price\":1195",
+      "weight_reproduced_today": {
+        "low": 3.4,
+        "high": 3.4,
+        "where": "seller JSON-LD product spec",
+        "quote": "metal weight: 3.4 grams"
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1195,
+        "high": 1195
+      }
+    },
+    {
+      "row": "rs-255232",
+      "stored": {
+        "price_low": 1295,
+        "price_high": 1295,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.ross-simons.com/products/255232",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:22Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 1295,
+        "high": 1295
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.ross-simons.com/products/255232 :: \"price\":1295",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1295,
+        "high": 1295
+      }
+    },
+    {
+      "row": "ag-14k-industrial-band",
+      "stored": {
+        "price_low": 598,
+        "price_high": 598,
+        "karat": "14K",
+        "weight_g_low": 2.1,
+        "weight_g_high": 2.1,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.automicgold.com/products/industrial-mirror-band",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:22Z",
+          "html_ok": true,
+          "product_json_ok": true,
+          "product_json_error": null
+        }
+      ],
+      "observed_price": {
+        "low": 598,
+        "high": 2825
+      },
+      "price_basis": "seller variant feed, 2 options carrying this karat (band 598-2825 across stones and sizes)",
+      "options": {
+        "karat_options": [
+          "14k Yellow Gold 598-2825",
+          "14k White Gold 598-1178"
+        ],
+        "other_options": []
+      },
+      "verdict": "match_within_karat_band",
+      "quote": "https://www.automicgold.com/products/industrial-mirror-band.js :: options 14k Yellow Gold 598-2825; 14k White Gold 598-1178",
+      "weight_reproduced_today": {
+        "low": 2.1,
+        "high": 2.1,
+        "where": "page text, weight keyword windows",
+        "quote": "d help deciding between Platinum, White Gold, and Silver? Check out our blog ! Details Dimensions Gemstones are 1.5mm Height Approximately 1.7mm Item Weight Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear "
+      },
+      "weight_channel_note": null,
+      "verdict_final": "match_within_karat_band",
+      "observed_price_final": {
+        "low": 598,
+        "high": 2825
+      }
+    },
+    {
+      "row": "car-18k-destinee-princess",
+      "stored": {
+        "price_low": 3350,
+        "price_high": 3350,
+        "karat": "18K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+          "http_status": 403,
+          "read_at": "2026-10-23T20:32:22Z",
+          "html_ok": false,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        },
+        {
+          "channel": "arena sandbox fetch (hand read)",
+          "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+          "read_at": "2026-10-23T20:34:00Z",
+          "verbatim": "H1 \"Etincelle de Cartier ring, princess-cut diamond, paved\"; document title \"18K Yellow Gold Etincelle de Cartier Diamond Ring | Cartier US\"; \"- Etincelle de Cartier ring\" / \"- Yellow gold 750/1000\" / \"- Set with a princess-cut diamond centre stone of 0.16 carats\" / \"- Paved with brilliant-cut diamonds\" / \"- Width: 1.52 mm\" / \"- Thickness: 1.35 mm (for size 52)\"; price block \"$3,350\"; \"Ref.B423290",
+          "verdict": "price and metal CONFIRMED ($3,350, yellow gold 750/1000). TITLE MISMATCH: the URL slug still says \"cartier-destinee\" but the page Cartier serves at Ref. B4232900 is titled \"Étincelle de Cartier ring, princess-cut diamond, paved\", not \"Cartier Destinée\". The row's title is corrected to the page's own H1 and the mismatch is published as flag F59."
+        }
+      ],
+      "observed_price": {
+        "low": 3350,
+        "high": 3350
+      },
+      "price_basis": "hand read of the official page (verbatim quote recorded in the ledger)",
+      "options": {},
+      "verdict": "match",
+      "quote": "H1 \"Etincelle de Cartier ring, princess-cut diamond, paved\"; document title \"18K Yellow Gold Etincelle de Cartier Diamond Ring | Cartier US\"; \"- Etincelle de Cartier ring\" / \"- Yellow gold 750/1000\" / \"- Set with a princess-cut diamond centre stone of 0.16 carats\" / \"- Paved with brilliant-cut diamonds\" / \"- Width: 1.52 mm\" / \"- Thickness: 1.35 mm (for size 52)\"; price block \"$3,350\"; \"Ref.B423290",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 3350,
+        "high": 3350
+      }
+    },
+    {
+      "row": "bn-14k-petite-195639",
+      "stored": {
+        "price_low": 1000,
+        "price_high": 1000,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": false
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:23Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 1000,
+        "high": 1000
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {},
+      "verdict": "match",
+      "quote": "JSON-LD on https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639 :: \"price\":1000",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 1000,
+        "high": 1000
+      }
+    },
+    {
+      "row": "mej-14k-sdeb",
+      "stored": {
+        "price_low": 898,
+        "price_high": 898,
+        "karat": "14K",
+        "weight_g_low": null,
+        "weight_g_high": null,
+        "solid_stated": true
+      },
+      "channels": [
+        {
+          "channel": "github-actions runner (scripts/live_reverify.mjs v6)",
+          "url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+          "http_status": 200,
+          "read_at": "2026-10-23T20:32:24Z",
+          "html_ok": true,
+          "product_json_ok": false,
+          "product_json_error": "HTTP 404"
+        }
+      ],
+      "observed_price": {
+        "low": 898,
+        "high": 898
+      },
+      "price_basis": "seller JSON-LD price for the variant the page selects by default",
+      "options": {
+        "jsonld_range": "648-948"
+      },
+      "verdict": "match",
+      "quote": "JSON-LD on https://mejuri.com/us/en/products/slim-diamond-eternity-band :: \"price\":898, \"lowPrice\":648, \"highPrice\":948",
+      "weight_reproduced_today": null,
+      "weight_channel_note": null,
+      "weight_candidate_today": null,
+      "verdict_final": "match",
+      "observed_price_final": {
+        "low": 898,
+        "high": 898
+      }
+    }
+  ],
+  "applied": [
+    {
+      "row": "mene-24k-classic-band",
+      "id": "P98-01",
+      "field": [
+        "price_low",
+        "price_high",
+        "price_basis",
+        "notes"
+      ],
+      "before": {
+        "price_low": 1707,
+        "price_high": 1707,
+        "price_basis": "starting price - varies with spot gold & ring size",
+        "notes": "24K pure gold benchmark (999.9 fine; re-verified 2026-10-23 at $1,707 USD, down $13 from $1,720 with intraday gold spot). Because Menē renders the size-specific gram breakdown via client-side JavaScript rather than static HTML, weight_g_low stays null rather than back-calculated. Note 7-day return window and up to 10% refund restocking fee."
+      },
+      "quote": "3D Classic Band $1,694 USD Price breakdown Metal Gold 24k Gold",
+      "url": "https://www.mene.com/products/classic-band-1",
+      "why": "Menē repriced this band from $1,707 (the value stored since the 2026-10-22 capture) to $1,694 during 2026-10-23. The product page carries no machine-readable price block, so the figure is transcribed from the page text the runner captured. Menē prices 24k bands off live gold, and the drop follows spot (4,024.70 to 3,997.40 USD/ozt over the same period)."
+    },
+    {
+      "row": "mene-24k-narrow-band",
+      "id": "P98-02",
+      "field": [
+        "price_low",
+        "price_high",
+        "price_basis",
+        "notes"
+      ],
+      "before": {
+        "price_low": 1361,
+        "price_high": 1361,
+        "price_basis": "starting price - varies with spot gold & ring size",
+        "notes": "24K pure gold 4 mm band (re-verified 2026-10-23 at $1,361 USD, down $11 from $1,372 with spot gold). Gram weight left null in static snapshot because the gram breakdown renders via client-side JS; verify delivered Certificate of Authenticity weight within the 7-day return window."
+      },
+      "quote": "3D Narrow Classic Band $1,350 USD Price breakdown Metal Gold 24k Gold",
+      "url": "https://www.mene.com/products/3d-narrow-classic-band",
+      "why": "Menē repriced this band from $1,361 (the value stored since the 2026-10-22 capture) to $1,350 during 2026-10-23. Read from the same page-text capture as P98-01; the two products' other figures ($779 and $1,290 in the page's 'You may also like' tiles) belong to different products and were not used."
+    },
+    {
+      "row": "car-18k-destinee-princess",
+      "id": "P98-03",
+      "field": [
+        "title",
+        "notes",
+        "verification_note"
+      ],
+      "before": {
+        "title": "Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold",
+        "notes": "Verified Cartier 18K yellow gold (750/1000) solitaire ring (converts research lead R12). Starting price $3,350 applies to the entry 0.18 ct center tier; gram weight is unpublished online. Keep Maison security tag, box, and GIA certificate untouched during the 30-day delivery return window."
+      },
+      "quote": "Etincelle de Cartier ring, princess-cut diamond, paved Ref.B4232900 $3,350 *Yellow gold 750/1000",
+      "url": "https://www.cartier.com/en-us/jewelry/collections/etincelle-de-cartier/jewelry/women/rings/products/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "why": "The row's title named a product the page no longer shows. Correcting it to the page's own H1 removes a claim the source does not support. The price written here ($3,350) is the number that appears in the quote above and in today's capture; the figure stored before this pass was already 3,350, so this entry changes identity text, not money."
+    },
+    {
+      "row": "as-bea-sol",
+      "id": "P98-04",
+      "field": [
+        "price_low",
+        "price_high",
+        "verification_status",
+        "price_basis",
+        "notes"
+      ],
+      "before": {
+        "price_low": 11500,
+        "price_high": 11500,
+        "verification_status": "partly_verified",
+        "price_basis": "single listed price",
+        "notes": "Champagne diamonds vary stone to stone - the photo is representative, not the exact stone. Re-checked 2026-10-22 (sess-277867af): the page no longer shows a price, so the row is published as unverified. The stored figure is retained in the data file only as the last observed value and must not be read as a quote."
+      },
+      "quote": "11500.00,11500.00,11500.00 (58 variants, all priced 11500.00)",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
+      "why": "The row's stored price is reproduced by the seller's own feed at variant level; the flag that called it unreproducible is cleared and replaced by an accurate availability caveat."
+    },
+    {
+      "row": "au-2ct-oval",
+      "id": "P98-05",
+      "field": [
+        "price_low",
+        "price_high",
+        "price_basis",
+        "verification_status",
+        "notes"
+      ],
+      "before": {
+        "price_low": 1968,
+        "price_high": 2800,
+        "price_basis": "listed variant range",
+        "verification_status": "confirmed",
+        "notes": "Variant-level data confirms the 14K/Yellow size-2.5 option is the 1,968.00 low end, so the 14K price is real for this model. Other sizes and 18K or platinum cost more. HTML PDP re-read recovered published \"Weight: 2.73g\" (includes 2.25 tcw diamond = 0.45 g stone) and \"Exchange for size only. Final Sale!\" notice."
+      },
+      "quote": "14k variants priced 1968.00-1968.00 (15 variants); 18k priced 2438.00; Platinum priced 2800.00",
+      "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.js",
+      "why": "Removes a price range that spanned three different metals from a row labelled 14K, using the seller's own variant-level data."
+    },
+    {
+      "row": "au-1ct-emerald",
+      "id": "P98-06",
+      "field": [
+        "price_low",
+        "price_high",
+        "price_basis",
+        "verification_status",
+        "notes"
+      ],
+      "before": {
+        "price_low": 1498,
+        "price_high": 2100,
+        "price_basis": "listed variant range",
+        "verification_status": "confirmed",
+        "notes": "The feed confirms a 14K option exists but does not map price to metal. The 1,498.00 low end is the product range, not a proven 14K price — set metal and size on the product page before buying. HTML PDP re-read recovered published \"Weight: 1.97g\" (includes 0.85 tcw diamond = 0.17 g stone) and \"Final Sale! Exchange for size only.\" notice."
+      },
+      "quote": "14k variants priced 1498.00-1498.00 (15 variants); 18k priced 1878.00; Platinum priced 2100.00",
+      "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.js",
+      "why": "Same fix as P98-05 on the emerald bezel: the row's price should be the price of the metal the row is about."
+    },
+    {
+      "row": "au-3ct-round",
+      "id": "P98-07",
+      "field": [
+        "price_low",
+        "price_high",
+        "price_basis",
+        "verification_status",
+        "notes"
+      ],
+      "before": {
+        "price_low": 2438,
+        "price_high": 3000,
+        "price_basis": "listed variant range",
+        "verification_status": "confirmed",
+        "notes": "Same caveat as the other Aurate bezel rings: the 2,438.00 low end is the product range across metals and sizes, not a proven 14K price. HTML PDP re-read recovered published \"Weight: 3.3g\" (includes 2.85 tcw diamond = 0.57 g stone) and \"Exchange for size only. Final Sale!\" notice."
+      },
+      "quote": "14k variants priced 2438.00-2438.00 (15 variants); 18k priced 2858.00; Platinum priced 3000.00",
+      "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring.js",
+      "why": "Same fix as P98-05 on the 3ct round bezel."
+    },
+    {
+      "row": "au-xring",
+      "id": "P98-08",
+      "field": [
+        "notes",
+        "verification_status",
+        "verification_note"
+      ],
+      "before": {
+        "notes": "Sold as a fashion ring, not an engagement ring, but usable as an alternative. HTML PDP re-read recovered explicit \"Precision-crafted in solid gold\" wording, published \"Weight: 2.7g\" (includes 0.44 tcw diamonds = 0.09 g), and \"Final Sale! Exchange for size only.\" notice.",
+        "verification_status": "confirmed",
+        "verification_note": "This pass read the storefront feed showing a product price band of 1,808.00-2,578.00 across variants, but the band could not be attributed to a specific metal/size variant on this read. The stored 1,808.00 (14K) is kept and the row is marked partially verified rather than widened to a range no single official line supports."
+      },
+      "quote": "14k variants priced 1808.00; 18k priced 2578.00",
+      "url": "https://auratenewyork.com/products/x-ring-with-diamonds.js",
+      "why": "Resolves the contradiction between the row's evidence text (which claimed the range was widened to 2,578) and its fields (which stayed at 1,808)."
+    },
+    {
+      "row": "au-cigar",
+      "id": "P98-09",
+      "field": [
+        "verification_status",
+        "notes"
+      ],
+      "before": {
+        "verification_status": "partly_verified",
+        "notes": "IMPORTANT: this product mixes vermeil (118.00), 14K and 18K in one listing. The 14K price is 1308.00. The published weight range 2.6-4 g is for the model, not your exact size."
+      },
+      "quote": "14K / Yellow / 3 = $1308.00 (45 variants, all priced 1308.00); 18K priced 1668.00; Vermeil priced 118.00",
+      "url": "https://auratenewyork.com/products/modern-cigar-band.js",
+      "why": "Closes the variant-level price question for the cigar band using the seller's own data, and records the vermeil price that a per-product 'from' price would hide."
+    },
+    {
+      "row": "rs-989853",
+      "id": "P98-10",
+      "field": [
+        "notes"
+      ],
+      "before": {
+        "notes": "Verified 18K yellow gold ring with explicit \"Gold Weight: 1.2 grams\" ($469, ~4.0× raw 18K melt), expanding weighted 18K coverage beyond ultra-light 0.5 g bands. Confirm non-hollow tubing before purchase."
+      },
+      "quote": "Metal 14kt Yellow Gold / Gold Weight 1.2 grams; sizes 4-7 priced $469, size 8.5 priced $435 (Currently Unavailable)",
+      "url": "https://www.ross-simons.com/products/571213.js",
+      "why": "Documents why a second price exists in the feed but is not published as a range: the variant carrying it is not for sale."
+    },
+    {
+      "row": "ag-14k-leaves",
+      "id": "P98-11",
+      "field": [],
+      "before": {},
+      "quote": "14k Yellow Gold / Clear Lab Diamond = $2194.00",
+      "url": "https://www.automicgold.com/products/leaves-signet-ring.js",
+      "why": "Confirms the stored $2,194 is the price of the 14k Yellow Gold / Clear Lab Diamond combination this row describes; the same product lists $2,744 for the Salt & Pepper variation and $3,068 in platinum, so a product-level 'from' price would have been wrong."
+    },
+    {
+      "row": "ag-14k-cluster",
+      "id": "P98-12",
+      "field": [],
+      "before": {},
+      "quote": "14k Yellow Gold / Lab Diamond = $1636.00",
+      "url": "https://www.automicgold.com/products/cluster-signet-ring.js",
+      "why": "Confirms the stored $1,636 against the specific option combination this row describes."
+    },
+    {
+      "row": "be-18k-6p-121h6",
+      "id": "P98-13",
+      "field": [
+        "verification_status",
+        "notes"
+      ],
+      "before": {
+        "verification_status": "partly_verified",
+        "notes": "Mixed-metal construction: 18K yellow gold band with 14K white gold prongs. No gram weight published. Carried over from the first research pass (session arena-6f8c2bcb-gold1) and re-mapped into this schema without changing any number. Re-opened live on 2026-10-23: confirmed Style BE121H6-18KY, Metal 18K Yellow Gold, Prong metal 14K White Gold, Width 2.5 mm; Global-e localized price rendered €1,250.00 to non-US proxy IP ($1,090 US snapshot retained)."
+      },
+      "quote": "$1,090(Setting Only) - 18K Yellow Gold band, Prong metal: 14K White Gold, 0.50 carat total weight",
+      "url": "https://www.brilliantearth.com/enlabdiamond/Engagement-Rings/Product/?id=121h6&metal_type=11&stone_id=2466166",
+      "why": "Moves the row out of 'partly verified' on the strength of a same-day second read of the price on the official page, while keeping the mixed-metal caveat published."
+    },
+    {
+      "row": "auv-22k-vneck-sm",
+      "id": "P98-14",
+      "field": [
+        "notes"
+      ],
+      "before": {
+        "notes": "Closes the 22K (91.7% gold) purity tier gap with explicit \"Handcrafted from solid 22 karat gold\" wording. Because Auvere's live PDP labels its size-dependent range \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" (ambiguous between gross 22K alloy mass and net 24K fine-gold content), weight_g_low is kept null rather than guessed (Flag F54). Strict 15-day return window from delivery with security tag untouched (Flag F55)."
+      },
+      "quote": "Approximate Fine Weight : 2.9 to 3.7 grams depending on size - Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed",
+      "url": "https://auvere.com/products/small-v-neck-chain-pendant",
+      "why": "Records, on the row, the two conflicting weight statements the seller publishes for this product today: the spec range 2.9-3.7 g above, and 'The Small V Neck Pendant has an approximate gold weight of 2.8 g' in the page's own JSON-LD description (with 'The Large V Neck Pendant has an approximate gold weight of 3 grams' in the same block). The row's weight fields stay blank because the seller does not state one number for this listing; guessing the midpoint would be a fabricated spec."
+    },
+    {
+      "row": "auv-22k-clean-cut-polished",
+      "id": "P98-15",
+      "field": [
+        "notes"
+      ],
+      "before": {
+        "notes": "Plain 2 mm 22K solid-gold wedding/stacking band listed at \"From $900\" on Auvere's official Rings catalog (larger ring sizes step up in price; select exact size in cart). Weight kept null due to \"Approximate Fine Weight: 2.8 to 3.7 grams\" wording ambiguity (Flag F54)."
+      },
+      "quote": "Approximate Fine Weight : 2.8 to 3.7 grams depending on size",
+      "url": "https://auvere.com/products/clean-cut-chain-16-long-cuff",
+      "why": "Records the two conflicting weight statements for this product today: the spec range 2.8-3.7 g above and 'The Clean Cut Chain has an approximate gold weight of 2.7 grams' in the page's JSON-LD description. Weight fields stay blank; the 2.7-2.7 g value recorded on 2026-10-13 came from a different read and is not overwritten by a range."
+    },
+    {
+      "row": "auv-22k-diamond-bridge-tall",
+      "id": "P98-16",
+      "field": [
+        "notes"
+      ],
+      "before": {
+        "notes": "Verified sculptural 22K solid-gold architectural diamond ring ($1,600). Weight kept null in calculator because PDP labels 5–6.1 g as \"Approximate Fine Weight\" without specifying whether gross 22K alloy or 24K fine-gold content is meant (Flag F54). Check Auvere's 15-day delivery return rule before removing tag (Flag F55)."
+      },
+      "quote": "Approximate Fine Weight : 5 to 6.1 grams depending on size",
+      "url": "https://auvere.com/products/diamond-bridge-tall-cuff",
+      "why": "This listing publishes only a size-dependent range (5-6.1 g) and no single figure, so the weight fields stay blank and the range is recorded here for the buyer who wants it."
+    },
+    {
+      "row": "auv-22k-hexagon-diamond",
+      "id": "P98-17",
+      "field": [
+        "notes"
+      ],
+      "before": {
+        "notes": "Verified 22K solid-gold diamond band ($1,400) with 0.20 ct G/VS natural diamonds. Note high-karat 22K gold (91.7% pure) is softer than 14K/18K around stone seats — inspect bezel/flush seats carefully. Weight kept null due to ambiguous \"Approximate Fine Weight: 3.3 to 3.5 grams\" label (Flag F54); 15-day return window with tag intact (Flag F55)."
+      },
+      "quote": "Approximate Fine Weight : 3.3 to 3.5 grams depending on size",
+      "url": "https://auvere.com/products/hexagon-diamond-cuff",
+      "why": "This listing publishes only a size-dependent range (3.3-3.5 g) and no single figure, so the weight fields stay blank and the range is recorded here for the buyer who wants it."
+    }
+  ],
+  "problems": []
+}

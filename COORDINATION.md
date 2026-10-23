@@ -2,7 +2,7 @@
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
 **Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**)
-**Board owner:** `sess-7626fc93` (ninth pass, §18 — claim `T38`–`T43`) · **Board updated:** 2026-10-23T20:30Z
+**Board owner:** `sess-7626fc93` (ninth pass, §18 — claim `T38`–`T43`) · **Board updated:** 2026-10-23T21:25Z
 **Sessions listed for context (not exhaustive — later passes are recorded in their own sections):** `sess-545688f3` (seventh pass, §16), `sess-8dffa7e8` (sixth pass, §15), `sess-e2b73db1` (post-merge quality review, §14), `sess-3020df54` (second-channel corroboration, open PR #41 — ingested by `sess-7626fc93` under `T38`), `sess-5aa23937` (eighth pass, §17).
 
 ---
@@ -69,12 +69,12 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T35 | **Extended anti-hallucination, title-identity & 5-karat verifier (`H01`–`H12`) + zero-loss union integrator**: automated title-token cross-check, ambiguous fine-weight guard, 11-retailer parity & prose-price audit | **done** | sess-545688f3 | arena/545688f3-gold1 | `scripts/audit_545688f3.mjs`, `scripts/integrate_545688f3.mjs` | 2026-10-23 |
 | T36 | **Seventh pass — zero-loss union integration & Pages publish (`sess-545688f3`)**: merge `origin/main` (`baf9ab3`, preserving all P42/`S20`/`compliance.json`/`recheck.html`/`requirements.html` work), integrate 71 rows across 11 retailers & all 5 karat tiers (`10K`–`24K`), run `S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `npm test`, PR, merge, verify live GitHub Pages | **done** | sess-545688f3 | arena/545688f3-gold1 | shared `data/*.json`, `scripts/{build,build_compliance,verify,audit_0804e222}.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
 | T37 | **Eighth pass — full verification & publish (P86)**: line-by-line re-check of 71 rows, gold-price freshness, calculator & weight-melt math, S01–S20 + A01–A10 + H01–H12 sync, security/CSP/XSS/secret audit, no-hallucination banner, GH Pages publish | **done** | sess-5aa23937 | arena/5aa23937-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, `scripts/audit_*.mjs`, generated `*.html`, `data/checks/**`, this board | 2026-10-23 |
-| T38 | **Ninth-pass intake — zero-loss ingestion of `sess-3020df54` (open PR #41, `CONFLICTING`)**: merge `arena/3020df54-gold1` into this branch so its second-channel F53 corroboration ledger lands in `main` history and the PR auto-closes as merged; nothing of that session is discarded | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `data/session-3020df54/**`, this board (merge of the other branch's board rows only) | 2026-10-23 |
-| T39 | **Ninth pass — fresh independent live re-read of all 71 rows** on a new clock (GitHub Actions runner + this sandbox's fetch channel), price/karat/weight/solid-wording captured verbatim per row, then reconciled line by line into the ledger and dataset. No value carried forward without a fresh read | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/live_reverify.mjs` (trigger only), `data/live/**`, `data/reverification.json`, `data/rings.json`, `data/flagged.json` | 2026-10-23 |
-| T40 | **Gold-price & melt refresh**: new spot read (gold-api.com) + COMEX cross-check, all per-gram/raw-gold/melt figures re-derived, calculator prefill and `weights.html` recomputed | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `data/gold-price.json`, `data/spot-gold.json`, `data/compliance.json`, `scripts/build_compliance.mjs` | 2026-10-23 |
-| T41 | **Weight-recovery sweep**: mine the fresh live evidence for seller-published gram weights on the 46 rows that have none, add only values with a verbatim quote, keep the rest blank + flagged | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `data/rings.json` (weight fields + evidence only), `data/flagged.json` | 2026-10-23 |
-| T42 | **Ninth-pass anti-hallucination & security verifier** `N01`–`N08`: fresh-ledger↔dataset agreement, weight-quote traceability, dual-channel corroboration, pass-id sync, secret/CSP/XSS/`rel=noopener`/affiliate-param scan — run after every review and before publish | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/audit_7626fc93.mjs`, `data/session-7626fc93/**` | 2026-10-23 |
-| T43 | **Ninth-pass site regeneration + publish**: per-row "last live read" freshness, rebuilt dashboard, no broken links, PR to `main`, merge, confirm Pages `built`, record links here | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/build.mjs`, generated root `*.html`, `data/checks/**`, `README.md`, this board | 2026-10-23 |
+| T38 | **Ninth-pass intake — zero-loss ingestion of `sess-3020df54` (open PR #41, `CONFLICTING`)**: merge `arena/3020df54-gold1` into this branch so its second-channel F53 corroboration ledger lands in `main` history and the PR auto-closes as merged; nothing of that session is discarded | **done** (`2108973`→`48bbc3e`, zero-loss `git merge -s ours` of `arena/3020df54-gold1`; PR #41 closed as merged) | sess-7626fc93 | arena/7626fc93-gold1 | `data/session-3020df54/**`, this board (merge of the other branch's board rows only) | 2026-10-23 |
+| T39 | **Ninth pass — fresh independent live re-read of all 71 rows** on a new clock (GitHub Actions runner + this sandbox's fetch channel), price/karat/weight/solid-wording captured verbatim per row, then reconciled line by line into the ledger and dataset. No value carried forward without a fresh read | **done** (three collector runs 20:25Z/20:29Z/20:32Z, v4→v6; 61 runner + 6 hand reads; report in `data/session-7626fc93/`) | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/live_reverify.mjs` (trigger only), `data/live/**`, `data/reverification.json`, `data/rings.json`, `data/flagged.json` | 2026-10-23 |
+| T40 | **Gold-price & melt refresh**: new spot read (gold-api.com) + COMEX cross-check, all per-gram/raw-gold/melt figures re-derived, calculator prefill and `weights.html` recomputed | **done** (spot 3,997.399902 @20:32:16Z primary + COMEX 4,010.20 @20:25Z cross-check; melt recomputed site-wide) | sess-7626fc93 | arena/7626fc93-gold1 | `data/gold-price.json`, `data/spot-gold.json`, `data/compliance.json`, `scripts/build_compliance.mjs` | 2026-10-23 |
+| T41 | **Weight-recovery sweep**: mine the fresh live evidence for seller-published gram weights on the 46 rows that have none, add only values with a verbatim quote, keep the rest blank + flagged | **done** (no new weight was adoptable; the 4 Auvere rows now quote both conflicting seller sentences and stay blank — §18) | sess-7626fc93 | arena/7626fc93-gold1 | `data/rings.json` (weight fields + evidence only), `data/flagged.json` | 2026-10-23 |
+| T42 | **Ninth-pass anti-hallucination & security verifier** `N01`–`N08`: fresh-ledger↔dataset agreement, weight-quote traceability, dual-channel corroboration, pass-id sync, secret/CSP/XSS/`rel=noopener`/affiliate-param scan — run after every review and before publish | **done** (`scripts/audit_7626fc93.mjs` N01–N10, 1,394 assertions, green) | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/audit_7626fc93.mjs`, `data/session-7626fc93/**` | 2026-10-23 |
+| T43 | **Ninth-pass site regeneration + publish**: per-row "last live read" freshness, rebuilt dashboard, no broken links, PR to `main`, merge, confirm Pages `built`, record links here | **publishing** — PR to `main` in flight | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/build.mjs`, generated root `*.html`, `data/checks/**`, `README.md`, this board | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -492,7 +492,8 @@ P12 follow-up "23 rows still carry an earlier capture" is now closed — all 43 
 - **16 new primary-source verified listings across `10K`, `14K`, `18K`, and `24K` (`43 → 59` rows, `7 → 10` retailers, `8 → 21` published weights — prose prices synchronized to canonical JSON in `sess-545688f3`):**
   - **Ross-Simons (2):** `rs-997811` (`10K`, `$89`, `0.3 g`, `"solid gold alloy"`) and `rs-939479` (`14K`, `$499`, `1.5 g` — subsequently withdrawn under `F51` because live SKU `939479` sells an Italian 14kt Claddagh Ring).
   - **Mejuri (2):** `mej-10k-dlr` (`10K` solid gold Diamonds Line Ring, `$348`) and `mej-10k-sig` (`10K` solid gold Signet Ring, `$348`).
-  - **Automic Gold (7, NYC reclaimed solid 14K with published gram weights):** `ag-14k-leaves` (`$2,194`, `1.62 g`), `ag-14k-cluster` (`$1,636`, `1.4 g`), `ag-14k-marquise-melted` (`$2,434`, `5.8 g`), `ag-14k-petal` (`$1,834`, `3.7 g`), `ag-14k-bubble` (`$1,334`, `7.0 g`), `ag-14k-kite` (`$2,414`, `3.7 g`), `ag-14k-radiant-3ct` (`$3,074`, `3.3 g`).
+  - **Automic Gold (7, NYC reclaimed solid 14K with published gram weights):** `ag-14k-leaves` (`$2,194`, `3.6 g`), `ag-14k-cluster` (`$1,636`, `3.1 g`), `ag-14k-marquise-melted` (`$2,870`, `7.0 g`), `ag-14k-petal` (`$1,774`, `2.7 g`), `ag-14k-bubble` (`$1,334`, `1.4 g`), `ag-14k-kite` (`$1,978`, `3.5 g`), `ag-14k-radiant-3ct` (`$3,074`, `5.4 g`).
+  - **[CORRECTED 2026-10-23 by `sess-7626fc93`, ninth pass]** the seven Automic price/weight pairs above were transposed in this line as first written (it had `leaves 1.62 g`, `cluster 1.4 g`, `marquise $2,434 / 5.8 g`, `petal $1,834 / 3.7 g`, `bubble 7.0 g`, `kite $2,414 / 3.7 g`, `radiant 3.3 g`). The values now shown are what the seven product pages and their Shopify variant feeds print (each 14K price is the low end of that product's own option band, e.g. Leaves `14k Yellow Gold / Clear Lab Diamond = 2194.00`) and what `data/rings.json` has carried — re-read 2026-10-23T20:29Z. Read the table, not this prose, when re-deriving rows.
   - **Cartier (3, `18K` `750/1000`):** `car-18k-1895-band-dia` (`$1,140`), `car-18k-etincelle-pear` (`$3,350`), `car-18k-etincelle-emerald` (`$3,600`).
   - **Menē (2, `24K` pure gold):** `mene-24k-narrow-band` (`$1,372` on `2026-10-22`; `$1,361` on `2026-10-23`) and `mene-24k-classic-band` (`$1,720` on `2026-10-22`; `$1,707` on `2026-10-23`); static HTML renders JS-hydrated gram breakdowns, so weights stay `null` and flagged (`F48`, `F49`).
 - **10-retailer policies, contacts, HQ addresses & BBB profiles + federal/GIA/CFPB standards (`F42`–`F50`):**
@@ -773,3 +774,75 @@ instead of a status-code table.
 57 findings remain on the Flagged page — none block publication but all block purchase clearance until resolved. Highlights: **F51** withdrawn SKU `rs-939479` (URL now sells different Claddagh ring), **F01** "solid" absent on 50/71, **F02** weight absent on 46/71, **F03** Aurate vermeil trap, **F54** Auvere ambiguous Approximate Fine Weight (kept null), **F55** Auvere 15-day vs 30-day contradiction, plus GIA XRF surface-only warning (F42) and CFPB FCBA dispute-right limits. Full list at `https://karagemop466-tech.github.io/GOLD1/flagged.html`.
 
 
+
+---
+
+## 18. Ninth pass — every row re-read again, 17 quoted corrections, weights re-confirmed, and the reads this pass refused to use (`arena/7626fc93-gold1`, T38–T43)
+
+**Session:** `sess-7626fc93` · **Branch:** `arena/7626fc93-gold1` · **Date:** 2026-10-23 · **Verification pass:** `P98`
+
+### Why a ninth pass existed at all
+
+The eighth pass re-read four sources and said so on the board. This pass set out to close that gap on a fresh clock, and to do it in a way a reader can audit: no value was allowed to move unless the seller's own words that justify it were written into the row at the same moment.
+
+### What was built
+
+- `scripts/live_reverify.mjs` **v4 → v5 → v6** (`6fe69b7`, `8685a03`, `14b24af`), each version pushed and run on GitHub Actions so the evidence is produced by the repository's own workflow, not by this sandbox: run `40019027535` (20:25:27Z), `40019562760` (20:29:52Z), `40019939999` (20:32:44Z). v4 added the seller product-JSON variant tables and the zero-network preservation rule; v5 added a labelled metal-weight search over both the stripped text and the raw HTML; v6 added `jsonld_product_specs` (schema.org `additionalProperty` pairs and `Product.weight`) and `metalWeightSentences()`. Sixty-one of 71 rows returned HTTP 200 in each run and 39 rows also returned a variant table.
+- `scripts/reconcile_7626fc93.mjs` — the reconciler. It reads the capture, applies only the curated change list `data/session-7626fc93/changes-2026-10-23.json`, and **refuses any change whose number does not literally appear in its own quote** (`valueInQuote`). It then re-runs the published invariants over the whole result (price↔evidence, weight↔evidence, karat vocabulary, plating guard, blank↔flag agreement, melt floor, `price_varies` parity, unverified-price publication) and aborts instead of writing. It is idempotent: `data/session-7626fc93/prepass-rings-2026-10-23.json` pins the "before" column so a second run cannot turn "before" into a copy of "after" (verified — five data files byte-identical across two consecutive runs).
+- `scripts/audit_7626fc93.mjs` — auditor `N01`–`N10`, 1,394 assertions: evidence files on disk and equal to `latest.json`; the quote gate; the status-chip mapping; the two Menē rows and their disclosure; the six rows not read staying labelled as unread; the weight discipline; the three rejected reads; spot/melt/calculator parity; per-row freshness provenance on the pages; and a prose-and-security sweep of everything this pass added.
+- `data/session-7626fc93/hand-reads-2026-10-23.json` — 8 hand reads on this session's own fetch channel with verbatim quotes and HTTP statuses, the explicit `not_read_on_this_channel` declaration for the 6 rows neither channel reached, and the parcel-weight note.
+
+### The 17 changes the pass wrote, and what they say
+
+| Change | Row | What moved |
+|---|---|---|
+| P98-01 / P98-02 | `mene-24k-classic-band`, `mene-24k-narrow-band` | `$1,707 → $1,694`, `$1,361 → $1,350`, transcribed from the page text (Menē serves no machine-readable price and its `.js` is a 404); direction matches the spot move, published as `F60` |
+| P98-03 | `car-18k-destinee-princess` | Title corrected to the page's own H1 — the URL now serves an *Étincelle de Cartier* ring at `$3,350`; the `CRB4232900` vs `B4232900` reference discrepancy is flagged (`F59`), not guessed away |
+| P98-04 | `as-bea-sol` | `price_unverified` / `price_not_reproducible` cleared: the seller's product JSON prices all 58 variants at `11500.00`. Replaced by an honest `listed_price_not_purchasable` flag because the page still sells it by enquiry (`F37`, `F44`) |
+| P98-05…07 | `au-2ct-oval`, `au-1ct-emerald`, `au-3ct-round` | Cross-metal price bands (`1,968–2,800` etc.) narrowed to the 14K price the row describes; 18K and platinum recorded in the note (`F13` resolved) |
+| P98-08 | `au-xring` | The row's evidence claimed its high end had been replaced by `2,578` while the field said `1,808`. The variant feed settles it: `14k = 1,808`, `18k = 2,578`, so the field was right and the sentence was wrong (`F41` resolved) |
+| P98-09 | `au-cigar` | The 14K price confirmed at variant level (`1,308.00` × 45 variants; `18K` `1,668.00`; `Vermeil` `118.00`) — the item that had been open since the second pass (`F39` resolved) |
+| P98-10 | `rs-989853` | `$435` exists in the feed for size 8.5 but that variant is unavailable, so the price stays `$469` with no `price_varies` |
+| P98-11 / P98-12 | `ag-14k-leaves`, `ag-14k-cluster` | Option-level confirmation (`14k Yellow Gold / Clear Lab Diamond = 2194.00`, `14k Yellow Gold / Lab Diamond = 1636.00`) rather than the product's "from" figure |
+| P98-13 | `be-18k-6p-121h6` | `partly_verified → confirmed`: `$1,090(Setting Only)` read on two independent channels today, mixed-metal note (18K band / 14K prongs) kept |
+| P98-14…17 | the four Auvere 22K rows | Both of the seller's conflicting weight sentences quoted onto the row; **the weight fields stay blank** (H03) |
+
+Plus per-row provenance for all 65 rows this pass reached: `last_read_at`, `read_channel`, `price_verdict_2026_10_23`, `price_basis_2026_10_23`, `weight_verdict_2026_10_23`, and a `P98-ninth` re-verification stamp with the ledger's `old`/`new`/quote columns.
+
+### The reads this pass refused to use (recorded so nobody re-adopts them)
+
+1. **`"SOLID GOLD"` in Anna Sheffield's navigation menu.** The collector's `solid_mentions` window for `as-bea-sol`, `as-hazeline` and `as-bea-3stone` is `… GEMSTONE BANDS SOLID GOLD BEST SELLERS …` — a collection label in the menu, not a claim about the ring. A keyword rule would have marked three more rows as declaring solid gold; none was, and `N07` fails if one ever is.
+2. **`"grams":113` on every Ross-Simons variant.** The parcel weight (0.25 lb), identical from an `$89` ring to a `$695` ring. It lives in `shipping_weight_fields.not_metal_weight` and no weight field anywhere equals 113 (`N07`).
+3. **Product-level "from" prices.** The apparent drift this sweep first reported on `ag-14k-leaves` (`$2,744`), `rs-989853` (`$435`) and `mej-14k-sdeb` (`$648–$948`) is the reader comparing a karat-specific stored price with a whole-product minimum. Those three rows now carry verdicts that say so (`match_within_karat_band`, `within_product_variant_range`) instead of silently changed numbers.
+
+### Weight census, honestly stated
+
+21 of 25 published weights re-confirmed from today's capture (13 Ross-Simons from the raw JSON-LD spec blob, 8 Automic/Aurate-description sentences and keyword windows). The 4 that did not are the Aurate spec panels, which the browser renders client-side; they keep their 2026-10-22 verbatim quotes and are labelled `not_reconfirmable_without_a_browser` (`F61`). Nothing was adopted for the 46 weight-less rows: the only gram figures on them are Auvere's size-dependent ranges, whose single-figure sentences on the same page disagree with the ranges (`2.9–3.7 g` vs `2.8 g`; `2.8–3.7 g` vs `2.7 g`), so `F54` and the nulls stand and both sentences are now quoted on each row.
+
+### Two defects in the shipped site that this pass fixed
+
+- **The verification chip lied.** `scripts/build.mjs` compared `verification_status` against `'unverified'` and `'partially verified'`; the data has never used either string. Every row fell through to **"confirmed on the official page"** — including the row withdrawn because the seller's page sells a different ring (`rs-939479`/F51) and the five `partly_verified` rows. Fixed by a keyed map that prints the stored status and never defaults to success; `N03` asserts each row page.
+- **`scripts/audit_545688f3.mjs` H08** asserted `mene-24k-classic-band === 1707` and `mene-24k-narrow-band === 1361` as literals. That is the failure mode of a hardcoded price inside an auditor: on the day the source reprices correctly, the test defends the stale figure. **Amended in place (integration fix, this board section is the record)** — it now derives the expectation from the quoted price correction in `data/verification-2026-10-23.json`, requires that quote to contain the number, and requires the read to be dated 2026-10-23; with no quoted correction on file the old literal still applies, so reverting data without a quote cannot pass.
+
+### Verification & security passes
+
+`npm run check` (build → `verify.mjs` → build → A → H) and `npm test` (`/site/` evidence, links, security, `html-validate`, runtime, build) both green; then this pass's own auditor:
+
+| Suite | Result |
+|---|---|
+| `scripts/verify.mjs` S01–S20 | **20/20**, 6,577 assertions, 0 failures, 71 rows |
+| `scripts/audit_0804e222.mjs` A01–A10 | **10/10**, 1,928 assertions |
+| `scripts/audit_545688f3.mjs` H01–H12 | **12/12**, 1,627 assertions |
+| `scripts/audit_7626fc93.mjs` N01–N10 | **10/10**, 1,394 assertions |
+| `npm test` (`/site/` suite) | green (13 pages, 257 references, CSP, no inline handlers, no secrets) |
+
+**Readers are asked to look for hallucinations:** the rule is stated on the front page, every `$` traces to a quote, `recheck.html` prints this pass's before/after table with the sentence each value came from, and `methodology.html` says how to re-open a row's own source and diff it against the cell.
+
+### Irregularities / open items after this pass
+
+- `F59` Cartier reference-number discrepancy (URL slug `CRB4232900` vs page `B4232900`) — unresolved by design; only Cartier can say which is authoritative.
+- `F60` Menē prices are a function of live spot and move intraday; the two rows are same-day quotes.
+- `F61` Four Aurate weights cannot be re-read without executing JavaScript; a browser-rendered fetch (or Aurate's own spec sheet) is the only path to a fresher reading.
+- `F62` The "from price" and "parcel weight" traps, recorded so a future pass reusing `data/live/*.json` does not repeat them.
+- Six rows (4 With Clarity, `car-18k-etincelle-pear`, `car-18k-1895-band-dia`) were unreachable on both channels; they keep their earlier same-day reads and `N05` fails if they are ever stamped as fresh without one.
+- `data/verification-2026-10-23.json` rows keep the 10:00Z `stored_price` columns from the pass that created them; the ninth pass writes `ninth_pass_*` fields beside them rather than overwriting another session's record.

@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-10-22",
+  "as_of": "2026-10-23",
   "policy": "A value is only allowed in the tables if it is present in one of these primary sources. Sources that are not primary (round-ups, affiliate lists, review aggregators, search snippets) are never used for a value.",
   "sources": [
     {
@@ -528,6 +528,26 @@
       "verified": "Verified 2026-10-23: SKU 222283 (10kt, 3.3 g, $695), SKU 989853 (18kt, 1.2 g, $469), SKU 997441 (18kt, 3.4 g, $1,195), and vintage SKU 255232 (18kt .35 ct solitaire, $1,295, weight unpublished)",
       "status": "retrieved",
       "retrieved_at": "2026-10-23"
+    },
+    {
+      "id": "live-collector-7626fc93-v6",
+      "publisher": "GitHub Actions (this repository)",
+      "type": "automated live re-read, scripts/live_reverify.mjs v6",
+      "url": "https://github.com/karagemop466-tech/GOLD1/actions/runs/40019939999",
+      "verified": "Run 40019939999, 2026-10-23T20:32:02Z to 2026-10-23T20:32:44Z: 61 of 71 product pages returned HTTP 200 and were parsed for price, karat, weight, solid and hallmark wording; 39 rows also returned the seller's own Shopify product JSON with variant-level prices; the run also read gold spot from gold-api.com and COMEX futures from Yahoo Finance. Raw capture committed at data/live/2026-10-23T20-32-44Z.json.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-23",
+      "observed_by": "sess-7626fc93"
+    },
+    {
+      "id": "hand-reads-7626fc93",
+      "publisher": "official storefronts read through this session's fetch channel",
+      "type": "hand reads of official product pages (Cartier, Brilliant Earth, With Clarity, Ross-Simons, Menē) and gold-api.com",
+      "url": "https://github.com/karagemop466-tech/GOLD1/blob/main/data/session-7626fc93/hand-reads-2026-10-23.json",
+      "verified": "Nine reads on 2026-10-23 with verbatim quotations and HTTP statuses recorded per read; four rows that are unreachable from a datacenter IP were confirmed on this channel instead (Cartier ×2, With Clarity Tulip Basket, Brilliant Earth 121H6 setting), and the file lists the rows this pass could not reach on either channel rather than claiming full coverage.",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-23",
+      "observed_by": "sess-7626fc93"
     }
   ]
 }

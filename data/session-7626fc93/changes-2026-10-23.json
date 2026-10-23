@@ -1,0 +1,566 @@
+{
+  "pass": "P98-ninth",
+  "session": "sess-7626fc93",
+  "branch": "arena/7626fc93-gold1",
+  "generated_at": "2026-10-23T21:05:00Z",
+  "rule": "No hallucinations. Every numeric value below is copied verbatim from the quote in the same entry, and scripts/reconcile_7626fc93.mjs refuses to write any number that does not literally appear in its own quote. Rows with no quote-backed change are left exactly as they are; only their read stamp is refreshed.",
+  "evidence": {
+    "runner": "data/live/latest.json (scripts/live_reverify.mjs v6.0.0, GitHub Actions run 40019939999, finished 2026-10-23T20:32:44Z)",
+    "hand_reads": "data/session-7626fc93/hand-reads-2026-10-23.json"
+  },
+  "changes": [
+    {
+      "id": "P98-01",
+      "row": "mene-24k-classic-band",
+      "set": {
+        "price_low": 1694,
+        "price_high": 1694,
+        "price_basis": "listed price on the product page (spot-linked, read 2026-10-23)",
+        "notes": "24K pure gold, priced off live spot: this row was $1,720 on 2026-10-22, $1,707 during the morning of 2026-10-23 and $1,694 by 20:29Z (this row). Re-read on the official page at 20:29Z today. Menē prints no machine-readable price block and its Shopify .js endpoint is not served, so the figure comes from the rendered page text. The other numbers on the page ($779 Engravable Classic Band, $1,290 Engravable Narrow Classic Band, $1,651) are different products and were not used. Weight stays blank: Auvere-style gram figures are not published here, and the gram breakdown on the page is hydrated by JavaScript (F48/F49). Treat this price as same-day only - see F60."
+      },
+      "quote": "3D Classic Band $1,694 USD Price breakdown Metal Gold 24k Gold",
+      "url": "https://www.mene.com/products/classic-band-1",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official product page text via GitHub Actions runner (HTTP 200)",
+      "why": "Menē repriced this band from $1,707 (the value stored since the 2026-10-22 capture) to $1,694 during 2026-10-23. The product page carries no machine-readable price block, so the figure is transcribed from the page text the runner captured. Menē prices 24k bands off live gold, and the drop follows spot (4,024.70 to 3,997.40 USD/ozt over the same period)."
+    },
+    {
+      "id": "P98-02",
+      "row": "mene-24k-narrow-band",
+      "set": {
+        "price_low": 1350,
+        "price_high": 1350,
+        "price_basis": "listed price on the product page (spot-linked, read 2026-10-23)",
+        "notes": "24K pure gold, priced off live spot: this row was $1,372 on 2026-10-22, $1,361 during the morning of 2026-10-23 and $1,350 by 20:29Z today. Re-read on the official page at 20:29Z. Menē prints no machine-readable price block and its Shopify .js endpoint is not served, so the figure comes from the rendered page text. The other numbers on the page ($779 Engravable Classic Band, $1,290 Engravable Narrow Classic Band) are different products and were not used. Weight stays blank (F48/F49). Treat this price as same-day only - see F60."
+      },
+      "quote": "3D Narrow Classic Band $1,350 USD Price breakdown Metal Gold 24k Gold",
+      "url": "https://www.mene.com/products/3d-narrow-classic-band",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official product page text via GitHub Actions runner (HTTP 200)",
+      "why": "Menē repriced this band from $1,361 (the value stored since the 2026-10-22 capture) to $1,350 during 2026-10-23. Read from the same page-text capture as P98-01; the two products' other figures ($779 and $1,290 in the page's 'You may also like' tiles) belong to different products and were not used."
+    },
+    {
+      "id": "P98-03",
+      "row": "car-18k-destinee-princess",
+      "set": {
+        "title": "Etincelle de Cartier ring, princess-cut diamond, paved",
+        "notes": "CORRECTED 2026-10-23 (ninth pass, sess-7626fc93): this row was created as 'Destinee de Cartier engagement ring, princess-cut diamond, paved (CRB4232900)'. The stored URL still resolves, but the page it serves is now titled 'Etincelle de Cartier ring, princess-cut diamond, paved' with reference number B4232900 at $3,350 in yellow gold 750/1000 with a 0.16 ct diamond. The title has been corrected to match the live page so the row cannot assert a product identity the source does not carry; the reference number in the slug and the reference number printed on the page (B4232900) differ and are flagged for buyer confirmation. The 2026-10-13 read of this same page recorded $3,270, so the price also moved: it is republished at $3,350, the figure this row's own source shows today.",
+        "verification_note": "Title corrected to the page's own H1 on 2026-10-23; price $3,350 re-read on the same page at 20:29Z (runner) and matches the stored value. Reference-number discrepancy (CRB4232900 in the URL slug vs B4232900 on the page) is left unresolved and flagged F59, not guessed away."
+      },
+      "remove_flags": [
+        "title_mismatch_unresolved"
+      ],
+      "append_flags": [
+        "title_mismatch_corrected_2026_10_23"
+      ],
+      "quote": "Etincelle de Cartier ring, princess-cut diamond, paved Ref.B4232900 $3,350 *Yellow gold 750/1000",
+      "url": "https://www.cartier.com/en-us/jewelry/collections/etincelle-de-cartier/jewelry/women/rings/products/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Cartier US product page, read on two channels (runner page-text capture and this session's sandbox fetch of the live PDP)",
+      "why": "The row's title named a product the page no longer shows. Correcting it to the page's own H1 removes a claim the source does not support. The price written here ($3,350) is the number that appears in the quote above and in today's capture; the figure stored before this pass was already 3,350, so this entry changes identity text, not money."
+    },
+    {
+      "id": "P98-04",
+      "row": "as-bea-sol",
+      "set": {
+        "price_low": 11500,
+        "price_high": 11500,
+        "verification_status": "confirmed",
+        "price_basis": "seller product JSON, all 58 variants",
+        "notes": "The 2026-10-22 pass could not reproduce 11,500.00 anywhere and published the row as price-unverified. On 2026-10-23 the seller's own product JSON for this handle lists price_min 115000 cents and price_max 115000 cents across 58 variants (Yellow Gold and Rose Gold, every ring size), so the stored figure is reproduced verbatim and the price is no longer unverified. What is NOT resolved: the product page itself still swaps the buy box for an enquiry form ('While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range'), so $11,500 is the listed price, not a price you can currently check out at. That caveat is published as flag F37 and on this row's page as a listed-not-purchasable chip."
+      },
+      "delete_keys": [
+        "price_unverified",
+        "price_unverified_reason"
+      ],
+      "remove_flags": [
+        "price_unverified",
+        "price_not_reproducible"
+      ],
+      "append_flags": [
+        "listed_price_not_purchasable"
+      ],
+      "quote": "11500.00,11500.00,11500.00 (58 variants, all priced 11500.00)",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Anna Sheffield product JSON via GitHub Actions runner (HTTP 200)",
+      "require_verdict": "match",
+      "why": "The row's stored price is reproduced by the seller's own feed at variant level; the flag that called it unreproducible is cleared and replaced by an accurate availability caveat."
+    },
+    {
+      "id": "P98-05",
+      "row": "au-2ct-oval",
+      "set": {
+        "price_low": 1968,
+        "price_high": 1968,
+        "price_basis": "seller product JSON, 14k metal option (all 15 variants)",
+        "verification_status": "confirmed",
+        "notes": "PRICE RANGE NARROWED TO THE ROW'S OWN KARAT, 2026-10-23 (ninth pass). This 14K row stored 1,968-2,800 because the storefront feed only published a product-level band. The seller's own product JSON now maps that band metal by metal: 14k = 1,968 (15 variants, all priced the same), 18k = 2,438, Platinum = 2,800. The 14K figure is the one this row describes, so 1,968 is now stored for both ends and the other two metals are recorded here rather than blended into a price this ring does not have. The published 2.73 g weight could not be re-read today: Aurate renders its spec panel in the browser, so the number still rests on the 2026-10-22 quote ('$1,968 · Rate - 14k GOLD · Weight: 2.73g') and is marked weight_not_reconfirmed_this_pass."
+      },
+      "remove_flags": [
+        "price_varies",
+        "metal_variant_price_unmapped"
+      ],
+      "quote": "14k variants priced 1968.00-1968.00 (15 variants); 18k priced 2438.00; Platinum priced 2800.00",
+      "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Aurate Shopify product JSON via GitHub Actions runner (HTTP 200)",
+      "why": "Removes a price range that spanned three different metals from a row labelled 14K, using the seller's own variant-level data."
+    },
+    {
+      "id": "P98-06",
+      "row": "au-1ct-emerald",
+      "set": {
+        "price_low": 1498,
+        "price_high": 1498,
+        "price_basis": "seller product JSON, 14k metal option (15 variants)",
+        "verification_status": "confirmed",
+        "notes": "PRICE RANGE NARROWED TO THE ROW'S OWN KARAT, 2026-10-23 (ninth pass). The stored band 1,498-2,100 was the product-level range across metals. The seller's product JSON maps it: 14k = 1,498 (15 variants, all priced the same), 18k = 1,878, Platinum = 2,100. This row describes the 14K ring, so 1,498 is stored for both ends. The published 1.97 g weight could not be re-read today (client-rendered spec panel) and is marked weight_not_reconfirmed_this_pass."
+      },
+      "remove_flags": [
+        "price_varies",
+        "metal_variant_price_unmapped"
+      ],
+      "quote": "14k variants priced 1498.00-1498.00 (15 variants); 18k priced 1878.00; Platinum priced 2100.00",
+      "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Aurate Shopify product JSON via GitHub Actions runner (HTTP 200)",
+      "why": "Same fix as P98-05 on the emerald bezel: the row's price should be the price of the metal the row is about."
+    },
+    {
+      "id": "P98-07",
+      "row": "au-3ct-round",
+      "set": {
+        "price_low": 2438,
+        "price_high": 2438,
+        "price_basis": "seller product JSON, 14k metal option (15 variants)",
+        "verification_status": "confirmed",
+        "notes": "PRICE RANGE NARROWED TO THE ROW'S OWN KARAT, 2026-10-23 (ninth pass). The stored band 2,438-3,000 was the product-level range across metals. The seller's product JSON maps it: 14k = 2,438 (15 variants, all priced the same), 18k = 2,858, Platinum = 3,000. This row describes the 14K ring, so 2,438 is stored for both ends. The published 3.3 g weight could not be re-read today (client-rendered spec panel) and is marked weight_not_reconfirmed_this_pass."
+      },
+      "remove_flags": [
+        "price_varies",
+        "metal_variant_price_unmapped"
+      ],
+      "quote": "14k variants priced 2438.00-2438.00 (15 variants); 18k priced 2858.00; Platinum priced 3000.00",
+      "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Aurate Shopify product JSON via GitHub Actions runner (HTTP 200)",
+      "why": "Same fix as P98-05 on the 3ct round bezel."
+    },
+    {
+      "id": "P98-08",
+      "row": "au-xring",
+      "set": {
+        "notes": "Sold as a fashion ring, not an engagement ring, but usable as a band. The evidence line from the 2026-10-22 pass says the stored high was 'replaced by the published 2578' and that the row is labelled a variant range spanning metals - that sentence describes a change this dataset never actually made (price_high has stayed 1,808), and today's read shows it would have been wrong anyway: the seller's product JSON maps 14k = 1,808 and 18k = 2,578, so the 14K row is priced correctly at 1,808 alone. The sentence is left in the evidence log (it is a verbatim record of what that pass wrote) and superseded here. Weight 2.7 g could not be re-read today (client-rendered spec panel); it rests on the 2026-10-22 quote 'Weight: 2.7g' and is marked weight_not_reconfirmed_this_pass.",
+        "verification_status": "confirmed",
+        "verification_note": "Confirmed at variant level on 2026-10-23: the seller's product JSON prices the 14k variants at 1,808.00 and the 18k variants at 2,578.00, which is why the row keeps a single 1,808.00 price instead of the unattributed product band the previous pass refused to use."
+      },
+      "quote": "14k variants priced 1808.00; 18k priced 2578.00",
+      "url": "https://auratenewyork.com/products/x-ring-with-diamonds.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Aurate Shopify product JSON via GitHub Actions runner (HTTP 200)",
+      "require_verdict": "match",
+      "why": "Resolves the contradiction between the row's evidence text (which claimed the range was widened to 2,578) and its fields (which stayed at 1,808)."
+    },
+    {
+      "id": "P98-09",
+      "row": "au-cigar",
+      "set": {
+        "verification_status": "confirmed",
+        "notes": "Modern Cigar Band, 14K row. The long-open question 'was the 14K variant price re-read at variant level?' is answered: the seller's own product JSON prices the 14K / Yellow variants at 1,308.00 across all 45 size-and-width options, while 18K is 1,668.00 and the Vermeil option is 118.00. The stored 1,308 is therefore confirmed against the seller's variant feed, and the vermeil price is recorded here as a trap - the same product page offers a gold-plated version at a fraction of the price. Weight: the page publishes 'Weight: 2.6-4g' in the product description, and the row keeps exactly that range (2.6 g low, 4 g high) with the weight_range_published flag; the seller states it for the model, not for a chosen size, which is why it is a range and not a single figure."
+      },
+      "quote": "14K / Yellow / 3 = $1308.00 (45 variants, all priced 1308.00); 18K priced 1668.00; Vermeil priced 118.00",
+      "url": "https://auratenewyork.com/products/modern-cigar-band.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Aurate Shopify product JSON via GitHub Actions runner (HTTP 200)",
+      "require_verdict": "match",
+      "why": "Closes the variant-level price question for the cigar band using the seller's own data, and records the vermeil price that a per-product 'from' price would hide."
+    },
+    {
+      "id": "P98-10",
+      "row": "rs-989853",
+      "set": {
+        "notes": "14K gold band, 1.2 g. Sold at $469 for sizes 4, 4.5, 5, 5.5, 6 and 7 today; size 8.5 is listed at $435 but is 'Currently Unavailable' (available: false), so $435 is recorded here as a note and the published price stays the single available figure $469 with no price_varies flag. Weights and measurements are approximate, per the seller."
+      },
+      "quote": "Metal 14kt Yellow Gold / Gold Weight 1.2 grams; sizes 4-7 priced $469, size 8.5 priced $435 (Currently Unavailable)",
+      "url": "https://www.ross-simons.com/products/571213.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Ross-Simons product JSON via GitHub Actions runner (HTTP 200)",
+      "why": "Documents why a second price exists in the feed but is not published as a range: the variant carrying it is not for sale."
+    },
+    {
+      "id": "P98-11",
+      "row": "ag-14k-leaves",
+      "set": {},
+      "quote": "14k Yellow Gold / Clear Lab Diamond = $2194.00",
+      "url": "https://www.automicgold.com/products/leaves-signet-ring.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Automic Gold product JSON via GitHub Actions runner (HTTP 200)",
+      "why": "Confirms the stored $2,194 is the price of the 14k Yellow Gold / Clear Lab Diamond combination this row describes; the same product lists $2,744 for the Salt & Pepper variation and $3,068 in platinum, so a product-level 'from' price would have been wrong."
+    },
+    {
+      "id": "P98-12",
+      "row": "ag-14k-cluster",
+      "set": {},
+      "quote": "14k Yellow Gold / Lab Diamond = $1636.00",
+      "url": "https://www.automicgold.com/products/cluster-signet-ring.js",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Automic Gold product JSON via GitHub Actions runner (HTTP 200)",
+      "why": "Confirms the stored $1,636 against the specific option combination this row describes."
+    },
+    {
+      "id": "P98-13",
+      "row": "be-18k-6p-121h6",
+      "set": {
+        "verification_status": "confirmed",
+        "notes": "Etincelle Emerald Shape Ring, 18K, 0.50 cttw, priced as a setting-only listing at $1,090 (the page renders it as '$1,090(Setting Only)'). Re-read on two independent channels on 2026-10-23: the runner's page-text capture listed the price tokens 1090 and 1,090, and this session's own read of the live page reproduced '$1,090(Setting Only)'. The page's own spec panel says the band is 18K yellow gold while the prongs are 14K white gold ('Prong metal: 14K White Gold'), which is why this row keeps karat 18K with the mixed-metal note rather than a single-metal claim. The previous pass marked the row partly verified only because Brilliant Earth serves no machine-readable endpoint from a datacenter IP; that limitation is unchanged, but the figure has now been read from the page twice on the same day, so the row is no longer 'partly' verified on price."
+      },
+      "quote": "$1,090(Setting Only) - 18K Yellow Gold band, Prong metal: 14K White Gold, 0.50 carat total weight",
+      "url": "https://www.brilliantearth.com/enlabdiamond/Engagement-Rings/Product/?id=121h6&metal_type=11&stone_id=2466166",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Brilliant Earth product page on two channels (runner page-text capture at 20:29Z and this session's sandbox fetch at 20:2xZ)",
+      "require_verdict": "match",
+      "why": "Moves the row out of 'partly verified' on the strength of a same-day second read of the price on the official page, while keeping the mixed-metal caveat published."
+    },
+    {
+      "id": "P98-14",
+      "row": "auv-22k-vneck-sm",
+      "set": {
+        "notes": "Weight intentionally blank. Auvere's page states two different things about this piece on the same screen: the spec panel says 'Approximate Fine Weight : 2.9 to 3.7 grams depending on size', and the product description in the page's own structured data says 'The Small V Neck Pendant has an approximate gold weight of 2.8 g.' (the same block also says 'The Large V Neck Pendant has an approximate gold weight of 3 grams', which belongs to a different product and is quoted here only to show how these pages mix listings). The seller's own sentence adds: 'Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed'. Because the seller does not state one figure for this listing, nothing is stored: averaging 2.9-3.7 or picking 2.8 would be our number, not Auvere's. See F54."
+      },
+      "quote": "Approximate Fine Weight : 2.9 to 3.7 grams depending on size - Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed",
+      "url": "https://auvere.com/products/small-v-neck-chain-pendant",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Auvere product page text via GitHub Actions runner (HTTP 200)",
+      "why": "Records, on the row, the two conflicting weight statements the seller publishes for this product today: the spec range 2.9-3.7 g above, and 'The Small V Neck Pendant has an approximate gold weight of 2.8 g' in the page's own JSON-LD description (with 'The Large V Neck Pendant has an approximate gold weight of 3 grams' in the same block). The row's weight fields stay blank because the seller does not state one number for this listing; guessing the midpoint would be a fabricated spec.",
+      "evidence_extra": [
+        "The Small V Neck Pendant has an approximate gold weight of 2.8 g.",
+        "Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed"
+      ]
+    },
+    {
+      "id": "P98-15",
+      "row": "auv-22k-clean-cut-polished",
+      "set": {
+        "notes": "Weight intentionally blank. Two statements from the seller, on the same page today: the spec panel 'Approximate Fine Weight : 2.8 to 3.7 grams depending on size' and the structured-data description 'The Clean Cut Chain has an approximate gold weight of 2.7 grams'. The single figure (2.7) sits below the bottom of the range (2.8), so neither can be adopted as this listing's spec, and the 2.7-2.7 g value carried from the 2026-10-13 read is left as it was. See F54."
+      },
+      "quote": "Approximate Fine Weight : 2.8 to 3.7 grams depending on size",
+      "url": "https://auvere.com/products/clean-cut-chain-16-long-cuff",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Auvere product page text via GitHub Actions runner (HTTP 200)",
+      "why": "Records the two conflicting weight statements for this product today: the spec range 2.8-3.7 g above and 'The Clean Cut Chain has an approximate gold weight of 2.7 grams' in the page's JSON-LD description. Weight fields stay blank; the 2.7-2.7 g value recorded on 2026-10-13 came from a different read and is not overwritten by a range.",
+      "evidence_extra": [
+        "The Clean Cut Chain has an approximate gold weight of 2.7 grams.",
+        "Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed"
+      ]
+    },
+    {
+      "id": "P98-16",
+      "row": "auv-22k-diamond-bridge-tall",
+      "set": {
+        "notes": "Weight intentionally blank. This listing publishes only a size-dependent range - 'Approximate Fine Weight : 5 to 6.1 grams depending on size' - and no single figure anywhere on the page, so the range is recorded in the row's evidence and the fields stay empty rather than holding a midpoint. See F54."
+      },
+      "quote": "Approximate Fine Weight : 5 to 6.1 grams depending on size",
+      "url": "https://auvere.com/products/diamond-bridge-tall-cuff",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Auvere product page text via GitHub Actions runner (HTTP 200)",
+      "why": "This listing publishes only a size-dependent range (5-6.1 g) and no single figure, so the weight fields stay blank and the range is recorded here for the buyer who wants it.",
+      "evidence_extra": [
+        "Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed"
+      ]
+    },
+    {
+      "id": "P98-17",
+      "row": "auv-22k-hexagon-diamond",
+      "set": {
+        "notes": "Weight intentionally blank. This listing publishes only a size-dependent range - 'Approximate Fine Weight : 3.3 to 3.5 grams depending on size' - and no single figure anywhere on the page, so the range is recorded in the row's evidence and the fields stay empty rather than holding a midpoint. See F54."
+      },
+      "quote": "Approximate Fine Weight : 3.3 to 3.5 grams depending on size",
+      "url": "https://auvere.com/products/hexagon-diamond-cuff",
+      "read_at": "2026-10-23T20:29:52Z",
+      "channel": "official Auvere product page text via GitHub Actions runner (HTTP 200)",
+      "why": "This listing publishes only a size-dependent range (3.3-3.5 g) and no single figure, so the weight fields stay blank and the range is recorded here for the buyer who wants it.",
+      "evidence_extra": [
+        "Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed"
+      ]
+    }
+  ],
+  "flags": [
+    {
+      "id": "F59",
+      "type": "Identity",
+      "severity": "medium",
+      "title": "One Cartier listing's URL now serves a different product line than its title said",
+      "finding": "The row stored as 'Destinee de Cartier engagement ring, princess-cut diamond, paved (CRB4232900)' points at a Cartier URL whose slug ends -destinee-ring-princess-cut-diamond-paved-CRB4232900.html, but the page served today is titled 'Etincelle de Cartier ring, princess-cut diamond, paved' and prints reference number B4232900. The stone, metal and price on the page ($3,350, yellow gold 750/1000, 0.16 ct) match what the row carried, so this is a product-line rename or a repurposed slug, not a wrong price. The row title has been corrected to the page's own wording; the reference-number discrepancy is not resolved by inference.",
+      "affected": "car-18k-destinee-princess",
+      "what_is_missing": "Which Cartier reference number this listing is actually selling (CRB4232900 in the URL vs B4232900 printed on the page), and whether the 'Destinee de Cartier' engagement ring the row was created from still exists at another URL.",
+      "why_it_matters": "Cartier's reference number is what a boutique quotes to find the ring again, and 'Destinee' and 'Etincelle' are different collections with different settings and prices. A row that names a collection the source does not name would send a buyer to the counter asking for the wrong ring.",
+      "buyer_action": "Ask Cartier to confirm the reference number on the order, and do not quote this row as a 'Destinee de Cartier' price.",
+      "status": "needs review",
+      "found_by": "sess-7626fc93",
+      "found_at": "2026-10-23",
+      "sources": [
+        {
+          "title": "Cartier US product page the row links to (serves the Etincelle de Cartier princess-cut ring, Ref.B4232900, $3,350)",
+          "url": "https://www.cartier.com/en-us/jewelry/collections/etincelle-de-cartier/jewelry/women/rings/products/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+          "publisher": "Cartier",
+          "date": "2026-10-23",
+          "quote": "Etincelle de Cartier ring, princess-cut diamond, paved Ref.B4232900 $3,350 *Yellow gold 750/1000"
+        },
+        {
+          "title": "Cartier US Etincelle de Cartier collection page",
+          "url": "https://www.cartier.com/en-us/jewelry/collections/etincelle-de-cartier/",
+          "publisher": "Cartier",
+          "date": "2026-10-23"
+        }
+      ]
+    },
+    {
+      "id": "F60",
+      "type": "Price",
+      "severity": "medium",
+      "title": "Two Menē bands repriced intraday because Menē prices off live gold",
+      "finding": "The 24k 3D Classic Band moved from $1,707 to $1,694 and the 3D Narrow Classic Band from $1,361 to $1,350 between the 2026-10-22 capture and a re-read at 20:29Z on 2026-10-23, in the same direction and rough proportion as spot (4,024.699951 USD/ozt at 09:59:43Z to 3,997.399902 USD/ozt at 20:32:16Z, read from gold-api.com over the same window). Neither product page carries a machine-readable price block, and the Menē Shopify .js endpoint returns a 404, so these two figures were transcribed from the rendered page text rather than a data field.",
+      "affected": "mene-24k-classic-band, mene-24k-narrow-band",
+      "what_is_missing": "Menē's repricing rule (how often and against which benchmark the prices move) and whether a checkout price can differ from the page price between sessions.",
+      "why_it_matters": "A pure-gold band priced by weight is the one product in this dataset whose price is expected to change daily, so a screenshot from yesterday is not a quote. Anything quoted from these two rows is only good for the day it was read.",
+      "buyer_action": "Treat Menē prices as same-day only, and re-read the page before relying on it - the dataset stamps every row with the date and channel it was last read.",
+      "status": "needs review",
+      "found_by": "sess-7626fc93",
+      "found_at": "2026-10-23",
+      "sources": [
+        {
+          "title": "Menē 3D Classic Band product page",
+          "url": "https://www.mene.com/products/classic-band-1",
+          "publisher": "Menē",
+          "date": "2026-10-23",
+          "quote": "3D Classic Band $1,694 USD Price breakdown Metal Gold 24k Gold"
+        },
+        {
+          "title": "Menē 3D Narrow Classic Band product page",
+          "url": "https://www.mene.com/products/3d-narrow-classic-band",
+          "publisher": "Menē",
+          "date": "2026-10-23",
+          "quote": "3D Narrow Classic Band $1,350 USD Price breakdown Metal Gold 24k Gold"
+        },
+        {
+          "title": "gold-api.com spot reading used for the comparison",
+          "url": "https://api.gold-api.com/price/XAU",
+          "publisher": "gold-api.com",
+          "date": "2026-10-23",
+          "quote": "3997.399902 @ 2026-10-23T20:32:16Z"
+        }
+      ]
+    },
+    {
+      "id": "F61",
+      "type": "Weight",
+      "severity": "medium",
+      "title": "Aurate publishes its gram weights only in a spec panel that a non-browser read cannot see",
+      "finding": "Four Aurate rows carry published gram weights (2ct oval 2.73 g, 1ct emerald 1.97 g, 3ct round 3.3 g, X ring 2.7 g) that could not be reproduced by either channel on 2026-10-23: the runner's page-text capture and this session's own read of the live page both return the product's images, navigation and JSON-LD, but not the spec panel, because Aurate renders it client-side. The 2026-10-22 pass recorded those four numbers verbatim ('$1,968 · Rate - 14k GOLD · Weight: 2.73g') and they are kept, marked weight_not_reconfirmed_this_pass rather than deleted, while 21 of the dataset's 25 published weights re-confirmed today from Ross-Simons, Automic Gold and Aurate's own description fields.",
+      "affected": "au-2ct-oval, au-1ct-emerald, au-3ct-round, au-xring",
+      "what_is_missing": "A re-read of those four spec panels on 2026-10-23 from any channel that executes the page's JavaScript, and Aurate's statement of which ring size each gram figure refers to.",
+      "why_it_matters": "The melt calculation and the 'is this ring priced near its gold content' scorecard both run on these grams. A weight that cannot be re-read cannot be shown to be current, so it must be labelled as a 2026-10-22 reading rather than presented as today's.",
+      "buyer_action": "Before pricing a ring against its gold, screenshot Aurate's spec panel in a browser and compare the gram figure with the one stored here.",
+      "status": "needs review",
+      "found_by": "sess-7626fc93",
+      "found_at": "2026-10-23",
+      "sources": [
+        {
+          "title": "Aurate 2ct Oval Lab Grown Diamond Bezel Ring (live page; spec panel is client-rendered)",
+          "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "2ct Oval Lab Grown Diamond Bezel Ring 14k 18k Yellow Gold - Weight: 2.73g appears only in the 2026-10-22 spec-panel quote retained in this row's evidence"
+        },
+        {
+          "title": "Aurate product JSON the variant prices were read from (no metal weight field)",
+          "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23"
+        }
+      ]
+    },
+    {
+      "id": "F62",
+      "type": "Price",
+      "severity": "low",
+      "title": "A 'from' price and a parcel weight are the two things a scraped listing gets wrong loudest",
+      "finding": "Two traps this pass caught before they reached the table. (1) Product-level minimums: Automic Gold's Leaves Signet Ring lists 'from $2,194' on a page whose options run to $2,744 (Salt & Pepper lab diamond) and $3,068 (platinum), and its Cluster Signet Ring's 'from $1,636' is one of several option prices; both rows were confirmed against the exact option combination (14k Yellow Gold / Clear Lab Diamond = 2194.00; 14k Yellow Gold / Lab Diamond = 1636.00) instead of the headline. The same effect explains every apparent 'drift' in an earlier automated sweep except the two Menē rows: the reader was comparing a karat-specific stored price with a product-wide minimum. (2) Parcel weight: Ross-Simons's variant records publish \"grams\":113 on every size of every product, from an $89 ring to a $695 ring - it is the shipping weight (0.25 lb), 113 g is 0.25 lb - the shipping weight of the box - and a 113 g gold band would be an entirely different product from anything on this page.",
+      "affected": "ag-14k-leaves, ag-14k-cluster, every Ross-Simons row",
+      "what_is_missing": "Nothing in the dataset - recorded so that the next pass, or a reader reusing the raw capture, does not read a product-level minimum as a karat's price or a parcel weight as gold content.",
+      "why_it_matters": "Both mistakes inflate or deflate a ring's apparent value by an order of magnitude, and both look like clean machine-readable numbers, which is exactly how a hallucinated price gets into a table of verified prices.",
+      "buyer_action": "When you check a price, select the metal and stone you intend to buy and read the number under the selection - never the 'from' figure on the card.",
+      "status": "needs review",
+      "found_by": "sess-7626fc93",
+      "found_at": "2026-10-23",
+      "sources": [
+        {
+          "title": "Automic Gold Leaves Signet Ring product JSON (option prices, not a single price)",
+          "url": "https://www.automicgold.com/products/leaves-signet-ring.js",
+          "publisher": "Automic Gold",
+          "date": "2026-10-23",
+          "quote": "14k Yellow Gold / Clear Lab Diamond = 2194.00; 14k Yellow Gold / Salt & Pepper Lab Diamond = 2744.00; platinum priced 3068.00"
+        },
+        {
+          "title": "Ross-Simons 1.20 ctw Diamond Band product JSON (shipping_weight_fields)",
+          "url": "https://www.ross-simons.com/products/571223.js",
+          "publisher": "Ross-Simons",
+          "date": "2026-10-23",
+          "quote": "\"grams\":113,\"weight\":113.0 on every variant of the product"
+        }
+      ]
+    },
+    {
+      "id": "F37",
+      "title": "Anna Sheffield Bea Solitaire: listed at $11,500 in the seller's feed, but the product page sells it by enquiry",
+      "finding": "The 2026-10-22 pass could not reproduce the stored 11,500.00 anywhere and published the row as price-unverified. On 2026-10-23 the seller's own product JSON prices it at 11500.00 for all 58 variants (Yellow Gold and Rose Gold, every size), so the number is verified against the official feed. The page itself still replaces the buy box with an enquiry form, so the listed price is not a price you can currently check out at.",
+      "resolution": "Price unverified cleared on 2026-10-23 (ninth pass): 11,500.00 reproduced verbatim from annasheffield.com/products/....js for all 58 variants. The remaining caveat is availability, not price, and is now carried on the row as listed_price_not_purchasable.",
+      "sources": [
+        {
+          "title": "Anna Sheffield product JSON for the Bea Solitaire (price_min / price_max / all 58 variants)",
+          "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
+          "publisher": "Anna Sheffield",
+          "date": "2026-10-23",
+          "quote": "price_min 115000, price_max 115000; 58 variants priced 11500.00"
+        },
+        {
+          "title": "The product page, whose buy box is an enquiry form",
+          "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+          "publisher": "Anna Sheffield",
+          "date": "2026-10-23",
+          "quote": "While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range."
+        }
+      ]
+    },
+    {
+      "id": "F13",
+      "resolution": "Resolved on 2026-10-23 (ninth pass). Aurate's own product JSON maps the metal option to a price for all four rows, so the bands no longer have to be stored as cross-metal ranges: au-2ct-oval 14k = 1,968 / 18k = 2,438 / Platinum = 2,800; au-1ct-emerald 14k = 1,498 / 18k = 1,878 / Platinum = 2,100; au-3ct-round 14k = 2,438 / 18k = 2,858 / Platinum = 3,000; au-xring 14k = 1,808 / 18k = 2,578. Each 14K row now stores only its own metal's price, and the other metals are recorded in the row's notes.",
+      "sources": [
+        {
+          "title": "Aurate product JSON, 2ct oval bezel (variant prices by metal option)",
+          "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "14k variants priced 1968.00-1968.00; 18k priced 2438.00; Platinum priced 2800.00"
+        },
+        {
+          "title": "Aurate product JSON, 1ct emerald bezel",
+          "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "14k variants priced 1498.00-1498.00; 18k priced 1878.00; Platinum priced 2100.00"
+        },
+        {
+          "title": "Aurate product JSON, 3ct round bezel",
+          "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "14k variants priced 2438.00-2438.00; 18k priced 2858.00; Platinum priced 3000.00"
+        },
+        {
+          "title": "Aurate product JSON, Diamond X Ring",
+          "url": "https://auratenewyork.com/products/x-ring-with-diamonds.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "14k variants priced 1808.00; 18k priced 2578.00"
+        }
+      ]
+    },
+    {
+      "id": "F39",
+      "resolution": "Resolved on 2026-10-23 (ninth pass). The seller's product JSON prices the 14K / Yellow variants of the Modern Cigar Band at 1,308.00 across all 45 variants, which is the figure stored in the row; 18K is 1,668.00 and the vermeil option is 118.00.",
+      "sources": [
+        {
+          "title": "Aurate Modern Cigar Band product JSON (variants by metal)",
+          "url": "https://auratenewyork.com/products/modern-cigar-band.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "14K / Yellow variants priced 1308.00; 18K priced 1668.00; Vermeil priced 118.00"
+        }
+      ]
+    },
+    {
+      "id": "F41",
+      "resolution": "Resolved on 2026-10-23 (ninth pass): the product band 1,808.00-2,578.00 is now attributed - 14k variants are priced 1,808.00 and 18k variants 2,578.00 in the seller's own feed, so the 14K row keeps 1,808.00 and the previous pass's refusal to widen the row was correct.",
+      "sources": [
+        {
+          "title": "Aurate Diamond X Ring product JSON",
+          "url": "https://auratenewyork.com/products/x-ring-with-diamonds.js",
+          "publisher": "Aurate",
+          "date": "2026-10-23",
+          "quote": "14k variants priced 1808.00; 18k priced 2578.00"
+        }
+      ]
+    },
+    {
+      "id": "F44",
+      "resolution": "Partly resolved on 2026-10-23 (ninth pass): both Anna Sheffield archive pages publish a machine-readable price through the seller's own product JSON (as-bea-sol $11,500 across 58 variants, as-hazeline $7,150-$9,200 by size and stone), so the prices are traceable; the pages themselves still render without a buy box.",
+      "sources": [
+        {
+          "title": "Anna Sheffield product JSON for the Bea Solitaire",
+          "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
+          "publisher": "Anna Sheffield",
+          "date": "2026-10-23",
+          "quote": "price_min 115000, price_max 115000"
+        },
+        {
+          "title": "Anna Sheffield product JSON for the Hazeline ring",
+          "url": "https://www.annasheffield.com/products/hazeline-ring-oval-champagne-diamond.js",
+          "publisher": "Anna Sheffield",
+          "date": "2026-10-23",
+          "quote": "price_min 715000, price_max 920000"
+        }
+      ]
+    },
+    {
+      "id": "F54",
+      "finding": "Auvere's 22K pages publish size-dependent gram ranges labelled 'Approximate Fine Weight : X to Y grams depending on size' together with the sentence 'Each Auvere piece is handcrafted to order; your piece may weigh more or less than the gold weight listed', and - in the page's own JSON-LD description - a single figure for some pieces that does not agree with the range on the same page: the Small V Neck Pendant prints '2.9 to 3.7 grams' in the spec panel and 'an approximate gold weight of 2.8 g' in the description, and the Clean Cut Chain prints '2.8 to 3.7 grams' against 'an approximate gold weight of 2.7 grams'. The two 22K diamond cuffs publish a range only (bridge tall 5 to 6.1 g, hexagon 3.3 to 3.5 g) and no single figure anywhere.",
+      "resolution": "Left blank on purpose, again, on 2026-10-23 (ninth pass). Both statements were re-read today from the live pages and are quoted verbatim on each row; no number was averaged, and no range was stored as a single weight. A buyer who wants Auvere's own figure should read the row's note, where both the range and the single-figure sentence are recorded.",
+      "sources": [
+        {
+          "title": "Auvere Small V Neck pendant page - spec range and JSON-LD single figure on the same page",
+          "url": "https://auvere.com/products/small-v-neck-chain-pendant",
+          "publisher": "Auvere",
+          "date": "2026-10-23",
+          "quote": "Approximate Fine Weight : 2.9 to 3.7 grams depending on size / The Small V Neck Pendant has an approximate gold weight of 2.8 g."
+        },
+        {
+          "title": "Auvere Clean Cut chain page",
+          "url": "https://auvere.com/products/clean-cut-chain-16-long-cuff",
+          "publisher": "Auvere",
+          "date": "2026-10-23",
+          "quote": "Approximate Fine Weight : 2.8 to 3.7 grams depending on size / The Clean Cut Chain has an approximate gold weight of 2.7 grams."
+        },
+        {
+          "title": "Auvere Diamond Bridge tall cuff page",
+          "url": "https://auvere.com/products/diamond-bridge-tall-cuff",
+          "publisher": "Auvere",
+          "date": "2026-10-23",
+          "quote": "Approximate Fine Weight : 5 to 6.1 grams depending on size"
+        },
+        {
+          "title": "Auvere Hexagon Diamond cuff page",
+          "url": "https://auvere.com/products/hexagon-diamond-cuff",
+          "publisher": "Auvere",
+          "date": "2026-10-23",
+          "quote": "Approximate Fine Weight : 3.3 to 3.5 grams depending on size"
+        }
+      ]
+    },
+    {
+      "id": "F53",
+      "finding": "Six retailers refused the GitHub Actions runner's IP on 2026-10-23: With Clarity returned HTTP 403 on the product page and on its .js/.json endpoints for all five rows, and Ross-Simons, Cartier, Brilliant Earth and Menē refused their JSON endpoints outright. Ten rows returned no usable page text at all on the 20:32Z run (five With Clarity, one Brilliant Earth, two Cartier Etincelle, the 1895 band and the Destinee/Etincelle page).",
+      "resolution": "Resolved on the ninth pass the same way: the ten blocked rows were read on this session's own fetch channel (Cartier etincelle-emerald, Cartier destinee, Menē both bands, Brilliant Earth setting, withclarity.com/products/tulip-basket-alternating-diamond-ring-14k-yellow-gold.js) and six of them (wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera, be-18k-6p-121h6 in part) keep their earlier same-day reads, which are labelled as such on every row page and in the ledger. The two rows the ninth pass could not read on any channel are listed explicitly as not read today: see data/session-7626fc93/hand-reads-2026-10-23.json.",
+      "sources": [
+        {
+          "title": "With Clarity Tulip Basket ring .js endpoint read through the sandbox fetch channel",
+          "url": "https://www.withclarity.com/products/tulip-basket-alternating-diamond-ring-14k-yellow-gold.js",
+          "publisher": "With Clarity",
+          "date": "2026-10-23",
+          "quote": "price_min 59000, price_max 111000, tags include 'Ring Setting Product'"
+        }
+      ]
+    }
+  ]
+}
