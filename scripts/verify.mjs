@@ -177,7 +177,11 @@ const counted = (fn) => fn;
 /* ---------------------------------------------------------------- S06 */
 {
   const failures = [];
-  const perGram = gold.primary.price_usd_per_ozt / (gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce);
+  // Never fall back to a different unit: the legacy "grains_per_troy_ounce"
+  // property is a misnomer that holds grams today, and a real grains value (480)
+  // here would silently inflate every melt figure by a factor of ~15.5.
+  if (gold.grams_per_troy_ounce == null) throw new Error('gold-price.json is missing grams_per_troy_ounce; refusing to compute melt without the NIST gram conversion');
+  const perGram = gold.primary.price_usd_per_ozt / gold.grams_per_troy_ounce;
   for (const r of rings.rows) {
     assertions++;
     if (r.weight_g_low === null || r.price_low === null) continue;
@@ -431,11 +435,20 @@ const counted = (fn) => fn;
     'data/verification-2026-10-23-evening-dab93754.json',
     'data/live/compare-dab93754.json',
     'data/session-dab93754/manual-reads-2026-10-23.json',
+    // Eleventh pass, third channel (T51): its ledger and reads are data files
+    // too, so a number printed on the new panel must trace to one of them.
+    'data/verification-2026-10-23-e33f8670.json',
+    'data/session-e33f8670/manual-reads-2026-10-23.json',
+    'data/session-e33f8670/live-comparison.json',
   ]) {
     harvest(await readIf(f, {}));
   }
   // derived values the site is allowed to compute
-  const perGram = gold.primary.price_usd_per_ozt / (gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce);
+  // Never fall back to a different unit: the legacy "grains_per_troy_ounce"
+  // property is a misnomer that holds grams today, and a real grains value (480)
+  // here would silently inflate every melt figure by a factor of ~15.5.
+  if (gold.grams_per_troy_ounce == null) throw new Error('gold-price.json is missing grams_per_troy_ounce; refusing to compute melt without the NIST gram conversion');
+  const perGram = gold.primary.price_usd_per_ozt / gold.grams_per_troy_ounce;
   const derived = new Set();
   const addDerived = (n) => {
     if (!Number.isFinite(n)) return;

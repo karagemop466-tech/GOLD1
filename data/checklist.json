@@ -60,7 +60,7 @@
     {
       "requirement": "Weight: check the ring's weight in grams — a legitimate seller should state or quote it unambiguously.",
       "status": "partial",
-      "finding": "25 of 71 rows (25 active + 1 withdrawn) publish an unambiguous metal gram weight on the official product page (0.3 g to 7.0 g across Ross-Simons, Automic Gold, and Aurate in 10K, 14K, and 18K). The remaining 46 rows are left blank rather than guessed — including Auvere's 4 22K rings whose PDPs label size-dependent ranges \"Approximate Fine Weight\" (ambiguous between 22K alloy mass and 24K fine content, Flag F54) and Menē's 2 JS-rendered 24K bands.",
+      "finding": "25 of 71 rows (24 active + 1 withdrawn) publish an unambiguous metal gram weight on the official product page (0.3 g to 7 g). The remaining 46 rows are left blank rather than guessed — including Auvere's 4 22K rings whose PDPs label size-dependent ranges \"Approximate Fine Weight\" (ambiguous between 22K alloy mass and 24K fine content, Flag F54) and Menē's 2 JS-rendered 24K bands.",
       "how": "Opened every HTML product page across all 71 listings; enforced by automated checks S14, A03, H03, and H04.",
       "buyer_action": "For any of the 46 unweighted rows (including Auvere's \"Approximate Fine Weight\" listings), ask customer service in writing for the exact gross alloy gram weight for your ring size before paying.",
       "links": [
@@ -94,7 +94,7 @@
     {
       "requirement": "Price vs raw gold value: compare asking price against gram weight × karat purity × live spot gold.",
       "status": "verified",
-      "finding": "Spot gold is pinned with publisher timestamp (2026-10-23T09:59:43Z) at $4024.70/ozt ($129.40/g 24K fine gold using NIST Handbook 130 § 2.17 exact 31.1034768 g/ozt). Across the active weighted rings in 10K, 14K, and 18K, price-to-gold multiples span ~2.5×–4.0× on plain/dome bands up to stone-set solitaire multiples; automated check S06 flags any price below raw gold melt.",
+      "finding": "Spot gold is pinned with the publisher's own timestamp (2026-10-23T23:38:16Z) at $3,996.90/ozt (3996.899902 USD/ozt exactly as the publisher prints it) — $128.50/g of 24K fine gold using NIST Handbook 130 § 2.17 exact 31.1034768 g/ozt. Across the 24 active rows that publish a metal gram weight, price-to-melt spans 2.56× (rs-571213) to 12.71× (ag-14k-bubble); the 11 plain and dome bands cluster at 2.56×–5.54×. Stone-set rows sit higher partly because the seller's gram figure includes the diamonds — that makes the multiple conservative, not generous. Automated check S06 flags any price below raw gold melt.",
       "how": "Computed from seller-published grams, karat/24, NIST 31.1034768 g/ozt, and timestamped gold-api.com + COMEX GC=F feeds; interactive calculator on calculator.html.",
       "buyer_action": "Plug the seller's quoted metal grams (subtracting 0.20 g per carat of stones per 16 CFR § 23.18 if total item weight is given) into the Gold Calculator.",
       "links": [

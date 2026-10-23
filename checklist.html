@@ -41,7 +41,7 @@
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10 + E01–E09</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
 </div>
   <div class="checklist">
     <article class="check-item">
@@ -89,7 +89,7 @@
           <h2>Weight: check the ring&#39;s weight in grams — a legitimate seller should state or quote it unambiguously.</h2>
           <span class="chip warn">partly verified</span>
         </div>
-        <p>25 of 71 rows (25 active + 1 withdrawn) publish an unambiguous metal gram weight on the official product page (0.3 g to 7.0 g across Ross-Simons, Automic Gold, and Aurate in 10K, 14K, and 18K). The remaining 46 rows are left blank rather than guessed — including Auvere&#39;s 4 22K rings whose PDPs label size-dependent ranges &quot;Approximate Fine Weight&quot; (ambiguous between 22K alloy mass and 24K fine content, Flag F54) and Menē&#39;s 2 JS-rendered 24K bands.</p>
+        <p>25 of 71 rows (24 active + 1 withdrawn) publish an unambiguous metal gram weight on the official product page (0.3 g to 7 g). The remaining 46 rows are left blank rather than guessed — including Auvere&#39;s 4 22K rings whose PDPs label size-dependent ranges &quot;Approximate Fine Weight&quot; (ambiguous between 22K alloy mass and 24K fine content, Flag F54) and Menē&#39;s 2 JS-rendered 24K bands.</p>
         <dl class="kv">
           <dt>How it was checked</dt><dd>Opened every HTML product page across all 71 listings; enforced by automated checks S14, A03, H03, and H04.</dd>
           <dt>What to do</dt><dd>For any of the 46 unweighted rows (including Auvere&#39;s &quot;Approximate Fine Weight&quot; listings), ask customer service in writing for the exact gross alloy gram weight for your ring size before paying.</dd>
@@ -115,7 +115,7 @@
           <h2>Price vs raw gold value: compare asking price against gram weight × karat purity × live spot gold.</h2>
           <span class="chip ok">verified</span>
         </div>
-        <p>Spot gold is pinned with publisher timestamp (2026-10-23T09:59:43Z) at $4024.70/ozt ($129.40/g 24K fine gold using NIST Handbook 130 § 2.17 exact 31.1034768 g/ozt). Across the active weighted rings in 10K, 14K, and 18K, price-to-gold multiples span ~2.5×–4.0× on plain/dome bands up to stone-set solitaire multiples; automated check S06 flags any price below raw gold melt.</p>
+        <p>Spot gold is pinned with the publisher&#39;s own timestamp (2026-10-23T23:38:16Z) at $3,996.90/ozt (3996.899902 USD/ozt exactly as the publisher prints it) — $128.50/g of 24K fine gold using NIST Handbook 130 § 2.17 exact 31.1034768 g/ozt. Across the 24 active rows that publish a metal gram weight, price-to-melt spans 2.56× (rs-571213) to 12.71× (ag-14k-bubble); the 11 plain and dome bands cluster at 2.56×–5.54×. Stone-set rows sit higher partly because the seller&#39;s gram figure includes the diamonds — that makes the multiple conservative, not generous. Automated check S06 flags any price below raw gold melt.</p>
         <dl class="kv">
           <dt>How it was checked</dt><dd>Computed from seller-published grams, karat/24, NIST 31.1034768 g/ozt, and timestamped gold-api.com + COMEX GC=F feeds; interactive calculator on calculator.html.</dd>
           <dt>What to do</dt><dd>Plug the seller&#39;s quoted metal grams (subtracting 0.20 g per carat of stones per 16 CFR § 23.18 if total item weight is given) into the Gold Calculator.</dd>

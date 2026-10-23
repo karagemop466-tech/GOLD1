@@ -37,11 +37,11 @@
 
 <section class="wrap section">
   <h1>Flagged for review</h1>
-  <p class="lede">67 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
+  <p class="lede">69 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10 + E01–E09</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
 </div>
   <div class="flag-grid">
     <article class="flag-card sev-high" id="F01">
@@ -913,6 +913,32 @@
       <p class="small"><strong>Affects:</strong> car-18k-destinee-princess</p>
       <p class="action"><strong>What to do:</strong> Order by reference B4232900 and confirm with Cartier that the piece you receive matches the current Etincelle page (18K yellow gold 750/1000, 0.16 ct princess centre, $3,350). Do not rely on the old “Destinée” wording.</p>
       <p class="sub"><a href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html" target="_blank" rel="noopener nofollow">www.cartier.com ↗</a> · <a href="https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html" target="_blank" rel="noopener nofollow">www.cartier.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-low" id="F69">
+      <div class="flag-head">
+        <span class="flag-id">F69</span>
+        <span class="chip info">low</span>
+        <span class="chip">audit method / false positive</span>
+      </div>
+      <h2>Pass method: six false &quot;price moved&quot; verdicts came from reading page navigation as a price</h2>
+      <p>The first run of this pass’s comparator treated price-like strings in the page navigation (&quot;$500 &amp; UNDER&quot;, &quot;$1000 &amp; UNDER&quot;, &quot;Under $350&quot;) as product prices and produced six false &quot;price moved&quot; verdicts (Anna Sheffield ×3, Aurate cigar band, Automic Gold ×2). The navigation channel was removed; only JSON-LD offer data, the seller’s own variant feed and this session’s verbatim page reads now count. All six rows reproduced exactly once the fix was in. A second detector bug is disclosed in the same pass: a weight parser that missed Automic Gold’s &quot;Item Weight: gold 3.6g, platinum 5.4g&quot; line, which is exactly the line where the platinum figure could have been mistaken for the gold one. Both are pinned by audit groups E06/E08.</p>
+      <p class="small"><strong>Affects:</strong> scripts/compare_live_e33f8670.mjs (first run of this pass)</p>
+      <p class="action"><strong>What to do:</strong> None for a buyer. It is published so the &quot;price moved&quot; and &quot;weight confirmed&quot; counts on the re-check page can be trusted: they now mean the seller’s own offer/variant data agreed, not that a menu did.</p>
+      <p class="sub"><a href="https://karagemop466-tech.github.io/GOLD1/checks.html" target="_blank" rel="noopener nofollow">karagemop466-tech.github.io ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
+<article class="flag-card sev-low" id="F70">
+      <div class="flag-head">
+        <span class="flag-id">F70</span>
+        <span class="chip info">low</span>
+        <span class="chip">price visibility / method coverage</span>
+      </div>
+      <h2>Five rows still publish a price a buyer cannot see today — four Auvere pages render none, Anna Sheffield’s is inquiry-only</h2>
+      <p>On the 2026-10-23T23:50Z re-read, four Auvere product pages returned shipping/returns policy text with no product price at all, and the Anna Sheffield Bea Solitaire buy box has been replaced by an inquiry form (&quot;we are able to create a unique version just for you within your desired price range&quot;). Ten other pages (five With Clarity, four Cartier, one Brilliant Earth) answer the automated runner with HTTP 403; those were read on a second channel instead, and every one of them reproduced its stored price. The five above did not, on either channel. Their stored figures are therefore shown as captured, with their earlier dated reads, and are explicitly not presented as today’s price.</p>
+      <p class="small"><strong>Affects:</strong> auv-22k-vneck-sm, auv-22k-hexagon-diamond, auv-22k-diamond-bridge-tall, auv-22k-clean-cut-polished, as-bea-sol</p>
+      <p class="action"><strong>What to do:</strong> For the four Auvere rings and the Anna Sheffield Bea, call or use the site’s contact form and ask for the current price for your size before budgeting — the site does not show one. Treat the published figure as the last observed price, not a quote.</p>
+      <p class="sub"><a href="https://auvere.com/product/v-neck-stack-ring-small-polished/" target="_blank" rel="noopener nofollow">auvere.com ↗</a> · <a href="https://auvere.com/product/hexagon-diamond-stack-ring/" target="_blank" rel="noopener nofollow">auvere.com ↗</a> · <a href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" target="_blank" rel="noopener nofollow">www.annasheffield.com ↗</a></p>
       <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
     </article>
   </div>

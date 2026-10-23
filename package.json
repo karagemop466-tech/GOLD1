@@ -13,11 +13,13 @@
     "test:build": "node scripts/audit-build.js",
     "build": "node scripts/build.js",
     "serve": "node scripts/serve.js",
-    "check": "node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs && node scripts/audit_545688f3.mjs && node scripts/audit_dab93754.mjs && node scripts/audit_67748540.mjs",
+    "check": "node scripts/fix_checklist_e33f8670.mjs && node scripts/build_compliance.mjs && node scripts/compare_live_e33f8670.mjs && node scripts/apply_e33f8670.mjs && node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs && node scripts/audit_545688f3.mjs && node scripts/audit_dab93754.mjs && node scripts/audit_67748540.mjs && node scripts/audit_e33f8670.mjs",
     "reverify": "node scripts/live_reverify.mjs",
     "reconcile": "node scripts/build_compliance.mjs",
     "audit:q": "node scripts/audit_67748540.mjs",
-    "reconcile:q": "node scripts/compare_67748540.mjs"
+    "reconcile:q": "node scripts/compare_67748540.mjs",
+    "audit:e": "node scripts/audit_e33f8670.mjs",
+    "compare:e": "node scripts/compare_live_e33f8670.mjs"
   },
   "engines": {
     "node": ">=22"

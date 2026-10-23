@@ -596,7 +596,7 @@
    "source_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"590.00\"; price_max \"1110.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"590.00\", price_max \"1110.00\", tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\". 2026-10-23 storefront feed title \"Tulip Basket Cathedral Classic Solitaire Engagement Ring\" confirmed. Re-read 2026-10-23T23:42Z (P117-67748540, second channel): printed $590–$1,110 — verbatim \"\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\" ... \"price\":59000,\"price_min\":59000,\"price_max\":111000,\"available\":true,\"price_varies\":true\"",
+   "evidence": "Price_min \"590.00\"; price_max \"1110.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"590.00\", price_max \"1110.00\", tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\". 2026-10-23 storefront feed title \"Tulip Basket Cathedral Classic Solitaire Engagement Ring\" confirmed. Re-read 2026-10-23T23:42Z (P117-67748540, second channel): printed $590–$1,110 — verbatim \"\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\" ... \"price\":59000,\"price_min\":59000,\"price_max\":111000,\"available\":true,\"price_varies\":true\" T51 2026-10-24 (sess-e33f8670, second channel): feed \"$590-$1,110\" — verbatim \"\\\"price\\\":59000,\\\"price_min\\\":59000,\\\"price_max\\\":111000\" (cents), setting only.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -631,7 +631,7 @@
    "source_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"558.00\"; price_max \"801.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"558.00\", price_max \"801.00\"; the feed also shows compare_at_price_min \"620.00\" and compare_at_price_max \"890.00\". 2026-10-23 product.json title \"Classic Four Prong Solitaire Diamond Engagement Ring\" confirmed (updated 06:05:04-04:00). Re-read 2026-10-23T23:44Z (P117-67748540, second channel): printed $558–$801 — verbatim \"\"price\":55800,\"price_min\":55800,\"price_max\":80100 ... \"compare_at_price\":62000,\"compare_at_price_min\":62000,\"compare_at_price_max\":89000\"",
+   "evidence": "Price_min \"558.00\"; price_max \"801.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"558.00\", price_max \"801.00\"; the feed also shows compare_at_price_min \"620.00\" and compare_at_price_max \"890.00\". 2026-10-23 product.json title \"Classic Four Prong Solitaire Diamond Engagement Ring\" confirmed (updated 06:05:04-04:00). Re-read 2026-10-23T23:44Z (P117-67748540, second channel): printed $558–$801 — verbatim \"\"price\":55800,\"price_min\":55800,\"price_max\":80100 ... \"compare_at_price\":62000,\"compare_at_price_min\":62000,\"compare_at_price_max\":89000\" T51 2026-10-24 (sess-e33f8670, second channel): Shopify product feed \"$558-$801\" — verbatim \"\\\"price\\\":55800,\\\"price_min\\\":55800,\\\"price_max\\\":80100\" (cents), all variants tagged \"Ring Setting Product\" so the figure is the setting only.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -666,7 +666,7 @@
    "source_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"558.00\"; price_max \"963.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"558.00\", price_max \"963.00\"; compare-at range 620-1070. 2026-10-23 storefront feed title \"Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring\" confirmed. Re-read 2026-10-23T23:45Z (P117-67748540, second channel): printed $558–$963 — verbatim \"\"price\":55800,\"price_min\":55800,\"price_max\":96300 ... \"compare_at_price_max\":107000\"",
+   "evidence": "Price_min \"558.00\"; price_max \"963.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"558.00\", price_max \"963.00\"; compare-at range 620-1070. 2026-10-23 storefront feed title \"Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring\" confirmed. Re-read 2026-10-23T23:45Z (P117-67748540, second channel): printed $558–$963 — verbatim \"\"price\":55800,\"price_min\":55800,\"price_max\":96300 ... \"compare_at_price_max\":107000\" T51 2026-10-24 (sess-e33f8670, second channel): feed \"$558-$963\" — verbatim \"\\\"price\\\":55800,\\\"price_min\\\":55800,\\\"price_max\\\":96300\" (cents), setting only.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -701,7 +701,7 @@
    "source_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"567.00\"; price_max \"828.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"567.00\", price_max \"828.00\"; compare-at range 630-920. 2026-10-23 product.json title \"Classic Six Prong Solitaire Diamond Engagement Ring\" confirmed (updated 06:05:04-04:00). Re-read 2026-10-23T23:45Z (P117-67748540, second channel): printed $567–$828 — verbatim \"\"price\":56700,\"price_min\":56700,\"price_max\":82800 ... \"compare_at_price_max\":92000\"",
+   "evidence": "Price_min \"567.00\"; price_max \"828.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\" Re-checked 2026-10-22 on the official storefront feed: price_min \"567.00\", price_max \"828.00\"; compare-at range 630-920. 2026-10-23 product.json title \"Classic Six Prong Solitaire Diamond Engagement Ring\" confirmed (updated 06:05:04-04:00). Re-read 2026-10-23T23:45Z (P117-67748540, second channel): printed $567–$828 — verbatim \"\"price\":56700,\"price_min\":56700,\"price_max\":82800 ... \"compare_at_price_max\":92000\" T51 2026-10-24 (sess-e33f8670, second channel): feed \"$567-$828\" — verbatim \"\\\"price\\\":56700,\\\"price_min\\\":56700,\\\"price_max\\\":82800\" (cents), setting only.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -736,7 +736,7 @@
    "source_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"1210.00\"; price_max \"1850.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\"; body \"striking marquise created blue sapphire ... under-halo\" Re-checked 2026-10-22 on the official storefront feed: price_min \"1210.00\", price_max \"1850.00\"; body confirms the centre stone is a created (lab) blue sapphire. Re-read 2026-10-23T20:25Z (sess-0a6df02e) via the official product JSON: \"price_min\":121000, \"price_max\":185000 ($1,210-$1,850); tags include \"Ring Setting Product\", \"14K\", \"18K\" — stored range confirmed unchanged (third independent channel on a formerly F53-blocked row). Re-read 2026-10-23T23:44Z (P117-67748540, second channel): printed $1,210–$1,850 — verbatim \"\"price\":121000,\"price_min\":121000,\"price_max\":185000,\"available\":true,\"price_varies\":true\"",
+   "evidence": "Price_min \"1210.00\"; price_max \"1850.00\"; tags include \"Ring Setting Product\", \"14K\", \"18K\"; body \"striking marquise created blue sapphire ... under-halo\" Re-checked 2026-10-22 on the official storefront feed: price_min \"1210.00\", price_max \"1850.00\"; body confirms the centre stone is a created (lab) blue sapphire. Re-read 2026-10-23T20:25Z (sess-0a6df02e) via the official product JSON: \"price_min\":121000, \"price_max\":185000 ($1,210-$1,850); tags include \"Ring Setting Product\", \"14K\", \"18K\" — stored range confirmed unchanged (third independent channel on a formerly F53-blocked row). Re-read 2026-10-23T23:44Z (P117-67748540, second channel): printed $1,210–$1,850 — verbatim \"\"price\":121000,\"price_min\":121000,\"price_max\":185000,\"available\":true,\"price_varies\":true\" T51 2026-10-24 (sess-e33f8670, second channel): feed \"$1,210-$1,850\" — verbatim \"\\\"price\\\":121000,\\\"price_min\\\":121000,\\\"price_max\\\":185000\" (cents), setting only.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -772,7 +772,7 @@
    "source_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price \"11500.00\"; body \"1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank.\" Re-checked 2026-10-22: the official product page resolves and still carries the 1.50ct oval champagne diamond description in 14k recycled gold, but it no longer displays any price. The buy box has been replaced by an enquiry form that says \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" The stored 11500.00 could not be reproduced, so the row is published as price unverified. Re-read 2026-10-23T20:25Z (sess-0a6df02e): the official storefront JSON still carries \"price\":1150000 ($11,500.00) and title \"Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)\", while the shopper-facing page itself shows no price. A feed value a buyer cannot see is not a quote, so the row stays price-unverified.",
+   "evidence": "Price \"11500.00\"; body \"1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank.\" Re-checked 2026-10-22: the official product page resolves and still carries the 1.50ct oval champagne diamond description in 14k recycled gold, but it no longer displays any price. The buy box has been replaced by an enquiry form that says \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" The stored 11500.00 could not be reproduced, so the row is published as price unverified. Re-read 2026-10-23T20:25Z (sess-0a6df02e): the official storefront JSON still carries \"price\":1150000 ($11,500.00) and title \"Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)\", while the shopper-facing page itself shows no price. A feed value a buyer cannot see is not a quote, so the row stays price-unverified. T47 re-read 2026-10-23T23:40Z (sess-e33f8670): PDP prints no price at all: \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" The seller's product JSON still publishes price_min/price_max 11500. The row therefore keeps showing $11,500 as unverified. T51 2026-10-24 (sess-e33f8670, second channel): the PDP prints no price at all — the buy box reads \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" The product JSON still publishes 1150000 cents, but a price a buyer cannot see is not a quote, so $11,500 stays unverified.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -880,19 +880,19 @@
    "source_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"1968.00\"; price_max \"2800.00\"; tags \"14k\", \"18k\", \"platinum\", \"engagement-ring\" Re-checked 2026-10-22 on the official storefront feed: price_min \"1968.00\", price_max \"2800.00\"; tags \"14k\", \"18k\", \"platinum\", \"engagement-ring\". HTML spec panel (re-read 2026-10-22): \"$1,968 · Rate - 14k GOLD · Weight: 2.73g · 2.25tcw · Exchange for size only. Final Sale!\". 2026-10-23 live PDP title \"2ct Oval Lab Grown Diamond Bezel Ring\" confirmed. Re-read 2026-10-23T20:25Z (sess-0a6df02e) via the official product JSON: \"price_min\":196800, \"price_max\":280000 ($1,968-$2,800 across 14k/18k/platinum variants) — stored range confirmed unchanged. Gram weight not in the feed; not re-claimed. Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): price_min 1968, price_max 2800 — range reproduced unchanged; metal-level map: 14k $1,968 · 18k $2,438 · Platinum $2,800",
+   "evidence": "Price_min \"1968.00\"; price_max \"2800.00\"; tags \"14k\", \"18k\", \"platinum\", \"engagement-ring\" Re-checked 2026-10-22 on the official storefront feed: price_min \"1968.00\", price_max \"2800.00\"; tags \"14k\", \"18k\", \"platinum\", \"engagement-ring\". HTML spec panel (re-read 2026-10-22): \"$1,968 · Rate - 14k GOLD · Weight: 2.73g · 2.25tcw · Exchange for size only. Final Sale!\". 2026-10-23 live PDP title \"2ct Oval Lab Grown Diamond Bezel Ring\" confirmed. Re-read 2026-10-23T20:25Z (sess-0a6df02e) via the official product JSON: \"price_min\":196800, \"price_max\":280000 ($1,968-$2,800 across 14k/18k/platinum variants) — stored range confirmed unchanged. Gram weight not in the feed; not re-claimed. Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): price_min 1968, price_max 2800 — range reproduced unchanged; metal-level map: 14k $1,968 · 18k $2,438 · Platinum $2,800 T47 re-read 2026-10-23T23:40Z (sess-e33f8670): Metal-grouped variant feed: \"14k\" 1968, \"18k\" 2438, \"Platinum\" 2800 — the stored upper bound $2800 is the platinum variant, not a 14K price; the 14K price is $1968.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
-    "price_varies",
-    "metal_variant_price_unmapped"
+    "price_varies"
    ],
-   "notes": "Variant-level data confirms the 14K/Yellow size-2.5 option is the 1,968.00 low end, so the 14K price is real for this model. Other sizes and 18K or platinum cost more. HTML PDP re-read recovered published \"Weight: 2.73g\" (includes 2.25 tcw diamond = 0.45 g stone) and \"Exchange for size only. Final Sale!\" notice. 2026-10-23T23:39Z (P117-67748540): the seller's own variant feed now maps every metal to a price for this SKU (14k and 18k yellow/white, plus platinum), so the stored range is confirmed to be a cross-metal range and the high end is platinum, not 14K.",
+   "notes": "Variant-level data now maps the metal: 14K is $1,968 (18K $2,438, platinum $2,800). The stored range $1,968–$2,800 is the seller's own cross-metal range and is kept as published — it is not a 14K range, and the price-basis column says so. HTML PDP re-read recovered published \"Weight: 2.73g\" (includes 2.25 tcw diamond = 0.45 g stone) and \"Exchange for size only. Final Sale!\" notice. 2026-10-23T23:39Z (P117-67748540): the seller's own variant feed now maps every metal to a price for this SKU (14k and 18k yellow/white, plus platinum), so the stored range is confirmed to be a cross-metal range and the high end is platinum, not 14K.",
    "verified_at": "2026-10-23",
    "verified_by": "sess-8dffa7e8",
    "verification_status": "confirmed",
    "reverified_at": "2026-10-23",
-   "reverified_pass": "P117-67748540"
+   "reverified_pass": "P117-67748540",
+   "third_channel_pass": "T51-e33f8670"
   },
   {
    "id": "au-1ct-emerald",
@@ -914,19 +914,19 @@
    "source_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"1498.00\"; price_max \"2100.00\"; tags \"14k\", \"18k\", \"engagement-ring\" Re-checked 2026-10-22 on the official storefront feed: price_min \"1498.00\", price_max \"2100.00\"; tags \"14k\", \"18k\". HTML spec panel (re-read 2026-10-22): \"$1,498 · Rate - 14k GOLD · Weight: 1.97g · 0.85tcw · Final Sale! Exchange for size only.\". 2026-10-23 live PDP title \"1ct Emerald Lab Grown Diamond Bezel Ring\" confirmed. Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): price_min 1498, price_max 2100 — range reproduced unchanged; metal-level map: 14k $1,498 · 18k $1,878 · Platinum $2,100",
+   "evidence": "Price_min \"1498.00\"; price_max \"2100.00\"; tags \"14k\", \"18k\", \"engagement-ring\" Re-checked 2026-10-22 on the official storefront feed: price_min \"1498.00\", price_max \"2100.00\"; tags \"14k\", \"18k\". HTML spec panel (re-read 2026-10-22): \"$1,498 · Rate - 14k GOLD · Weight: 1.97g · 0.85tcw · Final Sale! Exchange for size only.\". 2026-10-23 live PDP title \"1ct Emerald Lab Grown Diamond Bezel Ring\" confirmed. Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): price_min 1498, price_max 2100 — range reproduced unchanged; metal-level map: 14k $1,498 · 18k $1,878 · Platinum $2,100 T47 re-read 2026-10-23T23:40Z (sess-e33f8670): Metal-grouped variant feed: \"14k\" 1498, \"18k\" 1878, \"Platinum\" 2100 — the stored upper bound $2100 is the platinum variant, not a 14K price; the 14K price is $1498.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
-    "price_varies",
-    "metal_variant_price_unmapped"
+    "price_varies"
    ],
-   "notes": "The feed confirms a 14K option exists but does not map price to metal. The 1,498.00 low end is the product range, not a proven 14K price — set metal and size on the product page before buying. HTML PDP re-read recovered published \"Weight: 1.97g\" (includes 0.85 tcw diamond = 0.17 g stone) and \"Final Sale! Exchange for size only.\" notice. 2026-10-23T23:39Z (P117-67748540): the seller's own variant feed now maps every metal to a price for this SKU (14k and 18k yellow/white, plus platinum), so the stored range is confirmed to be a cross-metal range and the high end is platinum, not 14K.",
+   "notes": "Variant-level data now maps the metal: 14K is $1,498 (18K $1,878, platinum $2,100). The stored range $1,498–$2,100 is the seller's own cross-metal range and is kept as published — it is not a 14K range, and the price-basis column says so. HTML PDP re-read recovered published \"Weight: 1.97g\" (includes 0.85 tcw diamond = 0.17 g stone) and \"Final Sale! Exchange for size only.\" notice. 2026-10-23T23:39Z (P117-67748540): the seller's own variant feed now maps every metal to a price for this SKU (14k and 18k yellow/white, plus platinum), so the stored range is confirmed to be a cross-metal range and the high end is platinum, not 14K.",
    "verified_at": "2026-10-23",
    "verified_by": "sess-8dffa7e8",
    "verification_status": "confirmed",
    "reverified_at": "2026-10-23",
-   "reverified_pass": "P117-67748540"
+   "reverified_pass": "P117-67748540",
+   "third_channel_pass": "T51-e33f8670"
   },
   {
    "id": "au-3ct-round",
@@ -948,19 +948,19 @@
    "source_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Price_min \"2438.00\"; price_max \"3000.00\"; tags \"14k\", \"18k\", \"lab-grown\", \"engagement-ring\" Re-checked 2026-10-22 on the official storefront feed: price_min \"2438.00\", price_max \"3000.00\"; tags \"14k\", \"18k\", \"lab-grown\". HTML spec panel (re-read 2026-10-22): \"$2,438 · Rate - 14k GOLD · Weight: 3.3g · 2.85tcw · Exchange for size only. Final Sale!\". Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): price_min 2438, price_max 3000 — range reproduced unchanged; metal-level map: 14k $2,438 · 18k $2,858 · Platinum $3,000",
+   "evidence": "Price_min \"2438.00\"; price_max \"3000.00\"; tags \"14k\", \"18k\", \"lab-grown\", \"engagement-ring\" Re-checked 2026-10-22 on the official storefront feed: price_min \"2438.00\", price_max \"3000.00\"; tags \"14k\", \"18k\", \"lab-grown\". HTML spec panel (re-read 2026-10-22): \"$2,438 · Rate - 14k GOLD · Weight: 3.3g · 2.85tcw · Exchange for size only. Final Sale!\". Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): price_min 2438, price_max 3000 — range reproduced unchanged; metal-level map: 14k $2,438 · 18k $2,858 · Platinum $3,000 T47 re-read 2026-10-23T23:40Z (sess-e33f8670): Metal-grouped variant feed: \"14k\" 2438, \"18k\" 2858, \"Platinum\" 3000 — the stored upper bound $3000 is the platinum variant, not a 14K price; the 14K price is $2438.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
-    "price_varies",
-    "metal_variant_price_unmapped"
+    "price_varies"
    ],
-   "notes": "Same caveat as the other Aurate bezel rings: the 2,438.00 low end is the product range across metals and sizes, not a proven 14K price. HTML PDP re-read recovered published \"Weight: 3.3g\" (includes 2.85 tcw diamond = 0.57 g stone) and \"Exchange for size only. Final Sale!\" notice. 2026-10-23T23:39Z (P117-67748540): the seller's own variant feed now maps every metal to a price for this SKU (14k and 18k yellow/white, plus platinum), so the stored range is confirmed to be a cross-metal range and the high end is platinum, not 14K.",
+   "notes": "Variant-level data now maps the metal: 14K is $2,438 (18K $2,858, platinum $3,000). The stored range $2,438–$3,000 is the seller's own cross-metal range and is kept as published — it is not a 14K range, and the price-basis column says so. HTML PDP re-read recovered published \"Weight: 3.3g\" (includes 2.85 tcw diamond = 0.57 g stone) and \"Exchange for size only. Final Sale!\" notice. 2026-10-23T23:39Z (P117-67748540): the seller's own variant feed now maps every metal to a price for this SKU (14k and 18k yellow/white, plus platinum), so the stored range is confirmed to be a cross-metal range and the high end is platinum, not 14K.",
    "verified_at": "2026-10-23",
    "verified_by": "sess-8dffa7e8",
    "verification_status": "confirmed",
    "reverified_at": "2026-10-23",
-   "reverified_pass": "P117-67748540"
+   "reverified_pass": "P117-67748540",
+   "third_channel_pass": "T51-e33f8670"
   },
   {
    "id": "au-cigar",
@@ -976,26 +976,27 @@
    "price_low": 1308,
    "price_high": 1308,
    "compare_at_high": null,
-   "price_basis": "single listed price",
+   "price_basis": "variant price - 14K option (18K and vermeil in the same listing)",
    "weight_g_low": 2.6,
    "weight_g_high": 4,
    "source_url": "https://auratenewyork.com/products/modern-cigar-band",
    "source_type": "official product feed",
    "retrieved_at": "2026-10-22",
-   "evidence": "Variant \"14K / Yellow / 3\" price \"1308.00\"; body \"Weight: 2.6-4g\"; product price_min \"118.00\" belongs to the vermeil variant Re-checked 2026-10-22: the official storefront feed still publishes the product with price_min \"118.00\" (the vermeil variant) and price_max \"1668.00\"; the product page specs panel repeats \"Weight: 2.6-4g\", \"Width: 20mm\", \"Thickness: 1mm\", \"SKU: AU0429\". The stored 14K variant price of 1308.00 could not be re-read from the product-level feed on this pass. 2026-10-23 live PDP title \"Modern Cigar Band\" confirmed. Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): the stored single price 1308 matches variant \"14K / Yellow / 3\" exactly; the product-level min/max (118–1668) spans vermeil to 18K",
+   "evidence": "Variant \"14K / Yellow / 3\" price \"1308.00\"; body \"Weight: 2.6-4g\"; product price_min \"118.00\" belongs to the vermeil variant Re-checked 2026-10-22: the official storefront feed still publishes the product with price_min \"118.00\" (the vermeil variant) and price_max \"1668.00\"; the product page specs panel repeats \"Weight: 2.6-4g\", \"Width: 20mm\", \"Thickness: 1mm\", \"SKU: AU0429\". The stored 14K variant price of 1308.00 could not be re-read from the product-level feed on this pass. 2026-10-23 live PDP title \"Modern Cigar Band\" confirmed. Re-read 2026-10-23T23:39Z (P117-67748540, seller variant feed): the stored single price 1308 matches variant \"14K / Yellow / 3\" exactly; the product-level min/max (118–1668) spans vermeil to 18K T47 re-read 2026-10-23T23:40Z (sess-e33f8670): Variant feed groups by metal: \"14K\" 45 variants at $1,308, \"18K\" 45 variants at $1,668, \"Vermeil\" 36 variants at $118 — the stored $1,308 is the 14K price exactly, and the $118 belongs to a different (vermeil) metal.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
     "plated_variant_in_product",
     "weight_range_published"
    ],
-   "notes": "IMPORTANT: this product mixes vermeil (118.00), 14K and 18K in one listing. The 14K price is 1308.00. The published weight range 2.6-4 g is for the model, not your exact size.",
+   "notes": "IMPORTANT: this product mixes vermeil ($118), 14K ($1,308) and 18K ($1,668) in one listing. The stored $1,308 is proven to be the 14K price from the seller's own metal-grouped variant feed. The published weight range 2.6–4 g is for the model, not your exact size.",
    "reverified_at": "2026-10-23",
    "reverified_pass": "P117-67748540",
    "verified_at": "2026-10-23",
    "verified_by": "sess-8dffa7e8",
-   "verification_status": "partly_verified",
-   "verification_note": "Product, tags and the published 2.6-4g weight range were re-confirmed. The stored 1,308.00 belongs to the 14K/yellow/size-3 variant and was not re-readable at variant level this pass (the feed exposes only price_min 118.00 and price_max 1,668.00 for the product)."
+   "verification_status": "confirmed",
+   "verification_note": "14K price re-confirmed at variant level on 2026-10-23: the seller's feed lists 45 \"14K\" variants, all $1,308; 18K is $1,668 and the vermeil variant is $118. Product JSON still publishes the cross-metal product range 118–1668, which is why the row quotes the variant, not the range.",
+   "third_channel_pass": "T51-e33f8670"
   },
   {
    "id": "au-xring",
@@ -1481,7 +1482,7 @@
    "source_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
    "source_type": "official product page",
    "retrieved_at": "2026-10-22",
-   "evidence": "Title \"Classic Six-Prong Solitaire Ring in 18K Yellow Gold\"; price \"$1,090\"; metal \"18K Yellow Gold\"; solid-gold note \"“Metal: 18K Yellow Gold”\"; price read from the product page on 2026-10-22 Re-checked 2026-10-22: \"$1,090 (Setting Only)\"; Ring Information \"Style: BE121H6-18KY\", \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\", \"Setting: Six-Prong\". Re-checked 2026-10-23T20:24Z (sess-0a6df02e): the US PDP rendered in USD — \"$1,090 (Setting Only)\", \"Style: BE121H6-18KY\", \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\" — matching the stored values. The €1,250 Global-e rendering seen on non-US channels (F53/F58) is superseded by this direct USD read; status upgraded partly_verified -> confirmed. Re-read 2026-10-23T23:49Z (P117-67748540, second channel): printed $1,090 — verbatim \"# Classic Six-Prong Solitaire Ring in 18K Yellow Gold / $1,090(Setting Only) ... - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm\"",
+   "evidence": "Title \"Classic Six-Prong Solitaire Ring in 18K Yellow Gold\"; price \"$1,090\"; metal \"18K Yellow Gold\"; solid-gold note \"“Metal: 18K Yellow Gold”\"; price read from the product page on 2026-10-22 Re-checked 2026-10-22: \"$1,090 (Setting Only)\"; Ring Information \"Style: BE121H6-18KY\", \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\", \"Setting: Six-Prong\". Re-checked 2026-10-23T20:24Z (sess-0a6df02e): the US PDP rendered in USD — \"$1,090 (Setting Only)\", \"Style: BE121H6-18KY\", \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\" — matching the stored values. The €1,250 Global-e rendering seen on non-US channels (F53/F58) is superseded by this direct USD read; status upgraded partly_verified -> confirmed. Re-read 2026-10-23T23:49Z (P117-67748540, second channel): printed $1,090 — verbatim \"# Classic Six-Prong Solitaire Ring in 18K Yellow Gold / $1,090(Setting Only) ... - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm\" T51 2026-10-24 (sess-e33f8670, second channel): page printed \"$1,090 (Setting Only)\" with \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\" — the mixed-karat prong disclosure is why this row carries a mixed-metal note.",
    "solid_stated": false,
    "flags": [
     "weight_not_published",
@@ -1881,7 +1882,7 @@
    "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
    "source_type": "official product page",
    "retrieved_at": "2026-10-22",
-   "evidence": "Title \"Étincelle de Cartier ring, pear-shaped diamond, paved\"; Ref. B4230400; price \"$3,350\" (excl. sales tax); Product Description \"Étincelle de Cartier ring, rose gold 750/1000, set with a pear-shaped diamond available from 0.16 carats and 22 brilliant-cut diamonds totaling 0.10 carats. Width: 1.52 mm. Thickness: 1.35 mm\" Re-read 2026-10-23T23:47Z (P117-67748540, second channel): printed $3,350 — verbatim \"- Rose gold 750/1000 - Set with a pear-shaped diamond centre stone of 0.16 carats and 22 brilliant-cut diamonds totalling 0.10 carats ... $3,350\"",
+   "evidence": "Title \"Étincelle de Cartier ring, pear-shaped diamond, paved\"; Ref. B4230400; price \"$3,350\" (excl. sales tax); Product Description \"Étincelle de Cartier ring, rose gold 750/1000, set with a pear-shaped diamond available from 0.16 carats and 22 brilliant-cut diamonds totaling 0.10 carats. Width: 1.52 mm. Thickness: 1.35 mm\" Re-read 2026-10-23T23:47Z (P117-67748540, second channel): printed $3,350 — verbatim \"- Rose gold 750/1000 - Set with a pear-shaped diamond centre stone of 0.16 carats and 22 brilliant-cut diamonds totalling 0.10 carats ... $3,350\" T51 2026-10-24 (sess-e33f8670, second channel): page printed \"$3,350\", \"Rose gold 750/1000\", \"pear-shaped diamond of 0.16 carat\", \"Ref.B4230400\".",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -1914,7 +1915,7 @@
    "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
    "source_type": "official product page",
    "retrieved_at": "2026-10-22",
-   "evidence": "Title \"Étincelle de Cartier ring, emerald-cut diamond, paved\"; Ref. B4225700; price \"$3,600\" (excl. sales tax); Product Description \"Étincelle de Cartier ring, 18K white gold (750/1000), set with an emerald-cut diamond of 0.16 carats and paved with 22 brilliant-cut diamonds totaling 0.10 carats. Width: 1.52 mm. Thickness: 1.35 mm\" Second-channel re-read 2026-10-23T20:22Z (sess-0a6df02e): live US PDP prints \"18K white gold (750/1000)\", \"$3,600\", \"Ref.B4225700\" — matches stored values (page also showed an \"Unavailable online\" stock notice). Re-read 2026-10-23T23:48Z (P117-67748540, second channel): printed $3,600 — verbatim \"- 18K white gold (750/1000) - Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat ... $3,600\"",
+   "evidence": "Title \"Étincelle de Cartier ring, emerald-cut diamond, paved\"; Ref. B4225700; price \"$3,600\" (excl. sales tax); Product Description \"Étincelle de Cartier ring, 18K white gold (750/1000), set with an emerald-cut diamond of 0.16 carats and paved with 22 brilliant-cut diamonds totaling 0.10 carats. Width: 1.52 mm. Thickness: 1.35 mm\" Second-channel re-read 2026-10-23T20:22Z (sess-0a6df02e): live US PDP prints \"18K white gold (750/1000)\", \"$3,600\", \"Ref.B4225700\" — matches stored values (page also showed an \"Unavailable online\" stock notice). Re-read 2026-10-23T23:48Z (P117-67748540, second channel): printed $3,600 — verbatim \"- 18K white gold (750/1000) - Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat ... $3,600\" T51 2026-10-24 (sess-e33f8670, second channel): page printed \"$3,600\", \"White gold 750/1000\", \"emerald-cut diamond of 0.16 carat\", \"Ref.B4225700\".",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -1947,7 +1948,7 @@
    "source_url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
    "source_type": "official product page",
    "retrieved_at": "2026-10-22",
-   "evidence": "Title \"1895 wedding band, 2.6 mm width, 1 diamond\"; Ref. B4057600; price \"$1,140\" (excl. sales tax); Product Description \"1895 wedding band, width 2.6 mm, yellow gold (750/1000), set with 1 brilliant-cut diamond totaling 0.01 carats.\" Re-read 2026-10-23T23:47Z (P117-67748540, second channel): printed $1,140 — the stored URL now redirects to https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-2.6-mm-width-1-diamond-CRB4057600.html — verbatim \"# 1895 wedding band, 2.6 mm width, 1 diamond ... - Yellow gold (750/1000) - Set with a brilliant-cut diamond of 0.01 carat (for size 52) ... $1,140\"",
+   "evidence": "Title \"1895 wedding band, 2.6 mm width, 1 diamond\"; Ref. B4057600; price \"$1,140\" (excl. sales tax); Product Description \"1895 wedding band, width 2.6 mm, yellow gold (750/1000), set with 1 brilliant-cut diamond totaling 0.01 carats.\" Re-read 2026-10-23T23:47Z (P117-67748540, second channel): printed $1,140 — the stored URL now redirects to https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-2.6-mm-width-1-diamond-CRB4057600.html — verbatim \"# 1895 wedding band, 2.6 mm width, 1 diamond ... - Yellow gold (750/1000) - Set with a brilliant-cut diamond of 0.01 carat (for size 52) ... $1,140\" T51 2026-10-24 (sess-e33f8670, second channel): page printed \"$1,140\", \"Yellow gold 750/1000\", \"brilliant-cut diamond of 0.01 carat (for size 52)\", \"Ref.B4057600\".",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -1980,7 +1981,7 @@
    "source_url": "https://mene.com/products/mene-classic-band-gold",
    "source_type": "official product page",
    "retrieved_at": "2026-10-22",
-   "evidence": "Title \"Classic Band - 24k Gold\"; live 2026-10-23T20:22Z price \"$1,694 USD\" (earlier 2026-10-23 read \"$1,707 USD\"; 2026-10-22 snapshot \"$1,720\"; size-floor card \"From $1,651\"); specs \"Metal: 24k Gold · Width: 5.00 mm · Height: 2.00 mm · Crafted-on-Demand\"; Menē Terms state 24 karat pure gold with delivered gram weight printed on the Certificate of Authenticity (±1.0 g variance). Re-read 2026-10-23T23:41Z (P117-67748540, second channel): printed $1,694 — verbatim \"# Classic Band / $1,694 / USD ... [Gold 24k Gold] ... Specifications - Width: 5mm Thickness: 2mm\"",
+   "evidence": "Title \"Classic Band - 24k Gold\"; live 2026-10-23T20:22Z price \"$1,694 USD\" (earlier 2026-10-23 read \"$1,707 USD\"; 2026-10-22 snapshot \"$1,720\"; size-floor card \"From $1,651\"); specs \"Metal: 24k Gold · Width: 5.00 mm · Height: 2.00 mm · Crafted-on-Demand\"; Menē Terms state 24 karat pure gold with delivered gram weight printed on the Certificate of Authenticity (±1.0 g variance). Re-read 2026-10-23T23:41Z (P117-67748540, second channel): printed $1,694 — verbatim \"# Classic Band / $1,694 / USD ... [Gold 24k Gold] ... Specifications - Width: 5mm Thickness: 2mm\" T47 re-read 2026-10-23T23:40Z (sess-e33f8670): Page prints \"$1,694\" / \"USD\" with Metal \"24k Gold\", and the recommendation card on the same page prints \"From $1,651\" — the headline is the default-configuration price, not a floor. T51 2026-10-24 (sess-e33f8670, second channel): page printed \"$1,694\" with \"Metal Gold 24k Gold\", \"Width: 5mm Thickness: 2mm\" and \"Products are sold by weight, not size.\" The same page's cross-sell tile reads \"From $1,651\" for this band — recorded as a discrepancy a buyer will see, not smoothed over.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -2014,7 +2015,7 @@
    "source_url": "https://mene.com/products/mene-narrow-band-gold",
    "source_type": "official product page",
    "retrieved_at": "2026-10-22",
-   "evidence": "Title \"Narrow Classic Band - 24k Gold\"; live 2026-10-23T20:22Z price \"$1,350 USD\" (earlier 2026-10-23 read \"$1,361 USD\"; 2026-10-22 snapshot \"$1,372\"; size-floor card \"From $1,290\"); specs \"Metal: 24k Gold · Width: 4.00 mm · Height: 2.00 mm · Crafted-on-Demand\"; Menē Terms state exact delivered gram weight is printed on the Certificate of Authenticity (±1.0 g variance). Re-read 2026-10-23T23:42Z (P117-67748540, second channel): printed $1,350 — verbatim \"# Narrow Classic Band / $1,350 / USD ... Specifications - Width: 4mm Thickness: 2mm\"",
+   "evidence": "Title \"Narrow Classic Band - 24k Gold\"; live 2026-10-23T20:22Z price \"$1,350 USD\" (earlier 2026-10-23 read \"$1,361 USD\"; 2026-10-22 snapshot \"$1,372\"; size-floor card \"From $1,290\"); specs \"Metal: 24k Gold · Width: 4.00 mm · Height: 2.00 mm · Crafted-on-Demand\"; Menē Terms state exact delivered gram weight is printed on the Certificate of Authenticity (±1.0 g variance). Re-read 2026-10-23T23:42Z (P117-67748540, second channel): printed $1,350 — verbatim \"# Narrow Classic Band / $1,350 / USD ... Specifications - Width: 4mm Thickness: 2mm\" T47 re-read 2026-10-23T23:40Z (sess-e33f8670): Page prints \"$1,350\" / \"USD\" with Metal \"24k Gold\", and the recommendation card on the same page prints \"From $1,290\" — the headline is the default-configuration price, not a floor. T51 2026-10-24 (sess-e33f8670, second channel): page printed \"$1,350\" with \"Width: 4mm Thickness: 2mm\" and \"Products are sold by weight, not size.\"",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
@@ -2048,7 +2049,7 @@
    "source_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
    "source_type": "official product page",
    "retrieved_at": "2026-10-23",
-   "evidence": "Title \"V Neck Stack Ring Small / Polished\"; price \"$900\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Finish: Polished · Approximate Fine Weight: 2.9 to 3.7 grams depending on size\". Partial re-read 2026-10-23T20:24Z (sess-0a6df02e): PDP Details still print \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" and \"Free returns and exchange within 15 days in the USA\"; the price block was not present in the fetched page text, so the $900 price was NOT re-read this pass and keeps its earlier 2026-10-23 verification. Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $900 — stored value reproduced unchanged; verbatim \"Arignote Collection V Neck Stack Ring Small / Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offer two ways\".",
+   "evidence": "Title \"V Neck Stack Ring Small / Polished\"; price \"$900\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Finish: Polished · Approximate Fine Weight: 2.9 to 3.7 grams depending on size\". Partial re-read 2026-10-23T20:24Z (sess-0a6df02e): PDP Details still print \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" and \"Free returns and exchange within 15 days in the USA\"; the price block was not present in the fetched page text, so the $900 price was NOT re-read this pass and keeps its earlier 2026-10-23 verification. Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $900 — stored value reproduced unchanged; verbatim \"Arignote Collection V Neck Stack Ring Small / Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offer two ways\". T47 re-read 2026-10-23T23:40Z (sess-e33f8670): PDP opened: the fetched text carries \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\" and \"Free returns and exchange within 15 days in the USA\", but no product price (client-side price block). The stored $900 was NOT re-read and no number was substituted. T51 2026-10-24 (sess-e33f8670, second channel): no price anywhere in the rendered page text on two reads. Details confirmed: \"V opening 25/64\\\" (10 mm)\", \"V height 25/64\\\" (10 mm)\", \"thickness 1/16\\\" (2 mm)\", \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\", \"Return within 15 days\". Stored $900 keeps its earlier dated read and is not re-claimed today.",
    "solid_stated": true,
    "flags": [
     "weight_not_published",
@@ -2081,7 +2082,7 @@
    "source_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
    "source_type": "official product page",
    "retrieved_at": "2026-10-23",
-   "evidence": "Title \"Hexagon Diamond Stack Ring\"; price \"$1,400\" across sizes 5-9; Details \"Handcrafted in 22 karat gold with a polished finish · Our pieces are solid gold · Six round-cut diamonds · Diamond Carat Weight: 0.20 carats · Diamond Color | Clarity: G|VS · Ring Width: Approximately 4 mm · Approximate Fine Weight: 3.3 to 3.5 grams depending on size\". Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $1,400 — stored value reproduced unchanged; verbatim \"Checkout Arignote Collection Hexagon Diamond Stack Ring 22 karat gold $1,400 Select size ring size 5 6 7 8 9 Other Ring Sizing We offer two ways f\".",
+   "evidence": "Title \"Hexagon Diamond Stack Ring\"; price \"$1,400\" across sizes 5-9; Details \"Handcrafted in 22 karat gold with a polished finish · Our pieces are solid gold · Six round-cut diamonds · Diamond Carat Weight: 0.20 carats · Diamond Color | Clarity: G|VS · Ring Width: Approximately 4 mm · Approximate Fine Weight: 3.3 to 3.5 grams depending on size\". Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $1,400 — stored value reproduced unchanged; verbatim \"Checkout Arignote Collection Hexagon Diamond Stack Ring 22 karat gold $1,400 Select size ring size 5 6 7 8 9 Other Ring Sizing We offer two ways f\". T47 re-read 2026-10-23T23:40Z (sess-e33f8670): PDP opened: the fetched text carried the shipping/returns policy blocks and no product price. The stored $1,400 was NOT re-read and no number was substituted. T51 2026-10-24 (sess-e33f8670, second channel): page returned the store's shipping and returns policy blocks with no product price. Stored $1,400 keeps its earlier dated read.",
    "solid_stated": true,
    "flags": [
     "weight_not_published",
@@ -2114,7 +2115,7 @@
    "source_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
    "source_type": "official product page",
    "retrieved_at": "2026-10-23",
-   "evidence": "Title \"Diamond Bridge Ring Tall\"; price \"$1,600\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Set with four conflict-free, natural diamonds · Diamond Carat Weight: 0.07 carats · Diamond Color | Clarity: G|VS · Ring Height: 20 mm · Polished finish · Approximate Fine Weight: 5 to 6.1 grams depending on size\". Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $1,600 — stored value reproduced unchanged; verbatim \"g Checkout Arignote Collection Diamond Bridge Ring Tall 22 karat gold $1,600 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offer two ways\".",
+   "evidence": "Title \"Diamond Bridge Ring Tall\"; price \"$1,600\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Set with four conflict-free, natural diamonds · Diamond Carat Weight: 0.07 carats · Diamond Color | Clarity: G|VS · Ring Height: 20 mm · Polished finish · Approximate Fine Weight: 5 to 6.1 grams depending on size\". Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $1,600 — stored value reproduced unchanged; verbatim \"g Checkout Arignote Collection Diamond Bridge Ring Tall 22 karat gold $1,600 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offer two ways\". T51 2026-10-24 (sess-e33f8670, second channel): page returned policy copy with no product price. Stored $1,600 keeps its earlier dated read.",
    "solid_stated": true,
    "flags": [
     "weight_not_published",
@@ -2147,7 +2148,7 @@
    "source_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
    "source_type": "official product page",
    "retrieved_at": "2026-10-23",
-   "evidence": "Title \"Clean Cut Stack Ring Polished\"; Rings index price \"From $900\" across sizes 4-10; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Polished finish · Approximate Fine Weight: 2.8 to 3.7 grams depending on size\". Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $900 — stored value reproduced unchanged; verbatim \"ckout Arignote Collection Clean Cut Stack Ring Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 10 Other Ring Sizing We offer two w\".",
+   "evidence": "Title \"Clean Cut Stack Ring Polished\"; Rings index price \"From $900\" across sizes 4-10; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Polished finish · Approximate Fine Weight: 2.8 to 3.7 grams depending on size\". Re-read 2026-10-23T23:39Z (P117-67748540, official page, HTTP 200): printed $900 — stored value reproduced unchanged; verbatim \"ckout Arignote Collection Clean Cut Stack Ring Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 10 Other Ring Sizing We offer two w\". T51 2026-10-24 (sess-e33f8670, second channel): page returned policy copy with no product price. Stored $900 keeps its earlier dated read.",
    "solid_stated": true,
    "flags": [
     "weight_not_published",
@@ -2328,13 +2329,13 @@
    "id": "car-18k-destinee-princess",
    "retailer_id": "cartier",
    "retailer": "Cartier",
-   "title": "Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold",
+   "title": "Étincelle de Cartier Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold (ref. B4232900)",
    "category": "solitaire",
    "style": "Pavé diamond solitaire",
    "karat": "18K",
    "metal": "Yellow gold",
    "stone": "Diamond",
-   "stone_type": "Natural princess-cut center diamond (0.18–0.34 ct) + brilliant-cut pavé diamonds",
+   "stone_type": "Natural princess-cut centre diamond (0.16 ct for size 52, per the live page) + brilliant-cut pavé diamonds",
    "price_low": 3350,
    "price_high": 3350,
    "compare_at_high": 3350,
@@ -2344,20 +2345,22 @@
    "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
    "source_type": "official product page",
    "retrieved_at": "2026-10-23",
-   "evidence": "Title \"Cartier Destinée Solitaire Ring\"; Ref. CRB4232900; starting price \"$3,350\" (excl. sales tax); Product Description \"Solitaire Cartier Destinée, yellow gold (750/1000), set with a princess-cut diamond available from 0.18 to 0.34 carats and paved with brilliant-cut diamonds.\" Re-read 2026-10-23T23:48Z (P117-67748540, second channel): printed $3,350 — the stored URL now redirects to https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html — verbatim \"# Etincelle de Cartier ring, princess-cut diamond, paved ... - Yellow gold 750/1000 - Set with a princess-cut diamond centre stone of 0.16 carats ... $3,350 ... Ref.B4232900\"",
+   "evidence": "Title \"Cartier Destinée Solitaire Ring\"; Ref. CRB4232900; starting price \"$3,350\" (excl. sales tax); Product Description \"Solitaire Cartier Destinée, yellow gold (750/1000), set with a princess-cut diamond available from 0.18 to 0.34 carats and paved with brilliant-cut diamonds.\" Re-read 2026-10-23T23:48Z (P117-67748540, second channel): printed $3,350 — the stored URL now redirects to https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html — verbatim \"# Etincelle de Cartier ring, princess-cut diamond, paved ... - Yellow gold 750/1000 - Set with a princess-cut diamond centre stone of 0.16 carats ... $3,350 ... Ref.B4232900\" T47 re-read 2026-10-23T23:40Z (sess-e33f8670) (independent third read, same finding as F68): The stored Destinée URL redirected to /etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html, headed \"Etincelle de Cartier ring, princess-cut diamond, paved\", \"Yellow gold 750/1000\", \"$3,350\", \"Ref.B4232900\". The Destinée name and the \"available from 0.18 to 0.34 carats\" description are no longer served on that URL. T51 2026-10-24 (sess-e33f8670, second channel): the stored Destinée URL redirects to /etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html, headed \"Etincelle de Cartier ring, princess-cut diamond, paved\" with \"princess-cut diamond centre stone of 0.16 carats\", \"$3,350\", \"Ref.B4232900\" and \"Unavailable online\". The 0.18-0.34 ct sentence is no longer served.",
    "solid_stated": false,
    "flags": [
     "solid_not_stated",
     "weight_not_published",
     "starting_price",
-    "hallmark_not_published"
+    "hallmark_not_published",
+    "source_renamed"
    ],
-   "notes": "Verified Cartier 18K yellow gold (750/1000) solitaire ring (converts research lead R12). Starting price $3,350 applies to the entry 0.18 ct center tier; gram weight is unpublished online. Keep Maison security tag, box, and GIA certificate untouched during the 30-day delivery return window. 2026-10-23T23:48Z (P117-67748540): the seller now serves reference B4232900 under the \"Etincelle de Cartier\" collection — the stored Destinée URL redirects and the page no longer prints \"Destinée\". Price reproduced unchanged at $3,350; published as F68 rather than silently retitled.",
+   "notes": "Cartier serves reference B4232900 under the Étincelle name as of 2026-10-23; the earlier \"Destinée\" title and its 0.18-0.34 ct stone description are no longer served on that URL and were replaced, not deleted (F68). T52 re-read 2026-10-24: $3,350, reference B4232900 and yellow gold 750/1000 re-confirmed; the page also prints \"Unavailable online\" with a \"Request Price\" / \"Contact an ambassador\" route, so the price is published but this reference cannot be added to a bag online - expect to order by phone or in boutique. Width 1.52 mm, thickness 1.35 mm (size 52). Gram weight is not published.",
    "reverified_at": "2026-10-23",
    "reverified_pass": "P117-67748540",
    "verified_at": "2026-10-23",
    "verified_by": "sess-545688f3",
-   "verification_status": "confirmed"
+   "verification_status": "confirmed",
+   "third_channel_pass": "T51-e33f8670"
   },
   {
    "id": "bn-14k-petite-195639",

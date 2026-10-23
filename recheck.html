@@ -41,8 +41,83 @@
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10 + E01–E09</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
 </div>
+  
+<section class="wrap section">
+  <h2>Third independent channel — every URL re-opened at 23:47–23:48Z</h2>
+  <p>A third session opened all <strong>71</strong> official URLs in the same hour on its own retrieval channel, independently of the two passes recorded above. This panel is generated from that ledger alone, so the numbers here cannot drift from the evidence file.</p>
+  <div class="stat-grid">
+    
+<div class="stat">
+  <div class="stat-value">71/71</div>
+  <div class="stat-label">official pages opened</div>
+  <div class="stat-note">by one channel or the other tonight</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">66</div>
+  <div class="stat-label">prices reproduced from the seller</div>
+  <div class="stat-note">the seller's own page, feed or a verbatim read printed the stored figure</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">5</div>
+  <div class="stat-label">prices not reproduced</div>
+  <div class="stat-note">left as captured, marked — never replaced by a guess</div>
+</div>
+    
+<div class="stat">
+  <div class="stat-value">0</div>
+  <div class="stat-label">pages no channel could read</div>
+  <div class="stat-note">none tonight</div>
+</div>
+  </div>
+  <p class="sub">The 5 rows that could not be reproduced today are listed here rather than buried:</p>
+  <div class="table-scroll">
+  <table class="data">
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Verdict</th><th scope="col">Why</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>as-bea-sol</strong></td>
+      <td class="small">Anna Sheffield</td>
+      <td><span class="chip warn">no price on the page</span></td>
+      <td class="small">The seller&#39;s product JSON still publishes 11500, but a buyer cannot see or pay it. The row keeps $11,500 marked unverified.</td>
+      <td class="small"><a class="src" href="" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-vneck-sm</strong></td>
+      <td class="small">Auvere</td>
+      <td><span class="chip warn">not reproduced today</span></td>
+      <td class="small">Stored $900 keeps its earlier dated read; this channel did not see a price today, and no number was invented.</td>
+      <td class="small"><a class="src" href="" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-hexagon-diamond</strong></td>
+      <td class="small">Auvere</td>
+      <td><span class="chip warn">not reproduced today</span></td>
+      <td class="small">Stored $1,400 keeps its earlier dated read.</td>
+      <td class="small"><a class="src" href="" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-diamond-bridge-tall</strong></td>
+      <td class="small">Auvere</td>
+      <td><span class="chip warn">not reproduced today</span></td>
+      <td class="small">Stored $1,600 keeps its earlier dated read.</td>
+      <td class="small"><a class="src" href="" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    <tr>
+      <td><strong>auv-22k-clean-cut-polished</strong></td>
+      <td class="small">Auvere</td>
+      <td><span class="chip warn">not reproduced today</span></td>
+      <td class="small">Stored $900 keeps its earlier dated read.</td>
+      <td class="small"><a class="src" href="" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">Per-row ledger with the verdict and the quote behind it: <code>data/verification-2026-10-23-e33f8670.json</code> · independent page reads: <code>data/session-e33f8670/manual-reads-2026-10-23.json</code>. Counts and rows are read out of that ledger at build time, never typed.</p>
+</section>
 
   <div class="stat-grid">
     

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T23:46:44.194Z",
+  "generated_at": "2026-10-23T23:58:05.772Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -15,10 +15,10 @@
   },
   "summary": {
     "groups": 10,
-    "passed": 2,
-    "failed": 8,
-    "assertions": 1846,
-    "findings": 156
+    "passed": 4,
+    "failed": 6,
+    "assertions": 1849,
+    "findings": 152
   },
   "groups": [
     {
@@ -48,8 +48,8 @@
     {
       "id": "R05",
       "name": "Checklist summary matches canonical spot and active/withdrawn counts",
-      "passed": false,
-      "failure_count": 3
+      "passed": true,
+      "failure_count": 0
     },
     {
       "id": "R06",
@@ -78,8 +78,8 @@
     {
       "id": "R10",
       "name": "Source registry and audit-reference integrity",
-      "passed": false,
-      "failure_count": 1
+      "passed": true,
+      "failure_count": 0
     }
   ],
   "findings": [
@@ -1481,42 +1481,6 @@
       "sources": []
     },
     {
-      "id": "R05-01",
-      "group": "R05",
-      "irregularity_id": "IMPOSSIBLE_WEIGHT_COUNT",
-      "severity": "high",
-      "message": "Weight summary must say 25 total = 24 active + 1 withdrawn",
-      "row": null,
-      "path": "data/checklist.json",
-      "sources": [
-        "data/rings.json"
-      ]
-    },
-    {
-      "id": "R05-02",
-      "group": "R05",
-      "irregularity_id": "STALE_CHECKLIST_SPOT_TIMESTAMP",
-      "severity": "high",
-      "message": "Checklist spot timestamp is stale relative to data/gold-price.json",
-      "row": null,
-      "path": "data/checklist.json",
-      "sources": [
-        "https://api.gold-api.com/price/XAU"
-      ]
-    },
-    {
-      "id": "R05-03",
-      "group": "R05",
-      "irregularity_id": "STALE_CHECKLIST_SPOT_PRICE",
-      "severity": "high",
-      "message": "Checklist spot prose does not contain current $3,996.90/ozt",
-      "row": null,
-      "path": "data/checklist.json",
-      "sources": [
-        "https://api.gold-api.com/price/XAU"
-      ]
-    },
-    {
       "id": "R06-01",
       "group": "R06",
       "irregularity_id": "README_WRONG_FINDING_LINK",
@@ -1921,18 +1885,6 @@
       "row": null,
       "path": "data/flagged.json",
       "sources": []
-    },
-    {
-      "id": "R10-01",
-      "group": "R10",
-      "irregularity_id": "UNIT_FALLBACK_MISMATCH",
-      "severity": "high",
-      "message": "Verifier can fall back to grains per troy ounce as though it were grams; require the NIST gram conversion instead",
-      "row": null,
-      "path": "scripts/verify.mjs",
-      "sources": [
-        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
-      ]
     }
   ],
   "required_response": "Review every finding against the linked official/repository source. Do not fill an unconfirmed value; blank it or preserve it only as clearly labelled historical evidence. Re-run this audit and all canonical/security suites after every correction."

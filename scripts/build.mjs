@@ -55,6 +55,9 @@ const nightRunnerFinished = nightLedger?.runner_finished_at ?? null;
 const nightHandRead = nightLedger?.hand_read_resolved ?? 0;
 const nightTotalConfirmed = nightConfirmed === null ? null : nightConfirmed + nightHandRead;
 const eveningAudit = await readOptional('data/session-dab93754/audit.json');
+// Third independent channel (T52, sess-e33f8670): all 71 URLs re-opened at
+// 23:49Z by the runner and the 10 runner-403 pages by a second channel.
+const eleventh = await readOptional('data/verification-2026-10-23-e33f8670.json');
 const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
 const readCounts = {
   automated: liveCheck.rows.filter((r) => String(r.read).startsWith('live')).length,
@@ -66,7 +69,13 @@ const readCounts = {
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const spot = gold.primary.price_usd_per_ozt;
-const GRAMS_PER_OZT = gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce;
+// Hard requirement: the site's melt arithmetic is grams-based. A fallback to
+// "grains_per_troy_ounce" (a legacy misnomer for 31.1034768, but 480 in real
+// grains) would change every number on the site, so it is not allowed.
+if (gold.grams_per_troy_ounce == null) {
+  throw new Error('gold-price.json is missing grams_per_troy_ounce; refusing to build melt figures without the NIST gram conversion');
+}
+const GRAMS_PER_OZT = gold.grams_per_troy_ounce;
 const spotPerGram = spot / GRAMS_PER_OZT;
 
 export const CATEGORIES = [
@@ -285,7 +294,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10 + E01–E09</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -1403,6 +1412,52 @@ const VERDICT_LABEL = {
 
 const blockedRows = liveCheck.rows.filter((r) => r.http_status === 403);
 const fullyBlocked = liveCheck.rows.filter((r) => r.price_verdict === 'not_read');
+
+/* --------- third independent channel (T52): tonight's cross-channel re-read */
+const ELEVENTH_CHIP = {
+  confirmed_feed_range: ['confirmed — seller feed', 'ok'],
+  confirmed_jsonld: ['confirmed — page offer', 'ok'],
+  confirmed_low_end: ['confirmed — 14K entry price', 'ok'],
+  confirmed_manual_read: ['confirmed — second channel', 'ok'],
+  not_reproducible_this_pass: ['not reproduced today', 'warn'],
+  pdp_shows_no_price: ['no price on the page', 'warn'],
+};
+const eleventhPanel = eleventh
+  ? `
+<section class="wrap section">
+  <h2>Third independent channel — every URL re-opened at ${esc((eleventh.evidence_started_at || '2026-10-23T23:49Z').slice(11, 16))}–${esc((eleventh.evidence_finished_at || '').slice(11, 16))}Z</h2>
+  <p>A third session opened all <strong>${eleventh.row_count}</strong> official URLs in the same hour on its own retrieval channel, independently of the two passes recorded above. This panel is generated from that ledger alone, so the numbers here cannot drift from the evidence file.</p>
+  <div class="stat-grid">
+    ${stat(`${eleventh.coverage.pages_opened_today}/${eleventh.row_count}`, 'official pages opened', 'by one channel or the other tonight')}
+    ${stat(`${eleventh.coverage.prices_reproduced_today}`, 'prices reproduced from the seller', "the seller's own page, feed or a verbatim read printed the stored figure")}
+    ${stat(`${eleventh.coverage.prices_not_reproduced}`, 'prices not reproduced', 'left as captured, marked — never replaced by a guess')}
+    ${stat(`${eleventh.coverage.fetch_failed_both_channels}`, 'pages no channel could read', 'none tonight')}
+  </div>
+  <p class="sub">The ${eleventh.coverage.prices_not_reproduced} rows that could not be reproduced today are listed here rather than buried:</p>
+  <div class="table-scroll">
+  <table class="data">
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Verdict</th><th scope="col">Why</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    ${eleventh.rows
+      .filter((r) => !r.price_reproduced)
+      .map((r) => {
+        const chip = ELEVENTH_CHIP[r.verdict] || [r.verdict, 'warn'];
+        return `<tr>
+      <td><strong>${esc(r.id)}</strong></td>
+      <td class="small">${esc(r.retailer || '')}</td>
+      <td><span class="chip ${chip[1]}">${esc(chip[0])}</span></td>
+      <td class="small">${esc(r.detail || '')}</td>
+      <td class="small"><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>`;
+      })
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">Per-row ledger with the verdict and the quote behind it: <code>data/verification-2026-10-23-e33f8670.json</code> · independent page reads: <code>data/session-e33f8670/manual-reads-2026-10-23.json</code>. Counts and rows are read out of that ledger at build time, never typed.</p>
+</section>`
+  : '';
+
 const recheckPage = layout({
   title: 'Re-check — 2026-10-23',
   description:
@@ -1414,6 +1469,7 @@ const recheckPage = layout({
   <h1>Re-check — 2026-10-23</h1>
   <p class="lede">Every listing (${totalRows} total) was opened at its own official product URL on 2026-10-23: ${readCounts.automated} retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner, ${readCounts.manual} read by hand, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread in that ledger; the 1 Brilliant Earth setting that then rendered localized EUR pricing via Global-e was confirmed in USD in the ninth pass — see <a href="flagged.html">F53</a>).</p>
   ${noHallucinationBanner()}
+  ${eleventhPanel}
 
   <div class="stat-grid">
     ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}

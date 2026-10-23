@@ -1,0 +1,2257 @@
+{
+ "as_of": "2026-10-23",
+ "pass": "T51-e33f8670",
+ "evidence_file": "data/live/2026-10-23T23-48-01Z.json",
+ "evidence_started_at": "2026-10-23T23:47:22Z",
+ "evidence_finished_at": "2026-10-23T23:48:01Z",
+ "gold": {
+  "label": "Gold spot, USD per troy ounce",
+  "price_usd_per_ozt": 3996.899902,
+  "publisher": "gold-api.com",
+  "publisher_timestamp": "2026-10-23T23:38:16Z",
+  "source_url": "https://api.gold-api.com/price/XAU",
+  "observed_by": "sess-356f1adf",
+  "observed_at": "2026-10-23T23:38:20Z",
+  "corroboration": "Independently corroborated by sess-67748540: this session's own retrieval channel read the same feed at 2026-10-23T23:38:16Z and got the identical value 3996.899902 USD/ozt, and the GitHub Actions live-re-read runner sampled it again at 2026-10-23T23:39:15Z (run 40040847705) — also 3996.899902 USD/ozt. Three reads, two network paths, one unchanged number. A fourth read by the GitHub Actions runner at 2026-10-23T23:49:47Z (run 40041808412) returned the same 3996.899902 USD/ozt, and this session re-read the feed again at 2026-10-24T00:20:52Z with the publisher timestamp still 2026-10-23T23:38:16Z — the publisher simply had not ticked. Four reads, two network paths, one unchanged number."
+ },
+ "row_count": 71,
+ "coverage": {
+  "pages_opened_today": 71,
+  "runner_read": 61,
+  "runner_forbidden": 10,
+  "second_channel_read": 17,
+  "prices_reproduced_today": 66,
+  "prices_not_reproduced": 5,
+  "fetch_failed_both_channels": 0
+ },
+ "tally": {
+  "confirmed_feed_range": 27,
+  "confirmed_manual_read": 12,
+  "pdp_shows_no_price": 1,
+  "confirmed_low_end": 10,
+  "confirmed_jsonld": 17,
+  "not_reproducible_this_pass": 4
+ },
+ "rows": [
+  {
+   "id": "rs-571221",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 400,
+   "stored_price_high": 400,
+   "observed_jsonld": [
+    400
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 5.5": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 6.5": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 7.5": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 8.5": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 400,
+     "max": 400,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $400 / price_max $400"
+  },
+  {
+   "id": "rs-571222",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 599,
+   "stored_price_high": 599,
+   "observed_jsonld": [
+    599
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 5.5": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 6.5": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 7.5": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 8.5": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 599,
+     "max": 599,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $599 / price_max $599"
+  },
+  {
+   "id": "rs-571223",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 799,
+   "stored_price_high": 849,
+   "observed_jsonld": [
+    799,
+    849
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 849,
+     "max": 849,
+     "n": 1
+    },
+    "Size 5.5": {
+     "min": 799,
+     "max": 799,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 849,
+     "max": 849,
+     "n": 1
+    },
+    "Size 6.5": {
+     "min": 799,
+     "max": 799,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 849,
+     "max": 849,
+     "n": 1
+    },
+    "Size 7.5": {
+     "min": 799,
+     "max": 799,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 849,
+     "max": 849,
+     "n": 1
+    },
+    "Size 8.5": {
+     "min": 799,
+     "max": 799,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 849,
+     "max": 849,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $799 / price_max $849"
+  },
+  {
+   "id": "rs-571213",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 959,
+   "stored_price_high": 959,
+   "observed_jsonld": [
+    959
+   ],
+   "observed_variant_groups": {
+    "Size 8": {
+     "min": 959,
+     "max": 959,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 959,
+     "max": 959,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 959,
+     "max": 959,
+     "n": 1
+    },
+    "Size 11": {
+     "min": 959,
+     "max": 959,
+     "n": 1
+    },
+    "Size 12": {
+     "min": 959,
+     "max": 959,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $959 / price_max $959"
+  },
+  {
+   "id": "rs-981367",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 149,
+   "stored_price_high": 149,
+   "observed_jsonld": [
+    149
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 149,
+     "max": 149,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 149,
+     "max": 149,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 149,
+     "max": 149,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 149,
+     "max": 149,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 149,
+     "max": 149,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 149,
+     "max": 149,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $149 / price_max $149"
+  },
+  {
+   "id": "rs-907250",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 179,
+   "stored_price_high": 179,
+   "observed_jsonld": [
+    179
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 179,
+     "max": 179,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 179,
+     "max": 179,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 179,
+     "max": 179,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 179,
+     "max": 179,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 179,
+     "max": 179,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 179,
+     "max": 179,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $179 / price_max $179"
+  },
+  {
+   "id": "rs-960952",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 399,
+   "stored_price_high": 399,
+   "observed_jsonld": [
+    399
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 399,
+     "max": 399,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 399,
+     "max": 399,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 399,
+     "max": 399,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 399,
+     "max": 399,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 399,
+     "max": 399,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 399,
+     "max": 399,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $399 / price_max $399"
+  },
+  {
+   "id": "rs-879968",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 2695,
+   "stored_price_high": 2695,
+   "observed_jsonld": [
+    2695
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 2695,
+     "max": 2695,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 2695,
+     "max": 2695,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 2695,
+     "max": 2695,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 2695,
+     "max": 2695,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 2695,
+     "max": 2695,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $2,695 / price_max $2,695"
+  },
+  {
+   "id": "rs-999230",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 489,
+   "stored_price_high": 559,
+   "observed_jsonld": [
+    489,
+    559
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 489,
+     "max": 489,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 559,
+     "max": 559,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 559,
+     "max": 559,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 489,
+     "max": 489,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 489,
+     "max": 489,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $489 / price_max $559"
+  },
+  {
+   "id": "rs-991907",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 2795,
+   "stored_price_high": 2795,
+   "observed_jsonld": [
+    2795
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $2,795 / price_max $2,795"
+  },
+  {
+   "id": "rs-993512",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 2795,
+   "stored_price_high": 2795,
+   "observed_jsonld": [
+    2795
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 2795,
+     "max": 2795,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $2,795 / price_max $2,795"
+  },
+  {
+   "id": "rs-991908",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 1795,
+   "stored_price_high": 1795,
+   "observed_jsonld": [
+    1795
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 1795,
+     "max": 1795,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 1795,
+     "max": 1795,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 1795,
+     "max": 1795,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 1795,
+     "max": 1795,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 1795,
+     "max": 1795,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $1,795 / price_max $1,795"
+  },
+  {
+   "id": "rs-864785",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 2395,
+   "stored_price_high": 2395,
+   "observed_jsonld": [
+    2395
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 5.5": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 6.5": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 7.5": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 8.5": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 2395,
+     "max": 2395,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $2,395 / price_max $2,395"
+  },
+  {
+   "id": "rs-943668",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 1269,
+   "stored_price_high": 1439,
+   "observed_jsonld": [
+    1269,
+    1439
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 1439,
+     "max": 1439,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 1439,
+     "max": 1439,
+     "n": 1
+    },
+    "Size 6.5": {
+     "min": 1439,
+     "max": 1439,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 1269,
+     "max": 1269,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 1269,
+     "max": 1269,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 1269,
+     "max": 1269,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $1,269 / price_max $1,439"
+  },
+  {
+   "id": "rs-242556",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 2195,
+   "stored_price_high": 2195,
+   "observed_jsonld": [
+    2195
+   ],
+   "observed_variant_groups": {
+    "Size 6.5": {
+     "min": 2195,
+     "max": 2195,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $2,195 / price_max $2,195"
+  },
+  {
+   "id": "rs-254575",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 695,
+   "stored_price_high": 695,
+   "observed_jsonld": [
+    695
+   ],
+   "observed_variant_groups": {
+    "Size 7.5": {
+     "min": 695,
+     "max": 695,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $695 / price_max $695"
+  },
+  {
+   "id": "rs-240912",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 8995,
+   "stored_price_high": 8995,
+   "observed_jsonld": [
+    8995
+   ],
+   "observed_variant_groups": {
+    "Size 7": {
+     "min": 8995,
+     "max": 8995,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $8,995 / price_max $8,995"
+  },
+  {
+   "id": "wc-tulip",
+   "retailer": "With Clarity",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 590,
+   "stored_price_high": 1110,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:16Z",
+    "verdict": "confirmed",
+    "price_low": 590,
+    "price_high": 1110,
+    "verbatim": "\"price\":59000,\"price_min\":59000,\"price_max\":111000,\"available\":true ... {\"title\":\"14KT White Gold / Round\",\"price\":59000 ... }",
+    "note": "Cents. Setting only.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $590 — \"price\":59000,\"price_min\":59000,\"price_max\":111000,\"available\":true ... {\"title\":\"14KT White Gold / Round\",\"price\":59000 ... }"
+  },
+  {
+   "id": "wc-4prong",
+   "retailer": "With Clarity",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 558,
+   "stored_price_high": 801,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:12Z",
+    "verdict": "confirmed",
+    "price_low": 558,
+    "price_high": 801,
+    "verbatim": "\"price\":55800,\"price_min\":55800,\"price_max\":80100,\"available\":true ... \"compare_at_price\":62000 ... {\"title\":\"1.9 / 14KT White Gold / Round\",\"price\":55800 ... }",
+    "note": "Shopify feed prints cents; divided by 100 for dollars. All variants tagged \"Ring Setting Product\" — setting only, centre diamond priced separately.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $558 — \"price\":55800,\"price_min\":55800,\"price_max\":80100,\"available\":true ... \"compare_at_price\":62000 ... {\"title\":\"1.9 / 14KT White Gold / Round\""
+  },
+  {
+   "id": "wc-4prong-petite",
+   "retailer": "With Clarity",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 558,
+   "stored_price_high": 963,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:52Z",
+    "verdict": "confirmed",
+    "price_low": 558,
+    "price_high": 963,
+    "verbatim": "\"price\":55800,\"price_min\":55800,\"price_max\":96300 ... {\"title\":\"1.8 / 14KT White Gold / Round\",\"price\":55800 ... }",
+    "note": "Cents. Setting only.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $558 — \"price\":55800,\"price_min\":55800,\"price_max\":96300 ... {\"title\":\"1.8 / 14KT White Gold / Round\",\"price\":55800 ... }"
+  },
+  {
+   "id": "wc-6prong",
+   "retailer": "With Clarity",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 567,
+   "stored_price_high": 828,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:53Z",
+    "verdict": "confirmed",
+    "price_low": 567,
+    "price_high": 828,
+    "verbatim": "\"price\":56700,\"price_min\":56700,\"price_max\":82800 ... {\"title\":\"1.9 / 14KT White Gold / Round\",\"price\":56700 ... }",
+    "note": "Cents. Setting only.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $567 — \"price\":56700,\"price_min\":56700,\"price_max\":82800 ... {\"title\":\"1.9 / 14KT White Gold / Round\",\"price\":56700 ... }"
+  },
+  {
+   "id": "wc-gerbera",
+   "retailer": "With Clarity",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 1210,
+   "stored_price_high": 1850,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:54Z",
+    "verdict": "confirmed",
+    "price_low": 1210,
+    "price_high": 1850,
+    "verbatim": "\"price\":121000,\"price_min\":121000,\"price_max\":185000 ... {\"title\":\"14KT White Gold / Round\",\"price\":121000 ... }",
+    "note": "Cents. Setting only.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $1,210 — \"price\":121000,\"price_min\":121000,\"price_max\":185000 ... {\"title\":\"14KT White Gold / Round\",\"price\":121000 ... }"
+  },
+  {
+   "id": "as-bea-sol",
+   "retailer": "Anna Sheffield",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "pdp_shows_no_price",
+   "price_reproduced": false,
+   "stored_price_low": 11500,
+   "stored_price_high": 11500,
+   "observed_jsonld": [
+    11500
+   ],
+   "observed_variant_groups": {
+    "Yellow Gold": {
+     "min": 11500,
+     "max": 11500,
+     "n": 29
+    },
+    "Rose Gold": {
+     "min": 11500,
+     "max": 11500,
+     "n": 29
+    }
+   },
+   "manual_read": {
+    "read_at": "2026-10-24T00:30Z",
+    "verdict": "pdp_shows_no_price",
+    "price_low": null,
+    "price_high": null,
+    "verbatim": "Title \"Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)\"; no price in the buy box, which instead reads \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" with a name/email/budget form.",
+    "note": "The seller's product JSON still publishes 11500, but a buyer cannot see or pay it. The row keeps $11,500 marked unverified.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "The seller's product JSON still publishes 11500, but a buyer cannot see or pay it. The row keeps $11,500 marked unverified."
+  },
+  {
+   "id": "as-hazeline",
+   "retailer": "Anna Sheffield",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 7150,
+   "stored_price_high": 9200,
+   "observed_jsonld": [
+    7150
+   ],
+   "observed_variant_groups": {
+    "Yellow Gold": {
+     "min": 7150,
+     "max": 9200,
+     "n": 2
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $7,150 / price_max $9,200"
+  },
+  {
+   "id": "as-bea-3stone",
+   "retailer": "Anna Sheffield",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 5400,
+   "stored_price_high": 25100,
+   "observed_jsonld": [
+    5400
+   ],
+   "observed_variant_groups": {
+    "Yellow Gold": {
+     "min": 5400,
+     "max": 25100,
+     "n": 4
+    },
+    "White Gold": {
+     "min": 5400,
+     "max": 25100,
+     "n": 4
+    },
+    "Rose Gold": {
+     "min": 5400,
+     "max": 25100,
+     "n": 4
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $5,400 / price_max $25,100"
+  },
+  {
+   "id": "au-2ct-oval",
+   "retailer": "Aurate",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 1968,
+   "stored_price_high": 2800,
+   "observed_jsonld": [
+    1968
+   ],
+   "observed_variant_groups": {
+    "14k": {
+     "min": 1968,
+     "max": 1968,
+     "n": 28
+    },
+    "18k": {
+     "min": 2438,
+     "max": 2438,
+     "n": 28
+    },
+    "Platinum": {
+     "min": 2800,
+     "max": 2800,
+     "n": 14
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $1,968 / price_max $2,800"
+  },
+  {
+   "id": "au-1ct-emerald",
+   "retailer": "Aurate",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 1498,
+   "stored_price_high": 2100,
+   "observed_jsonld": [
+    1498
+   ],
+   "observed_variant_groups": {
+    "14k": {
+     "min": 1498,
+     "max": 1498,
+     "n": 28
+    },
+    "18k": {
+     "min": 1878,
+     "max": 1878,
+     "n": 28
+    },
+    "Platinum": {
+     "min": 2100,
+     "max": 2100,
+     "n": 14
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $1,498 / price_max $2,100"
+  },
+  {
+   "id": "au-3ct-round",
+   "retailer": "Aurate",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 2438,
+   "stored_price_high": 3000,
+   "observed_jsonld": [
+    2438
+   ],
+   "observed_variant_groups": {
+    "14k": {
+     "min": 2438,
+     "max": 2438,
+     "n": 28
+    },
+    "18k": {
+     "min": 2858,
+     "max": 2858,
+     "n": 28
+    },
+    "Platinum": {
+     "min": 3000,
+     "max": 3000,
+     "n": 14
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $2,438 / price_max $3,000"
+  },
+  {
+   "id": "au-cigar",
+   "retailer": "Aurate",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 1308,
+   "stored_price_high": 1308,
+   "observed_jsonld": [
+    118
+   ],
+   "observed_variant_groups": {
+    "Vermeil": {
+     "min": 118,
+     "max": 118,
+     "n": 36
+    },
+    "14K": {
+     "min": 1308,
+     "max": 1308,
+     "n": 45
+    },
+    "18K": {
+     "min": 1668,
+     "max": 1668,
+     "n": 45
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $1,308–$1,308; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "au-xring",
+   "retailer": "Aurate",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 1808,
+   "stored_price_high": 1808,
+   "observed_jsonld": [
+    1808
+   ],
+   "observed_variant_groups": {
+    "14k": {
+     "min": 1808,
+     "max": 1808,
+     "n": 54
+    },
+    "18k": {
+     "min": 2578,
+     "max": 2578,
+     "n": 39
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $1,808–$1,808; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "bn-14k-ccf-203284",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 935,
+   "stored_price_high": 935,
+   "observed_jsonld": [
+    935
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$935"
+  },
+  {
+   "id": "bn-14k-tc-203288",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1240,
+   "stored_price_high": 1240,
+   "observed_jsonld": [
+    1240
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,240"
+  },
+  {
+   "id": "bn-14k-leaf-192442",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1275,
+   "stored_price_high": 1275,
+   "observed_jsonld": [
+    1275
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,275"
+  },
+  {
+   "id": "bn-14k-bezel-296643",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1310,
+   "stored_price_high": 1310,
+   "observed_jsonld": [
+    1310
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,310"
+  },
+  {
+   "id": "bn-14k-ridge-304497",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 2065,
+   "stored_price_high": 2065,
+   "observed_jsonld": [
+    2065
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$2,065"
+  },
+  {
+   "id": "bn-14k-6p-203272",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1000,
+   "stored_price_high": 1000,
+   "observed_jsonld": [
+    1000
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,000"
+  },
+  {
+   "id": "bn-18k-6p-194159",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1240,
+   "stored_price_high": 1240,
+   "observed_jsonld": [
+    1240
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,240"
+  },
+  {
+   "id": "bn-18k-pn-203268",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1420,
+   "stored_price_high": 1420,
+   "observed_jsonld": [
+    1420
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,420"
+  },
+  {
+   "id": "mej-deb",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1100,
+   "stored_price_high": 1700,
+   "observed_jsonld": [
+    1100,
+    1700
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,100 / $1,700"
+  },
+  {
+   "id": "mej-db",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 648,
+   "stored_price_high": 648,
+   "observed_jsonld": [
+    648
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$648"
+  },
+  {
+   "id": "mej-bde",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 2900,
+   "stored_price_high": 3500,
+   "observed_jsonld": [
+    2900,
+    3500
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$2,900 / $3,500"
+  },
+  {
+   "id": "mej-2mm",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 498,
+   "stored_price_high": 498,
+   "observed_jsonld": [
+    498
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$498"
+  },
+  {
+   "id": "be-18k-6p-121h6",
+   "retailer": "Brilliant Earth",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 1090,
+   "stored_price_high": 1090,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:57Z",
+    "verdict": "confirmed",
+    "price_low": 1090,
+    "price_high": 1090,
+    "verbatim": "Classic Six-Prong Solitaire Ring in 18K Yellow Gold / $1,090 (Setting Only) ... - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm",
+    "note": "Setting only; centre stone is priced separately. Prong metal is 14K white gold on an 18K band — disclosed on the row.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $1,090 — Classic Six-Prong Solitaire Ring in 18K Yellow Gold / $1,090 (Setting Only) ... - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Wid"
+  },
+  {
+   "id": "rs-997811",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 89,
+   "stored_price_high": 89,
+   "observed_jsonld": [
+    89
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 89,
+     "max": 89,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 89,
+     "max": 89,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 89,
+     "max": 89,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 89,
+     "max": 89,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 89,
+     "max": 89,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 89,
+     "max": 89,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $89 / price_max $89"
+  },
+  {
+   "id": "rs-939479",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 499,
+   "stored_price_high": 499,
+   "observed_jsonld": [
+    499
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 499,
+     "max": 499,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 499,
+     "max": 499,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 499,
+     "max": 499,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 499,
+     "max": 499,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 499,
+     "max": 499,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 499,
+     "max": 499,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $499 / price_max $499"
+  },
+  {
+   "id": "mej-10k-dlr",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 348,
+   "stored_price_high": 348,
+   "observed_jsonld": [
+    348
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$348"
+  },
+  {
+   "id": "mej-10k-sig",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 348,
+   "stored_price_high": 348,
+   "observed_jsonld": [
+    348
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$348"
+  },
+  {
+   "id": "ag-14k-radiant-3ct",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 3074,
+   "stored_price_high": 3074,
+   "observed_jsonld": [
+    3074
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 3074,
+     "max": 3074,
+     "n": 1
+    },
+    "14k White Gold": {
+     "min": 3074,
+     "max": 3074,
+     "n": 1
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 3236,
+     "max": 3236,
+     "n": 1
+    },
+    "14k Rose Gold": {
+     "min": 3074,
+     "max": 3074,
+     "n": 1
+    },
+    "14k Champagne Gold": {
+     "min": 3074,
+     "max": 3074,
+     "n": 1
+    },
+    "950 Platinum": {
+     "min": 3452,
+     "max": 3452,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $3,074–$3,236; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "ag-14k-marquise-melted",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 2870,
+   "stored_price_high": 2870,
+   "observed_jsonld": [
+    2870
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 2870,
+     "max": 8190,
+     "n": 2
+    },
+    "14k White Gold": {
+     "min": 2870,
+     "max": 8190,
+     "n": 2
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 3080,
+     "max": 8400,
+     "n": 2
+    },
+    "14k Rose Gold": {
+     "min": 2870,
+     "max": 8190,
+     "n": 2
+    },
+    "14k Champagne Gold": {
+     "min": 2870,
+     "max": 8190,
+     "n": 2
+    },
+    "950 Platinum": {
+     "min": 3360,
+     "max": 8820,
+     "n": 2
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $2,870–$8,400; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "ag-14k-leaves",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 2194,
+   "stored_price_high": 2194,
+   "observed_jsonld": [
+    2194,
+    2744
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 2194,
+     "max": 2744,
+     "n": 2
+    },
+    "14k White Gold": {
+     "min": 2194,
+     "max": 2744,
+     "n": 2
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 2410,
+     "max": 2852,
+     "n": 2
+    },
+    "14k Rose Gold": {
+     "min": 2194,
+     "max": 2744,
+     "n": 2
+    },
+    "14k Champagne Gold": {
+     "min": 2194,
+     "max": 2744,
+     "n": 2
+    },
+    "950 Platinum": {
+     "min": 2518,
+     "max": 3068,
+     "n": 2
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $2,194–$2,852; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "ag-14k-petal",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 1774,
+   "stored_price_high": 1774,
+   "observed_jsonld": [
+    1774
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 1774,
+     "max": 3274,
+     "n": 2
+    },
+    "14k White Gold": {
+     "min": 1774,
+     "max": 3274,
+     "n": 2
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 1855,
+     "max": 3355,
+     "n": 2
+    },
+    "14k Rose Gold": {
+     "min": 1774,
+     "max": 3274,
+     "n": 2
+    },
+    "14k Champagne Gold": {
+     "min": 1774,
+     "max": 3274,
+     "n": 2
+    },
+    "950 Platinum": {
+     "min": 1977,
+     "max": 3517,
+     "n": 2
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $1,774–$3,355; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "ag-14k-kite",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 1978,
+   "stored_price_high": 1978,
+   "observed_jsonld": [
+    1978
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 1978,
+     "max": 1978,
+     "n": 6
+    },
+    "14k White Gold": {
+     "min": 1978,
+     "max": 1978,
+     "n": 6
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 2083,
+     "max": 2083,
+     "n": 6
+    },
+    "14k Rose Gold": {
+     "min": 1978,
+     "max": 1978,
+     "n": 6
+    },
+    "14k Champagne Gold": {
+     "min": 1978,
+     "max": 1978,
+     "n": 6
+    },
+    "950 Platinum": {
+     "min": 2293,
+     "max": 2293,
+     "n": 6
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $1,978–$2,083; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "ag-14k-cluster",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 1636,
+   "stored_price_high": 1636,
+   "observed_jsonld": [
+    1636,
+    2862
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 1636,
+     "max": 2862,
+     "n": 2
+    },
+    "14k White Gold": {
+     "min": 1636,
+     "max": 2862,
+     "n": 2
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 1729,
+     "max": 2955,
+     "n": 2
+    },
+    "14k Rose Gold": {
+     "min": 1636,
+     "max": 2862,
+     "n": 2
+    },
+    "14k Champagne Gold": {
+     "min": 1636,
+     "max": 2862,
+     "n": 2
+    },
+    "950 Platinum": {
+     "min": 1915,
+     "max": 3095,
+     "n": 2
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $1,636–$2,955; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "ag-14k-bubble",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 1334,
+   "stored_price_high": 1334,
+   "observed_jsonld": [
+    1334
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 1334,
+     "max": 1680,
+     "n": 4
+    },
+    "14k White Gold": {
+     "min": 1334,
+     "max": 1680,
+     "n": 4
+    },
+    "Nickel Free 14k White Gold": {
+     "min": 1376,
+     "max": 1722,
+     "n": 4
+    },
+    "14k Rose Gold": {
+     "min": 1334,
+     "max": 1680,
+     "n": 4
+    },
+    "14k Champagne Gold": {
+     "min": 1334,
+     "max": 1680,
+     "n": 4
+    },
+    "950 Platinum": {
+     "min": 1460,
+     "max": 1785,
+     "n": 4
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $1,334–$1,722; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "car-18k-etincelle-pear",
+   "retailer": "Cartier",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 3350,
+   "stored_price_high": 3350,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:44Z",
+    "verdict": "confirmed",
+    "price_low": 3350,
+    "price_high": 3350,
+    "verbatim": "# Etincelle de Cartier ring, pear-shaped diamond, paved ... - Rose gold 750/1000 - Set with a pear-shaped diamond of 0.16 carat ... $3,350 ... Ref.B4230400",
+    "note": null,
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $3,350 — # Etincelle de Cartier ring, pear-shaped diamond, paved ... - Rose gold 750/1000 - Set with a pear-shaped diamond of 0.16 carat ... $3,350 ."
+  },
+  {
+   "id": "car-18k-etincelle-emerald",
+   "retailer": "Cartier",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 3600,
+   "stored_price_high": 3600,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:45Z",
+    "verdict": "confirmed",
+    "price_low": 3600,
+    "price_high": 3600,
+    "verbatim": "# Etincelle de Cartier ring, emerald-cut diamond, paved ... - White gold 750/1000 - Set with an emerald-cut diamond of 0.16 carat ... $3,600 ... Ref.B4225700",
+    "note": null,
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $3,600 — # Etincelle de Cartier ring, emerald-cut diamond, paved ... - White gold 750/1000 - Set with an emerald-cut diamond of 0.16 carat ... $3,600"
+  },
+  {
+   "id": "car-18k-1895-band-dia",
+   "retailer": "Cartier",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 1140,
+   "stored_price_high": 1140,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-23T23:46Z",
+    "verdict": "confirmed",
+    "price_low": 1140,
+    "price_high": 1140,
+    "verbatim": "# 1895 wedding band, 2.6 mm width, 1 diamond ... - Yellow gold 750/1000 - Set with a brilliant-cut diamond of 0.01 carat (for size 52) ... $1,140 ... Ref.B4057600",
+    "note": null,
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $1,140 — # 1895 wedding band, 2.6 mm width, 1 diamond ... - Yellow gold 750/1000 - Set with a brilliant-cut diamond of 0.01 carat (for size 52) ... $"
+  },
+  {
+   "id": "mene-24k-classic-band",
+   "retailer": "Menē",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 1694,
+   "stored_price_high": 1694,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:22Z",
+    "verdict": "confirmed",
+    "price_low": 1694,
+    "price_high": 1694,
+    "verbatim": "# Classic Band ... $1,694 ... Metal [Gold 24k Gold] [Platinum Pure Platinum] ... **Width:** 5mm **Thickness:** 2mm ... Dimensions are approximate. Products are sold by weight, not size.",
+    "note": "Size selector changes the price; $1,694 is what the page printed on load for 24k gold. The cross-sell tile reads \"From $1,651\" — a different figure on the same page, recorded in the flag registry so a buyer is not surprised.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $1,694 — # Classic Band ... $1,694 ... Metal [Gold 24k Gold] [Platinum Pure Platinum] ... **Width:** 5mm **Thickness:** 2mm ... Dimensions are approx"
+  },
+  {
+   "id": "mene-24k-narrow-band",
+   "retailer": "Menē",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 1350,
+   "stored_price_high": 1350,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:23Z",
+    "verdict": "confirmed",
+    "price_low": 1350,
+    "price_high": 1350,
+    "verbatim": "# Narrow Classic Band ... $1,350 ... **Width:** 4mm **Thickness:** 2mm ... Products are sold by weight, not size.",
+    "note": "The cross-sell tile on this page shows the Classic Band at \"From $1,651\", while the Classic Band's own page prints $1,694 — recorded, not smoothed over.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $1,350 — # Narrow Classic Band ... $1,350 ... **Width:** 4mm **Thickness:** 2mm ... Products are sold by weight, not size."
+  },
+  {
+   "id": "auv-22k-vneck-sm",
+   "retailer": "Auvere",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "not_reproducible_this_pass",
+   "price_reproduced": false,
+   "stored_price_low": 900,
+   "stored_price_high": 900,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:25Z",
+    "verdict": "not_reproduced",
+    "price_low": null,
+    "price_high": null,
+    "verbatim": "No price anywhere in the rendered page text (two reads). Details do print: \"V opening 25/64\" (10 mm)\", \"V height 25/64\" (10 mm)\", \"thickness 1/16\" (2 mm)\", \"Approximate Fine Weight: 2.9 to 3.7 grams depending on size\", \"Return within 15 days\".",
+    "note": "Stored $900 keeps its earlier dated read; this channel did not see a price today, and no number was invented.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "Stored $900 keeps its earlier dated read; this channel did not see a price today, and no number was invented."
+  },
+  {
+   "id": "auv-22k-hexagon-diamond",
+   "retailer": "Auvere",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "not_reproducible_this_pass",
+   "price_reproduced": false,
+   "stored_price_low": 1400,
+   "stored_price_high": 1400,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:26Z",
+    "verdict": "not_reproduced",
+    "price_low": null,
+    "price_high": null,
+    "verbatim": "Page text returned the store's ORDER PROCESSING / SHIPPING / Returns & Exchanges policy blocks; no product price present.",
+    "note": "Stored $1,400 keeps its earlier dated read.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "Stored $1,400 keeps its earlier dated read."
+  },
+  {
+   "id": "auv-22k-diamond-bridge-tall",
+   "retailer": "Auvere",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "not_reproducible_this_pass",
+   "price_reproduced": false,
+   "stored_price_low": 1600,
+   "stored_price_high": 1600,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:27Z",
+    "verdict": "not_reproduced",
+    "price_low": null,
+    "price_high": null,
+    "verbatim": "Page text returned shipping, returns and fraud-prevention policy copy; no product price present.",
+    "note": "Stored $1,600 keeps its earlier dated read.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "Stored $1,600 keeps its earlier dated read."
+  },
+  {
+   "id": "auv-22k-clean-cut-polished",
+   "retailer": "Auvere",
+   "http_status": 200,
+   "channel": "runner + second channel",
+   "verdict": "not_reproducible_this_pass",
+   "price_reproduced": false,
+   "stored_price_low": 900,
+   "stored_price_high": 900,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:27Z",
+    "verdict": "not_reproduced",
+    "price_low": null,
+    "price_high": null,
+    "verbatim": "Page text returned policy copy; no product price present.",
+    "note": "Stored $900 keeps its earlier dated read.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "Stored $900 keeps its earlier dated read."
+  },
+  {
+   "id": "rs-222283",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 695,
+   "stored_price_high": 695,
+   "observed_jsonld": [
+    695
+   ],
+   "observed_variant_groups": {
+    "Size 6": {
+     "min": 695,
+     "max": 695,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 695,
+     "max": 695,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 695,
+     "max": 695,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 695,
+     "max": 695,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $695 / price_max $695"
+  },
+  {
+   "id": "rs-989853",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 469,
+   "stored_price_high": 469,
+   "observed_jsonld": [
+    435,
+    469
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 469,
+     "max": 469,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 469,
+     "max": 469,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 469,
+     "max": 469,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 469,
+     "max": 469,
+     "n": 1
+    },
+    "Size 8.5": {
+     "min": 435,
+     "max": 435,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 469,
+     "max": 469,
+     "n": 1
+    },
+    "Size 10": {
+     "min": 469,
+     "max": 469,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "$435 / $469"
+  },
+  {
+   "id": "rs-997441",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 1195,
+   "stored_price_high": 1195,
+   "observed_jsonld": [
+    1195
+   ],
+   "observed_variant_groups": {
+    "Size 5": {
+     "min": 1195,
+     "max": 1195,
+     "n": 1
+    },
+    "Size 6": {
+     "min": 1195,
+     "max": 1195,
+     "n": 1
+    },
+    "Size 7": {
+     "min": 1195,
+     "max": 1195,
+     "n": 1
+    },
+    "Size 8": {
+     "min": 1195,
+     "max": 1195,
+     "n": 1
+    },
+    "Size 9": {
+     "min": 1195,
+     "max": 1195,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $1,195 / price_max $1,195"
+  },
+  {
+   "id": "rs-255232",
+   "retailer": "Ross-Simons",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_feed_range",
+   "price_reproduced": true,
+   "stored_price_low": 1295,
+   "stored_price_high": 1295,
+   "observed_jsonld": [
+    1295
+   ],
+   "observed_variant_groups": {
+    "Size 6.25": {
+     "min": 1295,
+     "max": 1295,
+     "n": 1
+    }
+   },
+   "manual_read": null,
+   "detail": "feed price_min $1,295 / price_max $1,295"
+  },
+  {
+   "id": "ag-14k-industrial-band",
+   "retailer": "Automic Gold",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_low_end",
+   "price_reproduced": true,
+   "stored_price_low": 598,
+   "stored_price_high": 598,
+   "observed_jsonld": [
+    225,
+    598
+   ],
+   "observed_variant_groups": {
+    "14k Yellow Gold": {
+     "min": 598,
+     "max": 2825,
+     "n": 175
+    },
+    "14k White Gold": {
+     "min": 598,
+     "max": 1178,
+     "n": 75
+    }
+   },
+   "manual_read": null,
+   "detail": "14K options span $598–$2,825; the stored figure is the 14K entry price"
+  },
+  {
+   "id": "car-18k-destinee-princess",
+   "retailer": "Cartier",
+   "http_status": 403,
+   "channel": "second channel",
+   "verdict": "confirmed_manual_read",
+   "price_reproduced": true,
+   "stored_price_low": 3350,
+   "stored_price_high": 3350,
+   "observed_jsonld": [],
+   "observed_variant_groups": null,
+   "manual_read": {
+    "read_at": "2026-10-24T00:14Z",
+    "verdict": "confirmed_with_rename",
+    "price_low": 3350,
+    "price_high": 3350,
+    "verbatim": "final URL .../etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html — \"# Etincelle de Cartier ring, princess-cut diamond, paved ... Yellow gold 750/1000 - Set with a princess-cut diamond centre stone of 0.16 carats ... Width: 1.52 mm - Thickness: 1.35 mm (for size 52) ... $3,350 ... Ref.B4232900 ... Unavailable online\"",
+    "note": "The stored \"Destinée\" URL redirects; name and stone size changed, price and reference did not.",
+    "channel": "fetch_page text channel"
+   },
+   "detail": "runner could not price this page; the second channel read $3,350 — final URL .../etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html — \"# Etincelle de Cartier ring, prin"
+  },
+  {
+   "id": "bn-14k-petite-195639",
+   "retailer": "Blue Nile",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 1000,
+   "stored_price_high": 1000,
+   "observed_jsonld": [
+    1000
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$1,000"
+  },
+  {
+   "id": "mej-14k-sdeb",
+   "retailer": "Mejuri",
+   "http_status": 200,
+   "channel": "runner",
+   "verdict": "confirmed_jsonld",
+   "price_reproduced": true,
+   "stored_price_low": 898,
+   "stored_price_high": 898,
+   "observed_jsonld": [
+    648,
+    898,
+    948
+   ],
+   "observed_variant_groups": null,
+   "manual_read": null,
+   "detail": "$648 / $898 / $948"
+  }
+ ]
+}
