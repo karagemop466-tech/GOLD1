@@ -204,8 +204,28 @@ function extract(html, row) {
     // Every appearance of the word "weight" with a verbatim window, plus every
     // number followed by a gram unit with its own window. Both are recorded
     // raw; deciding what they mean is the reconciliation step's job.
-    weight_keyword_context: occurrences(text, /weight/gi, 12, 130),
-    gram_mentions: occurrences(text, /\b\d{1,3}(?:\.\d{1,2})?\s?(?:grams?|g)\b/g, 16, 80),
+    // The limits are deliberately high: on a storefront page the metal-weight
+    // spec sits late in a very long document, and a low cap used to truncate
+    // the answer away (a Ross-Simons "Gold Weight 1.7 grams" line was missed
+    // that way on 2026-10-23 even though the page printed it).
+    weight_keyword_context: occurrences(text, /weight/gi, 60, 150),
+    gram_mentions: occurrences(text, /\b\d{1,3}(?:\.\d{1,2})?\s?(?:grams?|g)\b/g, 40, 90),
+    // Labelled metal-weight lines ("Gold Weight 1.7 grams", "Item Weight
+    // Approximately 3.6g (gold)", "Metal Weight: 2.5 g") - the only form this
+    // project accepts as a published weight, and searched in both the stripped
+    // text and the raw HTML because spec panels are rendered from JSON blobs.
+    gold_weight_label_text: occurrences(
+      text,
+      /(?:gold|metal|item)\s+weight[^0-9<]{0,40}\d{1,3}(?:\.\d{1,2})?\s*(?:grams?|g)\b/gi,
+      12,
+      110
+    ),
+    gold_weight_label_html: occurrences(
+      html,
+      /(?:gold|metal|item)[_ ]?weight[^0-9<]{0,40}\d{1,3}(?:\.\d{1,2})?\s*(?:grams?|g)\b/gi,
+      12,
+      130
+    ),
     solid_mentions: occurrences(text, /\bsolid\s+(?:\d{1,2}\s?(?:kt|k|karat)\s+)?(?:yellow\s+|white\s+|rose\s+)?gold\b|\bsolid gold\b/gi, 8, 90),
     plated_mentions: occurrences(text, /\b(?:vermeil|gold[- ]?filled|gold[- ]?plated|gold tone|gold-tone|plated over|over sterling|sterling silver)\b/gi, 8, 90),
     sale_mentions: occurrences(text, /\bfinal sale\b|\bexchange for size only\b|\ball sales final\b/gi, 4, 90),
@@ -455,7 +475,7 @@ const gold = await goldSpot();
 await mkdir(OUT_DIR, { recursive: true });
 const doc = {
   pass: 'P42-live',
-  script_version: 'v4 shopify variant table + description grams (ninth pass, sess-7626fc93)',
+  script_version: 'v5 labelled metal-weight search in text and raw HTML + higher occurrence caps (ninth pass, sess-7626fc93)',
   purpose:
     'Independent live re-read of every curated row at its own official product URL, plus a variant-level read of the seller product JSON. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.',
   started_at,
