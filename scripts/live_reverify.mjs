@@ -210,9 +210,48 @@ function extract(html, row) {
     plated_mentions: occurrences(text, /\b(?:vermeil|gold[- ]?filled|gold[- ]?plated|gold tone|gold-tone|plated over|over sterling|sterling silver)\b/gi, 8, 90),
     sale_mentions: occurrences(text, /\bfinal sale\b|\bexchange for size only\b|\ball sales final\b/gi, 4, 90),
     hallmark_mentions: occurrences(text, /\bhallmark\b|\bmaker'?s mark\b|\bstamped\b|\bengraved with\b/gi, 6, 100),
+    // Spec panels on many storefronts are rendered from a JSON blob inside a
+    // <script>, so the stripped text never contains them. Scan the raw HTML too.
+    html_weight_context: occurrences(html, /(?:metal_weight|metalWeight|gold_weight|goldWeight|"weight"\s*:\s*"?\d[\d.]*)/gi, 12, 110),
     prices: moneyExcerpts(text),
     text_length: text.length,
     text_sha256: createHash('sha256').update(text).digest('hex'),
+  };
+}
+
+async function shopifyFallback(url) {
+  const jsonUrl = url.replace(/[?#].*$/, '').replace(/\/$/, '') + '.json';
+  const res = await fetchPage(jsonUrl);
+  if (!res.text || res.status !== 200) return null;
+  let doc;
+  try {
+    doc = JSON.parse(res.text);
+  } catch {
+    return null;
+  }
+  const prod = doc?.product;
+  if (!prod || !Array.isArray(prod.variants)) return null;
+  const prices = prod.variants.map((v) => Number(v.price)).filter((n) => Number.isFinite(n) && n > 0);
+  const metas = [...new Set(prod.variants.map((v) => v.option1).filter(Boolean))];
+  return {
+    json_url: jsonUrl,
+    http_status: res.status,
+    fetched_at: nowIso(),
+    title: prod.title,
+    handle: prod.handle,
+    updated_at: prod.updated_at,
+    tags: String(prod.tags || '').split(',').map((t) => t.trim()).filter(Boolean).slice(0, 40),
+    options: (prod.options || []).map((o) => ({ name: o.name, values: o.values })),
+    variant_count: prod.variants.length,
+    price_min: prices.length ? Math.min(...prices) : null,
+    price_max: prices.length ? Math.max(...prices) : null,
+    metal_options: metas.slice(0, 12),
+    variants_sample: prod.variants.slice(0, 30).map((v) => ({
+      title: v.title,
+      price: v.price,
+      compare_at_price: v.compare_at_price,
+      available: v.available ?? null,
+    })),
   };
 }
 
@@ -220,7 +259,8 @@ async function runOne(row) {
   const t0 = Date.now();
   const res = await fetchPage(row.source_url);
   const fetched_at = nowIso();
-  if (!res.text) {
+  if (!res.text || res.status >= 400) {
+    const fb = await shopifyFallback(row.source_url);
     return {
       id: row.id,
       retailer: row.retailer,
@@ -228,7 +268,8 @@ async function runOne(row) {
       http_status: res.status,
       fetched_at,
       ok: false,
-      error: res.error,
+      error: res.error || `HTTP ${res.status}`,
+      shopify_json_fallback: fb,
       extraction: null,
     };
   }
