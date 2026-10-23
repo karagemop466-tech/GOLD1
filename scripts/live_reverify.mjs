@@ -134,6 +134,70 @@ function jsonLdProducts(html) {
   return out;
 }
 
+const SHOPIFY_HOSTS = [
+  'www.ross-simons.com',
+  'auratenewyork.com',
+  'www.automicgold.com',
+  'mejuri.com',
+  'mene.com',
+  'www.annasheffield.com',
+  'www.withclarity.com',
+];
+
+/**
+ * Ninth pass: the seller's own variant feed. A Shopify product page can show a
+ * single default price while the listing actually sells several variants at
+ * different prices, so a stored range can only be checked at variant level.
+ * This records every variant title and price exactly as published.
+ */
+async function variantFeed(url) {
+  let host = '';
+  try {
+    host = new URL(url).host;
+  } catch {
+    return null;
+  }
+  if (!SHOPIFY_HOSTS.includes(host)) return null;
+  const jsonUrl = url.replace(/[?#].*$/, '').replace(/\/$/, '') + '.json';
+  const res = await fetchPage(jsonUrl);
+  if (!res.text || res.status !== 200) return { json_url: jsonUrl, http_status: res.status, error: res.error || 'no body' };
+  let doc;
+  try {
+    doc = JSON.parse(res.text);
+  } catch {
+    return { json_url: jsonUrl, http_status: res.status, error: 'not JSON' };
+  }
+  const prod = doc?.product;
+  if (!prod || !Array.isArray(prod.variants)) {
+    return { json_url: jsonUrl, http_status: res.status, error: 'no product.variants' };
+  }
+  const variants = prod.variants.slice(0, 300).map((v) => ({
+    title: v.title,
+    price: Number(v.price),
+    compare_at_price: v.compare_at_price === '' ? null : Number(v.compare_at_price),
+    available: v.available ?? null,
+  }));
+  const prices = variants.map((v) => v.price).filter((n) => Number.isFinite(n) && n > 0);
+  return {
+    json_url: jsonUrl,
+    http_status: res.status,
+    fetched_at: nowIso(),
+    title: prod.title,
+    handle: prod.handle,
+    updated_at: prod.updated_at,
+    tags: String(prod.tags || '')
+      .split(',')
+      .map((t) => t.trim())
+      .filter(Boolean)
+      .slice(0, 40),
+    option_names: (prod.options || []).map((o) => o.name),
+    variant_count: prod.variants.length,
+    price_min: prices.length ? Math.min(...prices) : null,
+    price_max: prices.length ? Math.max(...prices) : null,
+    variants,
+  };
+}
+
 function offerPrices(node) {
   const offers = [].concat(node?.offers || []).filter(Boolean);
   const prices = [];
@@ -194,6 +258,13 @@ function extract(html, row) {
     title_tag: decodeEntities(titleTag).replace(/\s+/g, ' ').trim().slice(0, 200),
     jsonld_titles: [...new Set(ldTitles)].slice(0, 4),
     jsonld_prices: ldPrices.slice(0, 12),
+    // Keep each Product node's own offers, so a price cannot be attributed to
+    // the wrong product when a page also lists cross-sell items.
+    jsonld_offers: ld.slice(0, 6).map((n) => ({
+      name: n.name || null,
+      sku: n.sku || null,
+      prices: offerPrices(n).slice(0, 12),
+    })),
     meta,
     karat_mentions: occurrences(
       text,
@@ -271,6 +342,7 @@ async function runOne(row) {
       error: res.error || `HTTP ${res.status}`,
       shopify_json_fallback: fb,
       extraction: null,
+      variant_feed: fb,
     };
   }
   return {
@@ -283,6 +355,7 @@ async function runOne(row) {
     ok: res.status >= 200 && res.status < 300,
     bytes: res.text.length,
     extraction: extract(res.text, row),
+    variant_feed: await variantFeed(row.source_url),
   };
 }
 
