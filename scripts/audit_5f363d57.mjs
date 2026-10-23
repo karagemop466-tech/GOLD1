@@ -192,6 +192,10 @@ await group('R02', 'Verification verdicts agree with observed bounds and weights
         row: r.id, id: 'STALE_NOTE_PRICE', path: 'data/rings.json', sources: [r.source_url],
       });
     }
+    const sizeFloor = (r.evidence || '').match(/size-floor card\s*["“]From\s*\$([\d,]+(?:\.\d{2})?)/i);
+    check(!(sizeFloor && /starting price/i.test(r.price_basis || '') && Number(sizeFloor[1].replace(/,/g, '')) !== r.price_low), failure, `${r.id}: basis says starting price $${r.price_low}, but the quoted size-floor card says From $${sizeFloor?.[1]}; identify the stored figure as the displayed default configuration, not the range floor`, {
+      row: r.id, id: 'PRICE_BASIS_CONTRADICTS_EVIDENCE', path: 'data/rings.json', sources: [r.source_url],
+    });
   }
   check(/prices\.max < hi/.test(reconciler), failure, 'P42 reconciler never detects an observed range that fails to reproduce the stored upper bound', {
     id: 'RECONCILER_IGNORES_UPPER_BOUND', path: 'scripts/reconcile_live.mjs',
