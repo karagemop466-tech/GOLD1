@@ -12,9 +12,9 @@ Built and reconciled across research passes: **arena-6f8c2bcb-gold1** (Blue Nile
 
 > **No hallucinated prices.** Every price, karat and weight on the site was copied from an official retailer feed, stored with the date it was retrieved, and linked on the same row to the exact page it came from. If a value could not be confirmed on an official source it is shown as **— unverified** and published on the **Flagged for review** page. Nothing is estimated, averaged, inferred or remembered.
 
-That rule is printed at the top of the landing page, repeated on every subpage, and then enforced mechanically by `scripts/verify.mjs`, which re-derives every claim from its own evidence text.
+That rule is printed at the top of the landing page, repeated on every subpage, and then enforced mechanically by `scripts/verify.mjs`, which checks each claim against its stored evidence text. This structural audit does **not** prove a seller page is still live or unchanged.
 
-**Pass P12 added a second rule:** a price is only "current" if the seller's page was actually re-opened. `data/reverification.json` is the single ledger: one line per listing re-opened, with the old value, the value read, the seller's quote, the URL and the date. A row may only be labelled *re-read* if the ledger holds that entry — the audit fails the build otherwise. Nothing is silently refreshed, and rows that were not re-opened keep their capture date and say so.
+**Freshness rule:** a price is only current as of the timestamp at which the seller's page was actually re-opened. `data/reverification.json` is the single ledger: one line per listing re-opened, with the old value, the value read, the seller's quote, the URL and the date. The latest full re-read recorded in this repository is **2026-10-22**; these values are dated snapshots, not live quotes, and may have changed since then. Open the official product link immediately before purchasing. Nothing is silently refreshed, and rows that were not re-opened keep their capture date and say so.
 
 ---
 
@@ -44,7 +44,7 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `data/flagged.json` | Findings, severity, affected rows, source links (`49` published items) |
 | `data/retailers.json` | All 10 retailers' verified contacts, official return/resize terms, and BBB records |
 | `data/gold-price.json` | Gold spot (`3` timestamped readings) + COMEX cross-check + NIST exact `grams_per_troy_ounce` (`31.1034768`) |
-| `data/checks/` | Latest pass (`P40`) and full pass history |
+| `data/checks/` | Latest canonical anti-hallucination pass and full pass history |
 | `scripts/integrate_0804e222.mjs` | Zero-loss, idempotent integrator merging `data/session-0804e222/*` into canonical `data/*.json` |
 | `scripts/build.mjs` | Root static site generator (91 HTML pages, zero runtime dependencies) |
 | `scripts/verify.mjs` | Canonical anti-hallucination audit: **19 check groups (`S01`–`S19`), 4,747 assertions** |
@@ -56,12 +56,14 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 ## Run it
 
 ```bash
-node scripts/build.mjs      # regenerate every page from data/
-node scripts/verify.mjs     # audit the data and the generated HTML
-python3 -m http.server 8080 # preview at http://localhost:8080
+node scripts/build.mjs          # regenerate every page from data/
+node scripts/verify.mjs         # audit the data and generated HTML; writes latest pass
+node scripts/build.mjs          # publish that exact pass ID to index.html and checks.html
+node scripts/audit_0804e222.mjs # verify cross-file provenance, security, and pass-ID sync
+python3 -m http.server 8080     # preview at http://localhost:8080
 ```
 
-Node 22, no npm install, no network calls at build time, no tracking scripts, no CDN.
+The second build is intentional: it renders the pass just written by the verifier. `python3 scripts/verify_data.py` is retained as a compatibility wrapper for the same canonical `node scripts/verify.mjs` audit; it is not an independent verifier. These local checks do not re-fetch retailer or market pages. Node 22, no network calls at build time, no tracking scripts, no CDN.
 
 ---
 
