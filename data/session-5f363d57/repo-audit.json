@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T21:12:15.381Z",
+  "generated_at": "2026-10-23T23:46:44.194Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -11,14 +11,14 @@
     "verification_ledger": "data/verification-2026-10-23.json",
     "evening_verification_ledger": "data/verification-2026-10-23-evening-dab93754.json",
     "official_standards_review": "data/session-5f363d57/standards-review.json",
-    "gold_publisher_timestamp": "2026-10-23T20:19:15Z"
+    "gold_publisher_timestamp": "2026-10-23T23:38:16Z"
   },
   "summary": {
     "groups": 10,
     "passed": 2,
     "failed": 8,
-    "assertions": 1842,
-    "findings": 159
+    "assertions": 1846,
+    "findings": 156
   },
   "groups": [
     {
@@ -79,7 +79,7 @@
       "id": "R10",
       "name": "Source registry and audit-reference integrity",
       "passed": false,
-      "failure_count": 4
+      "failure_count": 1
     }
   ],
   "findings": [
@@ -1509,7 +1509,7 @@
       "group": "R05",
       "irregularity_id": "STALE_CHECKLIST_SPOT_PRICE",
       "severity": "high",
-      "message": "Checklist spot prose does not contain current $3,998.10/ozt",
+      "message": "Checklist spot prose does not contain current $3,996.90/ozt",
       "row": null,
       "path": "data/checklist.json",
       "sources": [
@@ -1924,42 +1924,6 @@
     },
     {
       "id": "R10-01",
-      "group": "R10",
-      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
-      "severity": "high",
-      "message": "Gold unit authority still uses the NIST URL that returned a 404 on 2026-10-23",
-      "row": null,
-      "path": "data/gold-price.json",
-      "sources": [
-        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
-      ]
-    },
-    {
-      "id": "R10-02",
-      "group": "R10",
-      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
-      "severity": "high",
-      "message": "Source registry still uses the retired NIST conversion URL",
-      "row": null,
-      "path": "data/sources.json",
-      "sources": [
-        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
-      ]
-    },
-    {
-      "id": "R10-03",
-      "group": "R10",
-      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
-      "severity": "high",
-      "message": "Checklist still links the retired NIST conversion URL",
-      "row": null,
-      "path": "data/checklist.json",
-      "sources": [
-        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
-      ]
-    },
-    {
-      "id": "R10-04",
       "group": "R10",
       "irregularity_id": "UNIT_FALLBACK_MISMATCH",
       "severity": "high",

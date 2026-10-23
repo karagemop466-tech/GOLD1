@@ -179,7 +179,7 @@
       "severity": "medium",
       "type": "price basis",
       "affected": "au-2ct-oval, au-1ct-emerald, au-3ct-round",
-      "finding": "For these three rings the feed reports only a min/max across 14K, 18K, platinum and ring sizes. The lowest price is not proven to be the 14K price, so the low end is shown as a range rather than as a 14K price.",
+      "finding": "For these three rings the feed reports only a min/max across 14K, 18K, platinum and ring sizes. The lowest price is not proven to be the 14K price, so the low end is shown as a range rather than as a 14K price. Addendum (sess-67748540, P116, 2026-10-23T23:39Z): the seller's own variant feed does map every metal to a price for all three SKUs - 14k yellow/white is the low end (au-1ct-emerald $1,498; au-2ct-oval $1,968; au-3ct-round $2,438), 18k is $1,878 / $2,438 / $2,858, and the stored high end is the Platinum variant ($2,100 / $2,800 / $3,000). The flag stands because the HTML page still prints no per-metal price without scripting, and because a $2,800 high end is not a 14K price.",
       "buyer_action": "Set metal to 14K and the size you need, then read the actual price before buying.",
       "sources": [
         "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
@@ -887,7 +887,7 @@
       "severity": "medium",
       "type": "data freshness (live re-read finding, sess-dab93754)",
       "affected": "wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera, be-18k-6p-121h6, car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia, car-18k-destinee-princess",
-      "finding": "Five With Clarity rows (their storefront .json also refused), four Cartier rows and one Brilliant Earth row could not be opened by the automated runner. Nothing was confirmed for them today and nothing is presented as fresh. Union addendum (sess-0a6df02e, T46): three of these ten rows were read live the same evening through a second channel — wc-gerbera ($1,210–$1,850 confirmed), be-18k-6p-121h6 ($1,090 confirmed in USD; upgraded to confirmed) and car-18k-etincelle-emerald ($3,600 confirmed) at 20:24–20:25Z — and the five With Clarity rows plus two Cartier rows were read at 10:26–10:39Z by sess-3020df54 (T37b). The runner-channel statement above stands as written for the 20:21Z automated run.",
+      "finding": "Five With Clarity rows (their storefront .json also refused), four Cartier rows and one Brilliant Earth row could not be opened by the automated runner. Nothing was confirmed for them today and nothing is presented as fresh. Union addendum (sess-0a6df02e, T46): three of these ten rows were read live the same evening through a second channel — wc-gerbera ($1,210–$1,850 confirmed), be-18k-6p-121h6 ($1,090 confirmed in USD; upgraded to confirmed) and car-18k-etincelle-emerald ($3,600 confirmed) at 20:24–20:25Z — and the five With Clarity rows plus two Cartier rows were read at 10:26–10:39Z by sess-3020df54 (T37b). The runner-channel statement above stands as written for the 20:21Z automated run. Addendum (sess-67748540, P116): the same ten rows returned HTTP 403 to the 2026-10-23T23:39Z runner, and all ten were then read successfully through an independent channel in the 23:41-23:53Z window with no price change: wc-tulip $590-$1,110, wc-4prong $558-$801, wc-4prong-petite $558-$963, wc-6prong $567-$828, wc-gerbera $1,210-$1,850, be-18k-6p-121h6 $1,090 (setting only), car-18k-etincelle-pear $3,350, car-18k-etincelle-emerald $3,600, car-18k-1895-band-dia $1,140, car-18k-destinee-princess $3,350. The block is channel-specific, not a data defect.",
       "buyer_action": "Open those official pages yourself before buying; the stored values keep their original capture dates.",
       "sources": [
         "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
@@ -1003,7 +1003,22 @@
       ],
       "status": "needs review",
       "disclosed_at": "2026-10-23T23:45:00Z"
+    },
+    {
+      "id": "F68",
+      "title": "Cartier reference B4232900 is now served as “Etincelle de Cartier”, not “Destinée” — the stored URL redirects",
+      "severity": "low",
+      "type": "source identity (seller-side collection rename)",
+      "affected": "car-18k-destinee-princess",
+      "finding": "On 2026-10-23T23:48Z the stored URL /jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html redirected to /jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html. The page title, H1 and description now say “Etincelle de Cartier ring, princess-cut diamond, paved” and print “Yellow gold 750/1000”, “princess-cut diamond centre stone of 0.16 carats”, “$3,350” and “Ref.B4232900”. The reference number and the price are unchanged, so this is a seller-side collection rename rather than a repurposed listing (contrast F51 and F65); the stored row keeps the older seller naming for traceability. In the same window the Cartier 1895 band URL 301'd to a longer slug at the same $1,140.",
+      "buyer_action": "Order by reference B4232900 and confirm with Cartier that the piece you receive matches the current Etincelle page (18K yellow gold 750/1000, 0.16 ct princess centre, $3,350). Do not rely on the old “Destinée” wording.",
+      "sources": [
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html"
+      ],
+      "status": "needs review",
+      "found_by": "sess-67748540"
     }
   ],
-  "generated_at": "2026-10-23T23:45:00Z"
+  "generated_at": "2026-10-23T23:59:00Z"
 }
