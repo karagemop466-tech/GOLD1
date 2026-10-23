@@ -37,7 +37,7 @@
 
 <section class="wrap section">
   <h1>Flagged for review</h1>
-  <p class="lede">65 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
+  <p class="lede">66 findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -207,7 +207,7 @@
         <span class="chip">price basis</span>
       </div>
       <h2>Aurate metal-variant prices are not mapped one-to-one</h2>
-      <p>For these three rings the feed reports only a min/max across 14K, 18K, platinum and ring sizes. The lowest price is not proven to be the 14K price, so the low end is shown as a range rather than as a 14K price.</p>
+      <p>For these three rings the feed reports only a min/max across 14K, 18K, platinum and ring sizes. The lowest price is not proven to be the 14K price, so the low end is shown as a range rather than as a 14K price. Addendum (sess-67748540, P116, 2026-10-23T23:39Z): the seller&#39;s own variant feed does map every metal to a price for all three SKUs — 14k yellow/white is the low end (au-1ct-emerald $1,498; au-2ct-oval $1,968; au-3ct-round $2,438), 18k is $1,878 / $2,438 / $2,858, and the stored high end is the Platinum variant ($2,100 / $2,800 / $3,000). The flag stands because the HTML page still prints no per-metal price without scripting, and because a $2,800 high end is not a 14K price.</p>
       <p class="small"><strong>Affects:</strong> au-2ct-oval, au-1ct-emerald, au-3ct-round</p>
       <p class="action"><strong>What to do:</strong> Set metal to 14K and the size you need, then read the actual price before buying.</p>
       <p class="sub"><a href="https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring" target="_blank" rel="noopener nofollow">auratenewyork.com ↗</a> · <a href="https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring" target="_blank" rel="noopener nofollow">auratenewyork.com ↗</a> · <a href="https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring" target="_blank" rel="noopener nofollow">auratenewyork.com ↗</a></p>
@@ -805,7 +805,7 @@
         <span class="chip">data freshness (live re-read finding, sess-dab93754)</span>
       </div>
       <h2>Ten rows returned HTTP 403 to the runner again on 2026-10-23 20:21Z</h2>
-      <p>Five With Clarity rows (their storefront .json also refused), four Cartier rows and one Brilliant Earth row could not be opened by the automated runner. Nothing was confirmed for them today and nothing is presented as fresh. Union addendum (sess-0a6df02e, T46): three of these ten rows were read live the same evening through a second channel — wc-gerbera ($1,210–$1,850 confirmed), be-18k-6p-121h6 ($1,090 confirmed in USD; upgraded to confirmed) and car-18k-etincelle-emerald ($3,600 confirmed) at 20:24–20:25Z — and the five With Clarity rows plus two Cartier rows were read at 10:26–10:39Z by sess-3020df54 (T37b). The runner-channel statement above stands as written for the 20:21Z automated run.</p>
+      <p>Five With Clarity rows (their storefront .json also refused), four Cartier rows and one Brilliant Earth row could not be opened by the automated runner. Nothing was confirmed for them today and nothing is presented as fresh. Union addendum (sess-0a6df02e, T46): three of these ten rows were read live the same evening through a second channel — wc-gerbera ($1,210–$1,850 confirmed), be-18k-6p-121h6 ($1,090 confirmed in USD; upgraded to confirmed) and car-18k-etincelle-emerald ($3,600 confirmed) at 20:24–20:25Z — and the five With Clarity rows plus two Cartier rows were read at 10:26–10:39Z by sess-3020df54 (T37b). The runner-channel statement above stands as written for the 20:21Z automated run. Addendum (sess-67748540, P116): the same ten rows returned HTTP 403 to the 2026-10-23T23:39Z runner, and all ten were then read successfully through an independent channel in the 23:41–23:53Z window with no price change: wc-tulip $590–$1,110, wc-4prong $558–$801, wc-4prong-petite $558–$963, wc-6prong $567–$828, wc-gerbera $1,210–$1,850, be-18k-6p-121h6 $1,090 (setting only), car-18k-etincelle-pear $3,350, car-18k-etincelle-emerald $3,600, car-18k-1895-band-dia $1,140, car-18k-destinee-princess $3,350. The block is channel-specific, not a data defect.</p>
       <p class="small"><strong>Affects:</strong> wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera, be-18k-6p-121h6, car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia, car-18k-destinee-princess</p>
       <p class="action"><strong>What to do:</strong> Open those official pages yourself before buying; the stored values keep their original capture dates.</p>
       <p class="sub"><a href="https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring" target="_blank" rel="noopener nofollow">www.withclarity.com ↗</a> · <a href="https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring" target="_blank" rel="noopener nofollow">www.withclarity.com ↗</a> · <a href="https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring" target="_blank" rel="noopener nofollow">www.withclarity.com ↗</a></p>
@@ -889,13 +889,26 @@
       <p class="sub"><a href="https://github.com/karagemop466-tech/GOLD1/blob/main/scripts/build.mjs" target="_blank" rel="noopener nofollow">github.com ↗</a> · <a href="https://github.com/karagemop466-tech/GOLD1/blob/main/scripts/verify.mjs" target="_blank" rel="noopener nofollow">github.com ↗</a></p>
       <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
     </article>
+<article class="flag-card sev-low" id="F67">
+      <div class="flag-head">
+        <span class="flag-id">F67</span>
+        <span class="chip info">low</span>
+        <span class="chip">source identity (collection rename)</span>
+      </div>
+      <h2>Cartier reference B4232900 is now served as “Etincelle de Cartier”, not “Destinée” — stored URL redirects</h2>
+      <p>On 2026-10-23T23:48Z the stored URL /jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html redirected to /jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html. The page title, H1 and product description now say “Etincelle de Cartier ring, princess-cut diamond, paved” and print “Yellow gold 750/1000”, “princess-cut diamond centre stone of 0.16 carats”, “$3,350” and “Ref.B4232900”. The reference number and the price are unchanged, so this is a seller-side collection rename rather than a repurposed listing (unlike F51/F65); the stored row title keeps the older seller naming for traceability.</p>
+      <p class="small"><strong>Affects:</strong> car-18k-destinee-princess</p>
+      <p class="action"><strong>What to do:</strong> Order by reference B4232900 and confirm with Cartier that the piece you receive matches the current Etincelle page (18K yellow gold 750/1000, 0.16 ct princess centre, $3,350). Do not rely on the old “Destinée” wording.</p>
+      <p class="sub"><a href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html" target="_blank" rel="noopener nofollow">www.cartier.com ↗</a> · <a href="https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html" target="_blank" rel="noopener nofollow">www.cartier.com ↗</a></p>
+      <p class="sub">Status: <strong>needs review</strong> — published, does not block.</p>
+    </article>
   </div>
 </section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22, 2026-10-23 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $3,998.10 per troy ounce at 2026-10-23T20:19:15Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $3,996.90 per troy ounce at 2026-10-23T23:39:15Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>
