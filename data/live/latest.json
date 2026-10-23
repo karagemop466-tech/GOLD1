@@ -1,9 +1,9 @@
 {
  "pass": "P42-live",
  "purpose": "Independent live re-read of every curated row at its own official product URL. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.",
- "started_at": "2026-10-23T09:57:28Z",
- "finished_at": "2026-10-23T09:57:58Z",
- "run_context": "github-actions run 39935606469",
+ "started_at": "2026-10-23T09:58:49Z",
+ "finished_at": "2026-10-23T09:59:19Z",
+ "run_context": "github-actions run 39935767503",
  "row_count": 59,
  "fetch_ok": 50,
  "fetch_failed": [
@@ -49,16 +49,16 @@
    "publisher": "gold-api.com",
    "url": "https://api.gold-api.com/price/XAU",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:40Z",
-   "price_usd_per_ozt": 4024.899902,
-   "publisher_timestamp": "2026-10-23T09:57:13Z",
-   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":4024.899902,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T09:57:13Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+   "fetched_at": "2026-10-23T09:59:01Z",
+   "price_usd_per_ozt": 4024.699951,
+   "publisher_timestamp": "2026-10-23T09:58:43Z",
+   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":4024.699951,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T09:58:43Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
   },
   {
    "publisher": "Yahoo Finance (COMEX GC=F front month)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
    "http_status": 0,
-   "fetched_at": "2026-10-23T09:57:58Z",
+   "fetched_at": "2026-10-23T09:59:19Z",
    "price_usd_per_ozt": null,
    "publisher_timestamp": null,
    "raw_excerpt": "HTTP 429"
@@ -71,10 +71,11 @@
    "url": "https://www.ross-simons.com/products/571221",
    "final_url": "https://www.ross-simons.com/products/571221",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:29Z",
+   "fetched_at": "2026-10-23T09:58:50Z",
    "ok": true,
-   "bytes": 939123,
+   "bytes": 939120,
    "extraction": {
+    "h1": "Women's 2mm 14kt Yellow Gold Band",
     "title_tag": "Women's 2mm 14kt Yellow Gold Band",
     "jsonld_titles": [
      "Women's 2mm 14kt Yellow Gold Band"
@@ -165,7 +166,37 @@
       "excerpt": "Cart 2 Metal Choices 14kt White Gold 14kt White Gold 14kt Yellow Gold 14kt Yellow Gold Details ${ (() => { const specRows = (specs_keys_sorted |"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Choo"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -223,10 +254,11 @@
    "url": "https://www.ross-simons.com/products/571222",
    "final_url": "https://www.ross-simons.com/products/571222",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:29Z",
+   "fetched_at": "2026-10-23T09:58:50Z",
    "ok": true,
-   "bytes": 931936,
+   "bytes": 931933,
    "extraction": {
+    "h1": "Women's 3mm 14kt Yellow Gold Band",
     "title_tag": "Women's 3mm 14kt Yellow Gold Band",
     "jsonld_titles": [
      "Women's 3mm 14kt Yellow Gold Band"
@@ -301,7 +333,37 @@
       "excerpt": "Style it solo or pair with other favorite rings for a timeless touch. 14kt yellow gold band. Read more… Read less Ring Sizing (PDF, opens in a n"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Choo"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -359,10 +421,11 @@
    "url": "https://www.ross-simons.com/products/571223",
    "final_url": "https://www.ross-simons.com/products/571223",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:29Z",
+   "fetched_at": "2026-10-23T09:58:50Z",
    "ok": true,
-   "bytes": 930161,
+   "bytes": 930158,
    "extraction": {
+    "h1": "Women's 4mm 14kt Yellow Gold Band",
     "title_tag": "Women's 4mm 14kt Yellow Gold Band",
     "jsonld_titles": [
      "Women's 4mm 14kt Yellow Gold Band"
@@ -441,7 +504,37 @@
       "excerpt": "and gleams in sunny 14kt yellow gold with a brightly polished finish. 14kt yellow gold band. Read more… Read less Ring Sizing (PDF, opens in a n"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Choo"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -499,10 +592,11 @@
    "url": "https://www.ross-simons.com/products/571213",
    "final_url": "https://www.ross-simons.com/products/571213",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:29Z",
+   "fetched_at": "2026-10-23T09:58:50Z",
    "ok": true,
-   "bytes": 890461,
+   "bytes": 892043,
    "extraction": {
+    "h1": "Men's 5mm 14kt Yellow Gold Band",
     "title_tag": "Men's 5mm 14kt Yellow Gold Band",
     "jsonld_titles": [
      "Men's 5mm 14kt Yellow Gold Band"
@@ -577,7 +671,37 @@
       "excerpt": "art 2 Metal Choices 14kt Yellow Gold 14kt Yellow Gold 14kt White Gold 14kt White Gold Details ${ (() => { const specRows = (specs_keys_sorted ||"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Choo"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -639,10 +763,11 @@
    "url": "https://www.ross-simons.com/products/981367",
    "final_url": "https://www.ross-simons.com/products/981367",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:30Z",
+   "fetched_at": "2026-10-23T09:58:51Z",
    "ok": true,
-   "bytes": 932449,
+   "bytes": 932446,
    "extraction": {
+    "h1": "14kt Yellow Gold Polished Ring",
     "title_tag": "14kt Yellow Gold Polished Ring",
     "jsonld_titles": [
      "14kt Yellow Gold Polished Ring"
@@ -726,7 +851,41 @@
       "excerpt": "credibility that makes the gift special. A Notable Quality A piece in 14kt yellow gold won't need to be replaced or restored to stay beautiful:"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles How"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ads as intentional rather than crowded. Elemental Detail Giving 14kt gold jewelry means giving something real: 58.3% pure gold by weight, stamped to a globally recognized standard, with the credibility that makes the gift special. A Notable Quality A piece in 14kt y"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -789,10 +948,11 @@
    "url": "https://www.ross-simons.com/products/907250",
    "final_url": "https://www.ross-simons.com/products/907250",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:30Z",
+   "fetched_at": "2026-10-23T09:58:51Z",
    "ok": true,
-   "bytes": 929935,
+   "bytes": 929932,
    "extraction": {
+    "h1": "18kt Yellow Gold Roped Ring",
     "title_tag": "18kt Yellow Gold Roped Ring",
     "jsonld_titles": [
      "18kt Yellow Gold Roped Ring"
@@ -868,7 +1028,37 @@
       "excerpt": "art 2 Metal Choices 18kt Yellow Gold 18kt Yellow Gold 18kt White Gold 18kt White Gold Details ${ (() => { const specRows = (specs_keys_sorted ||"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles How"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -926,10 +1116,11 @@
    "url": "https://www.ross-simons.com/products/960952",
    "final_url": "https://www.ross-simons.com/products/960952",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:30Z",
+   "fetched_at": "2026-10-23T09:58:51Z",
    "ok": true,
-   "bytes": 932859,
+   "bytes": 932856,
    "extraction": {
+    "h1": "Italian 14kt Yellow Gold Dome Ring",
     "title_tag": "Italian 14kt Yellow Gold Dome Ring",
     "jsonld_titles": [
      "Italian 14kt Yellow Gold Dome Ring"
@@ -1001,7 +1192,37 @@
       "excerpt": "e alloy metals make it harder and more scratch-resistant than 18kt or 24kt, which are better suited for occasional wear. Myth & Meaning Yellow g"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles How"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1059,10 +1280,11 @@
    "url": "https://www.ross-simons.com/products/879968",
    "final_url": "https://www.ross-simons.com/products/879968",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:30Z",
+   "fetched_at": "2026-10-23T09:58:51Z",
    "ok": true,
-   "bytes": 912151,
+   "bytes": 912334,
    "extraction": {
+    "h1": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
     "title_tag": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
     "jsonld_titles": [
      "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold"
@@ -1129,7 +1351,37 @@
       "excerpt": "Cart 2 Metal Choices 14kt White Gold 14kt White Gold 14kt Yellow Gold 14kt Yellow Gold Details ${ (() => { const specRows = (specs_keys_sorted |"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles How"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1187,10 +1439,11 @@
    "url": "https://www.ross-simons.com/products/999230",
    "final_url": "https://www.ross-simons.com/products/999230",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:31Z",
+   "fetched_at": "2026-10-23T09:58:52Z",
    "ok": true,
-   "bytes": 906253,
+   "bytes": 906250,
    "extraction": {
+    "h1": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold",
     "title_tag": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity",
     "jsonld_titles": [
      ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold"
@@ -1233,7 +1486,37 @@
       "excerpt": "t gems alternate with pretty .30 ct. t.w. pink sapphire rounds set in 14kt yellow gold. 1/8\" wide. Pink sapphire and garnet eternity band. Read"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Comm"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1295,10 +1578,11 @@
    "url": "https://www.ross-simons.com/products/991907",
    "final_url": "https://www.ross-simons.com/products/991907",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:31Z",
+   "fetched_at": "2026-10-23T09:58:52Z",
    "ok": true,
-   "bytes": 911023,
+   "bytes": 910327,
    "extraction": {
+    "h1": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "title_tag": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "jsonld_titles": [
      "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold"
@@ -1361,7 +1645,41 @@
       "excerpt": "Cart 2 Metal Choices 14kt White Gold 14kt White Gold 14kt Yellow Gold 14kt Yellow Gold Details ${ (() => { const specRows = (specs_keys_sorted |"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "chemical properties. This item includes a report from the International Gemological Institute to verify color, clarity and carat weight. 5/16\" wide. Lab-grown diamond ring. Read more… Read less Ring Sizing (PDF, opens in a new tab) Size 5 Size 6 Size 7 Size 8 Size"
+     },
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Anni"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1419,10 +1737,11 @@
    "url": "https://www.ross-simons.com/products/993512",
    "final_url": "https://www.ross-simons.com/products/993512",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:31Z",
+   "fetched_at": "2026-10-23T09:58:52Z",
    "ok": true,
-   "bytes": 910348,
+   "bytes": 910826,
    "extraction": {
+    "h1": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
     "title_tag": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
     "jsonld_titles": [
      "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold"
@@ -1485,7 +1804,41 @@
       "excerpt": "Cart 2 Metal Choices 14kt White Gold 14kt White Gold 14kt Yellow Gold 14kt Yellow Gold Details ${ (() => { const specRows = (specs_keys_sorted |"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "chemical properties. This item includes a report from the International Gemological Institute to verify color, clarity and carat weight. 5/16\" wide. Lab-grown diamond ring. Read more… Read less Ring Sizing (PDF, opens in a new tab) Size 5 Size 6 Size 7 Size 8 Size"
+     },
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Anni"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1543,10 +1896,11 @@
    "url": "https://www.ross-simons.com/products/991908",
    "final_url": "https://www.ross-simons.com/products/991908",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:31Z",
+   "fetched_at": "2026-10-23T09:58:52Z",
    "ok": true,
-   "bytes": 907621,
+   "bytes": 906628,
    "extraction": {
+    "h1": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "title_tag": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "jsonld_titles": [
      "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold"
@@ -1593,7 +1947,41 @@
       "excerpt": "t.w. round brilliant-cut gems of the same kind that stud the slender 14kt white gold band. Lab-grown diamonds are identical to mined diamonds a"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "chemical properties. This item includes a report from the International Gemological Institute to verify color, clarity and carat weight. 1/4\" wide. Lab-grown diamond ring. Read more… Read less Ring Sizing (PDF, opens in a new tab) Size 5 Size 6 Size 7 Size 8 Size 9"
+     },
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Anni"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1651,10 +2039,11 @@
    "url": "https://www.ross-simons.com/products/864785",
    "final_url": "https://www.ross-simons.com/products/864785",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:32Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": true,
-   "bytes": 932268,
+   "bytes": 932265,
    "extraction": {
+    "h1": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold",
     "title_tag": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt",
     "jsonld_titles": [
      "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold"
@@ -1721,7 +2110,37 @@
       "excerpt": "wedding band and along the halo engagement ring, both set in polished 14kt yellow gold. The center stone totals .20 carats. Diamond ring set. Re"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Anni"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1779,10 +2198,11 @@
    "url": "https://www.ross-simons.com/products/943668",
    "final_url": "https://www.ross-simons.com/products/943668",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:32Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": true,
-   "bytes": 893714,
+   "bytes": 893711,
    "extraction": {
+    "h1": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
     "title_tag": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
     "jsonld_titles": [
      ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold"
@@ -1834,7 +2254,37 @@
       "excerpt": "ement ring setting! Ten round brilliant-cut diamonds trail a polished 14kt white gold shank to present a majestic center stone of your choice. D"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Anni"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1896,10 +2346,11 @@
    "url": "https://www.ross-simons.com/products/242556",
    "final_url": "https://www.ross-simons.com/products/242556",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": true,
-   "bytes": 863272,
+   "bytes": 863269,
    "extraction": {
+    "h1": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
     "title_tag": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in",
     "jsonld_titles": [
      "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5"
@@ -1926,7 +2377,37 @@
       "excerpt": "rkling across the band in 14kt white gold. Finely crafted in polished 14kt yellow gold. 5/8\" wide. Diamond and sapphire ring. Exclusive, one-of-"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Disc"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -1984,10 +2465,11 @@
    "url": "https://www.ross-simons.com/products/254575",
    "final_url": "https://www.ross-simons.com/products/254575",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": true,
-   "bytes": 849569,
+   "bytes": 849566,
    "extraction": {
+    "h1": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
     "title_tag": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
     "jsonld_titles": [
      "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5"
@@ -2022,7 +2504,37 @@
       "excerpt": "hat's ready to pair perfectly with other tonal favorites. 7/16\" wide. 14kt two-tone gold bypass ring. Exclusive, one-of-a-kind Estate Jewelry. R"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Disc"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -2080,10 +2592,11 @@
    "url": "https://www.ross-simons.com/products/240912",
    "final_url": "https://www.ross-simons.com/products/240912",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:54Z",
    "ok": true,
-   "bytes": 858980,
+   "bytes": 857801,
    "extraction": {
+    "h1": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
     "title_tag": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold",
     "jsonld_titles": [
      "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7"
@@ -2110,7 +2623,37 @@
       "excerpt": "sapphire glowing in a four-prong setting on a simple polished band of 14kt yellow gold. GIA Cert #7235079100. 1/4\" wide. Certified sapphire ring"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Disc"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -2168,16 +2711,18 @@
    "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
    "final_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:32Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": false,
    "bytes": 5999,
    "extraction": {
+    "h1": "",
     "title_tag": "Just a moment...",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -2193,16 +2738,18 @@
    "url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
    "final_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:32Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": false,
-   "bytes": 5987,
+   "bytes": 5965,
    "extraction": {
+    "h1": "",
     "title_tag": "Just a moment...",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -2218,16 +2765,18 @@
    "url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
    "final_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:32Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": false,
    "bytes": 6020,
    "extraction": {
+    "h1": "",
     "title_tag": "Just a moment...",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -2243,16 +2792,18 @@
    "url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
    "final_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": false,
-   "bytes": 5984,
+   "bytes": 5962,
    "extraction": {
+    "h1": "",
     "title_tag": "Just a moment...",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -2268,16 +2819,18 @@
    "url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
    "final_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:53Z",
    "ok": false,
    "bytes": 6029,
    "extraction": {
+    "h1": "",
     "title_tag": "Just a moment...",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -2293,10 +2846,11 @@
    "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:54Z",
    "ok": true,
-   "bytes": 805034,
+   "bytes": 805031,
    "extraction": {
+    "h1": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)",
     "title_tag": "Oval Solitaire Engagement Ring | Anna Sheffield | Champange Diamond &ndash; Anna Sheffield Jewelry",
     "jsonld_titles": [
      "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)"
@@ -2345,7 +2899,8 @@
       "excerpt": "14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond $7,500.00 USD View all"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "SOLID GOLD",
@@ -2419,10 +2974,11 @@
    "url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:54Z",
    "ok": true,
-   "bytes": 709843,
+   "bytes": 709840,
    "extraction": {
+    "h1": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond",
     "title_tag": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond &ndash; Anna Sheffield Jewelry",
     "jsonld_titles": [
      "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond"
@@ -2459,7 +3015,8 @@
       "excerpt": "14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond $7,500.00 USD View all"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "SOLID GOLD",
@@ -2533,10 +3090,11 @@
    "url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:33Z",
+   "fetched_at": "2026-10-23T09:58:54Z",
    "ok": true,
-   "bytes": 810109,
+   "bytes": 810106,
    "extraction": {
+    "h1": "Bea Three Stone Ring - 14k Gold & White Diamond Center",
     "title_tag": "Three Diamond Ring | Anna Sheffield | White Diamond Bea Three Ring &ndash; Anna Sheffield Jewelry",
     "jsonld_titles": [
      "Bea Three Stone Ring - 14k Gold & White Diamond Center"
@@ -2589,7 +3147,8 @@
       "excerpt": "14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond $7,500.00 USD View all"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "SOLID GOLD",
@@ -2663,10 +3222,11 @@
    "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:34Z",
+   "fetched_at": "2026-10-23T09:58:55Z",
    "ok": true,
-   "bytes": 7169626,
+   "bytes": 7169623,
    "extraction": {
+    "h1": "2ct Oval Lab Grown Diamond Bezel Ring",
     "title_tag": "2ct Oval Lab Grown Diamond Bezel Ring",
     "jsonld_titles": [
      "2ct Oval Lab Grown Diamond Bezel Ring"
@@ -2704,7 +3264,8 @@
       "excerpt": "wing this product 2ct Oval Lab Grown Diamond Bezel Ring $1,968 Rate - 14k Color - Yellow Size - 2.5 • Add to bag Log in to add to wishlist Life"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -2787,10 +3348,11 @@
    "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:35Z",
+   "fetched_at": "2026-10-23T09:58:56Z",
    "ok": true,
-   "bytes": 7181072,
+   "bytes": 7181069,
    "extraction": {
+    "h1": "1ct Emerald Lab Grown Diamond Bezel Ring",
     "title_tag": "1ct Emerald Lab Grown Diamond Bezel Ring",
     "jsonld_titles": [
      "1ct Emerald Lab Grown Diamond Bezel Ring"
@@ -2828,7 +3390,8 @@
       "excerpt": "g this product 1ct Emerald Lab Grown Diamond Bezel Ring $1,498 Rate - 14k Color - Yellow Size - 2.5 • Add to bag Log in to add to wishlist Life"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -2911,10 +3474,11 @@
    "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:35Z",
+   "fetched_at": "2026-10-23T09:58:55Z",
    "ok": true,
-   "bytes": 7176090,
+   "bytes": 7198825,
    "extraction": {
+    "h1": "3ct Round Lab Grown Diamond Bezel Ring",
     "title_tag": "3ct Round Lab Grown Diamond Bezel Ring",
     "jsonld_titles": [
      "3ct Round Lab Grown Diamond Bezel Ring"
@@ -2952,7 +3516,8 @@
       "excerpt": "ing this product 3ct Round Lab Grown Diamond Bezel Ring $2,438 Rate - 14k Color - Yellow Size - 2.5 • Add to bag Log in to add to wishlist Life"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -3035,10 +3600,11 @@
    "url": "https://auratenewyork.com/products/modern-cigar-band",
    "final_url": "https://auratenewyork.com/products/modern-cigar-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:35Z",
+   "fetched_at": "2026-10-23T09:58:55Z",
    "ok": true,
-   "bytes": 7525742,
+   "bytes": 7525739,
    "extraction": {
+    "h1": "Modern Cigar Band",
     "title_tag": "Modern Cigar Band in Yellow, Rose or White Gold",
     "jsonld_titles": [
      "Minimalist Gold Cigar Band Ring - Recycled Metal, Size 10"
@@ -3072,7 +3638,8 @@
       "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum Tennis Best S"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -3163,10 +3730,11 @@
    "url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "final_url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:57Z",
    "ok": true,
-   "bytes": 7539420,
+   "bytes": 7539417,
    "extraction": {
+    "h1": "Diamond X Ring",
     "title_tag": "X Ring with White Diamonds in Yellow, Rose or White Gold",
     "jsonld_titles": [
      "Diamond X Prong-Set Gold Diamond Crossover Ring"
@@ -3204,7 +3772,8 @@
       "excerpt": "ople are viewing this product Diamond X Ring 82 Reviews $1,808 Rate - 14k Color - Yellow Size - 6 • Add to bag Log in to add to wishlist Lifeti"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -3291,10 +3860,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:35Z",
+   "fetched_at": "2026-10-23T09:58:56Z",
    "ok": true,
    "bytes": 676032,
    "extraction": {
+    "h1": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
     "title_tag": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
     "jsonld_titles": [
      "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)"
@@ -3333,7 +3903,13 @@
       "excerpt": "gement rings are perhaps our most popular style. This one, crafted in 18k yellow gold, features a rounded inside edge for comfort. Secure Shopp"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3362,10 +3938,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:35Z",
+   "fetched_at": "2026-10-23T09:58:56Z",
    "ok": true,
    "bytes": 675198,
    "extraction": {
+    "h1": "Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold",
     "jsonld_titles": [
      "Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold"
@@ -3404,7 +3981,13 @@
       "excerpt": "ral solitaire is a timeless engagement ring design. Crafted in bright 14k yellow gold, the contoured shoulders perfectly frame your choice of c"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3441,10 +4024,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:56Z",
    "ok": true,
    "bytes": 674856,
    "extraction": {
+    "h1": "Leaf Solitaire Engagement Ring in 14k Yellow Gold",
     "title_tag": "Leaf Solitaire Engagement Ring in 14k Yellow Gold",
     "jsonld_titles": [
      "Leaf Solitaire Engagement Ring in 14k Yellow Gold"
@@ -3483,7 +4067,13 @@
       "excerpt": "ce of your love with this classic solitaire engagement ring featuring 14k yellow gold design that promises a rich luster. The shanks gracefully"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3520,10 +4110,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:57Z",
    "ok": true,
    "bytes": 673945,
    "extraction": {
+    "h1": "Bezel Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Bezel Solitaire Engagement Ring in 14K Yellow Gold",
     "jsonld_titles": [
      "Bezel Solitaire Engagement Ring in 14K Yellow Gold"
@@ -3558,7 +4149,13 @@
       "excerpt": "ment of $1,336 ** Learn more View other Financing Options Metal Type: 14K Yellow Gold Ring Size: Select Ring Size Guide Add Free Engraving Ship"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3595,10 +4192,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:56Z",
    "ok": true,
    "bytes": 619351,
    "extraction": {
+    "h1": "Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold",
     "title_tag": "Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold",
     "jsonld_titles": [
      "Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold"
@@ -3633,7 +4231,13 @@
       "excerpt": "ment of $2,106 ** Learn more View other Financing Options Metal Type: 14K Yellow Gold Ring Size: Select Ring Size Guide Add Free Engraving Ship"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3670,10 +4274,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:57Z",
    "ok": true,
-   "bytes": 649593,
+   "bytes": 649592,
    "extraction": {
+    "h1": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
     "jsonld_titles": [
      "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold"
@@ -3712,7 +4317,13 @@
       "excerpt": "rns to make your experience as easy as possible. Product Details This 14k yellow gold, six-prong solitaire is the ultimate classic engagement r"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3749,10 +4360,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:57Z",
    "ok": true,
    "bytes": 645680,
    "extraction": {
+    "h1": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
     "title_tag": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
     "jsonld_titles": [
      "Classic Six-Prong Solitaire  Engagement Ring in 18k Yellow Gold"
@@ -3791,7 +4403,13 @@
       "excerpt": "rns to make your experience as easy as possible. Product Details This 18k yellow gold, six-prong solitaire is the ultimate classic engagement r"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3828,10 +4446,11 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:36Z",
+   "fetched_at": "2026-10-23T09:58:57Z",
    "ok": true,
    "bytes": 629845,
    "extraction": {
+    "h1": "Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
     "title_tag": "Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
     "jsonld_titles": [
      "Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold"
@@ -3870,7 +4489,13 @@
       "excerpt": "this petite nouveau solitaire engagement ring is crafted in polished 14k white gold to create a classic frame for your center diamond. Secure"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -3907,10 +4532,11 @@
    "url": "https://mejuri.com/products/diamond-eternity-band",
    "final_url": "https://mejuri.com/products/diamond-eternity-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:37Z",
+   "fetched_at": "2026-10-23T09:58:58Z",
    "ok": true,
-   "bytes": 1702860,
+   "bytes": 1702632,
    "extraction": {
+    "h1": "Diamond Eternity Band",
     "title_tag": "Diamond Eternity Band | Mejuri",
     "jsonld_titles": [
      "Diamond Eternity Band",
@@ -3962,7 +4588,17 @@
       "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 14K Gold 93% Traceable to Mine or Region Natural Diamonds OUR SUSTAINABIL"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "s: a slimmed down style handcrafted in recycled 14k solid gold, featuring 33-42 responsibly sourced diamonds for an average carat weight of 0.532ct. Each diamond is hand-set in a basket of open prongs to enhance the sparkle. Materials & Specifications Solid Yellow G"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "re responsibly sourced from suppliers who follow conflict-free and socially responsible practices. Specifications - Minimum Carat Weight: 0.044 ct - 0.056 ct - Diamond Clarity: SI - I - Diamond Color: GHI - Band Width: 1.5 mm Need help with your size? Size Guide Why"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "Solid Yellow Gold",
@@ -4004,10 +4640,11 @@
    "url": "https://mejuri.com/products/diamonds-band",
    "final_url": "https://mejuri.com/products/diamonds-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:37Z",
+   "fetched_at": "2026-10-23T09:58:58Z",
    "ok": true,
-   "bytes": 1278798,
+   "bytes": 1278780,
    "extraction": {
+    "h1": "Diamonds Band",
     "title_tag": "Diamond Band Ring | Mejuri",
     "jsonld_titles": [
      "Diamonds Band",
@@ -4059,7 +4696,13 @@
       "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 14K Gold 93% Traceable to Mine or Region Natural Diamonds OUR SUSTAINABIL"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "re responsibly sourced from suppliers who follow conflict-free and socially responsible practices. Specifications - Minimum Carat Weight: 0.07 ct - Diamond Clarity: SI - I - Diamond Color: GHI - Stone Size: 1.8 mm - Shank Width: 2.8 mm - Engrave up to 25 characters"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "Solid Yellow Gold",
@@ -4101,10 +4744,11 @@
    "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "final_url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:37Z",
+   "fetched_at": "2026-10-23T09:58:58Z",
    "ok": true,
-   "bytes": 1733765,
+   "bytes": 1733770,
    "extraction": {
+    "h1": "Bold Diamond Eternity Ring",
     "title_tag": "Bold Diamond Eternity Ring | Mejuri",
     "jsonld_titles": [
      "Bold Diamond Eternity Ring",
@@ -4156,7 +4800,13 @@
       "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 14K Gold 93% Traceable to Mine or Region Natural Diamonds OUR SUSTAINABIL"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "re responsibly sourced from suppliers who follow conflict-free and socially responsible practices. Specifications - Minimum Carat Weight: 1.15 ct - 1.57 ct - Diamond Clarity: SI - I - Diamond Color: GHI - Stone Size: 2.5 mm - Band Width: 2.6 mm - Engrave up to 25 ch"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "Solid White Gold",
@@ -4198,10 +4848,11 @@
    "url": "https://mejuri.com/products/2mm-smooth-band",
    "final_url": "https://mejuri.com/products/2mm-smooth-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:38Z",
+   "fetched_at": "2026-10-23T09:58:59Z",
    "ok": true,
-   "bytes": 1529743,
+   "bytes": 1529749,
    "extraction": {
+    "h1": "2mm Smooth Band",
     "title_tag": "14k Gold Smooth Band Ring - Jewelry | Mejuri",
     "jsonld_titles": [
      "2mm Smooth Band",
@@ -4257,7 +4908,13 @@
       "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 14K Gold OUR SUSTAINABILITY PROGRESS View Sustainability Report Our journ"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "ional) Add Pick Up In-Store Availability Select a size to see availability. Loading... The ideal band for your next chapter. Lightweight, wearable and enduring, it’s the perfect piece to symbolize your unbreakable bond. Or, to bring in as a permanent part of your ri"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "Solid Yellow Gold",
@@ -4299,16 +4956,18 @@
    "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
    "final_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:37Z",
+   "fetched_at": "2026-10-23T09:58:58Z",
    "ok": false,
    "bytes": 615593,
    "extraction": {
+    "h1": "",
     "title_tag": "Brilliant Earth - Verifying",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -4324,10 +4983,11 @@
    "url": "https://www.ross-simons.com/products/997811",
    "final_url": "https://www.ross-simons.com/products/997811",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:38Z",
+   "fetched_at": "2026-10-23T09:58:59Z",
    "ok": true,
-   "bytes": 922281,
+   "bytes": 922278,
    "extraction": {
+    "h1": "Italian 10kt Yellow Gold Textured Ring",
     "title_tag": "Italian 10kt Yellow Gold Textured Ring",
     "jsonld_titles": [
      "Italian 10kt Yellow Gold Textured Ring"
@@ -4399,7 +5059,37 @@
       "excerpt": "=> ` `)) )} The deeper story Elemental Detail The distinction between 10kt yellow gold and gold-filled or gold-plated materials is not about qua"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles How"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "solid gold",
@@ -4462,10 +5152,11 @@
    "url": "https://www.ross-simons.com/products/939479",
    "final_url": "https://www.ross-simons.com/products/939479",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:58:59Z",
    "ok": true,
-   "bytes": 907540,
+   "bytes": 907723,
    "extraction": {
+    "h1": "Italian 14kt Yellow Gold Claddagh Ring",
     "title_tag": "Italian 14kt Yellow Gold Claddagh Ring",
     "jsonld_titles": [
      "Italian 14kt Yellow Gold Claddagh Ring"
@@ -4525,7 +5216,37 @@
       "excerpt": "e Irish culture, or even your own heritage! Made in Italy. 3/8\" wide. 14kt yellow gold Claddagh ring. Read more… Read less Ring Sizing (PDF, ope"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Our"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [
      {
@@ -4583,10 +5304,11 @@
    "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "final_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:38Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 1291177,
+   "bytes": 1291176,
    "extraction": {
+    "h1": "Diamonds Line Ring",
     "title_tag": "Diamonds Line Ring | Mejuri",
     "jsonld_titles": [
      "Diamonds Line Ring",
@@ -4634,7 +5356,13 @@
       "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 10K Gold 93% Traceable to Mine or Region Natural Diamonds OUR SUSTAINABIL"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "re responsibly sourced from suppliers who follow conflict-free and socially responsible practices. Specifications - Minimum Carat Weight: 0.047 ct - Diamond Clarity: SI - I - Diamond Color: GHI - Stone Size: 1.2 mm - Shank Width: 1.3 mm Need help with your size? Siz"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "Solid Yellow Gold",
@@ -4672,10 +5400,11 @@
    "url": "https://mejuri.com/us/en/products/signet-ring",
    "final_url": "https://mejuri.com/us/en/products/signet-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 1321555,
+   "bytes": 1321592,
    "extraction": {
+    "h1": "Signet Ring",
     "title_tag": "Signet Pinky Ring",
     "jsonld_titles": [
      "Signet Ring",
@@ -4723,7 +5452,8 @@
       "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 10K Gold OUR SUSTAINABILITY PROGRESS View Sustainability Report Our journ"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [
      {
       "match": "Solid Yellow Gold",
@@ -4761,10 +5491,11 @@
    "url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "final_url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:58:59Z",
    "ok": true,
-   "bytes": 441203,
+   "bytes": 441200,
    "extraction": {
+    "h1": "3ct Radiant Cut Lab Diamond Cathedral Ring",
     "title_tag": "3ct Radiant Cut Lab Diamond Cathedral Ring &ndash; Automic Gold",
     "jsonld_titles": [
      "3ct Radiant Cut Lab Diamond Cathedral Ring"
@@ -4827,7 +5558,26 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "Details Dimensions Stone is 9.7mm x 7.3mm Width Engagement band is 3mm, wedding band is 3mm Height Approximately 1.7mm - 6mm Item Weight Approximately 5.4g for gold or 8.1g for platinum Stone Lab created diamond Diamond clarity VS/VVS Diamond color D/E/F Diamond wei"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ght Approximately 5.4g for gold or 8.1g for platinum Stone Lab created diamond Diamond clarity VS/VVS Diamond color D/E/F Diamond weight Approximately 3ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "5.4g",
+      "excerpt": "wedding band is 3mm Height Approximately 1.7mm - 6mm Item Weight Approximately 5.4g for gold or 8.1g for platinum Stone Lab created diamond Diamond clarity VS/VVS"
+     },
+     {
+      "match": "8.1g",
+      "excerpt": "3mm Height Approximately 1.7mm - 6mm Item Weight Approximately 5.4g for gold or 8.1g for platinum Stone Lab created diamond Diamond clarity VS/VVS Diamond color D/E"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -4914,10 +5664,11 @@
    "url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "final_url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 468732,
+   "bytes": 468729,
    "extraction": {
+    "h1": "1ct Marquise Diamond Melted Ring",
     "title_tag": "Automic Gold Marquise Diamond Melted Ring | Fine Jewelry",
     "jsonld_titles": [
      "1ct Marquise Diamond Melted Ring"
@@ -4980,7 +5731,26 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "our blog ! Details Dimensions Stone is 10mm x 5mm Width Band is tapered 2.8mm to 8.5mm wide Height Approximately 2mm - 3.5mm Item Weight Approximately 7g (gold) or 10.5g (platinum) Stone Reclaimed natural diamond or Lab-created diamond with the highest cut quality D"
+     },
+     {
+      "match": "weight",
+      "excerpt": "iamond with the highest cut quality Diamond clarity Natural is VS. Lab is VS/VVS Diamond color Natural is H. Lab is D/E/F Diamond weight Approximately 1ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "7g",
+      "excerpt": "2.8mm to 8.5mm wide Height Approximately 2mm - 3.5mm Item Weight Approximately 7g (gold) or 10.5g (platinum) Stone Reclaimed natural diamond or Lab-created diamo"
+     },
+     {
+      "match": "10.5g",
+      "excerpt": "mm wide Height Approximately 2mm - 3.5mm Item Weight Approximately 7g (gold) or 10.5g (platinum) Stone Reclaimed natural diamond or Lab-created diamond with the high"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -5071,10 +5841,11 @@
    "url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "final_url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 518419,
+   "bytes": 518416,
    "extraction": {
+    "h1": "Diamond Leaves Ring",
     "title_tag": "Automic Gold Diamond Leaves Ring | Sustainable Fine Jewelry",
     "jsonld_titles": [
      "Diamond Leaves Ring"
@@ -5133,7 +5904,30 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "imensions Stone diameter is 6mm. Ring is 7mm at widest part Width Band is 2mm to 5mm wide Height Approximately 1.7mm - 3.2mm Item Weight Approximate item weight: gold 3.6g, platinum 5.4g Stone Ethically sourced natural diamond, clear lab-created diamond Diamond clar"
+     },
+     {
+      "match": "weight",
+      "excerpt": "is 6mm. Ring is 7mm at widest part Width Band is 2mm to 5mm wide Height Approximately 1.7mm - 3.2mm Item Weight Approximate item weight: gold 3.6g, platinum 5.4g Stone Ethically sourced natural diamond, clear lab-created diamond Diamond clarity Clear diamond is VS/"
+     },
+     {
+      "match": "weight",
+      "excerpt": "d natural diamond, clear lab-created diamond Diamond clarity Clear diamond is VS/VVS Diamond color Clear diamond is D/E/F Diamond weight ~1ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled gold Manufact"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "3.6g",
+      "excerpt": "de Height Approximately 1.7mm - 3.2mm Item Weight Approximate item weight: gold 3.6g, platinum 5.4g Stone Ethically sourced natural diamond, clear lab-created diamo"
+     },
+     {
+      "match": "5.4g",
+      "excerpt": "ximately 1.7mm - 3.2mm Item Weight Approximate item weight: gold 3.6g, platinum 5.4g Stone Ethically sourced natural diamond, clear lab-created diamond Diamond clar"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -5224,10 +6018,11 @@
    "url": "https://www.automicgold.com/products/diamond-petal-ring",
    "final_url": "https://www.automicgold.com/products/diamond-petal-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 494391,
+   "bytes": 494388,
    "extraction": {
+    "h1": "0.6ct Round Diamond Petal Ring",
     "title_tag": "Automic Gold Round Diamond Petal Ring | Fine Jewelry",
     "jsonld_titles": [
      "0.6ct Round Diamond Petal Ring"
@@ -5286,7 +6081,26 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "r blog ! Details Dimensions Stone diameter is 5.5mm Width Graduating band from 1mm to 3mm Height Approximately 1.5mm - 3.3mm Item Weight Approximately 2.7g (gold) or 4.1g (platinum) Stone Reclaimed natural diamond or Lab created diamond Diamond clarity Natural is VS"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ural diamond or Lab created diamond Diamond clarity Natural is VS. Lab is VS/VVS Diamond color Natural is H. Lab is D/E/F Diamond weight 0.6ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled gold Manufac"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "2.7g",
+      "excerpt": "nd from 1mm to 3mm Height Approximately 1.5mm - 3.3mm Item Weight Approximately 2.7g (gold) or 4.1g (platinum) Stone Reclaimed natural diamond or Lab created diamon"
+     },
+     {
+      "match": "4.1g",
+      "excerpt": "3mm Height Approximately 1.5mm - 3.3mm Item Weight Approximately 2.7g (gold) or 4.1g (platinum) Stone Reclaimed natural diamond or Lab created diamond Diamond clari"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -5373,10 +6187,11 @@
    "url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "final_url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 607625,
+   "bytes": 607622,
    "extraction": {
+    "h1": "Gemstone Kite Ring",
     "title_tag": "Automic Gold Gemstone Kite Ring | Sustainable Fine Jewelry",
     "jsonld_titles": [
      "Gemstone Kite Ring"
@@ -5435,7 +6250,26 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "te Gold? Check out our blog ! Details Dimensions Stone is 7.2mm x 5.5mm Width Band is 2.4mm Height Approximately 1.7mm - 4mm Item Weight Approximately 3.5g (gold) or 5.3g (platinum) Stone Ethically sourced natural salt and pepper diamond, lab-created alexandrite and"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ed alexandrite and diamond, natural gemstone Diamond clarity Clear diamond is VS/VVS Diamond color Clear Diamond is D/E/F Diamond weight Diamond is approximately 0.60ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "3.5g",
+      "excerpt": "Width Band is 2.4mm Height Approximately 1.7mm - 4mm Item Weight Approximately 3.5g (gold) or 5.3g (platinum) Stone Ethically sourced natural salt and pepper diamo"
+     },
+     {
+      "match": "5.3g",
+      "excerpt": "2.4mm Height Approximately 1.7mm - 4mm Item Weight Approximately 3.5g (gold) or 5.3g (platinum) Stone Ethically sourced natural salt and pepper diamond, lab-created"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -5522,10 +6356,11 @@
    "url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "final_url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 520216,
+   "bytes": 520213,
    "extraction": {
+    "h1": "Diamond Cluster Ring",
     "title_tag": "Automic Gold Diamond Cluster Ring | Sustainable Fine Jewelry",
     "jsonld_titles": [
      "Diamond Cluster Ring"
@@ -5584,7 +6419,26 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "log ! Details Dimensions Stones range in diameter from 1.5mm-4mm Width 8mm at widest part Height Approximately 1.7mm - 2.4mm Item Weight Approximately 3.1g (gold) or 4.7g (platinum) Stone Reclaimed natural diamond or Lab-created diamond Diamond clarity Natural is VS"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ural diamond or Lab-created diamond Diamond clarity Natural is VS. Lab is VS/VVS Diamond color Natural is H. Lab is D/E/F Diamond weight 0.63ctw Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled gold Manuf"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "3.1g",
+      "excerpt": "8mm at widest part Height Approximately 1.7mm - 2.4mm Item Weight Approximately 3.1g (gold) or 4.7g (platinum) Stone Reclaimed natural diamond or Lab-created diamon"
+     },
+     {
+      "match": "4.7g",
+      "excerpt": "art Height Approximately 1.7mm - 2.4mm Item Weight Approximately 3.1g (gold) or 4.7g (platinum) Stone Reclaimed natural diamond or Lab-created diamond Diamond clari"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -5675,10 +6529,11 @@
    "url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "final_url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": true,
-   "bytes": 556645,
+   "bytes": 556642,
    "extraction": {
+    "h1": "Diamond Bubble Ring",
     "title_tag": "Automic Gold Diamond Bubble Ring | Sustainable Fine Jewelry",
     "jsonld_titles": [
      "Diamond Bubble Ring"
@@ -5737,7 +6592,26 @@
       "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "s ring. Details Dimensions Stones are 1.5mm and 2mm in diameter Width Band is 3mm at widest parts Height Approximately 1.7mm Item Weight Approximately 1.4g (gold) or 2.1g (platinum) Stone Reclaimed clear natural diamond, clear lab-created diamond, ethically sourced"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ar Lab is VS/VVS Diamond color Clear Natural is H. Clear Lab is D/E/F. Colored diamonds are natural and may vary in color Diamond weight 0.35ctw Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled gold Manuf"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "1.4g",
+      "excerpt": "and is 3mm at widest parts Height Approximately 1.7mm Item Weight Approximately 1.4g (gold) or 2.1g (platinum) Stone Reclaimed clear natural diamond, clear lab-crea"
+     },
+     {
+      "match": "2.1g",
+      "excerpt": "idest parts Height Approximately 1.7mm Item Weight Approximately 1.4g (gold) or 2.1g (platinum) Stone Reclaimed clear natural diamond, clear lab-created diamond, et"
+     }
+    ],
     "solid_mentions": [
      {
       "match": "Solid 14k Gold",
@@ -5819,23 +6693,25 @@
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
    "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": false,
-   "bytes": 554,
+   "bytes": 556,
    "extraction": {
+    "h1": "Access Denied",
     "title_tag": "Access Denied",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
     "prices": [],
-    "text_length": 326,
-    "text_sha256": "b0e751357e1895a299949b155d9dd6a8c5ddde07d86eb6877674fa08007f281d"
+    "text_length": 328,
+    "text_sha256": "6f10181198dd9b7f955e2021fb203171fd973e7a98c91f0a6a3ae42aa8a5189a"
    }
   },
   {
@@ -5844,23 +6720,25 @@
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
    "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": false,
-   "bytes": 554,
+   "bytes": 556,
    "extraction": {
+    "h1": "Access Denied",
     "title_tag": "Access Denied",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
     "prices": [],
-    "text_length": 326,
-    "text_sha256": "c623b22c102d9b643e48ac4956fe2a151ef2c792ea76ad63946eae224dd72146"
+    "text_length": 328,
+    "text_sha256": "102ccc1f4da28a56dbc54f233ec5862e077641320bb6285e71996f19409d194f"
    }
   },
   {
@@ -5869,23 +6747,25 @@
    "url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
    "final_url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T09:57:39Z",
+   "fetched_at": "2026-10-23T09:59:00Z",
    "ok": false,
-   "bytes": 465,
+   "bytes": 473,
    "extraction": {
+    "h1": "Access Denied",
     "title_tag": "Access Denied",
     "jsonld_titles": [],
     "jsonld_prices": [],
     "meta": {},
     "karat_mentions": [],
-    "weight_mentions": [],
+    "weight_keyword_context": [],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
     "hallmark_mentions": [],
     "prices": [],
-    "text_length": 265,
-    "text_sha256": "b8b63cad513e6571cf1efd96cf5d1dbb208a35a6e96c8f35bd79b543af070d0d"
+    "text_length": 273,
+    "text_sha256": "147a0c39e6e6e68a95ee89f71757302f25bd42dfa9f6b8c8faa64ca28970e3ce"
    }
   },
   {
@@ -5894,10 +6774,11 @@
    "url": "https://mene.com/products/mene-classic-band-gold",
    "final_url": "https://mene.com/products/mene-classic-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:40Z",
+   "fetched_at": "2026-10-23T09:59:01Z",
    "ok": true,
-   "bytes": 675399,
+   "bytes": 675533,
    "extraction": {
+    "h1": "Classic Band",
     "title_tag": "Menē Classic Band - 24k Gold | Menē",
     "jsonld_titles": [
      "Classic Band"
@@ -5924,7 +6805,13 @@
       "excerpt": "Medallions Tableware Accessories Gift Cards Customer Care 1-833-MENE-24K service@mene.com Live Chat Help Center Product Care Reviews About Abo"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "Quarter sizes available upon request. Specifications Width: 5 mm Thickness: 2 mm Dimensions are approximate. Products are sold by weight, not size. Learn more. Read more Recommended for you About Menē The Menē story Discover our mission to craft pure metal jewelry t"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -5944,7 +6831,7 @@
      },
      {
       "match": "$1,320",
-      "excerpt": "nd 4.9 408 reviews 1 2 3 4 ... 25 Recommended for you Crown Ring From $1,320 Engravable Wide Classic Band From $2,075 Daisy Earrings $844 Engravab"
+      "excerpt": "sponsible Sourcing Certification. Recommended for you Crown Ring From $1,320 Engravable Wide Classic Band From $2,075 Daisy Earrings $844 Engravab"
      },
      {
       "match": "$2,075",
@@ -5976,11 +6863,11 @@
      },
      {
       "match": "$1,544",
-      "excerpt": "gravable Wide Classic Band From $722 Engravable Narrow Flat Band From $1,544 Wide Faceted Band From $2,396"
+      "excerpt": "gravable Wide Classic Band From $722 Engravable Narrow Flat Band From $1,544 Wide Faceted Band From $2,396 4.9 · 408 reviews Classic Band 4.9 408"
      }
     ],
     "text_length": 2622,
-    "text_sha256": "b6e70980adc7bcbef01a34a96f7be8bde5b17b5a7aed6592e049187978fdc4bb"
+    "text_sha256": "126195bad4a6aa7d9d63214eeae24d67b310a123e781a7620b99db5b1d9bd99f"
    }
   },
   {
@@ -5989,10 +6876,11 @@
    "url": "https://mene.com/products/mene-narrow-band-gold",
    "final_url": "https://mene.com/products/mene-narrow-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T09:57:40Z",
+   "fetched_at": "2026-10-23T09:59:01Z",
    "ok": true,
-   "bytes": 642051,
+   "bytes": 641921,
    "extraction": {
+    "h1": "Narrow Classic Band",
     "title_tag": "Menē Narrow Classic Band - 24k Gold | Menē",
     "jsonld_titles": [
      "Narrow Classic Band"
@@ -6019,7 +6907,13 @@
       "excerpt": "Medallions Tableware Accessories Gift Cards Customer Care 1-833-MENE-24K service@mene.com Live Chat Help Center Product Care Reviews About Abo"
      }
     ],
-    "weight_mentions": [],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "Quarter sizes available upon request. Specifications Width: 4 mm Thickness: 2 mm Dimensions are approximate. Products are sold by weight, not size. Learn more. Read more Recommended for you About Menē The Menē story Discover our mission to craft pure metal jewelry t"
+     }
+    ],
+    "gram_mentions": [],
     "solid_mentions": [],
     "plated_mentions": [],
     "sale_mentions": [],
@@ -6039,7 +6933,7 @@
      },
      {
       "match": "$1,395",
-      "excerpt": "52 reviews 1 2 3 4 ... 25 Recommended for you Etched Ripple Ring From $1,395 Engravable Narrow Classic Band From $617 Acorn Charm $649 Engravable"
+      "excerpt": "e Sourcing Certification. Recommended for you Etched Ripple Ring From $1,395 Engravable Narrow Classic Band From $617 Acorn Charm $649 Engravable"
      },
      {
       "match": "$617",
@@ -6067,15 +6961,15 @@
      },
      {
       "match": "$1,845",
-      "excerpt": "1,664 Engravable Wide Classic Band From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross Pendant $1,414"
+      "excerpt": "1,664 Engravable Wide Classic Band From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross Pendant $1,414 4.9 · 452 review"
      },
      {
       "match": "$1,357",
-      "excerpt": "nd From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross Pendant $1,414"
+      "excerpt": "nd From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross Pendant $1,414 4.9 · 452 reviews Narrow Classic Band 4.9 452 re"
      }
     ],
     "text_length": 2612,
-    "text_sha256": "cf4c23f76188f6bb2de586c7615cccbb6cf1871ca27dbd2e360ab76251bad0f6"
+    "text_sha256": "c0582cc9444b053346cc8b09489dc661889c53232b87f144f2ba4340d1c4ef56"
    }
   }
  ]
