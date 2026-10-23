@@ -1,14 +1,14 @@
 {
-  "as_of": "2026-10-23T19:38:15Z",
+  "as_of": "2026-10-23T20:19:15Z",
   "note": "Published gold prices, each stored with the publisher's own timestamp. None is an estimate. The latest reading drives the melt arithmetic; the calculator lets you replace the price at any time.",
   "primary": {
     "label": "Gold spot, USD per troy ounce",
-    "price_usd_per_ozt": 3999.899902,
+    "price_usd_per_ozt": 3998.100098,
     "publisher": "gold-api.com",
-    "publisher_timestamp": "2026-10-23T19:38:15Z",
+    "publisher_timestamp": "2026-10-23T20:19:15Z",
     "source_url": "https://api.gold-api.com/price/XAU",
-    "observed_by": "sess-5aa23937",
-    "observed_at": "2026-10-23T19:38:30Z"
+    "observed_by": "sess-b4adf01a",
+    "observed_at": "2026-10-23T20:25:00Z"
   },
   "cross_check": {
     "label": "COMEX gold futures, front month (GC=F), USD per troy ounce",
@@ -23,6 +23,15 @@
   "grains_per_troy_ounce": 31.1034768,
   "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
   "readings": [
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 3998.100098,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T20:19:15Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "sess-b4adf01a",
+      "observed_at": "2026-10-23T20:25:00Z"
+    },
     {
       "label": "Gold spot, USD per troy ounce",
       "price_usd_per_ozt": 3999.899902,
@@ -75,7 +84,7 @@
   "pennyweights_per_troy_ounce": 20,
   "unit_authority": {
     "publisher": "National Institute of Standards and Technology (NIST)",
-    "document": "NIST Handbook 130 (2025), Uniform Laws and Regulations, Section 2.17 \u2014 Precious Metals Conversion Information",
+    "document": "NIST Handbook 130 (2025), Uniform Laws and Regulations, Section 2.17 — Precious Metals Conversion Information",
     "source_url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
     "retrieved_at": "2026-10-22",
     "note": "31.1034768 is exact grams per troy ounce (1 ozt = 480 grains = 20 dwt). Legacy property \"grains_per_troy_ounce\" is retained for backwards script compatibility."

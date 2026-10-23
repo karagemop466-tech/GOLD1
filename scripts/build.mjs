@@ -912,6 +912,10 @@ const checklistPage = layout({
   <h1>The checklist, scored</h1>
   <p class="lede">Your original checklist, line by line. Each line says what was checked, what was found, and what is left for you to do at the counter.</p>
   ${noHallucinationBanner()}
+  <div class="callout warn" role="note">
+    <h2>The key: what a stamp actually proves</h2>
+    <p><strong>A 14K or 18K stamp by itself does not prove the ring is actually that purity.</strong> The safest approach is a reputable seller + proper markings (karat mark plus manufacturer's registered trademark) + reasonable price consistent with the gold weight + independent testing (XRF plus density) after delivery. <strong>If the seller won't let you independently verify or return it: don't buy it.</strong></p>
+  </div>
   <div class="checklist">
     ${checklist.items
       .map(
