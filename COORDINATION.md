@@ -857,6 +857,9 @@ variant feeds) and to keep both `data/live/` timestamps.
 | Merged into `main` | **2026-10-23T20:26:51Z**, merge commit **`949ddfe45fca8ff34b7539a38e05a17ff0443c3e`** |
 | GitHub Pages | build **`built`**, `error: null`, for the exact merge commit (`updated_at` 2026-10-23T20:27:13Z) |
 | Live page read back | `https://karagemop466-tech.github.io/GOLD1/live-audit.html` returned the page with the stat panel, all six findings and the row table |
+| Follow-up PR | [#48](https://github.com/karagemop466-tech/GOLD1/pull/48) — *Fix live-audit time range, add N10/N11 and the 20:27Z replication record* · merged **2026-10-23T20:28:39Z**, merge commit **`5baa2afff4a4c9dae676efb96d0b2befb7837ec0`** |
+| Pages after the follow-up | build **`built`**, `error: null`, for `5baa2af` (`updated_at` 2026-10-23T20:29:06Z) |
+| Live page re-read | `live-audit.html?deploy=5baa2af` rendered the full time range (`2026-10-23T20:21:46Z` → `2026-10-23T20:22:25Z`), the run id, the immutable evidence file, the replication line and all six findings |
 
 **Defect found by reading the deployed page (fixed in the follow-up PR).** The lede rendered
 *"…in a single automated run between **and** , then compared…"* — the ledger writer had omitted
