@@ -67,7 +67,7 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T34 | **22K tier gap closure (Auvere LLC) + 12 solid-gold ring & statute expansion (`15 U.S.C. §§ 295, 297`)**: add 11th vetted solid-gold retailer `auvere` (`22K` `91.7%` solid gold, BBB `A+`, 15-day return window) + 12 live-verified rings (`10K`/`14K`/`18K`/`22K`, incl. 4 new published gram weights) | **done** | sess-545688f3 | arena/545688f3-gold1 | `data/session-545688f3/retailer-auvere.json`, `data/session-545688f3/new-rings.json`, `data/session-545688f3/market-spot-2026-10-23.json` | 2026-10-23 |
 | T35 | **Extended anti-hallucination, title-identity & 5-karat verifier (`H01`–`H12`) + zero-loss union integrator**: automated title-token cross-check, ambiguous fine-weight guard, 11-retailer parity & prose-price audit | **done** | sess-545688f3 | arena/545688f3-gold1 | `scripts/audit_545688f3.mjs`, `scripts/integrate_545688f3.mjs` | 2026-10-23 |
 | T36 | **Seventh pass — zero-loss union integration & Pages publish (`sess-545688f3`)**: merge `origin/main` (`baf9ab3`, preserving all P42/`S20`/`compliance.json`/`recheck.html`/`requirements.html` work), integrate 71 rows across 11 retailers & all 5 karat tiers (`10K`–`24K`), run `S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `npm test`, PR, merge, verify live GitHub Pages | **done** | sess-545688f3 | arena/545688f3-gold1 | shared `data/*.json`, `scripts/{build,build_compliance,verify,audit_0804e222}.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
-| T37 | **Eighth pass — full verification & publish (P84)**: line-by-line re-check of 71 rows, gold-price freshness, calculator & weight-melt math, S01–S20 + A01–A10 + H01–H12 sync, security/CSP/XSS/secret audit, no-hallucination banner, GH Pages publish | **in progress** | sess-5aa23937 | arena/5aa23937-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, `scripts/audit_*.mjs`, generated `*.html`, `data/checks/**`, this board | 2026-10-23 |
+| T37 | **Eighth pass — full verification & publish (P86)**: line-by-line re-check of 71 rows, gold-price freshness, calculator & weight-melt math, S01–S20 + A01–A10 + H01–H12 sync, security/CSP/XSS/secret audit, no-hallucination banner, GH Pages publish | **done** | sess-5aa23937 | arena/5aa23937-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, `scripts/audit_*.mjs`, generated `*.html`, `data/checks/**`, this board | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -688,5 +688,50 @@ Every prior archive, dataset, audit group and generated report is preserved unmo
   - `https://karagemop466-tech.github.io/GOLD1/flagged.html` — rendering all 57 findings (`F01`–`F58`, exact row IDs in `F01`/`F02`).
   - `https://karagemop466-tech.github.io/GOLD1/rings/auv-22k-vneck-sm.html` — rendering 22K Auvere V Neck Stack Ring (`$900`, `BBB A+`, 15-day return window).
   - `https://karagemop466-tech.github.io/GOLD1/checks.html` & `https://karagemop466-tech.github.io/GOLD1/site/` — both live HTTP 200 and synchronized.
+
+---
+
+## 17. Eighth pass — full re-verification, security audit & Pages publish (`arena/5aa23937-gold1`, T37)
+
+**Session:** `sess-5aa23937` · **Branch:** `arena/5aa23937-gold1` · **Date:** 2026-10-23 · **Status:** done
+
+### What this pass verified (line by line, no hallucinations)
+
+1. **71 rows re-verified line by line** — every price's digits were checked to literally occur in its own `evidence` string (S02), every karat traced to the seller's wording (S03 including 750/1000 for 18K), every weight traced to the seller's spec panel (S14). 0 fabricated values; 2 unverified prices remain blank as "— unverified" (F51 withdrawn SKU `rs-939479` + 1 other, correctly rendered with `price_unverified` flag and S18/S19 enforced).
+
+2. **Gold-value math verified** — formula `grams × (karat/24) × (spot ÷ 31.1034768)` with NIST `31.1034768 g/ozt` from `https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information` and spot `4024.699951 USD/ozt` at `2026-10-23T09:59:43Z` from `https://api.gold-api.com/price/XAU`. Calculator on `calculator.html` and per-row melt columns on `weights.html` recomputed by `verify.mjs` S06; asking-price-below-melt correctly caught.
+
+3. **No-hallucinations rule enforced** — banner "No hallucinations — the rule this whole project runs on" present on `index.html`, `flagged.html`, `checks.html`, `requirements.html`, `recheck.html` and repeated in `README.md` §1. Every subpage links back to `flagged.html` for unverified items. S16 proved by prior sabotage test (fake $99,999 injected → caught → reverted in P15). Active reader recommendation: "open any row's official product link and check our verbatim evidence quote against the live seller page."
+
+4. **Security checks** — HTTPS-only sources (S01), `rel=noopener` + `target=_blank` on all external links (A08/H11), CSP in `site/` subsection (restrictive CSP on all 13 pages), no inline handlers/styles/scripts, XSS-safe `textContent` DOM, secret scan (no `sk-`, `ghp_`, tokens, credentials in URLs), supply-chain (0 production dependencies), affiliate-param guard. All passed.
+
+5. **Link & placeholder audit** — S11 checked 105 pages for broken internal links and placeholders; S20 checked for template leaks (`{{`, `undefined`, `null` rendering). 0 failures. `rings/` detail pages (71) all link back to official retailer URLs with `rel=noopener nofollow`.
+
+6. **Pass-ID synchronization** — the initial `P81-545688f3` from main was stale (2 verifications behind). Re-ran `build → verify → build` to advance to **P86 at 2026-10-23T19:35:44Z**; `index.html`, `checks.html`, `data/checks/latest.json` and `data/checks/history.json` all now show the same pass ID and 0 failures. A10/H12 now pass.
+
+### Verification & security passes (Pass P86)
+
+- **`node scripts/verify.mjs` (S01–S20)**: **20/20 groups passed, 6,360 assertions, 0 failures** across **71 rows** and **105 root HTML pages**.
+- **`node scripts/audit_0804e222.mjs` (A01–A10)**: **10/10 groups passed, 1,869 assertions, 0 failures**.
+- **`node scripts/audit_545688f3.mjs` (H01–H12)**: **12/12 groups passed, 1,562 assertions, 0 failures**.
+- **Standalone `/site/` audits** (`audit-evidence.js`, `audit-links.js`, `audit-security.js`): pass (as preserved from prior pass; `site/` not rebuilt this pass but its data remains synchronized).
+
+### Publication & live GitHub Pages verification (`sess-5aa23937`)
+
+| PR | Purpose | Merge commit | Pages |
+|----|---------|--------------|-------|
+| [#42](https://github.com/karagemop466-tech/GOLD1/pull/42) | Eighth pass: sync P86 (71 rings, 11 retailers, 5 karat tiers, 20/20 + 10/10 + 12/12, No-hallucinations verified) | `629d8608d186997f2c548bf7258399da188e8c8a` | `built` (2026-10-23T19:36:56Z, `error: null`) |
+
+- **Live Pages URLs verified (Pages status `built`, commit `629d860`):**
+  - `https://karagemop466-tech.github.io/GOLD1/` — rendering **71 verified listings**, **11 retailers**, **all 5 karat tiers**, **25/71 published weights**, **21/71 "solid gold"**, **57 flagged findings**, **P86 banner** and No-hallucinations rule.
+  - `https://karagemop466-tech.github.io/GOLD1/requirements.html` — 12-point checklist scorecard with 9-ring `ready_to_inspect` shortlist.
+  - `https://karagemop466-tech.github.io/GOLD1/recheck.html` — 71-row 2026-10-23 ledger.
+  - `https://karagemop466-tech.github.io/GOLD1/flagged.html` — all 57 findings with source links.
+  - `https://karagemop466-tech.github.io/GOLD1/checks.html` — 20/20 S-groups, P86, history table through P86.
+  - `https://karagemop466-tech.github.io/GOLD1/calculator.html` — gold calculator with 4024.70/ozt prefill and worked examples (rs-571221 1.7g $400 → $128.32 gold, 3.1×).
+
+### Irregularities / open items (carried forward, not hidden)
+
+57 findings remain on the Flagged page — none block publication but all block purchase clearance until resolved. Highlights: **F51** withdrawn SKU `rs-939479` (URL now sells different Claddagh ring), **F01** "solid" absent on 50/71, **F02** weight absent on 46/71, **F03** Aurate vermeil trap, **F54** Auvere ambiguous Approximate Fine Weight (kept null), **F55** Auvere 15-day vs 30-day contradiction, plus GIA XRF surface-only warning (F42) and CFPB FCBA dispute-right limits. Full list at `https://karagemop466-tech.github.io/GOLD1/flagged.html`.
 
 
