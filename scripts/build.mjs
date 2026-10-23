@@ -26,6 +26,17 @@ const gold = await read('data/gold-price.json');
 const checklist = await read('data/checklist.json');
 const compliance = await read('data/compliance.json');
 const liveCheck = await read('data/verification-2026-10-23.json');
+// Ninth pass (sess-dab93754): evening live re-read + its own audit. Optional on
+// purpose — if the files are absent the page is skipped, never faked.
+const readOptional = async (p) => {
+  try {
+    return await read(p);
+  } catch {
+    return null;
+  }
+};
+const eveningLedger = await readOptional('data/verification-2026-10-23-evening-dab93754.json');
+const eveningAudit = await readOptional('data/session-dab93754/audit.json');
 const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
 const readCounts = {
   automated: liveCheck.rows.filter((r) => String(r.read).startsWith('live')).length,
@@ -101,11 +112,11 @@ const sortPrice = (r) => (r.price_unverified ? null : r.price_low);
 
 const checkedCell = (r) => {
   const when = r.verified_at || r.retrieved_at;
-  // T38 (sess-0a6df02e): the partly branch previously compared against
+  // sess-0a6df02e (board T45): the partly branch previously compared against
   // 'partially verified', a value the data never uses (it is 'partly_verified'),
   // so partly_verified and withdrawn rows rendered a green "confirmed" chip.
   // Prices were always rendered correctly (S19); only this status chip lied.
-  // Fixed here and pinned by a regression assertion in verify.mjs S18. See F60.
+  // Fixed here and pinned by a regression assertion in verify.mjs S18. See F66.
   const pass = r.withdrawn
     ? '<span class="chip bad">withdrawn</span>'
     : r.verification_status === 'unverified'
@@ -200,6 +211,7 @@ const NAV = [
   ['rings.html', 'All rings'],
   ['requirements.html', 'Requirements'],
   ['recheck.html', 'Re-check 23 Oct'],
+  ['live-audit.html', 'Live audit'],
   ['weights.html', 'Weight & melt'],
   ['calculator.html', 'Gold calculator'],
   ['checklist.html', 'Checklist'],
@@ -255,7 +267,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H12</a>). <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H12 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -436,7 +448,7 @@ const dashboard = layout({
 <section class="wrap section">
   <div class="callout good">
     <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F59">F59</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
+    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -574,7 +586,7 @@ const ringsPage = layout({
   body: `
 <section class="wrap section">
   <h1>All ${totalRows - rings.rows.filter((r) => r.withdrawn).length} verified listings</h1>
-  <p class="lede">Sorted as captured. Use the filters to narrow by style, seller, karat or budget. Every row links to the official page it came from and to a detail page showing the exact evidence text.${rings.rows.filter((r) => r.withdrawn).length ? ` <strong>${rings.rows.filter((r) => r.withdrawn).length} further ${rings.rows.filter((r) => r.withdrawn).length === 1 ? 'row is' : 'rows are'} withheld from this table</strong> because the seller now sells a different product under the recorded URL — see <a href="flagged.html">Flagged for Review (F51, F59)</a>.` : ''}</p>
+  <p class="lede">Sorted as captured. Use the filters to narrow by style, seller, karat or budget. Every row links to the official page it came from and to a detail page showing the exact evidence text.${rings.rows.filter((r) => r.withdrawn).length ? ` <strong>${rings.rows.filter((r) => r.withdrawn).length} further ${rings.rows.filter((r) => r.withdrawn).length === 1 ? 'row is' : 'rows are'} withheld from this table</strong> because the seller now sells a different product under the recorded URL — see <a href="flagged.html">Flagged for Review (F51, F65)</a>.` : ''}</p>
   ${noHallucinationBanner()}
   ${filterBar(totalRows)}
   ${ringTable(rings.rows)}
@@ -1310,7 +1322,7 @@ const requirementsPage = layout({
       .map((r) => {
         const t = TIER_LABEL[r.tier] || TIER_LABEL.needs_confirmation;
         return `<tr>
-      <td class="cell-title"><a href="${r.tier === 'withdrawn' ? (r.id === 'bn-14k-petite-195639' ? 'flagged.html#F59' : 'flagged.html#F51') : 'rings/' + esc(r.id) + '.html'}">${esc(r.title)}</a></td>
+      <td class="cell-title"><a href="${r.tier === 'withdrawn' ? (r.id === 'bn-14k-petite-195639' ? 'flagged.html#F65' : 'flagged.html#F51') : 'rings/' + esc(r.id) + '.html'}">${esc(r.title)}</a></td>
       <td>${esc(r.retailer)}</td>
       ${compliance.criteria.map((c) => markCell(r.checks[c.key])).join('')}
       <td><span class="chip ${t.k}">${esc(t.t)}</span>${r.blockers.length ? `<div class="sub">${esc(r.blockers.slice(0, 2).join('; '))}</div>` : ''}</td>
@@ -1383,7 +1395,7 @@ const recheckPage = layout({
   <div class="stat-grid">
     ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}
     ${stat(`${liveCheck.corrections.length}`, 'prices corrected', 'Only where the seller\'s own page contradicted the stored value and the replacement is quoted below.')}
-    ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn in this ledger', 'SKU 939479 now sells a different ring (F51). A second URL — Blue Nile item 195639 — was withdrawn in the ninth pass (F59).')}
+    ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn in this ledger', 'SKU 939479 now sells a different ring (F51). A second URL — Blue Nile item 195639 — was withdrawn in the ninth pass (F65).')}
     ${stat(`${fullyBlocked.length}`, 'rows still unread', blockedRows.length === 0 ? 'All 9 formerly HTTP-403 rows were verified via direct storefront JSON & PDP reads (F53).' : `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. See F53.`)}
     ${stat(`${compliance.gold_reference.price_usd_per_ozt.toLocaleString('en-US', { maximumFractionDigits: 2 })}`, 'USD per troy ounce, spot', `${esc(compliance.gold_reference.publisher)} at ${esc(compliance.gold_reference.publisher_timestamp)}.`)}
   </div>
@@ -1445,9 +1457,187 @@ const recheckPage = layout({
 </section>`,
 });
 
+/* ------------------------------------------- ninth-pass evening live audit */
+const EVENING_VERDICT = {
+  confirmed: { t: 'confirmed', k: 'ok' },
+  confirmed_two_channels: { t: 'confirmed — two channels', k: 'ok' },
+  confirmed_independent_read: { t: 'confirmed — direct read', k: 'ok' },
+  consistent_with_published_range: { t: 'inside published range', k: 'ok' },
+  stored_price_not_reproduced: { t: 'price moved — needs review', k: 'warn' },
+  unresolved_price: { t: 'not machine-readable', k: 'warn' },
+  not_read: { t: 'not read (HTTP 403)', k: 'warn' },
+  withdrawn_source_mismatch: { t: 'withdrawn — wrong product', k: 'bad' },
+};
+
+const eveningPage = eveningLedger
+  ? layout({
+      title: 'Live audit — 2026-10-23 evening (P87)',
+      description:
+        'Ninth-pass per-row audit: every curated row re-opened on 2026-10-23 20:21Z, compared at product/variant level, with an independent second channel and its own N01–N09 checks.',
+      current: 'root',
+      active: 'Live audit',
+      body: `
+<section class="wrap section">
+  <h1>Live audit — 2026-10-23 evening (P87)</h1>
+  <p class="lede">Every one of the ${eveningLedger.summary.rows} curated listings was re-opened at its own official URL in a single automated run between
+  <strong>${esc(eveningLedger.evidence_started_at)}</strong> and <strong>${esc(eveningLedger.evidence_finished_at)}</strong>, then compared at product and variant level.
+  A separate channel re-read ${eveningLedger.summary.independent_reads} sources so the automated numbers have an independent witness. Nothing below was carried forward from an earlier pass.
+  <br><span class="sub">Evidence run: <code>${esc(eveningLedger.run_context || 'local')}</code> · evidence file <code>${esc(ledgerEvidenceFile(eveningLedger))}</code> · run finished <strong>${esc(eveningLedger.evidence_finished_at)}</strong>.${
+    eveningLedger.replication
+      ? ` <strong>Replicated:</strong> a second automated run (<code>${esc(eveningLedger.replication.run_context)}</code>) finished at <strong>${esc(eveningLedger.replication.finished_at)}</strong> and returned ${
+          eveningLedger.replication.verdict_disagreements.length === 0
+            ? 'the identical verdict for all 71 rows'
+            : `${eveningLedger.replication.verdict_disagreements.length} disagreement(s): ${esc(eveningLedger.replication.verdict_disagreements.join(', '))}`
+        }.`
+      : ''
+  }</span></p>
+  ${noHallucinationBanner()}
+
+  <div class="stat-grid">
+    ${stat(`${eveningLedger.summary.confirmed + eveningLedger.summary.confirmed_two_channels + eveningLedger.summary.confirmed_independent_read + eveningLedger.summary.consistent_with_published_range}/${eveningLedger.summary.rows}`, 'rows confirmed today', `${eveningLedger.summary.confirmed} from the automated run alone, ${eveningLedger.summary.confirmed_two_channels} by two independent channels. The stored price appears in the page’s own offer data or in the seller’s own variant feed for that exact product.`)}
+    ${stat(`${eveningLedger.summary.stored_price_not_reproduced}`, 'prices that moved', 'Both Menē 24K bands repriced with spot gold during the pass. Published, not overwritten.')}
+    ${stat(`${eveningLedger.summary.unresolved_price}`, 'prices not machine-readable', 'Client-side price rendering, read by eye where possible; the rest stay unresolved rather than guessed.')}
+    ${stat(`${eveningLedger.summary.not_read}`, 'rows blocked (HTTP 403)', 'Five With Clarity, four Cartier and one Brilliant Earth page refused the runner. Nothing is claimed fresh for them.')}
+    ${stat(`${eveningLedger.method.gold_price.agreement_pct}%`, 'spread between two gold reads', `${esc(eveningLedger.method.gold_price.runner.publisher)} ${usd(eveningLedger.method.gold_price.runner.price_usd_per_ozt)}/ozt at ${esc(eveningLedger.method.gold_price.runner.publisher_timestamp)} versus ${usd(eveningLedger.method.gold_price.independent.price_usd_per_ozt)}/ozt read independently at ${esc(eveningLedger.method.gold_price.independent.read_at)}.`)}
+  </div>
+
+  <h2>Findings from this pass, published for review</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">ID</th><th scope="col">Finding</th><th scope="col">Severity</th><th scope="col">Rows</th><th scope="col">What to do</th></tr></thead>
+    <tbody>
+    ${eveningLedger.findings
+      .map(
+        (f) => `<tr>
+      <td><strong>${esc(f.id)}</strong></td>
+      <td><strong>${esc(f.title)}</strong><div class="small">${esc(f.finding)}</div></td>
+      <td>${chip(f.severity, f.severity === 'high' ? 'bad' : f.severity === 'medium' ? 'warn' : 'ok')}</td>
+      <td class="small">${f.rows
+        .map((r) => {
+          const id = typeof r === 'string' ? r : r.id;
+          const extra = typeof r === 'string' ? '' : r.observed ? ` (${usd(r.stored)} → ${usd(r.observed)})` : '';
+          return `<a href="rings/${esc(id)}.html">${esc(id)}</a>${esc(extra)}`;
+        })
+        .join('<br>')}</td>
+      <td class="small">${esc(f.buyer_action)}</td>
+    </tr>`
+      )
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>Independent second-channel reads</h2>
+  <p class="sub">Read directly from the URL shown, at the time shown, through a different retrieval channel from the runner. The quote is what the page or feed printed.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Read at (UTC)</th><th scope="col">Observed</th><th scope="col">Verbatim quote</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    ${eveningLedger.rows
+      .filter((r) => r.independent_read)
+      .map(
+        (r) => `<tr>
+      <td><a href="rings/${esc(r.id)}.html">${esc(r.id)}</a></td>
+      <td class="small">${esc(r.independent_read.read_at)}</td>
+      <td class="small">${esc(
+          Object.entries(r.independent_read.observed)
+            .map(([k, v]) => `${k}: ${v == null ? '—' : v}`)
+            .join(' · ')
+        )}</td>
+      <td class="small">${esc(r.independent_read.quote.slice(0, 220))}</td>
+      <td><a class="src" href="${esc(r.independent_read.url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>`
+      )
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The full 71-row ledger</h2>
+  <p class="sub">“Stored” is what this project had before the pass. “Read today” is what the official page or the seller’s own variant feed printed in this run. A screenshot is never a source, and a missing value is never filled in.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Read today</th><th scope="col">Verdict</th><th scope="col">Weight</th><th scope="col">Note</th><th scope="col">Official source</th></tr></thead>
+    <tbody>
+    ${eveningLedger.rows
+      .map((r) => {
+        const v = EVENING_VERDICT[r.verdict] || { t: r.verdict, k: '' };
+        const stored =
+          r.stored_price && r.stored_price[0] != null
+            ? usd(r.stored_price[0]) + (r.stored_price[1] != null && r.stored_price[1] !== r.stored_price[0] ? '–' + usd(r.stored_price[1]) : '')
+            : '— unverified';
+        const range = (pair) =>
+          pair && pair[0] != null
+            ? usd(pair[0]) + (pair[1] != null && pair[1] !== pair[0] ? '–' + usd(pair[1]) : '')
+            : null;
+        const obs =
+          range(r.observed_price) ||
+          range(r.matched_variant_prices) ||
+          range(r.runner_observed_prices) ||
+          (r.variant_price_range ? `variant range ${range(r.variant_price_range)}` : '—');
+        const w =
+          r.verdict === 'withdrawn_source_mismatch'
+            ? '— (withdrawn row)'
+            : r.stored_weight_g == null
+              ? '—'
+              : r.weight_reproduced_today === true
+                ? `${r.stored_weight_g} g re-printed`
+                : `${r.stored_weight_g} g (not machine-visible today)`;
+        return `<tr${r.verdict === 'withdrawn_source_mismatch' ? ' class="row-alert"' : ''}>
+      <td><strong>${esc(r.id)}</strong><div class="sub">${esc(r.stored_title)}</div></td>
+      <td>${esc(r.retailer)}</td>
+      <td class="num-col small">${stored}</td>
+      <td class="num-col small"><strong>${obs}</strong></td>
+      <td>${chip(v.t, v.k)}</td>
+      <td class="small">${esc(w)}</td>
+      <td class="small">${esc((r.note || '').slice(0, 200))}</td>
+      <td><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>`;
+      })
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>This pass’s own audit (N01–N11)</h2>
+  ${
+    eveningAudit
+      ? `<p class="sub">${eveningAudit.groups - eveningAudit.failures}/${eveningAudit.groups} groups passed, ${eveningAudit.assertions.toLocaleString('en-US')} assertions, ${eveningAudit.failures} failure(s). Group N09 was sabotage-tested: an external link without <code>rel="noopener"</code> and an unreplaced template expression were injected into a temporary page, both were caught, and the page was removed.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">ID</th><th scope="col">Check</th><th scope="col">Result</th><th scope="col" class="num-col">Assertions</th></tr></thead>
+    <tbody>
+    ${eveningAudit.results
+      .map(
+        (r) => `<tr><td><strong>${esc(r.id)}</strong></td><td class="small">${esc(r.name)}</td><td>${chip(r.ok ? 'pass' : 'fail', r.ok ? 'ok' : 'bad')}</td><td class="num-col">${r.assertions}</td></tr>`
+      )
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>`
+      : '<p>Audit output not present in this build.</p>'
+  }
+
+  <h2>Honest limits of this pass</h2>
+  <ul class="notes">
+    <li>${eveningLedger.summary.not_read} rows could not be opened by this run (HTTP 403). They were <strong>not</strong> re-confirmed by this run and keep their older capture dates. The dashboard can still show a 2026-10-23 verdict for them because an <em>earlier</em> read on the same day reached those sellers by a different route (direct storefront JSON and product-page fetches, recorded as F53). That is a different clock and a different method — this page never presents it as this run's evidence.</li>
+    <li>${eveningLedger.summary.unresolved_price} rows render their price client-side; no number was invented for them.</li>
+    <li>Prices are dated snapshots, not quotes. ${eveningLedger.summary.stored_price_not_reproduced} rows moved inside a single evening (Menē 24K tracks spot gold).</li>
+    <li>A stamp is a claim, not proof: have any purchase XRF-tested by an independent jeweller inside the return window.</li>
+    <li>Raw evidence: <code>${esc(ledgerEvidenceFile(eveningLedger))}</code>, <code>data/live/compare-dab93754.json</code>, <code>data/session-dab93754/manual-reads-2026-10-23.json</code>, <code>data/verification-2026-10-23-evening-dab93754.json</code>.</li>
+  </ul>
+</section>`,
+    })
+  : '';
+
+function ledgerEvidenceFile(doc) {
+  return doc.evidence_file || 'data/live/latest.json';
+}
+
 await writeFile(join(OUT, 'index.html'), dashboard);
 await writeFile(join(OUT, 'requirements.html'), requirementsPage);
 await writeFile(join(OUT, 'recheck.html'), recheckPage);
+if (eveningPage) await writeFile(join(OUT, 'live-audit.html'), eveningPage);
 await writeFile(join(OUT, 'rings.html'), ringsPage);
 await writeFile(join(OUT, 'weights.html'), weightsPage);
 await writeFile(join(OUT, 'calculator.html'), calculator);

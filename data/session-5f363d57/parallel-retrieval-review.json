@@ -1,0 +1,65 @@
+{
+  "review_type": "read-only independent review of a parallel session's immutable retrieval; not a canonical reconciliation",
+  "reviewed_by": "sess-5f363d57",
+  "parallel_session": "sess-7626fc93",
+  "parallel_branch": "arena/7626fc93-gold1",
+  "parallel_commit": "22f510a84fa8ef6502393d5f2c276299e8e77140",
+  "evidence_path_on_parallel_branch": "data/live/latest.json",
+  "evidence_sha256": "527fee65337c33f933025ace087155899af480f3a668f16cfd3ebd875d3870f3",
+  "run": {
+    "id": "40019939999",
+    "started_at": "2026-10-23T20:32:02Z",
+    "finished_at": "2026-10-23T20:32:44Z",
+    "rows": 71,
+    "fetch_ok": 61,
+    "http_403": 10
+  },
+  "zero_loss_reader_requirements": {
+    "preserve_from_parallel_v6": [
+      "shopify_variant_table.metal_groups",
+      "shopify_variant_table explicit metal/option price groups",
+      "extraction.jsonld_product_specs",
+      "whole labelled metal-weight sentences",
+      "shipping-weight quarantine"
+    ],
+    "preserve_from_main": [
+      "extraction.jsonld_offers",
+      "extraction.variant_feed",
+      "run identity and immutable timestamped evidence",
+      "N01-N11 audit and live-audit page"
+    ],
+    "reason": "The parallel v6 extraction does not contain the main reader's jsonld_offers field, while its shopify_variant_table adds useful metal-option grouping. A replacement rather than a union would discard evidence."
+  },
+  "blank_weight_review": {
+    "canonical_blank_weight_rows_reviewed": 46,
+    "new_unambiguous_weights_found": [],
+    "deliberate_f54_blanks_reconfirmed": [
+      {
+        "id": "auv-22k-vneck-sm",
+        "official_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+        "quote": "Approximate Fine Weight: 2.9 to 3.7 grams depending on size",
+        "decision": "Keep weight_g_low/high null; the label does not establish gross 22K alloy weight versus net fine-gold content."
+      },
+      {
+        "id": "auv-22k-hexagon-diamond",
+        "official_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+        "quote": "Approximate Fine Weight: 3.3 to 3.5 grams depending on size",
+        "decision": "Keep weight_g_low/high null; the label does not establish gross 22K alloy weight versus net fine-gold content."
+      },
+      {
+        "id": "auv-22k-diamond-bridge-tall",
+        "official_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+        "quote": "Approximate Fine Weight: 5 to 6.1 grams depending on size",
+        "decision": "Keep weight_g_low/high null; the label does not establish gross 22K alloy weight versus net fine-gold content."
+      },
+      {
+        "id": "auv-22k-clean-cut-polished",
+        "official_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+        "quote": "Approximate Fine Weight: 2.8 to 3.7 grams depending on size",
+        "decision": "Keep weight_g_low/high null; the label does not establish gross 22K alloy weight versus net fine-gold content."
+      }
+    ],
+    "other_observations": "Other blank-weight rows with retrieval text contained metal_weight:null, unrelated translation strings, or no published gram value. None justify filling a weight."
+  },
+  "integration_decision": "Do not treat v6 parser output alone as permission to populate F54 weights or calculate melt value. Preserve the official wording in evidence/flagged review and leave the numeric weight fields blank until the seller defines the basis."
+}

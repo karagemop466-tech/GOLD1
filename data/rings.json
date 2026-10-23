@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "generated_at": "2026-10-23T20:31:23Z",
-  "note": "Curated solid-gold engagement & wedding ring dataset across 11 retailers and all 5 legal karat tiers (10K, 14K, 18K, 22K, 24K) — 71 listings (69 active + 2 withdrawn source mismatches: rs-939479 F51, bn-14k-petite-195639 F59), 25 with published gram weights, 21 explicitly stating \"solid gold\". Re-verified line by line on 2026-10-23.",
+  "note": "Curated solid-gold engagement & wedding ring dataset across 11 retailers and all 5 legal karat tiers (10K, 14K, 18K, 22K, 24K) — 71 listings (69 active + 2 withdrawn source mismatches: rs-939479 F51, bn-14k-petite-195639 F65), 25 with published gram weights, 21 explicitly stating \"solid gold\". Re-verified line by line on 2026-10-23.",
   "fields": {
     "price_basis": [
       "single listed price",
@@ -1988,7 +1988,7 @@
         "starting_price",
         "made_to_order"
       ],
-      "notes": "24K pure gold benchmark (999.9 fine; re-verified 2026-10-23 at $1,707 USD, down $13 from $1,720 with intraday gold spot). Because Menē renders the size-specific gram breakdown via client-side JavaScript rather than static HTML, weight_g_low stays null rather than back-calculated. Note 7-day return window and up to 10% refund restocking fee.",
+      "notes": "24K pure gold benchmark (999.9 fine; re-verified 2026-10-23 evening at $1,694 USD by two sessions independently — the morning read was $1,707, itself down $13 from $1,720 with intraday gold spot). Because Menē renders the size-specific gram breakdown via client-side JavaScript rather than static HTML, weight_g_low stays null rather than back-calculated. Note 7-day return window and up to 10% refund restocking fee.",
       "reverified_at": "2026-10-23",
       "reverified_pass": "T38-0a6df02e",
       "verified_at": "2026-10-23",
@@ -2022,7 +2022,7 @@
         "starting_price",
         "made_to_order"
       ],
-      "notes": "24K pure gold 4 mm band (re-verified 2026-10-23 at $1,361 USD, down $11 from $1,372 with spot gold). Gram weight left null in static snapshot because the gram breakdown renders via client-side JS; verify delivered Certificate of Authenticity weight within the 7-day return window.",
+      "notes": "24K pure gold 4 mm band (re-verified 2026-10-23 evening at $1,350 USD by two sessions independently — the morning read was $1,361, itself down $11 from $1,372 with spot gold). Gram weight left null in static snapshot because the gram breakdown renders via client-side JS; verify delivered Certificate of Authenticity weight within the 7-day return window.",
       "reverified_at": "2026-10-23",
       "reverified_pass": "T38-0a6df02e",
       "verified_at": "2026-10-23",
@@ -2379,7 +2379,7 @@
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
       "source_type": "official product page",
       "retrieved_at": "2026-10-23",
-      "evidence": "Title \"Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)\"; Item #195639; setting price \"$1,000\" (excl. center stone); Ring Details \"Metal: 14k Yellow Gold · Width: 1.50 mm · Prong Metal: Platinum · Minimum Carat Total Weight: 0.11 · Average Color: I · Average Clarity: SI2\". Re-checked 2026-10-23T20:25Z (sess-0a6df02e): this same official item-195639 URL now resolves to \"Petite Solitaire Engagement Ring in 14k Yellow Gold\", Stock Number \"501130y14\", \"Metal 14K Yellow Gold\", \"Width 1.80mm\", \"$1,000 (Setting Price)\" — a plain solitaire, not the Petite Micropavé (Item #195639, 1/10 ct. tw., Width 1.50 mm, Platinum prongs) captured earlier on 2026-10-23. Source mismatch; row withdrawn (F59).",
+      "evidence": "Title \"Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)\"; Item #195639; setting price \"$1,000\" (excl. center stone); Ring Details \"Metal: 14k Yellow Gold · Width: 1.50 mm · Prong Metal: Platinum · Minimum Carat Total Weight: 0.11 · Average Color: I · Average Clarity: SI2\". Re-checked 2026-10-23T20:25Z (sess-0a6df02e): this same official item-195639 URL now resolves to \"Petite Solitaire Engagement Ring in 14k Yellow Gold\", Stock Number \"501130y14\", \"Metal 14K Yellow Gold\", \"Width 1.80mm\", \"$1,000 (Setting Price)\" — a plain solitaire, not the Petite Micropavé (Item #195639, 1/10 ct. tw., Width 1.50 mm, Platinum prongs) captured earlier on 2026-10-23. Source mismatch; row withdrawn (F65).",
       "solid_stated": false,
       "flags": [
         "solid_not_stated",
@@ -2397,9 +2397,9 @@
       "verified_by": "sess-545688f3",
       "verification_status": "withdrawn_source_mismatch",
       "withdrawn": true,
-      "withdrawn_reason": "The seller now sells a different product under this URL (see F59). The row is retained for the record and removed from the buy tables.",
+      "withdrawn_reason": "The seller now sells a different product under this URL (see F65). The row is retained for the record and removed from the buy tables.",
       "price_unverified": true,
-      "price_unverified_reason": "Withdrawn on 2026-10-23 (sess-0a6df02e): this official item-195639 URL now resolves to a different product — \"Petite Solitaire Engagement Ring in 14k Yellow Gold\", Stock Number 501130y14, Width 1.80mm — not the Petite Micropavé (1/10 ct. tw., Item #195639, Width 1.50 mm, Platinum prongs) captured earlier the same day (F59). The stored $1,000 describes the ring that used to be listed here, not the ring sold today, so it is published as unverified and never as a live price."
+      "price_unverified_reason": "Withdrawn on 2026-10-23 (sess-0a6df02e): this official item-195639 URL now resolves to a different product — \"Petite Solitaire Engagement Ring in 14k Yellow Gold\", Stock Number 501130y14, Width 1.80mm — not the Petite Micropavé (1/10 ct. tw., Item #195639, Width 1.50 mm, Platinum prongs) captured earlier the same day (F65). The stored $1,000 describes the ring that used to be listed here, not the ring sold today, so it is published as unverified and never as a live price."
     },
     {
       "id": "mej-14k-sdeb",

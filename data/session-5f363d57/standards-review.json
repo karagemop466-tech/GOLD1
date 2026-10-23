@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "session": "sess-5f363d57",
+  "reviewed_at": "2026-10-23T20:26:05Z",
+  "method": "Direct page/PDF reads from the named FTC, eCFR, NIST, GIA, CFPB and GovInfo URLs. Search snippets were used only to locate the replacement NIST page, never as the evidence for the conversion. Quotes below are short excerpts for manual comparison; no product price or specification is changed by this file.",
+  "records": [
+    {
+      "id": "STD01",
+      "topic": "Meaning of solid gold",
+      "status": "supported",
+      "official_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "publisher": "US Federal Trade Commission",
+      "quote": "The phrase “solid gold” means the gold item isn’t hollow.",
+      "review": "Supports the project's warning that solid gold is about construction and does not by itself prove karat purity. It does not prove that any seller's particular ring is solid."
+    },
+    {
+      "id": "STD02",
+      "topic": "Hollow-center wording and legal strength",
+      "status": "needs review",
+      "official_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3",
+      "publisher": "eCFR / FTC Jewelry Guides, title 16 current to 2026-10-21 when read",
+      "quote": "Such products should not be marked or described as “solid” or as being solidly of gold or of a gold alloy.",
+      "irregularity": "Canonical prose repeatedly turns this into “may NOT legally be called Solid Gold” or “Solid Gold barred.” The cited text says “should not”; quote its actual strength rather than making a broader criminal/legal claim.",
+      "recommended_text": "FTC Jewelry Guides § 23.3(c)(1) says hollow-center gold-alloy products should not be described as solid gold; the seller's construction claim therefore needs review."
+    },
+    {
+      "id": "STD03",
+      "topic": "The catalog does not cover every legal karat",
+      "status": "needs review",
+      "official_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3",
+      "publisher": "eCFR / FTC Jewelry Guides",
+      "quote": "The acceptable-marking examples expressly include “9 Karat Gold,” “9 Kt. Gold,” and “9 K.”",
+      "corroborating_url": "https://www.nist.gov/system/files/documents/2017/05/09/Precious-Metals-Conversion-Information-march2015.pdf",
+      "corroborating_quote": "NIST's chart also gives “12 k” as an example of 50% gold.",
+      "irregularity": "“All five legal karat tiers,” “covering every legal tier,” and S03's implication that only 10/14/18/22/24 are legal marks are false. The five tiers are a catalog scope, not the complete legal spectrum.",
+      "recommended_text": "Five karat tiers currently represented in this catalog: 10K, 14K, 18K, 22K and 24K."
+    },
+    {
+      "id": "STD04",
+      "topic": "NIST troy-ounce conversion and broken legacy link",
+      "status": "needs review",
+      "old_url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
+      "old_url_result": "NIST 404 page (“Sorry, we cannot find that page”) on 2026-10-23",
+      "official_url": "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information",
+      "publisher": "National Institute of Standards and Technology",
+      "pdf_url": "https://www.nist.gov/system/files/documents/2017/05/09/Precious-Metals-Conversion-Information-march2015.pdf",
+      "quote": "1 troy ounce | 1 | 20 | 480 | 31.103 476 8 | 31 103.476 8",
+      "review": "The replacement official NIST page and its linked chart support 31.1034768 grams per troy ounce, 480 grains and 20 pennyweights. Update canonical links; do not change the verified conversion.",
+      "recommended_text": "NIST Conversion Factors for Precious Metal Sales: 1 troy ounce = 31.1034768 g = 480 grains = 20 dwt."
+    },
+    {
+      "id": "STD05",
+      "topic": "Quality mark plus maker identity",
+      "status": "needs review",
+      "official_url": "https://www.govinfo.gov/link/uscode/15/297",
+      "publisher": "GovInfo / U.S. Code, 2024 edition PDF retrieved 2026-10-23",
+      "quote": "Each identifying trademark or name … shall be applied … in a position as close as possible to that quality mark or stamp.",
+      "scope_quote": "The subsection applies to a manufacturer or dealer subject to section 294, in the transportation/import contexts stated by the statute.",
+      "review": "Supports requiring a maker trademark or name near a covered quality mark. Canonical statements that every quality mark in every context must carry a registered trademark are too broad: the statute also allows the person's name and has a defined scope.",
+      "recommended_text": "For manufacturers/dealers covered by 15 U.S.C. §§ 294 and 297(b), a quality mark must be accompanied by the registered/applied-for trademark or legal name, applied as closely as possible; buyers should still request both purity and maker marks on every candidate."
+    },
+    {
+      "id": "STD06",
+      "topic": "Gold assay tolerances",
+      "status": "supported_with_scope",
+      "official_url": "https://www.govinfo.gov/link/uscode/15/295",
+      "publisher": "GovInfo / U.S. Code, 2024 edition PDF retrieved 2026-10-23",
+      "quote": "The tested part without inferior solder has a three one-thousandth-parts limit; the entire article including solder has three one-thousandth parts for watchcases/flatware and seven one-thousandth parts for other covered articles.",
+      "review": "Supports the simplified 3/1000 and 7/1000 ring explanation only with the statutory test/scope distinctions retained. A stamp and tolerance are not proof that a particular ring meets them."
+    },
+    {
+      "id": "STD07",
+      "topic": "GIA 2024 XRF limitation",
+      "status": "supported",
+      "official_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+      "publisher": "Gemological Institute of America, Gems & Gemology Spring 2024 Vol. 60 No. 1",
+      "quote": "Thick plating and electroforming may not be detected by XRF methods alone, and additional testing may be necessary.",
+      "details_confirmed": "The article describes a 41 g bracelet submitted as 14K solid gold, exterior XRF readings of 17.99K and 22.47K, and wax/resin beneath the electroformed surface.",
+      "review": "Supports rejecting a stamp or surface XRF result as sole proof. It does not authenticate any catalog row."
+    },
+    {
+      "id": "STD08",
+      "topic": "GIA 2025 article identity and testing overstatements",
+      "status": "needs review",
+      "official_url": "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold",
+      "publisher": "Gemological Institute of America, Gems & Gemology Summer 2025 Vol. 61 No. 2",
+      "quote": "Visual observation under a microscope is essential to check for metal discoloration, plating damage, or previous destructive testing that exposes the base material.",
+      "details_confirmed": "Figure 1 is a rose-gold item whose base tested 9K and layer 13.5K; figure 2 is a pendant whose base tested 10K and top layer 18K. GIA warns that gold-on-gold plating can produce inaccurately high XRF purity results.",
+      "irregularity": "The canonical checklist calls both examples “9K/10K gold rings,” but one is expressly a pendant and the other is only called an item. The cited articles do not establish the checklist's blanket X-ray-penetration claim or prescribe its specific hydrostatic/ultrasound regimen.",
+      "recommended_text": "GIA documented gold-on-gold plating that produced falsely high XRF readings; use an independent jeweler and appropriate additional inspection/testing rather than relying on XRF alone."
+    },
+    {
+      "id": "STD09",
+      "topic": "Credit-card billing disputes and claims/defenses",
+      "status": "supported_with_qualification",
+      "official_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+      "publisher": "Consumer Financial Protection Bureau",
+      "quote": "Send a written billing error notice … within 60 calendar days after the charge appeared on your statement.",
+      "second_url": "https://www.consumerfinance.gov/ask-cfpb/how-can-i-get-a-refund-on-a-product-or-service-i-purchased-with-my-credit-card-en-1969/",
+      "second_quote": "For withholding the remaining amount, CFPB lists good-faith resolution, home-state/100-mile and over-$50 conditions, credit-card payment, and that the purchase has not yet been fully paid.",
+      "review": "Supports the 60-day billing-error advice. The separate claims/defenses discussion must retain the unpaid-balance and other conditions; neither source guarantees a chargeback."
+    },
+    {
+      "id": "STD10",
+      "topic": "FTC online payment and records guidance",
+      "status": "supported",
+      "official_url": "https://consumer.ftc.gov/articles/online-shopping",
+      "publisher": "US Federal Trade Commission",
+      "quote": "Paying by credit card best protects you and your money in case of a scam, or if something else goes wrong.",
+      "records_quote": "FTC also tells buyers to keep the company/site, item, order date, amount paid, return policy, communications and payment statements.",
+      "review": "Supports preferring a credit card and retaining documentation. The project's pre-purchase archive is only partial compliance until the buyer keeps the actual receipt and order records."
+    }
+  ],
+  "follow_up": [
+    "Replace the broken NIST URL in canonical data, sources and generated pages with STD04's working /unit-conversion/ URL and retain the PDF as a second official link.",
+    "Replace “all legal karat tiers” with “five tiers in this catalog”; do not reject other legitimate karats merely because the catalog does not contain them.",
+    "Quote eCFR “should not” rather than escalating it to an unqualified legal prohibition.",
+    "Correct the GIA 2025 item/pendant description and remove testing claims not present in the cited GIA articles.",
+    "Keep CFPB conditions and scope; present all testing and payment guidance as risk reduction, not a guarantee or authentication."
+  ]
+}

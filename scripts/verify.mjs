@@ -390,7 +390,21 @@ const counted = (fn) => fn;
     } else if (Array.isArray(v)) v.forEach(harvest);
     else if (v && typeof v === 'object') Object.values(v).forEach(harvest);
   };
-  for (const f of ['data/rings.json', 'data/retailers.json', 'data/flagged.json', 'data/gold-price.json', 'data/checklist.json', 'data/sources.json', 'data/reverification.json']) {
+  // Ninth pass: the evening ledger and its evidence are data files too. A number
+  // printed on live-audit.html must trace to one of them, exactly as it must for
+  // the older pages — adding them widens what is checkable, not what is allowed.
+  for (const f of [
+    'data/rings.json',
+    'data/retailers.json',
+    'data/flagged.json',
+    'data/gold-price.json',
+    'data/checklist.json',
+    'data/sources.json',
+    'data/reverification.json',
+    'data/verification-2026-10-23-evening-dab93754.json',
+    'data/live/compare-dab93754.json',
+    'data/session-dab93754/manual-reads-2026-10-23.json',
+  ]) {
     harvest(await readIf(f, {}));
   }
   // derived values the site is allowed to compute
@@ -488,7 +502,7 @@ const counted = (fn) => fn;
     if ((r.flags || []).includes('price_unverified') && !r.price_unverified) {
       failures.push(`${r.id}: carries the price_unverified flag but price_unverified is not set`);
     }
-    // T38 regression guard (sess-0a6df02e, F60): build.mjs previously compared
+    // Regression guard (sess-0a6df02e, board T45 — renumbered from a parallel T38 claim at the union merge; F66): build.mjs previously compared
     // verification_status against 'partially verified' — a value the data never
     // uses — so partly_verified and withdrawn rows rendered a green "confirmed
     // on the official page" chip on their detail pages. Prices were always
@@ -499,7 +513,7 @@ const counted = (fn) => fn;
       if (existsSync(page)) {
         const text = await readFile(page, 'utf8');
         if (text.includes('confirmed on the official page')) {
-          failures.push(`${r.id}: status is ${r.withdrawn ? 'withdrawn' : 'partly_verified'} but the detail page claims "confirmed on the official page" (F60 regression)`);
+          failures.push(`${r.id}: status is ${r.withdrawn ? 'withdrawn' : 'partly_verified'} but the detail page claims "confirmed on the official page" (F66 regression)`);
         }
       }
     }

@@ -1,0 +1,87 @@
+{
+  "pass": "P87-audit",
+  "session": "sess-dab93754",
+  "generated_at": "2026-10-23T21:03:36Z",
+  "groups": 11,
+  "assertions": 1567,
+  "failures": 0,
+  "results": [
+    {
+      "id": "N01",
+      "name": "Ledger is complete, unique and bijective with the curated dataset",
+      "ok": true,
+      "assertions": 145,
+      "failures": []
+    },
+    {
+      "id": "N02",
+      "name": "Every row links the seller’s own https product URL",
+      "ok": true,
+      "assertions": 142,
+      "failures": []
+    },
+    {
+      "id": "N03",
+      "name": "A failed page fetch can never be reported as a confirmation",
+      "ok": true,
+      "assertions": 142,
+      "failures": []
+    },
+    {
+      "id": "N04",
+      "name": "Every “confirmed” stored price is present in the evidence it cites",
+      "ok": true,
+      "assertions": 117,
+      "failures": []
+    },
+    {
+      "id": "N05",
+      "name": "A weight is only reported as reproduced when the page printed it",
+      "ok": true,
+      "assertions": 75,
+      "failures": []
+    },
+    {
+      "id": "N06",
+      "name": "The two independent gold reads agree and both carry a publisher timestamp",
+      "ok": true,
+      "assertions": 5,
+      "failures": []
+    },
+    {
+      "id": "N07",
+      "name": "Every independent read carries a URL, a time and a verbatim quote",
+      "ok": true,
+      "assertions": 25,
+      "failures": []
+    },
+    {
+      "id": "N08",
+      "name": "Verdict arithmetic, withdrawn rows and findings are internally consistent",
+      "ok": true,
+      "assertions": 46,
+      "failures": []
+    },
+    {
+      "id": "N09",
+      "name": "Published HTML keeps its security posture",
+      "ok": true,
+      "assertions": 787,
+      "failures": []
+    },
+    {
+      "id": "N10",
+      "name": "The published live-audit page carries the run identity and every row",
+      "ok": true,
+      "assertions": 76,
+      "failures": []
+    },
+    {
+      "id": "N11",
+      "name": "The ledger cites an immutable evidence file and its replication is honest",
+      "ok": true,
+      "assertions": 7,
+      "failures": []
+    }
+  ]
+}
