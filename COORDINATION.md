@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **active**)
-**Board owner:** `sess-0804e222` (preserving §9–§12 records) · **Board updated:** 2026-10-22T23:55Z
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), and `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**)
+**Board owner:** `sess-0804e222` (reconciled union board, §9–§13) · **Board updated:** 2026-10-23T00:02Z
 
 ---
 
@@ -57,7 +57,7 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T21 | **Retailer policy, contact, BBB reputation & regulatory/testing standards**: official return/resize/custom terms for all 10 retailers; BBB grades (`F25`, incl. Aurate `F`); 16 CFR Part 23, NIST `31.1034768 g/ozt`, GIA XRF limits (`2024`/`2025`), CFPB FCBA | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/retailer-policies.json`, `data/session-0804e222/standards.json` | 2026-10-22 |
 | T22 | **10K / 14K / 18K / 24K solid-gold + gram-weight ring expansion**: 16 verified primary-source listings across Ross-Simons (`10K` `0.3g`, `14K` `1.5g`), Mejuri (`10K` solid), Automic Gold (`14K` solid + `1.4g`–`7.0g` weights), Cartier (`18K` `750/1000`), and Menē (`24K` pure gold) | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/new-rings.json` | 2026-10-22 |
 | T23 | **Extended anti-hallucination & security verifier + zero-loss integrator**: cross-file consistency, weight/price/karat provenance, HTML/CSP/XSS/rel=noopener security checks, idempotent merger | **done** | sess-0804e222 | arena/0804e222-gold1 | `scripts/audit_0804e222.mjs`, `scripts/integrate_0804e222.mjs` | 2026-10-22 |
-| T24 | **Zero-loss final union integration & Pages publish**: merge `origin/main` (`f919689` incl. PR #21/#22/#23/#24) without discarding any work, run `integrate_0804e222.mjs` + `build.mjs` + `verify.mjs` (`S01`–`S19`) + `audit_0804e222.mjs` (`A01`–`A10`) + `/site/` audits, open PR, merge, verify live GitHub Pages | **done** (P40 passing; PR/Pages deploy below) | sess-0804e222 | arena/0804e222-gold1 | shared `data/*.json`, `scripts/build.mjs`, `scripts/verify.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-22 |
+| T24 | **Zero-loss final union integration & Pages publish**: merge `origin/main` (`f919689` incl. PR #21/#22/#23/#24) without discarding any work, run `integrate_0804e222.mjs` + `build.mjs` + `verify.mjs` (`S01`–`S19`) + `audit_0804e222.mjs` (`A01`–`A10`) + `/site/` audits, open PR, merge, verify live GitHub Pages | **done** (PR #25 merged; Pages live) | sess-0804e222 | arena/0804e222-gold1 | shared `data/*.json`, `scripts/build.mjs`, `scripts/verify.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -437,4 +437,14 @@ P12 follow-up "23 rows still carry an earlier capture" is now closed — all 43 
   - Canonical `node scripts/verify.mjs` **Pass `P40`**: **19/19 groups passed (`S01`–`S19`), 4,747 assertions, 0 failures** across **59 rows** and **91 HTML pages**.
   - Extended `node scripts/audit_0804e222.mjs`: **10/10 groups passed (`A01`–`A10`), 1,491 assertions, 0 failures**.
   - Standalone `/site/` Node audits (`audit-evidence.js`, `audit-links.js`, `audit-security.js`, `build.js`, `audit-build.js`): **100% passing**.
+- **Publication & live GitHub Pages verification — complete:**
+  - **Pull request:** [#25](https://github.com/karagemop466-tech/GOLD1/pull/25) — *"P40 union publish: 59 verified 10K–24K rings, 21 gram weights, 10-retailer policies & BBB grades, FTC/NIST/GIA/CFPB standards & 29-group audit"*.
+  - **Merged autonomously into `main`:** 2026-10-23T00:00:44Z. Merge commit: **`4a8fcd5b192ec75bb5ff573ac786bea9fe63725a`** (from branch head `0246cea`).
+  - **GitHub Pages build:** Build **`1306758797`** reported **`built`**, `error: null`, for exact commit `4a8fcd5b192ec75bb5ff573ac786bea9fe63725a` (`created_at: 2026-10-23T00:00:45Z`, `updated_at: 2026-10-23T00:01:18Z`, `duration: 33097ms`).
+  - **Live public URLs fetched & verified directly (`?deploy=4a8fcd5`):**
+    - `https://karagemop466-tech.github.io/GOLD1/` — live, rendering 59 listings, 10 retailers, 21/59 published weights (`0.3 g`–`7.0 g`), 15/59 explicit `"solid gold"`, 59/59 re-checked `2026-10-22`, 49 flagged findings, 1 withdrawn unverified price (`as-bea-sol`), `$4,026.70/ozt` (`$129.46/g` 24K via NIST `31.1034768 g/ozt`), and top-of-page **No hallucinations** banner.
+    - `https://karagemop466-tech.github.io/GOLD1/weights.html` — live, rendering all 21 weighted rings (`2.5×`–`12.6×` melt) and 38 unweighted rows by seller.
+    - `https://karagemop466-tech.github.io/GOLD1/sources.html` — live, rendering all 54 primary sources, 10-retailer policy/contact/BBB table, and rejected 404s.
+    - `https://karagemop466-tech.github.io/GOLD1/checks.html` — live, rendering **Pass P40** (`19/19` passed, `0` failed, unbroken `P1`–`P40` history, 59-row re-verification ledger).
+    - `https://karagemop466-tech.github.io/GOLD1/site/` — live, standalone 13-candidate CSP-hardened evidence review (`arena/c662efda-gold1`) intact.
 
