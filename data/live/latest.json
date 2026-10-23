@@ -1,11 +1,11 @@
 {
  "pass": "P42-live",
  "purpose": "Independent live re-read of every curated row at its own official product URL. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.",
- "started_at": "2026-10-23T10:16:34Z",
- "finished_at": "2026-10-23T10:17:03Z",
- "run_context": "github-actions run 39937867408",
- "row_count": 59,
- "fetch_ok": 50,
+ "started_at": "2026-10-23T20:19:40Z",
+ "finished_at": "2026-10-23T20:20:12Z",
+ "run_context": "github-actions run 40018332954",
+ "row_count": 71,
+ "fetch_ok": 61,
  "fetch_failed": [
   {
    "id": "wc-tulip",
@@ -51,6 +51,11 @@
    "id": "car-18k-1895-band-dia",
    "status": 403,
    "error": "HTTP 403"
+  },
+  {
+   "id": "car-18k-destinee-princess",
+   "status": 403,
+   "error": "HTTP 403"
   }
  ],
  "gold_price_readings": [
@@ -58,19 +63,19 @@
    "publisher": "gold-api.com",
    "url": "https://api.gold-api.com/price/XAU",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:45Z",
-   "price_usd_per_ozt": 4025.600098,
-   "publisher_timestamp": "2026-10-23T10:16:43Z",
-   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":4025.600098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T10:16:43Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
+   "fetched_at": "2026-10-23T20:20:03Z",
+   "price_usd_per_ozt": 3998.100098,
+   "publisher_timestamp": "2026-10-23T20:19:45Z",
+   "raw_excerpt": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3998.100098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:19:45Z\",\"updatedAtReadable\":\"a few seconds ago\"}"
   },
   {
    "publisher": "Yahoo Finance (COMEX GC=F front month)",
    "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
-   "http_status": 0,
-   "fetched_at": "2026-10-23T10:17:03Z",
-   "price_usd_per_ozt": null,
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:12Z",
+   "price_usd_per_ozt": 4009.8,
    "publisher_timestamp": null,
-   "raw_excerpt": "HTTP 429"
+   "raw_excerpt": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"GC=F\",\"exchangeName\":\"CMX\",\"fullExchangeName\":\"COMEX\",\"instrumentType\":\"FUTURE\",\"firstTradeDate\":967608000,\"regularMarketTime\":1792786203,\"hasPrePostMarketData\":false,\"gmtoffset\":-14400,\"timezone\":\"EDT\",\"exchangeTimezoneName\":\"America/New_York\""
   }
  ],
  "rows": [
@@ -80,9 +85,9 @@
    "url": "https://www.ross-simons.com/products/571221",
    "final_url": "https://www.ross-simons.com/products/571221",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:35Z",
+   "fetched_at": "2026-10-23T20:19:42Z",
    "ok": true,
-   "bytes": 939120,
+   "bytes": 943745,
    "extraction": {
     "h1": "Women's 2mm 14kt Yellow Gold Band",
     "title_tag": "Women's 2mm 14kt Yellow Gold Band",
@@ -303,8 +308,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21260,
-    "text_sha256": "9a16a696909eb7219d783327c6bebabc0e140ccb73a9f1d681d9fd3acb0e921f"
+    "text_length": 21264,
+    "text_sha256": "0e6a989a5013a34c8e5782ea4022e689a5a63327611aa609b2a013153fab3c48"
    }
   },
   {
@@ -313,9 +318,9 @@
    "url": "https://www.ross-simons.com/products/571222",
    "final_url": "https://www.ross-simons.com/products/571222",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:35Z",
+   "fetched_at": "2026-10-23T20:19:42Z",
    "ok": true,
-   "bytes": 931933,
+   "bytes": 936970,
    "extraction": {
     "h1": "Women's 3mm 14kt Yellow Gold Band",
     "title_tag": "Women's 3mm 14kt Yellow Gold Band",
@@ -520,8 +525,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21256,
-    "text_sha256": "57125cada88dbd83523c082b47d17ecf7a0469dcb0a68d3a29ab339574776cb1"
+    "text_length": 21260,
+    "text_sha256": "23d6b34d2fecdaefa27ef98dc356a5d0137c81169a9371f2731e811a3b6e4fbf"
    }
   },
   {
@@ -530,9 +535,9 @@
    "url": "https://www.ross-simons.com/products/571223",
    "final_url": "https://www.ross-simons.com/products/571223",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:35Z",
+   "fetched_at": "2026-10-23T20:19:41Z",
    "ok": true,
-   "bytes": 930158,
+   "bytes": 935195,
    "extraction": {
     "h1": "Women's 4mm 14kt Yellow Gold Band",
     "title_tag": "Women's 4mm 14kt Yellow Gold Band",
@@ -741,8 +746,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21143,
-    "text_sha256": "ccdc4e68e1ace6f1dcfa570d21b918a092404eee6bed00875fbf897003ab7427"
+    "text_length": 21147,
+    "text_sha256": "8ee5939d45957a9a2e12bc76a2d209ac51b599b92df6ad717af88826b1680150"
    }
   },
   {
@@ -751,9 +756,9 @@
    "url": "https://www.ross-simons.com/products/571213",
    "final_url": "https://www.ross-simons.com/products/571213",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:35Z",
+   "fetched_at": "2026-10-23T20:19:42Z",
    "ok": true,
-   "bytes": 890867,
+   "bytes": 895495,
    "extraction": {
     "h1": "Men's 5mm 14kt Yellow Gold Band",
     "title_tag": "Men's 5mm 14kt Yellow Gold Band",
@@ -962,8 +967,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21195,
-    "text_sha256": "8edf16258d988335a86bf1c1a4c3776932e347880df629113ca7daa539599639"
+    "text_length": 21199,
+    "text_sha256": "fc2a9e9338cb81de2429270352c5ff93f5e23884f52335f30b771d8936d267d5"
    }
   },
   {
@@ -972,9 +977,9 @@
    "url": "https://www.ross-simons.com/products/981367",
    "final_url": "https://www.ross-simons.com/products/981367",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:36Z",
+   "fetched_at": "2026-10-23T20:19:43Z",
    "ok": true,
-   "bytes": 932446,
+   "bytes": 938517,
    "extraction": {
     "h1": "14kt Yellow Gold Polished Ring",
     "title_tag": "14kt Yellow Gold Polished Ring",
@@ -1021,7 +1026,7 @@
      },
      {
       "match": "14kt",
-      "excerpt": "All Pre-Owned Watches Home Jewelry Classic Collection Rings Gold --> 14kt Yellow Gold Polished Ring (41) 25% OFF IN CART WITH CODE GOLD25 $149"
+      "excerpt": "All Pre-Owned Watches Home Jewelry Classic Collection Rings Gold --> 14kt Yellow Gold Polished Ring (41) 25% OFF IN CART WITH CODE GOLDENDAYS $"
      },
      {
       "match": "14kt",
@@ -1190,15 +1195,15 @@
     "prices": [
      {
       "match": "$149",
-      "excerpt": "14kt Yellow Gold Polished Ring (41) 25% OFF IN CART WITH CODE GOLD25 $149 Define your style with stack-and-layer essentials from our Pure Colle"
+      "excerpt": "t Yellow Gold Polished Ring (41) 25% OFF IN CART WITH CODE GOLDENDAYS $149 Define your style with stack-and-layer essentials from our Pure Colle"
      },
      {
       "match": "$5.95",
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 22098,
-    "text_sha256": "e00f0ebe701e21b92fdc8b9e8b8bd47244870d2a88d72ccb76854935dba07c1b"
+    "text_length": 22106,
+    "text_sha256": "d3eda62df66371fa0ce87b8e0f7ce3b82f19aeea96b12878a700e5b6e7aa1a21"
    }
   },
   {
@@ -1207,9 +1212,9 @@
    "url": "https://www.ross-simons.com/products/907250",
    "final_url": "https://www.ross-simons.com/products/907250",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:36Z",
+   "fetched_at": "2026-10-23T20:19:43Z",
    "ok": true,
-   "bytes": 929932,
+   "bytes": 934826,
    "extraction": {
     "h1": "18kt Yellow Gold Roped Ring",
     "title_tag": "18kt Yellow Gold Roped Ring",
@@ -1415,8 +1420,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 22157,
-    "text_sha256": "6a01cc0ac33ccca8e41ea65009e531dce3a8fddd0aab992d29955299280373ae"
+    "text_length": 22161,
+    "text_sha256": "be7a1543ae9ca756fae90bb5542a1e52f0ca6b87b41cacd7d9f2cf8a19c2ce54"
    }
   },
   {
@@ -1425,9 +1430,9 @@
    "url": "https://www.ross-simons.com/products/960952",
    "final_url": "https://www.ross-simons.com/products/960952",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:36Z",
+   "fetched_at": "2026-10-23T20:19:44Z",
    "ok": true,
-   "bytes": 934032,
+   "bytes": 937707,
    "extraction": {
     "h1": "Italian 14kt Yellow Gold Dome Ring",
     "title_tag": "Italian 14kt Yellow Gold Dome Ring",
@@ -1629,8 +1634,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21965,
-    "text_sha256": "6deeb3ae6dfe307efc6dbdec460e765242e21a00efec1c5b63a669371a81519e"
+    "text_length": 21969,
+    "text_sha256": "d173b08ea3e63914b28b16da315257cbe56156a71acb52b99fd66813268f922c"
    }
   },
   {
@@ -1639,9 +1644,9 @@
    "url": "https://www.ross-simons.com/products/879968",
    "final_url": "https://www.ross-simons.com/products/879968",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:36Z",
+   "fetched_at": "2026-10-23T20:19:43Z",
    "ok": true,
-   "bytes": 913510,
+   "bytes": 917371,
    "extraction": {
     "h1": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
     "title_tag": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
@@ -1679,7 +1684,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25"
+      "excerpt": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDEND"
      },
      {
       "match": "14kt",
@@ -1838,8 +1843,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21271,
-    "text_sha256": "50648e7671c9a89d9d6f33eb6867e819856113150fa9a81897c5bb468c6e900d"
+    "text_length": 21275,
+    "text_sha256": "79aee67cb4c8924f9298a38ad3017c73229899e2ce6bdafb510265fb0f3d9f07"
    }
   },
   {
@@ -1848,9 +1853,9 @@
    "url": "https://www.ross-simons.com/products/999230",
    "final_url": "https://www.ross-simons.com/products/999230",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:37Z",
+   "fetched_at": "2026-10-23T20:19:44Z",
    "ok": true,
-   "bytes": 906250,
+   "bytes": 910439,
    "extraction": {
     "h1": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity Band in 14kt Yellow Gold",
     "title_tag": ".80 ct. t.w. Garnet and .30 ct. t.w. Pink Sapphire Geometric Eternity",
@@ -2027,8 +2032,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21627,
-    "text_sha256": "cdc2b17764cce063c50e5100cf497b986ddc665364e4bf64fc3a21e30ee37005"
+    "text_length": 21631,
+    "text_sha256": "04abaf45a216d95ea2139adb2fe17e43a13ebdebab1d92e699ce0452546bb803"
    }
   },
   {
@@ -2037,9 +2042,9 @@
    "url": "https://www.ross-simons.com/products/991907",
    "final_url": "https://www.ross-simons.com/products/991907",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:37Z",
+   "fetched_at": "2026-10-23T20:19:45Z",
    "ok": true,
-   "bytes": 910327,
+   "bytes": 914881,
    "extraction": {
     "h1": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "title_tag": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
@@ -2077,7 +2082,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25 A"
+      "excerpt": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDENDA"
      },
      {
       "match": "14kt",
@@ -2236,8 +2241,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21616,
-    "text_sha256": "35d2483b148aeb7b47ba433c005451df928186b8c3d6e846d1cce2847c6cde37"
+    "text_length": 21620,
+    "text_sha256": "bdc831b20eee36eca69f30a00aca54b025188d2ddb221b984138e7c4148d8881"
    }
   },
   {
@@ -2246,9 +2251,9 @@
    "url": "https://www.ross-simons.com/products/993512",
    "final_url": "https://www.ross-simons.com/products/993512",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:37Z",
+   "fetched_at": "2026-10-23T20:19:44Z",
    "ok": true,
-   "bytes": 912002,
+   "bytes": 915382,
    "extraction": {
     "h1": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
     "title_tag": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
@@ -2286,7 +2291,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25"
+      "excerpt": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDEND"
      },
      {
       "match": "14kt",
@@ -2445,8 +2450,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21629,
-    "text_sha256": "a434ce0f4728f1af2d25fbe9447dd2ae91f9bf83a38dde5a39c67c12be1ab04d"
+    "text_length": 21633,
+    "text_sha256": "a39b19d494e331a01e8b58f7163f17ba9b9ef61caa982ba8e763f764dbddb2ea"
    }
   },
   {
@@ -2455,9 +2460,9 @@
    "url": "https://www.ross-simons.com/products/991908",
    "final_url": "https://www.ross-simons.com/products/991908",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:37Z",
+   "fetched_at": "2026-10-23T20:19:45Z",
    "ok": true,
-   "bytes": 906628,
+   "bytes": 911665,
    "extraction": {
     "h1": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
     "title_tag": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
@@ -2495,7 +2500,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25 A"
+      "excerpt": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDENDA"
      },
      {
       "match": "14kt",
@@ -2638,8 +2643,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21547,
-    "text_sha256": "1226c4cf437b13523c76ce457063540284a2e948f328ae3ab8d8ee350753e3e1"
+    "text_length": 21551,
+    "text_sha256": "6399bae4afed60691677ec3b09c2a2fb1f35da6ce3cc34dc5d2ae0490f502780"
    }
   },
   {
@@ -2648,9 +2653,9 @@
    "url": "https://www.ross-simons.com/products/864785",
    "final_url": "https://www.ross-simons.com/products/864785",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:45Z",
    "ok": true,
-   "bytes": 932265,
+   "bytes": 937302,
    "extraction": {
     "h1": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold",
     "title_tag": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt",
@@ -2708,7 +2713,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25 APPLIED IN C"
+      "excerpt": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDENDAYS APPLIED"
      },
      {
       "match": "14kt",
@@ -2847,8 +2852,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21360,
-    "text_sha256": "6887ecd8c98ad8dc3a1dfdcec47602b66e5ebd7c66fb2177b957915884a0f783"
+    "text_length": 21364,
+    "text_sha256": "937c08dad5bf360c5dfdb44ac980570afa53ca97f529a3a2df7d10c8a7c88fd0"
    }
   },
   {
@@ -2857,9 +2862,9 @@
    "url": "https://www.ross-simons.com/products/943668",
    "final_url": "https://www.ross-simons.com/products/943668",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:45Z",
    "ok": true,
-   "bytes": 894887,
+   "bytes": 898562,
    "extraction": {
     "h1": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
     "title_tag": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
@@ -2902,7 +2907,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25 A"
+      "excerpt": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDENDA"
      },
      {
       "match": "14kt",
@@ -3045,8 +3050,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21348,
-    "text_sha256": "696ead0179e6b814f698edb4c158e44532b06a2d11eba37ee7cc4e48930e7570"
+    "text_length": 21352,
+    "text_sha256": "8ac61316ed475f71964fcc244fbb80accc0615f3f4190b8fd0babc70ade5cb14"
    }
   },
   {
@@ -3055,9 +3060,9 @@
    "url": "https://www.ross-simons.com/products/242556",
    "final_url": "https://www.ross-simons.com/products/242556",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:46Z",
    "ok": true,
-   "bytes": 863269,
+   "bytes": 868120,
    "extraction": {
     "h1": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
     "title_tag": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in",
@@ -3198,8 +3203,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21252,
-    "text_sha256": "a8a9f213dc4195c3f53938eac148e72b06a2102a5e458a8c08303d20e6f2410b"
+    "text_length": 21256,
+    "text_sha256": "369d27fa5955e0f2b85a144e763ee8639fa029840e9c538729f61831a50f857a"
    }
   },
   {
@@ -3208,9 +3213,9 @@
    "url": "https://www.ross-simons.com/products/254575",
    "final_url": "https://www.ross-simons.com/products/254575",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:47Z",
    "ok": true,
-   "bytes": 849566,
+   "bytes": 854417,
    "extraction": {
     "h1": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
     "title_tag": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
@@ -3351,8 +3356,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21090,
-    "text_sha256": "e2b0cff1c85b516d2d5db835dc35e85fc11a295c36636d8461b02a7be73bf206"
+    "text_length": 21094,
+    "text_sha256": "6ca218f7f58798afa5fb03bdb41ce0f8bebd08ce861f0c696ef89b74bbfc0a95"
    }
   },
   {
@@ -3361,9 +3366,9 @@
    "url": "https://www.ross-simons.com/products/240912",
    "final_url": "https://www.ross-simons.com/products/240912",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:39Z",
+   "fetched_at": "2026-10-23T20:19:47Z",
    "ok": true,
-   "bytes": 857801,
+   "bytes": 862652,
    "extraction": {
     "h1": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
     "title_tag": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold",
@@ -3381,7 +3386,7 @@
     "karat_mentions": [
      {
       "match": "14kt",
-      "excerpt": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLD25"
+      "excerpt": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDEND"
      },
      {
       "match": "14kt",
@@ -3500,8 +3505,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21231,
-    "text_sha256": "8b1315fd8f4910d5d77215d8b56fb096b56aa5390a553f7830acf69087b96d7f"
+    "text_length": 21235,
+    "text_sha256": "2992f15d9f6c5e3166ccb5e334c690de4c6f1ef27b8854941b2f2cfa0a7554d8"
    }
   },
   {
@@ -3509,7 +3514,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:46Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -3520,7 +3525,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:46Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -3531,7 +3536,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:46Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -3542,7 +3547,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:46Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -3553,7 +3558,7 @@
    "retailer": "With Clarity",
    "url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:46Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -3565,9 +3570,9 @@
    "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:47Z",
    "ok": true,
-   "bytes": 806204,
+   "bytes": 806672,
    "extraction": {
     "h1": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)",
     "title_tag": "Oval Solitaire Engagement Ring | Anna Sheffield | Champange Diamond &ndash; Anna Sheffield Jewelry",
@@ -3608,14 +3613,6 @@
      {
       "match": "14k",
       "excerpt": "Asymmetrical motifs of four round stones prong set and dotted along a 14k gold curved nesting band emblematic of stars shining above the horizo"
-     },
-     {
-      "match": "14K",
-      "excerpt": "Grey Diamond $6,000.00 USD Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K"
-     },
-     {
-      "match": "14K",
-      "excerpt": "14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond $7,500.00 USD View all"
      }
     ],
     "weight_keyword_context": [],
@@ -3668,24 +3665,24 @@
       "excerpt": "Y PUSH PRESENT SHOP BY PRICE $500 & UNDER $1000 & UNDER $2500 & UNDER $5000 & UNDER Shop All In-Stock Fine Jewelry FEATURED SILVER & MIXED METAL"
      },
      {
-      "match": "$6,000.00",
-      "excerpt": "amond Toi Et Moi Necklace - Yellow Gold, White Diamond & Grey Diamond $6,000.00 USD NEW ARRIVAL Diamond Torque Necklace - Yellow Gold, Platinum & Whi"
+      "match": "$2,800.00",
+      "excerpt": "Gold & Turquoise Turquoise Amulet Necklace - Yellow Gold & Turquoise $2,800.00 USD NEW ARRIVAL Toi Et Moi Necklace - Yellow Gold, White Diamond & Gr"
      },
      {
-      "match": "$6,200.00",
-      "excerpt": "d Diamond Torque Necklace - Yellow Gold, Platinum & White Lab Diamond $6,200.00 USD NEW ARRIVAL Toi Et Moi Ring - Yellow Gold, Grey & White Diamond ("
+      "match": "$6,000.00",
+      "excerpt": "amond Toi Et Moi Necklace - Yellow Gold, White Diamond & Grey Diamond $6,000.00 USD NEW ARRIVAL Toi Et Moi Ring - Yellow Gold, Grey & White Diamond ("
      },
      {
       "match": "$5,600.00",
-      "excerpt": "(1.40ct) Toi Et Moi Ring - Yellow Gold, Grey & White Diamond (1.40ct) $5,600.00 USD NEW ARRIVAL Toi Et Moi Ring - Yellow Gold, Grey & White Diamond ("
+      "excerpt": "(1.40ct) Toi Et Moi Ring - Yellow Gold, Grey & White Diamond (1.40ct) $5,600.00 USD NEW ARRIVAL Diamond Torque Necklace - Yellow Gold, Platinum & Whi"
      },
      {
-      "match": "$13,600.00",
-      "excerpt": "(1.80ct) Toi Et Moi Ring - Yellow Gold, Grey & White Diamond (1.80ct) $13,600.00 USD VIEW MORE Play video Ethics & Sustainability From using recycled"
+      "match": "$6,200.00",
+      "excerpt": "d Diamond Torque Necklace - Yellow Gold, Platinum & White Lab Diamond $6,200.00 USD VIEW MORE Play video Ethics & Sustainability From using recycled"
      }
     ],
-    "text_length": 20596,
-    "text_sha256": "24ab564a6dcbaab573670bfa9ca770faa81c9c97db30aaabcc69ce1e8514eb72"
+    "text_length": 20540,
+    "text_sha256": "59d8313ac3f315caed0e940e0e830a2a9a7da463719578d9d4b290edeab96120"
    }
   },
   {
@@ -3694,9 +3691,9 @@
    "url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "final_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:38Z",
+   "fetched_at": "2026-10-23T20:19:47Z",
    "ok": true,
-   "bytes": 709840,
+   "bytes": 711481,
    "extraction": {
     "h1": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond",
     "title_tag": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond &ndash; Anna Sheffield Jewelry",
@@ -3725,14 +3722,6 @@
      {
       "match": "14k",
       "excerpt": "Asymmetrical motifs of four round stones prong set and dotted along a 14k gold curved nesting band emblematic of stars shining above the horizo"
-     },
-     {
-      "match": "14K",
-      "excerpt": "Grey Diamond $6,000.00 USD Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K"
-     },
-     {
-      "match": "14K",
-      "excerpt": "14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond $7,500.00 USD View all"
      }
     ],
     "weight_keyword_context": [],
@@ -3785,24 +3774,24 @@
       "excerpt": "Y PUSH PRESENT SHOP BY PRICE $500 & UNDER $1000 & UNDER $2500 & UNDER $5000 & UNDER Shop All In-Stock Fine Jewelry FEATURED SILVER & MIXED METAL"
      },
      {
-      "match": "$6,000.00",
-      "excerpt": "amond Toi Et Moi Necklace - Yellow Gold, White Diamond & Grey Diamond $6,000.00 USD NEW ARRIVAL Diamond Torque Necklace - Yellow Gold, Platinum & Whi"
+      "match": "$2,800.00",
+      "excerpt": "Gold & Turquoise Turquoise Amulet Necklace - Yellow Gold & Turquoise $2,800.00 USD NEW ARRIVAL Toi Et Moi Necklace - Yellow Gold, White Diamond & Gr"
      },
      {
-      "match": "$6,200.00",
-      "excerpt": "d Diamond Torque Necklace - Yellow Gold, Platinum & White Lab Diamond $6,200.00 USD NEW ARRIVAL Toi Et Moi Ring - Yellow Gold, Grey & White Diamond ("
+      "match": "$6,000.00",
+      "excerpt": "amond Toi Et Moi Necklace - Yellow Gold, White Diamond & Grey Diamond $6,000.00 USD NEW ARRIVAL Toi Et Moi Ring - Yellow Gold, Grey & White Diamond ("
      },
      {
       "match": "$5,600.00",
-      "excerpt": "(1.40ct) Toi Et Moi Ring - Yellow Gold, Grey & White Diamond (1.40ct) $5,600.00 USD NEW ARRIVAL Toi Et Moi Ring - Yellow Gold, Grey & White Diamond ("
+      "excerpt": "(1.40ct) Toi Et Moi Ring - Yellow Gold, Grey & White Diamond (1.40ct) $5,600.00 USD NEW ARRIVAL Diamond Torque Necklace - Yellow Gold, Platinum & Whi"
      },
      {
-      "match": "$13,600.00",
-      "excerpt": "(1.80ct) Toi Et Moi Ring - Yellow Gold, Grey & White Diamond (1.80ct) $13,600.00 USD VIEW MORE Play video Ethics & Sustainability From using recycled"
+      "match": "$6,200.00",
+      "excerpt": "d Diamond Torque Necklace - Yellow Gold, Platinum & White Lab Diamond $6,200.00 USD VIEW MORE Play video Ethics & Sustainability From using recycled"
      }
     ],
-    "text_length": 20845,
-    "text_sha256": "963bbd7b47531745252a14044cafb4351182c279d7af871d8681314df2cd7c7e"
+    "text_length": 20789,
+    "text_sha256": "c3bc22ba9fcd1c571750469d9608021a06cff5d3811289d0da5fc6e0fae9a158"
    }
   },
   {
@@ -3811,9 +3800,9 @@
    "url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "final_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:39Z",
+   "fetched_at": "2026-10-23T20:19:47Z",
    "ok": true,
-   "bytes": 810106,
+   "bytes": 811747,
    "extraction": {
     "h1": "Bea Three Stone Ring - 14k Gold & White Diamond Center",
     "title_tag": "Three Diamond Ring | Anna Sheffield | White Diamond Bea Three Ring &ndash; Anna Sheffield Jewelry",
@@ -3858,14 +3847,6 @@
      {
       "match": "14k",
       "excerpt": "Asymmetrical motifs of four round stones prong set and dotted along a 14k gold curved nesting band emblematic of stars shining above the horizo"
-     },
-     {
-      "match": "14K",
-      "excerpt": "Grey Diamond $6,000.00 USD Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K"
-     },
-     {
-      "match": "14K",
-      "excerpt": "14K Gold, Quartz & Diamond Terra Firma Double Drop Earrings (PAIR) - 14K Gold, Quartz & Diamond $7,500.00 USD View all"
      }
     ],
     "weight_keyword_context": [],
@@ -3939,8 +3920,8 @@
       "excerpt": "der has been completed. Free 2-Day shipping available for orders over $300. Made-to-order items will ship via 2-Day Express when the order has b"
      }
     ],
-    "text_length": 21489,
-    "text_sha256": "5b8515d4f57f4425ca31227646107dc0bf6c86e4c975a4921f029a7282927c0e"
+    "text_length": 21433,
+    "text_sha256": "39b0c27df2113f7e2d4c982fcc517f6e7f1898e638428a0dba7db5f7b10c70aa"
    }
   },
   {
@@ -3949,9 +3930,9 @@
    "url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:50Z",
    "ok": true,
-   "bytes": 7169623,
+   "bytes": 7175904,
    "extraction": {
     "h1": "2ct Oval Lab Grown Diamond Bezel Ring",
     "title_tag": "2ct Oval Lab Grown Diamond Bezel Ring",
@@ -3972,11 +3953,11 @@
     "karat_mentions": [
      {
       "match": "14k",
-      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST"
+      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELL"
      },
      {
       "match": "18k",
-      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED:"
+      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST:"
      },
      {
       "match": "14k",
@@ -3997,11 +3978,11 @@
     "plated_mentions": [
      {
       "match": "Vermeil",
-      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN:"
+      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROP"
      },
      {
       "match": "Sterling Silver",
-      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN: THE PINKY RING SH"
+      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROPPED: THE VINTAGE S"
      },
      {
       "match": "Vermeil",
@@ -4115,8 +4096,8 @@
       "excerpt": "Grown Diamond Bezel Ring $1,968 2ct Pear Lab Grown Diamond Bezel Ring $1,968 Skip past reviews See what people are saying Skip back to start of re"
      }
     ],
-    "text_length": 8202,
-    "text_sha256": "150629e77e0892e9e1a7f85041a40dfc117d40c0984ad38b88f0c4c13f230cdb"
+    "text_length": 8201,
+    "text_sha256": "c9d7b10250354c410f58ed51689c6a5a26151e3472779adfba24f77791c83e32"
    }
   },
   {
@@ -4125,9 +4106,9 @@
    "url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:48Z",
    "ok": true,
-   "bytes": 7181069,
+   "bytes": 7186180,
    "extraction": {
     "h1": "1ct Emerald Lab Grown Diamond Bezel Ring",
     "title_tag": "1ct Emerald Lab Grown Diamond Bezel Ring",
@@ -4148,11 +4129,11 @@
     "karat_mentions": [
      {
       "match": "14k",
-      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST"
+      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELL"
      },
      {
       "match": "18k",
-      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED:"
+      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST:"
      },
      {
       "match": "14k",
@@ -4173,11 +4154,11 @@
     "plated_mentions": [
      {
       "match": "Vermeil",
-      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN:"
+      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROP"
      },
      {
       "match": "Sterling Silver",
-      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN: THE PINKY RING SH"
+      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROPPED: THE VINTAGE S"
      },
      {
       "match": "Vermeil",
@@ -4291,8 +4272,8 @@
       "excerpt": "Grown Diamond Bezel Ring $1,498 1ct Pear Lab Grown Diamond Bezel Ring $1,498 Skip past reviews See what people are saying Skip back to start of re"
      }
     ],
-    "text_length": 8284,
-    "text_sha256": "152ca08961355bf1256cc7c9e8901f33d2c8de7ca7c615ea59f3ebfbd0c01954"
+    "text_length": 8283,
+    "text_sha256": "fd05d04a831bd67aa517c8ee1894c01bbedd25ed3c7f8133bf6a955f66d07ab5"
    }
   },
   {
@@ -4301,9 +4282,9 @@
    "url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "final_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:49Z",
    "ok": true,
-   "bytes": 7176087,
+   "bytes": 7203936,
    "extraction": {
     "h1": "3ct Round Lab Grown Diamond Bezel Ring",
     "title_tag": "3ct Round Lab Grown Diamond Bezel Ring",
@@ -4324,11 +4305,11 @@
     "karat_mentions": [
      {
       "match": "14k",
-      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST"
+      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELL"
      },
      {
       "match": "18k",
-      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED:"
+      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST:"
      },
      {
       "match": "14k",
@@ -4349,11 +4330,11 @@
     "plated_mentions": [
      {
       "match": "Vermeil",
-      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN:"
+      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROP"
      },
      {
       "match": "Sterling Silver",
-      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN: THE PINKY RING SH"
+      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROPPED: THE VINTAGE S"
      },
      {
       "match": "Vermeil",
@@ -4467,8 +4448,8 @@
       "excerpt": "Grown Diamond Bezel Ring $2,498 3ct Pear Lab Grown Diamond Bezel Ring $2,498 Skip past reviews See what people are saying Skip back to start of re"
      }
     ],
-    "text_length": 8274,
-    "text_sha256": "856877ee29b6c3c44fce1b90b6a2ba16615114e9fdf3d82c5db189969f331ac0"
+    "text_length": 8273,
+    "text_sha256": "1d55b8763bf67671079eda4f4247757002cb80e0742723cb68138dcbab997236"
    }
   },
   {
@@ -4477,9 +4458,9 @@
    "url": "https://auratenewyork.com/products/modern-cigar-band",
    "final_url": "https://auratenewyork.com/products/modern-cigar-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:49Z",
    "ok": true,
-   "bytes": 7525739,
+   "bytes": 7530850,
    "extraction": {
     "h1": "Modern Cigar Band",
     "title_tag": "Modern Cigar Band in Yellow, Rose or White Gold",
@@ -4500,11 +4481,11 @@
     "karat_mentions": [
      {
       "match": "14k",
-      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST"
+      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELL"
      },
      {
       "match": "18k",
-      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED:"
+      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST:"
      },
      {
       "match": "14k",
@@ -4521,11 +4502,11 @@
     "plated_mentions": [
      {
       "match": "Vermeil",
-      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN:"
+      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROP"
      },
      {
       "match": "Sterling Silver",
-      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN: THE PINKY RING SH"
+      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROPPED: THE VINTAGE S"
      },
      {
       "match": "Vermeil",
@@ -4647,8 +4628,8 @@
       "excerpt": "old Hinged Bracelet $398 Brooklyn Bridge Ring $448 Open Link Ring $88 $44 Skip past reviews See what people are saying 4.8 Rated 4.8 out of 5 s"
      }
     ],
-    "text_length": 13495,
-    "text_sha256": "daf998f11b2f35cc4c1251c902055fd8d9b7efa8c5c6b8d10db0c0f3c45b19a2"
+    "text_length": 13494,
+    "text_sha256": "82b9bcb549a813bb3c7ac09ec30f4086bf13de36e1c125418cf00087931b9660"
    }
   },
   {
@@ -4657,9 +4638,9 @@
    "url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "final_url": "https://auratenewyork.com/products/x-ring-with-diamonds",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:41Z",
+   "fetched_at": "2026-10-23T20:19:50Z",
    "ok": true,
-   "bytes": 7562731,
+   "bytes": 7544528,
    "extraction": {
     "h1": "Diamond X Ring",
     "title_tag": "X Ring with White Diamonds in Yellow, Rose or White Gold",
@@ -4680,11 +4661,11 @@
     "karat_mentions": [
      {
       "match": "14k",
-      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST"
+      "excerpt": "urate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELL"
      },
      {
       "match": "18k",
-      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED:"
+      "excerpt": "olly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST:"
      },
      {
       "match": "14k",
@@ -4705,11 +4686,11 @@
     "plated_mentions": [
      {
       "match": "Vermeil",
-      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN:"
+      "excerpt": "Aurate x Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROP"
      },
      {
       "match": "Sterling Silver",
-      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum JUST DROPPED: AURATE X MOLLY DICKSON NOW OPEN: THE PINKY RING SH"
+      "excerpt": "Molly Dickson Aurate x Frye Aurate x Marilyn Monroe Materials 14k Gold 18k Gold Vermeil & Sterling Silver Stainless Steel Platinum SELLING FAST: AURATE X MOLLY DICKSON JUST DROPPED: THE VINTAGE S"
      },
      {
       "match": "Vermeil",
@@ -4827,8 +4808,8 @@
       "excerpt": "$1,098 Bold Diamond Baguette Ring $2,748 Diamond Brooklyn Bridge Ring $508 Skip past reviews See what people are saying 5.0 Rated 5.0 out of 5 s"
      }
     ],
-    "text_length": 13491,
-    "text_sha256": "4f87edc77e1f8df719cdcc1739364dc6a01ce0246c094eead481d0130d18f58f"
+    "text_length": 13490,
+    "text_sha256": "fc1385bf3b77eb6bfccfeb30d00c893fa07bd3fe46ba0fa7479be89260822b24"
    }
   },
   {
@@ -4837,9 +4818,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:49Z",
    "ok": true,
-   "bytes": 676035,
+   "bytes": 676032,
    "extraction": {
     "h1": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
     "title_tag": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
@@ -4916,9 +4897,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:49Z",
    "ok": true,
-   "bytes": 675201,
+   "bytes": 675198,
    "extraction": {
     "h1": "Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold",
@@ -5003,9 +4984,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:40Z",
+   "fetched_at": "2026-10-23T20:19:49Z",
    "ok": true,
-   "bytes": 674859,
+   "bytes": 674856,
    "extraction": {
     "h1": "Leaf Solitaire Engagement Ring in 14k Yellow Gold",
     "title_tag": "Leaf Solitaire Engagement Ring in 14k Yellow Gold",
@@ -5090,9 +5071,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:41Z",
+   "fetched_at": "2026-10-23T20:19:49Z",
    "ok": true,
-   "bytes": 673948,
+   "bytes": 673945,
    "extraction": {
     "h1": "Bezel Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Bezel Solitaire Engagement Ring in 14K Yellow Gold",
@@ -5173,9 +5154,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:41Z",
+   "fetched_at": "2026-10-23T20:19:50Z",
    "ok": true,
-   "bytes": 619354,
+   "bytes": 619351,
    "extraction": {
     "h1": "Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold",
     "title_tag": "Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold",
@@ -5256,9 +5237,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:41Z",
+   "fetched_at": "2026-10-23T20:19:50Z",
    "ok": true,
-   "bytes": 649596,
+   "bytes": 649593,
    "extraction": {
     "h1": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
     "title_tag": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
@@ -5343,9 +5324,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:41Z",
+   "fetched_at": "2026-10-23T20:19:50Z",
    "ok": true,
-   "bytes": 645683,
+   "bytes": 645680,
    "extraction": {
     "h1": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
     "title_tag": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
@@ -5430,9 +5411,9 @@
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:41Z",
+   "fetched_at": "2026-10-23T20:19:50Z",
    "ok": true,
-   "bytes": 629848,
+   "bytes": 629845,
    "extraction": {
     "h1": "Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
     "title_tag": "Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
@@ -5517,9 +5498,9 @@
    "url": "https://mejuri.com/products/diamond-eternity-band",
    "final_url": "https://mejuri.com/products/diamond-eternity-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:19:51Z",
    "ok": true,
-   "bytes": 1706792,
+   "bytes": 1711457,
    "extraction": {
     "h1": "Diamond Eternity Band",
     "title_tag": "Diamond Eternity Band | Mejuri",
@@ -5616,8 +5597,8 @@
       "excerpt": "Free Returns & Exchanges Free Shipping Diamond Eternity Band 4.6 From $1,100 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond Siz"
      }
     ],
-    "text_length": 3079,
-    "text_sha256": "9a1adc081f424d5ecaa871e22efe8d5b46c237d3a21330963ad0ecfcdc9ed33a"
+    "text_length": 3063,
+    "text_sha256": "468f9a213f88001b9c3bb40ab8c7f622f6f4adf3f08ee6218a672932db3ced52"
    }
   },
   {
@@ -5626,9 +5607,9 @@
    "url": "https://mejuri.com/products/diamonds-band",
    "final_url": "https://mejuri.com/products/diamonds-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:42Z",
+   "fetched_at": "2026-10-23T20:19:51Z",
    "ok": true,
-   "bytes": 1282628,
+   "bytes": 1286206,
    "extraction": {
     "h1": "Diamonds Band",
     "title_tag": "Diamond Band Ring | Mejuri",
@@ -5721,8 +5702,8 @@
       "excerpt": "ear Warranty Free Returns & Exchanges Free Shipping Diamonds Band 4.7 $648 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond Siz"
      }
     ],
-    "text_length": 3117,
-    "text_sha256": "160336eff29475d88ab01b3a193c7fb65065fed25ecff4b9035cbc708145f966"
+    "text_length": 3101,
+    "text_sha256": "89d38bd03ed52e0d71bcfc4ad811ae33f86cdcb6fb55efeb8c08e0a0cacc8f87"
    }
   },
   {
@@ -5731,9 +5712,9 @@
    "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "final_url": "https://mejuri.com/products/bold-diamond-eternity-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:42Z",
+   "fetched_at": "2026-10-23T20:19:53Z",
    "ok": true,
-   "bytes": 1737138,
+   "bytes": 1741708,
    "extraction": {
     "h1": "Bold Diamond Eternity Ring",
     "title_tag": "Bold Diamond Eternity Ring | Mejuri",
@@ -5826,8 +5807,8 @@
       "excerpt": "Returns & Exchanges Free Shipping Bold Diamond Eternity Ring 4.8 From $2,900 Material & Stone Options Solid White Gold (14k), Natural Diamond Size"
      }
     ],
-    "text_length": 3386,
-    "text_sha256": "8769843fa8233b588fcb9c2693574c056183b0504b92099e5207df33b84c2020"
+    "text_length": 3370,
+    "text_sha256": "01f40d40cb89192f8708ffba44e0dd6372ed44809712f1edb29aac2911faeece"
    }
   },
   {
@@ -5836,9 +5817,9 @@
    "url": "https://mejuri.com/products/2mm-smooth-band",
    "final_url": "https://mejuri.com/products/2mm-smooth-band",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:19:52Z",
    "ok": true,
-   "bytes": 1533706,
+   "bytes": 1538353,
    "extraction": {
     "h1": "2mm Smooth Band",
     "title_tag": "14k Gold Smooth Band Ring - Jewelry | Mejuri",
@@ -5935,8 +5916,8 @@
       "excerpt": "r Warranty Free Returns & Exchanges Free Shipping 2mm Smooth Band 4.8 $498 Material Solid Yellow Gold (14k) Size Size Guide 4 4.5 5 5.5 6 6.5 7"
      }
     ],
-    "text_length": 2949,
-    "text_sha256": "7b243fdd4523ca9da062785205686f9cea2dde103ebfa6d7d8c9897743732e8f"
+    "text_length": 2933,
+    "text_sha256": "7ff2b6b51aaf59ce0ac91f7ecc0f51d0586491e55e4b6410fa3117761188ca56"
    }
   },
   {
@@ -5944,7 +5925,7 @@
    "retailer": "Brilliant Earth",
    "url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:42Z",
+   "fetched_at": "2026-10-23T20:19:51Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -5956,9 +5937,9 @@
    "url": "https://www.ross-simons.com/products/997811",
    "final_url": "https://www.ross-simons.com/products/997811",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:20:02Z",
    "ok": true,
-   "bytes": 922278,
+   "bytes": 927129,
    "extraction": {
     "h1": "Italian 10kt Yellow Gold Textured Ring",
     "title_tag": "Italian 10kt Yellow Gold Textured Ring",
@@ -6165,8 +6146,8 @@
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 22296,
-    "text_sha256": "2592dd407a147c9b70af47bac8f6c61df3b9ddf715c8e8e3866ea4dcc656b0ce"
+    "text_length": 22300,
+    "text_sha256": "eb0488de382e82ce7328880da1dccdc9cb48cf7776b7edc2abf4557a6583d4bd"
    }
   },
   {
@@ -6175,9 +6156,9 @@
    "url": "https://www.ross-simons.com/products/939479",
    "final_url": "https://www.ross-simons.com/products/939479",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:19:56Z",
    "ok": true,
-   "bytes": 907723,
+   "bytes": 912578,
    "extraction": {
     "h1": "Italian 14kt Yellow Gold Claddagh Ring",
     "title_tag": "Italian 14kt Yellow Gold Claddagh Ring",
@@ -6224,7 +6205,7 @@
      },
      {
       "match": "14kt",
-      "excerpt": "Rolex All Pre-Owned Watches Home Jewelry Rings Gold Only --> Italian 14kt Yellow Gold Claddagh Ring 25% OFF IN CART WITH CODE GOLD25 $499 This"
+      "excerpt": "Rolex All Pre-Owned Watches Home Jewelry Rings Gold Only --> Italian 14kt Yellow Gold Claddagh Ring 25% OFF IN CART WITH CODE GOLDENDAYS $499 T"
      },
      {
       "match": "14kt",
@@ -6360,15 +6341,15 @@
     "prices": [
      {
       "match": "$499",
-      "excerpt": "alian 14kt Yellow Gold Claddagh Ring 25% OFF IN CART WITH CODE GOLD25 $499 This ring bears a very traditional Celtic symbol, known as the Cladda"
+      "excerpt": "n 14kt Yellow Gold Claddagh Ring 25% OFF IN CART WITH CODE GOLDENDAYS $499 This ring bears a very traditional Celtic symbol, known as the Cladda"
      },
      {
       "match": "$5.95",
       "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
      }
     ],
-    "text_length": 21189,
-    "text_sha256": "ecd8803071d1501b2c9ede49f6e47eabe777b994b73283eb413d2bdb746afdc8"
+    "text_length": 21197,
+    "text_sha256": "25410b505af3d0b870e2a7653a66e238f0b556458a941210fb683b68d45ac6ee"
    }
   },
   {
@@ -6377,9 +6358,9 @@
    "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "final_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:19:53Z",
    "ok": true,
-   "bytes": 1295102,
+   "bytes": 1299807,
    "extraction": {
     "h1": "Diamonds Line Ring",
     "title_tag": "Diamonds Line Ring | Mejuri",
@@ -6464,8 +6445,8 @@
       "excerpt": "arranty Free Returns & Exchanges Free Shipping Diamonds Line Ring 4.8 $348 Material & Stone Options Solid Yellow Gold (10k), Natural Diamond Siz"
      }
     ],
-    "text_length": 2967,
-    "text_sha256": "601a8002b381c0c5b012e387cdd50ad23a42c7a1da3120174100389861d121f8"
+    "text_length": 2951,
+    "text_sha256": "cac998e3e383817ac47dc25abc11459e2691adaef3be3ccdeb9dea5a0c5b6640"
    }
   },
   {
@@ -6474,9 +6455,9 @@
    "url": "https://mejuri.com/us/en/products/signet-ring",
    "final_url": "https://mejuri.com/us/en/products/signet-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:54Z",
    "ok": true,
-   "bytes": 1325487,
+   "bytes": 1329755,
    "extraction": {
     "h1": "Signet Ring",
     "title_tag": "Signet Pinky Ring",
@@ -6556,8 +6537,8 @@
       "excerpt": "Year Warranty Free Returns & Exchanges Free Shipping Signet Ring 4.6 $348 Material Solid Yellow Gold (10k) Size Size Guide 3 4 5 6 7 8 9 10 Eng"
      }
     ],
-    "text_length": 2766,
-    "text_sha256": "b13f056aa5e922849f5546dc71d048c954f845096be259e8ce57c8f355677c8e"
+    "text_length": 2750,
+    "text_sha256": "e6422639bfa3eba7108a3cbe2e5fbff341ada51833becce8335657bee4add017"
    }
   },
   {
@@ -6566,9 +6547,9 @@
    "url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "final_url": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:19:54Z",
    "ok": true,
-   "bytes": 441200,
+   "bytes": 447386,
    "extraction": {
     "h1": "3ct Radiant Cut Lab Diamond Cathedral Ring",
     "title_tag": "3ct Radiant Cut Lab Diamond Cathedral Ring &ndash; Automic Gold",
@@ -6789,9 +6770,9 @@
    "url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "final_url": "https://www.automicgold.com/products/marquise-diamond-melted-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:43Z",
+   "fetched_at": "2026-10-23T20:19:54Z",
    "ok": true,
-   "bytes": 468729,
+   "bytes": 474915,
    "extraction": {
     "h1": "1ct Marquise Diamond Melted Ring",
     "title_tag": "Automic Gold Marquise Diamond Melted Ring | Fine Jewelry",
@@ -7016,9 +6997,9 @@
    "url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "final_url": "https://www.automicgold.com/products/diamond-leaves-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:54Z",
    "ok": true,
-   "bytes": 518416,
+   "bytes": 524602,
    "extraction": {
     "h1": "Diamond Leaves Ring",
     "title_tag": "Automic Gold Diamond Leaves Ring | Sustainable Fine Jewelry",
@@ -7243,9 +7224,9 @@
    "url": "https://www.automicgold.com/products/diamond-petal-ring",
    "final_url": "https://www.automicgold.com/products/diamond-petal-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:57Z",
    "ok": true,
-   "bytes": 494388,
+   "bytes": 500574,
    "extraction": {
     "h1": "0.6ct Round Diamond Petal Ring",
     "title_tag": "Automic Gold Round Diamond Petal Ring | Fine Jewelry",
@@ -7462,9 +7443,9 @@
    "url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "final_url": "https://www.automicgold.com/products/gemstone-kite-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:55Z",
    "ok": true,
-   "bytes": 607622,
+   "bytes": 613808,
    "extraction": {
     "h1": "Gemstone Kite Ring",
     "title_tag": "Automic Gold Gemstone Kite Ring | Sustainable Fine Jewelry",
@@ -7681,9 +7662,9 @@
    "url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "final_url": "https://www.automicgold.com/products/diamond-cluster-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:58Z",
    "ok": true,
-   "bytes": 520213,
+   "bytes": 526399,
    "extraction": {
     "h1": "Diamond Cluster Ring",
     "title_tag": "Automic Gold Diamond Cluster Ring | Sustainable Fine Jewelry",
@@ -7904,9 +7885,9 @@
    "url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "final_url": "https://www.automicgold.com/products/diamond-bubble-ring",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:56Z",
    "ok": true,
-   "bytes": 556642,
+   "bytes": 562828,
    "extraction": {
     "h1": "Diamond Bubble Ring",
     "title_tag": "Automic Gold Diamond Bubble Ring | Sustainable Fine Jewelry",
@@ -8117,7 +8098,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:56Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -8128,7 +8109,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:57Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -8139,7 +8120,7 @@
    "retailer": "Cartier",
    "url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
    "http_status": 403,
-   "fetched_at": "2026-10-23T10:16:44Z",
+   "fetched_at": "2026-10-23T20:19:57Z",
    "ok": false,
    "error": "HTTP 403",
    "shopify_json_fallback": null,
@@ -8151,9 +8132,9 @@
    "url": "https://mene.com/products/mene-classic-band-gold",
    "final_url": "https://mene.com/products/mene-classic-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:45Z",
+   "fetched_at": "2026-10-23T20:19:59Z",
    "ok": true,
-   "bytes": 675404,
+   "bytes": 675551,
    "extraction": {
     "h1": "Classic Band",
     "title_tag": "Menē Classic Band - 24k Gold | Menē",
@@ -8171,7 +8152,7 @@
      },
      {
       "match": "24k",
-      "excerpt": "d of Menē About 3D Classic Band $1,707 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5"
+      "excerpt": "d of Menē About 3D Classic Band $1,694 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5"
      },
      {
       "match": "24k",
@@ -8206,55 +8187,55 @@
     "prices": [
      {
       "match": "$500",
-      "excerpt": "ewest pure metal. Free shipping within U.S. and Canada on orders over $500. Cart Cart Shop World of Menē About 3D Classic Band $1,707 USD Price"
+      "excerpt": "ewest pure metal. Free shipping within U.S. and Canada on orders over $500. Cart Cart Shop World of Menē About 3D Classic Band $1,694 USD Price"
      },
      {
-      "match": "$1,707",
-      "excerpt": "orders over $500. Cart Cart Shop World of Menē About 3D Classic Band $1,707 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4"
+      "match": "$1,694",
+      "excerpt": "orders over $500. Cart Cart Shop World of Menē About 3D Classic Band $1,694 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4"
      },
      {
       "match": "$75",
       "excerpt": "5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 13.5 14 Size guide Engraving $75 Add engraving This is a Crafted-on-Demand item. Learn More Add to bag"
      },
      {
-      "match": "$1,320",
-      "excerpt": "sponsible Sourcing Certification. Recommended for you Crown Ring From $1,320 Engravable Wide Classic Band From $2,075 Daisy Earrings $844 Engravab"
+      "match": "$1,309",
+      "excerpt": "sponsible Sourcing Certification. Recommended for you Crown Ring From $1,309 Engravable Wide Classic Band From $2,059 Daisy Earrings $837 Engravab"
      },
      {
-      "match": "$2,075",
-      "excerpt": "nded for you Crown Ring From $1,320 Engravable Wide Classic Band From $2,075 Daisy Earrings $844 Engravable Classic Band From $779 Engravable Narr"
+      "match": "$2,059",
+      "excerpt": "nded for you Crown Ring From $1,309 Engravable Wide Classic Band From $2,059 Daisy Earrings $837 Engravable Classic Band From $779 Engravable Narr"
      },
      {
-      "match": "$844",
-      "excerpt": "g From $1,320 Engravable Wide Classic Band From $2,075 Daisy Earrings $844 Engravable Classic Band From $779 Engravable Narrow Classic Band From"
+      "match": "$837",
+      "excerpt": "g From $1,309 Engravable Wide Classic Band From $2,059 Daisy Earrings $837 Engravable Classic Band From $779 Engravable Narrow Classic Band From"
      },
      {
       "match": "$779",
-      "excerpt": "sic Band From $2,075 Daisy Earrings $844 Engravable Classic Band From $779 Engravable Narrow Classic Band From $1,300 Engravable Flat Band From"
+      "excerpt": "sic Band From $2,059 Daisy Earrings $837 Engravable Classic Band From $779 Engravable Narrow Classic Band From $1,290 Engravable Flat Band From"
      },
      {
-      "match": "$1,300",
-      "excerpt": "Engravable Classic Band From $779 Engravable Narrow Classic Band From $1,300 Engravable Flat Band From $2,112 Engravable Wide Flat Band From $2,31"
+      "match": "$1,290",
+      "excerpt": "Engravable Classic Band From $779 Engravable Narrow Classic Band From $1,290 Engravable Flat Band From $2,096 Engravable Wide Flat Band From $2,29"
      },
      {
-      "match": "$2,112",
-      "excerpt": "Engravable Narrow Classic Band From $1,300 Engravable Flat Band From $2,112 Engravable Wide Flat Band From $2,315 Engravable Wide Classic Band Fr"
+      "match": "$2,096",
+      "excerpt": "Engravable Narrow Classic Band From $1,290 Engravable Flat Band From $2,096 Engravable Wide Flat Band From $2,297 Engravable Wide Classic Band Fr"
      },
      {
-      "match": "$2,315",
-      "excerpt": "1,300 Engravable Flat Band From $2,112 Engravable Wide Flat Band From $2,315 Engravable Wide Classic Band From $722 Engravable Narrow Flat Band Fr"
+      "match": "$2,297",
+      "excerpt": "1,290 Engravable Flat Band From $2,096 Engravable Wide Flat Band From $2,297 Engravable Wide Classic Band From $722 Engravable Narrow Flat Band Fr"
      },
      {
       "match": "$722",
-      "excerpt": "gravable Wide Flat Band From $2,315 Engravable Wide Classic Band From $722 Engravable Narrow Flat Band From $1,544 Wide Faceted Band From $2,396"
+      "excerpt": "gravable Wide Flat Band From $2,297 Engravable Wide Classic Band From $722 Engravable Narrow Flat Band From $1,532 Wide Faceted Band From $2,377"
      },
      {
-      "match": "$1,544",
-      "excerpt": "gravable Wide Classic Band From $722 Engravable Narrow Flat Band From $1,544 Wide Faceted Band From $2,396 4.9 · 408 reviews Classic Band 4.9 408"
+      "match": "$1,532",
+      "excerpt": "gravable Wide Classic Band From $722 Engravable Narrow Flat Band From $1,532 Wide Faceted Band From $2,377 4.9 · 408 reviews Classic Band 4.9 408"
      }
     ],
     "text_length": 2622,
-    "text_sha256": "126195bad4a6aa7d9d63214eeae24d67b310a123e781a7620b99db5b1d9bd99f"
+    "text_sha256": "655f14f1d9702407e48f0d89a7e42b0ade7c6960f2d49125c3612a534e581d52"
    }
   },
   {
@@ -8263,9 +8244,9 @@
    "url": "https://mene.com/products/mene-narrow-band-gold",
    "final_url": "https://mene.com/products/mene-narrow-band-gold",
    "http_status": 200,
-   "fetched_at": "2026-10-23T10:16:45Z",
+   "fetched_at": "2026-10-23T20:19:58Z",
    "ok": true,
-   "bytes": 641924,
+   "bytes": 641940,
    "extraction": {
     "h1": "Narrow Classic Band",
     "title_tag": "Menē Narrow Classic Band - 24k Gold | Menē",
@@ -8283,7 +8264,7 @@
      },
      {
       "match": "24k",
-      "excerpt": "nē About 3D Narrow Classic Band $1,361 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5"
+      "excerpt": "nē About 3D Narrow Classic Band $1,350 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5"
      },
      {
       "match": "24k",
@@ -8318,55 +8299,1923 @@
     "prices": [
      {
       "match": "$500",
-      "excerpt": "ewest pure metal. Free shipping within U.S. and Canada on orders over $500. Cart Cart Shop World of Menē About 3D Narrow Classic Band $1,361 USD"
+      "excerpt": "ewest pure metal. Free shipping within U.S. and Canada on orders over $500. Cart Cart Shop World of Menē About 3D Narrow Classic Band $1,350 USD"
      },
      {
-      "match": "$1,361",
-      "excerpt": "over $500. Cart Cart Shop World of Menē About 3D Narrow Classic Band $1,361 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4"
+      "match": "$1,350",
+      "excerpt": "over $500. Cart Cart Shop World of Menē About 3D Narrow Classic Band $1,350 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 4"
      },
      {
       "match": "$75",
       "excerpt": "6.5 7 7.5 8 8.5 9 9.5 10 10.5 11 11.5 12 12.5 13 Size guide Engraving $75 Add engraving This is a Crafted-on-Demand item. Learn More Add to bag"
      },
      {
-      "match": "$1,395",
-      "excerpt": "e Sourcing Certification. Recommended for you Etched Ripple Ring From $1,395 Engravable Narrow Classic Band From $617 Acorn Charm $649 Engravable"
+      "match": "$1,384",
+      "excerpt": "e Sourcing Certification. Recommended for you Etched Ripple Ring From $1,384 Engravable Narrow Classic Band From $617 Acorn Charm $644 Engravable"
      },
      {
       "match": "$617",
-      "excerpt": "ou Etched Ripple Ring From $1,395 Engravable Narrow Classic Band From $617 Acorn Charm $649 Engravable Narrow Flat Band From $1,544 Sea Turtle C"
+      "excerpt": "ou Etched Ripple Ring From $1,384 Engravable Narrow Classic Band From $617 Acorn Charm $644 Engravable Narrow Flat Band From $1,532 Sea Turtle C"
      },
      {
-      "match": "$649",
-      "excerpt": "Ring From $1,395 Engravable Narrow Classic Band From $617 Acorn Charm $649 Engravable Narrow Flat Band From $1,544 Sea Turtle Charm $657 Engrava"
+      "match": "$644",
+      "excerpt": "Ring From $1,384 Engravable Narrow Classic Band From $617 Acorn Charm $644 Engravable Narrow Flat Band From $1,532 Sea Turtle Charm $652 Engrava"
      },
      {
-      "match": "$1,544",
-      "excerpt": "ssic Band From $617 Acorn Charm $649 Engravable Narrow Flat Band From $1,544 Sea Turtle Charm $657 Engravable Classic Band From $1,664 Engravable"
+      "match": "$1,532",
+      "excerpt": "ssic Band From $617 Acorn Charm $644 Engravable Narrow Flat Band From $1,532 Sea Turtle Charm $652 Engravable Classic Band From $1,651 Engravable"
      },
      {
-      "match": "$657",
-      "excerpt": "n Charm $649 Engravable Narrow Flat Band From $1,544 Sea Turtle Charm $657 Engravable Classic Band From $1,664 Engravable Wide Classic Band From"
+      "match": "$652",
+      "excerpt": "n Charm $644 Engravable Narrow Flat Band From $1,532 Sea Turtle Charm $652 Engravable Classic Band From $1,651 Engravable Wide Classic Band From"
      },
      {
-      "match": "$1,664",
-      "excerpt": "t Band From $1,544 Sea Turtle Charm $657 Engravable Classic Band From $1,664 Engravable Wide Classic Band From $2,075 Rounded Box Chain From $1,84"
+      "match": "$1,651",
+      "excerpt": "t Band From $1,532 Sea Turtle Charm $652 Engravable Classic Band From $1,651 Engravable Wide Classic Band From $2,059 Cross Pendant $1,403 Narrow"
      },
      {
-      "match": "$2,075",
-      "excerpt": "Engravable Classic Band From $1,664 Engravable Wide Classic Band From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross P"
+      "match": "$2,059",
+      "excerpt": "Engravable Classic Band From $1,651 Engravable Wide Classic Band From $2,059 Cross Pendant $1,403 Narrow Faceted Band From $1,346 Rounded Box Chai"
      },
      {
-      "match": "$1,845",
-      "excerpt": "1,664 Engravable Wide Classic Band From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross Pendant $1,414 4.9 · 452 review"
+      "match": "$1,403",
+      "excerpt": "nd From $1,651 Engravable Wide Classic Band From $2,059 Cross Pendant $1,403 Narrow Faceted Band From $1,346 Rounded Box Chain From $1,830 4.9 · 4"
      },
      {
-      "match": "$1,357",
-      "excerpt": "nd From $2,075 Rounded Box Chain From $1,845 Narrow Faceted Band From $1,357 Cross Pendant $1,414 4.9 · 452 reviews Narrow Classic Band 4.9 452 re"
+      "match": "$1,346",
+      "excerpt": "lassic Band From $2,059 Cross Pendant $1,403 Narrow Faceted Band From $1,346 Rounded Box Chain From $1,830 4.9 · 452 reviews Narrow Classic Band 4"
      }
     ],
     "text_length": 2612,
-    "text_sha256": "c0582cc9444b053346cc8b09489dc661889c53232b87f144f2ba4340d1c4ef56"
+    "text_sha256": "e74b65595b2d7df13d72c8d1fe7d35b2375386746526502199d2739c4c1232e8"
+   }
+  },
+  {
+   "id": "auv-22k-vneck-sm",
+   "retailer": "Auvere",
+   "url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+   "final_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:19:59Z",
+   "ok": true,
+   "bytes": 565340,
+   "extraction": {
+    "h1": "V Neck Stack Ring Small / Polished",
+    "title_tag": "V Neck Stack Ring Small / Polished 22K Gold - AUVERE",
+    "jsonld_titles": [],
+    "jsonld_prices": [],
+    "meta": {
+     "og:title": "V Neck Stack Ring Small / Polished",
+     "product:price:amount": "900"
+    },
+    "karat_mentions": [
+     {
+      "match": "22K",
+      "excerpt": "V Neck Stack Ring Small / Polished 22K Gold - AUVERE Shipping x Returns & Exchanges x Warranty x Your jewelr"
+     },
+     {
+      "match": "24K",
+      "excerpt": "Sculptura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US"
+     },
+     {
+      "match": "22K",
+      "excerpt": "a Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story"
+     },
+     {
+      "match": "18K",
+      "excerpt": "n Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auver"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "r bag Checkout Arignote Collection V Neck Stack Ring Small / Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offe"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "now Description Our V Neck Stack Ring Small is precisely on point in 22 karat polished gold. Designed to be worn solo, in multiples or with our Cle"
+     },
+     {
+      "match": "18K",
+      "excerpt": "t : 2.9 to 3.7 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm Asteroid Stud"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Earrings XS 7 mm You May Also Like V Neck Stack Ring Large / Polished 22 karat gold $950 V Neck Stack Ring Small / Satin 22 karat gold $900 V Neck S"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "g Large / Polished 22 karat gold $950 V Neck Stack Ring Small / Satin 22 karat gold $900 V Neck Stack Ring Large / Satin 22 karat gold $950 Octavia"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Ring Small / Satin 22 karat gold $900 V Neck Stack Ring Large / Satin 22 karat gold $950 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "ack Ring Large / Satin 22 karat gold $950 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut Stack Ring Polished 22 karat gold From $900 Our"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "tack Ring Polished 22 karat gold $1,500 Clean Cut Stack Ring Polished 22 karat gold From $900 Our Philosophy Our Philosophy We like our metal rare G"
+     },
+     {
+      "match": "18 karat",
+      "excerpt": "lor and the richer the piece. That is why we work in high karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percen"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "gh karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "arge / Polished . Details Dimensions: V Opening: 25/64\" (10 mm) V Height: 25/64\" (10 mm) Thickness: 1/16\" (2 mm) Approximate Fine Weight : 2.9 to 3.7 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm A"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "3.7 grams",
+      "excerpt": "Height: 25/64\" (10 mm) Thickness: 1/16\" (2 mm) Approximate Fine Weight : 2.9 to 3.7 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Aste"
+     }
+    ],
+    "solid_mentions": [
+     {
+      "match": "solid gold",
+      "excerpt": "22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 kara"
+     }
+    ],
+    "plated_mentions": [
+     {
+      "match": "Sterling Silver",
+      "excerpt": "ura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auvere Our Designer Our Philosophy Responsible"
+     },
+     {
+      "match": "vermeil",
+      "excerpt": "24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 karat is 41.7 percent. Whatever make"
+     },
+     {
+      "match": "sterling silver",
+      "excerpt": "piece they do: small sculptures crafted by the hands of experts from high karat gold and sterling silver, meant to be worn every day. Auvere jewelry you enjoy now may be handed down tomorrow, as"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [],
+    "prices": [
+     {
+      "match": "$2,500",
+      "excerpt": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15%"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> C"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "y at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> Can't decide what to"
+     },
+     {
+      "match": "$900",
+      "excerpt": "Arignote Collection V Neck Stack Ring Small / Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offer two ways"
+     },
+     {
+      "match": "$950",
+      "excerpt": "mm You May Also Like V Neck Stack Ring Large / Polished 22 karat gold $950 V Neck Stack Ring Small / Satin 22 karat gold $900 V Neck Stack Ring"
+     },
+     {
+      "match": "$900",
+      "excerpt": "shed 22 karat gold $950 V Neck Stack Ring Small / Satin 22 karat gold $900 V Neck Stack Ring Large / Satin 22 karat gold $950 Octavia Stack Ring"
+     },
+     {
+      "match": "$950",
+      "excerpt": "atin 22 karat gold $900 V Neck Stack Ring Large / Satin 22 karat gold $950 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut Stack Ring"
+     },
+     {
+      "match": "$1,500",
+      "excerpt": "/ Satin 22 karat gold $950 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut Stack Ring Polished 22 karat gold From $900 Our Philosophy"
+     },
+     {
+      "match": "$900",
+      "excerpt": "22 karat gold $1,500 Clean Cut Stack Ring Polished 22 karat gold From $900 Our Philosophy Our Philosophy We like our metal rare Gold seems to be"
+     }
+    ],
+    "text_length": 11877,
+    "text_sha256": "2c621b6ecde5d7041a71db3f64b0c9b756adb6494177fed4e657ff69c79bc124"
+   }
+  },
+  {
+   "id": "auv-22k-hexagon-diamond",
+   "retailer": "Auvere",
+   "url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+   "final_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:19:59Z",
+   "ok": true,
+   "bytes": 570751,
+   "extraction": {
+    "h1": "Hexagon Diamond Stack Ring",
+    "title_tag": "Hexagon Diamond Stack Ring 22k Gold - AUVERE",
+    "jsonld_titles": [],
+    "jsonld_prices": [],
+    "meta": {
+     "og:title": "Hexagon Diamond Stack Ring",
+     "product:price:amount": "1400"
+    },
+    "karat_mentions": [
+     {
+      "match": "22k",
+      "excerpt": "Hexagon Diamond Stack Ring 22k Gold - AUVERE Shipping x Returns & Exchanges x Warranty x Your jewelr"
+     },
+     {
+      "match": "24K",
+      "excerpt": "Sculptura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US"
+     },
+     {
+      "match": "22K",
+      "excerpt": "a Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story"
+     },
+     {
+      "match": "18K",
+      "excerpt": "n Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auver"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "View your bag Checkout Arignote Collection Hexagon Diamond Stack Ring 22 karat gold $1,400 Select size ring size 5 6 7 8 9 Other Ring Sizing We offe"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "r two reasons why you may want to do so. Maybe it’s the rich polished 22 karat gold that contrasts brilliantly with six round cut diamonds totaling"
+     },
+     {
+      "match": "18K",
+      "excerpt": "t : 3.3 to 3.5 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm Asteroid Stud"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "e Hoop Earrings XS 7 mm You May Also Like Hexagon Sapphire Stack Ring 22 karat gold $1,400 Hexagon Ruby Stack Ring 22 karat gold $1,400 Hexagon Diam"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "agon Sapphire Stack Ring 22 karat gold $1,400 Hexagon Ruby Stack Ring 22 karat gold $1,400 Hexagon Diamond Necklace 22 karat gold From $6,200 Hexago"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Hexagon Ruby Stack Ring 22 karat gold $1,400 Hexagon Diamond Necklace 22 karat gold From $6,200 Hexagon Diamond Bracelet 22 karat gold From $2,100 N"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "n Diamond Necklace 22 karat gold From $6,200 Hexagon Diamond Bracelet 22 karat gold From $2,100 New Hexagon Diamond Threader Earrings 22 karat gold"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "celet 22 karat gold From $2,100 New Hexagon Diamond Threader Earrings 22 karat gold $3,200 Our Philosophy Our Philosophy We like our metal rare Gold"
+     },
+     {
+      "match": "18 karat",
+      "excerpt": "lor and the richer the piece. That is why we work in high karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percen"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "gh karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "rs well with the Hexagon Sapphire Stack Ring and the Hexagon Ruby Stack Ring . Details Diamond Details: Approximate Total Diamond Weight: .20 carats Diamond Color/Clarity: G|VS Dimensions: Width: 5/32\" (4 mm) Thickness: 3/64\" (1 mm) Approximate Fine Weight : 3.3 to"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "l Diamond Weight: .20 carats Diamond Color/Clarity: G|VS Dimensions: Width: 5/32\" (4 mm) Thickness: 3/64\" (1 mm) Approximate Fine Weight : 3.3 to 3.5 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm A"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "3.5 grams",
+      "excerpt": "s: Width: 5/32\" (4 mm) Thickness: 3/64\" (1 mm) Approximate Fine Weight : 3.3 to 3.5 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Aste"
+     }
+    ],
+    "solid_mentions": [
+     {
+      "match": "solid gold",
+      "excerpt": "22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 kara"
+     }
+    ],
+    "plated_mentions": [
+     {
+      "match": "Sterling Silver",
+      "excerpt": "ura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auvere Our Designer Our Philosophy Responsible"
+     },
+     {
+      "match": "vermeil",
+      "excerpt": "24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 karat is 41.7 percent. Whatever make"
+     },
+     {
+      "match": "sterling silver",
+      "excerpt": "piece they do: small sculptures crafted by the hands of experts from high karat gold and sterling silver, meant to be worn every day. Auvere jewelry you enjoy now may be handed down tomorrow, as"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [],
+    "prices": [
+     {
+      "match": "$2,500",
+      "excerpt": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15%"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> C"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "y at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> Can't decide what to"
+     },
+     {
+      "match": "$1,400",
+      "excerpt": "Checkout Arignote Collection Hexagon Diamond Stack Ring 22 karat gold $1,400 Select size ring size 5 6 7 8 9 Other Ring Sizing We offer two ways f"
+     },
+     {
+      "match": "$1,400",
+      "excerpt": "s XS 7 mm You May Also Like Hexagon Sapphire Stack Ring 22 karat gold $1,400 Hexagon Ruby Stack Ring 22 karat gold $1,400 Hexagon Diamond Necklace"
+     },
+     {
+      "match": "$1,400",
+      "excerpt": "Stack Ring 22 karat gold $1,400 Hexagon Ruby Stack Ring 22 karat gold $1,400 Hexagon Diamond Necklace 22 karat gold From $6,200 Hexagon Diamond Br"
+     },
+     {
+      "match": "$6,200",
+      "excerpt": "Ring 22 karat gold $1,400 Hexagon Diamond Necklace 22 karat gold From $6,200 Hexagon Diamond Bracelet 22 karat gold From $2,100 New Hexagon Diamon"
+     },
+     {
+      "match": "$2,100",
+      "excerpt": "22 karat gold From $6,200 Hexagon Diamond Bracelet 22 karat gold From $2,100 New Hexagon Diamond Threader Earrings 22 karat gold $3,200 Our Philos"
+     },
+     {
+      "match": "$3,200",
+      "excerpt": "gold From $2,100 New Hexagon Diamond Threader Earrings 22 karat gold $3,200 Our Philosophy Our Philosophy We like our metal rare Gold seems to be"
+     }
+    ],
+    "text_length": 12345,
+    "text_sha256": "ecc33e06b34dd0c890d0547290c1e8463d8c30b2b7ac311ae11348f41a19ba7c"
+   }
+  },
+  {
+   "id": "auv-22k-diamond-bridge-tall",
+   "retailer": "Auvere",
+   "url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+   "final_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:19:59Z",
+   "ok": true,
+   "bytes": 568680,
+   "extraction": {
+    "h1": "Diamond Bridge Ring Tall",
+    "title_tag": "Diamond Bridge Ring Tall 22k Gold - AUVERE",
+    "jsonld_titles": [],
+    "jsonld_prices": [],
+    "meta": {
+     "og:title": "Diamond Bridge Ring Tall ",
+     "product:price:amount": "1600"
+    },
+    "karat_mentions": [
+     {
+      "match": "22k",
+      "excerpt": "Diamond Bridge Ring Tall 22k Gold - AUVERE Shipping x Returns & Exchanges x Warranty x Your jewelr"
+     },
+     {
+      "match": "24K",
+      "excerpt": "Sculptura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US"
+     },
+     {
+      "match": "22K",
+      "excerpt": "a Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story"
+     },
+     {
+      "match": "18K",
+      "excerpt": "n Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auver"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "X View your bag Checkout Arignote Collection Diamond Bridge Ring Tall 22 karat gold $1,600 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We of"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": ", much like our Diamond Bridge Ring Short , is handcrafted from solid 22 karat gold and connects the open ends of a gently curved body with a linear"
+     },
+     {
+      "match": "18K",
+      "excerpt": "Weight : 5 to 6.1 grams depending on size Finish: Satin Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm Asteroid Stud"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Earrings XS 7 mm You May Also Like Classic Diamond Bridge Ring Short 22 karat gold $1,200 Diamond Spike Earrings Tall 22 karat gold $3,300 Wingspan"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "nd Bridge Ring Short 22 karat gold $1,200 Diamond Spike Earrings Tall 22 karat gold $3,300 Wingspan Diamond Chandelier Earrings Tall 22 karat gold $"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "s Tall 22 karat gold $3,300 Wingspan Diamond Chandelier Earrings Tall 22 karat gold $4,400 Hexagon Diamond Stack Ring 22 karat gold $1,400 Sno Cone"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "ndelier Earrings Tall 22 karat gold $4,400 Hexagon Diamond Stack Ring 22 karat gold $1,400 Sno Cone Diamond Ring 22 karat gold $5,400 Our Philosophy"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Hexagon Diamond Stack Ring 22 karat gold $1,400 Sno Cone Diamond Ring 22 karat gold $5,400 Our Philosophy Our Philosophy We like our metal rare Gold"
+     },
+     {
+      "match": "18 karat",
+      "excerpt": "lor and the richer the piece. That is why we work in high karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percen"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "gh karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "e this ring with the Linear Threader Earrings or the Diamond Cone Threader Earrings . Details Diamonds: Approximate Total Diamond Weight: 0.07 carats Diamond Color and Clarity: G | VS Dimensions: Width: 3/4\" (20 mm) Approximate Fine Weight : 5 to 6.1 grams depending"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "Approximate Total Diamond Weight: 0.07 carats Diamond Color and Clarity: G | VS Dimensions: Width: 3/4\" (20 mm) Approximate Fine Weight : 5 to 6.1 grams depending on size Finish: Satin Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm Astero"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "6.1 grams",
+      "excerpt": "Clarity: G | VS Dimensions: Width: 3/4\" (20 mm) Approximate Fine Weight : 5 to 6.1 grams depending on size Finish: Satin Earring Style 18K Earring Back Diameter Asteroi"
+     }
+    ],
+    "solid_mentions": [
+     {
+      "match": "solid 22 karat gold",
+      "excerpt": "r Diamond Bridge Ring Tall, much like our Diamond Bridge Ring Short , is handcrafted from solid 22 karat gold and connects the open ends of a gently curved body with a linear “bridge”. Unlike the Dia"
+     },
+     {
+      "match": "solid gold",
+      "excerpt": "22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 kara"
+     }
+    ],
+    "plated_mentions": [
+     {
+      "match": "Sterling Silver",
+      "excerpt": "ura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auvere Our Designer Our Philosophy Responsible"
+     },
+     {
+      "match": "vermeil",
+      "excerpt": "24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 karat is 41.7 percent. Whatever make"
+     },
+     {
+      "match": "sterling silver",
+      "excerpt": "piece they do: small sculptures crafted by the hands of experts from high karat gold and sterling silver, meant to be worn every day. Auvere jewelry you enjoy now may be handed down tomorrow, as"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [],
+    "prices": [
+     {
+      "match": "$2,500",
+      "excerpt": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15%"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> C"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "y at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> Can't decide what to"
+     },
+     {
+      "match": "$1,600",
+      "excerpt": "g Checkout Arignote Collection Diamond Bridge Ring Tall 22 karat gold $1,600 Select size ring size 4 5 6 7 8 9 Other Ring Sizing We offer two ways"
+     },
+     {
+      "match": "$1,200",
+      "excerpt": "mm You May Also Like Classic Diamond Bridge Ring Short 22 karat gold $1,200 Diamond Spike Earrings Tall 22 karat gold $3,300 Wingspan Diamond Cha"
+     },
+     {
+      "match": "$3,300",
+      "excerpt": "Short 22 karat gold $1,200 Diamond Spike Earrings Tall 22 karat gold $3,300 Wingspan Diamond Chandelier Earrings Tall 22 karat gold $4,400 Hexago"
+     },
+     {
+      "match": "$4,400",
+      "excerpt": "t gold $3,300 Wingspan Diamond Chandelier Earrings Tall 22 karat gold $4,400 Hexagon Diamond Stack Ring 22 karat gold $1,400 Sno Cone Diamond Ring"
+     },
+     {
+      "match": "$1,400",
+      "excerpt": "gs Tall 22 karat gold $4,400 Hexagon Diamond Stack Ring 22 karat gold $1,400 Sno Cone Diamond Ring 22 karat gold $5,400 Our Philosophy Our Philoso"
+     },
+     {
+      "match": "$5,400",
+      "excerpt": "d Stack Ring 22 karat gold $1,400 Sno Cone Diamond Ring 22 karat gold $5,400 Our Philosophy Our Philosophy We like our metal rare Gold seems to be"
+     }
+    ],
+    "text_length": 12355,
+    "text_sha256": "cf77c9f81fa303a87a0e4e8124f252bb23af1244673ab94d056a6408a4637a01"
+   }
+  },
+  {
+   "id": "auv-22k-clean-cut-polished",
+   "retailer": "Auvere",
+   "url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+   "final_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:19:59Z",
+   "ok": true,
+   "bytes": 568269,
+   "extraction": {
+    "h1": "Clean Cut Stack Ring Polished",
+    "title_tag": "Clean Cut Stack Ring Polished 22K Gold - AUVERE",
+    "jsonld_titles": [],
+    "jsonld_prices": [],
+    "meta": {
+     "og:title": "Clean Cut Stack Ring Polished",
+     "product:price:amount": "900"
+    },
+    "karat_mentions": [
+     {
+      "match": "22K",
+      "excerpt": "Clean Cut Stack Ring Polished 22K Gold - AUVERE Shipping x Returns & Exchanges x Warranty x Your jewelr"
+     },
+     {
+      "match": "24K",
+      "excerpt": "Sculptura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US"
+     },
+     {
+      "match": "22K",
+      "excerpt": "a Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story"
+     },
+     {
+      "match": "18K",
+      "excerpt": "n Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auver"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "w your bag Checkout Arignote Collection Clean Cut Stack Ring Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 10 Other Ring Sizing We o"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "n love with our Clean Cut Stack Ring Polished. Handcrafted from solid 22 karat gold, this ring is both gender-neutral and versatile. Whether worn as"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "in and V Neck Stack Ring Large Polished , each handcrafted from solid 22 karat gold. That said, the Clean Cut Stack Ring Polished is simple enough t"
+     },
+     {
+      "match": "18K",
+      "excerpt": "t : 2.8 to 3.7 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm Asteroid Stud"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "he Hoop Earrings XS 7 mm You May Also Like Clean Cut Stack Ring Satin 22 karat gold From $900 Octavia Stack Ring Polished 22 karat gold $1,500 Clean"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Stack Ring Satin 22 karat gold From $900 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut Ear Cuff Polished 22 karat gold $450 V Neck Sta"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "Stack Ring Polished 22 karat gold $1,500 Clean Cut Ear Cuff Polished 22 karat gold $450 V Neck Stack Ring Small / Polished 22 karat gold $900 V Nec"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "r Cuff Polished 22 karat gold $450 V Neck Stack Ring Small / Polished 22 karat gold $900 V Neck Stack Ring Large / Polished 22 karat gold $950 Our P"
+     },
+     {
+      "match": "22 karat",
+      "excerpt": "mall / Polished 22 karat gold $900 V Neck Stack Ring Large / Polished 22 karat gold $950 Our Philosophy Our Philosophy We like our metal rare Gold s"
+     },
+     {
+      "match": "18 karat",
+      "excerpt": "lor and the richer the piece. That is why we work in high karat gold: 18 karat at 75 percent gold, 20 karat at 83.3 percent, 22 karat at 91.7 percen"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "enough to be stacked with pretty much any ring in your jewelry box. Details Dimensions: Thickness: 1/16 \" (2 mm) Approximate Fine Weight : 2.8 to 3.7 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Asteroid Stud Earrings Small 7 mm A"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "3.7 grams",
+      "excerpt": ". Details Dimensions: Thickness: 1/16 \" (2 mm) Approximate Fine Weight : 2.8 to 3.7 grams depending on size Finish: Polished Earring Style 18K Earring Back Diameter Aste"
+     }
+    ],
+    "solid_mentions": [
+     {
+      "match": "solid 22 karat gold",
+      "excerpt": "tyle will certainly fall in love with our Clean Cut Stack Ring Polished. Handcrafted from solid 22 karat gold, this ring is both gender-neutral and versatile. Whether worn as a wedding band or to com"
+     },
+     {
+      "match": "solid 22 karat gold",
+      "excerpt": "Neck Stack Ring Small Satin and V Neck Stack Ring Large Polished , each handcrafted from solid 22 karat gold. That said, the Clean Cut Stack Ring Polished is simple enough to be stacked with pretty"
+     },
+     {
+      "match": "solid gold",
+      "excerpt": "22 karat at 91.7 percent, and pure 24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 kara"
+     }
+    ],
+    "plated_mentions": [
+     {
+      "match": "Sterling Silver",
+      "excerpt": "ura Talisman Finish Finish Hammered Polished Satin Metal Metal 24K Gold 22K Gold 18K Gold Sterling Silver ABOUT ABOUT ABOUT US ABOUT US The Story of Auvere Our Designer Our Philosophy Responsible"
+     },
+     {
+      "match": "vermeil",
+      "excerpt": "24 karat. The difference is not subtle. Our pieces are solid gold, never plated and never vermeil. By comparison, 14 karat is 58.3 percent gold and 10 karat is 41.7 percent. Whatever make"
+     },
+     {
+      "match": "sterling silver",
+      "excerpt": "piece they do: small sculptures crafted by the hands of experts from high karat gold and sterling silver, meant to be worn every day. Auvere jewelry you enjoy now may be handed down tomorrow, as"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [],
+    "prices": [
+     {
+      "match": "$2,500",
+      "excerpt": "mail us at concierge@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALEN"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "@auvere.com . VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout VALENTINE’S DAY SALE: 15%"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "applied automatically at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> C"
+     },
+     {
+      "match": "$2,500",
+      "excerpt": "y at checkout VALENTINE’S DAY SALE: 15% off up to $2,500 20% off over $2,500 Discounts applied automatically at checkout --> Can't decide what to"
+     },
+     {
+      "match": "$900",
+      "excerpt": "ckout Arignote Collection Clean Cut Stack Ring Polished 22 karat gold $900 Select size ring size 4 5 6 7 8 9 10 Other Ring Sizing We offer two w"
+     },
+     {
+      "match": "$900",
+      "excerpt": "7 mm You May Also Like Clean Cut Stack Ring Satin 22 karat gold From $900 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut Ear Cuff P"
+     },
+     {
+      "match": "$1,500",
+      "excerpt": "tin 22 karat gold From $900 Octavia Stack Ring Polished 22 karat gold $1,500 Clean Cut Ear Cuff Polished 22 karat gold $450 V Neck Stack Ring Smal"
+     },
+     {
+      "match": "$450",
+      "excerpt": "lished 22 karat gold $1,500 Clean Cut Ear Cuff Polished 22 karat gold $450 V Neck Stack Ring Small / Polished 22 karat gold $900 V Neck Stack Ri"
+     },
+     {
+      "match": "$900",
+      "excerpt": "d 22 karat gold $450 V Neck Stack Ring Small / Polished 22 karat gold $900 V Neck Stack Ring Large / Polished 22 karat gold $950 Our Philosophy"
+     },
+     {
+      "match": "$950",
+      "excerpt": "d 22 karat gold $900 V Neck Stack Ring Large / Polished 22 karat gold $950 Our Philosophy Our Philosophy We like our metal rare Gold seems to be"
+     }
+    ],
+    "text_length": 12390,
+    "text_sha256": "94d95972f8738440bfaf6417e788bcb3e1a5b8598c71b59702823348042ed0a5"
+   }
+  },
+  {
+   "id": "rs-222283",
+   "retailer": "Ross-Simons",
+   "url": "https://www.ross-simons.com/products/222283",
+   "final_url": "https://www.ross-simons.com/products/222283",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:00Z",
+   "ok": true,
+   "bytes": 914544,
+   "extraction": {
+    "h1": "Italian 10kt Yellow Gold Polished Dome Ring",
+    "title_tag": "Italian 10kt Yellow Gold Polished Dome Ring",
+    "jsonld_titles": [
+     "Italian 10kt Yellow Gold Polished Dome Ring"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "price",
+      "value": 695,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 695,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 695,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 695,
+      "currency": "USD"
+     }
+    ],
+    "meta": {},
+    "karat_mentions": [
+     {
+      "match": "10kt",
+      "excerpt": "Italian 10kt Yellow Gold Polished Dome Ring Skip to content 25% OFF SELECT GOLD JE"
+     },
+     {
+      "match": "10kt",
+      "excerpt": "-Owned Watches Home Jewelry Classic Collection Rings Gold --> Italian 10kt Yellow Gold Polished Dome Ring (2) 25% OFF IN CART WITH CODE GOLDENDA"
+     },
+     {
+      "match": "10kt",
+      "excerpt": "Gold Polished Dome Ring (2) 25% OFF IN CART WITH CODE GOLDENDAYS $695 10kt gold fine jewelry essentials are fashionable, fun and affordable. Eve"
+     },
+     {
+      "match": "10kt",
+      "excerpt": "ble. Every strong and durable piece is real gold you'll live in. This 10kt… 10kt gold fine jewelry essentials are fashionable, fun and affordabl"
+     },
+     {
+      "match": "10kt",
+      "excerpt": "very strong and durable piece is real gold you'll live in. This 10kt… 10kt gold fine jewelry essentials are fashionable, fun and affordable. Eve"
+     },
+     {
+      "match": "10kt",
+      "excerpt": "ble. Every strong and durable piece is real gold you'll live in. This 10kt yellow gold dome ring from Italy makes a big statement with ample fin"
+     },
+     {
+      "match": "10kt",
+      "excerpt": "ample finger coverage and a striking high-polished finish. 3/4\" wide. 10kt yellow gold dome ring. Read more… Read less Ring Sizing (PDF, opens i"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Yell"
+     }
+    ],
+    "gram_mentions": [],
+    "solid_mentions": [],
+    "plated_mentions": [
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry Pearl Jewelry CZ Jewelry Simulated Gemstones Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Shop All All Bracelets New Bracelets Estate Bracelets Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "celets CZ Bracelets Simulated Gem Bracelets Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Shop All All Earrings New Earrings Estate Earrings Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "l Earrings CZ Earrings Simulated Gem Earrings Shop by Metal Gold Earrings Silver Earrings Gold-Plated Earrings Two-Tone Earrings Shop All All Necklaces New Necklaces Estate Necklaces Clearanc"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "klaces CZ Necklaces Simulated Gem Necklaces Shop by Metal Gold Necklaces Silver Necklaces Gold-Plated Necklaces Two-Tone Necklaces Shop All All Rings New Rings Estate Rings Clearance Rings Sh"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "tone Rings Pearl Rings CZ Rings Simulated Gem Rings Shop by Metal Gold Rings Silver Rings Gold-Plated Rings Two-Tone Rings Shop by Collection Luxe Look The Pure Collection The Prestige Collec"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "stone Gemstone Charms Diamond Charms Pearl Charms Shop by Metal Gold Charms Silver Charms Gold-Plated Charms Two-Tone Charms Shop by Chain Charm Necklaces Charm Bracelets Shop Gifts The Gift"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry CZ Jewelry Simulated Gemstones Shop by Metal Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Jewelry Clearance Bracelets Shop All Shop All All Bracelets New"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "elets Simulated Gem Bracelets Shop by Metal Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Earrings Shop All Shop All All Earrings New Earrings Estate"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "lian 10kt Yellow Gold Polished Dome Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":69500,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "lian 10kt Yellow Gold Polished Dome Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":69500,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "lian 10kt Yellow Gold Polished Dome Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":69500,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "lian 10kt Yellow Gold Polished Dome Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":69500,\"weight\":113,\"compare_at_price\":69500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"3.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"3.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"3.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"3.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"10kt Yellow Gold\",\n            \"metal_weight\": \"3.3 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     }
+    ],
+    "prices": [
+     {
+      "match": "$695",
+      "excerpt": "llow Gold Polished Dome Ring (2) 25% OFF IN CART WITH CODE GOLDENDAYS $695 10kt gold fine jewelry essentials are fashionable, fun and affordable"
+     },
+     {
+      "match": "$5.95",
+      "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
+     }
+    ],
+    "text_length": 21320,
+    "text_sha256": "63aa39571d9f22ce413b4aa84db89e40c277187d38b1d2523ea4d93da386eb24"
+   }
+  },
+  {
+   "id": "rs-989853",
+   "retailer": "Ross-Simons",
+   "url": "https://www.ross-simons.com/products/989853",
+   "final_url": "https://www.ross-simons.com/products/989853",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:00Z",
+   "ok": true,
+   "bytes": 932513,
+   "extraction": {
+    "h1": "Italian 18kt Yellow Gold Bypass Ring",
+    "title_tag": "Italian 18kt Yellow Gold Bypass Ring",
+    "jsonld_titles": [
+     "Italian 18kt Yellow Gold Bypass Ring"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "price",
+      "value": 469,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 469,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 469,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 469,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 435,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 469,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 469,
+      "currency": "USD"
+     }
+    ],
+    "meta": {},
+    "karat_mentions": [
+     {
+      "match": "18kt",
+      "excerpt": "Italian 18kt Yellow Gold Bypass Ring Skip to content 25% OFF SELECT GOLD JEWELRY."
+     },
+     {
+      "match": "18kt",
+      "excerpt": "ll Pre-Owned Watches Home Jewelry Rings Gold Only Italian --> Italian 18kt Yellow Gold Bypass Ring (7) 25% OFF IN CART WITH CODE GOLDENDAYS $469"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "of classics, starting with this fabulous Italian-made statement. Our 18kt yellow gold bypass ring will elevate your ev… Build up a collection o"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "of classics, starting with this fabulous Italian-made statement. Our 18kt yellow gold bypass ring will elevate your everyday stack with a simpl"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "y stack with a simple aesthetic and a rich, buttery gleam. 3/8\" wide. 18kt yellow gold bypass ring. Read more… Read less Ring Sizing (PDF, opens"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Yell"
+     }
+    ],
+    "gram_mentions": [],
+    "solid_mentions": [],
+    "plated_mentions": [
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry Pearl Jewelry CZ Jewelry Simulated Gemstones Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Shop All All Bracelets New Bracelets Estate Bracelets Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "celets CZ Bracelets Simulated Gem Bracelets Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Shop All All Earrings New Earrings Estate Earrings Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "l Earrings CZ Earrings Simulated Gem Earrings Shop by Metal Gold Earrings Silver Earrings Gold-Plated Earrings Two-Tone Earrings Shop All All Necklaces New Necklaces Estate Necklaces Clearanc"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "klaces CZ Necklaces Simulated Gem Necklaces Shop by Metal Gold Necklaces Silver Necklaces Gold-Plated Necklaces Two-Tone Necklaces Shop All All Rings New Rings Estate Rings Clearance Rings Sh"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "tone Rings Pearl Rings CZ Rings Simulated Gem Rings Shop by Metal Gold Rings Silver Rings Gold-Plated Rings Two-Tone Rings Shop by Collection Luxe Look The Pure Collection The Prestige Collec"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "stone Gemstone Charms Diamond Charms Pearl Charms Shop by Metal Gold Charms Silver Charms Gold-Plated Charms Two-Tone Charms Shop by Chain Charm Necklaces Charm Bracelets Shop Gifts The Gift"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry CZ Jewelry Simulated Gemstones Shop by Metal Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Jewelry Clearance Bracelets Shop All Shop All All Bracelets New"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "elets Simulated Gem Bracelets Shop by Metal Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Earrings Shop All Shop All All Earrings New Earrings Estate"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e\":\"Italian 18kt Yellow Gold Bypass Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":46900,\"weight\":113,\"compare_at_price\":46900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e\":\"Italian 18kt Yellow Gold Bypass Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":46900,\"weight\":113,\"compare_at_price\":46900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e\":\"Italian 18kt Yellow Gold Bypass Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":46900,\"weight\":113,\"compare_at_price\":46900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e\":\"Italian 18kt Yellow Gold Bypass Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":46900,\"weight\":113,\"compare_at_price\":46900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "alian 18kt Yellow Gold Bypass Ring - Size 8.5\",\"public_title\":\"Size 8.5\",\"options\":[\"Size 8.5\"],\"price\":43500,\"weight\":113,\"compare_at_price\":43500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "e\":\"Italian 18kt Yellow Gold Bypass Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":46900,\"weight\":113,\"compare_at_price\":46900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "\"Italian 18kt Yellow Gold Bypass Ring - Size 10\",\"public_title\":\"Size 10\",\"options\":[\"Size 10\"],\"price\":46900,\"weight\":113,\"compare_at_price\":46900,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"selli"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": \"_blank\",\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"1.2 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "th\": \"_blank\",\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"1.2 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": \"_blank\","
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"1.2 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     }
+    ],
+    "prices": [
+     {
+      "match": "$469",
+      "excerpt": "18kt Yellow Gold Bypass Ring (7) 25% OFF IN CART WITH CODE GOLDENDAYS $469 Build up a collection of classics, starting with this fabulous Italia"
+     },
+     {
+      "match": "$5.95",
+      "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
+     }
+    ],
+    "text_length": 21214,
+    "text_sha256": "a7f09dcb656468054a8d4a04bfb5d96cf873c2fbf6b696d553709bd9c1344f9a"
+   }
+  },
+  {
+   "id": "rs-997441",
+   "retailer": "Ross-Simons",
+   "url": "https://www.ross-simons.com/products/997441",
+   "final_url": "https://www.ross-simons.com/products/997441",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:00Z",
+   "ok": true,
+   "bytes": 910795,
+   "extraction": {
+    "h1": "Italian 18kt Yellow Gold Dome Ring",
+    "title_tag": "Italian 18kt Yellow Gold Dome Ring",
+    "jsonld_titles": [
+     "Italian 18kt Yellow Gold Dome Ring"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "price",
+      "value": 1195,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 1195,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 1195,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 1195,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 1195,
+      "currency": "USD"
+     }
+    ],
+    "meta": {},
+    "karat_mentions": [
+     {
+      "match": "18kt",
+      "excerpt": "Italian 18kt Yellow Gold Dome Ring Skip to content 25% OFF SELECT GOLD JEWELRY. CO"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "-Owned Watches Home Jewelry Classic Collection Rings Gold --> Italian 18kt Yellow Gold Dome Ring (2) 25% OFF IN CART WITH CODE GOLDENDAYS $1,195"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "25% OFF IN CART WITH CODE GOLDENDAYS $1,195 Gleaming in mirror-bright 18kt yellow gold, this classic 1/2\" wide dome ring adds incredible shine t"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "to your everyday stacks. A style you'll b… Gleaming in mirror-bright 18kt yellow gold, this classic 1/2\" wide dome ring adds incredible shine t"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "your everyday stacks. A style you'll be glad to have! Made in Italy. 18kt yellow gold dome ring. Read more… Read less Ring Sizing (PDF, opens i"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Yell"
+     }
+    ],
+    "gram_mentions": [],
+    "solid_mentions": [],
+    "plated_mentions": [
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry Pearl Jewelry CZ Jewelry Simulated Gemstones Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Shop All All Bracelets New Bracelets Estate Bracelets Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "celets CZ Bracelets Simulated Gem Bracelets Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Shop All All Earrings New Earrings Estate Earrings Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "l Earrings CZ Earrings Simulated Gem Earrings Shop by Metal Gold Earrings Silver Earrings Gold-Plated Earrings Two-Tone Earrings Shop All All Necklaces New Necklaces Estate Necklaces Clearanc"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "klaces CZ Necklaces Simulated Gem Necklaces Shop by Metal Gold Necklaces Silver Necklaces Gold-Plated Necklaces Two-Tone Necklaces Shop All All Rings New Rings Estate Rings Clearance Rings Sh"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "tone Rings Pearl Rings CZ Rings Simulated Gem Rings Shop by Metal Gold Rings Silver Rings Gold-Plated Rings Two-Tone Rings Shop by Collection Luxe Look The Pure Collection The Prestige Collec"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "stone Gemstone Charms Diamond Charms Pearl Charms Shop by Metal Gold Charms Silver Charms Gold-Plated Charms Two-Tone Charms Shop by Chain Charm Necklaces Charm Bracelets Shop Gifts The Gift"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry CZ Jewelry Simulated Gemstones Shop by Metal Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Jewelry Clearance Bracelets Shop All Shop All All Bracelets New"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "elets Simulated Gem Bracelets Shop by Metal Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Earrings Shop All Shop All All Earrings New Earrings Estate"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "me\":\"Italian 18kt Yellow Gold Dome Ring - Size 5\",\"public_title\":\"Size 5\",\"options\":[\"Size 5\"],\"price\":119500,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "me\":\"Italian 18kt Yellow Gold Dome Ring - Size 6\",\"public_title\":\"Size 6\",\"options\":[\"Size 6\"],\"price\":119500,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "me\":\"Italian 18kt Yellow Gold Dome Ring - Size 7\",\"public_title\":\"Size 7\",\"options\":[\"Size 7\"],\"price\":119500,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "me\":\"Italian 18kt Yellow Gold Dome Ring - Size 8\",\"public_title\":\"Size 8\",\"options\":[\"Size 8\"],\"price\":119500,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "me\":\"Italian 18kt Yellow Gold Dome Ring - Size 9\",\"public_title\":\"Size 9\",\"options\":[\"Size 9\"],\"price\":119500,\"weight\":113,\"compare_at_price\":119500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"3.4 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"3.4 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"3.4 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"ne"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": \"3.4 grams\",\n            \"metal_weight_label\": \"Gold Weight\",\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"n"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\": {\n            \"src\": null,\n            \"id\": null\n          },\n          \"specs_keys_sorted\": \"width,metal,metal_weight,finish\",\n          \"specs\": {\n            \"backing\": null,\n            \"bail\": null,\n            \"best_fits\":"
+     }
+    ],
+    "prices": [
+     {
+      "match": "$1,195",
+      "excerpt": "n 18kt Yellow Gold Dome Ring (2) 25% OFF IN CART WITH CODE GOLDENDAYS $1,195 Gleaming in mirror-bright 18kt yellow gold, this classic 1/2\" wide do"
+     },
+     {
+      "match": "$5.95",
+      "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
+     }
+    ],
+    "text_length": 21138,
+    "text_sha256": "a5a517a99016cd48fc8a8e0cf45763e43fdec891d6c6693e647361dc812d11dd"
+   }
+  },
+  {
+   "id": "rs-255232",
+   "retailer": "Ross-Simons",
+   "url": "https://www.ross-simons.com/products/255232",
+   "final_url": "https://www.ross-simons.com/products/255232",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:01Z",
+   "ok": true,
+   "bytes": 864377,
+   "extraction": {
+    "h1": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25",
+    "title_tag": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold.",
+    "jsonld_titles": [
+     "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "price",
+      "value": 1295,
+      "currency": "USD"
+     }
+    ],
+    "meta": {},
+    "karat_mentions": [
+     {
+      "match": "18kt",
+      "excerpt": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Skip to content 25% OFF SELECT GOLD JEWELRY. CODE GOLDEN"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "Gold Diamond --> C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25 $1,295 C. 1980. Distinct dazzle. Our Estate co"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "ring spotlights a fantastic .35 carat round brilliant-cut diamond in 18kt white gold prongs … C. 1980. Distinct dazzle. Our Estate collection r"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "ring spotlights a fantastic .35 carat round brilliant-cut diamond in 18kt white gold prongs that emphasize the gem's bright glow. Crafted in po"
+     },
+     {
+      "match": "18kt",
+      "excerpt": "gold prongs that emphasize the gem's bright glow. Crafted in polished 18kt yellow gold on a bead-patterned band that offers a more unique look a"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "const key = rawKey.trim(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label,"
+     },
+     {
+      "match": "weight",
+      "excerpt": "m(); const value = specs[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Bool"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "s[key]; if (!value || value === '_blank') return null; const label = key === 'metal_weight' ? (specs.metal_weight_label || 'Metal Weight') : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase()); return { label, value }; }).filter(Boolean); const gemRows = ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "` : null, stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone."
+     },
+     {
+      "match": "Weight",
+      "excerpt": "stone.colorgrade ? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ("
+     },
+     {
+      "match": "weight",
+      "excerpt": "? `Color Grade: ${stone.colorgrade}` : null, stone.clarity ? `Clarity: ${stone.clarity}` : null, stone.weight ? `Weight: ${stone.weight}` : null, stone.size ? `Size: ${stone.size}` : null, ].filter(Boolean).join(', '); const label = stone.label || ('Gemstone ' + st"
+     },
+     {
+      "match": "weight",
+      "excerpt": ".length) return ''; const rows = allRows.map((row, i) => ` ${row.label} ${row.value} ` ).join(''); return ` ${rows} `; })() } All weights and measurements are approximate. Most gemstones are treated to enhance their beauty and may require special care. Articles Anni"
+     }
+    ],
+    "gram_mentions": [],
+    "solid_mentions": [],
+    "plated_mentions": [
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry Pearl Jewelry CZ Jewelry Simulated Gemstones Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Shop All All Bracelets New Bracelets Estate Bracelets Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "celets CZ Bracelets Simulated Gem Bracelets Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Shop All All Earrings New Earrings Estate Earrings Clearance"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "l Earrings CZ Earrings Simulated Gem Earrings Shop by Metal Gold Earrings Silver Earrings Gold-Plated Earrings Two-Tone Earrings Shop All All Necklaces New Necklaces Estate Necklaces Clearanc"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "klaces CZ Necklaces Simulated Gem Necklaces Shop by Metal Gold Necklaces Silver Necklaces Gold-Plated Necklaces Two-Tone Necklaces Shop All All Rings New Rings Estate Rings Clearance Rings Sh"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "tone Rings Pearl Rings CZ Rings Simulated Gem Rings Shop by Metal Gold Rings Silver Rings Gold-Plated Rings Two-Tone Rings Shop by Collection Luxe Look The Pure Collection The Prestige Collec"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "stone Gemstone Charms Diamond Charms Pearl Charms Shop by Metal Gold Charms Silver Charms Gold-Plated Charms Two-Tone Charms Shop by Chain Charm Necklaces Charm Bracelets Shop Gifts The Gift"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "ry CZ Jewelry Simulated Gemstones Shop by Metal Shop by Metal Gold Jewelry Silver Jewelry Gold-Plated Jewelry Two-Tone Jewelry Jewelry Clearance Bracelets Shop All Shop All All Bracelets New"
+     },
+     {
+      "match": "Gold-Plated",
+      "excerpt": "elets Simulated Gem Bracelets Shop by Metal Shop by Metal Gold Bracelets Silver Bracelets Gold-Plated Bracelets Two-Tone Bracelets Earrings Shop All Shop All All Earrings New Earrings Estate"
+     }
+    ],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":113",
+      "excerpt": "in 18kt Yellow Gold. Size 6.25 - Size 6.25\",\"public_title\":\"Size 6.25\",\"options\":[\"Size 6.25\"],\"price\":129500,\"weight\":113,\"compare_at_price\":129500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"fits_chain\": null,\n            \"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_leng"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "\"length\": null,\n            \"metal\": \"18kt Yellow Gold\",\n            \"metal_weight\": null,\n            \"metal_weight_label\": null,\n            \"movement\": null,\n            \"necklace_drop_length\": null,\n            \"necklace_d"
+     },
+     {
+      "match": "\"weight\":\"0.35",
+      "excerpt": "h\"\n          },\n          \"stone_data\": [{\"position\":\"1\",\"label\":\"Gemstone 1\",\"type\":\"Diamond\",\"quantity\":\"1\",\"weight\":\"0.35 carats\",\"cutshape\":\"Round Brilliant\",\"clarity\":\"VS1\",\"colorgrade\":\"L\"}]\n        }\n      ],\n      \"preselect\":"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value = specs[key];\n          if (!value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\"
+     },
+     {
+      "match": "metal_weight",
+      "excerpt": "value || value === '_blank') return null;\n          const label = key === 'metal_weight'\n            ? (specs.metal_weight_label || 'Metal Weight')\n            : key.replace(/_/g, ' ').replace(/\\b\\w/g, c => c.toUpperCase());"
+     },
+     {
+      "match": "\"weight\":113",
+      "excerpt": "in 18kt Yellow Gold. Size 6.25 - Size 6.25\",\"public_title\":\"Size 6.25\",\"options\":[\"Size 6.25\"],\"price\":129500,\"weight\":113,\"compare_at_price\":129500,\"inventory_management\":\"shopify\",\"barcode\":null,\"requires_selling_plan\":false,\"sell"
+     }
+    ],
+    "prices": [
+     {
+      "match": "$1,295",
+      "excerpt": "ntage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25 $1,295 C. 1980. Distinct dazzle. Our Estate collection ring spotlights a fan"
+     },
+     {
+      "match": "$5.95",
+      "excerpt": "\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i"
+     }
+    ],
+    "text_length": 21276,
+    "text_sha256": "cf5e6e6b15e4ed208afd044a04604d3f9a12577453c59e202c655d3943c91b76"
+   }
+  },
+  {
+   "id": "ag-14k-industrial-band",
+   "retailer": "Automic Gold",
+   "url": "https://www.automicgold.com/products/industrial-mirror-band",
+   "final_url": "https://www.automicgold.com/products/industrial-mirror-band",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:01Z",
+   "ok": true,
+   "bytes": 2634192,
+   "extraction": {
+    "h1": "Industrial Mirror Band",
+    "title_tag": "Automic Gold Industrial Mirror Band Ring | Sustainable Fine Jewelry",
+    "jsonld_titles": [
+     "Industrial Mirror Band"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "price",
+      "value": 598,
+      "currency": "USD"
+     }
+    ],
+    "meta": {
+     "og:title": "Automic Gold Industrial Mirror Band Ring | Sustainable Fine Jewelry",
+     "og:price:amount": "225.00",
+     "og:price:currency": "USD"
+    },
+    "karat_mentions": [
+     {
+      "match": "750",
+      "excerpt": "Cart items: Log in Search Floral Cowrie Shell-Patterned Rope Band $1,750 Geometric Rhombus Engraved Band $1,450 Milgrain Scroll Band $1,275 Ge"
+     },
+     {
+      "match": "14k",
+      "excerpt": "eal jewelry on real humans, always. Industrial Mirror Band $598 Solid 14k Gold, 950 Platinum, 925 Silver Rated 5.0 out of 5 2 Reviews Based on"
+     },
+     {
+      "match": "14k",
+      "excerpt": "5.75 16 Not sure about your exact size? Order Ring Sizer first. metal 14k Yellow Gold 14k Yellow Gold 14k White Gold Nickel Free 14k White Gold"
+     },
+     {
+      "match": "14k",
+      "excerpt": "about your exact size? Order Ring Sizer first. metal 14k Yellow Gold 14k Yellow Gold 14k White Gold Nickel Free 14k White Gold 14k Rose Gold 1"
+     },
+     {
+      "match": "14k",
+      "excerpt": "t size? Order Ring Sizer first. metal 14k Yellow Gold 14k Yellow Gold 14k White Gold Nickel Free 14k White Gold 14k Rose Gold 14k Champagne Gol"
+     },
+     {
+      "match": "14k",
+      "excerpt": "rst. metal 14k Yellow Gold 14k Yellow Gold 14k White Gold Nickel Free 14k White Gold 14k Rose Gold 14k Champagne Gold 950 Platinum 925 Sterling"
+     },
+     {
+      "match": "14k",
+      "excerpt": "Yellow Gold 14k Yellow Gold 14k White Gold Nickel Free 14k White Gold 14k Rose Gold 14k Champagne Gold 950 Platinum 925 Sterling Silver Width 1"
+     },
+     {
+      "match": "14k",
+      "excerpt": "k Yellow Gold 14k White Gold Nickel Free 14k White Gold 14k Rose Gold 14k Champagne Gold 950 Platinum 925 Sterling Silver Width 1.7mm 1.7mm 2.0"
+     },
+     {
+      "match": "14k",
+      "excerpt": "ch diamond is approximately 0.02ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycl"
+     },
+     {
+      "match": "14k",
+      "excerpt": "ble and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds an"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "Weight",
+      "excerpt": "een Platinum, White Gold, and Silver? Check out our blog ! Details Dimensions Gemstones are 1.5mm Height Approximately 1.7mm Item Weight Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Re"
+     },
+     {
+      "match": "weight",
+      "excerpt": "Gold, and Silver? Check out our blog ! Details Dimensions Gemstones are 1.5mm Height Approximately 1.7mm Item Weight Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear natur"
+     },
+     {
+      "match": "weight",
+      "excerpt": "ry in color Diamond clarity Clear Natural is VS. Clear Lab is VS/VVS Diamond color Clear Natural is H. Clear Lab is D/E/F Diamond weight Each diamond is approximately 0.02ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold so"
+     }
+    ],
+    "gram_mentions": [
+     {
+      "match": "2.1g",
+      "excerpt": "mm Height Approximately 1.7mm Item Weight Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) S"
+     },
+     {
+      "match": "2.4g",
+      "excerpt": "oximately 1.7mm Item Weight Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed"
+     },
+     {
+      "match": "3.6g",
+      "excerpt": "7mm Item Weight Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear natur"
+     },
+     {
+      "match": "4.8g",
+      "excerpt": "ght Approximate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear natural diamond,"
+     },
+     {
+      "match": "6g",
+      "excerpt": "ate weight for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear natural diamond, clear lab-"
+     },
+     {
+      "match": "7.2g",
+      "excerpt": "for a size 9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear natural diamond, clear lab-created diam"
+     },
+     {
+      "match": "9.6g",
+      "excerpt": "9 ring: 2.1g (1.7mm), 2.4g (2mm), 3.6g (3mm), 4.8g (4mm), 6g (5mm), 7.2g (6mm), 9.6g (8mm) Stone Reclaimed clear natural diamond, clear lab-created diamond, ethical"
+     }
+    ],
+    "solid_mentions": [
+     {
+      "match": "Solid 14k Gold",
+      "excerpt": "o retouched models. Just real jewelry on real humans, always. Industrial Mirror Band $598 Solid 14k Gold, 950 Platinum, 925 Silver Rated 5.0 out of 5 2 Reviews Based on 2 reviews Size 2 2 2.25 2"
+     },
+     {
+      "match": "Solid 14k gold",
+      "excerpt": "is D/E/F Diamond weight Each diamond is approximately 0.02ct Material 950 platinum and/or Solid 14k gold ( what is karat? / what’s in our gold? ) Gold source 100% Recycled gold Manufacturing In"
+     },
+     {
+      "match": "Solid gold",
+      "excerpt": "u can order our Ring Sizer and check out our ring sizing blog for info. Care Instructions Solid gold and platinum naturally withstand water, oxygen, and chemicals, however, they can get scra"
+     },
+     {
+      "match": "solid 14k gold",
+      "excerpt": "Working only with sustainable and durable materials, we handcraft our jewelry in recycled solid 14k gold and platinum with reclaimed and/or ethically sourced diamonds and gemstones. Each piece i"
+     }
+    ],
+    "plated_mentions": [
+     {
+      "match": "Sterling Silver",
+      "excerpt": "k White Gold Nickel Free 14k White Gold 14k Rose Gold 14k Champagne Gold 950 Platinum 925 Sterling Silver Width 1.7mm 1.7mm 2.0mm 3.0mm 4.0mm 5.0mm 6.0mm 8.0mm gemstone No Gem No Gem Center Clear"
+     }
+    ],
+    "sale_mentions": [
+     {
+      "match": "final sale",
+      "excerpt": "t us . Engraving adds two business days to your order to ship out. All engraved items are final sale. Add engraving Remove engraving Add to Cart Only 2 units left in stock! Ships from New Yo"
+     },
+     {
+      "match": "final sale",
+      "excerpt": "ithin 30 days of the delivery date. Free return shipping on US orders. Engraved items are final sale and cannot be returned. One width, many sizes Wedding bands of the same width will look d"
+     }
+    ],
+    "hallmark_mentions": [],
+    "html_weight_context": [
+     {
+      "match": "\"weight\":0",
+      "excerpt": "blic_title\":\"14k Yellow Gold \\/ 1.7mm \\/ No Gem\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"No Gem\"],\"price\":59800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":2,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ter Clear Natural Diamond\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Center Clear Natural Diamond\"],\"price\":64300,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ee Clear Natural Diamonds\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Three Clear Natural Diamonds\"],\"price\":73300,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "m \\/ Center Clear Lab Diamond\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Center Clear Lab Diamond\"],\"price\":63800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "m \\/ Three Clear Lab Diamonds\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Three Clear Lab Diamonds\"],\"price\":71800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\\/ 1.7mm \\/ Center Black Diamond\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Center Black Diamond\"],\"price\":63800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "ld \\/ 1.7mm \\/ Three Black Diamond\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Three Black Diamond\"],\"price\":71800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "Salt and Pepper Diamond\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Center Salt and Pepper Diamond\"],\"price\":63800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "alt and Pepper Diamonds\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Three Salt and Pepper Diamonds\"],\"price\":71800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "1.7mm \\/ Center Lab Alexandrite\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Center Lab Alexandrite\"],\"price\":63800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "1.7mm \\/ Three Lab Alexandrites\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Three Lab Alexandrites\"],\"price\":71800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     },
+     {
+      "match": "\"weight\":0",
+      "excerpt": "\":\"14k Yellow Gold \\/ 1.7mm \\/ Center Ruby\",\"options\":[\"14k Yellow Gold\",\"1.7mm\",\"Center Ruby\"],\"price\":63800,\"weight\":0,\"compare_at_price\":null,\"inventory_quantity\":3,\"inventory_management\":\"shopify\",\"inventory_policy\":\"deny\",\"ba"
+     }
+    ],
+    "prices": [
+     {
+      "match": "$350",
+      "excerpt": "Hoops Flatbacks Platinum Celestial Engravable Gifts Back Gifts Under $350 Under $800 Under $1500 Gift card Gift Wrap Custom Back Custom Customi"
+     },
+     {
+      "match": "$800",
+      "excerpt": "backs Platinum Celestial Engravable Gifts Back Gifts Under $350 Under $800 Under $1500 Gift card Gift Wrap Custom Back Custom Customize Now Exam"
+     },
+     {
+      "match": "$1500",
+      "excerpt": "num Celestial Engravable Gifts Back Gifts Under $350 Under $800 Under $1500 Gift card Gift Wrap Custom Back Custom Customize Now Examples How It"
+     },
+     {
+      "match": "$150",
+      "excerpt": "ains Huggie Hoops Flatbacks Platinum Celestial Engravable Gifts Under $150 Under $300 Under $700 Gift Card Gift Wrap Wedding Wedding Bands Engag"
+     },
+     {
+      "match": "$300",
+      "excerpt": "Hoops Flatbacks Platinum Celestial Engravable Gifts Under $150 Under $300 Under $700 Gift Card Gift Wrap Wedding Wedding Bands Engagement Promi"
+     },
+     {
+      "match": "$700",
+      "excerpt": "backs Platinum Celestial Engravable Gifts Under $150 Under $300 Under $700 Gift Card Gift Wrap Wedding Wedding Bands Engagement Promise Rings An"
+     },
+     {
+      "match": "$350",
+      "excerpt": "Wedding Bands Engagement Promise Rings Anniversary Rings Gifts Under $350 Under $800 Under $1500 Gift Card Gift Wrap Custom Customize Now Examp"
+     },
+     {
+      "match": "$800",
+      "excerpt": "nds Engagement Promise Rings Anniversary Rings Gifts Under $350 Under $800 Under $1500 Gift Card Gift Wrap Custom Customize Now Examples How it"
+     },
+     {
+      "match": "$1500",
+      "excerpt": "ent Promise Rings Anniversary Rings Gifts Under $350 Under $800 Under $1500 Gift Card Gift Wrap Custom Customize Now Examples How it works Recycl"
+     },
+     {
+      "match": "$1,750",
+      "excerpt": "t 0 Cart items: Log in Search Floral Cowrie Shell-Patterned Rope Band $1,750 Geometric Rhombus Engraved Band $1,450 Milgrain Scroll Band $1,275 Ge"
+     },
+     {
+      "match": "$1,450",
+      "excerpt": "wrie Shell-Patterned Rope Band $1,750 Geometric Rhombus Engraved Band $1,450 Milgrain Scroll Band $1,275 Geometric Grass Band $850 Flat Mariner An"
+     },
+     {
+      "match": "$1,275",
+      "excerpt": "nd $1,750 Geometric Rhombus Engraved Band $1,450 Milgrain Scroll Band $1,275 Geometric Grass Band $850 Flat Mariner Anklet $490 Home / Wedding rin"
+     }
+    ],
+    "text_length": 10715,
+    "text_sha256": "36c47d982bd4cd8700a4182b97db71a0b2cff86748f4c53bfede7f95ba60484c"
+   }
+  },
+  {
+   "id": "car-18k-destinee-princess",
+   "retailer": "Cartier",
+   "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+   "http_status": 403,
+   "fetched_at": "2026-10-23T20:20:00Z",
+   "ok": false,
+   "error": "HTTP 403",
+   "shopify_json_fallback": null,
+   "extraction": null
+  },
+  {
+   "id": "bn-14k-petite-195639",
+   "retailer": "Blue Nile",
+   "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+   "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:01Z",
+   "ok": true,
+   "bytes": 680123,
+   "extraction": {
+    "h1": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+    "title_tag": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+    "jsonld_titles": [
+     "Petite Solitaire Engagement Ring in 14k Yellow Gold"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "price",
+      "value": 1000,
+      "currency": "USD"
+     }
+    ],
+    "meta": {
+     "og:title": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+     "og:price:amount": "1000",
+     "og:price:currency": "USD"
+    },
+    "karat_mentions": [
+     {
+      "match": "14k",
+      "excerpt": "Petite Solitaire Engagement Ring in 14k Yellow Gold +1‑800‑242‑2728 The Fall Edit: Up to 30% Off* Select Styl"
+     },
+     {
+      "match": "14K",
+      "excerpt": "ck To Gallery Share round Shown in 1 ct. Stock Number 501130y14 Metal 14K Yellow Gold Width 1.80mm Show More Can Be Set With: Round 0.20 - 8.00"
+     },
+     {
+      "match": "14k",
+      "excerpt": "Square Emerald 0.20 - 8.00 Carat Petite Solitaire Engagement Ring in 14k Yellow Gold $1,000 (Setting Price) Or as low as $170 /mo for 6 months"
+     },
+     {
+      "match": "14K",
+      "excerpt": "ment of $1,020 ** Learn more View other Financing Options Metal Type: 14K Yellow Gold Ring Size: Select Ring Size Guide Add Free Engraving Ship"
+     },
+     {
+      "match": "14k",
+      "excerpt": "t Details Elegant in its simplicity, this petite solitaire crafted in 14k gold is a beautifully classic frame for your choice of center diamond"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "raving Ships by : For an exact shipping date, please select a ring size first. Free Overnight Shipping Returns Policy Total carat weights are approximate. Variance Chart select this setting Consult an expert Need a Blue Nile Expert? Call +1-800-242-2728 Your Order I"
+     }
+    ],
+    "gram_mentions": [],
+    "solid_mentions": [],
+    "plated_mentions": [],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [],
+    "prices": [
+     {
+      "match": "$1000",
+      "excerpt": "Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today&#x27;s Deals Clear The Vault OCCASION Fall Edit Wedding An"
+     },
+     {
+      "match": "$1,000",
+      "excerpt": "0.20 - 8.00 Carat Petite Solitaire Engagement Ring in 14k Yellow Gold $1,000 (Setting Price) Or as low as $170 /mo for 6 months with the Blue Nile"
+     },
+     {
+      "match": "$170",
+      "excerpt": "ngagement Ring in 14k Yellow Gold $1,000 (Setting Price) Or as low as $170 /mo for 6 months with the Blue Nile Credit Card for a total payment o"
+     },
+     {
+      "match": "$1,020",
+      "excerpt": "mo for 6 months with the Blue Nile Credit Card for a total payment of $1,020 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol"
+     },
+     {
+      "match": "$1,000",
+      "excerpt": "warrant all gold and platinum jewelry items with a purchase price of $1,000 or more from manufacturer’s defect. Limitations Apply. See Terms and"
+     }
+    ],
+    "text_length": 7883,
+    "text_sha256": "3ea8936f1090a0850c4f707b0ff550aabe4365ba6f8d1e1e77c4daf8d2e092db"
+   }
+  },
+  {
+   "id": "mej-14k-sdeb",
+   "retailer": "Mejuri",
+   "url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+   "final_url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+   "http_status": 200,
+   "fetched_at": "2026-10-23T20:20:02Z",
+   "ok": true,
+   "bytes": 1744064,
+   "extraction": {
+    "h1": "Slim Diamond Eternity Band",
+    "title_tag": "Slim Diamond Eternity Band - Mejuri",
+    "jsonld_titles": [
+     "Slim Diamond Eternity Band",
+     "Solid White Gold (14k) / Natural Diamond / 9.5"
+    ],
+    "jsonld_prices": [
+     {
+      "key": "lowPrice",
+      "value": 648,
+      "currency": "USD"
+     },
+     {
+      "key": "highPrice",
+      "value": 948,
+      "currency": "USD"
+     },
+     {
+      "key": "price",
+      "value": 898,
+      "currency": "USD"
+     }
+    ],
+    "meta": {
+     "og:title": "Slim Diamond Eternity Band - Mejuri"
+    },
+    "karat_mentions": [
+     {
+      "match": "14k",
+      "excerpt": "ternity Band 4.8 From $898 Material & Stone Options Solid White Gold (14k), Natural Diamond Size Size Guide 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5"
+     },
+     {
+      "match": "14k",
+      "excerpt": "o celebrate. Here it is: a slimmed down style handcrafted in recycled 14k solid gold, featuring 47-60 responsibly sourced diamonds for an avera"
+     },
+     {
+      "match": "14k",
+      "excerpt": "to enhance the sparkle. Materials & Specifications Solid Yellow Gold (14k) Our 14k solid gold pieces are made to last and perfect for everyday"
+     },
+     {
+      "match": "14k",
+      "excerpt": "e the sparkle. Materials & Specifications Solid Yellow Gold (14k) Our 14k solid gold pieces are made to last and perfect for everyday wear. Eac"
+     },
+     {
+      "match": "14k",
+      "excerpt": "fect for everyday wear. Each piece is crafted from 90% recycled gold. 14k solid white gold pieces are finished with rhodium plating, giving the"
+     },
+     {
+      "match": "14K",
+      "excerpt": "roof & Hypoallergenic Lifetime wear, Lifetime Investment 90% Recycled 14K Gold 93% Traceable to Mine or Region Natural Diamonds OUR SUSTAINABIL"
+     }
+    ],
+    "weight_keyword_context": [
+     {
+      "match": "weight",
+      "excerpt": "s: a slimmed down style handcrafted in recycled 14k solid gold, featuring 47-60 responsibly sourced diamonds for an average carat weight of 0.248ct. Each diamond is hand-set in a basket of open prongs to enhance the sparkle. Materials & Specifications Solid Yellow G"
+     },
+     {
+      "match": "Weight",
+      "excerpt": "re responsibly sourced from suppliers who follow conflict-free and socially responsible practices. Specifications - Minimum Carat Weight Range: 0.214 ct - 0.274 ct - Diamond Clarity: SI - I - Diamond Color: GHI - Stone Size: 1 mm - Band Width: 1.1 mm - Band thicknes"
+     }
+    ],
+    "gram_mentions": [],
+    "solid_mentions": [
+     {
+      "match": "Solid White Gold",
+      "excerpt": "Exchanges Free Shipping Slim Diamond Eternity Band 4.8 From $898 Material & Stone Options Solid White Gold (14k), Natural Diamond Size Size Guide 4 4.5 5 5.5 6 6.5 7 7.5 8 8.5 9 9.5 10 Pick Up In-"
+     },
+     {
+      "match": "solid gold",
+      "excerpt": "e is something to celebrate. Here it is: a slimmed down style handcrafted in recycled 14k solid gold, featuring 47-60 responsibly sourced diamonds for an average carat weight of 0.248ct. Eac"
+     },
+     {
+      "match": "Solid Yellow Gold",
+      "excerpt": "is hand-set in a basket of open prongs to enhance the sparkle. Materials & Specifications Solid Yellow Gold (14k) Our 14k solid gold pieces are made to last and perfect for everyday wear. Each piec"
+     },
+     {
+      "match": "solid gold",
+      "excerpt": "prongs to enhance the sparkle. Materials & Specifications Solid Yellow Gold (14k) Our 14k solid gold pieces are made to last and perfect for everyday wear. Each piece is crafted from 90% rec"
+     },
+     {
+      "match": "solid white gold",
+      "excerpt": "to last and perfect for everyday wear. Each piece is crafted from 90% recycled gold. 14k solid white gold pieces are finished with rhodium plating, giving them their signature color along with ad"
+     }
+    ],
+    "plated_mentions": [],
+    "sale_mentions": [],
+    "hallmark_mentions": [],
+    "html_weight_context": [],
+    "prices": [
+     {
+      "match": "$898",
+      "excerpt": "Returns & Exchanges Free Shipping Slim Diamond Eternity Band 4.8 From $898 Material & Stone Options Solid White Gold (14k), Natural Diamond Size"
+     }
+    ],
+    "text_length": 3120,
+    "text_sha256": "1cde77508bde0233987cca30072dc645bdb4f7307246a65249b1ed5f91e44d61"
    }
   }
  ]
