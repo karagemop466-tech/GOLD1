@@ -55,6 +55,7 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 `scripts/verify.mjs` (S18–S19), generated `*.html`, this board | 2026-10-22 |
 | T20 | **100% (43/43) live HTML PDP audit**: re-verify all 43 inherited rows + recover 5 weights (`rs-960952` `1.3g`, `au-2ct-oval` `2.73g`, `au-1ct-emerald` `1.97g`, `au-3ct-round` `3.3g`, `au-xring` `2.7g` + `"solid gold"`), resolve `au-cigar` variant-level 14K price (`$1,308`–`$1,668`), catch Aurate Final-Sale notices, `grains_per_troy_ounce` mislabel, and `c2bbe753` leads | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/repo-audit.json`, `data/session-0804e222/flagged-0804e222.json` | 2026-10-22 |
 | T21 | **Retailer policy, contact, BBB reputation & regulatory/testing standards**: official return/resize/custom terms for all 10 retailers; BBB grades (`F25`, incl. Aurate `F`); 16 CFR Part 23, NIST `31.1034768 g/ozt`, GIA XRF limits (`2024`/`2025`), CFPB FCBA | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/retailer-policies.json`, `data/session-0804e222/standards.json` | 2026-10-22 |
+| T25 | **Post-merge quality review**: rerun canonical build/audits, check stale legacy verifier and published freshness labeling; document the results | **in progress** | arena/e2b73db1-gold1 | arena/e2b73db1-gold1 | `scripts/verify_data.py`, `scripts/build.mjs`, `README.md`, generated `index.html`, `checks.html`, `data/checks/**`, this board | 2026-10-23 |
 | T22 | **10K / 14K / 18K / 24K solid-gold + gram-weight ring expansion**: 16 verified primary-source listings across Ross-Simons (`10K` `0.3g`, `14K` `1.5g`), Mejuri (`10K` solid), Automic Gold (`14K` solid + `1.4g`–`7.0g` weights), Cartier (`18K` `750/1000`), and Menē (`24K` pure gold) | **done** | sess-0804e222 | arena/0804e222-gold1 | `data/session-0804e222/new-rings.json` | 2026-10-22 |
 | T23 | **Extended anti-hallucination & security verifier + zero-loss integrator**: cross-file consistency, weight/price/karat provenance, HTML/CSP/XSS/rel=noopener security checks, idempotent merger | **done** | sess-0804e222 | arena/0804e222-gold1 | `scripts/audit_0804e222.mjs`, `scripts/integrate_0804e222.mjs` | 2026-10-22 |
 | T24 | **Zero-loss final union integration & Pages publish**: merge `origin/main` (`f919689` incl. PR #21/#22/#23/#24) without discarding any work, run `integrate_0804e222.mjs` + `build.mjs` + `verify.mjs` (`S01`–`S19`) + `audit_0804e222.mjs` (`A01`–`A10`) + `/site/` audits, open PR, merge, verify live GitHub Pages | **done** (PR #25 merged; Pages live) | sess-0804e222 | arena/0804e222-gold1 | shared `data/*.json`, `scripts/build.mjs`, `scripts/verify.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
@@ -448,3 +449,15 @@ P12 follow-up "23 rows still carry an earlier capture" is now closed — all 43 
     - `https://karagemop466-tech.github.io/GOLD1/checks.html` — live, rendering **Pass P40** (`19/19` passed, `0` failed, unbroken `P1`–`P40` history, 59-row re-verification ledger).
     - `https://karagemop466-tech.github.io/GOLD1/site/` — live, standalone 13-candidate CSP-hardened evidence review (`arena/c662efda-gold1`) intact.
 
+
+---
+
+## 14. Post-merge quality review (`arena/e2b73db1-gold1`, T25)
+
+**Session/branch:** `arena/e2b73db1-gold1` · **Date:** 2026-10-23 · **Status:** in progress
+
+- **Claimed scope:** `scripts/verify_data.py`, `scripts/build.mjs`, `README.md`, generated `index.html` and `checks.html`, `data/checks/**`, this board. No retailer/product data is being changed.
+- **Initial checks:** canonical `node scripts/verify.mjs` passed P42 (19/19 groups, 4,747 assertions, 0 failures; 59 rows, 91 pages); `node scripts/audit_0804e222.mjs` passed A01–A10 (1,491 assertions); standalone `npm test` passed evidence, links, security, HTML, runtime, build, and build-link audits.
+- **Flag for review:** the canonical listing and spot-price evidence are dated 2026-10-22. These are dated snapshots, not guaranteed live/current prices. Live retailer/market-source refresh is not represented as complete in this review; buyers must re-open the official product links immediately before purchase.
+- **Legacy audit defect found:** `python3 scripts/verify_data.py` exits with `KeyError: 'checklist'` because it expects an older data schema. This is outside the active npm/canonical audit chain and is being corrected to delegate to the canonical verifier rather than offer a broken, stale second audit.
+- **Source/verification policy:** no product prices, gold prices, or seller facts are being newly asserted or inferred here.
