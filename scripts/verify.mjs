@@ -390,7 +390,21 @@ const counted = (fn) => fn;
     } else if (Array.isArray(v)) v.forEach(harvest);
     else if (v && typeof v === 'object') Object.values(v).forEach(harvest);
   };
-  for (const f of ['data/rings.json', 'data/retailers.json', 'data/flagged.json', 'data/gold-price.json', 'data/checklist.json', 'data/sources.json', 'data/reverification.json']) {
+  // Ninth pass: the evening ledger and its evidence are data files too. A number
+  // printed on live-audit.html must trace to one of them, exactly as it must for
+  // the older pages — adding them widens what is checkable, not what is allowed.
+  for (const f of [
+    'data/rings.json',
+    'data/retailers.json',
+    'data/flagged.json',
+    'data/gold-price.json',
+    'data/checklist.json',
+    'data/sources.json',
+    'data/reverification.json',
+    'data/verification-2026-10-23-evening-dab93754.json',
+    'data/live/compare-dab93754.json',
+    'data/session-dab93754/manual-reads-2026-10-23.json',
+  ]) {
     harvest(await readIf(f, {}));
   }
   // derived values the site is allowed to compute
