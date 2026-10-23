@@ -2,6 +2,10 @@
   "pass": "P87-live",
   "session": "sess-dab93754",
   "date": "2026-10-23",
+  "evidence_file": "data/live/2026-10-23T20-22-25Z.json",
+  "evidence_started_at": "2026-10-23T20:21:46Z",
+  "evidence_finished_at": "2026-10-23T20:22:25Z",
+  "run_context": "github-actions run 40018561423",
   "purpose": "Line-by-line reconciliation of every curated row against its own official product page, re-read in one automated run (20:21:46Z–20:22:25Z) plus an independent second channel.",
   "method": {
     "runner": "GitHub Actions run re-opened all 71 curated URLs with a browser user agent and recorded HTTP status, page title, per-product JSON-LD offers, every Shopify seller’s own variant feed, gram text and solid/plated/final-sale wording. It cannot edit the dataset.",
@@ -36,6 +40,15 @@
     "weight_rows": 25,
     "weight_reproduced_today": 19,
     "weight_not_machine_visible_today": 6
+  },
+  "replication": {
+    "evidence_file": "data/live/2026-10-23T20-27-36Z.json",
+    "started_at": "2026-10-23T20:27:00Z",
+    "finished_at": "2026-10-23T20:27:36Z",
+    "run_context": "github-actions run 40019285597",
+    "rows": 71,
+    "verdict_disagreements": [],
+    "note": "A second automated run, five minutes later and triggered separately, returned the identical verdict for every one of the 71 rows."
   },
   "findings": [
     {

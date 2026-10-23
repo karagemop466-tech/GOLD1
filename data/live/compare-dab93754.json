@@ -1,11 +1,11 @@
 {
   "pass": "P87-live",
   "session": "sess-dab93754",
-  "generated_at": "2026-10-23T20:23:39Z",
-  "evidence_file": "data/live/latest.json",
-  "evidence_started_at": "2026-10-23T20:21:46Z",
-  "evidence_finished_at": "2026-10-23T20:22:25Z",
-  "run_context": "github-actions run 40018561423",
+  "generated_at": "2026-10-23T20:27:57Z",
+  "evidence_file": "data/live/2026-10-23T20-27-36Z.json",
+  "evidence_started_at": "2026-10-23T20:27:00Z",
+  "evidence_finished_at": "2026-10-23T20:27:36Z",
+  "run_context": "github-actions run 40019285597",
   "method": "Each curated row is compared with the price its own official product page printed in this run, and — for Shopify storefronts — with the seller's own variant feed for that exact product. A stored single price, or the full stored range, must appear in one of those sources; a price is never attributed from a cross-sell tile. Weights count as reproduced only on an exact gram string.",
   "summary": {
     "rows": 71,

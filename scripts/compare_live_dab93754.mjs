@@ -22,7 +22,8 @@ import { join } from 'node:path';
 const ROOT = process.cwd();
 const arg = process.argv.slice(2).find((a) => a.startsWith('--evidence='));
 const EVIDENCE = arg ? arg.slice('--evidence='.length) : 'data/live/latest.json';
-const OUT = 'data/live/compare-dab93754.json';
+const outArg = process.argv.slice(2).find((a) => a.startsWith('--out='));
+const OUT = outArg ? outArg.slice('--out='.length) : 'data/live/compare-dab93754.json';
 
 const ringsDoc = JSON.parse(await readFile(join(ROOT, 'data/rings.json'), 'utf8'));
 const live = JSON.parse(await readFile(join(ROOT, EVIDENCE), 'utf8'));
