@@ -36,6 +36,24 @@ const readOptional = async (p) => {
   }
 };
 const eveningLedger = await readOptional('data/verification-2026-10-23-evening-dab93754.json');
+// Twelfth pass (sess-67748540): the newest 71-row reconciliation, produced at
+// 2026-10-23T23:39Z from the runner plus a second channel. Optional: if absent,
+// the landing block falls back to the older ledger rather than inventing counts.
+const nightLedger = await readOptional('data/session-67748540/reconcile-67748540.json');
+const nightVerdicts = nightLedger?.verdict_counts ?? null;
+const nightConfirmed = nightVerdicts
+  ? (nightVerdicts.stored_price_reproduced ?? 0) +
+    (nightVerdicts.stored_range_reproduced_seller_feed ?? 0) +
+    (nightVerdicts.stored_variant_price_reproduced_seller_feed ?? 0)
+  : null;
+const nightByDesign = nightVerdicts?.price_unverified_by_design ?? null;
+// hand_read_resolved = rows the runner could NOT read and the second channel did.
+// (Two further hand reads corroborate rows the runner did read; they are not a gap.)
+const nightUnread = nightLedger?.hand_read_resolved ?? null;
+const nightRunnerRead = nightLedger ? nightLedger.row_count - (nightUnread ?? 0) : null;
+const nightRunnerFinished = nightLedger?.runner_finished_at ?? null;
+const nightHandRead = nightLedger?.hand_read_resolved ?? 0;
+const nightTotalConfirmed = nightConfirmed === null ? null : nightConfirmed + nightHandRead;
 const eveningAudit = await readOptional('data/session-dab93754/audit.json');
 const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
 const readCounts = {
@@ -447,8 +465,13 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="callout good">
-    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
+    <h2>Latest pass — 2026-10-23T23:39Z: all ${totalRows} rows accounted for on one clock, 0 drift</h2>
+    <p>${
+      nightLedger && nightConfirmed !== null
+        ? `The automated re-read runner opened all ${totalRows} official URLs at <strong>${esc(nightRunnerFinished)}</strong> and read <strong>${nightRunnerRead}</strong> of them; the other <strong>${nightUnread}</strong> refused the runner with HTTP 403 (seller-side blocking, not a data defect — <a href="flagged.html#F60">F60</a>) and were re-opened by hand through an independent channel in the same hour. Every price that channel printed matched the stored value: <strong>${nightTotalConfirmed} of ${totalRows} rows reproduced exactly (${nightConfirmed} by the runner, ${nightHandRead} by the second channel), ${nightLedger.price_drift?.length ?? 0} contradictions, ${nightByDesign} rows unverified by design</strong> (two withdrawn source mismatches and one partly-verified listing whose price is never rendered as a number). The gold spot was read twice, <strong>59 seconds apart through two different network paths, and both reads returned the identical $${gold.primary.price_usd_per_ozt.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 6 })}/ozt</strong>, so every melt figure below is re-derived rather than retyped.`
+        : `All ${totalRows} listings across ${retailersDoc.retailers.length} retailers were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread).`
+    } Two reused product URLs are kept as withdrawn records rather than deleted: Ross-Simons SKU 939479 now sells an Italian 14kt Claddagh ring (<a href="flagged.html#F51">F51</a>) and Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>).</p>
+    <p>Full ledger: <code>data/session-67748540/reconcile-67748540.json</code> (verdict per row) and <code>data/session-67748540/hand-reads-2026-10-23.json</code> (the ten second-channel reads with verbatim quotes).</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>

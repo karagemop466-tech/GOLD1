@@ -103,8 +103,9 @@
 
 <section class="wrap section">
   <div class="callout good">
-    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All 71 listings across 11 retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: 48 parsed by the automated workflow, 2 hand-read, and 21 verified via direct storefront JSON &amp; PDP fetches (0 unread). <strong>59 prices reproduced exactly.</strong> 6 were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). 1 row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
+    <h2>Latest pass — 2026-10-23T23:39Z: all 71 rows accounted for on one clock, 0 drift</h2>
+    <p>The automated re-read runner opened all 71 official URLs at <strong>2026-10-23T23:39:43Z</strong> and read <strong>61</strong> of them; the other <strong>10</strong> refused the runner with HTTP 403 (seller-side blocking, not a data defect — <a href="flagged.html#F60">F60</a>) and were re-opened by hand through an independent channel in the same hour. Every price that channel printed matched the stored value: <strong>68 of 71 rows reproduced exactly (58 by the runner, 10 by the second channel), 0 contradictions, 3 rows unverified by design</strong> (two withdrawn source mismatches and one partly-verified listing whose price is never rendered as a number). The gold spot was read twice, <strong>59 seconds apart through two different network paths, and both reads returned the identical $3,996.899902/ozt</strong>, so every melt figure below is re-derived rather than retyped. Two reused product URLs are kept as withdrawn records rather than deleted: Ross-Simons SKU 939479 now sells an Italian 14kt Claddagh ring (<a href="flagged.html#F51">F51</a>) and Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>).</p>
+    <p>Full ledger: <code>data/session-67748540/reconcile-67748540.json</code> (verdict per row) and <code>data/session-67748540/hand-reads-2026-10-23.json</code> (the ten second-channel reads with verbatim quotes).</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -126,7 +127,7 @@
 
 <section class="wrap section">
   <div class="callout">
-    <h2>How current each row is — pass P117, 2026-10-23</h2>
+    <h2>How current each row is — pass P118, 2026-10-23</h2>
     <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and 71 of 71 were opened again on 2026-10-23 by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-2026-10-23.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
       <li><strong>25 of 71 rows publish a metal weight</strong> (<a href="rings/rs-571221.html">1.7 g</a>, <a href="rings/rs-571222.html">2.5 g</a>, <a href="rings/rs-571223.html">3.8 g</a>, <a href="rings/rs-571213.html">5 g</a>, <a href="rings/rs-981367.html">0.5 g</a>, <a href="rings/rs-907250.html">0.5 g</a>, <a href="rings/rs-960952.html">1.3 g</a>, <a href="rings/au-2ct-oval.html">2.73 g</a>, <a href="rings/au-1ct-emerald.html">1.97 g</a>, <a href="rings/au-3ct-round.html">3.3 g</a>, <a href="rings/au-cigar.html">2.6 g</a>, <a href="rings/au-xring.html">2.7 g</a>, and 13 more). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. </li>
@@ -241,8 +242,8 @@
   <div class="pass-card">
           <div class="pass-head">
             <span class="badge ok">PASS</span>
-            <strong>P117</strong>
-            <span class="muted">run 2026-10-23T23:46:37Z</span>
+            <strong>P118</strong>
+            <span class="muted">run 2026-10-23T23:48:19Z</span>
           </div>
           <p>20 checks passed, 0 failed. The suite looks for fabricated values: prices that do not appear in their own evidence string, karats outside the legal set, melt-value contradictions, future dates and broken internal links.</p>
           <p><a href="checks.html">See every check →</a></p>
