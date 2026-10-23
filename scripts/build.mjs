@@ -112,7 +112,7 @@ const sortPrice = (r) => (r.price_unverified ? null : r.price_low);
 
 const checkedCell = (r) => {
   const when = r.verified_at || r.retrieved_at;
-  // sess-0a6df02e (board T45): the partly branch previously compared against
+  // sess-0a6df02e (board T46): the partly branch previously compared against
   // 'partially verified', a value the data never uses (it is 'partly_verified'),
   // so partly_verified and withdrawn rows rendered a green "confirmed" chip.
   // Prices were always rendered correctly (S19); only this status chip lied.
@@ -267,7 +267,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H12 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -434,7 +434,7 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="stats">
-    ${stat(`${totalRows}`, 'verified listings', 'price + karat across 10K, 14K, 18K, 22K & 24K')}
+    ${stat(`${totalRows - rings.rows.filter((r) => r.withdrawn).length}`, 'active listings', `${totalRows - rings.rows.filter((r) => r.withdrawn).length} active listings with price + karat across 10K, 14K, 18K, 22K & 24K; ${rings.rows.filter((r) => r.withdrawn).length} withdrawn records kept for audit history (reused URLs, F51/F65)`)}
     ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', '0.3 g to 7.0 g — the number you need for a value check')}

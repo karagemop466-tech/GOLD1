@@ -52,7 +52,7 @@ await check('N01', 'Ledger is complete, unique and bijective with the curated da
     const ds = rings.rows.find((x) => x.id === r.id);
     if (!ds) fail(`${r.id} not in dataset`);
     if (ds && r.stored_price && ds.price_low !== r.stored_price[0]) {
-      // T45 union exception (sess-0a6df02e, board §20): a row whose verdict is
+      // T46 union exception (sess-0a6df02e, board §21): a row whose verdict is
       // stored_price_not_reproduced AND whose ledger entry captured an observed price may
       // legitimately carry that observed value in the dataset — the ledger then documents
       // the correction itself (both spots-linked Menē rows; the observed evening values were
@@ -222,7 +222,7 @@ await check('N08', 'Verdict arithmetic, withdrawn rows and findings are internal
   const publishedFlags = new Map(flags.items.map((i) => [i.id, i]));
   n++;
   for (const f of ledger.findings) {
-    // T45 union amendment (sess-0a6df02e, board §20): this guard originally forbade any ledger
+    // T46 union amendment (sess-0a6df02e, board §21): this guard originally forbade any ledger
     // finding from appearing in the published registry, while sess-5f363d57's R09 requires one
     // canonical registry to carry them. The union folds F59–F64 into data/flagged.json verbatim,
     // so the guard becomes: an id present in both places must be the *same* finding

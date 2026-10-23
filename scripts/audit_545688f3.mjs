@@ -195,7 +195,7 @@ await checkGroup('H08', '2026-10-23 live gold spot & Menē/Blue Nile price fresh
   const mc = rings.rows.find((r) => r.id === 'mene-24k-classic-band');
   const mn = rings.rows.find((r) => r.id === 'mene-24k-narrow-band');
   const bn = rings.rows.find((r) => r.id === 'bn-14k-petite-195639');
-  // Pins updated by sess-0a6df02e (board T45): Menē is spot-linked and repriced again
+  // Pins updated by sess-0a6df02e (board T46): Menē is spot-linked and repriced again
   // on 2026-10-23 evening (spot 4024.699951 @09:59:43Z -> 3998.100098 @20:19:15Z).
   // Live PDPs read 2026-10-23T20:22Z printed $1,694 / $1,350 USD — verbatim in
   // data/session-0a6df02e/live-reads-2026-10-23.json; superseded pins 1707/1361
@@ -313,6 +313,41 @@ await checkGroup('H12', 'Zero-loss peer preservation & pass-ID synchronization',
     'data/session-545688f3/repo-audit.json',
   ]) {
     assert(existsSync(join(ROOT, reqPath)), `Missing preserved deliverable ${reqPath}`);
+  }
+});
+
+/* H13: README "Current findings" bullets are derived from the live dataset (anti-stale-prose guard) */
+await checkGroup('H13', 'README current-findings counts derived from the dataset, no stale 59-row prose', async (assert) => {
+  const readme = await readFile(join(ROOT, 'README.md'), 'utf8');
+  const n = rings.rows.length;
+  const kc = rings.rows.reduce((a, r) => ((a[r.karat] = (a[r.karat] || 0) + 1), a), {});
+  const solid = rings.rows.filter((r) => r.solid_stated).length;
+  const weighted = rings.rows.filter((r) => r.weight_g_low !== null).length;
+  const ready = compliance.summary.tiers.ready_to_inspect;
+  const nRetailers = retailersDoc.retailers.length;
+  assert(
+    readme.includes(`${n} verified listings across 10K (${kc['10K']}), 14K (${kc['14K']}), 18K (${kc['18K']}), 22K (${kc['22K']}) and 24K (${kc['24K']})`),
+    `README findings bullet missing the exact ${n}-row per-karat summary`
+  );
+  assert(readme.includes(`**${nRetailers} retailers**`), `README findings bullet missing "${nRetailers} retailers"`);
+  assert(readme.includes(`${ready} of ${n} rows clear every criterion`), `README findings bullet missing "${ready} of ${n} rows clear every criterion"`);
+  assert(readme.includes(`**0 of ${n} publish a hallmark`), `README findings bullet missing "0 of ${n} publish a hallmark"`);
+  assert(readme.includes(`${solid} of ${n} listings explicitly state`), `README findings bullet missing the solid-gold count ${solid} of ${n}`);
+  assert(readme.includes(`${weighted} of ${n} listings publish a weight`), `README findings bullet missing the weight count ${weighted} of ${n}`);
+  assert(readme.includes(`The remaining ${n - weighted} rows`), `README findings bullet missing "remaining ${n - weighted} rows"`);
+  assert(readme.includes('all 71 rows re-read on 2026-10-23'), 'README findings bullet missing the all-rows re-read statement');
+  for (const stale of [
+    '59 verified listings',
+    '10 retailers',
+    '50 of 59',
+    '8 of 59 rows',
+    '15 of 59 listings',
+    '21 of 59 listings',
+    '38 rows',
+    'seven Automic Gold pieces',
+    'six Mejuri',
+  ]) {
+    assert(!readme.includes(stale), `README.md still contains stale pre-71-row prose: "${stale}"`);
   }
 });
 

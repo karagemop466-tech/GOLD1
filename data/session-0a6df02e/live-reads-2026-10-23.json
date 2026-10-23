@@ -1,7 +1,7 @@
 {
   "session": "sess-0a6df02e",
   "branch": "arena/0a6df02e-gold1",
-  "task": "Board T45 (claimed as T38 in parallel with two other ninth-pass sessions; renumbered at the union merge) — ninth pass: fresh live official-source re-reads (2026-10-23 evening, UTC), PR #41 zero-loss integration, security/hallucination passes, publish",
+  "task": "Board T46 (claimed as T38 in parallel with two other ninth-pass sessions; renumbered at the union merge) — ninth pass: fresh live official-source re-reads (2026-10-23 evening, UTC), PR #41 zero-loss integration, security/hallucination passes, publish",
   "method": "Official retailer product pages and the sellers' own Shopify product JSON feeds (<product-url>.js), read through the Arena page-fetch channel (sandbox shell egress is allowlist-only: github/npm/pypi). Only what the source printed is recorded; nothing is inferred. Timestamps are UTC, minute granularity, from the session clock at read time.",
   "rule": "No hallucinations: every value below is a verbatim field or page line from the URL named, read at the timestamp recorded. A value this channel could not read is recorded as not_read and changes nothing. Shopify variant \"weight\" fields are parcel/shipping weights and are never used as metal weight.",
   "reads": [
@@ -296,5 +296,5 @@
     "performed": "2026-10-23 (sess-0a6df02e)",
     "result": "data/session-3020df54/blocked-reread-2026-10-23.json verified line by line against data/rings.json before carrying in: 5 With Clarity stored ranges equal current data and the verbatim Shopify quotes contain the price digits in cents; 2 Cartier confirmations ($1,140 / $3,350, 750/1000) match; 2 entries honestly not_read. Tree-to-tree diff showed every other PR #41 file is older than main's (spot 4024.699951 @09:59:43Z vs 3999.899902 @19:38:15Z; checks P81-545688f3 vs P96), so only the ledger was taken. 0 published values change."
   },
-  "union_renumbering": "At the T45 union merge with origin/main (§19, sess-dab93754/sess-5f363d57 already landed), this session’s two new canonical flags were renumbered F59→F65 (Blue Nile mismatch) and F60→F66 (confirmed-chip defect) so sess-dab93754’s live-audit findings keep F59–F64 in the single Flagged-for-Review registry (R09). dab93754’s independent Menē reads ($1,694 @20:26:00Z, $1,350 @20:33:00Z) corroborate this ledger’s corrections exactly."
+  "union_renumbering": "This pass was claimed as board T38/§18, then renumbered T45/§20 at the first union with origin/main (§19, sess-dab93754), and finally T46/§21 at the second union after arena/e0f33b77-gold1 published its tenth pass as T45/§20. At the unions this session’s two new canonical flags were renumbered F59→F65 (Blue Nile mismatch) and F60→F66 (confirmed-chip defect) so sess-dab93754’s live-audit findings keep F59–F64 in the single Flagged-for-Review registry (R09); sess-5f363d57 independently confirmed the Blue Nile mismatch and the Menē $1,694/$1,350 displays at 2026-10-23T20:47:06Z and asked for exactly this non-colliding ID. dab93754’s independent Menē reads ($1,694 @20:26:00Z, $1,350 @20:33:00Z) corroborate this ledger’s corrections exactly."
 }

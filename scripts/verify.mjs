@@ -502,7 +502,7 @@ const counted = (fn) => fn;
     if ((r.flags || []).includes('price_unverified') && !r.price_unverified) {
       failures.push(`${r.id}: carries the price_unverified flag but price_unverified is not set`);
     }
-    // Regression guard (sess-0a6df02e, board T45 — renumbered from a parallel T38 claim at the union merge; F66): build.mjs previously compared
+    // Regression guard (sess-0a6df02e, board T46 — renumbered from parallel T38/T45 claims at the union merges; F66): build.mjs previously compared
     // verification_status against 'partially verified' — a value the data never
     // uses — so partly_verified and withdrawn rows rendered a green "confirmed
     // on the official page" chip on their detail pages. Prices were always
