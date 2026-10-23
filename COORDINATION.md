@@ -864,6 +864,8 @@ variant feeds) and to keep both `data/live/` timestamps.
 | Live page re-read | `live-audit.html?deploy=5baa2af` rendered the full time range (`2026-10-23T20:21:46Z` → `2026-10-23T20:22:25Z`), the run id, the immutable evidence file, the replication line and all six findings |
 | Documentation PR | [#49](https://github.com/karagemop466-tech/GOLD1/pull/49) — banner now cites all four check families (`S01–S20 + A01–A10 + H01–H12 + N01–N11`) · merged **2026-10-23T20:29:27Z**, merge commit **`917a38352e87e93e4425d4de8c9390643d6c2c32`** |
 | Final Pages build | **`built`**, `error: null`, for `917a383` (`updated_at` 2026-10-23T20:29:51Z) — the site is live with the ninth-pass audit page |
+| Follow-ups (presentation/docs only, no data changed) | [#51](https://github.com/karagemop466-tech/GOLD1/pull/51) board record (merge `8629db6`) · [#52](https://github.com/karagemop466-tech/GOLD1/pull/52) reconciles "10 unread in this run" vs the dashboard's 71/71 same-day count (merge `ad04c4b`) · [#54](https://github.com/karagemop466-tech/GOLD1/pull/54) shows the reproduced price instead of the whole variant range, heading `N01–N11` (merge `6eb2b4f`) |
+| Concurrent merges by other sessions | PR #50 (`arena/5f363d57-gold1`, independent semantic audit) and PR #53 (same session, preserved-variant reconciliation) landed on `main` during this pass. Re-verified together: the combined tree still passes **S01–S20 20/20, A01–A10 10/10, H01–H12 12/12, N01–N11 11/11** and `npm test` |
 
 **Defect found by reading the deployed page (fixed in the follow-up PR).** The lede rendered
 *"…in a single automated run between **and** , then compared…"* — the ledger writer had omitted
