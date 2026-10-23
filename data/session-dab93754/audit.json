@@ -1,9 +1,9 @@
 {
   "pass": "P87-audit",
   "session": "sess-dab93754",
-  "generated_at": "2026-10-23T20:27:28Z",
-  "groups": 10,
-  "assertions": 1544,
+  "generated_at": "2026-10-23T20:28:11Z",
+  "groups": 11,
+  "assertions": 1551,
   "failures": 0,
   "results": [
     {
@@ -74,6 +74,13 @@
       "name": "The published live-audit page carries the run identity and every row",
       "ok": true,
       "assertions": 76,
+      "failures": []
+    },
+    {
+      "id": "N11",
+      "name": "The ledger cites an immutable evidence file and its replication is honest",
+      "ok": true,
+      "assertions": 7,
       "failures": []
     }
   ]

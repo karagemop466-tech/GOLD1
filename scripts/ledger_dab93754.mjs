@@ -21,7 +21,33 @@ const compare = JSON.parse(await readFile(join(ROOT, 'data/live/compare-dab93754
 const manual = JSON.parse(
   await readFile(join(ROOT, 'data/session-dab93754/manual-reads-2026-10-23.json'), 'utf8')
 );
-const evidence = JSON.parse(await readFile(join(ROOT, 'data/live/latest.json'), 'utf8'));
+// The ledger is built on the 20:22 run, so it reads that immutable file rather
+// than `latest.json` (which moves whenever any session triggers a re-read).
+const evidence = JSON.parse(
+  await readFile(join(ROOT, 'data/live/2026-10-23T20-22-25Z.json'), 'utf8')
+);
+let replication = null;
+try {
+  const rep = JSON.parse(
+    await readFile(join(ROOT, 'data/live/compare-dab93754-2026-10-23T20-27-36Z.json'), 'utf8')
+  );
+  const baseVerdict = new Map(compare.rows.map((r) => [r.id, r.verdict]));
+  const disagreements = rep.rows.filter((r) => baseVerdict.get(r.id) !== r.verdict).map((r) => r.id);
+  replication = {
+    evidence_file: rep.evidence_file,
+    started_at: rep.evidence_started_at,
+    finished_at: rep.evidence_finished_at,
+    run_context: rep.run_context,
+    rows: rep.rows.length,
+    verdict_disagreements: disagreements,
+    note:
+      disagreements.length === 0
+        ? 'A second automated run, five minutes later and triggered separately, returned the identical verdict for every one of the 71 rows.'
+        : `The replication disagreed on ${disagreements.length} row(s); see verdict_disagreements.`,
+  };
+} catch {
+  replication = null;
+}
 
 const manualById = new Map(manual.reads.filter((r) => r.id !== '__gold__').map((r) => [r.id, r]));
 const goldManual = manual.reads.find((r) => r.id === '__gold__');
@@ -206,7 +232,11 @@ const doc = {
   pass: 'P87-live',
   session: 'sess-dab93754',
   date: '2026-10-23',
-  evidence_file: compare.evidence_file || 'data/live/latest.json',
+  // Point at the immutable timestamped evidence file for the run this ledger
+  // describes. `latest.json` moves whenever any session triggers a re-read, so a
+  // published ledger must never cite it as its own source.
+  evidence_file:
+    'data/live/' + String(evidence.finished_at).replace(/[:.]/g, '-') + '.json',
   evidence_started_at: evidence.started_at,
   evidence_finished_at: evidence.finished_at,
   run_context: evidence.run_context,
@@ -239,6 +269,7 @@ const doc = {
     },
   },
   summary,
+  replication,
   findings,
   rows,
 };

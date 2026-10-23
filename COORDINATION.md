@@ -778,7 +778,7 @@ instead of a status-code table.
 
 ---
 
-## 19. Ninth pass — fresh 20:21Z live re-read of all 71 rows, variant-level reconciliation, `N01`–`N10` audit and publish (`arena/dab93754-gold1`, T38)
+## 19. Ninth pass — fresh 20:21Z live re-read of all 71 rows, variant-level reconciliation, `N01`–`N11` audit and publish (`arena/dab93754-gold1`, T38)
 
 **Session:** `sess-dab93754` · **Branch:** `arena/dab93754-gold1` · **Date:** 2026-10-23 · **Status:** done
 
@@ -796,8 +796,8 @@ from a default page. A separate channel re-read eight sources afterwards as an i
 | `scripts/compare_live_dab93754.mjs` | refuses a stale evidence file, attributes a price only to an offer whose product name matches the row, and reports `confirmed / confirmed at variant level / inside published band / not reproduced / unresolved / not read` |
 | `data/verification-2026-10-23-evening-dab93754.json` | the published per-row ledger, with the quote behind every verdict |
 | `data/session-dab93754/manual-reads-2026-10-23.json` | the eight independent reads, verbatim |
-| `scripts/audit_dab93754.mjs` | `N01`–`N10`: bijection, no-confirmation-from-a-failed-fetch, price traceability, weight-quote traceability, dual-channel gold agreement, quote requirement, verdict arithmetic, withdrawn-row handling, HTML security |
-| `live-audit.html` | the published page: stat panel, findings, independent reads, all 71 rows, the `N01`–`N10` table and the honest limits |
+| `scripts/audit_dab93754.mjs` | `N01`–`N11`: bijection, no-confirmation-from-a-failed-fetch, price traceability, weight-quote traceability, dual-channel gold agreement, quote requirement, verdict arithmetic, withdrawn-row handling, HTML security |
+| `live-audit.html` | the published page: stat panel, findings, independent reads, all 71 rows, the `N01`–`N11` table and the honest limits |
 
 ### Result
 
@@ -833,7 +833,7 @@ under this pass's scope-narrowing note in §5. Handover: they are one append awa
 - `node scripts/verify.mjs`: **Pass P99, S01–S20 20/20, 0 failures** (71 rows, 106 root pages).
 - `node scripts/audit_0804e222.mjs`: **A01–A10 10/10** (1,951 assertions).
 - `node scripts/audit_545688f3.mjs`: **H01–H12 12/12** (1,644 assertions).
-- `node scripts/audit_dab93754.mjs`: **N01–N10 10/10** (1,544 assertions), N09 sabotage-tested.
+- `node scripts/audit_dab93754.mjs`: **N01–N11 11/11** (1,551 assertions), N09 sabotage-tested.
 - `npm test`: evidence, links, security, HTML validation, runtime, build and published-output stages all pass.
 - Internal link crawl: **603 internal links across 17 root pages, 0 broken**.
 - `S16` was widened to include this pass's ledger and evidence files in its "no invented dollar amounts"
@@ -865,6 +865,13 @@ nothing. The structural suite could not see it (no `undefined`, no `${…}`), wh
 deployed page is read back after every merge. Fix: the ledger now carries the run identity, the page
 prints it, and **new audit group N10** fails the build if the published page ever loses the run
 timestamps or any of the 71 rows. N10 is what caught it on the rebuild.
+
+**Independent replication.** The merge push triggered the re-read workflow again on `main`.
+That run (`40019285597`, 20:27:00Z–20:27:36Z) was compared row by row with the 20:22 run this
+ledger is built on: **0 verdict disagreements across all 71 rows**. The ledger now cites the
+immutable timestamped evidence file (`data/live/2026-10-23T20-22-25Z.json`) rather than
+`latest.json`, which moves whenever any session re-reads, and **N11** fails the build if the
+published page ever claims a replication that is missing, stale or of a different row count.
 
 ### Honest limits
 

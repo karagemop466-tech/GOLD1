@@ -267,6 +267,30 @@ await check('N10', 'The published live-audit page carries the run identity and e
   return { assertions: n };
 });
 
+await check('N11', 'The ledger cites an immutable evidence file and its replication is honest', async (fail) => {
+  let n = 0;
+  n++;
+  if (!ledger.evidence_file || ledger.evidence_file.endsWith('latest.json')) {
+    fail('ledger cites latest.json, which moves whenever any session re-reads');
+  }
+  n++;
+  if (!/^data\/live\/.+\.json$/.test(ledger.evidence_file || '')) fail('ledger evidence file path is not a timestamped file');
+  n++;
+  if (!ledger.replication) fail('no replication recorded');
+  else {
+    n++;
+    if (!/\d{4}-\d{2}-\d{2}T/.test(ledger.replication.finished_at || '')) fail('replication has no timestamp');
+    n++;
+    if (ledger.replication.finished_at === ledger.evidence_finished_at) fail('replication reuses the same run as the ledger');
+    n++;
+    if (ledger.replication.rows !== ledger.rows.length) fail('replication covered a different number of rows');
+  }
+  const html = await readFile(join(ROOT, 'live-audit.html'), 'utf8');
+  n++;
+  if (!html.includes('Replicated')) fail('live-audit.html does not state the replication');
+  return { assertions: n };
+});
+
 const failed = results.filter((r) => !r.ok);
 const doc = {
   pass: 'P87-audit',
