@@ -1,14 +1,14 @@
 {
-  "pass": "P80",
-  "generated_at": "2026-10-23T10:18:37Z",
+  "pass": "P80-545688f3",
+  "generated_at": "2026-10-23T10:30:11Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 20,
     "passed": 20,
     "failed": 0,
-    "assertions": 5410,
-    "rows": 59,
-    "pages": 93
+    "assertions": 6360,
+    "rows": 71,
+    "pages": 105
   },
   "groups": [
     {
@@ -120,7 +120,7 @@
       "total_assertions": 0,
       "failures": [],
       "failure_count": 0,
-      "pages_checked": 93
+      "pages_checked": 105
     },
     {
       "id": "S12",

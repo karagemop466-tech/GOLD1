@@ -5,9 +5,9 @@ A source-linked buying dashboard for **solid gold engagement rings**, built so t
 **Live site:** https://karagemop466-tech.github.io/GOLD1/ (plus standalone 13-row official-source evidence review at https://karagemop466-tech.github.io/GOLD1/site/)
 
 > ### No hallucinations. Read this first.
-> Every price, karat and gram figure on this site was copied from the seller's own official page and linked on the same row. **Nothing is estimated, averaged, inferred or remembered.** A value that could not be confirmed is printed as **— unverified** and listed on **Flagged for review**. Every build is re-tested by 20 anti-hallucination groups (S01–S20) plus 10 extended provenance/security groups (A01–A10), and the suite is deliberately sabotaged with a fake price to prove it fires.
+> Every price, karat and gram figure on this site was copied from the seller's own official page and linked on the same row. **Nothing is estimated, averaged, inferred or remembered.** A value that could not be confirmed is printed as **— unverified** and listed on **Flagged for review**. Every build is re-tested by 20 canonical anti-hallucination groups (S01–S20), 10 extended provenance/security groups (A01–A10), and 12 title-identity/5-karat/prose-parity groups (H01–H12) — and we actively recommend that readers look for hallucinations themselves against every linked official source.
 
-**Latest pass — 2026-10-23 (`arena/8dffa7e8-gold1`):** every one of the 59 listings was opened again at its own official product URL from an independent network. **39 prices reproduced exactly; 4 were corrected** against a quoted page line (wider size/variant ranges); **1 row was withdrawn** because Ross-Simons now sells a different ring under that SKU at the same price and weight (F51); **9 pages were blocked** by With Clarity, Cartier and Brilliant Earth, so those rows are labelled *not re-read* rather than presented as fresh (F53). New in this pass: a **12-point requirements scorecard** (`requirements.html`) that scores every row against the buyer's own checklist, and a **full re-check ledger** (`recheck.html`) with the quote behind every verdict.
+**Latest pass — 2026-10-23 (`arena/545688f3-gold1` building on `arena/8dffa7e8-gold1`):** **71 listings across 11 retailers** spanning **all 5 legal karat tiers** — **10K (4), 14K (50, incl. 1 withdrawn SKU), 18K (11), 22K (4, via Auvere LLC), and 24K (2, via Menē)** — with **25 published gram weights** (`0.3 g`–`7.0 g` across `10K`/`14K`/`18K`) and **21 explicit `"solid gold"` disclosures**. All 9 pages previously blocked by HTTP 403 on the Actions runner (5 With Clarity, 3 Cartier, 1 Brilliant Earth) were opened directly via storefront `.json` feeds and US PDPs, Menē 24K live spot-linked prices were updated (`$1,707` & `$1,361`), Ross-Simons SKU `939479` remains withdrawn (`F51`), Auvere's ambiguous `"Approximate Fine Weight"` size ranges and 15-day vs 30-day return contradiction are flagged (`F54`, `F55`), and `15 U.S.C. §§ 295, 297` trademark/assay statutes are anchored alongside `16 CFR Part 23`, NIST `31.1034768 g/ozt`, GIA `2024`/`2025` Lab Notes, and CFPB FCBA protections.
 
 Built and reconciled across research passes: **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), **arena/c2bbe753-gold1** (luxury leads in `docs/` & `data/rings_c2bbe753.json`), **arena/bc088451-gold1** & **arena/b93ff7c6-gold1** (reconciled P12 live re-reads & 6 Ross-Simons weights), **arena/c662efda-gold1** (standalone 13-row audit at `/site/` & `research/`), and **arena/0804e222-gold1** (100% live HTML PDP re-verification across all 43 inherited rows + 5 further recovered weights + 16 new primary-source verified `10K`/`14K`/`18K`/`24K` listings from Ross-Simons, Mejuri, Automic Gold, Cartier and Menē, 10-retailer policies & BBB grades, eCFR `16 CFR Part 23` + NIST `31.1034768 g/ozt` + GIA `2024`/`2025` XRF limits + CFPB FCBA dispute rules). All prior archives are preserved unmodified.
 
@@ -37,32 +37,35 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `sources.html` | Source registry, including sources that were checked and **rejected** |
 | `requirements.html` | **12-point requirements scorecard**: every listing scored against the buyer's checklist, with a shortlist of rows that meet every criterion checkable before paying |
 | `recheck.html` | **2026-10-23 re-check ledger**: what each seller printed, what was stored, the verdict and the verbatim quote |
-| `flagged.html` | 52 findings that need a human decision (published, non-blocking) |
+| `flagged.html` | 57 findings that need a human decision (published, non-blocking) |
 | `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
 | `checks.html` | Output of the latest automated verification pass and the pass history |
-| `data/rings.json` | The curated dataset — 59 rows across 10K, 14K, 18K and 24K, each with verbatim evidence |
-| `data/reverification.json` | Unified 59-row ledger of live primary-page reads: row, URL, checked fields, before/after, verdict and verbatim quote |
+| `data/rings.json` | The curated dataset — 71 listings across 10K (4), 14K (50), 18K (11), 22K (4) and 24K (2), each with verbatim evidence |
+| `data/reverification.json` | Unified 71-row ledger of live primary-page reads: row, URL, checked fields, before/after, verdict and verbatim quote |
 | `data/verification-2026-10-22.json` | Per-row line-by-line quote audit of the 43 inherited rows (`arena/277867af-gold1`) |
-| `data/verification-2026-10-23.json` | **This pass**: per-row live re-read of all 59 rows, with the verdict and quote for each |
+| `data/verification-2026-10-23.json` | Per-row live re-read of all 71 rows, with the verdict and quote for each |
 | `data/live/` | Raw evidence from the re-read workflow: parsed page signals, manual reads, HTTP status and timestamps |
 | `data/compliance.json` | Machine-readable 12-point scorecard behind `requirements.html` |
 | `data/session-0804e222/` | Isolated primary-source audit, retailer policies & BBB profiles, NIST/FTC/GIA/CFPB standards, and 16-ring expansion |
+| `data/session-545688f3/` | Isolated 2026-10-23 spot feed, 11th retailer Auvere (22K), 12-ring 10K–22K expansion, and line-by-line audit artifacts |
 | `data/archive/` | Preserved unmodified archives from earlier sessions (`session-6f8c2bcb`, `session-c662efda`) |
 | `site/` & `research/` | Standalone 13-row CSP-hardened evidence review (`arena/c662efda-gold1`) published at `/site/` |
 | `docs/` | Secondary category dashboard from `arena/c2bbe753-gold1` |
-| `data/sources.json` | Source registry with retrieval dates and status (54 entries incl. rejected 404s) |
-| `data/flagged.json` | Findings, severity, affected rows, source links (`49` published items) |
-| `data/retailers.json` | All 10 retailers' verified contacts, official return/resize terms, and BBB records |
-| `data/gold-price.json` | Gold spot (`3` timestamped readings) + COMEX cross-check + NIST exact `grams_per_troy_ounce` (`31.1034768`) |
+| `data/sources.json` | Source registry with retrieval dates and status (58 entries incl. rejected 404s) |
+| `data/flagged.json` | Findings, severity, affected rows, source links (`57` published items, `F01`–`F58`) |
+| `data/retailers.json` | All 11 retailers' verified contacts, official return/resize terms, and BBB records |
+| `data/gold-price.json` | Gold spot (`5` timestamped readings) + COMEX cross-check + NIST exact `grams_per_troy_ounce` (`31.1034768`) |
 | `data/checks/` | Latest canonical anti-hallucination pass and full pass history |
 | `scripts/integrate_0804e222.mjs` | Zero-loss, idempotent integrator merging `data/session-0804e222/*` into canonical `data/*.json` |
-| `scripts/build.mjs` | Root static site generator (91 HTML pages, zero runtime dependencies) |
+| `scripts/integrate_545688f3.mjs` | Zero-loss, idempotent integrator merging `data/session-545688f3/*` into canonical `data/*.json` |
+| `scripts/build.mjs` | Root static site generator (105 HTML pages, zero runtime dependencies) |
 | `scripts/verify.mjs` | Canonical anti-hallucination audit: **20 check groups (`S01`–`S20`)** |
 | `scripts/live_reverify.mjs` | Re-opens every official product page on a runner with full internet and records what it printed (never edits the curated data) |
 | `scripts/reconcile_live.mjs` | Applies only evidence-backed corrections, with a quote and URL for each, and writes the per-row ledger |
 | `scripts/build_compliance.mjs` | Builds the 12-point requirements scorecard |
 | `.github/workflows/reverify.yml` | Runs the re-read on demand and commits the evidence file |
-| `scripts/audit_0804e222.mjs` | Extended cross-file provenance, regulatory & HTML security/XSS audit (`A01`–`A10`, 1,491 assertions) |
+| `scripts/audit_0804e222.mjs` | Extended cross-file provenance, regulatory & HTML security/XSS audit (`A01`–`A10`) |
+| `scripts/audit_545688f3.mjs` | Deep title-identity, 5-karat-tier, prose-parity & security audit (`H01`–`H12`) |
 | `COORDINATION.md` | Shared task board, verification log and integration record |
 
 ---

@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "session": "sess-545688f3",
+  "audited_at": "2026-10-23T10:05:00Z",
+  "scope": "Line-by-line anti-hallucination, primary-source PDP/feed, prose, and script audit across all 59 inherited canonical listings, 12 newly added listings (including 4 Auvere 22K solid-gold rings), 11 retailers, COORDINATION.md, README.md, scripts/build.mjs, and scripts/verify.mjs.",
+  "canonical_data_corrections": [
+    {
+      "id": "rs-939479",
+      "severity": "critical_hallucination_fixed",
+      "file": "data/rings.json, data/reverification.json, data/sources.json",
+      "previous_claim": {
+        "title": "1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold",
+        "style": "Diamond eternity band",
+        "stone": "Diamond",
+        "stone_type": "Lab-grown diamond (1.00 ct. t.w.)",
+        "evidence_excerpt": "Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 1.5 grams · Lab-Grown Diamond 1.00 ct. t.w."
+      },
+      "live_official_truth": {
+        "url": "https://www.ross-simons.com/products/939479",
+        "retrieved_at": "2026-10-23",
+        "title": "Italian 14kt Yellow Gold Claddagh Ring",
+        "style": "Claddagh band",
+        "stone": "None",
+        "stone_type": null,
+        "price_usd": 499,
+        "karat": "14K",
+        "weight_g": 1.5,
+        "specs_verbatim": "Width: 3/8 inch · Metal: 14kt Yellow Gold · Gold Weight: 1.5 grams · Finish: Polished · Country of Origin: Italy"
+      },
+      "action": "Replaced fabricated eternity-band title, stone, and spec text with verbatim Claddagh Ring data across data/rings.json, data/reverification.json, and data/sources.json, and logged Flag F51 on Flagged for Review."
+    },
+    {
+      "id": "mej-10k-dlr",
+      "severity": "unverified_spec_quote_removed",
+      "file": "data/rings.json, data/reverification.json",
+      "previous_claim": "evidence quoted 'Band Thickness: 1.45 mm'",
+      "live_official_truth": "Live PDP https://mejuri.com/us/en/products/diamonds-line-ring (2026-10-23) publishes 'Band Width: 1.3 mm', 'Stone Quantity: 6', 'Total Carat Weight: >=0.047 ct', 'Solid Yellow Gold (10k)' ($348), with no 'Band Thickness: 1.45 mm' line, and gallery alt text contradicts 10k by stating 'crafted in 14k solid gold'.",
+      "action": "Removed unverified thickness string from evidence and flagged gallery alt-text mismatch (F54)."
+    },
+    {
+      "id": "mej-10k-sig",
+      "severity": "unverified_spec_quote_removed",
+      "file": "data/rings.json, data/reverification.json",
+      "previous_claim": "evidence quoted 'Thickness: 1.2 mm'",
+      "live_official_truth": "Live PDP https://mejuri.com/us/en/products/signet-ring (2026-10-23) publishes 'Band Width: 2.3 mm', 'Width: 5.5 mm', 'Solid Yellow Gold (10k)' ($348), with no 'Thickness: 1.2 mm' line, and gallery alt text states 'crafted in 14k solid gold'.",
+      "action": "Removed unverified thickness string from evidence and flagged gallery alt-text mismatch (F54)."
+    },
+    {
+      "id": "mene-24k-classic-band",
+      "severity": "live_spot_price_drift_updated",
+      "file": "data/rings.json, data/reverification.json, data/sources.json",
+      "previous_claim": "$1,720 (2026-10-22 snapshot)",
+      "live_official_truth": "Live PDP https://mene.com/products/mene-classic-band-gold (2026-10-23) displays '$1,707 USD' (and 'From $1,664' on size-floor recommendation cards), dynamically repriced with gold spot.",
+      "action": "Updated price_low/price_high to 1707, preserved 2026-10-22 history in reverification.json, and logged Flag F56."
+    },
+    {
+      "id": "mene-24k-narrow-band",
+      "severity": "live_spot_price_drift_updated",
+      "file": "data/rings.json, data/reverification.json, data/sources.json",
+      "previous_claim": "$1,372 (2026-10-22 snapshot)",
+      "live_official_truth": "Live PDP https://mene.com/products/mene-narrow-band-gold (2026-10-23) displays '$1,361 USD' (and 'From $1,300' on size-floor recommendation cards), dynamically repriced with gold spot.",
+      "action": "Updated price_low/price_high to 1361, preserved 2026-10-22 history in reverification.json, and logged Flag F56."
+    },
+    {
+      "id": "ag-14k-radiant-3ct",
+      "severity": "variant_note_drift_updated",
+      "file": "data/rings.json",
+      "previous_claim": "notes cited Nickel-Free 14k White Gold variant at $3,194",
+      "live_official_truth": "Live feed https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring.json (2026-10-23) prices 14k Yellow/Rose Gold at $3,074.00 (5.4g) and Nickel-Free 14k White Gold at $3,236.00.",
+      "action": "Updated notes to cite $3,236.00 for Nickel-Free 14k White Gold."
+    }
+  ],
+  "prose_and_code_defects_fixed": [
+    {
+      "file": "COORDINATION.md (§13 lines 404-409)",
+      "defect": "16 prose-only price strings in §13 summary did not match data/rings.json (e.g., rs-997811 written as $119 vs $89; ag-14k-radiant-3ct $3,890 vs $3,074; car-18k-etincelle-pear $2,620 vs $3,350; mene-24k-classic-band $2,489 vs $1,720/$1,707).",
+      "action": "Corrected §13 prose citations to exact primary-source figures with explicit audit correction note."
+    },
+    {
+      "file": "README.md",
+      "defect": "Stated '14K (45), 18K (9)' instead of actual 47 and 7; cited wrong flag IDs (F38-F43 instead of F42-F50); listed only S01-S17 instead of S01-S19 + A01-A10 + H01-H12.",
+      "action": "Synchronized all counts, karat distributions (10K, 14K, 18K, 22K, 24K), flag citations, and audit suites."
+    },
+    {
+      "file": "scripts/build.mjs",
+      "defect": "Hardcoded stale counts and wrong flag IDs on index.html/weights.html/methodology.html/checks.html prose paragraphs (e.g. '43 curated listings', '#F38', '#F41', '#F42', '10K, 14K, 18K, and 24K').",
+      "action": "Replaced stale static strings with live dataset-computed counts and accurate flag anchors, including 22K (91.7%) Auvere coverage."
+    },
+    {
+      "file": "scripts/verify.mjs",
+      "defect": "Groups S17, S18, and S19 shared a single outer `failures` array without block scoping, and S19 performed a redundant unused HTML walk.",
+      "action": "Isolated block-scoped `failures` arrays per group S17/S18/S19 and removed dead walk."
+    }
+  ]
+}

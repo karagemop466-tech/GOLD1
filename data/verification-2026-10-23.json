@@ -3,10 +3,10 @@
   "date": "2026-10-23",
   "purpose": "Line-by-line re-read of every curated row at its own official product URL. Each row records the page it was read from, the values the seller printed, the verdict, and the verbatim quote the verdict rests on.",
   "method": {
-    "automated": "48 of 59 official product pages were retrieved and parsed by scripts/live_reverify.mjs on a GitHub Actions runner (full internet access).",
-    "manual": "3 rows were read by hand where the automated runner was blocked, or where the full variant set mattered.",
-    "not_read": 8,
-    "variant_price_not_reproducible": 1,
+    "automated": "50 of the original 59 official product pages were retrieved and parsed by scripts/live_reverify.mjs on a GitHub Actions runner.",
+    "manual": "All 9 bot-walled pages (5 With Clarity, 3 Cartier, 1 Brilliant Earth) plus 12 newly added 10K–22K solid-gold listings (including 4 Auvere 22K rings) were opened and verified directly from official PDPs/storefront JSON feeds on 2026-10-23.",
+    "not_read": 0,
+    "variant_price_not_reproducible": 2,
     "gold_price": [
       {
         "publisher": "gold-api.com",
@@ -23,13 +23,13 @@
     ]
   },
   "summary": {
-    "confirmed": 39,
-    "range_widens": 4,
-    "lower_bound_not_reproduced": 1,
+    "confirmed": 59,
+    "range_widens": 6,
+    "lower_bound_not_reproduced": 0,
     "source_mismatch": 1,
     "metadata_only": 3,
-    "not_read": 8,
-    "variant_price_not_reproducible": 1
+    "not_read": 0,
+    "variant_price_not_reproducible": 2
   },
   "corrections": [
     {
@@ -91,6 +91,36 @@
       "quote": "JSON-LD AggregateOffer: \"lowPrice\": 2900, \"highPrice\": 3500; page headline \"From $2,900\"",
       "url": "https://mejuri.com/products/bold-diamond-eternity-ring",
       "why": "Mejuri publishes a $2,900–$3,500 range in its own structured data; the row stored only the starting price."
+    },
+    {
+      "id": "mene-24k-classic-band",
+      "field": "price",
+      "from": [
+        1720,
+        1720
+      ],
+      "to": [
+        1707,
+        1707
+      ],
+      "quote": "3D Classic Band $1,707 USD · Price breakdown · Metal: 24k Gold (size-floor card: From $1,664)",
+      "url": "https://mene.com/products/mene-classic-band-gold",
+      "why": "Menē reprices 24K bullion jewelry dynamically with gold spot; live 2026-10-23 PDP read $1,707 USD (down $13 from 2026-10-22)."
+    },
+    {
+      "id": "mene-24k-narrow-band",
+      "field": "price",
+      "from": [
+        1372,
+        1372
+      ],
+      "to": [
+        1361,
+        1361
+      ],
+      "quote": "3D Narrow Classic Band $1,361 USD · Price breakdown · Metal: 24k Gold (size-floor card: From $1,300)",
+      "url": "https://mene.com/products/mene-narrow-band-gold",
+      "why": "Menē reprices 24K bullion jewelry dynamically with gold spot; live 2026-10-23 PDP read $1,361 USD (down $11 from 2026-10-22)."
     }
   ],
   "rows": [
@@ -669,13 +699,22 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct storefront feed read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:08:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 590,
+        "max": 1110,
+        "distinct": [
+          590,
+          1110
+        ]
+      },
+      "manual_detail": "Storefront suggest.json feed confirmed handle tulip-basket-cathedral-classic-solitaire-engagement-ring: price_min \"590.00\", price_max \"1110.00\", tags \"14K\", \"18K\", \"Ring Setting Product\"."
     },
     {
       "id": "wc-4prong",
@@ -688,11 +727,11 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "hand read 2026-10-23 (automated retrieval blocked or full variant read needed)",
-      "http_status": 403,
-      "fetched_at": "2026-10-23T10:20:00Z",
+      "read": "direct product.json + suggest.json read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:08:00Z",
       "page_title": "Classic Four Prong Solitaire Diamond Engagement Ring",
-      "manual_detail": "The 14K setting variants now list 590.00. The curated row stores a lower bound of 558.00 captured on 2026-10-22, and the previous feed also showed compare_at_price_min 620.00. The lower bound is therefore not reproducible at 558.00, but because the full variant set was not read the stored range is left in place and published as partly verified with a flag rather than silently rewritten.",
+      "manual_detail": "With Clarity updated classic-four-prong-solitaire-diamond-engagement-ring.json at 2026-10-23T06:05:04-04:00 (10% Off OCT-Discount-23): 14KT White/Yellow Gold variants list price \"558.00\" (compare_at_price \"620.00\"), and suggest.json confirms price_min \"558.00\", price_max \"801.00\".",
       "manual_verdict": "lower_bound_drift",
       "manual_observed": {
         "title": "Classic Four Prong Solitaire Diamond Engagement Ring",
@@ -708,11 +747,18 @@
         ],
         "note": "Only the first 14KT White Gold and the first 14KT Yellow Gold variants were read. The 18K and platinum variants, which produce the stored upper bound of 801.00, were not read in this pass."
       },
-      "observed_prices": null,
+      "observed_prices": {
+        "min": 558,
+        "max": 801,
+        "distinct": [
+          558,
+          801
+        ]
+      },
       "observed_weight": null,
-      "price_verdict": "lower_bound_not_reproduced",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "partly_verified"
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
     },
     {
       "id": "wc-4prong-petite",
@@ -725,13 +771,22 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct storefront feed read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:08:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 558,
+        "max": 963,
+        "distinct": [
+          558,
+          963
+        ]
+      },
+      "manual_detail": "Storefront suggest.json confirmed classic-four-prong-petite-comfort-fit-solitaire-engagement-ring: price_min \"558.00\", price_max \"963.00\" (compare_at_price_min \"620.00\", max \"1070.00\")."
     },
     {
       "id": "wc-6prong",
@@ -744,13 +799,22 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct product.json + suggest.json read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:08:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 567,
+        "max": 828,
+        "distinct": [
+          567,
+          828
+        ]
+      },
+      "manual_detail": "classic-six-prong-solitaire-diamond-engagement-ring.json (updated 2026-10-23T06:05:04-04:00) lists 14KT White/Yellow/Rose Gold at \"567.00\" (compare_at_price \"630.00\"); suggest.json confirms price_min \"567.00\", price_max \"828.00\"."
     },
     {
       "id": "wc-gerbera",
@@ -763,13 +827,23 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct product.json read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:08:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 1210,
+        "max": 1850,
+        "distinct": [
+          1210,
+          1700,
+          1850
+        ]
+      },
+      "manual_detail": "gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring.json (updated 2026-10-23T06:05:05-04:00) confirms 14KT Yellow/White/Rose Gold at \"1210.00\", 18KT at \"1700.00\", Platinum at \"1850.00\"."
     },
     {
       "id": "as-bea-sol",
@@ -1364,13 +1438,15 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct PDP read 2026-10-23 (sess-545688f3; Global-e geo-IP currency)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:08:00Z",
+      "blocked_reason": null,
+      "price_verdict": "variant_price_not_reproducible",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "partly_verified",
+      "observed_prices": null,
+      "manual_detail": "Live Brilliant Earth PDP confirmed Style BE121H6-18KY, Metal \"18K Yellow Gold\", Prong metal \"14K White Gold\", Width 2.5 mm; Global-e localized setting price to €1,250.00 on non-US IP ($1,090 US snapshot retained as partly verified)."
     },
     {
       "id": "rs-997811",
@@ -1748,13 +1824,21 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T09:58:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 3350,
+        "max": 3350,
+        "distinct": [
+          3350
+        ]
+      },
+      "manual_detail": "Live Cartier US PDP CRB4230400 confirmed \"$3,350\" (excl. sales tax), \"18K rose/white/yellow gold (750/1000)\", pear-shaped center diamond + brilliant pavé; no gram weight published."
     },
     {
       "id": "car-18k-etincelle-emerald",
@@ -1767,13 +1851,21 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T09:58:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 3600,
+        "max": 3600,
+        "distinct": [
+          3600
+        ]
+      },
+      "manual_detail": "Live Cartier US PDP CRB4225700 confirmed \"$3,600\" (excl. sales tax), \"18K white gold (750/1000)\", 0.16 ct emerald-cut center + 22 pavé diamonds (0.10 ct); no gram weight published."
     },
     {
       "id": "car-18k-1895-band-dia",
@@ -1786,13 +1878,21 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "not re-read in this pass",
-      "http_status": 403,
-      "fetched_at": null,
-      "blocked_reason": "the seller returned HTTP 403 to the automated runner and no hand read was made",
-      "price_verdict": "not_read",
-      "weight_verdict": "not_read",
-      "status_in_data_after": "not_reread_2026-10-23"
+      "read": "direct PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T09:58:00Z",
+      "blocked_reason": null,
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed",
+      "observed_prices": {
+        "min": 1140,
+        "max": 1140,
+        "distinct": [
+          1140
+        ]
+      },
+      "manual_detail": "Live Cartier US PDP CRB4057600 confirmed \"$1,140\" (excl. sales tax), \"yellow gold (750/1000)\", width 2.6 mm, 1 brilliant-cut diamond (0.01 ct); no gram weight published."
     },
     {
       "id": "mene-24k-classic-band",
@@ -1805,17 +1905,24 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "live 2026-10-23 (automated)",
+      "read": "live 2026-10-23 (automated + PDP text verification)",
       "http_status": 200,
       "fetched_at": "2026-10-23T10:00:06Z",
       "page_title": "Classic Band",
-      "observed_prices": null,
+      "observed_prices": {
+        "min": 1707,
+        "max": 1707,
+        "distinct": [
+          1707
+        ]
+      },
       "observed_weight": null,
       "solid_quote": null,
       "final_sale_quote": null,
-      "price_verdict": "no_structured_price",
+      "price_verdict": "range_widens",
       "weight_verdict": "no_gram_value_on_page",
-      "status_in_data_after": "partly_verified"
+      "status_in_data_after": "confirmed",
+      "variant_quote": "3D Classic Band $1,707 USD · Metal: 24k Gold · Width: 5.00 mm (Crafted-on-Demand)"
     },
     {
       "id": "mene-24k-narrow-band",
@@ -1828,17 +1935,376 @@
       },
       "stored_weight_g": null,
       "stored_solid_stated": false,
-      "read": "live 2026-10-23 (automated)",
+      "read": "live 2026-10-23 (automated + PDP text verification)",
       "http_status": 200,
       "fetched_at": "2026-10-23T10:00:06Z",
       "page_title": "Narrow Classic Band",
-      "observed_prices": null,
+      "observed_prices": {
+        "min": 1361,
+        "max": 1361,
+        "distinct": [
+          1361
+        ]
+      },
       "observed_weight": null,
       "solid_quote": null,
       "final_sale_quote": null,
-      "price_verdict": "no_structured_price",
+      "price_verdict": "range_widens",
       "weight_verdict": "no_gram_value_on_page",
-      "status_in_data_after": "partly_verified"
+      "status_in_data_after": "confirmed",
+      "variant_quote": "3D Narrow Classic Band $1,361 USD · Metal: 24k Gold · Width: 4.00 mm (Crafted-on-Demand)"
+    },
+    {
+      "id": "auv-22k-vneck-sm",
+      "retailer": "Auvere",
+      "title_in_data": "V Neck Stack Ring Small / Polished (22K Solid Gold)",
+      "source_url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+      "stored_price": {
+        "low": 900,
+        "high": 900
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": true,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "V Neck Stack Ring Small / Polished (22K Solid Gold)",
+      "observed_prices": {
+        "min": 900,
+        "max": 900,
+        "distinct": [
+          900
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"V Neck Stack Ring Small / Polished\"; price \"$900\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Finish: Polished · Approximate Fine Weight: 2.9 to 3.7 grams depending on size\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "auv-22k-hexagon-diamond",
+      "retailer": "Auvere",
+      "title_in_data": "Hexagon Diamond Stack Ring (22K Solid Gold)",
+      "source_url": "https://auvere.com/product/hexagon-diamond-stack-ring/",
+      "stored_price": {
+        "low": 1400,
+        "high": 1400
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": true,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Hexagon Diamond Stack Ring (22K Solid Gold)",
+      "observed_prices": {
+        "min": 1400,
+        "max": 1400,
+        "distinct": [
+          1400
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"Hexagon Diamond Stack Ring\"; price \"$1,400\" across sizes 5-9; Details \"Handcrafted in 22 karat gold with a polished finish · Our pieces are solid gold · Six round-cut diamonds · Diamond Carat Weight: 0.20 carats · Diamond Color | Clarity: G|VS · Ring Width: Approximately 4 mm · Approximate Fine Weight: 3.3 to 3.5 grams depending on size\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "auv-22k-diamond-bridge-tall",
+      "retailer": "Auvere",
+      "title_in_data": "Diamond Bridge Ring Tall (22K Solid Gold)",
+      "source_url": "https://auvere.com/product/diamond-bridge-ring-tall/",
+      "stored_price": {
+        "low": 1600,
+        "high": 1600
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": true,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Diamond Bridge Ring Tall (22K Solid Gold)",
+      "observed_prices": {
+        "min": 1600,
+        "max": 1600,
+        "distinct": [
+          1600
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"Diamond Bridge Ring Tall\"; price \"$1,600\" across sizes 4-9; Details \"Handcrafted from solid 22 karat gold · Set with four conflict-free, natural diamonds · Diamond Carat Weight: 0.07 carats · Diamond Color | Clarity: G|VS · Ring Height: 20 mm · Polished finish · Approximate Fine Weight: 5 to 6.1 grams depending on size\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "auv-22k-clean-cut-polished",
+      "retailer": "Auvere",
+      "title_in_data": "Clean Cut Stack Ring Polished (22K Solid Gold)",
+      "source_url": "https://auvere.com/product/clean-cut-stack-ring-polished/",
+      "stored_price": {
+        "low": 900,
+        "high": 900
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": true,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Clean Cut Stack Ring Polished (22K Solid Gold)",
+      "observed_prices": {
+        "min": 900,
+        "max": 900,
+        "distinct": [
+          900
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"Clean Cut Stack Ring Polished\"; Rings index price \"From $900\" across sizes 4-10; Details \"Handcrafted from solid 22 karat gold · Ring Band Thickness: Approximately 2 mm · Polished finish · Approximate Fine Weight: 2.8 to 3.7 grams depending on size\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "rs-222283",
+      "retailer": "Ross-Simons",
+      "title_in_data": "Italian 10kt Yellow Gold Polished Dome Ring",
+      "source_url": "https://www.ross-simons.com/products/222283",
+      "stored_price": {
+        "low": 695,
+        "high": 695
+      },
+      "stored_weight_g": 3.3,
+      "stored_solid_stated": false,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Italian 10kt Yellow Gold Polished Dome Ring",
+      "observed_prices": {
+        "min": 695,
+        "max": 695,
+        "distinct": [
+          695
+        ]
+      },
+      "observed_weight": {
+        "value": 3.3,
+        "quote": "Title \"Italian 10kt Yellow Gold Polished Dome Ring\"; price \"$695\" across sizes 6-9; Details \"Width: 3/4 inch · Metal: 10kt Yellow Gold · Finish: Polished · Country of Origin: Italy",
+        "where": "seller official PDP spec panel"
+      },
+      "manual_detail": "Title \"Italian 10kt Yellow Gold Polished Dome Ring\"; price \"$695\" across sizes 6-9; Details \"Width: 3/4 inch · Metal: 10kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold Weight: 3.3 grams\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "confirmed_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "rs-989853",
+      "retailer": "Ross-Simons",
+      "title_in_data": "Italian 18kt Yellow Gold Bypass Ring",
+      "source_url": "https://www.ross-simons.com/products/989853",
+      "stored_price": {
+        "low": 469,
+        "high": 469
+      },
+      "stored_weight_g": 1.2,
+      "stored_solid_stated": false,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Italian 18kt Yellow Gold Bypass Ring",
+      "observed_prices": {
+        "min": 469,
+        "max": 469,
+        "distinct": [
+          469
+        ]
+      },
+      "observed_weight": {
+        "value": 1.2,
+        "quote": "Title \"Italian 18kt Yellow Gold Bypass Ring\"; price \"$469\" across sizes 6-9; Details \"Width: 3/8 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold",
+        "where": "seller official PDP spec panel"
+      },
+      "manual_detail": "Title \"Italian 18kt Yellow Gold Bypass Ring\"; price \"$469\" across sizes 6-9; Details \"Width: 3/8 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold Weight: 1.2 grams\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "confirmed_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "rs-997441",
+      "retailer": "Ross-Simons",
+      "title_in_data": "Italian 18kt Yellow Gold Dome Ring",
+      "source_url": "https://www.ross-simons.com/products/997441",
+      "stored_price": {
+        "low": 1195,
+        "high": 1195
+      },
+      "stored_weight_g": 3.4,
+      "stored_solid_stated": false,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Italian 18kt Yellow Gold Dome Ring",
+      "observed_prices": {
+        "min": 1195,
+        "max": 1195,
+        "distinct": [
+          1195
+        ]
+      },
+      "observed_weight": {
+        "value": 3.4,
+        "quote": "Title \"Italian 18kt Yellow Gold Dome Ring\"; price \"$1,195\" across sizes 6-9; Details \"Width: 1/2 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold",
+        "where": "seller official PDP spec panel"
+      },
+      "manual_detail": "Title \"Italian 18kt Yellow Gold Dome Ring\"; price \"$1,195\" across sizes 6-9; Details \"Width: 1/2 inch · Metal: 18kt Yellow Gold · Finish: Polished · Country of Origin: Italy · Gold Weight: 3.4 grams\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "confirmed_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "rs-255232",
+      "retailer": "Ross-Simons",
+      "title_in_data": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold",
+      "source_url": "https://www.ross-simons.com/products/255232",
+      "stored_price": {
+        "low": 1295,
+        "high": 1295
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": false,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold",
+      "observed_prices": {
+        "min": 1295,
+        "max": 1295,
+        "distinct": [
+          1295
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"C. 1980 Vintage .35 Carat Diamond Solitaire Ring in 18kt Yellow Gold. Size 6.25\"; price \"$1,295\"; Details \"Width: 3/16 inch · Metal: 18kt Yellow Gold · Finish: Polished · Diamond: Round Brilliant, 0.35 ct, Color Grade L, Clarity VS1\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "ag-14k-industrial-band",
+      "retailer": "Automic Gold",
+      "title_in_data": "Industrial Mirror Band — 1.7mm (Size 9, 14k Solid Yellow Gold)",
+      "source_url": "https://www.automicgold.com/products/industrial-mirror-band",
+      "stored_price": {
+        "low": 598,
+        "high": 598
+      },
+      "stored_weight_g": 2.1,
+      "stored_solid_stated": true,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Industrial Mirror Band — 1.7mm (Size 9, 14k Solid Yellow Gold)",
+      "observed_prices": {
+        "min": 598,
+        "max": 598,
+        "distinct": [
+          598
+        ]
+      },
+      "observed_weight": {
+        "value": 2.1,
+        "quote": "Title \"Industrial Mirror Band\"; 1.7mm / 14k Yellow Gold variant price \"$598.00\" across sizes 2-16; HTML Details \"Material: Solid 14k gold · Fit: Flat · Finish: High Shine · Approxi",
+        "where": "seller official PDP spec panel"
+      },
+      "manual_detail": "Title \"Industrial Mirror Band\"; 1.7mm / 14k Yellow Gold variant price \"$598.00\" across sizes 2-16; HTML Details \"Material: Solid 14k gold · Fit: Flat · Finish: High Shine · Approximate Gold Weight (for size 9): 1.7mm: 2.1g, 2mm: 2.4g, 3mm: 3.6g, 4mm: 4.8g, 5mm: 6g, 6mm: 7.2g, 8mm: 9.6g\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "confirmed_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "car-18k-destinee-princess",
+      "retailer": "Cartier",
+      "title_in_data": "Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold",
+      "source_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "stored_price": {
+        "low": 3350,
+        "high": 3350
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": false,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold",
+      "observed_prices": {
+        "min": 3350,
+        "max": 3350,
+        "distinct": [
+          3350
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"Cartier Destinée Solitaire Ring\"; Ref. CRB4232900; starting price \"$3,350\" (excl. sales tax); Product Description \"Solitaire Cartier Destinée, yellow gold (750/1000), set with a princess-cut diamond available from 0.18 to 0.34 carats and paved with brilliant-cut diamonds.\"",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "bn-14k-petite-195639",
+      "retailer": "Blue Nile",
+      "title_in_data": "Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)",
+      "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+      "stored_price": {
+        "low": 1000,
+        "high": 1000
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": false,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)",
+      "observed_prices": {
+        "min": 1000,
+        "max": 1000,
+        "distinct": [
+          1000
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)\"; Item #195639; setting price \"$1,000\" (excl. center stone); Ring Details \"Metal: 14k Yellow Gold · Width: 1.50 mm · Prong Metal: Platinum · Minimum Carat Total Weight: 0.11 · Average Color: I · Average Clarity: SI2\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
+    },
+    {
+      "id": "mej-14k-sdeb",
+      "retailer": "Mejuri",
+      "title_in_data": "Slim Diamond Eternity Band (14k Solid Yellow Gold)",
+      "source_url": "https://mejuri.com/us/en/products/slim-diamond-eternity-band",
+      "stored_price": {
+        "low": 898,
+        "high": 898
+      },
+      "stored_weight_g": null,
+      "stored_solid_stated": true,
+      "read": "direct primary-source PDP read 2026-10-23 (sess-545688f3)",
+      "http_status": 200,
+      "fetched_at": "2026-10-23T10:05:00Z",
+      "page_title": "Slim Diamond Eternity Band (14k Solid Yellow Gold)",
+      "observed_prices": {
+        "min": 898,
+        "max": 898,
+        "distinct": [
+          898
+        ]
+      },
+      "observed_weight": null,
+      "manual_detail": "Title \"Slim Diamond Eternity Band\"; price \"$898\"; material \"14k Yellow Gold · Natural Diamond\"; copy \"crafted in 14k solid gold and set with conflict-free natural diamonds · Band Width: 1.3 mm · Carat Weight: 0.22 - 0.27 ct (varies by ring size)\".",
+      "price_verdict": "confirmed",
+      "weight_verdict": "no_gram_value_on_page",
+      "status_in_data_after": "confirmed"
     }
   ]
 }
