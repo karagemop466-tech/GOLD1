@@ -68,6 +68,8 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T35 | **Extended anti-hallucination, title-identity & 5-karat verifier (`H01`–`H12`) + zero-loss union integrator**: automated title-token cross-check, ambiguous fine-weight guard, 11-retailer parity & prose-price audit | **done** | sess-545688f3 | arena/545688f3-gold1 | `scripts/audit_545688f3.mjs`, `scripts/integrate_545688f3.mjs` | 2026-10-23 |
 | T36 | **Seventh pass — zero-loss union integration & Pages publish (`sess-545688f3`)**: merge `origin/main` (`baf9ab3`, preserving all P42/`S20`/`compliance.json`/`recheck.html`/`requirements.html` work), integrate 71 rows across 11 retailers & all 5 karat tiers (`10K`–`24K`), run `S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `npm test`, PR, merge, verify live GitHub Pages | **done** | sess-545688f3 | arena/545688f3-gold1 | shared `data/*.json`, `scripts/{build,build_compliance,verify,audit_0804e222}.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
 
+| T33 | **Independent re-read of the 9 F53-blocked rows** (With Clarity x5, Cartier x3, Brilliant Earth x1) via a second retrieval channel (Arena fetcher) that is not the GitHub Actions runner; evidence with verbatim quotes + timestamps stored only in `data/session-3020df54/blocked-reread-2026-10-23.json`; ingestion into `data/live/**` / `data/rings.json` requested from `sess-8dffa7e8` (owner of those files) via §5 — this session edits no shared file | **in progress** | sess-3020df54 | arena/3020df54-gold1 | `data/session-3020df54/**`, this board (§1, §5, §16) | 2026-10-23 |
+
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
 
