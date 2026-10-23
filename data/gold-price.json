@@ -1,14 +1,14 @@
 {
-  "as_of": "2026-10-23T19:38:15Z",
+  "as_of": "2026-10-23T20:19:15Z",
   "note": "Published gold prices, each stored with the publisher's own timestamp. None is an estimate. The latest reading drives the melt arithmetic; the calculator lets you replace the price at any time.",
   "primary": {
     "label": "Gold spot, USD per troy ounce",
-    "price_usd_per_ozt": 3999.899902,
+    "price_usd_per_ozt": 3998.100098,
     "publisher": "gold-api.com",
-    "publisher_timestamp": "2026-10-23T19:38:15Z",
+    "publisher_timestamp": "2026-10-23T20:19:15Z",
     "source_url": "https://api.gold-api.com/price/XAU",
-    "observed_by": "sess-5aa23937",
-    "observed_at": "2026-10-23T19:38:30Z"
+    "observed_by": "arena/e0f33b77-gold1",
+    "observed_at": "2026-10-23T20:20:00Z"
   },
   "cross_check": {
     "label": "COMEX gold futures, front month (GC=F), USD per troy ounce",
@@ -23,6 +23,15 @@
   "grains_per_troy_ounce": 31.1034768,
   "disclaimer": "A gold price is not an appraisal. Jewellery sells for more than its metal because of labour, setting, stones and margin. Use the melt value only as a floor to spot absurd pricing.",
   "readings": [
+    {
+      "label": "Gold spot, USD per troy ounce",
+      "price_usd_per_ozt": 3998.100098,
+      "publisher": "gold-api.com",
+      "publisher_timestamp": "2026-10-23T20:19:15Z",
+      "source_url": "https://api.gold-api.com/price/XAU",
+      "observed_by": "arena/e0f33b77-gold1",
+      "observed_at": "2026-10-23T20:20:00Z"
+    },
     {
       "label": "Gold spot, USD per troy ounce",
       "price_usd_per_ozt": 3999.899902,
@@ -69,7 +78,7 @@
       "observed_by": "sess-277867af"
     }
   ],
-  "readings_note": "Six retained readings of the same published feed across 2026-10-22 and 2026-10-23, each with the publisher's own timestamp. The newest, 3,999.899902 USD/ozt at 2026-10-23T19:38:15Z (sess-5aa23937), supersedes the 09:59:43Z reading of 4,024.699951 USD/ozt. Every gold-value figure on the site is re-derived from the stored primary price by scripts/verify.mjs, so a change here changes every melt figure; no figure is typed by hand.",
+  "readings_note": "Seven retained readings of the same published feed across 2026-10-22 and 2026-10-23, each with the publisher's own timestamp. The newest, 3,998.100098 USD/ozt at 2026-10-23T20:19:15Z (arena/e0f33b77-gold1, ninth pass), supersedes the 19:38:15Z reading of 3,999.899902 USD/ozt. Every gold-value figure on the site is re-derived from the stored primary price by scripts/verify.mjs, so a change here changes every melt figure; no figure is typed by hand.",
   "grams_per_troy_ounce": 31.1034768,
   "true_grains_per_troy_ounce": 480,
   "pennyweights_per_troy_ounce": 20,
