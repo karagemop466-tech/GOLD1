@@ -31,13 +31,14 @@ const [ringsDoc, retailersDoc, flagsDoc, gold, checklist, compliance, verificati
     readJson('data/verification-2026-10-23.json'),
     readJson('data/sources.json'),
   ]);
-const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, verifySource] = await Promise.all([
+const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, verifySource, reconciler] = await Promise.all([
   readText('README.md'),
   readText('scripts/build_compliance.mjs'),
   readText('scripts/build.mjs'),
   readText('assets/js/app.js'),
   readText('index.html'),
   readText('scripts/verify.mjs'),
+  readText('scripts/reconcile_live.mjs'),
 ]);
 const eveningVerification = existsSync(join(ROOT, 'data/verification-2026-10-23-evening-dab93754.json'))
   ? await readJson('data/verification-2026-10-23-evening-dab93754.json')
@@ -185,6 +186,12 @@ await group('R02', 'Verification verdicts agree with observed bounds and weights
       row: r.id, id: 'CANONICAL_PROSE_CONTRADICTS_SCHEMA', path: 'data/rings.json',
     });
   }
+  check(/prices\.max < hi/.test(reconciler), failure, 'P42 reconciler never detects an observed range that fails to reproduce the stored upper bound', {
+    id: 'RECONCILER_IGNORES_UPPER_BOUND', path: 'scripts/reconcile_live.mjs',
+  });
+  check(!/else if \(rec\.price_verdict === 'confirmed' \|\| rec\.price_verdict === 'range_widens'\) \{\s*row\.verification_status = 'confirmed'/.test(reconciler), failure, 'P42 reconciler marks rows confirmed from price alone, even when a stored weight was not reproduced or a range-widening observation was not explicitly applied', {
+    id: 'RECONCILER_OVERSTATES_OVERALL_STATUS', path: 'scripts/reconcile_live.mjs',
+  });
 });
 
 /* R03 — no average, unpaired range, or source-mismatch melt math. */
