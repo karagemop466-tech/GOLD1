@@ -1347,6 +1347,8 @@ const VERDICT_LABEL = {
   not_read: { t: 'not re-read', k: 'info' },
 };
 
+const blockedRows = liveCheck.rows.filter((r) => r.http_status === 403);
+const fullyBlocked = liveCheck.rows.filter((r) => r.price_verdict === 'not_read');
 const recheckPage = layout({
   title: 'Re-check — 2026-10-23',
   description:
@@ -1356,14 +1358,14 @@ const recheckPage = layout({
   body: `
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read} could not be re-read because the seller blocked automated retrieval, and they say so instead of pretending to be fresh.</p>
+  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.</p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">
     ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}
     ${stat(`${liveCheck.corrections.length}`, 'prices corrected', 'Only where the seller\'s own page contradicted the stored value and the replacement is quoted below.')}
     ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn', 'SKU 939479 now sells a different ring. See F51.')}
-    ${stat(`${liveCheck.summary.not_read}`, 'not re-read today', 'With Clarity (5), Cartier (3) and Brilliant Earth (1) returned HTTP 403. See F53.')}
+    ${stat(`${blockedRows.length}`, 'rows blocked by the seller', `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. With Clarity (5), Cartier (3) and Brilliant Earth (1) returned HTTP 403. See F53.`)}
     ${stat(`${compliance.gold_reference.price_usd_per_ozt.toLocaleString('en-US', { maximumFractionDigits: 2 })}`, 'USD per troy ounce, spot', `${esc(compliance.gold_reference.publisher)} at ${esc(compliance.gold_reference.publisher_timestamp)}.`)}
   </div>
 
