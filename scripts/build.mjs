@@ -1563,7 +1563,11 @@ const eveningPage = eveningLedger
           pair && pair[0] != null
             ? usd(pair[0]) + (pair[1] != null && pair[1] !== pair[0] ? '–' + usd(pair[1]) : '')
             : null;
-        const obs = range(r.observed_price) || range(r.variant_price_range) || '—';
+        const obs =
+          range(r.observed_price) ||
+          range(r.matched_variant_prices) ||
+          range(r.runner_observed_prices) ||
+          (r.variant_price_range ? `variant range ${range(r.variant_price_range)}` : '—');
         const w =
           r.verdict === 'withdrawn_source_mismatch'
             ? '— (withdrawn row)'
@@ -1588,7 +1592,7 @@ const eveningPage = eveningLedger
   </table>
   </div>
 
-  <h2>This pass’s own audit (N01–N09)</h2>
+  <h2>This pass’s own audit (N01–N11)</h2>
   ${
     eveningAudit
       ? `<p class="sub">${eveningAudit.groups - eveningAudit.failures}/${eveningAudit.groups} groups passed, ${eveningAudit.assertions.toLocaleString('en-US')} assertions, ${eveningAudit.failures} failure(s). Group N09 was sabotage-tested: an external link without <code>rel="noopener"</code> and an unreplaced template expression were injected into a temporary page, both were caught, and the page was removed.</p>

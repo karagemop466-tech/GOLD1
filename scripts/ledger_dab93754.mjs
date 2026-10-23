@@ -67,6 +67,7 @@ const rows = compare.rows.map((r) => {
     runner_verdict: r.verdict,
     runner_price_source: r.price_source,
     runner_observed_prices: r.observed_page_prices,
+    matched_variant_prices: [...new Set((r.matched_variants || []).map((v) => Number(v.price)))].sort((a, b) => a - b),
     variant_feed_status: r.variant_feed_status,
     variant_price_range: r.variant_price_range,
     weight_reproduced_today: r.weight_reproduced,

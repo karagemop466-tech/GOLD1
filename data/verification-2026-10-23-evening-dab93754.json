@@ -184,6 +184,9 @@
       "runner_observed_prices": [
         400
       ],
+      "matched_variant_prices": [
+        400
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         400,
@@ -228,6 +231,9 @@
       "runner_observed_prices": [
         599
       ],
+      "matched_variant_prices": [
+        599
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         599,
@@ -256,6 +262,10 @@
         849,
         799
       ],
+      "matched_variant_prices": [
+        799,
+        849
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         799,
@@ -281,6 +291,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        959
+      ],
+      "matched_variant_prices": [
         959
       ],
       "variant_feed_status": 200,
@@ -310,6 +323,9 @@
       "runner_observed_prices": [
         149
       ],
+      "matched_variant_prices": [
+        149
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         149,
@@ -335,6 +351,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        179
+      ],
+      "matched_variant_prices": [
         179
       ],
       "variant_feed_status": 200,
@@ -364,6 +383,9 @@
       "runner_observed_prices": [
         399
       ],
+      "matched_variant_prices": [
+        399
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         399,
@@ -389,6 +411,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        2695
+      ],
+      "matched_variant_prices": [
         2695
       ],
       "variant_feed_status": 200,
@@ -419,6 +444,10 @@
         489,
         559
       ],
+      "matched_variant_prices": [
+        489,
+        559
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         489,
@@ -444,6 +473,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        2795
+      ],
+      "matched_variant_prices": [
         2795
       ],
       "variant_feed_status": 200,
@@ -473,6 +505,9 @@
       "runner_observed_prices": [
         2795
       ],
+      "matched_variant_prices": [
+        2795
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         2795,
@@ -500,6 +535,9 @@
       "runner_observed_prices": [
         1795
       ],
+      "matched_variant_prices": [
+        1795
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1795,
@@ -525,6 +563,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        2395
+      ],
+      "matched_variant_prices": [
         2395
       ],
       "variant_feed_status": 200,
@@ -555,6 +596,10 @@
         1439,
         1269
       ],
+      "matched_variant_prices": [
+        1269,
+        1439
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1269,
@@ -580,6 +625,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        2195
+      ],
+      "matched_variant_prices": [
         2195
       ],
       "variant_feed_status": 200,
@@ -609,6 +657,9 @@
       "runner_observed_prices": [
         695
       ],
+      "matched_variant_prices": [
+        695
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         695,
@@ -636,6 +687,9 @@
       "runner_observed_prices": [
         8995
       ],
+      "matched_variant_prices": [
+        8995
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         8995,
@@ -661,6 +715,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -683,6 +738,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -705,6 +761,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -727,6 +784,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -749,6 +807,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -771,6 +830,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [],
+      "matched_variant_prices": [
+        11500
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         11500,
@@ -796,6 +858,10 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [],
+      "matched_variant_prices": [
+        7150,
+        9200
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         7150,
@@ -821,6 +887,10 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [],
+      "matched_variant_prices": [
+        5400,
+        25100
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         5400,
@@ -848,6 +918,9 @@
       "runner_observed_prices": [
         1968
       ],
+      "matched_variant_prices": [
+        1968
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1968,
@@ -873,6 +946,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        1498
+      ],
+      "matched_variant_prices": [
         1498
       ],
       "variant_feed_status": 200,
@@ -916,6 +992,9 @@
       "runner_observed_prices": [
         2438
       ],
+      "matched_variant_prices": [
+        2438
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         2438,
@@ -941,6 +1020,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [],
+      "matched_variant_prices": [
+        1308
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         118,
@@ -966,6 +1048,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [],
+      "matched_variant_prices": [
+        1808
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1808,
@@ -993,6 +1078,7 @@
       "runner_observed_prices": [
         935
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1017,6 +1103,7 @@
       "runner_observed_prices": [
         1240
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1041,6 +1128,7 @@
       "runner_observed_prices": [
         1275
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1065,6 +1153,7 @@
       "runner_observed_prices": [
         1310
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1089,6 +1178,7 @@
       "runner_observed_prices": [
         2065
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1113,6 +1203,7 @@
       "runner_observed_prices": [
         1000
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1137,6 +1228,7 @@
       "runner_observed_prices": [
         1240
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1161,6 +1253,7 @@
       "runner_observed_prices": [
         1420
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1186,6 +1279,7 @@
         1100,
         1700
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1210,6 +1304,7 @@
       "runner_observed_prices": [
         648
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1235,6 +1330,7 @@
         2900,
         3500
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1259,6 +1355,7 @@
       "runner_observed_prices": [
         498
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1281,6 +1378,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1303,6 +1401,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        89
+      ],
+      "matched_variant_prices": [
         89
       ],
       "variant_feed_status": 200,
@@ -1349,6 +1450,9 @@
       "runner_observed_prices": [
         499
       ],
+      "matched_variant_prices": [
+        499
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         499,
@@ -1376,6 +1480,7 @@
       "runner_observed_prices": [
         348
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1400,6 +1505,7 @@
       "runner_observed_prices": [
         348
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1422,6 +1528,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        3074
+      ],
+      "matched_variant_prices": [
         3074
       ],
       "variant_feed_status": 200,
@@ -1451,6 +1560,9 @@
       "runner_observed_prices": [
         2870
       ],
+      "matched_variant_prices": [
+        2870
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         2870,
@@ -1477,6 +1589,9 @@
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
         2744
+      ],
+      "matched_variant_prices": [
+        2194
       ],
       "variant_feed_status": 200,
       "variant_price_range": [
@@ -1520,6 +1635,9 @@
       "runner_observed_prices": [
         1774
       ],
+      "matched_variant_prices": [
+        1774
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1774,
@@ -1545,6 +1663,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        1978
+      ],
+      "matched_variant_prices": [
         1978
       ],
       "variant_feed_status": 200,
@@ -1574,6 +1695,9 @@
       "runner_observed_prices": [
         2862
       ],
+      "matched_variant_prices": [
+        1636
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1636,
@@ -1601,6 +1725,9 @@
       "runner_observed_prices": [
         1334
       ],
+      "matched_variant_prices": [
+        1334
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1334,
@@ -1626,6 +1753,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1648,6 +1776,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1670,6 +1799,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1692,6 +1822,7 @@
       "runner_verdict": "no_price_observed",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1728,6 +1859,7 @@
       "runner_verdict": "no_price_observed",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1764,6 +1896,7 @@
       "runner_verdict": "no_price_observed",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1786,6 +1919,7 @@
       "runner_verdict": "no_price_observed",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1821,6 +1955,7 @@
       "runner_verdict": "no_price_observed",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1843,6 +1978,7 @@
       "runner_verdict": "no_price_observed",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -1865,6 +2001,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        695
+      ],
+      "matched_variant_prices": [
         695
       ],
       "variant_feed_status": 200,
@@ -1895,6 +2034,9 @@
         469,
         435
       ],
+      "matched_variant_prices": [
+        469
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         435,
@@ -1920,6 +2062,9 @@
       "runner_verdict": "confirmed",
       "runner_price_source": "seller variant feed",
       "runner_observed_prices": [
+        1195
+      ],
+      "matched_variant_prices": [
         1195
       ],
       "variant_feed_status": 200,
@@ -1949,6 +2094,9 @@
       "runner_observed_prices": [
         1295
       ],
+      "matched_variant_prices": [
+        1295
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         1295,
@@ -1976,6 +2124,9 @@
       "runner_observed_prices": [
         598
       ],
+      "matched_variant_prices": [
+        598
+      ],
       "variant_feed_status": 200,
       "variant_price_range": [
         598,
@@ -2001,6 +2152,7 @@
       "runner_verdict": "not_read",
       "runner_price_source": null,
       "runner_observed_prices": [],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -2025,6 +2177,7 @@
       "runner_observed_prices": [
         1000
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": null,
       "variant_price_range": null,
       "weight_reproduced_today": null,
@@ -2050,6 +2203,7 @@
         648,
         948
       ],
+      "matched_variant_prices": [],
       "variant_feed_status": 404,
       "variant_price_range": null,
       "weight_reproduced_today": null,
