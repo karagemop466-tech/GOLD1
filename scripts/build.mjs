@@ -24,6 +24,9 @@ const sourcesDoc = await read('data/sources.json');
 const flagged = await read('data/flagged.json');
 const gold = await read('data/gold-price.json');
 const checklist = await read('data/checklist.json');
+const compliance = await read('data/compliance.json');
+const liveCheck = await read('data/verification-2026-10-23.json');
+const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const spot = gold.primary.price_usd_per_ozt;
@@ -170,7 +173,10 @@ const recheckDates = [...new Set(rings.rows.map((r) => r.verified_at).filter(Boo
 const recheckDate = recheckDates[recheckDates.length - 1] || null;
 const recheckChanged = rings.rows.filter((r) => r.verification_status === 'changed');
 const recheckUnverified = rings.rows.filter((r) => r.verification_status === 'unverified');
-const recheckPartial = rings.rows.filter((r) => r.verification_status === 'partially verified');
+const recheckPartial = rings.rows.filter((r) => r.verification_status === 'partly_verified');
+const verifiedToday = rings.rows.filter((r) => r.verified_at === compliance.as_of).length;
+const notRereadToday = rings.rows.filter((r) => r.verification_status === 'not_reread_2026-10-23').length;
+const priceUnverifiedRows = rings.rows.filter((r) => r.price_unverified);
 const publishedWeights = rings.rows.filter((r) => r.weight_g_low !== null && r.weight_g_low !== undefined);
 const retrievedDates = [...new Set(rings.rows.map((r) => r.retrieved_at))].sort();
 
@@ -178,6 +184,8 @@ const retrievedDates = [...new Set(rings.rows.map((r) => r.retrieved_at))].sort(
 const NAV = [
   ['index.html', 'Dashboard'],
   ['rings.html', 'All rings'],
+  ['requirements.html', 'Requirements'],
+  ['recheck.html', 'Re-check 23 Oct'],
   ['weights.html', 'Weight & melt'],
   ['calculator.html', 'Gold calculator'],
   ['checklist.html', 'Checklist'],
@@ -233,7 +241,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S19 + A01–A10</a>); re-check the live source link before paying.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10</a>). <strong>Price snapshots are not live quotes:</strong> the latest product-page re-read was ${esc(recheckDate || 'not recorded')}; retailer prices and gold spot can change, so verify the linked official source immediately before buying.</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -321,7 +329,10 @@ const ringTable = (rows, prefix = '') => `
 <table class="data-table" data-ring-table>
   ${tableHead()}
   <tbody>
-  ${rows.map((r) => rowHtml(r, prefix)).join('\n  ')}
+  ${rows
+    .filter((r) => !r.withdrawn)
+    .map((r) => rowHtml(r, prefix))
+    .join('\n  ')}
   </tbody>
 </table>
 </div>`;
@@ -382,15 +393,15 @@ const latestChecks = await read('data/checks/latest.json').catch(() => null);
 const dashboard = layout({
   title: 'Verified solid gold engagement rings',
   description:
-    'A verified, source-linked list of solid gold engagement rings from seven US retailers, with a weight and melt-value analysis, a gold calculator and a hallucination audit.',
+    `A source-linked research snapshot of solid gold engagement rings from ${retailersDoc.retailers.length} retailers, with a weight and melt-value analysis, a gold calculator, a 12-point requirements scorecard and an anti-hallucination audit.`,
   current: 'root',
   active: 'Dashboard',
   body: `
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Research dashboard · data downloaded ${esc(retrievedDates.join(', '))}</p>
+    <p class="eyebrow">Research dashboard · captured ${esc(retrievedDates.join(', '))} · last live re-read ${esc(compliance.as_of)}</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">${totalRows} listings from ${retailersDoc.retailers.length} retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on ${esc(recheckDate || '—')}: ${publishedWeights.length} now carry a published metal weight, ${recheckUnverified.length} ${recheckUnverified.length === 1 ? 'was' : 'were'} withdrawn as unverified and ${recheckPartial.length} could only be partly verified.</p>
+    <p class="lede">${totalRows} listings from ${retailersDoc.retailers.length} retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on ${esc(compliance.as_of)}: ${verifiedToday} carry a verdict from that pass, ${notRereadToday} could not be re-read at all because the seller blocks automated retrieval, and ${priceUnverifiedRows.length} carry no usable price — one because the seller displays none, one because the SKU now sells a different ring.</p>
     ${noHallucinationBanner()}
   </div>
 </section>
@@ -402,9 +413,25 @@ const dashboard = layout({
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', '0.3 g to 7.0 g — the number you need for a value check')}
     ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : `7 Automic Gold, 6 Mejuri, 1 Ross-Simons, 1 Aurate`)}
-    ${stat(`${rechecked}/${totalRows}`, `re-checked ${recheckDate || ''}`.trim(), 'every row read again line by line against its own page')}
+    ${stat(`${verifiedToday}/${totalRows}`, `verdict from ${compliance.as_of}`, 're-read live today, or documented as not re-readable')}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
-    ${stat(`${priceReread}/${totalRows}`, 'live PDP re-reads', 'every row traced in reverification.json')}
+    ${stat(`${liveFetchOk}/${totalRows}`, 'pages re-read 2026-10-23', 'the rest are behind bot walls and say so')}
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="callout good">
+    <h2>Latest pass — 2026-10-23: every row opened again at its own official URL</h2>
+    <p>Fifty pages were retrieved and parsed by the re-read workflow, five more were read by hand. <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page — a wider size or variant range in every case. ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band this project had described — same price, same published weight, different product (<a href="flagged.html">F51</a>). Nine pages were blocked by With Clarity, Cartier and Brilliant Earth: ${liveCheck.summary.not_read} could not be read at all and are labelled <em>not re-read</em> on every table, and one could only be read in part (<a href="flagged.html">F53</a>).</p>
+    <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="callout">
+    <h2>Against your 12-point checklist: ${compliance.summary.tiers.ready_to_inspect || 0} rows clear every criterion that can be checked before paying</h2>
+    <p>Of ${totalRows} listings, <strong>${compliance.summary.solid_stated}</strong> actually use the word “solid”, <strong>${compliance.summary.weight_published}</strong> publish a gram weight, and <strong>${compliance.summary.gold_value_computable}</strong> therefore have a real price-versus-gold multiple. <strong>${compliance.summary.hallmark_published} of ${totalRows} publish a hallmark or a maker's mark</strong> — no retailer does — so point 3 of the checklist cannot be completed online by anyone, and the last step is always an independent jeweller. ${compliance.summary.bbb_f} rows sit on a BBB “F” file and are blocked from the shortlist regardless of how good the listing looks.</p>
+    <p><a class="btn" href="requirements.html">Open the requirements scorecard →</a> · <a class="btn" href="requirements.html#matrix">Jump to the 12-point matrix →</a></p>
   </div>
 </section>
 
@@ -417,13 +444,13 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="callout">
-    <h2>Second and third pass: every row re-read against its own page (${esc(recheckDate || '—')})</h2>
-    <p>Nothing here is inherited on trust. Each of the ${totalRows} rows was opened again at its official URL and read line by line: title, karat, price, price basis and any published weight. The result is in the <em>Last checked</em> column of every table, in <code>data/reverification.json</code> (pass P12) and in <code>data/verification-${esc(recheckDate || '')}.json</code>, which stores the exact quote each number was read from.</p>
+    <h2>How current each row is — pass P42, ${esc(compliance.as_of)}</h2>
+    <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and ${liveFetchOk} of ${totalRows} were opened again on ${esc(compliance.as_of)} by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-${esc(compliance.as_of)}.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
-      <li><strong>${publishedWeights.length} of ${totalRows} rows now carry a published metal weight</strong> (${publishedWeights.map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}). It was one row when the project started. Every one of them is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat.</li>
-      ${recheckChanged.length ? `<li><strong>${recheckChanged.length} price ranges corrected.</strong> ${recheckChanged.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a> → ${usd(r.price_low)}`).join(', ')}. Each correction replaced a stored figure the live page no longer shows; the old figure stays in the audit trail rather than being silently kept as a second price.</li>` : ''}
-      <li><strong>${recheckUnverified.length} price withdrawn.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring</a> no longer publishes a price at all — the buy box has been replaced by an enquiry form — so the row reads “— unverified” everywhere on this site.</li>
-      <li><strong>${recheckPartial.length} rows are only partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')}. In each case two readings of the same page disagree, or a variant-level price could not be re-read. The disagreement is published rather than resolved by picking a number.</li>
+      <li><strong>${publishedWeights.length} of ${totalRows} rows publish a metal weight</strong> (${publishedWeights.slice(0, 12).map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}${publishedWeights.length > 12 ? `, and ${publishedWeights.length - 12} more` : ''}). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. ${compliance.summary.weight_published - 5 === 16 ? 'Sixteen were re-read verbatim today; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.' : ''}</li>
+      ${recheckPartial.length ? `<li><strong>${recheckPartial.length} rows are partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')} — in each case the seller's page did not fully reproduce the stored figure, and the reason is printed on the row.</li>` : ''}
+      <li><strong>${priceUnverifiedRows.length} rows carry no usable price.</strong> ${priceUnverifiedRows.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a> — ${esc((r.price_unverified_reason || '').split(':')[0])}`).join('; ')}. Both read “— unverified” everywhere on this site.</li>
+      <li><strong>${notRereadToday} rows were not re-read today</strong> because With Clarity, Cartier and Brilliant Earth block automated retrieval (<a href="flagged.html">F53</a>). Their stored values keep the 2026-10-22 date and are labelled <em>not re-read 2026-10-23</em> on every table.</li>
     </ul>
     <p class="sub">Full list of the ${flagged.items.length} open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
   </div>
@@ -531,8 +558,8 @@ const ringsPage = layout({
   active: 'All rings',
   body: `
 <section class="wrap section">
-  <h1>All ${totalRows} verified listings</h1>
-  <p class="lede">Sorted as captured. Use the filters to narrow by style, seller, karat or budget. Every row links to the official page it came from and to a detail page showing the exact evidence text.</p>
+  <h1>All ${totalRows - rings.rows.filter((r) => r.withdrawn).length} verified listings</h1>
+  <p class="lede">Sorted as captured. Use the filters to narrow by style, seller, karat or budget. Every row links to the official page it came from and to a detail page showing the exact evidence text.${rings.rows.filter((r) => r.withdrawn).length ? ` <strong>${rings.rows.filter((r) => r.withdrawn).length} further row is withheld from this table</strong> because the seller now sells a different product under that URL — see <a href="flagged.html">F51</a>.` : ''}</p>
   ${noHallucinationBanner()}
   ${filterBar(totalRows)}
   ${ringTable(rings.rows)}
@@ -618,6 +645,7 @@ for (const r of rings.rows) {
       </dl>
       <p><a class="btn" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">Open the official product page ↗</a></p>
       <p class="sub">If the price on that page differs from the price here, the page wins. This site records what the feed said on ${esc(r.retrieved_at)}.</p>
+      ${r.price_unverified ? `<div class="rule-banner" role="note"><h2>Why this price is marked unverified</h2><p>${esc(r.price_unverified_reason || '')}</p><p class="sub">The figure of ${usd(r.price_low)}${r.price_high && r.price_high !== r.price_low ? '–' + usd(r.price_high) : ''} is the <strong>last observed</strong> value, kept for the record only. It is not a quote and it is not current.</p></div>` : ''}
     </div>
 
     <div class="card">
@@ -1044,7 +1072,7 @@ const methodologyPage = layout({
     <li><strong>No invented dollar amounts.</strong> Every dollar figure on every generated page must trace to a value in the data files or to a formula computed from them. This is the check that catches a price invented in the prose.</li>
     <li><strong>Data age.</strong> A snapshot older than 30 days fails the run, so a stale price cannot be published as current.</li>
   </ol>
-  <p class="sub">All seventeen groups and their live results are listed on <a href="checks.html">Checks</a>. The suite is also tested against deliberate sabotage: a fake five-figure price was injected into a page to confirm the invented-amount check fires (pass P15 in the history).</p>
+  <p class="sub">All twenty canonical groups (S01–S20) plus the ten extended groups (A01–A10) and their live results are listed on <a href="checks.html">Checks</a>. The suite is also tested against deliberate sabotage: a fake five-figure price was injected into a page to confirm the invented-amount check fires (pass P15 in the history).</p>
 
   <h2>4. Limits you should know</h2>
   <ul class="crosses">
@@ -1052,7 +1080,7 @@ const methodologyPage = layout({
     <li><strong>Weight is mostly missing.</strong> ${weightPublished} of ${totalRows} listings publish grams. The value comparison cannot be completed for the rest, and this site refuses to fill that gap with an estimate.</li>
     <li><strong>Hallmarks are physical.</strong> No stamp can be verified from a web page. A photo of the stamp is evidence of what is written, not proof of what the metal is. XRF or an assay by an independent jeweller is the only real test.</li>
     <li><strong>Reputation is not scored here.</strong> Seller verification in this pass means: official store identity plus a verifiable phone or support email. It is not a rating and it is not an endorsement.</li>
-    <li><strong>Seven US retailers, 43 listings.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap. Only ${reverifiedRows.length} of the ${totalRows} rows were re-read live in the latest pass; the others carry the retrieval date they were captured on.</li>
+    <li><strong>${retailersDoc.retailers.length} US retailers, ${totalRows} listings.</strong> This is a curated sample, not the whole market. Coverage is stated so you can judge the gap. In the 2026-10-23 pass ${liveCheck.summary.confirmed + liveCheck.corrections.length} of the ${totalRows} rows were re-read live and ${liveCheck.summary.not_read} could not be (the seller blocked automated retrieval), so those carry an older date and say so on every table.</li>
     <li><strong>Only ${weightPublished} of ${totalRows} rows publish a weight,</strong> so the gold-value check is complete for those and impossible for the rest. <a href="weights.html">Weight and gold content</a> shows exactly which is which.</li>
   </ul>
 
@@ -1146,7 +1174,265 @@ const checksPage = layout({
 });
 
 /* --------------------------------------------------------------- writes */
+/* 10. Requirements scorecard --------------------------------------------- */
+const FEDERAL_NOTE_SOLID =
+  'a buyer cannot assume it is solid rather than hollow, plated or a vermeil build. FTC: "solid gold" means not hollow.';
+const FEDERAL_URL_ECFR = 'https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23';
+const FEDERAL_URL_FTC_SOLID = 'https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry';
+const FEDERAL_URL_FTC_SHOP = 'https://consumer.ftc.gov/articles/online-shopping';
+const FEDERAL_URL_GIA = 'https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet';
+const compById = Object.fromEntries(compliance.rows.map((r) => [r.id, r]));
+const TIER_LABEL = {
+  ready_to_inspect: { t: 'Meets every published-data criterion', k: 'good' },
+  needs_confirmation: { t: 'Needs written confirmation', k: 'warn' },
+  setting_only: { t: 'Setting only — no gold weight', k: 'info' },
+  unverified_price: { t: 'Price not displayed', k: 'bad' },
+  withdrawn: { t: 'Withdrawn — source changed', k: 'bad' },
+};
+const MARK = {
+  confirmed: { m: '✓', k: 'mark-yes', w: 'confirmed on the seller\'s own page' },
+  stated_not_reread: { m: '✓*', k: 'mark-yes', w: 'stated, but not re-read in the latest pass' },
+  not_published: { m: '—', k: 'mark-no', w: 'the seller does not publish it' },
+  buyer_action: { m: '▸', k: 'mark-buyer', w: 'a step only you can do' },
+  cannot_compute: { m: 'n/a', k: 'mark-no', w: 'needs a value the seller withholds' },
+  negative: { m: '✗', k: 'mark-bad', w: 'the independent record is negative' },
+};
+
+const markCell = (c) => {
+  const s = MARK[c.status] || MARK.not_published;
+  return `<td class="mark ${s.k}" title="${esc(s.w + ' — ' + (c.detail || ''))}">${s.m}</td>`;
+};
+
+const shortlist = compliance.rows.filter((r) => r.tier === 'ready_to_inspect');
+const w = compliance.summary;
+
+const requirementsPage = layout({
+  title: 'Requirements scorecard',
+  description:
+    'Every listing scored against the 12-point solid-gold buying checklist, with a source link or an explicit "not published" for each cell.',
+  current: 'root',
+  active: 'Requirements',
+  body: `
+<section class="wrap section">
+  <h1>Requirements scorecard</h1>
+  <p class="lede">The owner's 12-point solid-gold checklist, applied to all ${w.rows} listings. Each cell is <strong>✓ confirmed on the seller's own page</strong>, <strong>— not published by the seller</strong>, <strong>▸ a step only you can do</strong>, or <strong>n/a</strong> because it needs a value the seller withholds. Nothing is estimated to fill a gap.</p>
+  ${noHallucinationBanner()}
+
+  <div class="stat-grid">
+    ${stat(`${w.solid_stated}/${w.rows}`, 'explicitly call the metal "solid"', 'Point 2 of the checklist. The rest name a karat and stop.')}
+    ${stat(`${w.weight_published}/${w.rows}`, 'publish a weight in grams', 'Point 4. Without grams the gold-value check cannot run.')}
+    ${stat(`${w.hallmark_published}/${w.rows}`, "publish a hallmark + maker's mark", 'Point 3. No retailer publishes the stamp online — it must be read off the ring.')}
+    ${stat(`${w.gold_value_computable}/${w.rows}`, 'have a computable gold value', `Point 6. Computed at ${usd(spot)}/ozt from the stored spot reading.`)}
+    ${stat(`${w.return_window_14_plus}/${w.rows}`, 'sit with a 14-day-plus return window', 'Point 7. Windows range from 7 to 30 days and several start before delivery.')}
+    ${stat(`${w.bbb_a_grade}/${w.rows}`, 'sit with an A-grade BBB record', 'Point 5. Aurate rows carry a BBB "F" and are therefore blocked.')}
+  </div>
+
+  <h2>What the 12 points come down to</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">#</th><th scope="col">Point</th><th scope="col">What has to be true</th><th scope="col">How this site can check it</th></tr></thead>
+    <tbody>
+    ${compliance.criteria
+      .map((c) => {
+        const map = {
+          purity: 'The karat is printed on the seller\'s own product page and quoted in the row evidence.',
+          solid: 'Search the listing text for the word "solid". A karat stamp alone does not settle it.',
+          hallmark: 'Cannot be done online. 16 CFR Part 23 governs the mark; it is on the physical ring.',
+          weight: 'Look for a gram figure in the seller\'s spec panel. Many list no metal weight at all.',
+          reputation: 'Read the independent BBB file and the seller\'s own contact page.',
+          price_vs_gold: 'grams × karat ÷ 24 × spot ÷ 31.1034768, then compare with the asking price.',
+          returns: 'Read the seller\'s own return policy, including what voids it (resizing, engraving, custom).',
+          payment: 'Nothing to verify on the page — a decision you make at checkout.',
+          documentation: 'This project stores the URL, the quote and the retrieval date for every row.',
+          arrival_check: 'Nothing to verify online — it happens after delivery.',
+          xrf: 'Nothing to verify online — ask the jeweller for the reading in writing.',
+          return_if_refused: 'A rule you apply, not a fact a page can prove.',
+        };
+        return `<tr><td><strong>${c.n}</strong></td><td><strong>${esc(c.label)}</strong><div class="sub">${esc(c.ask)}</div></td><td class="small">${esc(c.ask)}</td><td class="small">${esc(map[c.key] || '')}</td></tr>`;
+      })
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="shortlist">The shortlist — ${shortlist.length} rows meet every criterion that can be checked before you pay</h2>
+  <p class="sub">These are the only rows where the listing itself says <em>solid</em>, the seller publishes the gram weight, the karat is stated, and the seller has a usable return window. That is a shortlist to <strong>order and inspect</strong> — not a purchase endorsement. Point 3 (hallmark) is still unverified for every row because no retailer publishes it, and points 10–12 happen after delivery.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Ring</th><th scope="col">Seller</th><th scope="col">Karat</th><th scope="col" class="num-col">Price</th><th scope="col" class="num-col">Grams</th><th scope="col" class="num-col">Gold value</th><th scope="col" class="num-col">Price ÷ gold</th><th scope="col" class="num-col">Returns</th><th scope="col">BBB</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    ${shortlist
+      .map(
+        (r) => `<tr>
+      <td class="cell-title"><a href="rings/${esc(r.id)}.html">${esc(r.title)}</a></td>
+      <td>${esc(r.retailer)}</td>
+      <td><strong>${esc(r.karat)}</strong></td>
+      <td class="num-col">${r.price_low === r.price_high ? usd(r.price_low) : `${usd(r.price_low)}–${usd(r.price_high)}`}</td>
+      <td class="num-col">${r.weight_g === null ? '<span class="unverified">—</span>' : r.weight_g + ' g'}</td>
+      <td class="num-col">${r.gold_value_usd === null ? '<span class="unverified">—</span>' : usd(r.gold_value_usd)}</td>
+      <td class="num-col">${r.price_to_gold === null ? '—' : r.price_to_gold.toFixed(2) + '×'}</td>
+      <td class="num-col">${r.return_days === null ? '—' : r.return_days + ' d'}</td>
+      <td>${esc(r.bbb_rating || '—')}</td>
+      <td><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>`
+      )
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="matrix">Every row against all 12 points</h2>
+  <p class="sub">Hover any mark for the exact reason. <span class="mark mark-yes">✓</span> confirmed on the seller's page · <span class="mark mark-no">—</span> not published · <span class="mark mark-buyer">▸</span> your step · <span class="mark mark-bad">✗</span> negative record · <span class="mark mark-no">n/a</span> needs a withheld value.</p>
+  <div class="table-wrap">
+  <table class="data-table matrix">
+    <thead><tr>
+      <th scope="col">Ring</th><th scope="col">Seller</th>
+      ${compliance.criteria.map((c) => `<th scope="col" class="num-col" title="${esc(c.label)}">${c.n}</th>`).join('')}
+      <th scope="col">Verdict</th>
+    </tr></thead>
+    <tbody>
+    ${compliance.rows
+      .map((r) => {
+        const t = TIER_LABEL[r.tier] || TIER_LABEL.needs_confirmation;
+        return `<tr>
+      <td class="cell-title"><a href="${r.tier === 'withdrawn' ? 'flagged.html#F51' : 'rings/' + esc(r.id) + '.html'}">${esc(r.title)}</a></td>
+      <td>${esc(r.retailer)}</td>
+      ${compliance.criteria.map((c) => markCell(r.checks[c.key])).join('')}
+      <td><span class="chip ${t.k}">${esc(t.t)}</span>${r.blockers.length ? `<div class="sub">${esc(r.blockers.slice(0, 2).join('; '))}</div>` : ''}</td>
+    </tr>`;
+      })
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="sellers">Seller-level facts for points 5 and 7</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Seller</th><th scope="col">BBB</th><th scope="col">Return window</th><th scope="col">What voids it</th><th scope="col">Policy source</th><th scope="col">BBB source</th></tr></thead>
+    <tbody>
+    ${Object.entries(compliance.returns)
+      .map(([id, p]) => {
+        const ret = retailers[id] || {};
+        return `<tr>
+      <td><strong>${esc(ret.name || id)}</strong><div class="sub">${esc(ret.phone || '')}</div></td>
+      <td>${esc(ret.bbb_rating || 'no rating recorded')}</td>
+      <td class="num-col">${p.days} days from ${esc(p.from)}</td>
+      <td class="small">${esc(p.caveat || 'see policy')}</td>
+      <td><a class="src" href="${esc(p.source)}" rel="noopener nofollow" target="_blank">policy ↗</a></td>
+      <td>${ret.bbb_source ? `<a class="src" href="${esc(ret.bbb_source)}" rel="noopener nofollow" target="_blank">BBB file ↗</a>` : '—'}</td>
+    </tr>`;
+      })
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The four rules that decide a row's verdict</h2>
+  <ol class="steps">
+    <li><strong>Solid must be said.</strong> ${w.solid_stated} listings say it. The other ${w.rows - w.solid_stated} name a karat and never use the word, so ${FEDERAL_NOTE_SOLID}</li>
+    <li><strong>Grams decide the value.</strong> ${w.weight_published} rows publish a weight, so the price-to-gold multiple can be computed for exactly those rows.</li>
+    <li><strong>A negative independent record blocks.</strong> The five Aurate rows sit on a BBB "F" file, so they cannot reach the shortlist however good the listing looks.</li>
+    <li><strong>Nobody publishes the hallmark.</strong> 0 of ${w.rows}. That is why the final step is always a jeweller, not a web page.</li>
+  </ol>
+  <p class="sub">Sources for the rules: <a href="${esc(FEDERAL_URL_ECFR)}" rel="noopener nofollow" target="_blank">16 CFR Part 23</a> (quality marks) · <a href="${esc(FEDERAL_URL_FTC_SOLID)}" rel="noopener nofollow" target="_blank">FTC: solid gold means not hollow</a> · <a href="${esc(FEDERAL_URL_FTC_SHOP)}" rel="noopener nofollow" target="_blank">FTC: online shopping and credit cards</a> · <a href="${esc(FEDERAL_URL_GIA)}" rel="noopener nofollow" target="_blank">GIA lab note on XRF limits</a>.</p>
+</section>`,
+});
+
+/* 11. 2026-10-23 re-check ledger ----------------------------------------- */
+const VERDICT_LABEL = {
+  confirmed: { t: 'confirmed', k: 'good' },
+  range_widens: { t: 'corrected', k: 'warn' },
+  lower_bound_not_reproduced: { t: 'partly verified', k: 'warn' },
+  source_mismatch: { t: 'withdrawn', k: 'bad' },
+  metadata_only_not_displayed: { t: 'price not displayed', k: 'bad' },
+  no_structured_price: { t: 'no machine-readable price', k: 'info' },
+  variant_price_not_reproducible: { t: 'variant not reproducible', k: 'warn' },
+  not_read: { t: 'not re-read', k: 'info' },
+};
+
+const blockedRows = liveCheck.rows.filter((r) => r.http_status === 403);
+const fullyBlocked = liveCheck.rows.filter((r) => r.price_verdict === 'not_read');
+const recheckPage = layout({
+  title: 'Re-check — 2026-10-23',
+  description:
+    'The 2026-10-23 line-by-line re-read of every listing: what the seller printed, what this project stored, and the verdict for each row.',
+  current: 'root',
+  active: 'Re-check 23 Oct',
+  body: `
+<section class="wrap section">
+  <h1>Re-check — 2026-10-23</h1>
+  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.</p>
+  ${noHallucinationBanner()}
+
+  <div class="stat-grid">
+    ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}
+    ${stat(`${liveCheck.corrections.length}`, 'prices corrected', 'Only where the seller\'s own page contradicted the stored value and the replacement is quoted below.')}
+    ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn', 'SKU 939479 now sells a different ring. See F51.')}
+    ${stat(`${blockedRows.length}`, 'rows blocked by the seller', `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. With Clarity (5), Cartier (3) and Brilliant Earth (1) returned HTTP 403. See F53.`)}
+    ${stat(`${compliance.gold_reference.price_usd_per_ozt.toLocaleString('en-US', { maximumFractionDigits: 2 })}`, 'USD per troy ounce, spot', `${esc(compliance.gold_reference.publisher)} at ${esc(compliance.gold_reference.publisher_timestamp)}.`)}
+  </div>
+
+  <h2>Corrections applied in this pass</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Field</th><th scope="col" class="num-col">Before</th><th scope="col" class="num-col">After</th><th scope="col">Quote it was read from</th><th scope="col">Why</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    ${liveCheck.corrections
+      .map(
+        (c) => `<tr>
+      <td><a href="rings/${esc(c.id)}.html">${esc(c.id)}</a></td>
+      <td>${esc(c.field)}</td>
+      <td class="num-col">${c.from.map((n) => usd(n)).join('–')}</td>
+      <td class="num-col"><strong>${c.to.map((n) => usd(n)).join('–')}</strong></td>
+      <td class="small">${esc(c.quote)}</td>
+      <td class="small">${esc(c.why)}</td>
+      <td><a class="src" href="${esc(c.url)}" rel="noopener nofollow" target="_blank">feed ↗</a></td>
+    </tr>`
+      )
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>The full ledger</h2>
+  <p class="sub">One line per listing. "Stored" is what this project had before the pass; "seller printed" is what the page showed on 2026-10-23; the verdict says whether they agree.</p>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Seller printed</th><th scope="col">Verdict</th><th scope="col">Weight on page</th><th scope="col">What was read</th><th scope="col">Source</th></tr></thead>
+    <tbody>
+    ${liveCheck.rows
+      .map((r) => {
+        const v = VERDICT_LABEL[r.price_verdict] || { t: r.price_verdict, k: 'info' };
+        const obs = r.observed_prices ? `${usd(r.observed_prices.min)}${r.observed_prices.max !== r.observed_prices.min ? '–' + usd(r.observed_prices.max) : ''}` : '—';
+        const wv = r.observed_weight ? (r.observed_weight.value === null ? 'publishes null' : r.observed_weight.value + ' g') : '—';
+        const quote =
+          (r.observed_weight && r.observed_weight.quote) ||
+          r.variant_quote ||
+          r.manual_detail ||
+          (r.blocked_reason || '');
+        return `<tr${r.price_verdict === 'source_mismatch' ? ' class="row-alert"' : ''}>
+      <td><strong>${esc(r.id)}</strong><div class="sub">${esc(r.title_in_data)}</div></td>
+      <td>${esc(r.retailer)}</td>
+      <td class="num-col small">${r.stored_price.low === null ? '—' : usd(r.stored_price.low) + (r.stored_price.high !== r.stored_price.low ? '–' + usd(r.stored_price.high) : '')}</td>
+      <td class="num-col small"><strong>${obs}</strong></td>
+      <td><span class="chip ${v.k}">${esc(v.t)}</span></td>
+      <td class="small">${esc(wv)}</td>
+      <td class="small">${esc((quote || '').slice(0, 240))}</td>
+      <td><a class="src" href="${esc(r.source_url)}" rel="noopener nofollow" target="_blank">official page ↗</a></td>
+    </tr>`;
+      })
+      .join('\n    ')}
+    </tbody>
+  </table>
+  </div>
+  <p class="sub">Raw evidence: <code>data/live/${esc((liveCheck.rows[0] && liveCheck.rows[0].fetched_at) || '2026-10-23')}</code> · <code>data/live/manual-2026-10-23.json</code> · <code>data/verification-2026-10-23.json</code>. The re-read runs from <code>.github/workflows/reverify.yml</code> against a runner with full internet access, so it is reproducible.</p>
+</section>`,
+});
+
 await writeFile(join(OUT, 'index.html'), dashboard);
+await writeFile(join(OUT, 'requirements.html'), requirementsPage);
+await writeFile(join(OUT, 'recheck.html'), recheckPage);
 await writeFile(join(OUT, 'rings.html'), ringsPage);
 await writeFile(join(OUT, 'weights.html'), weightsPage);
 await writeFile(join(OUT, 'calculator.html'), calculator);

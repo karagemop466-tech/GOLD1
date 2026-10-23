@@ -1,14 +1,14 @@
 {
-  "pass": "P40",
-  "generated_at": "2026-10-22T23:59:37Z",
+  "pass": "P76",
+  "generated_at": "2026-10-23T10:13:59Z",
   "builder_version": "1.0.0",
   "summary": {
-    "total": 19,
-    "passed": 19,
+    "total": 20,
+    "passed": 20,
     "failed": 0,
-    "assertions": 4747,
+    "assertions": 5410,
     "rows": 59,
-    "pages": 91
+    "pages": 93
   },
   "groups": [
     {
@@ -120,7 +120,7 @@
       "total_assertions": 0,
       "failures": [],
       "failure_count": 0,
-      "pages_checked": 91
+      "pages_checked": 93
     },
     {
       "id": "S12",
@@ -196,6 +196,16 @@
       "id": "S19",
       "name": "Unverified prices never render as numbers",
       "description": "A row whose price could not be reproduced must print \"— unverified\" wherever a price would go.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S20",
+      "name": "No template leaks or unset values",
+      "description": "A page must never show an unreplaced ${…} expression or a value that resolved to nothing: either one means a number was meant to be printed and was not, which reads as a fabricated figure to the buyer.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,

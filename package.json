@@ -12,7 +12,10 @@
     "test:runtime": "node scripts/test-runtime.js",
     "test:build": "node scripts/audit-build.js",
     "build": "node scripts/build.js",
-    "serve": "node scripts/serve.js"
+    "serve": "node scripts/serve.js",
+    "check": "node scripts/build.mjs && node scripts/verify.mjs && node scripts/build.mjs && node scripts/audit_0804e222.mjs",
+    "reverify": "node scripts/live_reverify.mjs",
+    "reconcile": "node scripts/build_compliance.mjs"
   },
   "engines": {
     "node": ">=22"
