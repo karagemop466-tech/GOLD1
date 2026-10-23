@@ -8,6 +8,14 @@ name: Live re-verification of every curated row
 # cannot silently change a published value.
 
 on:
+  # A workflow_dispatch entry point only becomes available once this file is on
+  # the default branch, so the same job is also triggered by a push that touches
+  # the trigger file below. This keeps the re-verification runnable from a
+  # feature branch without pushing anything to main.
+  push:
+    paths:
+      - '.github/reverify-trigger'
+      - 'scripts/live_reverify.mjs'
   workflow_dispatch:
     inputs:
       only:
