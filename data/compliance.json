@@ -2,9 +2,9 @@
  "as_of": "2026-10-23",
  "generated_by": "scripts/build_compliance.mjs",
  "gold_reference": {
-  "price_usd_per_ozt": 3998.100098,
+  "price_usd_per_ozt": 3996.899902,
   "publisher": "gold-api.com",
-  "publisher_timestamp": "2026-10-23T20:19:15Z",
+  "publisher_timestamp": "2026-10-23T23:39:15Z",
   "source_url": "https://api.gold-api.com/price/XAU",
   "grams_per_troy_ounce": 31.1034768
  },
@@ -202,7 +202,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 127.47,
+   "gold_value_usd": 127.43,
    "fine_gold_g": 0.992,
    "price_to_gold": 3.14,
    "tier": "needs_confirmation",
@@ -237,7 +237,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "1.7 g at 14K holds 0.992 g fine gold, worth 127.47 USD at the stored spot. Price ÷ gold = 3.14×.",
+     "detail": "1.7 g at 14K holds 0.992 g fine gold, worth 127.43 USD at the stored spot. Price ÷ gold = 3.14×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -287,7 +287,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 187.46,
+   "gold_value_usd": 187.4,
    "fine_gold_g": 1.458,
    "price_to_gold": 3.2,
    "tier": "needs_confirmation",
@@ -322,7 +322,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "2.5 g at 14K holds 1.458 g fine gold, worth 187.46 USD at the stored spot. Price ÷ gold = 3.20×.",
+     "detail": "2.5 g at 14K holds 1.458 g fine gold, worth 187.40 USD at the stored spot. Price ÷ gold = 3.20×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -372,7 +372,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 284.93,
+   "gold_value_usd": 284.85,
    "fine_gold_g": 2.217,
    "price_to_gold": 2.89,
    "tier": "needs_confirmation",
@@ -407,7 +407,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.8 g at 14K holds 2.217 g fine gold, worth 284.93 USD at the stored spot. Price ÷ gold = 2.89×.",
+     "detail": "3.8 g at 14K holds 2.217 g fine gold, worth 284.85 USD at the stored spot. Price ÷ gold = 2.89×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -457,7 +457,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 374.91,
+   "gold_value_usd": 374.8,
    "fine_gold_g": 2.917,
    "price_to_gold": 2.56,
    "tier": "needs_confirmation",
@@ -492,7 +492,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "5 g at 14K holds 2.917 g fine gold, worth 374.91 USD at the stored spot. Price ÷ gold = 2.56×.",
+     "detail": "5 g at 14K holds 2.917 g fine gold, worth 374.80 USD at the stored spot. Price ÷ gold = 2.56×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -542,9 +542,9 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 37.49,
+   "gold_value_usd": 37.48,
    "fine_gold_g": 0.292,
-   "price_to_gold": 3.97,
+   "price_to_gold": 3.98,
    "tier": "needs_confirmation",
    "blockers": [
     "the listing never says \"solid gold\""
@@ -577,7 +577,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "0.5 g at 14K holds 0.292 g fine gold, worth 37.49 USD at the stored spot. Price ÷ gold = 3.97×.",
+     "detail": "0.5 g at 14K holds 0.292 g fine gold, worth 37.48 USD at the stored spot. Price ÷ gold = 3.98×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -627,7 +627,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 48.2,
+   "gold_value_usd": 48.19,
    "fine_gold_g": 0.375,
    "price_to_gold": 3.71,
    "tier": "needs_confirmation",
@@ -662,7 +662,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "0.5 g at 18K holds 0.375 g fine gold, worth 48.20 USD at the stored spot. Price ÷ gold = 3.71×.",
+     "detail": "0.5 g at 18K holds 0.375 g fine gold, worth 48.19 USD at the stored spot. Price ÷ gold = 3.71×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -712,7 +712,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 97.48,
+   "gold_value_usd": 97.45,
    "fine_gold_g": 0.758,
    "price_to_gold": 4.09,
    "tier": "needs_confirmation",
@@ -747,7 +747,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "1.3 g at 14K holds 0.758 g fine gold, worth 97.48 USD at the stored spot. Price ÷ gold = 4.09×.",
+     "detail": "1.3 g at 14K holds 0.758 g fine gold, worth 97.45 USD at the stored spot. Price ÷ gold = 4.09×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -2351,7 +2351,7 @@
    "solid_stated": false,
    "bbb_rating": "F",
    "return_days": 14,
-   "gold_value_usd": 204.7,
+   "gold_value_usd": 204.64,
    "fine_gold_g": 1.593,
    "price_to_gold": 11.65,
    "tier": "needs_confirmation",
@@ -2387,7 +2387,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "2.73 g at 14K holds 1.593 g fine gold, worth 204.70 USD at the stored spot. Price ÷ gold = 11.65×.",
+     "detail": "2.73 g at 14K holds 1.593 g fine gold, worth 204.64 USD at the stored spot. Price ÷ gold = 11.65×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -2437,7 +2437,7 @@
    "solid_stated": false,
    "bbb_rating": "F",
    "return_days": 14,
-   "gold_value_usd": 147.72,
+   "gold_value_usd": 147.67,
    "fine_gold_g": 1.149,
    "price_to_gold": 12.18,
    "tier": "needs_confirmation",
@@ -2473,7 +2473,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "1.97 g at 14K holds 1.149 g fine gold, worth 147.72 USD at the stored spot. Price ÷ gold = 12.18×.",
+     "detail": "1.97 g at 14K holds 1.149 g fine gold, worth 147.67 USD at the stored spot. Price ÷ gold = 12.18×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -2523,7 +2523,7 @@
    "solid_stated": false,
    "bbb_rating": "F",
    "return_days": 14,
-   "gold_value_usd": 247.44,
+   "gold_value_usd": 247.37,
    "fine_gold_g": 1.925,
    "price_to_gold": 10.99,
    "tier": "needs_confirmation",
@@ -2559,7 +2559,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.3 g at 14K holds 1.925 g fine gold, worth 247.44 USD at the stored spot. Price ÷ gold = 10.99×.",
+     "detail": "3.3 g at 14K holds 1.925 g fine gold, worth 247.37 USD at the stored spot. Price ÷ gold = 10.99×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -2609,7 +2609,7 @@
    "solid_stated": false,
    "bbb_rating": "F",
    "return_days": 14,
-   "gold_value_usd": 194.96,
+   "gold_value_usd": 194.9,
    "fine_gold_g": 1.517,
    "price_to_gold": 6.71,
    "tier": "needs_confirmation",
@@ -2645,7 +2645,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "2.6 g at 14K holds 1.517 g fine gold, worth 194.96 USD at the stored spot. Price ÷ gold = 6.71×.",
+     "detail": "2.6 g at 14K holds 1.517 g fine gold, worth 194.90 USD at the stored spot. Price ÷ gold = 6.71×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -2695,7 +2695,7 @@
    "solid_stated": true,
    "bbb_rating": "F",
    "return_days": 14,
-   "gold_value_usd": 202.45,
+   "gold_value_usd": 202.39,
    "fine_gold_g": 1.575,
    "price_to_gold": 8.93,
    "tier": "needs_confirmation",
@@ -2730,7 +2730,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "2.7 g at 14K holds 1.575 g fine gold, worth 202.45 USD at the stored spot. Price ÷ gold = 8.93×.",
+     "detail": "2.7 g at 14K holds 1.575 g fine gold, worth 202.39 USD at the stored spot. Price ÷ gold = 8.93×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -3903,7 +3903,7 @@
    "solid_stated": true,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 16.07,
+   "gold_value_usd": 16.06,
    "fine_gold_g": 0.125,
    "price_to_gold": 5.54,
    "tier": "ready_to_inspect",
@@ -3936,7 +3936,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "0.3 g at 10K holds 0.125 g fine gold, worth 16.07 USD at the stored spot. Price ÷ gold = 5.54×.",
+     "detail": "0.3 g at 10K holds 0.125 g fine gold, worth 16.06 USD at the stored spot. Price ÷ gold = 5.54×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -3986,7 +3986,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 112.47,
+   "gold_value_usd": 112.44,
    "fine_gold_g": 0.875,
    "price_to_gold": 4.44,
    "tier": "withdrawn",
@@ -4023,7 +4023,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "1.5 g at 14K holds 0.875 g fine gold, worth 112.47 USD at the stored spot. Price ÷ gold = 4.44×.",
+     "detail": "1.5 g at 14K holds 0.875 g fine gold, worth 112.44 USD at the stored spot. Price ÷ gold = 4.44×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4243,7 +4243,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 404.91,
+   "gold_value_usd": 404.79,
    "fine_gold_g": 3.15,
    "price_to_gold": 7.59,
    "tier": "ready_to_inspect",
@@ -4276,7 +4276,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "5.4 g at 14K holds 3.15 g fine gold, worth 404.91 USD at the stored spot. Price ÷ gold = 7.59×.",
+     "detail": "5.4 g at 14K holds 3.15 g fine gold, worth 404.79 USD at the stored spot. Price ÷ gold = 7.59×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4326,7 +4326,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 524.88,
+   "gold_value_usd": 524.72,
    "fine_gold_g": 4.083,
    "price_to_gold": 5.47,
    "tier": "ready_to_inspect",
@@ -4359,7 +4359,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "7 g at 14K holds 4.083 g fine gold, worth 524.88 USD at the stored spot. Price ÷ gold = 5.47×.",
+     "detail": "7 g at 14K holds 4.083 g fine gold, worth 524.72 USD at the stored spot. Price ÷ gold = 5.47×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4409,7 +4409,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 269.94,
+   "gold_value_usd": 269.86,
    "fine_gold_g": 2.1,
    "price_to_gold": 8.13,
    "tier": "ready_to_inspect",
@@ -4442,7 +4442,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.6 g at 14K holds 2.1 g fine gold, worth 269.94 USD at the stored spot. Price ÷ gold = 8.13×.",
+     "detail": "3.6 g at 14K holds 2.1 g fine gold, worth 269.86 USD at the stored spot. Price ÷ gold = 8.13×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4492,9 +4492,9 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 202.45,
+   "gold_value_usd": 202.39,
    "fine_gold_g": 1.575,
-   "price_to_gold": 8.76,
+   "price_to_gold": 8.77,
    "tier": "ready_to_inspect",
    "blockers": [],
    "checks": {
@@ -4525,7 +4525,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "2.7 g at 14K holds 1.575 g fine gold, worth 202.45 USD at the stored spot. Price ÷ gold = 8.76×.",
+     "detail": "2.7 g at 14K holds 1.575 g fine gold, worth 202.39 USD at the stored spot. Price ÷ gold = 8.77×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4575,7 +4575,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 262.44,
+   "gold_value_usd": 262.36,
    "fine_gold_g": 2.042,
    "price_to_gold": 7.54,
    "tier": "ready_to_inspect",
@@ -4608,7 +4608,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.5 g at 14K holds 2.042 g fine gold, worth 262.44 USD at the stored spot. Price ÷ gold = 7.54×.",
+     "detail": "3.5 g at 14K holds 2.042 g fine gold, worth 262.36 USD at the stored spot. Price ÷ gold = 7.54×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4658,7 +4658,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 232.45,
+   "gold_value_usd": 232.38,
    "fine_gold_g": 1.808,
    "price_to_gold": 7.04,
    "tier": "ready_to_inspect",
@@ -4691,7 +4691,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.1 g at 14K holds 1.808 g fine gold, worth 232.45 USD at the stored spot. Price ÷ gold = 7.04×.",
+     "detail": "3.1 g at 14K holds 1.808 g fine gold, worth 232.38 USD at the stored spot. Price ÷ gold = 7.04×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -4741,7 +4741,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 104.98,
+   "gold_value_usd": 104.94,
    "fine_gold_g": 0.817,
    "price_to_gold": 12.71,
    "tier": "ready_to_inspect",
@@ -4774,7 +4774,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "1.4 g at 14K holds 0.817 g fine gold, worth 104.98 USD at the stored spot. Price ÷ gold = 12.71×.",
+     "detail": "1.4 g at 14K holds 0.817 g fine gold, worth 104.94 USD at the stored spot. Price ÷ gold = 12.71×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -5596,7 +5596,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 176.75,
+   "gold_value_usd": 176.69,
    "fine_gold_g": 1.375,
    "price_to_gold": 3.93,
    "tier": "needs_confirmation",
@@ -5631,7 +5631,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.3 g at 10K holds 1.375 g fine gold, worth 176.75 USD at the stored spot. Price ÷ gold = 3.93×.",
+     "detail": "3.3 g at 10K holds 1.375 g fine gold, worth 176.69 USD at the stored spot. Price ÷ gold = 3.93×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -5681,9 +5681,9 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 115.69,
+   "gold_value_usd": 115.65,
    "fine_gold_g": 0.9,
-   "price_to_gold": 4.05,
+   "price_to_gold": 4.06,
    "tier": "needs_confirmation",
    "blockers": [
     "the listing never says \"solid gold\""
@@ -5716,7 +5716,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "1.2 g at 18K holds 0.9 g fine gold, worth 115.69 USD at the stored spot. Price ÷ gold = 4.05×.",
+     "detail": "1.2 g at 18K holds 0.9 g fine gold, worth 115.65 USD at the stored spot. Price ÷ gold = 4.06×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -5766,7 +5766,7 @@
    "solid_stated": false,
    "bbb_rating": "A+",
    "return_days": 30,
-   "gold_value_usd": 327.78,
+   "gold_value_usd": 327.68,
    "fine_gold_g": 2.55,
    "price_to_gold": 3.65,
    "tier": "needs_confirmation",
@@ -5801,7 +5801,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "3.4 g at 18K holds 2.55 g fine gold, worth 327.78 USD at the stored spot. Price ÷ gold = 3.65×.",
+     "detail": "3.4 g at 18K holds 2.55 g fine gold, worth 327.68 USD at the stored spot. Price ÷ gold = 3.65×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {
@@ -5937,7 +5937,7 @@
    "solid_stated": true,
    "bbb_rating": "NR (0 unanswered complaints shown on NY overview)",
    "return_days": 30,
-   "gold_value_usd": 157.46,
+   "gold_value_usd": 157.42,
    "fine_gold_g": 1.225,
    "price_to_gold": 3.8,
    "tier": "ready_to_inspect",
@@ -5970,7 +5970,7 @@
     },
     "price_vs_gold": {
      "status": "confirmed",
-     "detail": "2.1 g at 14K holds 1.225 g fine gold, worth 157.46 USD at the stored spot. Price ÷ gold = 3.80×.",
+     "detail": "2.1 g at 14K holds 1.225 g fine gold, worth 157.42 USD at the stored spot. Price ÷ gold = 3.80×.",
      "source": "https://api.gold-api.com/price/XAU"
     },
     "returns": {

@@ -1,0 +1,254 @@
+{
+ "pass": "P116-67748540",
+ "purpose": "Independent second-channel reads for the 2026-10-23T23:39Z pass. The Actions runner (data/live/2026-10-23T23-39-43Z.json) returned HTTP 403 on 10 rows; this session's own retrieval channel re-opened those 10 official pages, plus both Menē 24K PDPs and the gold spot feed, and recorded the exact string each page printed.",
+ "clock_note": "This session's retrieval tool does not stamp a per-fetch timestamp. Reads were made inside the window 2026-10-23T23:41Z-23:53Z (UTC). 'observed_at_approx' is the position in that window, not a page-provided timestamp; no page-provided date is claimed. The runner file carries exact second-resolution timestamps for the 61 rows it did read.",
+ "observed_at_window": "2026-10-23T23:41Z-23:53Z",
+ "channel": "in-session page retrieval (HTML render + seller product feed endpoints)",
+ "rules": [
+  "every value below is copied from the string the page printed",
+  "no value is inferred, averaged or carried forward",
+  "a page that redirected is recorded with both the requested and the final URL"
+ ],
+ "reads": [
+  {
+   "id": "wc-tulip",
+   "retailer": "With Clarity",
+   "observed_at_approx": "2026-10-23T23:42Z",
+   "requested_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
+   "final_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
+   "source_kind": "seller product feed (same storefront, machine-readable product record)",
+   "observed": {
+    "title": "Tulip Basket Cathedral Classic Solitaire Engagement Ring",
+    "price_min_usd": 590,
+    "price_max_usd": 1110,
+    "price_varies": true,
+    "tags_include": ["14K", "18K", "Platinum"]
+   },
+   "verbatim": "\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\" ... \"price\":59000,\"price_min\":59000,\"price_max\":111000,\"available\":true,\"price_varies\":true",
+   "stored": {"price_low": 590, "price_high": 1110, "karat": "14K"},
+   "verdict": "stored_range_reproduced"
+  },
+  {
+   "id": "wc-4prong",
+   "retailer": "With Clarity",
+   "observed_at_approx": "2026-10-23T23:44Z",
+   "requested_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring.js",
+   "final_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring.js",
+   "source_kind": "seller product feed",
+   "observed": {
+    "title": "Classic Four Prong Solitaire Diamond Engagement Ring",
+    "price_min_usd": 558,
+    "price_max_usd": 801,
+    "compare_at_min_usd": 620,
+    "compare_at_max_usd": 890
+   },
+   "verbatim": "\"price\":55800,\"price_min\":55800,\"price_max\":80100 ... \"compare_at_price\":62000,\"compare_at_price_min\":62000,\"compare_at_price_max\":89000",
+   "stored": {"price_low": 558, "price_high": 801, "karat": "14K"},
+   "verdict": "stored_range_reproduced"
+  },
+  {
+   "id": "wc-4prong-petite",
+   "retailer": "With Clarity",
+   "observed_at_approx": "2026-10-23T23:45Z",
+   "requested_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring.js",
+   "final_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring.js",
+   "source_kind": "seller product feed",
+   "observed": {
+    "title": "Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring",
+    "price_min_usd": 558,
+    "price_max_usd": 963,
+    "compare_at_min_usd": 620,
+    "compare_at_max_usd": 1070
+   },
+   "verbatim": "\"price\":55800,\"price_min\":55800,\"price_max\":96300 ... \"compare_at_price_max\":107000",
+   "stored": {"price_low": 558, "price_high": 963, "karat": "14K"},
+   "verdict": "stored_range_reproduced"
+  },
+  {
+   "id": "wc-6prong",
+   "retailer": "With Clarity",
+   "observed_at_approx": "2026-10-23T23:45Z",
+   "requested_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring.js",
+   "final_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring.js",
+   "source_kind": "seller product feed",
+   "observed": {
+    "title": "Classic Six Prong Solitaire Diamond Engagement Ring",
+    "price_min_usd": 567,
+    "price_max_usd": 828,
+    "compare_at_min_usd": 630,
+    "compare_at_max_usd": 920
+   },
+   "verbatim": "\"price\":56700,\"price_min\":56700,\"price_max\":82800 ... \"compare_at_price_max\":92000",
+   "stored": {"price_low": 567, "price_high": 828, "karat": "14K"},
+   "verdict": "stored_range_reproduced"
+  },
+  {
+   "id": "wc-gerbera",
+   "retailer": "With Clarity",
+   "observed_at_approx": "2026-10-23T23:44Z",
+   "requested_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring.js",
+   "final_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring.js",
+   "source_kind": "seller product feed",
+   "observed": {
+    "title": "Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring",
+    "price_min_usd": 1210,
+    "price_max_usd": 1850
+   },
+   "verbatim": "\"price\":121000,\"price_min\":121000,\"price_max\":185000,\"available\":true,\"price_varies\":true",
+   "stored": {"price_low": 1210, "price_high": 1850, "karat": "14K"},
+   "verdict": "stored_range_reproduced"
+  },
+  {
+   "id": "be-18k-6p-121h6",
+   "retailer": "Brilliant Earth",
+   "observed_at_approx": "2026-10-23T23:49Z",
+   "requested_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+   "final_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+   "source_kind": "official product page (HTML)",
+   "observed": {
+    "title": "Classic Six-Prong Solitaire Ring in 18K Yellow Gold",
+    "price_usd": 1090,
+    "price_label": "Setting Only",
+    "metal": "18K Yellow Gold",
+    "prong_metal": "14K White Gold",
+    "style_code": "BE121H6-18KY",
+    "width": "2.5 mm"
+   },
+   "verbatim": "# Classic Six-Prong Solitaire Ring in 18K Yellow Gold / $1,090(Setting Only) ... - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm",
+   "stored": {"price_low": 1090, "price_high": 1090, "karat": "18K", "price_basis": "setting only - center stone sold separately"},
+   "verdict": "stored_price_reproduced",
+   "note": "The page still states a 14K white gold prong metal on an 18K yellow gold ring — finding F29 stands."
+  },
+  {
+   "id": "car-18k-1895-band-dia",
+   "retailer": "Cartier",
+   "observed_at_approx": "2026-10-23T23:47Z",
+   "requested_url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
+   "final_url": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-2.6-mm-width-1-diamond-CRB4057600.html",
+   "redirected": true,
+   "source_kind": "official product page (HTML)",
+   "observed": {
+    "title": "1895 wedding band, 2.6 mm width, 1 diamond",
+    "price_usd": 1140,
+    "metal": "Yellow gold (750/1000)",
+    "width": "2.6 mm",
+    "stone": "brilliant-cut diamond of 0.01 carat (for size 52)"
+   },
+   "verbatim": "# 1895 wedding band, 2.6 mm width, 1 diamond ... - Yellow gold (750/1000) - Set with a brilliant-cut diamond of 0.01 carat (for size 52) ... $1,140",
+   "stored": {"price_low": 1140, "price_high": 1140, "karat": "18K"},
+   "verdict": "stored_price_reproduced",
+   "note": "The stored URL still resolves but now 301s to a longer slug that carries the width in the path. Price and specification unchanged; the URL was left as stored and this redirect is recorded rather than silently rewritten."
+  },
+  {
+   "id": "car-18k-etincelle-pear",
+   "retailer": "Cartier",
+   "observed_at_approx": "2026-10-23T23:47Z",
+   "requested_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+   "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+   "source_kind": "official product page (HTML)",
+   "observed": {
+    "title": "Etincelle de Cartier ring, pear-shaped diamond, paved",
+    "price_usd": 3350,
+    "metal": "Rose gold 750/1000",
+    "stone": "pear-shaped diamond centre stone of 0.16 carats and 22 brilliant-cut diamonds totalling 0.10 carats"
+   },
+   "verbatim": "- Rose gold 750/1000 - Set with a pear-shaped diamond centre stone of 0.16 carats and 22 brilliant-cut diamonds totalling 0.10 carats ... $3,350",
+   "stored": {"price_low": 3350, "price_high": 3350, "karat": "18K"},
+   "verdict": "stored_price_reproduced"
+  },
+  {
+   "id": "car-18k-etincelle-emerald",
+   "retailer": "Cartier",
+   "observed_at_approx": "2026-10-23T23:48Z",
+   "requested_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+   "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+   "source_kind": "official product page (HTML)",
+   "observed": {
+    "title": "Etincelle de Cartier ring, emerald-cut diamond, paved",
+    "price_usd": 3600,
+    "metal": "18K white gold (750/1000)",
+    "stone": "emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat"
+   },
+   "verbatim": "- 18K white gold (750/1000) - Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat ... $3,600",
+   "stored": {"price_low": 3600, "price_high": 3600, "karat": "18K"},
+   "verdict": "stored_price_reproduced"
+  },
+  {
+   "id": "car-18k-destinee-princess",
+   "retailer": "Cartier",
+   "observed_at_approx": "2026-10-23T23:48Z",
+   "requested_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+   "final_url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-princess-cut-diamond-paved-CRB4232900.html",
+   "redirected": true,
+   "source_kind": "official product page (HTML)",
+   "observed": {
+    "title": "Etincelle de Cartier ring, princess-cut diamond, paved",
+    "page_title": "18K Yellow Gold Etincelle de Cartier Diamond Ring | Cartier US",
+    "price_usd": 3350,
+    "metal": "Yellow gold 750/1000",
+    "reference": "B4232900",
+    "stone": "princess-cut diamond centre stone of 0.16 carats"
+   },
+   "verbatim": "# Etincelle de Cartier ring, princess-cut diamond, paved ... - Yellow gold 750/1000 - Set with a princess-cut diamond centre stone of 0.16 carats ... $3,350 ... Ref.B4232900",
+   "stored": {"price_low": 3350, "price_high": 3350, "karat": "18K"},
+   "verdict": "stored_price_reproduced_name_changed",
+   "note": "Same product reference (B4232900) and the same $3,350 price, but Cartier now serves this reference under the 'Etincelle de Cartier' collection: the '/cartier-destinee/' URL redirects and the printed title no longer says 'Destinée'. The stored row title reflects the older seller naming. Published as F67 for review; the price is reproduced, so the row stays active."
+  },
+  {
+   "id": "mene-24k-classic-band",
+   "retailer": "Menē",
+   "observed_at_approx": "2026-10-23T23:41Z",
+   "requested_url": "https://mene.com/products/mene-classic-band-gold",
+   "final_url": "https://mene.com/products/mene-classic-band-gold",
+   "source_kind": "official product page (HTML)",
+   "observed": {"title": "Classic Band", "price_usd": 1694, "metal_option": "24k Gold", "width": "5mm", "thickness": "2mm"},
+   "verbatim": "# Classic Band / $1,694 / USD ... [Gold 24k Gold] ... Specifications - Width: 5mm Thickness: 2mm",
+   "stored": {"price_low": 1694, "price_high": 1694, "karat": "24K"},
+   "verdict": "stored_price_reproduced",
+   "note": "A 'From $1,651' card for the same product was printed in the recommended rail of the Narrow Classic Band page in the same window, so the default-configuration label on this row remains correct and the pair of numbers is not a contradiction."
+  },
+  {
+   "id": "mene-24k-narrow-band",
+   "retailer": "Menē",
+   "observed_at_approx": "2026-10-23T23:42Z",
+   "requested_url": "https://mene.com/products/mene-narrow-band-gold",
+   "final_url": "https://mene.com/products/mene-narrow-band-gold",
+   "source_kind": "official product page (HTML)",
+   "observed": {"title": "Narrow Classic Band", "price_usd": 1350, "metal_option": "24k Gold", "width": "4mm", "thickness": "2mm"},
+   "verbatim": "# Narrow Classic Band / $1,350 / USD ... Specifications - Width: 4mm Thickness: 2mm",
+   "stored": {"price_low": 1350, "price_high": 1350, "karat": "24K"},
+   "verdict": "stored_price_reproduced"
+  }
+ ],
+ "gold_price": [
+  {
+   "publisher": "gold-api.com",
+   "url": "https://api.gold-api.com/price/XAU",
+   "observed_at": "2026-10-23T23:38:16Z",
+   "price_usd_per_ozt": 3996.899902,
+   "publisher_timestamp": "2026-10-23T23:38:16Z",
+   "verbatim": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3996.899902,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T23:38:16Z\"}",
+   "corroboration": "The GitHub Actions runner read the identical number (3996.899902) from the same publisher 59 s later at 2026-10-23T23:39:15Z — two independent channels, one unchanged value."
+  },
+  {
+   "publisher": "Yahoo Finance (COMEX GC=F front month)",
+   "url": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+   "observed_at": "2026-10-23T23:40Z",
+   "price_usd_per_ozt": 4010.0,
+   "publisher_timestamp": "2026-10-23T20:59:58Z",
+   "publisher_timestamp_source": "regularMarketTime epoch 1792789198 converted to UTC",
+   "verbatim": "\"regularMarketPrice\":4010.0 ... \"regularMarketTime\":1792789198 ... \"chartPreviousClose\":4160.1",
+   "note": "The runner's own cross-check call returned HTTP 429 at 23:39Z; this reading came through the second channel and is timestamped by the publisher, not by the reader."
+  }
+ ],
+ "summary": {
+  "runner_unread_resolved": 10,
+  "runner_unread_total": 10,
+  "drift_found": 0,
+  "name_or_url_changes_found": 2,
+  "notes": [
+   "All ten rows the 2026-10-23T23:39Z runner could not read (HTTP 403: 5 With Clarity, 1 Brilliant Earth, 4 Cartier) were read through the second channel and every stored price reproduced exactly.",
+   "Two Cartier rows redirected: the 1895 band URL now 301s to a longer slug with the same reference and price; the Destinée princess-cut URL now serves an 'Etincelle de Cartier' product with the same reference B4232900 and the same $3,350 — published as F67."
+  ]
+ }
+}
