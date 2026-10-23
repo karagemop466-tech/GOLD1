@@ -206,6 +206,10 @@ const doc = {
   pass: 'P87-live',
   session: 'sess-dab93754',
   date: '2026-10-23',
+  evidence_file: compare.evidence_file || 'data/live/latest.json',
+  evidence_started_at: evidence.started_at,
+  evidence_finished_at: evidence.finished_at,
+  run_context: evidence.run_context,
   purpose:
     'Line-by-line reconciliation of every curated row against its own official product page, re-read in one automated run (20:21:46Z–20:22:25Z) plus an independent second channel.',
   method: {

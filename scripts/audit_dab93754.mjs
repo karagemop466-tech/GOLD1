@@ -242,6 +242,31 @@ await check('N09', 'Published HTML keeps its security posture', async (fail) => 
   return { assertions: n };
 });
 
+await check('N10', 'The published live-audit page carries the run identity and every row', async (fail) => {
+  let html;
+  try {
+    html = await readFile(join(ROOT, 'live-audit.html'), 'utf8');
+  } catch {
+    fail('live-audit.html is missing from the built site');
+    return { assertions: 1 };
+  }
+  let n = 1;
+  for (const field of ['evidence_started_at', 'evidence_finished_at', 'run_context']) {
+    n++;
+    if (!ledger[field]) fail(`ledger has no ${field}, so the page cannot state when it ran`);
+    else if (!html.includes(String(ledger[field]).replace(/&/g, '&amp;'))) {
+      fail(`live-audit.html does not print ${field} (${ledger[field]})`);
+    }
+  }
+  n++;
+  if (/between\s*<[^>]*>\s*and\s*</i.test(html.replace(/\s+/g, ' '))) fail('live-audit.html renders an empty time range ("between … and …")');
+  for (const r of ledger.rows) {
+    n++;
+    if (!html.includes(`>${r.id}<`)) fail(`live-audit.html is missing row ${r.id}`);
+  }
+  return { assertions: n };
+});
+
 const failed = results.filter((r) => !r.ok);
 const doc = {
   pass: 'P87-audit',

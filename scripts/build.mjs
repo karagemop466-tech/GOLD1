@@ -1474,7 +1474,8 @@ const eveningPage = eveningLedger
   <h1>Live audit — 2026-10-23 evening (P87)</h1>
   <p class="lede">Every one of the ${eveningLedger.summary.rows} curated listings was re-opened at its own official URL in a single automated run between
   <strong>${esc(eveningLedger.evidence_started_at)}</strong> and <strong>${esc(eveningLedger.evidence_finished_at)}</strong>, then compared at product and variant level.
-  A separate channel re-read ${eveningLedger.summary.independent_reads} sources so the automated numbers have an independent witness. Nothing below was carried forward from an earlier pass.</p>
+  A separate channel re-read ${eveningLedger.summary.independent_reads} sources so the automated numbers have an independent witness. Nothing below was carried forward from an earlier pass.
+  <br><span class="sub">Evidence run: <code>${esc(eveningLedger.run_context || 'local')}</code> · evidence file <code>${esc(ledgerEvidenceFile(eveningLedger))}</code> · run finished <strong>${esc(eveningLedger.evidence_finished_at)}</strong>.</span></p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">

@@ -38,8 +38,9 @@
 <section class="wrap section">
   <h1>Live audit — 2026-10-23 evening (P87)</h1>
   <p class="lede">Every one of the 71 curated listings was re-opened at its own official URL in a single automated run between
-  <strong></strong> and <strong></strong>, then compared at product and variant level.
-  A separate channel re-read 8 sources so the automated numbers have an independent witness. Nothing below was carried forward from an earlier pass.</p>
+  <strong>2026-10-23T20:21:46Z</strong> and <strong>2026-10-23T20:22:25Z</strong>, then compared at product and variant level.
+  A separate channel re-read 8 sources so the automated numbers have an independent witness. Nothing below was carried forward from an earlier pass.
+  <br><span class="sub">Evidence run: <code>github-actions run 40018561423</code> · evidence file <code>data/live/latest.json</code> · run finished <strong>2026-10-23T20:22:25Z</strong>.</span></p>
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
@@ -917,7 +918,7 @@
   </div>
 
   <h2>This pass’s own audit (N01–N09)</h2>
-  <p class="sub">9/9 groups passed, 1,468 assertions, 0 failure(s). Group N09 was sabotage-tested: an external link without <code>rel="noopener"</code> and an unreplaced template expression were injected into a temporary page, both were caught, and the page was removed.</p>
+  <p class="sub">10/10 groups passed, 1,544 assertions, 0 failure(s). Group N09 was sabotage-tested: an external link without <code>rel="noopener"</code> and an unreplaced template expression were injected into a temporary page, both were caught, and the page was removed.</p>
   <div class="table-wrap">
   <table class="data-table">
     <thead><tr><th scope="col">ID</th><th scope="col">Check</th><th scope="col">Result</th><th scope="col" class="num-col">Assertions</th></tr></thead>
@@ -931,6 +932,7 @@
     <tr><td><strong>N07</strong></td><td class="small">Every independent read carries a URL, a time and a verbatim quote</td><td><span class="chip ok">pass</span></td><td class="num-col">25</td></tr>
     <tr><td><strong>N08</strong></td><td class="small">Verdict arithmetic, withdrawn rows and findings are internally consistent</td><td><span class="chip ok">pass</span></td><td class="num-col">46</td></tr>
     <tr><td><strong>N09</strong></td><td class="small">Published HTML keeps its security posture</td><td><span class="chip ok">pass</span></td><td class="num-col">771</td></tr>
+    <tr><td><strong>N10</strong></td><td class="small">The published live-audit page carries the run identity and every row</td><td><span class="chip ok">pass</span></td><td class="num-col">76</td></tr>
     </tbody>
   </table>
   </div>
