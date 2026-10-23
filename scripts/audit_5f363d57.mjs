@@ -31,12 +31,13 @@ const [ringsDoc, retailersDoc, flagsDoc, gold, checklist, compliance, verificati
     readJson('data/verification-2026-10-23.json'),
     readJson('data/sources.json'),
   ]);
-const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, verifySource, reconciler] = await Promise.all([
+const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, liveAuditHtml, verifySource, reconciler] = await Promise.all([
   readText('README.md'),
   readText('scripts/build_compliance.mjs'),
   readText('scripts/build.mjs'),
   readText('assets/js/app.js'),
   readText('index.html'),
+  readText('live-audit.html'),
   readText('scripts/verify.mjs'),
   readText('scripts/reconcile_live.mjs'),
 ]);
@@ -185,6 +186,16 @@ await group('R02', 'Verification verdicts agree with observed bounds and weights
     check(!(staleCeiling && new RegExp(`Re-checked 2026-10-23[\\s\\S]*${staleCeiling[1]}`, 'i').test(r.evidence || '')), failure, `${r.id}: notes say ${staleCeiling?.[1]} is no longer listed but the later evidence quotes it`, {
       row: r.id, id: 'CANONICAL_PROSE_CONTRADICTS_SCHEMA', path: 'data/rings.json',
     });
+    for (const claim of (r.notes || '').matchAll(/re-?verified[^.\n]*?\bat\s*\$([\d,]+(?:\.\d{2})?)/gi)) {
+      const claimed = Number(claim[1].replace(/,/g, ''));
+      check(claimed === r.price_low || claimed === r.price_high, failure, `${r.id}: notes still claim re-verification at $${claimed}, but schema stores $${r.price_low}–$${r.price_high}`, {
+        row: r.id, id: 'STALE_NOTE_PRICE', path: 'data/rings.json', sources: [r.source_url],
+      });
+    }
+    const sizeFloor = (r.evidence || '').match(/size-floor card\s*["“]From\s*\$([\d,]+(?:\.\d{2})?)/i);
+    check(!(sizeFloor && /starting price/i.test(r.price_basis || '') && Number(sizeFloor[1].replace(/,/g, '')) !== r.price_low), failure, `${r.id}: basis says starting price $${r.price_low}, but the quoted size-floor card says From $${sizeFloor?.[1]}; identify the stored figure as the displayed default configuration, not the range floor`, {
+      row: r.id, id: 'PRICE_BASIS_CONTRADICTS_EVIDENCE', path: 'data/rings.json', sources: [r.source_url],
+    });
   }
   check(/prices\.max < hi/.test(reconciler), failure, 'P42 reconciler never detects an observed range that fails to reproduce the stored upper bound', {
     id: 'RECONCILER_IGNORES_UPPER_BOUND', path: 'scripts/reconcile_live.mjs',
@@ -257,20 +268,29 @@ await group('R03', 'Requirements math never averages or reuses unverified values
 
 /* R04 — checklist states must not claim unfinished buyer work or unknown reputation. */
 await group('R04', 'Requirements tiers and buyer-action labels are honest', async (failure) => {
+  const f46 = flagsDoc.items.find((f) => f.id === 'F46');
+  const ambiguousWeightIds = new Set(f46?.affected?.match(/au-[a-z0-9-]+/g) || []);
   for (const r of rows) {
     const c = complianceById[r.id];
     const v = verById[r.id];
     if (!c) continue;
     if (c.tier === 'ready_to_inspect') {
       const reputation = c.checks.reputation;
-      const unratedIsExplicit = reputation.status === 'unrated' && c.blockers.some((b) => /unrated|not rated|\bNR\b/i.test(b));
-      check(reputation.status === 'confirmed' || unratedIsExplicit, failure, `${r.id}: ready_to_inspect does not confirm reputation or explicitly disclose an unrated result with a caution`, {
+      check(reputation.status === 'confirmed', failure, `${r.id}: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier`, {
         row: r.id, id: 'SHORTLIST_REPUTATION_OPEN', path: 'data/compliance.json', sources: [retailers[r.retailer_id]?.bbb_source].filter(Boolean),
       });
     }
     check(c.checks.documentation.status !== 'confirmed', failure, `${r.id}: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet`, {
       row: r.id, id: 'DOCUMENTATION_BUYER_ACTION_MISLABELED', path: 'data/compliance.json',
     });
+    check(!(c.price_to_gold === null && c.checks.price_vs_gold.status === 'confirmed'), failure, `${r.id}: price-versus-gold is marked confirmed although no valid scalar comparison was computed`, {
+      row: r.id, id: 'PRICE_COMPARISON_OVERSTATED', path: 'data/compliance.json',
+    });
+    if (ambiguousWeightIds.has(r.id)) {
+      check(/basis|stone|metal-only|total.item|not established/i.test(c.checks.weight.detail || ''), failure, `${r.id}: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight`, {
+        row: r.id, id: 'WEIGHT_BASIS_CAVEAT_MISSING', path: 'data/compliance.json', sources: [r.source_url],
+      });
+    }
     if (/exchange only!|exchange for size only/i.test(v?.final_sale_quote || '')) {
       check(c.checks.returns.status === 'negative', failure, `${r.id}: final-sale/exchange-only product is marked as having a confirmed usable return policy`, {
         row: r.id, id: 'FINAL_SALE_RETURN_MISLABELED', path: 'data/compliance.json',
@@ -456,6 +476,20 @@ await group('R09', 'Flag and requirements source coverage', async (failure) => {
   check(!(/includes stone mass/i.test(f46?.title || '') && /can include diamond mass/i.test(f46?.finding || '')), failure, 'F46 title asserts stone inclusion while its own finding only says the weight can include stones; keep the basis unconfirmed', {
     id: 'WEIGHT_BASIS_OVERSTATED', path: 'data/flagged.json',
   });
+  const normalizeTitle = (s) => String(s || '').replace(/&quot;/g, '"').replace(/&(?:#39|apos);/g, "'").replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  const liveFindings = [...liveAuditHtml.matchAll(/<tr>\s*<td><strong>(F\d+)<\/strong><\/td>\s*<td><strong>([\s\S]*?)<\/strong>/g)];
+  for (const match of liveFindings) {
+    const [, id, htmlTitle] = match;
+    const registry = flagsDoc.items.find((f) => f.id === id);
+    check(Boolean(registry), failure, `${id}: published live-audit irregularity is absent from the main Flagged for Review registry`, {
+      id: 'LIVE_FINDING_MISSING_FROM_FLAGGED', path: 'data/flagged.json', sources: ['live-audit.html'],
+    });
+    if (registry) {
+      check(normalizeTitle(registry.title) === normalizeTitle(htmlTitle), failure, `${id}: Flagged for Review and live-audit assign different titles to the same finding ID`, {
+        id: 'FINDING_ID_COLLISION', path: 'data/flagged.json', sources: ['live-audit.html'],
+      });
+    }
+  }
 });
 
 /* R10 — registry and report references are real and security expectations stay visible. */

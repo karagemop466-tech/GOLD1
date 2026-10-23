@@ -39,11 +39,11 @@
   <div class="wrap">
     <p class="eyebrow">Research dashboard · captured 2026-10-22, 2026-10-23 · last live re-read 2026-10-23</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">71 listings from 11 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on 2026-10-23: 71 carry a verdict from that pass, 0 could not be re-read at all because the seller blocks automated retrieval, and 2 carry no usable price — one because the seller displays none, one because the SKU now sells a different ring.</p>
+    <p class="lede">71 listings from 11 retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on 2026-10-23: 71 carry a verdict from that pass, 0 could not be re-read at all because the seller blocks automated retrieval, and 3 carry no usable price — one because the seller displays none, one because the SKU now sells a different ring.</p>
     
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H12 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: 2026-10-23; snapshots are not live quotes).</p>
 </div>
   </div>
 </section>
@@ -52,9 +52,9 @@
   <div class="stats">
     
 <div class="stat">
-  <div class="stat-value">71</div>
-  <div class="stat-label">verified listings</div>
-  <div class="stat-note">price + karat across 10K, 14K, 18K, 22K & 24K</div>
+  <div class="stat-value">69</div>
+  <div class="stat-label">active listings</div>
+  <div class="stat-note">69 active listings with price + karat across 10K, 14K, 18K, 22K & 24K; 2 withdrawn records kept for audit history (reused URLs, F51/F65)</div>
 </div>
     
 <div class="stat">
@@ -88,7 +88,7 @@
 </div>
     
 <div class="stat">
-  <div class="stat-value">57</div>
+  <div class="stat-value">65</div>
   <div class="stat-label">flagged findings</div>
   <div class="stat-note">published, not hidden</div>
 </div>
@@ -104,7 +104,7 @@
 <section class="wrap section">
   <div class="callout good">
     <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All 71 listings across 11 retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: 48 parsed by the automated workflow, 2 hand-read, and 21 verified via direct storefront JSON &amp; PDP fetches (0 unread). <strong>59 prices reproduced exactly.</strong> 6 were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). 1 row remains <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows).</p>
+    <p>All 71 listings across 11 retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: 48 parsed by the automated workflow, 2 hand-read, and 21 verified via direct storefront JSON &amp; PDP fetches (0 unread). <strong>59 prices reproduced exactly.</strong> 6 were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). 1 row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -126,15 +126,15 @@
 
 <section class="wrap section">
   <div class="callout">
-    <h2>How current each row is — pass P114, 2026-10-23</h2>
+    <h2>How current each row is — pass P110, 2026-10-23</h2>
     <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and 71 of 71 were opened again on 2026-10-23 by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-2026-10-23.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
       <li><strong>25 of 71 rows publish a metal weight</strong> (<a href="rings/rs-571221.html">1.7 g</a>, <a href="rings/rs-571222.html">2.5 g</a>, <a href="rings/rs-571223.html">3.8 g</a>, <a href="rings/rs-571213.html">5 g</a>, <a href="rings/rs-981367.html">0.5 g</a>, <a href="rings/rs-907250.html">0.5 g</a>, <a href="rings/rs-960952.html">1.3 g</a>, <a href="rings/au-2ct-oval.html">2.73 g</a>, <a href="rings/au-1ct-emerald.html">1.97 g</a>, <a href="rings/au-3ct-round.html">3.3 g</a>, <a href="rings/au-cigar.html">2.6 g</a>, <a href="rings/au-xring.html">2.7 g</a>, and 13 more). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. </li>
-      <li><strong>5 rows are partly verified.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a>, <a href="rings/as-hazeline.html">Hazeline Solitaire Ring - Yellow Gold &amp; Cushion Champagne Diamond</a>, <a href="rings/as-bea-3stone.html">Bea Three Stone Ring - 14k Gold &amp; White Diamond Center</a>, <a href="rings/au-cigar.html">Modern Cigar Band (14K Yellow Gold variant)</a>, <a href="rings/be-18k-6p-121h6.html">Classic Six-Prong Solitaire Ring in 18K Yellow Gold</a> — in each case the seller's page did not fully reproduce the stored figure, and the reason is printed on the row.</li>
-      <li><strong>2 rows carry no usable price.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a> — The official product page still resolves and still describes the 1.50ct oval champagne diamond in 14k recycled gold, but it no longer displays any price; <a href="rings/rs-939479.html">1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold</a> — Withdrawn on 2026-10-23. Both read “— unverified” everywhere on this site.</li>
+      <li><strong>4 rows are partly verified.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a>, <a href="rings/as-hazeline.html">Hazeline Solitaire Ring - Yellow Gold &amp; Cushion Champagne Diamond</a>, <a href="rings/as-bea-3stone.html">Bea Three Stone Ring - 14k Gold &amp; White Diamond Center</a>, <a href="rings/au-cigar.html">Modern Cigar Band (14K Yellow Gold variant)</a> — in each case the seller's page did not fully reproduce the stored figure, and the reason is printed on the row.</li>
+      <li><strong>3 rows carry no usable price.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring - 14k Gold &amp; Champagne Diamond (1.50ct)</a> — The official product page still resolves and still describes the 1.50ct oval champagne diamond in 14k recycled gold, but it no longer displays any price; <a href="rings/rs-939479.html">1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold</a> — Withdrawn on 2026-10-23; <a href="rings/bn-14k-petite-195639.html">Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)</a> — Withdrawn on 2026-10-23 (sess-0a6df02e). Both read “— unverified” everywhere on this site.</li>
       <li><strong>0 rows remain unread today</strong> — all 9 pages previously blocked on the automated runner (With Clarity, Cartier and Brilliant Earth; <a href="flagged.html">F53</a>) were verified via direct storefront JSON &amp; PDP fetches.</li>
     </ul>
-    <p class="sub">Full list of the 57 open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
+    <p class="sub">Full list of the 65 open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
   </div>
 </section>
 
@@ -151,7 +151,7 @@
       <div><span class="k">18K gold / g</span> <strong>$96.41</strong></div>
       <div><span class="k">14K gold / g</span> <strong>$74.98</strong></div>
       <div><span class="k">10K gold / g</span> <strong>$53.56</strong></div>
-      <p class="sub">NIST exact 31.1034768 g/ozt · COMEX futures cross-check $4,040.10/ozt. <a href="calculator.html">Open the calculator →</a></p>
+      <p class="sub">NIST exact 31.1034768 g/ozt · COMEX futures cross-check $4,010.70/ozt. <a href="calculator.html">Open the calculator →</a></p>
     </div>
   </div>
 </section>
@@ -241,8 +241,8 @@
   <div class="pass-card">
           <div class="pass-head">
             <span class="badge ok">PASS</span>
-            <strong>P114</strong>
-            <span class="muted">run 2026-10-23T20:55:29Z</span>
+            <strong>P110</strong>
+            <span class="muted">run 2026-10-23T21:11:52Z</span>
           </div>
           <p>20 checks passed, 0 failed. The suite looks for fabricated values: prices that do not appear in their own evidence string, karats outside the legal set, melt-value contradictions, future dates and broken internal links.</p>
           <p><a href="checks.html">See every check →</a></p>
@@ -603,7 +603,7 @@
     <td class="small">single listed price</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip warn">partly</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price unverified</span> <span class="chip chip-warn">price not reproducible</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -616,7 +616,7 @@
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip warn">partly</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -629,7 +629,7 @@
     <td class="small">starting price - varies with stone size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip warn">partly</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">made to order</span> <span class="chip chip-warn">price varies</span></td>
     <td><a class="src" href="https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -681,7 +681,7 @@
     <td class="small">single listed price</td>
     <td class="small">2.6–4 g</td>
     <td class="num-col small">$194.96–$299.93<div class="sub">4.4× price</div></td>
-    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
+    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip warn">partly</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">plated variant in listing</span> <span class="chip chip-warn">weight range</span></td>
     <td><a class="src" href="https://auratenewyork.com/products/modern-cigar-band" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
@@ -1036,26 +1036,26 @@
     <td class="flags"><span class="chip chip-warn">solid not stated</span></td>
     <td><a class="src" href="https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="bands" data-retailer="mene" data-karat="24K" data-price="1707" data-title="classic band — 24k pure gold (5 mm) menē  none">
+  <tr data-category="bands" data-retailer="mene" data-karat="24K" data-price="1694" data-title="classic band — 24k pure gold (5 mm) menē  none">
     <td class="cell-title"><a href="rings/mene-24k-classic-band.html">Classic Band — 24k Pure Gold (5 mm)</a><div class="sub">Pure 24K bullion band</div></td>
     <td>Menē</td>
     <td><strong>24K</strong></td>
     <td>Pure 24K yellow gold<div class="sub">None</div></td>
-    <td class="num-col"><span class="num">$1,707.00</span></td>
-    <td class="small">starting price - varies with spot gold &amp; ring size</td>
+    <td class="num-col"><span class="num">$1,694.00</span></td>
+    <td class="small">default configuration price - varies with spot gold &amp; ring size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
     <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">starting price</span> <span class="chip chip-warn">made to order</span></td>
     <td><a class="src" href="https://mene.com/products/mene-classic-band-gold" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
-  <tr data-category="bands" data-retailer="mene" data-karat="24K" data-price="1361" data-title="narrow classic band — 24k pure gold (4 mm) menē  none">
+  <tr data-category="bands" data-retailer="mene" data-karat="24K" data-price="1350" data-title="narrow classic band — 24k pure gold (4 mm) menē  none">
     <td class="cell-title"><a href="rings/mene-24k-narrow-band.html">Narrow Classic Band — 24k Pure Gold (4 mm)</a><div class="sub">Pure 24K bullion band</div></td>
     <td>Menē</td>
     <td><strong>24K</strong></td>
     <td>Pure 24K yellow gold<div class="sub">None</div></td>
-    <td class="num-col"><span class="num">$1,361.00</span></td>
-    <td class="small">starting price - varies with spot gold &amp; ring size</td>
+    <td class="num-col"><span class="num">$1,350.00</span></td>
+    <td class="small">default configuration price - varies with spot gold &amp; ring size</td>
     <td class="small"><span class="unverified">— unverified</span></td>
     <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
     <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
@@ -1191,19 +1191,6 @@
     <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
     <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">starting price</span> <span class="chip chip-warn">no hallmark published</span></td>
     <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html" rel="noopener nofollow" target="_blank">official page ↗</a></td>
-  </tr>
-  <tr data-category="solitaire" data-retailer="blue-nile" data-karat="14K" data-price="1000" data-title="petite micropavé engagement ring in 14k yellow gold (1/10 ct. tw.) blue nile natural micropavé side diamonds (1/10 ct. tw., i color, si2 clarity); center stone sold separately diamond">
-    <td class="cell-title"><a href="rings/bn-14k-petite-195639.html">Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)</a><div class="sub">Micropavé solitaire setting</div></td>
-    <td>Blue Nile</td>
-    <td><strong>14K</strong></td>
-    <td>Yellow gold<div class="sub">Natural micropavé side diamonds (1/10 ct. tw., I color, SI2 clarity); center stone sold separately</div></td>
-    <td class="num-col"><span class="num">$1,000.00</span></td>
-    <td class="small">setting only - center stone sold separately</td>
-    <td class="small"><span class="unverified">— unverified</span></td>
-    <td class="num-col small"><span class="unverified" title="No published weight, so no gold value can be computed">—</span></td>
-    <td class="small"><span class="num">2026-10-23</span><div class="sub"><span class="chip ok">confirmed</span></div></td>
-    <td class="flags"><span class="chip chip-warn">solid not stated</span> <span class="chip chip-warn">setting only</span> <span class="chip chip-warn">mixed karat parts</span> <span class="chip chip-warn">no hallmark published</span></td>
-    <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639" rel="noopener nofollow" target="_blank">official page ↗</a></td>
   </tr>
   <tr data-category="bands" data-retailer="mejuri" data-karat="14K" data-price="898" data-title="slim diamond eternity band (14k solid yellow gold) mejuri natural round diamonds (0.22–0.27 ct total depending on size) diamond">
     <td class="cell-title"><a href="rings/mej-14k-sdeb.html">Slim Diamond Eternity Band (14k Solid Yellow Gold)</a><div class="sub">Slim diamond eternity band</div></td>

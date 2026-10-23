@@ -1,0 +1,300 @@
+{
+  "session": "sess-0a6df02e",
+  "branch": "arena/0a6df02e-gold1",
+  "task": "Board T46 (claimed as T38 in parallel with two other ninth-pass sessions; renumbered at the union merge) — ninth pass: fresh live official-source re-reads (2026-10-23 evening, UTC), PR #41 zero-loss integration, security/hallucination passes, publish",
+  "method": "Official retailer product pages and the sellers' own Shopify product JSON feeds (<product-url>.js), read through the Arena page-fetch channel (sandbox shell egress is allowlist-only: github/npm/pypi). Only what the source printed is recorded; nothing is inferred. Timestamps are UTC, minute granularity, from the session clock at read time.",
+  "rule": "No hallucinations: every value below is a verbatim field or page line from the URL named, read at the timestamp recorded. A value this channel could not read is recorded as not_read and changes nothing. Shopify variant \"weight\" fields are parcel/shipping weights and are never used as metal weight.",
+  "reads": [
+    {
+      "target": "gold spot (primary)",
+      "read_at": "2026-10-23T20:22Z",
+      "url_read": "https://api.gold-api.com/price/XAU",
+      "channel": "market data publisher JSON",
+      "verbatim": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3998.100098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:19:15Z\",\"updatedAtReadable\":\"a few seconds ago\"}",
+      "verdict": "new primary: 3998.100098 USD/ozt at publisher timestamp 2026-10-23T20:19:15Z; supersedes 3999.899902 at 19:38:15Z (sess-5aa23937), which is retained in readings[]",
+      "drift": true,
+      "action": "data/gold-price.json primary + readings[0] updated; every melt figure re-derived by rebuild, none retyped"
+    },
+    {
+      "target": "gold futures cross-check (COMEX GC=F)",
+      "read_at": "2026-10-23T20:27Z",
+      "url_read": "https://query1.finance.yahoo.com/v8/finance/chart/GC%3DF?interval=1d&range=5d",
+      "channel": "market data publisher JSON (Yahoo Finance)",
+      "verbatim": "\"regularMarketPrice\":4010.7,\"regularMarketTime\":1792786638,\"regularMarketDayHigh\":4050.2,\"regularMarketDayLow\":3989.2 (epoch 1792786638 = 2026-10-23T20:17:18Z)",
+      "verdict": "cross-check refreshed: 4010.7 USD/ozt; previous 4040.1 at 2026-10-23T10:00:08Z retained in the cross_check note",
+      "drift": true,
+      "action": "data/gold-price.json cross_check updated with its own publisher timestamp"
+    },
+    {
+      "row": "car-18k-etincelle-emerald",
+      "read_at": "2026-10-23T20:22Z",
+      "url_read": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+      "channel": "official Cartier product page",
+      "stored": {
+        "price": 3600,
+        "karat": "18K",
+        "metal": "White gold"
+      },
+      "verbatim": "h1 \"Etincelle de Cartier ring, emerald-cut diamond, paved\"; Product Description \"18K white gold (750/1000)\", \"Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat\", \"Width: 1.52 mm\"; price \"$3,600\"; \"Ref.B4225700\"; stock notice \"Unavailable online\"; \"You may return or exchange your Cartier creation within 30 days.\"",
+      "verdict": "confirmed — stored $3,600 and 18K white gold (750/1000) match the live page exactly. This is the second-channel read this row never had: sess-545688f3 read it (§16), sess-3020df54 could not reach it (T37b not_read), sess-0a6df02e now confirms it independently.",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "mene-24k-classic-band",
+      "read_at": "2026-10-23T20:22Z",
+      "url_read": "https://mene.com/products/mene-classic-band-gold",
+      "channel": "official Menē product page",
+      "stored": {
+        "price": 1707,
+        "karat": "24K"
+      },
+      "verbatim": "h1 \"Classic Band\"; \"$1,694\" / \"USD\"; metal selector \"24k Gold\"; Specifications \"Width: 5mm Thickness: 2mm\"; cross-link floor card \"From $1,651\"",
+      "verdict": "DRIFT — live default price $1,694 vs stored $1,707 (-$13). Menē prices are spot-linked and move intraday (F58); spot fell from 4024.699951 (09:59Z) to 3998.100098 (20:19Z) between the reads.",
+      "drift": true,
+      "action": "price_low/price_high updated 1707 -> 1694; evidence rewritten to quote the new live line and keep the earlier readings as history; F58 evening addendum"
+    },
+    {
+      "row": "mene-24k-narrow-band",
+      "read_at": "2026-10-23T20:22Z",
+      "url_read": "https://mene.com/products/mene-narrow-band-gold",
+      "channel": "official Menē product page",
+      "stored": {
+        "price": 1361,
+        "karat": "24K"
+      },
+      "verbatim": "h1 \"Narrow Classic Band\"; \"$1,350\" / \"USD\"; metal selector \"24k Gold\"; Specifications \"Width: 4mm Thickness: 2mm\"; cross-link floor card \"From $1,290\"",
+      "verdict": "DRIFT — live default price $1,350 vs stored $1,361 (-$11); same spot-linked cause as the Classic Band (F58).",
+      "drift": true,
+      "action": "price_low/price_high updated 1361 -> 1350; evidence rewritten likewise; F58 evening addendum"
+    },
+    {
+      "row": "rs-997811",
+      "read_at": "2026-10-23T20:23Z",
+      "url_read": "https://www.ross-simons.com/products/997811",
+      "channel": "official Ross-Simons product page",
+      "stored": {
+        "price": 89,
+        "karat": "10K",
+        "weight_g": 0.3,
+        "solid_stated": true
+      },
+      "verbatim": "h1 \"Italian 10kt Yellow Gold Textured Ring\"; \"$89\"; size lines \"Size 5$89.00In-Stock\" through \"Size 10$89.00In-Stock\"; Details \"Metal 10kt Yellow Gold\", \"Gold Weight 0.3 grams\"; \"Item 997811\"",
+      "verdict": "confirmed — price, karat and published gold weight all match the stored row exactly (shortlist row re-read fresh)",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "rs-222283",
+      "read_at": "2026-10-23T20:23Z",
+      "url_read": "https://www.ross-simons.com/products/222283",
+      "channel": "official Ross-Simons product page",
+      "stored": {
+        "price": 695,
+        "karat": "10K",
+        "weight_g": 3.3
+      },
+      "verbatim": "h1 \"Italian 10kt Yellow Gold Polished Dome Ring\"; \"$695\"; size lines \"Size 6$695.00In-Stock\" through \"Size 9$695.00In-Stock\"; promo banner \"25% OFF IN CART WITH CODE GOLDENDAYS\"; Details \"Metal 10kt Yellow Gold\", \"Gold Weight 3.3 grams\"; \"Item 222283\"",
+      "verdict": "confirmed — listed price/karat/weight match exactly. The 25%-off code applies in cart; the stored basis is the listed price, unchanged.",
+      "drift": false,
+      "action": "evidence suffix appended (incl. cart-code note); no value changed"
+    },
+    {
+      "row": "rs-571221",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://www.ross-simons.com/products/571221",
+      "channel": "official Ross-Simons product page",
+      "stored": {
+        "price": 400,
+        "karat": "14K",
+        "weight_g": 1.7
+      },
+      "verbatim": "h1 \"Women's 2mm 14kt Yellow Gold Band\"; \"$400\"; \"Size 5$400.00In-Stock\" (whole sizes 5–9 in stock; half sizes Sold Out); Details \"Metal 14kt Yellow Gold\", \"Gold Weight 1.7 grams\"; \"Item 571221\"",
+      "verdict": "confirmed — the calculator's worked example (1.7 g, 14K, $400) still rests on the seller's live page",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "rs-939479",
+      "read_at": "2026-10-23T20:26Z",
+      "url_read": "https://www.ross-simons.com/products/939479.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price": 499,
+        "karat": "14K",
+        "verification_status": "withdrawn_source_mismatch"
+      },
+      "verbatim": "\"title\":\"Italian 14kt Yellow Gold Claddagh Ring\"; \"price\":49900; variant sku \"JGRX 939479 050 4Y\"; variant \"weight\":113 (parcel grams — ignored, not metal weight)",
+      "verdict": "F51 re-confirmed — the URL still sells the Claddagh ring, not the curated lab-grown diamond eternity band. Withdrawal stands.",
+      "drift": false,
+      "action": "none (already withdrawn and flagged F51)"
+    },
+    {
+      "row": "ag-14k-industrial-band",
+      "read_at": "2026-10-23T20:24Z",
+      "url_read": "https://www.automicgold.com/products/industrial-mirror-band.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price": 598,
+        "karat": "14K",
+        "weight_g": 2.1,
+        "solid_stated": true
+      },
+      "verbatim": "variant \"public_title\":\"14k Yellow Gold / 1.7mm / No Gem\",\"price\":59800; product-level \"price_min\":22500 is the 925-silver variant and was NOT used (variant-mapping trap); description \"Our solid band is made in our studio in NYC\"; variant \"weight\":0 is an unset shipping field, not metal weight",
+      "verdict": "confirmed at variant level — the exact 14k Yellow Gold / 1.7mm / No Gem variant is $598.00 = stored (shortlist row). The 2.1 g metal weight was not in this feed and keeps its earlier HTML-details verification; it is not re-claimed here.",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "ag-14k-radiant-3ct",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price": 3074,
+        "karat": "14K",
+        "weight_g": 5.4,
+        "solid_stated": true
+      },
+      "verbatim": "variant \"public_title\":\"14k Yellow Gold\",\"price\":307400; \"Nickel Free 14k White Gold\" variant \"price\":323600 (matches F58's $3,236); description \"Crafted from solid recycled 14k gold or 950 platinum\"",
+      "verdict": "confirmed at variant level — 14k Yellow Gold $3,074.00 = stored (shortlist row). 5.4 g weight not in this feed; not re-claimed here.",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "mej-2mm",
+      "read_at": "2026-10-23T20:24Z",
+      "url_read": "https://mejuri.com/products/2mm-smooth-band",
+      "channel": "official Mejuri product page",
+      "stored": {
+        "price": 498,
+        "karat": "14K",
+        "solid_stated": true,
+        "weight_g": null
+      },
+      "verbatim": "h1 \"2mm Smooth Band\"; \"$498\"; \"Material Solid Yellow Gold (14k)\"; \"Handcrafted in recycled 14k solid gold featuring streamlined edges\"; Specifications \"Width: 2 mm\", \"Thickness: 1.3 mm\"; no gram weight anywhere on the page; \"free 30-day returns & exchanges\"",
+      "verdict": "confirmed — price, explicit solid-gold wording and the absence of a published weight all match the stored row",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "be-18k-6p-121h6",
+      "read_at": "2026-10-23T20:24Z",
+      "url_read": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "channel": "official Brilliant Earth product page (USD rendering)",
+      "stored": {
+        "price": 1090,
+        "karat": "18K",
+        "verification_status": "partly_verified"
+      },
+      "verbatim": "h1 \"Classic Six-Prong Solitaire Ring in 18K Yellow Gold\"; \"$1,090(Setting Only)\"; \"Metal:18K Yellow Gold\"; Ring Information \"Style: BE121H6-18KY\", \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\", \"Setting: Six-Prong\"",
+      "verdict": "confirmed in USD — resolves the only reason this row was partly_verified: sess-545688f3's channel rendered €1,250.00 under Global-e geo-IP (F53/F58) and sess-3020df54 never reached the page (T37b). The $1,090 US price now rests on two USD reads (2026-10-22 snapshot + this 2026-10-23 read).",
+      "drift": false,
+      "action": "verification_status upgraded partly_verified -> confirmed; evidence + notes appended; F53 ninth-pass addendum"
+    },
+    {
+      "row": "auv-22k-vneck-sm",
+      "read_at": "2026-10-23T20:24Z",
+      "url_read": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+      "channel": "official Auvere product page (BigCommerce; fetched text reordered, price block absent)",
+      "stored": {
+        "price": 900,
+        "karat": "22K",
+        "solid_stated": true,
+        "weight_g": null
+      },
+      "verbatim": "Details \"Approximate Fine Weight:2.9 to 3.7 grams depending on size\", \"Thickness: 1/16\\\" (2 mm)\"; \"Free returns and exchange within 15 days in the USA\"; \"You have 15 days from the day a piece is delivered to begin a return or exchange\"; philosophy block \"22 karat at 91.7 percent ... Our pieces are solid gold, never plated and never vermeil\"; the satin sibling card showed \"$900\" (different finish — not used for this row)",
+      "verdict": "PARTIAL READ — specs, the ambiguous fine-weight basis (F54) and the live 15-day return window (F55) are corroborated, but this row's own price block was not present in the fetched page text, so the $900 price was NOT re-read this pass. It keeps its earlier 2026-10-23 verification (sess-545688f3); nothing is upgraded on the basis of a sibling variant's card.",
+      "drift": null,
+      "action": "evidence suffix appended stating the price was not re-read; no value changed"
+    },
+    {
+      "row": "au-2ct-oval",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 1968,
+        "price_high": 2800,
+        "karat": "14K",
+        "weight_g": 2.73
+      },
+      "verbatim": "\"price_min\":196800,\"price_max\":280000; tags include \"14k\",\"18k\",\"platinum\",\"engagement-ring\"; first variant \"14k / Yellow / 2.5\" \"price\":196800",
+      "verdict": "confirmed — live range $1,968–$2,800 equals the stored range. The range spans 14k/18k/platinum variants (variant-mapping caution already flagged in prior passes). The 2.73 g weight is not in this feed; not re-claimed here.",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "wc-gerbera",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 1210,
+        "price_high": 1850,
+        "karat": "14K"
+      },
+      "verbatim": "\"title\":\"Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring\"; \"price_min\":121000,\"price_max\":185000; tags include \"Ring Setting Product\",\"14K\",\"18K\"",
+      "verdict": "confirmed — live range $1,210–$1,850 equals the stored range; setting-only basis tag present. Third independent channel on a formerly F53-blocked row (after sess-545688f3 and sess-3020df54).",
+      "drift": false,
+      "action": "evidence suffix appended; no value changed"
+    },
+    {
+      "row": "as-bea-sol",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price": 11500,
+        "karat": "14K",
+        "verification_status": "partly_verified",
+        "price_unverified": true
+      },
+      "verbatim": "\"title\":\"Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)\"; \"price\":1150000,\"price_min\":1150000,\"price_max\":1150000; description \"1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank.\"; variant \"weight\":454 (1 lb parcel weight — ignored, not metal weight); \"inventory_policy\":\"continue\"",
+      "verdict": "stored state corroborated, NOT upgraded — the seller's data feed still carries $11,500.00, but the shopper-facing product page shows no price (one-of-a-kind enquiry form, recorded by sess-277867af on 2026-10-22). A feed value a buyer cannot see is not a quote, so the row stays partly_verified / price_unverified by design.",
+      "drift": false,
+      "action": "evidence suffix appended explaining feed-vs-page distinction; status unchanged"
+    },
+    {
+      "row": "bn-14k-petite-195639",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+      "channel": "official Blue Nile product page",
+      "stored": {
+        "title": "Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)",
+        "item": "195639",
+        "price": 1000,
+        "karat": "14K",
+        "width_mm": 1.5,
+        "prong_metal": "Platinum"
+      },
+      "verbatim": "page title \"Petite Solitaire Engagement Ring in 14k Yellow Gold\"; \"Stock Number 501130y14\"; \"Metal 14K Yellow Gold\"; \"Width 1.80mm\"; h1 \"Petite Solitaire Engagement Ring in 14k Yellow Gold\"; \"$1,000(Setting Price)\"; Product Details \"this petite solitaire crafted in 14k gold is a beautifully classic frame for your choice of center diamond\"",
+      "verdict": "SOURCE MISMATCH (new Flag F65) — the curated item-195639 URL now resolves to a different ring: a plain Petite Solitaire (Stock 501130y14, 1.80 mm, no micropavé, no Platinum-prong detail) instead of the Petite Micropavé 1/10 ct. tw. (Item #195639, 1.50 mm, Platinum prongs) captured earlier on 2026-10-23 by sess-545688f3 (F58 recorded its $990 -> $1,000 move). The $1,000 setting price and 14K metal coincide, exactly as in F51, which is what makes a reused URL dangerous. Following the F51 precedent the row is withdrawn (withdrawn_source_mismatch, price_unverified) and removed from the buy tables rather than silently re-pointed at the successor product.",
+      "drift": true,
+      "action": "row withdrawn per F51 shape; Flag F65 added; counts/prose updated (69 active + 2 withdrawn)"
+    }
+  ],
+  "summary": {
+    "official_sources_opened": 17,
+    "retailers_covered": 11,
+    "rows_confirmed_exact": 10,
+    "rows_corrected_for_spot_linked_drift": 2,
+    "rows_upgraded_partly_verified_to_confirmed": 1,
+    "rows_newly_withdrawn_source_mismatch": 1,
+    "withdrawals_reconfirmed": 1,
+    "partial_reads_price_not_reread": 1,
+    "feed_vs_page_price_distinctions_upheld": 1,
+    "gold_price_feeds_refreshed": 2,
+    "values_invented_or_inferred": 0
+  },
+  "honest_limit": "This session re-opened 15 product sources plus 2 market feeds. It did not re-open the other 56 rows; they rest on today's earlier channels — the 09:59Z automated 71/71 ledger (data/verification-2026-10-23.json), sess-3020df54's 10:26–10:39Z second-channel reads (T37b, integrated verbatim), and sess-5aa23937's 19:38Z reads (§17) — plus the mechanical evidence audit (verify.mjs S02/S03/S14) that re-checks every stored value against its own stored quote on every run. Nothing in this pass upgrades a capture it did not itself read.",
+  "checklist_coverage_audit": {
+    "performed": "2026-10-23 (sess-0a6df02e)",
+    "result": "The owner's 12-point checklist maps 1:1 onto data/checklist.json items 1–12 and data/compliance.json criteria 1–12 (purity, solid, hallmark, weight, reputation, price_vs_gold, returns, payment, documentation, arrival_check, xrf, return_if_refused). No gap found; no edit needed. Mapping table recorded in COORDINATION.md §18."
+  },
+  "pr41_integration_check": {
+    "performed": "2026-10-23 (sess-0a6df02e)",
+    "result": "data/session-3020df54/blocked-reread-2026-10-23.json verified line by line against data/rings.json before carrying in: 5 With Clarity stored ranges equal current data and the verbatim Shopify quotes contain the price digits in cents; 2 Cartier confirmations ($1,140 / $3,350, 750/1000) match; 2 entries honestly not_read. Tree-to-tree diff showed every other PR #41 file is older than main's (spot 4024.699951 @09:59:43Z vs 3999.899902 @19:38:15Z; checks P81-545688f3 vs P96), so only the ledger was taken. 0 published values change."
+  },
+  "union_renumbering": "This pass was claimed as board T38/§18, then renumbered T45/§20 at the first union with origin/main (§19, sess-dab93754), and finally T46/§21 at the second union after arena/e0f33b77-gold1 published its tenth pass as T45/§20. At the unions this session’s two new canonical flags were renumbered F59→F65 (Blue Nile mismatch) and F60→F66 (confirmed-chip defect) so sess-dab93754’s live-audit findings keep F59–F64 in the single Flagged-for-Review registry (R09); sess-5f363d57 independently confirmed the Blue Nile mismatch and the Menē $1,694/$1,350 displays at 2026-10-23T20:47:06Z and asked for exactly this non-colliding ID. dab93754’s independent Menē reads ($1,694 @20:26:00Z, $1,350 @20:33:00Z) corroborate this ledger’s corrections exactly."
+}

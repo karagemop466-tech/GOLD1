@@ -1,0 +1,52 @@
+{
+  "session": "arena/e0f33b77-gold1",
+  "pass": "ninth pass (T38)",
+  "as_of": "2026-10-23T20:20Z",
+  "purpose": "Independent live re-read of official sources by a fresh session, not carried forward from any earlier capture. Each entry records exactly what the seller's own page printed. No value here was inferred.",
+  "method": "Direct page retrieval from the seller's own official domain (and the publisher's own gold feed). The sandbox shell cannot reach these hosts, so every read was opened through the page-fetch tool.",
+  "reads": [
+    {
+      "id": "gold-spot",
+      "official_source": "https://api.gold-api.com/price/XAU",
+      "retrieved_at": "2026-10-23T20:19:15Z",
+      "what_it_printed": "{\"currency\":\"USD\",\"name\":\"Gold\",\"price\":3998.100098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:19:15Z\"}",
+      "effect": "Primary gold price refreshed to 3,998.100098 USD/ozt at 2026-10-23T20:19:15Z; every melt figure is re-derived by scripts/verify.mjs S06, not retyped. The prior 19:38:15Z reading (3,999.899902) is retained in readings[]."
+    },
+    {
+      "id": "rs-571221",
+      "official_source": "https://www.ross-simons.com/products/571221",
+      "retrieved_at": "2026-10-23T20:20Z",
+      "what_it_printed": "Title \"Women's 2mm 14kt Yellow Gold Band\"; price \"$400\"; size variants 5/6/7/8/9 each \"$400.00\"; specs \"Metal 14kt Yellow Gold\", \"Gold Weight 1.7 grams\"; body \"high-polished 14kt yellow gold\"",
+      "effect": "Stored $400 / 14K / 1.7 g confirmed unchanged on the live page."
+    },
+    {
+      "id": "rs-939479",
+      "official_source": "https://www.ross-simons.com/products/939479.js",
+      "retrieved_at": "2026-10-23T20:21Z",
+      "what_it_printed": "title \"Italian 14kt Yellow Gold Claddagh Ring\"; price_min 49900, price_max 49900; description \"This ring bears a very traditional Celtic symbol, known as the Claddagh... Made in Italy.\"; all size variants \"Italian 14kt Yellow Gold Claddagh Ring - Size N\"",
+      "effect": "Flag F51 re-confirmed live: the URL no longer sells the lab-grown diamond eternity band the row described. It now sells an Italian 14kt Claddagh ring at $499. The row keeps its withdrawn_source_mismatch status and is published on the Flagged page."
+    },
+    {
+      "id": "aurate-modern-cigar-band",
+      "official_source": "https://auratenewyork.com/products/modern-cigar-band.js",
+      "retrieved_at": "2026-10-23T20:22Z",
+      "what_it_printed": "title \"Modern Cigar Band\"; description \"Width: 20mm, Thickness: 1mm, Height: 5mm, Weight: 2.6-4g\"; price_min 11800, price_max 166800, price_varies true; tags include \"14k\", \"18k\", \"vermeil\"; default variant \"Vermeil / Yellow / 3\" at 11800",
+      "effect": "Published weight basis 2.6-4 g confirmed. Flags F03 (a $118 vermeil variant sitting on a solid-gold page) and F39 (the 14K variant price is not separately readable from the product-level feed; the stored $1,308 is the earlier capture and is not claimed fresh) re-confirmed live. The $1,308 was NOT updated from this read because the feed does not expose the 14K variant price."
+    },
+    {
+      "id": "mejuri-diamonds-line-ring-10k",
+      "official_source": "https://mejuri.com/us/en/products/diamonds-line-ring?Material=Solid+Yellow+Gold+%2810k%29&Stone=Natural+Diamond",
+      "retrieved_at": "2026-10-23T20:23Z",
+      "what_it_printed": "title \"Diamonds Line Ring\"; price \"$348\"; material \"Solid Yellow Gold (10k)\"; body \"Our 10k solid gold offers the beauty of 14k solid gold with added durability\"; stone \"Natural Diamond\"",
+      "effect": "The 10K solid-gold wording is confirmed on the live page (the material option literally reads \"Solid Yellow Gold (10k)\"), supporting solid_stated=true for mej-10k-dlr. No gram weight is published, so weight_g stays null."
+    },
+    {
+      "id": "cartier-1895-wedding-band",
+      "official_source": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html",
+      "retrieved_at": "2026-10-23T20:24Z",
+      "what_it_printed": "title \"1895 wedding band, 2.6 mm width, 1 diamond\"; price \"$1,140\"; \"Yellow gold (750/1000)\"; \"Complimentary returns and exchanges\"",
+      "effect": "Stored $1,140 / 18K (750/1000) confirmed unchanged on the live US PDP. This is one of the nine rows that returned HTTP 403 to the automated Actions runner, so the live read independently corroborates the earlier storefront-feed verification."
+    }
+  ],
+  "honest_limit": "Six official sources were opened live by this session (the gold feed plus five product pages). The other 66 rows were not re-opened by this session; they rest on the 2026-10-23 re-read ledger (data/verification-2026-10-23.json, 71/71 rows with a verbatim quote and HTTP status) plus the mechanical evidence audit. Nothing in this file upgrades a capture to 'fresh' beyond what the seller's page actually printed today."
+}

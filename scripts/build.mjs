@@ -112,11 +112,18 @@ const sortPrice = (r) => (r.price_unverified ? null : r.price_low);
 
 const checkedCell = (r) => {
   const when = r.verified_at || r.retrieved_at;
-  const pass = r.verification_status === 'unverified'
-    ? '<span class="chip warn">not reproducible</span>'
-    : r.verification_status === 'partially verified'
-      ? '<span class="chip warn">partly</span>'
-      : '<span class="chip ok">confirmed</span>';
+  // sess-0a6df02e (board T46): the partly branch previously compared against
+  // 'partially verified', a value the data never uses (it is 'partly_verified'),
+  // so partly_verified and withdrawn rows rendered a green "confirmed" chip.
+  // Prices were always rendered correctly (S19); only this status chip lied.
+  // Fixed here and pinned by a regression assertion in verify.mjs S18. See F66.
+  const pass = r.withdrawn
+    ? '<span class="chip bad">withdrawn</span>'
+    : r.verification_status === 'unverified'
+      ? '<span class="chip warn">not reproducible</span>'
+      : r.verification_status === 'partly_verified'
+        ? '<span class="chip warn">partly</span>'
+        : '<span class="chip ok">confirmed</span>';
   return `<span class="num">${esc(when)}</span><div class="sub">${pass}</div>`;
 };
 
@@ -260,7 +267,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H12 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -427,7 +434,7 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="stats">
-    ${stat(`${totalRows}`, 'verified listings', 'price + karat across 10K, 14K, 18K, 22K & 24K')}
+    ${stat(`${totalRows - rings.rows.filter((r) => r.withdrawn).length}`, 'active listings', `${totalRows - rings.rows.filter((r) => r.withdrawn).length} active listings with price + karat across 10K, 14K, 18K, 22K & 24K; ${rings.rows.filter((r) => r.withdrawn).length} withdrawn records kept for audit history (reused URLs, F51/F65)`)}
     ${stat(`${retailersDoc.retailers.length}`, 'retailers', retailersDoc.retailers.filter((r) => retailerCounts[r.id]).map((r) => r.name).join(', '))}
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', '0.3 g to 7.0 g — the number you need for a value check')}
@@ -441,7 +448,7 @@ const dashboard = layout({
 <section class="wrap section">
   <div class="callout good">
     <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row remains <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows).</p>
+    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row was <strong>withdrawn</strong> in that pass: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows). A ninth-pass spot re-read the same evening (2026-10-23, 20:22–20:27Z) withdrew a second reused URL — Blue Nile item 195639 now resolves to a different ring (<a href="flagged.html#F65">F65</a>) — corrected both spot-linked Menē 24K prices again, and confirmed the last partly-verified Brilliant Earth price in USD. The full ninth-pass read log, with verbatim quotes, is in the repo at <code>data/session-0a6df02e/live-reads-2026-10-23.json</code>.</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -579,7 +586,7 @@ const ringsPage = layout({
   body: `
 <section class="wrap section">
   <h1>All ${totalRows - rings.rows.filter((r) => r.withdrawn).length} verified listings</h1>
-  <p class="lede">Sorted as captured. Use the filters to narrow by style, seller, karat or budget. Every row links to the official page it came from and to a detail page showing the exact evidence text.${rings.rows.filter((r) => r.withdrawn).length ? ` <strong>${rings.rows.filter((r) => r.withdrawn).length} further row is withheld from this table</strong> because the seller now sells a different product under that URL — see <a href="flagged.html">F51</a>.` : ''}</p>
+  <p class="lede">Sorted as captured. Use the filters to narrow by style, seller, karat or budget. Every row links to the official page it came from and to a detail page showing the exact evidence text.${rings.rows.filter((r) => r.withdrawn).length ? ` <strong>${rings.rows.filter((r) => r.withdrawn).length} further ${rings.rows.filter((r) => r.withdrawn).length === 1 ? 'row is' : 'rows are'} withheld from this table</strong> because the seller now sells a different product under the recorded URL — see <a href="flagged.html">Flagged for Review (F51, F65)</a>.` : ''}</p>
   ${noHallucinationBanner()}
   ${filterBar(totalRows)}
   ${ringTable(rings.rows)}
@@ -660,7 +667,7 @@ for (const r of rings.rows) {
         <dt>Price</dt><dd>${priceCell(r)} <div class="sub">${esc(r.price_basis)}</div></dd>
         <dt>Metal weight</dt><dd>${r.weight_g_low === null ? dash : `${r.weight_g_low}${r.weight_g_high && r.weight_g_high !== r.weight_g_low ? '–' + r.weight_g_high : ''} g <span class="sub">as published</span>`}</dd>
         <dt>Retrieved</dt><dd>${esc(r.retrieved_at)}${r.inherited ? ' <span class="chip info">carried over from the first research pass</span>' : ''}${r.reverified_at ? ` <span class="chip ok">re-read ${esc(r.reverified_at)}</span>` : ''}</dd>
-        <dt>Last checked</dt><dd>${esc(r.verified_at || r.retrieved_at)} ${r.verification_status === 'unverified' ? '<span class="chip warn">not reproducible</span>' : r.verification_status === 'partially verified' ? '<span class="chip warn">partly verified</span>' : '<span class="chip ok">confirmed on the official page</span>'}</dd>
+        <dt>Last checked</dt><dd>${esc(r.verified_at || r.retrieved_at)} ${r.withdrawn ? '<span class="chip bad">withdrawn — source changed</span>' : r.verification_status === 'unverified' ? '<span class="chip warn">not reproducible</span>' : r.verification_status === 'partly_verified' ? '<span class="chip warn">partly verified</span>' : '<span class="chip ok">confirmed on the official page</span>'}</dd>
         <dt>Read from</dt><dd>${esc(r.source_type || 'official product page')}</dd>
       </dl>
       <p><a class="btn" href="${esc(r.source_url)}" target="_blank" rel="noopener nofollow">Open the official product page ↗</a></p>
@@ -1034,7 +1041,7 @@ const flaggedPage = layout({
   <div class="flag-grid">
     ${flagged.items
       .map(
-        (f) => `<article class="flag-card sev-${esc(f.severity)}">
+        (f) => `<article class="flag-card sev-${esc(f.severity)}" id="${esc(f.id)}">
       <div class="flag-head">
         <span class="flag-id">${esc(f.id)}</span>
         ${severityChip(f.severity)}
@@ -1319,7 +1326,7 @@ const requirementsPage = layout({
       .map((r) => {
         const t = TIER_LABEL[r.tier] || TIER_LABEL.needs_confirmation;
         return `<tr>
-      <td class="cell-title"><a href="${r.tier === 'withdrawn' ? 'flagged.html#F51' : 'rings/' + esc(r.id) + '.html'}">${esc(r.title)}</a></td>
+      <td class="cell-title"><a href="${r.tier === 'withdrawn' ? (r.id === 'bn-14k-petite-195639' ? 'flagged.html#F65' : 'flagged.html#F51') : 'rings/' + esc(r.id) + '.html'}">${esc(r.title)}</a></td>
       <td>${esc(r.retailer)}</td>
       ${compliance.criteria.map((c) => markCell(r.checks[c.key])).join('')}
       <td><span class="chip ${t.k}">${esc(t.t)}</span>${r.blockers.length ? `<div class="sub">${esc(r.blockers.slice(0, 2).join('; '))}</div>` : ''}</td>
@@ -1386,13 +1393,13 @@ const recheckPage = layout({
   body: `
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing (${totalRows} total) was opened at its own official product URL on 2026-10-23: ${readCounts.automated} retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner, ${readCounts.manual} read by hand, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread; 1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified).</p>
+  <p class="lede">Every listing (${totalRows} total) was opened at its own official product URL on 2026-10-23: ${readCounts.automated} retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner, ${readCounts.manual} read by hand, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread in that ledger; the 1 Brilliant Earth setting that then rendered localized EUR pricing via Global-e was confirmed in USD in the ninth pass — see <a href="flagged.html">F53</a>).</p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">
     ${stat(`${liveCheck.summary.confirmed}/${w.rows}`, 'prices reproduced exactly', 'The seller printed the same figure that this project stored.')}
     ${stat(`${liveCheck.corrections.length}`, 'prices corrected', 'Only where the seller\'s own page contradicted the stored value and the replacement is quoted below.')}
-    ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn', 'SKU 939479 now sells a different ring. See F51.')}
+    ${stat(`${liveCheck.summary.source_mismatch}`, 'row withdrawn in this ledger', 'SKU 939479 now sells a different ring (F51). A second URL — Blue Nile item 195639 — was withdrawn in the ninth pass (F65).')}
     ${stat(`${fullyBlocked.length}`, 'rows still unread', blockedRows.length === 0 ? 'All 9 formerly HTTP-403 rows were verified via direct storefront JSON & PDP reads (F53).' : `${fullyBlocked.length} could not be read at all and ${blockedRows.length - fullyBlocked.length} only in part. See F53.`)}
     ${stat(`${compliance.gold_reference.price_usd_per_ozt.toLocaleString('en-US', { maximumFractionDigits: 2 })}`, 'USD per troy ounce, spot', `${esc(compliance.gold_reference.publisher)} at ${esc(compliance.gold_reference.publisher_timestamp)}.`)}
   </div>

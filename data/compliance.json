@@ -176,10 +176,10 @@
   "rows": 71,
   "tiers": {
    "needs_confirmation": 45,
-   "setting_only": 15,
+   "setting_only": 14,
    "unverified_price": 1,
    "ready_to_inspect": 9,
-   "withdrawn": 1
+   "withdrawn": 2
   },
   "solid_stated": 21,
   "weight_published": 25,
@@ -5076,8 +5076,8 @@
    "retailer_id": "mene",
    "title": "Classic Band — 24k Pure Gold (5 mm)",
    "karat": "24K",
-   "price_low": 1707,
-   "price_high": 1707,
+   "price_low": 1694,
+   "price_high": 1694,
    "weight_g": null,
    "solid_stated": false,
    "bbb_rating": null,
@@ -5163,8 +5163,8 @@
    "retailer_id": "mene",
    "title": "Narrow Classic Band — 24k Pure Gold (4 mm)",
    "karat": "24K",
-   "price_low": 1361,
-   "price_high": 1361,
+   "price_low": 1350,
+   "price_high": 1350,
    "weight_g": null,
    "solid_stated": false,
    "bbb_rating": null,
@@ -6109,8 +6109,10 @@
    "gold_value_usd": null,
    "fine_gold_g": null,
    "price_to_gold": null,
-   "tier": "setting_only",
+   "tier": "withdrawn",
    "blockers": [
+    "the source URL now sells a different product",
+    "no price is displayed on the official page",
     "the price is for the setting only",
     "the listing never says \"solid gold\"",
     "no published gram weight"

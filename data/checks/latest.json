@@ -1,12 +1,12 @@
 {
-  "pass": "P114",
-  "generated_at": "2026-10-23T20:55:29Z",
+  "pass": "P110",
+  "generated_at": "2026-10-23T21:11:52Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 20,
     "passed": 20,
     "failed": 0,
-    "assertions": 6856,
+    "assertions": 6922,
     "rows": 71,
     "pages": 106
   },
