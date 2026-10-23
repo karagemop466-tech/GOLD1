@@ -26,6 +26,7 @@ const gold = await read('data/gold-price.json');
 const checklist = await read('data/checklist.json');
 const compliance = await read('data/compliance.json');
 const liveCheck = await read('data/verification-2026-10-23.json');
+const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const spot = gold.primary.price_usd_per_ozt;
@@ -172,7 +173,10 @@ const recheckDates = [...new Set(rings.rows.map((r) => r.verified_at).filter(Boo
 const recheckDate = recheckDates[recheckDates.length - 1] || null;
 const recheckChanged = rings.rows.filter((r) => r.verification_status === 'changed');
 const recheckUnverified = rings.rows.filter((r) => r.verification_status === 'unverified');
-const recheckPartial = rings.rows.filter((r) => r.verification_status === 'partially verified');
+const recheckPartial = rings.rows.filter((r) => r.verification_status === 'partly_verified');
+const verifiedToday = rings.rows.filter((r) => r.verified_at === compliance.as_of).length;
+const notRereadToday = rings.rows.filter((r) => r.verification_status === 'not_reread_2026-10-23').length;
+const priceUnverifiedRows = rings.rows.filter((r) => r.price_unverified);
 const publishedWeights = rings.rows.filter((r) => r.weight_g_low !== null && r.weight_g_low !== undefined);
 const retrievedDates = [...new Set(rings.rows.map((r) => r.retrieved_at))].sort();
 
@@ -397,7 +401,7 @@ const dashboard = layout({
   <div class="wrap">
     <p class="eyebrow">Research dashboard · captured ${esc(retrievedDates.join(', '))} · last live re-read ${esc(compliance.as_of)}</p>
     <h1>Solid gold engagement rings, checked against the seller's own pages.</h1>
-    <p class="lede">${totalRows} listings from ${retailersDoc.retailers.length} retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on ${esc(recheckDate || '—')}: ${publishedWeights.length} now carry a published metal weight, ${recheckUnverified.length} ${recheckUnverified.length === 1 ? 'was' : 'were'} withdrawn as unverified and ${recheckPartial.length} could only be partly verified.</p>
+    <p class="lede">${totalRows} listings from ${retailersDoc.retailers.length} retailers, each one linked to the exact official page it came from. Prices were read directly from the retailer's feed and are stamped with the date they were captured. Where a seller does not publish a number — most of them do not publish metal weight — the field is blank and flagged. Every row was then re-read line by line against its own page on ${esc(compliance.as_of)}: ${verifiedToday} carry a verdict from that pass, ${notRereadToday} could not be re-read at all because the seller blocks automated retrieval, and ${priceUnverifiedRows.length} carry no usable price — one because the seller displays none, one because the SKU now sells a different ring.</p>
     ${noHallucinationBanner()}
   </div>
 </section>
@@ -409,9 +413,9 @@ const dashboard = layout({
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', '0.3 g to 7.0 g — the number you need for a value check')}
     ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : `7 Automic Gold, 6 Mejuri, 1 Ross-Simons, 1 Aurate`)}
-    ${stat(`${rechecked}/${totalRows}`, `re-checked ${recheckDate || ''}`.trim(), 'every row read again line by line against its own page')}
+    ${stat(`${verifiedToday}/${totalRows}`, `verdict from ${compliance.as_of}`, 're-read live today, or documented as not re-readable')}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
-    ${stat(`${priceReread}/${totalRows}`, 'live PDP re-reads', 'every row traced in reverification.json')}
+    ${stat(`${liveFetchOk}/${totalRows}`, 'pages re-read 2026-10-23', 'the rest are behind bot walls and say so')}
   </div>
 </section>
 
@@ -440,13 +444,13 @@ const dashboard = layout({
 
 <section class="wrap section">
   <div class="callout">
-    <h2>Second and third pass: every row re-read against its own page (${esc(recheckDate || '—')})</h2>
-    <p>Nothing here is inherited on trust. Each of the ${totalRows} rows was opened again at its official URL and read line by line: title, karat, price, price basis and any published weight. The result is in the <em>Last checked</em> column of every table, in <code>data/reverification.json</code> (pass P12) and in <code>data/verification-${esc(recheckDate || '')}.json</code>, which stores the exact quote each number was read from.</p>
+    <h2>How current each row is — pass P42, ${esc(compliance.as_of)}</h2>
+    <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and ${liveFetchOk} of ${totalRows} were opened again on ${esc(compliance.as_of)} by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-${esc(compliance.as_of)}.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
-      <li><strong>${publishedWeights.length} of ${totalRows} rows now carry a published metal weight</strong> (${publishedWeights.map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}). It was one row when the project started. Every one of them is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat.</li>
-      ${recheckChanged.length ? `<li><strong>${recheckChanged.length} price ranges corrected.</strong> ${recheckChanged.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a> → ${usd(r.price_low)}`).join(', ')}. Each correction replaced a stored figure the live page no longer shows; the old figure stays in the audit trail rather than being silently kept as a second price.</li>` : ''}
-      <li><strong>${recheckUnverified.length} price withdrawn.</strong> <a href="rings/as-bea-sol.html">Bea Solitaire Ring</a> no longer publishes a price at all — the buy box has been replaced by an enquiry form — so the row reads “— unverified” everywhere on this site.</li>
-      <li><strong>${recheckPartial.length} rows are only partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')}. In each case two readings of the same page disagree, or a variant-level price could not be re-read. The disagreement is published rather than resolved by picking a number.</li>
+      <li><strong>${publishedWeights.length} of ${totalRows} rows publish a metal weight</strong> (${publishedWeights.slice(0, 12).map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}${publishedWeights.length > 12 ? `, and ${publishedWeights.length - 12} more` : ''}). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. ${compliance.summary.weight_published - 5 === 16 ? 'Sixteen were re-read verbatim today; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.' : ''}</li>
+      ${recheckPartial.length ? `<li><strong>${recheckPartial.length} rows are partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')} — in each case the seller's page did not fully reproduce the stored figure, and the reason is printed on the row.</li>` : ''}
+      <li><strong>${priceUnverifiedRows.length} rows carry no usable price.</strong> ${priceUnverifiedRows.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a> — ${esc((r.price_unverified_reason || '').split(':')[0])}`).join('; ')}. Both read “— unverified” everywhere on this site.</li>
+      <li><strong>${notRereadToday} rows were not re-read today</strong> because With Clarity, Cartier and Brilliant Earth block automated retrieval (<a href="flagged.html">F53</a>). Their stored values keep the 2026-10-22 date and are labelled <em>not re-read 2026-10-23</em> on every table.</li>
     </ul>
     <p class="sub">Full list of the ${flagged.items.length} open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
   </div>

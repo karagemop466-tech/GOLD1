@@ -1,12 +1,12 @@
 {
-  "pass": "P68",
-  "generated_at": "2026-10-23T10:12:25Z",
+  "pass": "P76",
+  "generated_at": "2026-10-23T10:13:59Z",
   "builder_version": "1.0.0",
   "summary": {
     "total": 20,
     "passed": 20,
     "failed": 0,
-    "assertions": 5409,
+    "assertions": 5410,
     "rows": 59,
     "pages": 93
   },
@@ -204,8 +204,8 @@
     },
     {
       "id": "S20",
-      "name": "No template leaks or undefined values",
-      "description": "A page must never show an unreplaced ${…} expression or the word \"undefined\": either one means a value was meant to be printed and was not, which reads as a fabricated figure to the buyer.",
+      "name": "No template leaks or unset values",
+      "description": "A page must never show an unreplaced ${…} expression or a value that resolved to nothing: either one means a number was meant to be printed and was not, which reads as a fabricated figure to the buyer.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,
