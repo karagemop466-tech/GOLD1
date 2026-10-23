@@ -158,6 +158,50 @@ function offerPrices(node) {
   return prices;
 }
 
+/**
+ * The seller's own structured spec claims (schema.org Product additionalProperty
+ * and Product.weight), parsed from the JSON-LD the retailer publishes in the page.
+ * This is the strongest evidence form available: it is the value the seller tells
+ * search engines and price-comparison services, as a name/value pair, rather than
+ * a string that has to be found by regex inside a paragraph.
+ */
+function jsonLdSpecs(html) {
+  const nodes = jsonLdProducts(html);
+  const specs = [];
+  const names = [];
+  for (const n of nodes) {
+    if (n.name) names.push(String(n.name));
+    for (const p of [].concat(n.additionalProperty || []).filter(Boolean)) {
+      if (typeof p !== 'object' || !p.name) continue;
+      specs.push({ name: String(p.name).trim(), value: String(p.value ?? '').trim() });
+    }
+    if (n.weight !== undefined && n.weight !== null) {
+      const w = typeof n.weight === 'object' ? n.weight : { value: n.weight };
+      specs.push({ name: 'weight (schema.org)', value: String(w.value ?? '').trim(), unit: String(w.unitText ?? '').trim() });
+    }
+  }
+  return { product_names: [...new Set(names)].slice(0, 6), specs: specs.slice(0, 60) };
+}
+
+/**
+ * Whole sentences from the page text that state a metal weight. Windows around a
+ * regex match can cut a number in half, so the sentence is kept intact: a published
+ * weight is only ever transcribed from a complete sentence the reader can check.
+ */
+function metalWeightSentences(text, limit = 14) {
+  const out = [];
+  for (const raw of text.split(/(?<=[.;:])\s+/)) {
+    const sent = raw.trim();
+    if (sent.length > 320 || sent.length < 12) continue;
+    if (!/(gold|metal|item|fine)\s*weight/i.test(sent)) continue;
+    if (!/\d+(?:\.\d+)?\s*(?:grams?|g)\b/i.test(sent)) continue;
+    if (/shipping|parcel|package|postage/i.test(sent)) continue;
+    out.push(sent);
+    if (out.length >= limit) break;
+  }
+  return out;
+}
+
 /** All occurrences of a regex in text, with a verbatim window around each. */
 function occurrences(text, re, limit = 8, window = 90) {
   const out = [];
@@ -220,6 +264,8 @@ function extract(html, row) {
       12,
       110
     ),
+    jsonld_product_specs: jsonLdSpecs(html),
+    metal_weight_sentences: metalWeightSentences(text),
     gold_weight_label_html: occurrences(
       html,
       /(?:gold|metal|item)[_ ]?weight[^0-9<]{0,40}\d{1,3}(?:\.\d{1,2})?\s*(?:grams?|g)\b/gi,
@@ -475,7 +521,7 @@ const gold = await goldSpot();
 await mkdir(OUT_DIR, { recursive: true });
 const doc = {
   pass: 'P42-live',
-  script_version: 'v5 labelled metal-weight search in text and raw HTML + higher occurrence caps (ninth pass, sess-7626fc93)',
+  script_version: 'v6 seller structured specs (JSON-LD additionalProperty) + whole metal-weight sentences (ninth pass, sess-7626fc93)',
   purpose:
     'Independent live re-read of every curated row at its own official product URL, plus a variant-level read of the seller product JSON. Verbatim excerpts only; no value is inferred. Reconciliation against data/rings.json is recorded separately.',
   started_at,

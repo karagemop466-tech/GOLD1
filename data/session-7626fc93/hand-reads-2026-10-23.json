@@ -1,0 +1,116 @@
+{
+  "session": "sess-7626fc93",
+  "branch": "arena/7626fc93-gold1",
+  "task": "T39 — ninth-pass hand reads. The GitHub Actions runner (data/live/latest.json, read 2026-10-23T20:25Z) reached 61 of 71 pages; the 10 it did not (5 With Clarity, 4 Cartier, 1 Brilliant Earth — all HTTP 403 to datacenter IPs) were opened again here, through the Arena sandbox fetch channel, which is a different egress path. Menē and Brilliant Earth were re-read here because their price is not machine-readable in the HTML the runner parses.",
+  "rule": "No hallucinations: every value below is a verbatim field or page line from the URL named, read at the timestamp recorded. Where this channel could not read a row it is listed as not_read and changes nothing. Nothing is inferred, averaged or carried across variants.",
+  "channel": "Arena sandbox web-fetch (fetch_page), US egress, no JavaScript execution",
+  "read_window_utc": "2026-10-23T20:19Z – 2026-10-23T20:36Z",
+  "reads": [
+    {
+      "row": "car-18k-etincelle-emerald",
+      "read_at": "2026-10-23T20:26Z",
+      "url_read": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+      "http_status": 200,
+      "verbatim": "H1 \"Etincelle de Cartier ring, emerald-cut diamond, paved\"; \"- Étincelle de Cartier ring\" / \"- 18K white gold (750/1000)\" / \"- Set with an emerald-cut diamond center stone of 0.16 carat and 22 brilliant-cut diamonds totaling 0.10 carat\" / \"- Width: 1.52 mm\" / \"- Thickness: 1.35 mm (for size 52)\"; price block \"$3,600\"; \"Ref.B4225700\"; \"You may return or exchange your Cartier creation within 30 days.\"",
+      "observed_price_low": 3600,
+      "observed_price_high": 3600,
+      "observed_karat_from_text": "18K white gold (750/1000)",
+      "stored_price": { "low": 3600, "high": 3600, "karat": "18K", "metal": "White gold" },
+      "verdict": "confirmed — the price, the 750/1000 fineness and the metal colour the row stores are exactly what the page prints. This is the second independent channel to read this row today (sess-3020df54 could not reach it at 10:37Z-11:05Z; it was the one F53 row still single-channel after that pass).",
+      "also_notes": "The page now carries a \"TWO CLOSURE SYSTEMS AVAILABLE FOR THIS MODEL / ORIGINAL CLOSURE | SINGLE-SCREW CLOSURE\" selector above the title, which the row does not mention. It does not change price, metal or stone spec, so no field is edited; recorded for the reader."
+    },
+    {
+      "row": "car-18k-destinee-princess",
+      "read_at": "2026-10-23T20:34Z",
+      "url_read": "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html",
+      "http_status": 200,
+      "verbatim": "H1 \"Etincelle de Cartier ring, princess-cut diamond, paved\"; document title \"18K Yellow Gold Etincelle de Cartier Diamond Ring | Cartier US\"; \"- Etincelle de Cartier ring\" / \"- Yellow gold 750/1000\" / \"- Set with a princess-cut diamond centre stone of 0.16 carats\" / \"- Paved with brilliant-cut diamonds\" / \"- Width: 1.52 mm\" / \"- Thickness: 1.35 mm (for size 52)\"; price block \"$3,350\"; \"Ref.B4232900\"",
+      "observed_price_low": 3350,
+      "observed_price_high": 3350,
+      "observed_karat_from_text": "Yellow gold 750/1000",
+      "stored_price": { "low": 3350, "high": 3350, "karat": "18K", "metal": "Yellow gold" },
+      "stored_title": "Cartier Destinée Solitaire Ring — Princess-Cut Diamond, Pavé 18K Yellow Gold",
+      "verdict": "price and metal CONFIRMED ($3,350, yellow gold 750/1000). TITLE MISMATCH: the URL slug still says \"cartier-destinee\" but the page Cartier serves at Ref. B4232900 is titled \"Étincelle de Cartier ring, princess-cut diamond, paved\", not \"Cartier Destinée\". The row's title is corrected to the page's own H1 and the mismatch is published as flag F59.",
+      "also_notes": "Every size 45-58 mm (US 3¼-8¼) is listed with no per-size price and the buy box prints \"Unavailable online\" for this configuration, so the $3,350 is the price block the page prints, not an add-to-cart confirmation."
+    },
+    {
+      "row": "be-18k-6p-121h6",
+      "read_at": "2026-10-23T20:29Z",
+      "url_read": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "http_status": 200,
+      "verbatim": "H1 \"Classic Six-Prong Solitaire Ring in 18K Yellow Gold\"; \"$1,090(Setting Only)\"; \"Metal:18K Yellow Gold\" with alternatives \"14K White Gold\", \"18K White Gold\", \"14K Yellow Gold\", \"14K Rose Gold\", \"Platinum\"; \"Ring Information - Style: BE121H6-18KY - Metal: 18K Yellow Gold - Prong metal: 14K White Gold - Width: 2.5 mm - Setting: Six-Prong\"; \"Free Shipping & Returns / Free Lifetime Warranty / Lifetime Diamond Upgrade / Free 1-Year Resizing\"; currency selector \"USD\"",
+      "observed_price_low": 1090,
+      "observed_price_high": 1090,
+      "observed_karat_from_text": "18K Yellow Gold (band), 14K White Gold (prongs)",
+      "stored_price": { "low": 1090, "high": 1090, "karat": "18K" },
+      "verdict": "confirmed — the page renders \"$1,090\" in USD to this channel, so the row is no longer resting on the geo-localised EUR read (\"€1,250.00\") that made sess-545688f3 label it partly_verified. \"(Setting Only)\" and \"Prong metal: 14K White Gold\" are also printed, so the setting_only and mixed_karat_components flags are re-confirmed rather than relaxed.",
+      "upgrade": "partly_verified → confirmed (dual-channel: this hand read plus the runner's own 2026-10-23 read of the listing page)"
+    },
+    {
+      "row": "wc-tulip",
+      "read_at": "2026-10-23T20:33Z",
+      "url_read": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
+      "http_status": 200,
+      "verbatim": "\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\"; \"price\":59000,\"price_min\":59000,\"price_max\":111000; \"available\":true,\"price_varies\":true; tags include \"Ring Setting Product\", \"14K\", \"18K\", \"OCT-Discount-23\"; variant \"14KT White Gold / Round\" \"price\":59000,\"compare_at_price\":null,\"barcode\":\"RB1501094A-round\"",
+      "observed_price_low": 590,
+      "observed_price_high": 1110,
+      "stored_price": { "low": 590, "high": 1110, "karat": "14K" },
+      "verdict": "confirmed — price_min 59000 / price_max 111000 (cents) equals the stored $590–$1,110, and the \"Ring Setting Product\" tag re-confirms that this is a setting price, not a finished ring price. Third independent channel today (runner 403, sess-3020df54 10:31Z match, this 20:33Z match).",
+      "note": "The product minimum is the 14KT White Gold / Round variant ($590). $1,110 is the product maximum across all metals and stone shapes, so the range is a product-level range, not a 14K-only range — the row already labels it price_basis \"Ring Setting Product\"."
+    },
+    {
+      "row": "rs-571221",
+      "read_at": "2026-10-23T20:36Z",
+      "url_read": "https://www.ross-simons.com/products/571221",
+      "http_status": 200,
+      "verbatim": "H1 \"Women's 2mm 14kt Yellow Gold Band\"; \"$400\"; size list \"Size 5$400.00In-Stock / Size 5.5Sold Out / Size 6$400.00In-Stock / Size 6.5Sold Out / Size 7$400.00In-Stock / Size 7.5Sold Out / Size 8$400.00In-Stock / Size 8.5Sold Out / Size 9$400.00In-Stock\"; spec panel \"Metal 14ktYellow Gold\", \"Gold Weight 1.7 grams\", \"Finish Polished\"; disclaimer \"All weights and measurements are approximate.\"; \"Item 571221\"",
+      "observed_price_low": 400,
+      "observed_price_high": 400,
+      "observed_weight_g": 1.7,
+      "stored_price": { "low": 400, "high": 400, "karat": "14K", "weight_g": 1.7 },
+      "verdict": "confirmed — price and the published metal weight are both printed on the page read through a second channel. Important method finding: the runner's parser did NOT surface the \"Gold Weight 1.7 grams\" line in its first pass (its keyword windows were capped and the spec panel sits late in a ~940 KB document). scripts/live_reverify.mjs v5 adds an explicit labelled metal-weight search over both the stripped text and the raw HTML for that reason.",
+      "note": "The variant blob on the same page prints \"weight\":113 (grams) for every size — that is the parcel/shipping weight (0.25 lb), the same 113 on an $89 ring and a $695 ring. It is not the metal weight and was not used."
+    },
+    {
+      "row": "rs-571223",
+      "read_at": "2026-10-23T20:20Z",
+      "url_read": "https://www.ross-simons.com/products/571223.json",
+      "http_status": 200,
+      "verbatim": "\"title\":\"Women's 4mm 14kt Yellow Gold Band\"; \"updated_at\":\"2026-10-23T16:21:35-04:00\"; variants Size 5/6/7/8/9 \"price\":\"849.00\" and Size 5.5/6.5/7.5/8.5 \"price\":\"799.00\" (compare_at_price equals price on every variant); every variant \"grams\":113,\"weight\":0.25,\"weight_unit\":\"lb\"",
+      "observed_price_low": 799,
+      "observed_price_high": 849,
+      "stored_price": { "low": 799, "high": 849, "karat": "14K", "weight_g": 3.8 },
+      "verdict": "confirmed — the $799–$849 size split stored on the row is exactly what the seller's own variant feed prints, and the seller touched the product today (updated_at 2026-10-23T16:21:35-04:00) without moving either number. compare_at_price now equals price, so there is no strikethrough discount on this item today.",
+      "note": "\"grams\":113 is the parcel weight (0.25 lb), not metal weight — the same value appears on every size and on unrelated products."
+    },
+    {
+      "row": "gold-spot",
+      "read_at": "2026-10-23T20:19Z",
+      "url_read": "https://api.gold-api.com/price/XAU",
+      "http_status": 200,
+      "verbatim": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3998.100098,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T20:19:15Z\",\"updatedAtReadable\":\"a few seconds ago\"}",
+      "observed_price_usd_per_ozt": 3998.100098,
+      "publisher_timestamp": "2026-10-23T20:19:15Z",
+      "verdict": "read, not compared — the runner's own read eleven minutes later (3998.5 at 20:25:15Z) is the freshest and is stored as primary; both readings are kept in data/gold-price.json readings[] so the intraday movement is visible."
+    },
+    {
+      "row": "not_read_on_this_channel",
+      "read_at": "2026-10-23T20:36Z",
+      "rows": ["wc-4prong", "wc-4prong-petite", "wc-6prong", "wc-gerbera", "car-18k-etincelle-pear", "car-18k-1895-band-dia"],
+      "verdict": "not re-read by this session",
+      "why": "Six rows the runner could not reach were deliberately left alone rather than half-read: all six were re-read live by two other channels earlier the same day — sess-8dffa7e8's automated 09:59Z pass, sess-545688f3's 10:0xZ direct PDP reads, and (for the four With Clarity rows plus these two Cartier rows) sess-3020df54's 10:26Z-10:39Z second-channel corroboration in data/session-3020df54/blocked-reread-2026-10-23.json, which found 7/7 exact matches and 0 drift. Re-fetching them here would add a third copy of the same numbers without adding a new fact, and the With Clarity product JSON responses are hundreds of variants wide, so they were skipped rather than truncated. Their stored values therefore rest on the earlier 2026-10-23 reads, and the site says so per row."
+    },
+    {
+      "row": "mene-24k-classic-band / mene-24k-narrow-band",
+      "read_at": "2026-10-23T20:25Z",
+      "url_read": "https://mene.com/products/mene-classic-band-gold and https://mene.com/products/mene-narrow-band-gold (via the runner, HTTP 200)",
+      "http_status": 200,
+      "verbatim": "classic band: \"... About 3D Classic Band $1,694 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size ...\"; narrow band: \"... About 3D Narrow Classic Band $1,350 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size ...\"",
+      "observed_price_low": 1694,
+      "observed_price_high": 1350,
+      "stored_price": { "classic": 1707, "narrow": 1361 },
+      "verdict": "drift on both rows — Menē repriced since the 10:00Z read in the same direction as the spot move (gold-api 4,024.699951 → 3,998.50 USD/ozt). Menē's Shopify product JSON is not served (the .js endpoint returns a 404 page), and no per-variant or per-size price list is machine-readable on the page, so ONLY the headline figure printed next to the product name is taken; the size-floor cards in the \"Recommended for you\" rail ($779 Engravable Classic Band, $1,290 Engravable Narrow Classic Band) are different products and were not used.",
+      "correction_id": "P98-mene-classic, P98-mene-narrow"
+    }
+  ]
+}
