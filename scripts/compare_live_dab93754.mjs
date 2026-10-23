@@ -107,6 +107,16 @@ for (const ring of ringsDoc.rows) {
   const pagePrices = [...new Set(pageOffers.flatMap((o) => (o.prices || []).map((p) => Number(p.value))))].filter(
     (n) => Number.isFinite(n) && n > 0
   );
+  // A publisher's aggregate offer states its own low/high bound; a stored price
+  // inside that published band is consistent with the page, even when the exact
+  // figure is a variant the default page does not print.
+  const bands = pageOffers
+    .map((o) => {
+      const lows = (o.prices || []).filter((p) => /low|min/i.test(p.key)).map((p) => Number(p.value));
+      const highs = (o.prices || []).filter((p) => /high|max/i.test(p.key)).map((p) => Number(p.value));
+      return lows.length && highs.length ? [Math.min(...lows), Math.max(...highs)] : null;
+    })
+    .filter(Boolean);
 
   let priceVerdict = 'no_price_observed';
   let priceSource = null;
@@ -126,6 +136,11 @@ for (const ring of ringsDoc.rows) {
     } else if (pgLo && (lo === hi || pgHi)) {
       priceVerdict = 'reproduced';
       priceSource = 'product page';
+    } else if (lo === hi && bands.some(([a, b]) => lo >= a && lo <= b)) {
+      priceVerdict = 'within_published_range';
+      priceSource = 'product page (aggregate offer band)';
+      const band = bands.find(([a, b]) => lo >= a && lo <= b);
+      note = `the page's own aggregate offer prints ${money(band[0])}–${money(band[1])}; the stored ${money(lo)} sits inside that published band`;
     } else if (vf && (vfLo || vfHi)) {
       priceVerdict = 'partly_reproduced';
       priceSource = 'seller variant feed';
@@ -175,6 +190,8 @@ for (const r of results) {
     r.verdict = 'reproduced_but_title_differs';
   } else if (r.price_verdict === 'reproduced') {
     r.verdict = 'confirmed';
+  } else if (r.price_verdict === 'within_published_range') {
+    r.verdict = 'consistent_with_published_range';
   } else if (r.price_verdict === 'partly_reproduced') {
     r.verdict = 'partly_confirmed';
   } else if (r.price_verdict === 'not_reproduced') {
@@ -192,6 +209,7 @@ const count = (v) => results.filter((r) => r.verdict === v).length;
 const summary = {
   rows: results.length,
   confirmed: count('confirmed'),
+  consistent_with_published_range: count('consistent_with_published_range'),
   reproduced_but_title_differs: count('reproduced_but_title_differs'),
   partly_confirmed: count('partly_confirmed'),
   not_reproduced: count('not_reproduced'),
