@@ -1,0 +1,1975 @@
+{
+  "schema_version": 1,
+  "session": "sess-5f363d57",
+  "generated_at": "2026-10-23T23:39:18.658Z",
+  "status": "needs review",
+  "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
+  "inputs": {
+    "rows": 71,
+    "active_rows": 69,
+    "withdrawn_rows": 2,
+    "verification_ledger": "data/verification-2026-10-23.json",
+    "evening_verification_ledger": "data/verification-2026-10-23-evening-dab93754.json",
+    "official_standards_review": "data/session-5f363d57/standards-review.json",
+    "gold_publisher_timestamp": "2026-10-23T20:19:15Z"
+  },
+  "summary": {
+    "groups": 10,
+    "passed": 2,
+    "failed": 8,
+    "assertions": 1842,
+    "findings": 159
+  },
+  "groups": [
+    {
+      "id": "R01",
+      "name": "Exact row schema and numeric-token provenance",
+      "passed": true,
+      "failure_count": 0
+    },
+    {
+      "id": "R02",
+      "name": "Verification verdicts agree with observed bounds and weights",
+      "passed": false,
+      "failure_count": 6
+    },
+    {
+      "id": "R03",
+      "name": "Requirements math never averages or reuses unverified values",
+      "passed": false,
+      "failure_count": 19
+    },
+    {
+      "id": "R04",
+      "name": "Requirements tiers and buyer-action labels are honest",
+      "passed": false,
+      "failure_count": 91
+    },
+    {
+      "id": "R05",
+      "name": "Checklist summary matches canonical spot and active/withdrawn counts",
+      "passed": false,
+      "failure_count": 3
+    },
+    {
+      "id": "R06",
+      "name": "README current-state prose is synchronized",
+      "passed": false,
+      "failure_count": 5
+    },
+    {
+      "id": "R07",
+      "name": "No unsupported retail-price or wearability generalisations",
+      "passed": false,
+      "failure_count": 26
+    },
+    {
+      "id": "R08",
+      "name": "Published counts and verification badges distinguish partial and withdrawn rows",
+      "passed": true,
+      "failure_count": 0
+    },
+    {
+      "id": "R09",
+      "name": "Flag and requirements source coverage",
+      "passed": false,
+      "failure_count": 5
+    },
+    {
+      "id": "R10",
+      "name": "Source registry and audit-reference integrity",
+      "passed": false,
+      "failure_count": 4
+    }
+  ],
+  "findings": [
+    {
+      "id": "R02-01",
+      "group": "R02",
+      "irregularity_id": "CANONICAL_PROSE_CONTRADICTS_SCHEMA",
+      "severity": "high",
+      "message": "rs-571223: notes claim a single current price but the schema publishes a range",
+      "row": "rs-571223",
+      "path": "data/rings.json",
+      "sources": [
+        "https://www.ross-simons.com/products/571223"
+      ]
+    },
+    {
+      "id": "R02-02",
+      "group": "R02",
+      "irregularity_id": "CANONICAL_PROSE_CONTRADICTS_SCHEMA",
+      "severity": "high",
+      "message": "rs-943668: notes say 1439.00 is no longer listed but the later evidence quotes it",
+      "row": "rs-943668",
+      "path": "data/rings.json",
+      "sources": [
+        "https://www.ross-simons.com/products/943668"
+      ]
+    },
+    {
+      "id": "R02-03",
+      "group": "R02",
+      "irregularity_id": "CANONICAL_PROSE_CONTRADICTS_SCHEMA",
+      "severity": "high",
+      "message": "au-xring: verification note says partially verified but status is confirmed",
+      "row": "au-xring",
+      "path": "data/rings.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R02-04",
+      "group": "R02",
+      "irregularity_id": "CANONICAL_PROSE_CONTRADICTS_SCHEMA",
+      "severity": "high",
+      "message": "au-xring: evidence narrative says variant range but schema stores one price",
+      "row": "au-xring",
+      "path": "data/rings.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R02-05",
+      "group": "R02",
+      "irregularity_id": "RECONCILER_IGNORES_UPPER_BOUND",
+      "severity": "high",
+      "message": "P42 reconciler never detects an observed range that fails to reproduce the stored upper bound",
+      "row": null,
+      "path": "scripts/reconcile_live.mjs",
+      "sources": []
+    },
+    {
+      "id": "R02-06",
+      "group": "R02",
+      "irregularity_id": "RECONCILER_OVERSTATES_OVERALL_STATUS",
+      "severity": "high",
+      "message": "P42 reconciler marks rows confirmed from price alone, even when a stored weight was not reproduced or a range-widening observation was not explicitly applied",
+      "row": null,
+      "path": "scripts/reconcile_live.mjs",
+      "sources": []
+    },
+    {
+      "id": "R03-01",
+      "group": "R03",
+      "irregularity_id": "AVERAGED_VARIANT_PRICE",
+      "severity": "high",
+      "message": "Requirements builder averages low/high variant prices, contradicting the no-averaging rule",
+      "row": null,
+      "path": "scripts/build_compliance.mjs",
+      "sources": [
+        "data/rings.json"
+      ]
+    },
+    {
+      "id": "R03-02",
+      "group": "R03",
+      "irregularity_id": "SITE_UNPAIRED_RANGE_RATIO",
+      "severity": "high",
+      "message": "Site builder divides a lower price bound by an upper melt bound without proving the variants are paired",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R03-03",
+      "group": "R03",
+      "irregularity_id": "MISSING_WEIGHT_BASIS_GUARD",
+      "severity": "high",
+      "message": "Site and requirements builders have no shared ambiguous-item-weight guard",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R03-04",
+      "group": "R03",
+      "irregularity_id": "MELT_ANOMALY_CALLED_IMPOSSIBLE",
+      "severity": "high",
+      "message": "S06 calls a below-melt result impossible/wrong instead of requiring source review and a visible flag",
+      "row": null,
+      "path": "scripts/verify.mjs",
+      "sources": []
+    },
+    {
+      "id": "R03-05",
+      "group": "R03",
+      "irregularity_id": "UNPAIRED_PRICE_RANGE_RATIO",
+      "severity": "high",
+      "message": "rs-571223: one scalar ratio was derived from an unmapped price range",
+      "row": "rs-571223",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/571223"
+      ]
+    },
+    {
+      "id": "R03-06",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED",
+      "severity": "high",
+      "message": "au-2ct-oval: seller “Weight” may include stones but is used as metal-only weight without a basis flag",
+      "row": "au-2ct-oval",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-07",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED_ON_SITE",
+      "severity": "high",
+      "message": "au-2ct-oval: detail page still computes gold value from ambiguous total-item weight",
+      "row": "au-2ct-oval",
+      "path": "rings/au-2ct-oval.html",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-08",
+      "group": "R03",
+      "irregularity_id": "UNPAIRED_PRICE_RANGE_RATIO",
+      "severity": "high",
+      "message": "au-2ct-oval: one scalar ratio was derived from an unmapped price range",
+      "row": "au-2ct-oval",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-09",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED",
+      "severity": "high",
+      "message": "au-1ct-emerald: seller “Weight” may include stones but is used as metal-only weight without a basis flag",
+      "row": "au-1ct-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-10",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED_ON_SITE",
+      "severity": "high",
+      "message": "au-1ct-emerald: detail page still computes gold value from ambiguous total-item weight",
+      "row": "au-1ct-emerald",
+      "path": "rings/au-1ct-emerald.html",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-11",
+      "group": "R03",
+      "irregularity_id": "UNPAIRED_PRICE_RANGE_RATIO",
+      "severity": "high",
+      "message": "au-1ct-emerald: one scalar ratio was derived from an unmapped price range",
+      "row": "au-1ct-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-12",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED",
+      "severity": "high",
+      "message": "au-3ct-round: seller “Weight” may include stones but is used as metal-only weight without a basis flag",
+      "row": "au-3ct-round",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-13",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED_ON_SITE",
+      "severity": "high",
+      "message": "au-3ct-round: detail page still computes gold value from ambiguous total-item weight",
+      "row": "au-3ct-round",
+      "path": "rings/au-3ct-round.html",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-14",
+      "group": "R03",
+      "irregularity_id": "UNPAIRED_PRICE_RANGE_RATIO",
+      "severity": "high",
+      "message": "au-3ct-round: one scalar ratio was derived from an unmapped price range",
+      "row": "au-3ct-round",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R03-15",
+      "group": "R03",
+      "irregularity_id": "LOWER_BOUND_ONLY_WEIGHT_MATH",
+      "severity": "high",
+      "message": "au-cigar: only the lower weight bound was used for scalar fine-gold/melt outputs",
+      "row": "au-cigar",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ]
+    },
+    {
+      "id": "R03-16",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED",
+      "severity": "high",
+      "message": "au-xring: seller “Weight” may include stones but is used as metal-only weight without a basis flag",
+      "row": "au-xring",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds",
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R03-17",
+      "group": "R03",
+      "irregularity_id": "AMBIGUOUS_ITEM_WEIGHT_COMPUTED_ON_SITE",
+      "severity": "high",
+      "message": "au-xring: detail page still computes gold value from ambiguous total-item weight",
+      "row": "au-xring",
+      "path": "rings/au-xring.html",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds",
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R03-18",
+      "group": "R03",
+      "irregularity_id": "UNVERIFIED_VALUE_COMPUTED",
+      "severity": "high",
+      "message": "rs-939479: withdrawn/unverified source still produces fine-gold, gold-value or price-ratio outputs",
+      "row": "rs-939479",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/939479"
+      ]
+    },
+    {
+      "id": "R03-19",
+      "group": "R03",
+      "irregularity_id": "WITHDRAWN_VALUE_COMPUTED_ON_SITE",
+      "severity": "high",
+      "message": "rs-939479: withdrawn/source-mismatch detail page still presents a current melt calculation",
+      "row": "rs-939479",
+      "path": "rings/rs-939479.html",
+      "sources": [
+        "https://www.ross-simons.com/products/939479",
+        "https://www.ross-simons.com/products/939479"
+      ]
+    },
+    {
+      "id": "R04-01",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-571221: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-571221",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/571221"
+      ]
+    },
+    {
+      "id": "R04-02",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-571222: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-571222",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/571222"
+      ]
+    },
+    {
+      "id": "R04-03",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-571223: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-571223",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/571223"
+      ]
+    },
+    {
+      "id": "R04-04",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-571213: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-571213",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/571213"
+      ]
+    },
+    {
+      "id": "R04-05",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-981367: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-981367",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/981367"
+      ]
+    },
+    {
+      "id": "R04-06",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-907250: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-907250",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/907250"
+      ]
+    },
+    {
+      "id": "R04-07",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-960952: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-960952",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/960952"
+      ]
+    },
+    {
+      "id": "R04-08",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-879968: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-879968",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/879968"
+      ]
+    },
+    {
+      "id": "R04-09",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-999230: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-999230",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/999230"
+      ]
+    },
+    {
+      "id": "R04-10",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-991907: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-991907",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/991907"
+      ]
+    },
+    {
+      "id": "R04-11",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-993512: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-993512",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/993512"
+      ]
+    },
+    {
+      "id": "R04-12",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-991908: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-991908",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/991908"
+      ]
+    },
+    {
+      "id": "R04-13",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-864785: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-864785",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/864785"
+      ]
+    },
+    {
+      "id": "R04-14",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-943668: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-943668",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/943668"
+      ]
+    },
+    {
+      "id": "R04-15",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-242556: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-242556",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/242556"
+      ]
+    },
+    {
+      "id": "R04-16",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-254575: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-254575",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/254575"
+      ]
+    },
+    {
+      "id": "R04-17",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-240912: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-240912",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/240912"
+      ]
+    },
+    {
+      "id": "R04-18",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "wc-tulip: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "wc-tulip",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring"
+      ]
+    },
+    {
+      "id": "R04-19",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "wc-4prong: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "wc-4prong",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring"
+      ]
+    },
+    {
+      "id": "R04-20",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "wc-4prong-petite: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "wc-4prong-petite",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring"
+      ]
+    },
+    {
+      "id": "R04-21",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "wc-6prong: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "wc-6prong",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring"
+      ]
+    },
+    {
+      "id": "R04-22",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "wc-gerbera: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "wc-gerbera",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring"
+      ]
+    },
+    {
+      "id": "R04-23",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "as-bea-sol: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "as-bea-sol",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond"
+      ]
+    },
+    {
+      "id": "R04-24",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "as-hazeline: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "as-hazeline",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond"
+      ]
+    },
+    {
+      "id": "R04-25",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "as-bea-3stone: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "as-bea-3stone",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond"
+      ]
+    },
+    {
+      "id": "R04-26",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "au-2ct-oval: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "au-2ct-oval",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-27",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-2ct-oval: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-2ct-oval",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-28",
+      "group": "R04",
+      "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
+      "severity": "high",
+      "message": "au-2ct-oval: final-sale/exchange-only product is marked as having a confirmed usable return policy",
+      "row": "au-2ct-oval",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-29",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "au-1ct-emerald: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "au-1ct-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-30",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-1ct-emerald: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-1ct-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-31",
+      "group": "R04",
+      "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
+      "severity": "high",
+      "message": "au-1ct-emerald: final-sale/exchange-only product is marked as having a confirmed usable return policy",
+      "row": "au-1ct-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-32",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "au-3ct-round: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "au-3ct-round",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-33",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-3ct-round: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-3ct-round",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-34",
+      "group": "R04",
+      "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
+      "severity": "high",
+      "message": "au-3ct-round: final-sale/exchange-only product is marked as having a confirmed usable return policy",
+      "row": "au-3ct-round",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
+      ]
+    },
+    {
+      "id": "R04-35",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "au-cigar: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "au-cigar",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ]
+    },
+    {
+      "id": "R04-36",
+      "group": "R04",
+      "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
+      "severity": "high",
+      "message": "au-cigar: final-sale/exchange-only product is marked as having a confirmed usable return policy",
+      "row": "au-cigar",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/modern-cigar-band"
+      ]
+    },
+    {
+      "id": "R04-37",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "au-xring: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "au-xring",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R04-38",
+      "group": "R04",
+      "irregularity_id": "WEIGHT_BASIS_CAVEAT_MISSING",
+      "severity": "high",
+      "message": "au-xring: published weight lacks the F46 basis caveat; the number may remain visible but cannot be presented as established metal-only weight",
+      "row": "au-xring",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds",
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R04-39",
+      "group": "R04",
+      "irregularity_id": "FINAL_SALE_RETURN_MISLABELED",
+      "severity": "high",
+      "message": "au-xring: final-sale/exchange-only product is marked as having a confirmed usable return policy",
+      "row": "au-xring",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auratenewyork.com/products/x-ring-with-diamonds"
+      ]
+    },
+    {
+      "id": "R04-40",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-ccf-203284: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-ccf-203284",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284"
+      ]
+    },
+    {
+      "id": "R04-41",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-tc-203288: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-tc-203288",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288"
+      ]
+    },
+    {
+      "id": "R04-42",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-leaf-192442: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-leaf-192442",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442"
+      ]
+    },
+    {
+      "id": "R04-43",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-bezel-296643: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-bezel-296643",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643"
+      ]
+    },
+    {
+      "id": "R04-44",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-ridge-304497: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-ridge-304497",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497"
+      ]
+    },
+    {
+      "id": "R04-45",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-6p-203272: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-6p-203272",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272"
+      ]
+    },
+    {
+      "id": "R04-46",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-18k-6p-194159: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-18k-6p-194159",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159"
+      ]
+    },
+    {
+      "id": "R04-47",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-18k-pn-203268: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-18k-pn-203268",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268"
+      ]
+    },
+    {
+      "id": "R04-48",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-deb: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-deb",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/products/diamond-eternity-band"
+      ]
+    },
+    {
+      "id": "R04-49",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-db: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-db",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/products/diamonds-band"
+      ]
+    },
+    {
+      "id": "R04-50",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-bde: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-bde",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/products/bold-diamond-eternity-ring"
+      ]
+    },
+    {
+      "id": "R04-51",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-2mm: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-2mm",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/products/2mm-smooth-band"
+      ]
+    },
+    {
+      "id": "R04-52",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "be-18k-6p-121h6: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "be-18k-6p-121h6",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/"
+      ]
+    },
+    {
+      "id": "R04-53",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-997811: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-997811",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/997811"
+      ]
+    },
+    {
+      "id": "R04-54",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-939479: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-939479",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/939479"
+      ]
+    },
+    {
+      "id": "R04-55",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-10k-dlr: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-10k-dlr",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/us/en/products/diamonds-line-ring"
+      ]
+    },
+    {
+      "id": "R04-56",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-10k-sig: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-10k-sig",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/us/en/products/signet-ring"
+      ]
+    },
+    {
+      "id": "R04-57",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-radiant-3ct: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-radiant-3ct",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-58",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-radiant-3ct: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-radiant-3ct",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring"
+      ]
+    },
+    {
+      "id": "R04-59",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-marquise-melted: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-marquise-melted",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/marquise-diamond-melted-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-60",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-marquise-melted: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-marquise-melted",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/marquise-diamond-melted-ring"
+      ]
+    },
+    {
+      "id": "R04-61",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-leaves: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-leaves",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-leaves-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-62",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-leaves: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-leaves",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-leaves-ring"
+      ]
+    },
+    {
+      "id": "R04-63",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-petal: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-petal",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-petal-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-64",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-petal: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-petal",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-petal-ring"
+      ]
+    },
+    {
+      "id": "R04-65",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-kite: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-kite",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/gemstone-kite-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-66",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-kite: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-kite",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/gemstone-kite-ring"
+      ]
+    },
+    {
+      "id": "R04-67",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-cluster: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-cluster",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-cluster-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-68",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-cluster: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-cluster",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-cluster-ring"
+      ]
+    },
+    {
+      "id": "R04-69",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-bubble: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-bubble",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-bubble-ring",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-70",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-bubble: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-bubble",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/diamond-bubble-ring"
+      ]
+    },
+    {
+      "id": "R04-71",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "car-18k-etincelle-pear: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "car-18k-etincelle-pear",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html"
+      ]
+    },
+    {
+      "id": "R04-72",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "car-18k-etincelle-emerald: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "car-18k-etincelle-emerald",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html"
+      ]
+    },
+    {
+      "id": "R04-73",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "car-18k-1895-band-dia: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "car-18k-1895-band-dia",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html"
+      ]
+    },
+    {
+      "id": "R04-74",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mene-24k-classic-band: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mene-24k-classic-band",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mene.com/products/mene-classic-band-gold"
+      ]
+    },
+    {
+      "id": "R04-75",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mene-24k-narrow-band: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mene-24k-narrow-band",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mene.com/products/mene-narrow-band-gold"
+      ]
+    },
+    {
+      "id": "R04-76",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "auv-22k-vneck-sm: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "auv-22k-vneck-sm",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auvere.com/product/v-neck-stack-ring-small-polished/"
+      ]
+    },
+    {
+      "id": "R04-77",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "auv-22k-hexagon-diamond: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "auv-22k-hexagon-diamond",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auvere.com/product/hexagon-diamond-stack-ring/"
+      ]
+    },
+    {
+      "id": "R04-78",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "auv-22k-diamond-bridge-tall: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "auv-22k-diamond-bridge-tall",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auvere.com/product/diamond-bridge-ring-tall/"
+      ]
+    },
+    {
+      "id": "R04-79",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "auv-22k-clean-cut-polished: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "auv-22k-clean-cut-polished",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://auvere.com/product/clean-cut-stack-ring-polished/"
+      ]
+    },
+    {
+      "id": "R04-80",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-222283: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-222283",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/222283"
+      ]
+    },
+    {
+      "id": "R04-81",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-989853: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-989853",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/989853"
+      ]
+    },
+    {
+      "id": "R04-82",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-997441: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-997441",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/997441"
+      ]
+    },
+    {
+      "id": "R04-83",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "rs-255232: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "rs-255232",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.ross-simons.com/products/255232"
+      ]
+    },
+    {
+      "id": "R04-84",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_REPUTATION_OPEN",
+      "severity": "high",
+      "message": "ag-14k-industrial-band: ready_to_inspect requires confirmed independent reputation; BBB NR/unrated must stay visible with caution but cannot satisfy this tier",
+      "row": "ag-14k-industrial-band",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/industrial-mirror-band",
+        "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097"
+      ]
+    },
+    {
+      "id": "R04-85",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "ag-14k-industrial-band: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "ag-14k-industrial-band",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.automicgold.com/products/industrial-mirror-band"
+      ]
+    },
+    {
+      "id": "R04-86",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "car-18k-destinee-princess: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "car-18k-destinee-princess",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.cartier.com/en-us/jewelry/engagement-rings/cartier-destinee/cartier-destinee-ring-princess-cut-diamond-paved-CRB4232900.html"
+      ]
+    },
+    {
+      "id": "R04-87",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "bn-14k-petite-195639: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "bn-14k-petite-195639",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639"
+      ]
+    },
+    {
+      "id": "R04-88",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "mej-14k-sdeb: documentation is marked confirmed although the buyer receipt/post-purchase archive cannot exist yet",
+      "row": "mej-14k-sdeb",
+      "path": "data/compliance.json",
+      "sources": [
+        "https://mejuri.com/us/en/products/slim-diamond-eternity-band"
+      ]
+    },
+    {
+      "id": "R04-89",
+      "group": "R04",
+      "irregularity_id": "RETURN_SUMMARY_INCLUDES_FINAL_SALE_OR_WITHDRAWN",
+      "severity": "high",
+      "message": "Return summary must count 62 active rows with a usable 14+ day window, excluding final-sale and withdrawn records",
+      "row": null,
+      "path": "data/compliance.json",
+      "sources": []
+    },
+    {
+      "id": "R04-90",
+      "group": "R04",
+      "irregularity_id": "DOCUMENTATION_BUYER_ACTION_MISLABELED",
+      "severity": "high",
+      "message": "Checklist marks the buyer documentation/receipt requirement verified before any purchase archive exists",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": []
+    },
+    {
+      "id": "R04-91",
+      "group": "R04",
+      "irregularity_id": "SHORTLIST_OVERCLAIM",
+      "severity": "high",
+      "message": "Shortlist claims every pre-payment criterion despite unpublished hallmarks and unrated reputation results",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R05-01",
+      "group": "R05",
+      "irregularity_id": "IMPOSSIBLE_WEIGHT_COUNT",
+      "severity": "high",
+      "message": "Weight summary must say 25 total = 24 active + 1 withdrawn",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "data/rings.json"
+      ]
+    },
+    {
+      "id": "R05-02",
+      "group": "R05",
+      "irregularity_id": "STALE_CHECKLIST_SPOT_TIMESTAMP",
+      "severity": "high",
+      "message": "Checklist spot timestamp is stale relative to data/gold-price.json",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://api.gold-api.com/price/XAU"
+      ]
+    },
+    {
+      "id": "R05-03",
+      "group": "R05",
+      "irregularity_id": "STALE_CHECKLIST_SPOT_PRICE",
+      "severity": "high",
+      "message": "Checklist spot prose does not contain current $3,998.10/ozt",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://api.gold-api.com/price/XAU"
+      ]
+    },
+    {
+      "id": "R06-01",
+      "group": "R06",
+      "irregularity_id": "README_WRONG_FINDING_LINK",
+      "severity": "high",
+      "message": "README links the GIA XRF discussion to F42 (Blue Nile spec conflict) instead of F48",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/flagged.json"
+      ]
+    },
+    {
+      "id": "R06-02",
+      "group": "R06",
+      "irregularity_id": "MELT_ANOMALY_CALLED_IMPOSSIBLE",
+      "severity": "high",
+      "message": "README repeats the incorrect S06 claim that a below-melt price is impossible",
+      "row": null,
+      "path": "README.md",
+      "sources": []
+    },
+    {
+      "id": "R06-03",
+      "group": "R06",
+      "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
+      "severity": "high",
+      "message": "README verification-pass table omits S18",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "scripts/verify.mjs"
+      ]
+    },
+    {
+      "id": "R06-04",
+      "group": "R06",
+      "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
+      "severity": "high",
+      "message": "README verification-pass table omits S19",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "scripts/verify.mjs"
+      ]
+    },
+    {
+      "id": "R06-05",
+      "group": "R06",
+      "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
+      "severity": "high",
+      "message": "README verification-pass table omits S20",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "scripts/verify.mjs"
+      ]
+    },
+    {
+      "id": "R07-01",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_NORMAL_RETAIL_MULTIPLE",
+      "severity": "high",
+      "message": "scripts/build.mjs presents an unsourced normal 2–6× retail/melt range",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-02",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_NORMAL_RETAIL_MULTIPLE",
+      "severity": "high",
+      "message": "assets/js/app.js presents an unsourced normal 2–6× retail/melt range",
+      "row": null,
+      "path": "assets/js/app.js",
+      "sources": []
+    },
+    {
+      "id": "R07-03",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_KARAT_GENERALISATION",
+      "severity": "high",
+      "message": "Calculator karat table makes unsupported wearability/market claim: “Hardest wearing of these”",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-04",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_KARAT_GENERALISATION",
+      "severity": "high",
+      "message": "Calculator karat table makes unsupported wearability/market claim: “too soft for daily-wear rings”",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-05",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_KARAT_GENERALISATION",
+      "severity": "high",
+      "message": "Calculator karat table makes unsupported wearability/market claim: “The US engagement-ring standard”",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-06",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_KARAT_GENERALISATION",
+      "severity": "high",
+      "message": "Calculator karat table makes unsupported wearability/market claim: “Common in coins and South Asian jewellery”",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-07",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_KARAT_GENERALISATION",
+      "severity": "high",
+      "message": "Calculator karat table makes unsupported wearability/market claim: “Richer colour, softer than 14K”",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-08",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_KARAT_GENERALISATION",
+      "severity": "high",
+      "message": "Checklist turns gold fraction into unsupported durability/design advice",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": []
+    },
+    {
+      "id": "R07-09",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_MELT_PRICE_FLOOR",
+      "severity": "high",
+      "message": "Site presents melt value as a universal price floor or a below-melt price as necessarily a data error",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": []
+    },
+    {
+      "id": "R07-10",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
+      "message": "README.md calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-11",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
+      "message": "data/checklist.json calls the catalog's five karats the complete legal spectrum; eCFR § 23.3(c)(1) expressly includes 9K examples",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-12",
+      "group": "R07",
+      "irregularity_id": "FALSE_COMPLETE_LEGAL_KARAT_SPECTRUM",
+      "severity": "high",
+      "message": "S03 describes only 10/14/18/22/24 as legal marks, although the official guides give other examples including 9K",
+      "row": null,
+      "path": "scripts/verify.mjs",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-13",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "README.md strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-14",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "data/checklist.json strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-15",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "data/flagged.json strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-16",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "data/sources.json strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "data/sources.json",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-17",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "scripts/build.mjs strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "scripts/build.mjs",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-18",
+      "group": "R07",
+      "irregularity_id": "ECFR_LEGAL_STRENGTH_OVERSTATED",
+      "severity": "high",
+      "message": "scripts/build_compliance.mjs strengthens eCFR “should not” into an unqualified legal prohibition",
+      "row": null,
+      "path": "scripts/build_compliance.mjs",
+      "sources": [
+        "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3"
+      ]
+    },
+    {
+      "id": "R07-19",
+      "group": "R07",
+      "irregularity_id": "QUALITY_MARK_SCOPE_OVERSTATED",
+      "severity": "high",
+      "message": "Quality-mark prose omits the statutory manufacturer/dealer/transport scope and the legal-name alternative",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.govinfo.gov/link/uscode/15/297"
+      ]
+    },
+    {
+      "id": "R07-20",
+      "group": "R07",
+      "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
+      "severity": "high",
+      "message": "README.md misidentifies GIA 2025 item/pendant examples as rings",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-21",
+      "group": "R07",
+      "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
+      "severity": "high",
+      "message": "data/checklist.json misidentifies GIA 2025 item/pendant examples as rings",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-22",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_XRF_DEPTH_CLAIM",
+      "severity": "high",
+      "message": "data/checklist.json asserts an X-ray-depth claim not established by its cited GIA articles",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-23",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_TEST_GUARANTEE",
+      "severity": "high",
+      "message": "data/checklist.json presents a specific hydrostatic test regimen as catching these cases; the cited GIA articles do not establish that blanket guarantee",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-24",
+      "group": "R07",
+      "irregularity_id": "GIA_EXAMPLE_IDENTITY_ERROR",
+      "severity": "high",
+      "message": "data/flagged.json misidentifies GIA 2025 item/pendant examples as rings",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-25",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_XRF_DEPTH_CLAIM",
+      "severity": "high",
+      "message": "data/flagged.json asserts an X-ray-depth claim not established by its cited GIA articles",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R07-26",
+      "group": "R07",
+      "irregularity_id": "UNSUPPORTED_TEST_PRESCRIPTION",
+      "severity": "high",
+      "message": "Checklist prescribes a rigid test regimen that the cited GIA articles do not establish; ask the independent jeweller which additional tests are appropriate",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+        "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
+      ]
+    },
+    {
+      "id": "R09-01",
+      "group": "R09",
+      "irregularity_id": "STALE_FLAG_COUNT",
+      "severity": "high",
+      "message": "F02 buyer action still says seven weighted rows although 25 records publish gram figures",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": []
+    },
+    {
+      "id": "R09-02",
+      "group": "R09",
+      "irregularity_id": "FLAG_CONTRADICTS_ROW",
+      "severity": "high",
+      "message": "F02 incorrectly includes withdrawn rs-939479 among rows with no published weight although its archived evidence says Gold Weight 1.5 grams",
+      "row": "rs-939479",
+      "path": "data/flagged.json",
+      "sources": [
+        "https://www.ross-simons.com/products/939479"
+      ]
+    },
+    {
+      "id": "R09-03",
+      "group": "R09",
+      "irregularity_id": "STALE_FLAG_COUNT",
+      "severity": "high",
+      "message": "F30 still describes the old 59-row catalog as current",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": []
+    },
+    {
+      "id": "R09-04",
+      "group": "R09",
+      "irregularity_id": "STALE_FLAG_COUNT",
+      "severity": "high",
+      "message": "F20 title preserves a 13-row count as if it described the current 71-row review",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": []
+    },
+    {
+      "id": "R09-05",
+      "group": "R09",
+      "irregularity_id": "WEIGHT_BASIS_OVERSTATED",
+      "severity": "high",
+      "message": "F46 title asserts stone inclusion while its own finding only says the weight can include stones; keep the basis unconfirmed",
+      "row": null,
+      "path": "data/flagged.json",
+      "sources": []
+    },
+    {
+      "id": "R10-01",
+      "group": "R10",
+      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
+      "severity": "high",
+      "message": "Gold unit authority still uses the NIST URL that returned a 404 on 2026-10-23",
+      "row": null,
+      "path": "data/gold-price.json",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ]
+    },
+    {
+      "id": "R10-02",
+      "group": "R10",
+      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
+      "severity": "high",
+      "message": "Source registry still uses the retired NIST conversion URL",
+      "row": null,
+      "path": "data/sources.json",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ]
+    },
+    {
+      "id": "R10-03",
+      "group": "R10",
+      "irregularity_id": "BROKEN_NIST_AUTHORITY_LINK",
+      "severity": "high",
+      "message": "Checklist still links the retired NIST conversion URL",
+      "row": null,
+      "path": "data/checklist.json",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ]
+    },
+    {
+      "id": "R10-04",
+      "group": "R10",
+      "irregularity_id": "UNIT_FALLBACK_MISMATCH",
+      "severity": "high",
+      "message": "Verifier can fall back to grains per troy ounce as though it were grams; require the NIST gram conversion instead",
+      "row": null,
+      "path": "scripts/verify.mjs",
+      "sources": [
+        "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information"
+      ]
+    }
+  ],
+  "required_response": "Review every finding against the linked official/repository source. Do not fill an unconfirmed value; blank it or preserve it only as clearly labelled historical evidence. Re-run this audit and all canonical/security suites after every correction."
+}
