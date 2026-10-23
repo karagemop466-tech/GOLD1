@@ -234,7 +234,7 @@
       "title": "A dormant first-pass generator could overwrite the published dashboard",
       "affectedCandidateIds": [],
       "finding": "tools/build_site.py (the first-pass generator, dormant since 2026-10-22) had OUT set to the repository root and listed index.html, flagged.html and calculator.html among the pages it writes — the same filenames as the canonical published dashboard. Running it would have overwritten 71-row pages with 14-row pages.",
-      "action": "Fixed on 2026-10-23 (board T50): the script now refuses to write to the repository root and requires an explicit --allow-regenerate flag; its default output is docs/. No generated page was overwritten by this change.",
+      "action": "Fixed on 2026-10-23 (board T52): the script now refuses to write to the repository root and requires an explicit --allow-regenerate flag; its default output is docs/. No generated page was overwritten by this change.",
       "sourceBasis": "tools/build_site.py before and after the 2026-10-23 change in this branch."
     }
   ]

@@ -1546,6 +1546,18 @@ Note on `A10`/`H12`: those two groups report "pass-ID out of sync" whenever `ver
 following rebuild (the in-memory pass counter advances past the committed `P110`). On the committed tree they
 pass 10/10 and 13/13. That is expected behaviour, not a defect, and the files involved belong to T48.
 
+### 25.6 Publication record (`sess-7d64f506`)
+
+| Step | Result |
+|------|--------|
+| Pull request | [#82](https://github.com/karagemop466-tech/GOLD1/pull/82) — *T52: `/site/` 13-row register re-read live (13/13 prices reproduced), 6 new findings, freshness + publication-parity audit guards, legacy-generator root-write hazard closed* |
+| Union before publish | `origin/main` had moved **29 commits** (PRs #70–#80) while this pass ran. Merged **additively**; the only conflict was `COORDINATION.md`, resolved as a **union** — every other session's board rows and §22/§23/§24 kept verbatim, only this session's task renumbered (`T50`→`T52`, `§24`→`§25`) because `arena/67748540-gold1` had taken `T50`. Nothing was discarded. |
+| Merged into `main` | **2026-10-23T23:56:20Z**, merge commit **`96912b238166564d667ceea356ce9b3803c59f79`** |
+| GitHub Pages | build **`built`**, `error: null`, for the exact merge commit `96912b2` (`updated_at` 2026-10-23T23:56:50Z) |
+| Live readback (deployed site, not the working tree) | `site/data/irregularities.json` serves **16 groups** including all six 2026-10-23 findings; `retrievedDate` is `2026-10-23` — <https://karagemop466-tech.github.io/GOLD1/site/data/irregularities.json> |
+| Post-deploy correction | The published action text of `legacy-generator-wrote-to-repo-root` still said “board T50” after the renumber (the integrator only appends new findings, so already-appended text was not rewritten). Corrected to **T52** in `research/irregularities.json` and its byte-identical published copy, `npm test` re-run green, shipped in the follow-up board PR below. |
+| This record | follow-up board PR from `arena/7d64f506-gold1` (board + the T50→T52 text correction only; no dataset values changed) |
+
 ### 25.6 Honest limits
 
 * 13 rows were re-opened, not the canonical 71 — those belong to the concurrent T47/T48/T49 passes.
