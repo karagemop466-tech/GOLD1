@@ -237,7 +237,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S19 + A01–A10</a>). <strong>Price snapshots are not live quotes:</strong> the latest product-page re-read was ${esc(recheckDate || 'not recorded')}; retailer prices and gold spot can change, so verify the linked official source immediately before buying.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10</a>). <strong>Price snapshots are not live quotes:</strong> the latest product-page re-read was ${esc(recheckDate || 'not recorded')}; retailer prices and gold spot can change, so verify the linked official source immediately before buying.</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -1068,7 +1068,7 @@ const methodologyPage = layout({
     <li><strong>No invented dollar amounts.</strong> Every dollar figure on every generated page must trace to a value in the data files or to a formula computed from them. This is the check that catches a price invented in the prose.</li>
     <li><strong>Data age.</strong> A snapshot older than 30 days fails the run, so a stale price cannot be published as current.</li>
   </ol>
-  <p class="sub">All nineteen canonical groups (S01–S19) plus the ten extended groups (A01–A10) and their live results are listed on <a href="checks.html">Checks</a>. The suite is also tested against deliberate sabotage: a fake five-figure price was injected into a page to confirm the invented-amount check fires (pass P15 in the history).</p>
+  <p class="sub">All twenty canonical groups (S01–S20) plus the ten extended groups (A01–A10) and their live results are listed on <a href="checks.html">Checks</a>. The suite is also tested against deliberate sabotage: a fake five-figure price was injected into a page to confirm the invented-amount check fires (pass P15 in the history).</p>
 
   <h2>4. Limits you should know</h2>
   <ul class="crosses">
@@ -1218,7 +1218,7 @@ const requirementsPage = layout({
     ${stat(`${w.solid_stated}/${w.rows}`, 'explicitly call the metal "solid"', 'Point 2 of the checklist. The rest name a karat and stop.')}
     ${stat(`${w.weight_published}/${w.rows}`, 'publish a weight in grams', 'Point 4. Without grams the gold-value check cannot run.')}
     ${stat(`${w.hallmark_published}/${w.rows}`, "publish a hallmark + maker's mark", 'Point 3. No retailer publishes the stamp online — it must be read off the ring.')}
-    ${stat(`${w.gold_value_computable}/${w.rows}`, 'have a computable gold value', 'Point 6. Computed at ${usd(spot)}/ozt from the stored spot reading.')}
+    ${stat(`${w.gold_value_computable}/${w.rows}`, 'have a computable gold value', `Point 6. Computed at ${usd(spot)}/ozt from the stored spot reading.`)}
     ${stat(`${w.return_window_14_plus}/${w.rows}`, 'sit with a 14-day-plus return window', 'Point 7. Windows range from 7 to 30 days and several start before delivery.')}
     ${stat(`${w.bbb_a_grade}/${w.rows}`, 'sit with an A-grade BBB record', 'Point 5. Aurate rows carry a BBB "F" and are therefore blocked.')}
   </div>

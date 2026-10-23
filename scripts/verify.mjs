@@ -515,6 +515,41 @@ const counted = (fn) => fn;
   add('S19', 'Unverified prices never render as numbers', 'A row whose price could not be reproduced must print "— unverified" wherever a price would go.', failures);
 }
 
+/* ---------------------------------------------------- S20 template leaks */
+{
+  const failures = [];
+  const files = [];
+  const walk = async (dir) => {
+    for (const e of await readdir(dir, { withFileTypes: true })) {
+      if (e.name.startsWith('.') || e.name === 'node_modules' || e.name === 'dist') continue;
+      const full = join(dir, e.name);
+      if (e.isDirectory()) await walk(full);
+      else if (e.name.endsWith('.html')) files.push(full);
+    }
+  };
+  await walk(ROOT);
+  for (const f of files) {
+    assertions++;
+    const text = await readFile(f, 'utf8');
+    // A leaked template expression means a value was meant to be interpolated
+    // and was not: the page then shows source code instead of a verified number.
+    const leak = text.match(/\$\{[a-zA-Z0-9_.()'\[\] ]{1,60}\}/);
+    if (leak) failures.push(`${f.replace(ROOT + '/', '')}: unreplaced template expression ${leak[0]}`);
+    // Only a value position counts: an unset field renders as a bare "undefined"
+    // immediately after a tag or at the start of the document. Prose that merely
+    // mentions the word (such as this group's own description) is not a leak.
+    if (/(^|>)undefined(?=[<\s])/.test(text.replace(/<script[\s\S]*?<\/script>/g, ''))) {
+      failures.push(`${f.replace(ROOT + '/', '')}: a value rendered as undefined`);
+    }
+  }
+  add(
+    'S20',
+    'No template leaks or undefined values',
+    'A page must never show an unreplaced ${…} expression or the word "undefined": either one means a value was meant to be printed and was not, which reads as a fabricated figure to the buyer.',
+    failures
+  );
+}
+
 /* ---------------------------------------------------------------- report */
 const totalFailed = groups.reduce((n, g) => n + (g.failure_count || 0), 0);
 const history = await readIf('data/checks/history.json', { runs: [] });
