@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "session": "sess-545688f3",
+  "retrieved_at": "2026-10-23T09:58:00Z",
+  "retailer": {
+    "id": "auvere",
+    "name": "Auvere",
+    "legal_name": "Auvere LLC",
+    "domain": "auvere.com",
+    "site": "https://auvere.com",
+    "karat_specialty": "22K (91.7% gold) and 24K (99.9% gold) solid-gold jewelry",
+    "solid_gold_policy_quote": "Our pieces are solid gold, never plated and never vermeil. Handcrafted from solid 22 karat gold.",
+    "solid_gold_policy_url": "https://auvere.com/our-philosophy/",
+    "contact_verified": true,
+    "phone": "1-866-317-7779",
+    "email": "concierge@auvere.com",
+    "address_verified": "485 Lexington Ave, Suite 304, New York, NY 10017 (Mon–Fri 9am–5pm EST)",
+    "contact_source": "https://auvere.com/help/customer-support/",
+    "return_policy_verified": true,
+    "return_window_days": 15,
+    "return_clock_starts": "delivery date",
+    "return_summary": "15 days from delivery for complimentary US FedEx return or exchange (must ship within 10 days of RMA label issuance); original jewelry tag must remain attached and untouched; Rare, bespoke, engraved, and Sale items are final sale. Note: Auvere's older Journal article still mentions 30 days — live Shipping & Returns modal governs at 15 days (flagged F53).",
+    "return_source": "https://auvere.com/shipping-returns/",
+    "bbb_rating": "A+",
+    "bbb_status": "Not BBB Accredited",
+    "bbb_summary": "Auvere LLC (file opened 2023-06-21, business started 2020-06-05, New York, NY) holds an A+ BBB rating (Not BBB Accredited).",
+    "bbb_source": "https://www.bbb.org/us/ny/new-york/profile/online-retailer/auvere-llc-0121-87168132",
+    "checkout_note": "Strict 15-day return window from delivery and original security tag MUST stay attached; ask Concierge in writing for exact gross 22K gram weight for your ring size ('Approximate Fine Weight' on PDPs is ambiguous — see F52)."
+  }
+}
