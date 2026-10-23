@@ -126,9 +126,9 @@
         "metal": "White gold"
       },
       "verbatim": null,
-      "verdict": "not_read \u2014 the fetch channel's upstream proxy returned repeated SignatureDoesNotMatch infrastructure errors between 10:37Z and 10:41Z; the page itself was never reached, so nothing is recorded and the stored value keeps its 2026-10-22 capture date",
+      "verdict": "not_read \u2014 the fetch channel's upstream proxy returned repeated SignatureDoesNotMatch infrastructure errors between 10:37Z and 11:05Z (6 attempts); the page itself was never reached, so nothing is recorded and the stored value keeps its 2026-10-22 capture date",
       "drift": null,
-      "cross_reference_pass7": "sess-545688f3 \u00a716: CRB4225700 $3,600, 750/1000 (their channel read it; this channel did not reach the page \u2014 upstream proxy SignatureDoesNotMatch failures 10:37Z\u201310:53Z, 5 attempts)"
+      "cross_reference_pass7": "sess-545688f3 \u00a716: CRB4225700 $3,600, 750/1000 (their channel read it; this channel did not reach the page \u2014 upstream proxy SignatureDoesNotMatch failures 10:37Z\u201310:53Z, 6 attempts 10:37Z\u201311:05Z)"
     },
     {
       "row": "be-18k-6p-121h6",
