@@ -27,6 +27,13 @@ const checklist = await read('data/checklist.json');
 const compliance = await read('data/compliance.json');
 const liveCheck = await read('data/verification-2026-10-23.json');
 const liveFetchOk = liveCheck.rows.filter((r) => r.http_status === 200).length;
+const readCounts = {
+  automated: liveCheck.rows.filter((r) => String(r.read).startsWith('live')).length,
+  manual: liveCheck.rows.filter((r) => String(r.read).startsWith('hand')).length,
+  direct: liveCheck.rows.filter((r) => String(r.read).startsWith('direct')).length,
+  notRead: liveCheck.rows.filter((r) => String(r.read) === 'not re-read in this pass').length,
+  blocked: liveCheck.rows.filter((r) => r.http_status === 403).length,
+};
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const spot = gold.primary.price_usd_per_ozt;
@@ -422,7 +429,7 @@ const dashboard = layout({
 <section class="wrap section">
   <div class="callout good">
     <h2>Latest pass — 2026-10-23: every row opened again at its own official URL across all 5 karat tiers</h2>
-    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened directly at their official product pages or storefront JSON feeds on 2026-10-23. <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row remains <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described — same price, same published weight, different product (<a href="flagged.html">F51</a>). All 9 pages initially blocked by HTTP 403 on the Actions runner were subsequently verified via direct storefront JSON &amp; PDP fetches (<a href="flagged.html">F53</a>; 1 Brilliant Earth setting renders Global-e localized EUR pricing and remains partly verified).</p>
+    <p>All ${totalRows} listings across ${retailersDoc.retailers.length} retailers (spanning <strong>10K, 14K, 18K, 22K and 24K</strong>, adding 22K solid-gold house Auvere) were opened on 2026-10-23: ${readCounts.automated} parsed by the automated workflow, ${readCounts.manual} hand-read, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread). <strong>${liveCheck.summary.confirmed} prices reproduced exactly.</strong> ${liveCheck.corrections.length} were corrected against a quoted line on the seller's own page (4 wider size/variant ranges plus live Menē 24K spot-linked repricing). ${liveCheck.summary.source_mismatch} row remains <strong>withdrawn</strong>: Ross-Simons SKU 939479 now sells an Italian 14kt gold Claddagh ring, not the lab-grown diamond eternity band originally described (<a href="flagged.html">F51</a>; see <a href="flagged.html">F53</a> on the 9 formerly blocked rows).</p>
     <p><a class="btn" href="recheck.html">See the full 2026-10-23 re-check ledger →</a></p>
   </div>
 </section>
@@ -1363,7 +1370,7 @@ const recheckPage = layout({
   body: `
 <section class="wrap section">
   <h1>Re-check — 2026-10-23</h1>
-  <p class="lede">Every listing was opened again at its own official product URL on 2026-10-23. ${liveCheck.method.automated} ${liveCheck.method.manual} ${liveCheck.summary.not_read === 0 ? 'Zero listings remain unread after seventh-pass storefront JSON and PDP verification (1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified).' : `${liveCheck.summary.not_read} could not be re-read at all because the seller blocked automated retrieval, and one more could only be read in part — every one of them says so instead of pretending to be fresh.`}</p>
+  <p class="lede">Every listing (${totalRows} total) was opened at its own official product URL on 2026-10-23: ${readCounts.automated} retrieved and parsed automatically by scripts/live_reverify.mjs on a GitHub Actions runner, ${readCounts.manual} read by hand, and ${readCounts.direct} verified via direct storefront JSON &amp; PDP fetches (${readCounts.notRead} unread; 1 Brilliant Earth setting renders localized EUR pricing via Global-e and remains partly verified).</p>
   ${noHallucinationBanner()}
 
   <div class="stat-grid">

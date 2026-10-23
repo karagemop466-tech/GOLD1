@@ -620,24 +620,40 @@
       "pages": 93
     },
     {
-      "pass": "P50-545688f3",
-      "generated_at": "2026-10-23T10:26:37Z",
+      "pass": "P77",
+      "generated_at": "2026-10-23T10:15:50Z",
       "total": 20,
       "failed": 0,
-      "rows": 71,
-      "pages": 105
+      "rows": 59,
+      "pages": 93
     },
     {
       "pass": "P78",
-      "generated_at": "2026-10-23T10:26:38Z",
+      "generated_at": "2026-10-23T10:15:57Z",
       "total": 20,
       "failed": 0,
-      "rows": 71,
-      "pages": 105
+      "rows": 59,
+      "pages": 93
     },
     {
-      "pass": "P79-545688f3",
-      "generated_at": "2026-10-23T10:26:59Z",
+      "pass": "P79",
+      "generated_at": "2026-10-23T10:18:06Z",
+      "total": 20,
+      "failed": 0,
+      "rows": 59,
+      "pages": 93
+    },
+    {
+      "pass": "P80",
+      "generated_at": "2026-10-23T10:18:37Z",
+      "total": 20,
+      "failed": 0,
+      "rows": 59,
+      "pages": 93
+    },
+    {
+      "pass": "P80-545688f3",
+      "generated_at": "2026-10-23T10:30:11Z",
       "total": 20,
       "failed": 0,
       "rows": 71,
