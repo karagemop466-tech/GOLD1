@@ -1,0 +1,55 @@
+{
+  "session": "sess-db06c195",
+  "task": "T49 — independent third-channel verification (page-fetch channel)",
+  "channel": "Arena page-fetch channel (different egress from the GitHub Actions runner used by data/live/**)",
+  "clock_note": "The page-fetch tool does not return a sub-minute capture timestamp. Every read below was made on the 2026-10-23 23:36–23:44Z session clock; minute precision is reconstructed from the session log, not invented to the second. Where the seller's own page or feed printed a timestamp, it is recorded verbatim in publisher_timestamp.",
+  "reads": [
+    {
+      "id": "gold-api.com/XAU",
+      "url": "https://api.gold-api.com/price/XAU",
+      "observed_at_utc": "2026-10-23T23:38Z",
+      "publisher_timestamp": "2026-10-23T23:38:16Z",
+      "verbatim": "{\"currency\":\"USD\",\"currencySymbol\":\"$\",\"exchangeRate\":1.0,\"name\":\"Gold\",\"price\":3996.899902,\"symbol\":\"XAU\",\"updatedAt\":\"2026-10-23T23:38:16Z\",\"updatedAtReadable\":\"a few seconds ago\"}",
+      "price_usd_per_ozt": 3996.899902,
+      "cross_check": "Bit-identical to the reading the Actions runner captured at 2026-10-23T23:40:45Z (data/live/2026-10-23T23-41-17Z.json) and to the reading merged on main by PR #70 (data/gold-price.json). Three channels, same number.",
+      "verdict": "confirmed"
+    },
+    {
+      "id": "mene-24k-classic-band",
+      "url": "https://mene.com/products/mene-classic-band-gold",
+      "observed_at_utc": "2026-10-23T23:41Z",
+      "verbatim": "Classic Band — \"$1,694\" \"USD\" … \"Metal: 24k Gold\" \"Width: 5mm Thickness: 2mm\" … narrow-band recommendation card printed \"From $1,290\"",
+      "stored": { "price_low": 1694, "price_high": 1694, "karat": "24K" },
+      "verdict": "match",
+      "note": "The default-configuration display is $1,694 exactly as stored; the lower \"From $1,290\" card belongs to the Narrow Classic Band product, which is a separate row (stored $1,350 at its own default configuration)."
+    },
+    {
+      "id": "auv-22k-vneck-sm",
+      "url": "https://auvere.com/product/v-neck-stack-ring-small-polished/",
+      "observed_at_utc": "2026-10-23T23:42Z",
+      "verbatim": "Shipping and Returns policy sections printed on the product page: domestic returns and exchanges free; \"You have 15 days from the day …\"",
+      "stored": { "price_low": 900, "price_high": 900, "karat": "22K" },
+      "verdict": "partial",
+      "note": "The fetched page text led with the seller's Shipping/Returns blocks; the product price block was not in the returned text, so this read independently corroborates the 15-day return window (board finding F55) but does NOT re-confirm the $900 price. Recorded as a partial read rather than a match — the Actions runner's own read of this URL at 23:41Z is the price evidence for this row."
+    },
+    {
+      "id": "as-bea-sol",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+      "observed_at_utc": "2026-10-23T23:43Z",
+      "verbatim": "\"Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)\" … \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" — no price anywhere on the page; an enquiry form replaces the buy box.",
+      "stored": { "price_low": 11500, "price_unverified": true },
+      "verdict": "confirmed_unverified",
+      "note": "Independently corroborates the dataset's decision to publish this row as price-unverified: the official page prints no price tonight. The stored $11,500 is a storefront-feed value a shopper cannot see, which is exactly what the row's note says."
+    },
+    {
+      "id": "bn-14k-petite-195639",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-micropave-engagement-ring-in-14k-yellow-gold-1-10-ct-tw-item-195639",
+      "observed_at_utc": "2026-10-23T23:43Z",
+      "verbatim": "Page title \"Petite Solitaire Engagement Ring in 14k Yellow Gold\" … \"Stock Number 501130y14\" … \"Width 1.80mm\" … \"$1,000 (Setting Price)\"",
+      "stored": { "title": "Petite Micropavé Engagement Ring in 14k Yellow Gold (1/10 ct. tw.)", "withdrawn": true },
+      "verdict": "confirmed_withdrawn",
+      "note": "Independently corroborates F65: the stored URL now serves a different ring (solitaire, stock no. 501130y14, 1.80 mm) under the old item-195639 URL. The row stays withdrawn; its $1,000 must not be quoted as the micropavé setting price."
+    }
+  ],
+  "sample_rationale": "Five targeted reads, not 71: (a) the gold feed every melt figure depends on, (b) one spot-linked 24K seller where drift is most likely, (c) one 22K seller carrying an open return-window finding, (d) the only row published as price-unverified inside the dataset, (e) the row withdrawn for a repurposed URL. All 71 rows are covered by the independent runner ledger in data/live/2026-10-23T23-41-17Z.json, which this session reconciled line by line in data/session-db06c195/third-channel-2026-10-23T23-41-17Z.json."
+}

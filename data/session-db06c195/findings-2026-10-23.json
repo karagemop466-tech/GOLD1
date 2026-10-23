@@ -1,0 +1,97 @@
+{
+  "session": "sess-db06c195",
+  "task": "T49 — independent third-channel verification & publication QA",
+  "generated_at": "2026-10-23T23:44Z",
+  "method": "Read-only. Every finding below rests on a file in this repository or on a page this session opened itself; none is inferred. Corrections to shared files are requested in COORDINATION.md §5, never applied here.",
+  "findings": [
+    {
+      "id": "DB-01",
+      "severity": "medium",
+      "title": "A legacy dashboard is still published on the project's Pages domain, outside the verified dataset and outside every audit",
+      "evidence": [
+        "repo: docs/index.html (title \"Dashboard — GOLD — Gold Engagement Ring Research\", dated 2026-10-21/22)",
+        "repo: docs/rings-tiffany-co.html prints $1,600 / $1,530 against tiffany.com links",
+        "repo: no canonical page links to docs/ (grep for 'docs/' across the root *.html returns nothing)",
+        "live: https://karagemop466-tech.github.io/GOLD1/docs/"
+      ],
+      "why_it_matters": "The canonical project rule is that every published figure is sourced and audited. The docs/ subtree predates the 71-row dataset, contains a Tiffany & Co. page that is not part of the verified set, and is not covered by S01–S20, A01–A10, H01–H13, N01–N11 or this session's D01–D09. A reader who lands there sees numbers with no audit trail behind them.",
+      "recommendation": "Either (a) delete docs/ from the published tree, (b) add a legacy/noindex banner plus <meta name=\"robots\" content=\"noindex\"> and a link back to the canonical dashboard, or (c) fold the Tiffany rows into data/rings.json with verbatim evidence and let them be audited. Not done here: docs/** is outside this session's scope.",
+      "blocks_purchase": false,
+      "blocks_publication": false
+    },
+    {
+      "id": "DB-02",
+      "severity": "low",
+      "title": "10 of 71 rows refused an independent automated read tonight (HTTP 403); they are NOT presented as freshly confirmed",
+      "evidence": [
+        "data/live/2026-10-23T23-41-17Z.json: fetch_ok 61/71",
+        "refused: wc-tulip, wc-4prong, wc-4prong-petite, wc-6prong, wc-gerbera (With Clarity), car-18k-etincelle-pear, car-18k-etincelle-emerald, car-18k-1895-band-dia, car-18k-destinee-princess (Cartier), be-18k-6p-121h6 (Brilliant Earth)"
+      ],
+      "why_it_matters": "Bot walls are not evidence of defect, but they do mean those ten rows were not re-confirmed on this clock. The dataset already carries earlier dated reads for them; the point is that nobody should read tonight's pass as 71/71.",
+      "recommendation": "Keep the honest 61/71 line on the checks page (already the pattern). Where a seller's storefront JSON feed is reachable, keep using it as the documented fallback channel, and keep labelling those rows at product level rather than variant level.",
+      "blocks_purchase": false,
+      "blocks_publication": false
+    },
+    {
+      "id": "DB-03",
+      "severity": "low",
+      "title": "No Content-Security-Policy on any published root page (no inline execution today, but no policy either)",
+      "evidence": [
+        "every root *.html and rings/*.html loads exactly one script: <script src=\"assets/js/app.js\" defer>",
+        "grep for 'http-equiv=\"Content-Security-Policy\"' across the root pages returns 0 matches"
+      ],
+      "why_it_matters": "The published pages execute only a same-origin external script, so there is no inline-injection surface today. The /site/ subsection already ships a CSP; the root dashboard does not. Adding one is cheap hardening and also protects against a future inline script being added without review.",
+      "recommendation": "Add a meta CSP to the root template, e.g. default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; frame-ancestors 'none'; base-uri 'none'. Owner: scripts/build.mjs (not this session's scope).",
+      "blocks_purchase": false,
+      "blocks_publication": false
+    },
+    {
+      "id": "DB-04",
+      "severity": "info",
+      "title": "The COMEX futures cross-check was rate-limited (HTTP 429) on this run",
+      "evidence": [
+        "data/live/2026-10-23T23-41-17Z.json → gold_price_readings[1]: Yahoo Finance GC=F, http_status 0, raw_excerpt \"HTTP 429\""
+      ],
+      "why_it_matters": "The spot reading itself is primary and was obtained three ways tonight (page-fetch channel, Actions runner, and the reading merged by PR #70 — all 3,996.899902 USD/ozt). The second-opinion cross-check simply did not answer on this attempt, so no cross-check number is claimed for 23:4xZ.",
+      "recommendation": "Leave the earlier dated COMEX readings as the cross-check (they are stamped) and do not fabricate a new one. If a fresh cross-check is wanted, retry on a later run.",
+      "blocks_purchase": false,
+      "blocks_publication": false
+    },
+    {
+      "id": "DB-05",
+      "severity": "low",
+      "title": "Board hygiene: duplicate task rows and simultaneous claims of the same task ID",
+      "evidence": [
+        "COORDINATION.md contains two T44 rows with different scopes",
+        "arena/67748540-gold1, arena/e33f8670-gold1 and arena/a4b3c19b-gold1 all claimed T47 (integration/full re-read) within 90 seconds of each other at 2026-10-23T23:38–23:39Z; arena/356f1adf-gold1 had already claimed T47 and merged PR #70 at 23:43Z",
+        "this session therefore claimed T49 with a read-only scope that touches no shared output"
+      ],
+      "why_it_matters": "Parallel sessions racing on the same scope is how shared outputs get overwritten. The file-scope rule only works if the claim is written before the work starts and checked at that moment.",
+      "recommendation": "Keep the monotonic T-number counter in one place, and state in §0 that a claim must be pushed and re-read (git pull --rebase) before any file is edited. The duplicate T44 rows can be merged into one by whoever next owns the board header.",
+      "blocks_purchase": false,
+      "blocks_publication": false
+    },
+    {
+      "id": "DB-06",
+      "severity": "low",
+      "title": "Two flag ledgers exist; the older one (data/flags.json) is stale and contradicts the current dataset",
+      "evidence": [
+        "data/flags.json: meta.last_review_utc 2026-10-22, 12 items F1–F12; F1 says \"No retailer reviewed publishes the ring's metal weight in grams\" over 14 listings",
+        "data/flagged.json: 66 items (canonical, published on flagged.html); data/rings.json now carries 25 seller-published gram weights",
+        "data/flags.json is not referenced by any generated page"
+      ],
+      "why_it_matters": "A stale ledger that asserts the opposite of the published dataset is exactly the kind of document a future reader (or agent) quotes by mistake.",
+      "recommendation": "Mark data/flags.json as an archived superseded file (or move it under data/archive/) and keep data/flagged.json as the single registry.",
+      "blocks_purchase": false,
+      "blocks_publication": false
+    }
+  ],
+  "no_finding_conclusions": [
+    "Zero price drift on the 61 rows that did answer: every stored price_low/price_high appeared in the prices the seller printed at 2026-10-23T23:41Z (variant feeds included).",
+    "Every one of the 71 rows links an https page on its own retailer's domain with no tracking or affiliate parameters, and no two rows share a URL (D01: 284 assertions).",
+    "Every published gram weight either reproduced live tonight (8) or is carried on a dated verbatim quote in its own evidence (17 of 25).",
+    "Every melt figure re-derives exactly from the stored spot and the exact NIST troy ounce (31.1034768 g), and no melt value exceeds its asking price (D06: 30 assertions).",
+    "No row without a confirmed price renders a dollar figure in its price cell; withdrawn rows say withdrawn (D07: 142 assertions).",
+    "No secret-shaped string in any published HTML; every catalog product link carries rel=noopener; all 2,145 internal links and anchors resolve (D08–D09)."
+  ]
+}
