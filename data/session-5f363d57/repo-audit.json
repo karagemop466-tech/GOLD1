@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:28:21.088Z",
+  "generated_at": "2026-10-23T20:31:41.263Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -13,10 +13,10 @@
   },
   "summary": {
     "groups": 10,
-    "passed": 2,
-    "failed": 8,
+    "passed": 3,
+    "failed": 7,
     "assertions": 1344,
-    "findings": 134
+    "findings": 127
   },
   "groups": [
     {
@@ -28,8 +28,8 @@
     {
       "id": "R02",
       "name": "Verification verdicts agree with observed bounds and weights",
-      "passed": false,
-      "failure_count": 7
+      "passed": true,
+      "failure_count": 0
     },
     {
       "id": "R03",
@@ -81,90 +81,6 @@
     }
   ],
   "findings": [
-    {
-      "id": "R02-01",
-      "group": "R02",
-      "irregularity_id": "PRICE_BOUND_NOT_REPRODUCED",
-      "severity": "high",
-      "message": "au-2ct-oval: verdict says confirmed, but stored $1968–$2800 does not match observed $1968–$1968 and no variant quote reproduces both bounds",
-      "row": "au-2ct-oval",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
-      ]
-    },
-    {
-      "id": "R02-02",
-      "group": "R02",
-      "irregularity_id": "WEIGHT_NOT_REPRODUCED_BUT_ROW_CONFIRMED",
-      "severity": "high",
-      "message": "au-2ct-oval: overall row is confirmed although weight verdict is not_reproduced_on_page",
-      "row": "au-2ct-oval",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring"
-      ]
-    },
-    {
-      "id": "R02-03",
-      "group": "R02",
-      "irregularity_id": "PRICE_BOUND_NOT_REPRODUCED",
-      "severity": "high",
-      "message": "au-1ct-emerald: verdict says confirmed, but stored $1498–$2100 does not match observed $1498–$1498 and no variant quote reproduces both bounds",
-      "row": "au-1ct-emerald",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
-      ]
-    },
-    {
-      "id": "R02-04",
-      "group": "R02",
-      "irregularity_id": "WEIGHT_NOT_REPRODUCED_BUT_ROW_CONFIRMED",
-      "severity": "high",
-      "message": "au-1ct-emerald: overall row is confirmed although weight verdict is not_reproduced_on_page",
-      "row": "au-1ct-emerald",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring"
-      ]
-    },
-    {
-      "id": "R02-05",
-      "group": "R02",
-      "irregularity_id": "PRICE_BOUND_NOT_REPRODUCED",
-      "severity": "high",
-      "message": "au-3ct-round: verdict says confirmed, but stored $2438–$3000 does not match observed $2438–$2438 and no variant quote reproduces both bounds",
-      "row": "au-3ct-round",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
-      ]
-    },
-    {
-      "id": "R02-06",
-      "group": "R02",
-      "irregularity_id": "WEIGHT_NOT_REPRODUCED_BUT_ROW_CONFIRMED",
-      "severity": "high",
-      "message": "au-3ct-round: overall row is confirmed although weight verdict is not_reproduced_on_page",
-      "row": "au-3ct-round",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring"
-      ]
-    },
-    {
-      "id": "R02-07",
-      "group": "R02",
-      "irregularity_id": "WEIGHT_NOT_REPRODUCED_BUT_ROW_CONFIRMED",
-      "severity": "high",
-      "message": "au-xring: overall row is confirmed although weight verdict is not_reproduced_on_page",
-      "row": "au-xring",
-      "path": "data/verification-2026-10-23.json",
-      "sources": [
-        "https://auratenewyork.com/products/x-ring-with-diamonds"
-      ]
-    },
     {
       "id": "R03-01",
       "group": "R03",

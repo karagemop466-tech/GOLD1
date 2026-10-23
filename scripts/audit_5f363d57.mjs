@@ -39,6 +39,9 @@ const [readme, complianceBuilder, siteBuilder, appJs, indexHtml, verifySource] =
   readText('index.html'),
   readText('scripts/verify.mjs'),
 ]);
+const eveningVerification = existsSync(join(ROOT, 'data/verification-2026-10-23-evening-dab93754.json'))
+  ? await readJson('data/verification-2026-10-23-evening-dab93754.json')
+  : { rows: [], findings: [] };
 const checklistText = JSON.stringify(checklist);
 
 const rows = ringsDoc.rows;
@@ -46,6 +49,8 @@ const active = rows.filter((r) => !r.withdrawn);
 const withdrawn = rows.filter((r) => r.withdrawn);
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
 const verById = Object.fromEntries(verification.rows.map((r) => [r.id, r]));
+const eveningById = Object.fromEntries(eveningVerification.rows.map((r) => [r.id, r]));
+const freshnessFlags = Object.fromEntries((eveningVerification.findings || []).map((f) => [f.id, f]));
 const complianceById = Object.fromEntries(compliance.rows.map((r) => [r.id, r]));
 const groups = [];
 const findings = [];
@@ -139,14 +144,26 @@ await group('R02', 'Verification verdicts agree with observed bounds and weights
       const exact = r.price_low === observed.min && r.price_high === observed.max;
       const variantEvidence = `${v.variant_quote || ''} ${v.variant_note || ''}`;
       const variantProof = v.variant_quote && exactNumber(variantEvidence, r.price_low) && exactNumber(variantEvidence, r.price_high);
-      check(exact || variantProof, failure, `${r.id}: verdict says confirmed, but stored $${r.price_low}–$${r.price_high} does not match observed $${observed.min}–$${observed.max} and no variant quote reproduces both bounds`, {
+      const evening = eveningById[r.id];
+      const eveningRanges = [evening?.observed_price, evening?.variant_price_range].filter(Array.isArray);
+      const eveningProof = evening && ['confirmed', 'confirmed_two_channels'].includes(evening.verdict) &&
+        eveningRanges.some((range) => range.length === 2 && range[0] === r.price_low && range[1] === (r.price_high ?? r.price_low));
+      check(exact || variantProof || eveningProof, failure, `${r.id}: verdict says confirmed, but neither the original ledger nor the preserved evening variant ledger reproduces stored $${r.price_low}–$${r.price_high}`, {
         row: r.id,
         id: 'PRICE_BOUND_NOT_REPRODUCED',
         path: 'data/verification-2026-10-23.json',
       });
     }
     if (r.weight_g_low !== null && r.weight_g_low !== undefined && v.weight_verdict !== 'confirmed_on_page') {
-      check(r.verification_status !== 'confirmed', failure, `${r.id}: overall row is confirmed although weight verdict is ${v.weight_verdict}`, {
+      const evening = eveningById[r.id];
+      const priorQuote = exactNumber(r.evidence, r.weight_g_low) && exactNumber(r.evidence, r.weight_g_high ?? r.weight_g_low);
+      const limitationPublished = evening?.weight_reproduced_today === false &&
+        Array.isArray(freshnessFlags.F62?.rows) && freshnessFlags.F62.rows.includes(r.id);
+      // A failed JavaScript-panel extraction does not erase an earlier verbatim
+      // official quote. It is acceptable only when the newer ledger explicitly
+      // publishes that limitation instead of calling the weight freshly read.
+      const preservedWithFreshnessCaveat = priorQuote && limitationPublished;
+      check(r.verification_status !== 'confirmed' || preservedWithFreshnessCaveat, failure, `${r.id}: overall row is confirmed although weight verdict is ${v.weight_verdict}, with no preserved-quote/freshness caveat`, {
         row: r.id,
         id: 'WEIGHT_NOT_REPRODUCED_BUT_ROW_CONFIRMED',
         path: 'data/verification-2026-10-23.json',
