@@ -76,7 +76,7 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T42 | **Ninth-pass anti-hallucination & security verifier** `N01`–`N08`: fresh-ledger↔dataset agreement, weight-quote traceability, dual-channel corroboration, pass-id sync, secret/CSP/XSS/`rel=noopener`/affiliate-param scan — run after every review and before publish | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/audit_7626fc93.mjs`, `data/session-7626fc93/**` | 2026-10-23 |
 | T43 | **Ninth-pass site regeneration + publish**: per-row "last live read" freshness, rebuilt dashboard, no broken links, PR to `main`, merge, confirm Pages `built`, record links here | **in progress** | sess-7626fc93 | arena/7626fc93-gold1 | `scripts/build.mjs`, generated root `*.html`, `data/checks/**`, `README.md`, this board | 2026-10-23 |
 | T44 | **Independent semantic/provenance audit + official-standards review (`sess-5f363d57`)**: audit exact numeric provenance, verification verdicts, averaging/tier logic, active-vs-withdrawn counts, source wording and direct official FTC/eCFR/NIST/GIA/CFPB/GovInfo claims; preserve isolated before/after reports and hand findings to the canonical integration owner | **in progress** | sess-5f363d57 | arena/5f363d57-gold1 | `scripts/audit_5f363d57.mjs`, `data/session-5f363d57/**`, this board; shared outputs only after explicit handoff | 2026-10-23 |
-| T45 | **Tenth pass / Final integration — live spot refresh (3,998.10 USD/ozt), "The key" checklist card, zero-loss union of dab93754 & 5f363d57 work, P112 publish**: merge all concurrent passes, re-verify line by line, confirm site builds with no broken links, PR, merge, confirm live Pages | **done** | sess-b4adf01a | arena/b4adf01a-gold1 | all files | 2026-10-23 |
+| T45 | **Tenth pass / Final integration — live spot refresh (3,998.10 USD/ozt), "The key" checklist card, zero-loss union of dab93754 & 5f363d57 work, P114 publish**: merge all concurrent passes, re-verify line by line, confirm site builds with no broken links, PR, merge, confirm live Pages | **done** | sess-b4adf01a | arena/b4adf01a-gold1 | all files | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -900,7 +900,7 @@ published page ever claims a replication that is missing, stale or of a differen
 
 ---
 
-## 20. Tenth pass / Final integration — live spot refresh, "The key" checklist card, zero-loss union of dab93754 & 5f363d57 work, P112 publish (`arena/b4adf01a-gold1`, T45)
+## 20. Tenth pass / Final integration — live spot refresh, "The key" checklist card, zero-loss union of dab93754 & 5f363d57 work, P114 publish (`arena/b4adf01a-gold1`, T45)
 
 **Session:** `sess-b4adf01a` · **Branch:** `arena/b4adf01a-gold1` · **Date:** 2026-10-23 · **Status:** done
 
@@ -924,7 +924,7 @@ published page ever claims a replication that is missing, stale or of a differen
 5. **"The key" checklist principle prominently added to `checklist.html`** — *"A 14K or 18K stamp by itself does not prove the ring is actually that purity. The safest approach is a reputable seller + proper markings (karat mark plus manufacturer's registered trademark) + reasonable price consistent with the gold weight + independent testing (XRF plus density) after delivery. If the seller won't let you independently verify or return it: don't buy it."*
 6. **No-hallucinations rule enforced** — front-page top summary banner verified on `index.html`, `requirements.html`, `recheck.html`, `flagged.html`, `sources.html`, `checklist.html`, `live-audit.html`. Active recommendation to reader: *"We actively recommend that you look for hallucinations yourself: open any row's official product link and check our verbatim evidence quote against the live seller page before buying."*
 7. **Complete 53-group audit suite clean** —
-   - `scripts/verify.mjs` (S01–S20): **20/20 groups passed, 6,856 assertions, 0 failures** (Pass **P112**).
+   - `scripts/verify.mjs` (S01–S20): **20/20 groups passed, 6,856 assertions, 0 failures** (Pass **P114**).
    - `scripts/audit_0804e222.mjs` (A01–A10): **10/10 groups passed, 1,951 assertions, 0 failures**.
    - `scripts/audit_545688f3.mjs` (H01–H12): **12/12 groups passed, 1,644 assertions, 0 failures**.
    - `scripts/audit_dab93754.mjs` (N01–N11): **11/11 groups passed, 1,551 assertions, 0 failures**.
