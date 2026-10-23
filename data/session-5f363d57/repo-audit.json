@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "session": "sess-5f363d57",
-  "generated_at": "2026-10-23T20:41:48.081Z",
+  "generated_at": "2026-10-23T20:31:41.263Z",
   "status": "needs review",
   "purpose": "Independent semantic/provenance review. This is not a live retailer fetch and does not upgrade any row freshness claim.",
   "inputs": {
@@ -16,7 +16,7 @@
     "passed": 3,
     "failed": 7,
     "assertions": 1344,
-    "findings": 121
+    "findings": 127
   },
   "groups": [
     {
@@ -53,7 +53,7 @@
       "id": "R06",
       "name": "README current-state prose is synchronized",
       "passed": false,
-      "failure_count": 4
+      "failure_count": 10
     },
     {
       "id": "R07",
@@ -1280,6 +1280,84 @@
     {
       "id": "R06-01",
       "group": "R06",
+      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
+      "severity": "high",
+      "message": "README Current findings contains stale dataset phrase “8 of 59”",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/rings.json",
+        "data/compliance.json"
+      ]
+    },
+    {
+      "id": "R06-02",
+      "group": "R06",
+      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
+      "severity": "high",
+      "message": "README Current findings contains stale dataset phrase “59 verified listings”",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/rings.json",
+        "data/compliance.json"
+      ]
+    },
+    {
+      "id": "R06-03",
+      "group": "R06",
+      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
+      "severity": "high",
+      "message": "README Current findings contains stale dataset phrase “15 of 59”",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/rings.json",
+        "data/compliance.json"
+      ]
+    },
+    {
+      "id": "R06-04",
+      "group": "R06",
+      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
+      "severity": "high",
+      "message": "README Current findings contains stale dataset phrase “21 of 59”",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/rings.json",
+        "data/compliance.json"
+      ]
+    },
+    {
+      "id": "R06-05",
+      "group": "R06",
+      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
+      "severity": "high",
+      "message": "README Current findings contains stale dataset phrase “50 of 59”",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/rings.json",
+        "data/compliance.json"
+      ]
+    },
+    {
+      "id": "R06-06",
+      "group": "R06",
+      "irregularity_id": "STALE_README_CURRENT_FINDINGS",
+      "severity": "high",
+      "message": "README Current findings contains stale dataset phrase “0 of 59”",
+      "row": null,
+      "path": "README.md",
+      "sources": [
+        "data/rings.json",
+        "data/compliance.json"
+      ]
+    },
+    {
+      "id": "R06-07",
+      "group": "R06",
       "irregularity_id": "STALE_README_FULL_REREAD_DATE",
       "severity": "high",
       "message": "README freshness rule names 2026-10-22 although a 2026-10-23 full ledger exists",
@@ -1290,7 +1368,7 @@
       ]
     },
     {
-      "id": "R06-02",
+      "id": "R06-08",
       "group": "R06",
       "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
       "severity": "high",
@@ -1302,7 +1380,7 @@
       ]
     },
     {
-      "id": "R06-03",
+      "id": "R06-09",
       "group": "R06",
       "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
       "severity": "high",
@@ -1314,7 +1392,7 @@
       ]
     },
     {
-      "id": "R06-04",
+      "id": "R06-10",
       "group": "R06",
       "irregularity_id": "INCOMPLETE_AUDIT_DOCUMENTATION",
       "severity": "high",
