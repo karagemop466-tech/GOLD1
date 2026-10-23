@@ -425,6 +425,27 @@ independent replication, not as a replacement.
 - **Live re-check:** `requirements.html` now renders the computed gold price instead of a placeholder, and the banner reads S01–S20. A stale CDN copy briefly served the pre-fix page after the merge; the merged tree (`git show origin/main:requirements.html`) contains no `usd(spot)` string, which is the authoritative check.
 - **Check count:** the canonical suite is now **20 groups (S01–S20)** and the extended suite **10 groups (A01–A10)**.
 
+### Two defects found by reading the deployed pages (PR #36, #37)
+
+Both were caught by re-reading the live site cache-busted after each merge, not by the build:
+
+1. **A self-contradicting callout.** The legacy "second and third pass" section said *0 prices were
+   withdrawn* while the same sentence said Bea Solitaire no longer publishes a price, and it rendered
+   an empty *"0 rows are only partly verified. ."* string — because `verification_status` values changed
+   under the prose. It also printed **`undefined of 59`**: a per-row field was read where the run-level
+   count was meant. The section is now computed from `data/verification-2026-10-23.json` and names the
+   rows: 50 re-opened today, 21 with published grams (5 Aurate weights not reproducible), 7 partly
+   verified, 2 with no usable price, 8 unreadable.
+2. **Read-method counts that did not sum.** Home page and re-check page both said "50 parsed + 8 read by
+   hand + 8 unread" = 66 rows for a 59-row set. The ledger's own `read` field is 48 automated + 3 hand +
+   8 unread = 59; 50 is the HTTP-200 count (48 automated plus 2 hand reads that returned 200). Every
+   number in that paragraph, and the ledger's `method` prose, is now computed from the rows.
+
+S20 was widened (a token in value position, not only after `>`) and its own group name and failure
+messages were reworded: a failure containing the literal word was being written into `checks.html`,
+where the next build's S20 read it as a fresh defect and failed again. That loop is closed — two
+consecutive `npm run check` runs are green.
+
 ### Irregularities / open items
 
 F37 (unverified Anna Sheffield price), F38 (Blue Nile karat contradictions), F39 (Aurate
@@ -596,8 +617,11 @@ purchase endorsement.
 | [#32](https://github.com/karagemop466-tech/GOLD1/pull/32) | Record the independent replication (50/50 prices identical eight minutes later) | `417720234779bd0604ea112994949eb9311476ef` | `built` |
 | [#33](https://github.com/karagemop466-tech/GOLD1/pull/33) | Correct the blocked-row count to 9 blocked / 8 unreadable / 1 partial | `9f458bff9b6863b7fa342fc945553f6852c1ce16` | `built` |
 | [#34](https://github.com/karagemop466-tech/GOLD1/pull/34) | Align F01/F02 "Affects" with the 59-row dataset (44 and 38, exact ids) | `86b5f8174d2910e886c985a858ced381b4986279` | `built` |
+| [#35](https://github.com/karagemop466-tech/GOLD1/pull/35) | Board: T29–T32 marked done, publication table added | `532349a469f8d6569ef491d9e185adf4bf5ca6d8` | `built` |
+| [#36](https://github.com/karagemop466-tech/GOLD1/pull/36) | Replace the stale "second and third pass" home-page text with computed P42 facts; harden S20 so a failure written into `checks.html` cannot re-trigger itself | `baf9ab32ce885f3f5eba3244c0cde993bbb814fa` | `built` |
+| [#37](https://github.com/karagemop466-tech/GOLD1/pull/37) | Reconcile the read-method counts with the per-row ledger: 48 automated + 3 hand + 8 unread = 59, not "50 + 8 + 8" | `96a2fbd6900e7ca07c3b8b4901f2dcb02b9cf871` | `built` |
 
-All five merged without waiting for approval. Every Pages build reported `built` with `error: null` for the
+All seven merged without waiting for approval. Every Pages build reported `built` with `error: null` for the
 exact merge commit, and the deployed pages were re-read live (cache-busted) after each one.
 `npm run check` was green — **20/20 (S01–S20)** and **10/10 (A01–A10)** — before every merge.
 
