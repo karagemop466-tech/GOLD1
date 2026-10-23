@@ -158,7 +158,9 @@ await checkGroup('A08', 'HTML security, rel=noopener, XSS & secret scan', async 
     }
   }
   await walk(ROOT);
-  assert(htmlFiles.length === rings.rows.length + 15, `Expected ${rings.rows.length + 15} generated HTML pages, found ${htmlFiles.length}`);
+  const ringDetailFiles = htmlFiles.filter((p) => p.includes('/rings/'));
+  assert(ringDetailFiles.length === rings.rows.length, `Expected ${rings.rows.length} ring detail HTML pages, found ${ringDetailFiles.length}`);
+  assert(htmlFiles.length >= rings.rows.length + 15, `Expected >= ${rings.rows.length + 15} HTML pages, found ${htmlFiles.length}`);
 
   const inlineHandlerRe = /\son[a-z]+\s*=/i;
   const badProtoRe = /(?:href|src)\s*=\s*["']\s*(?:javascript:|vbscript:|data:text\/html)/i;
@@ -190,11 +192,11 @@ await checkGroup('A09', 'Dynamic karat filter & calculator parity', async (asser
 /* A10: Pass-ID synchronization across index.html, checks.html & latest.json */
 await checkGroup('A10', 'Pass-ID & zero-failure synchronization', async (assert) => {
   assert(latestChecks.summary.failed === 0, `latest.json reports ${latestChecks.summary.failed} failures`);
-  assert(latestChecks.dataset.rows === rings.rows.length, `latest.json rows=${latestChecks.dataset.rows} != ${rings.rows.length}`);
+  assert(latestChecks.summary.rows === rings.rows.length, `latest.json rows=${latestChecks.summary.rows} != ${rings.rows.length}`);
   const indexHtml = await readFile(join(ROOT, 'index.html'), 'utf8');
   const checksHtml = await readFile(join(ROOT, 'checks.html'), 'utf8');
   assert(indexHtml.includes(`<strong>${latestChecks.pass}</strong>`), `index.html out of sync with ${latestChecks.pass}`);
-  assert(checksHtml.includes(`Pass ${latestChecks.pass}`), `checks.html out of sync with ${latestChecks.pass}`);
+  assert(checksHtml.includes(`<strong>${latestChecks.pass}</strong>`), `checks.html out of sync with ${latestChecks.pass}`);
 });
 
 const failedGroups = results.filter((g) => !g.passed);

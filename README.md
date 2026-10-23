@@ -2,9 +2,9 @@
 
 A source-linked buying dashboard for **solid gold engagement rings**, built so that no price or specification can be invented.
 
-**Live site:** https://karagemop466-tech.github.io/GOLD1/
+**Live site:** https://karagemop466-tech.github.io/GOLD1/ (plus standalone 13-row official-source evidence review at https://karagemop466-tech.github.io/GOLD1/site/)
 
-Built across three research passes: session **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), session **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), session **arena/bc088451-gold1** (live re-verification of 7 pages + one market feed, 4 weights recovered, 2 prices corrected, 5 new findings), and session **arena/b93ff7c6-gold1** (an independent second read of the same pass: 2 further weights the other session missed, 12 more listings re-read, 1 paraphrased title corrected). Both P12 sessions are reconciled into one ledger — see §9 of `COORDINATION.md`. The first pass's original records are preserved unmodified in `data/archive/session-6f8c2bcb/`.
+Built and reconciled across research passes: **arena-6f8c2bcb-gold1** (Blue Nile, Mejuri, Brilliant Earth — 13 rows), **arena/d8f0544e-gold1** (Ross-Simons, Aurate, With Clarity, Anna Sheffield — 30 rows), **arena/c2bbe753-gold1** (luxury leads in `docs/` & `data/rings_c2bbe753.json`), **arena/bc088451-gold1** & **arena/b93ff7c6-gold1** (reconciled P12 live re-reads & 6 Ross-Simons weights), **arena/c662efda-gold1** (standalone 13-row audit at `/site/` & `research/`), and **arena/0804e222-gold1** (100% live HTML PDP re-verification across all 43 inherited rows + 5 further recovered weights + 16 new primary-source verified `10K`/`14K`/`18K`/`24K` listings from Ross-Simons, Mejuri, Automic Gold, Cartier and Menē, 10-retailer policies & BBB grades, eCFR `16 CFR Part 23` + NIST `31.1034768 g/ozt` + GIA `2024`/`2025` XRF limits + CFPB FCBA dispute rules). All prior archives are preserved unmodified.
 
 ---
 
@@ -30,28 +30,26 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `calculator.html` | Gold value calculator: grams × karat ÷ 24 × published gold price, plus price-to-melt multiple |
 | `checklist.html` | The original 12-point checklist, scored item by item |
 | `sources.html` | Source registry, including sources that were checked and **rejected** |
-| `flagged.html` | 29 findings that need a human decision (published, non-blocking) |
+| `flagged.html` | 49 findings that need a human decision (published, non-blocking) |
 | `methodology.html` | Collection method, exclusions, what the passes test, and the limits |
 | `checks.html` | Output of the latest automated verification pass and the pass history |
-| `data/rings.json` | The curated dataset — 43 rows, each with its evidence string |
-| `data/reverification.json` | Ledger of the P12 live re-reads: row, URL, what was checked, before/after, verdict and the quoted line |
-| `data/archive/session-6f8c2bcb/` | First pass's original 13 rows, 15 flags, CSV and gold reading, preserved unmodified |
-| `data/sources.json` | Source registry with retrieval dates and status |
-| `data/flagged.json` | Findings, severity, affected rows, source links |
-| `data/retailers.json` | Retailer identity, contact details and return terms (verbatim-sourced) |
-| `data/gold-price.json` | Gold spot + COMEX cross-check with publisher timestamps |
-| `data/checks/` | Latest pass and full pass history |
-| `data/collect/sources.json` | Machine-readable list of every primary URL used |
-| `scripts/collect.mjs` | Evidence collector: re-fetches every source and writes a timestamped snapshot |
-| `scripts/integrate_session_6f8c2bcb.py` | Mechanical migration of the first pass's rows into this schema (no number is retyped) |
-| `scripts/build.mjs` | Static site generator (no dependencies) |
-| `scripts/verify.mjs` | Anti-hallucination audit: **15 check groups, ~2,600 assertions** (S14 traces every weight to the seller's own wording, S15 audits the re-check log) |
-| `scripts/apply_recheck_p12.py` | The P12 re-check, as a script: every value it writes was read from the URL named beside it, and running it twice changes nothing |
-| `scripts/reconcile_second_read_p12.py` | Reconciles the two parallel P12 sessions: adds the 2 weights the first session missed, appends the second session's 12 re-reads to the one ledger, and corrects the findings that were stale (F02, F32, F06, F36) |
-| `.github/workflows/collect.yml` | On-demand evidence refresh (requires GitHub Actions to be enabled for the repo) |
+| `data/rings.json` | The curated dataset — 59 rows across 10K, 14K, 18K and 24K, each with verbatim evidence |
+| `data/reverification.json` | Unified 59-row ledger of live primary-page reads: row, URL, checked fields, before/after, verdict and verbatim quote |
+| `data/verification-2026-10-22.json` | Per-row line-by-line quote audit of the 43 inherited rows (`arena/277867af-gold1`) |
+| `data/session-0804e222/` | Isolated primary-source audit, retailer policies & BBB profiles, NIST/FTC/GIA/CFPB standards, and 16-ring expansion |
+| `data/archive/` | Preserved unmodified archives from earlier sessions (`session-6f8c2bcb`, `session-c662efda`) |
+| `site/` & `research/` | Standalone 13-row CSP-hardened evidence review (`arena/c662efda-gold1`) published at `/site/` |
+| `docs/` | Secondary category dashboard from `arena/c2bbe753-gold1` |
+| `data/sources.json` | Source registry with retrieval dates and status (54 entries incl. rejected 404s) |
+| `data/flagged.json` | Findings, severity, affected rows, source links (`49` published items) |
+| `data/retailers.json` | All 10 retailers' verified contacts, official return/resize terms, and BBB records |
+| `data/gold-price.json` | Gold spot (`3` timestamped readings) + COMEX cross-check + NIST exact `grams_per_troy_ounce` (`31.1034768`) |
+| `data/checks/` | Latest pass (`P40`) and full pass history |
+| `scripts/integrate_0804e222.mjs` | Zero-loss, idempotent integrator merging `data/session-0804e222/*` into canonical `data/*.json` |
+| `scripts/build.mjs` | Root static site generator (91 HTML pages, zero runtime dependencies) |
+| `scripts/verify.mjs` | Canonical anti-hallucination audit: **19 check groups (`S01`–`S19`), 4,747 assertions** |
+| `scripts/audit_0804e222.mjs` | Extended cross-file provenance, regulatory & HTML security/XSS audit (`A01`–`A10`, 1,491 assertions) |
 | `COORDINATION.md` | Shared task board, verification log and integration record |
-
-Directories `site/` is reserved and currently empty; all generated pages live in the repo root because GitHub Pages serves this repository from `main` at `/`.
 
 ---
 
@@ -108,16 +106,13 @@ Failures are printed, written to `data/checks/latest.json`, appended to `data/ch
 
 ## Current findings (as of 2026-10-22)
 
-- **43 listings**, 7 retailers (Blue Nile, Mejuri, Brilliant Earth, Ross-Simons, Aurate, With Clarity, Anna Sheffield), 6 style categories.
-- **Only 4 of 43 listings use the words "solid gold"** — all four are Mejuri. The other 39 state a karat but never the word solid, and none carries plating language. → F01
-- **7 of 43 listings publish metal weight in grams** (up from 1; six Ross-Simons bands plus the Aurate range). The value check is complete for those seven and impossible for the other 36, where it is left blank rather than estimated. → F02, F32
-- **Live re-read of 20 product pages found two prices had moved** (rs-571223 $799→$849; rs-943668 range $1,269–$1,439 → single $1,269 clearance). Both were corrected, and the old values are kept in `data/reverification.json`. → F31
-- **The two "impossible" prices are explained, not excused**: $149 and $179 are 0.5 g rings (≈0.29 g and ≈0.38 g of fine gold), giving 3.9× and 3.7× melt. → F06
-- **Aurate mixes a vermeil variant into a solid-gold listing** ($118 vs $1,308 for the same 14K band). → F03
-- **5 listings are settings, not rings** (4 × With Clarity, 1 × Ross-Simons). → F04, F05
-- **Weights the seller publishes are labelled approximate** by the seller, so melt figures carry that tolerance. → F34
-- **Mejuri's return promise excludes engraving** — "Engraved items are not eligible for return." Engraving is offered in the same buy box. → F33
-- **Resizing is a return-rights trap**: Ross-Simons and With Clarity both refuse returns on jewellery resized by another jeweller; Anna Sheffield charges a 10% restocking fee. → F07, F11
+- **59 verified listings across 10K (3), 14K (45), 18K (9) and 24K (2)** from **10 retailers** (Ross-Simons, With Clarity, Anna Sheffield, Aurate, Blue Nile, Mejuri, Brilliant Earth, Automic Gold, Cartier, Menē), across 6 style categories, with **59/59 product pages verified live on 2026-10-22**.
+- **15 of 59 listings explicitly state "solid gold"** (7 Automic Gold, 6 Mejuri, Ross-Simons 997811, and Aurate Diamond X Ring). Under FTC **16 CFR § 23.3(c)(1)**, hollow-center gold may not legally be called "Solid Gold" — yet Mejuri's FAQ and Bold Chain Ring ($348) call hollowed rings "solid gold" (flagged). → F01, F38
+- **21 of 59 listings publish a weight in grams** (9 Ross-Simons `0.3–5.0 g`, 7 Automic Gold `1.4–7.0 g`, 5 Aurate `1.97–4.0 g`). The remaining 38 rows (including Menē's 2 JS-rendered 24K bands) omit static HTML gram numbers and stay blank, never estimated. → F02, F32, F40, F43
+- **Independent BBB reputation diverges sharply**: Ross-Simons, Blue Nile, Brilliant Earth, and With Clarity hold **A+ BBB Accreditation**, whereas **Aurate New York holds a BBB "F" rating** (8 unanswered of 23 complaints) and displays `"Final Sale! Exchange for size only"` on all 5 ring PDPs. → F25, F39
+- **Page contradictions & inquiry-only archive pages caught**: Blue Nile item 203284 ($935) states `14K` in specs and `"18k yellow gold"` in prose while missing Blue Nile's $1,000 warranty minimum; Anna Sheffield `as-bea-sol` and `as-hazeline` have no live HTML price or checkout button; With Clarity gallery alt text says `"14KT Platinum"`. → F16, F37, F39, F41
+- **Surface XRF alone is not enough (GIA Lab Notes 2024–2025)**: GIA documented a 41 g resin-filled electroformed bracelet reading `17.99K–22.47K` on XRF and `"Gold-Plated Gold"` 9K/10K rings reading `13.5K–18K` on XRF with no plating alert — pair XRF with calibrated gram weight and hydrostatic specific gravity inside the return window. → F42
+- **Return clocks & engraving traps**: Menē allows 7 days (up to 10% refund restocking fee), Anna Sheffield 14 days (10% restocking), Blue Nile & Brilliant Earth start 30-day clocks at **shipment/readiness** rather than delivery, With Clarity caps returns at 1 per 6 months, and every retailer voids returns if resized by a third-party jeweller or engraved. → F07, F11, F23, F24, F33, F41, F43
 - **Blue Nile's 18K Petite Nouveau listing contradicts its own metal spec** (first pass, F15).
 - **Set & Stones was excluded** because its engagement-ring results were gold-filled. Blue Nile's category URL 404'd, so no row was invented. → `sources.html`
 

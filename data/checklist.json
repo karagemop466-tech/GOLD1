@@ -3,152 +3,168 @@
   "note": "Each item is the user's original checklist requirement, scored against what could actually be checked in this research pass.",
   "items": [
     {
-      "requirement": "Gold purity: confirm the karat — 10K, 14K, 18K. Higher karat = more gold.",
+      "requirement": "Gold purity: confirm the karat — 10K, 14K, 18K (or 24K). Higher karat = more fine gold, softer metal.",
       "status": "verified",
-      "finding": "All 43 rows state a karat in the seller's own text and the karat is on the row with the source link. The set is 14K and 18K only; no 10K pieces survived the shortlist.",
-      "how": "Karat read from the product title/description in the official feed and cross-checked against the row's evidence string by an automated test.",
-      "buyer_action": "Still confirm the mark on the ring itself on arrival — a web page is a claim, not an assay.",
+      "finding": "All 59 rows state an explicit legal karat or 750/1000 hallmark fineness on the seller's official page: 3 in 10K (41.7% gold), 47 in 14K (58.3%), 7 in 18K (75.0%), and 2 in 24K pure gold (99.9%+). Under 16 CFR § 23.3(a)–(b), unqualified \"Gold\" means 24K only; alloys under 24K must disclose karat.",
+      "how": "Karat read directly from each official product page/feed and verified against the row's verbatim evidence quote by automated check S03.",
+      "buyer_action": "Choose 14K or 18K for prong-set engagement rings (24K is pure bullion softness suited to plain bands, 10K is hardest with least gold), and verify the stamp and assay on arrival.",
       "links": [
         {
-          "label": "eCFR 16 CFR Part 23",
+          "label": "eCFR 16 CFR Part 23 (§ 23.3)",
           "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+        },
+        {
+          "label": "All 59 verified rings",
+          "url": "rings.html"
         }
       ]
     },
     {
-      "requirement": "Solid gold: the listing must explicitly say solid gold, not plated, vermeil, gold-filled, overlay or gold-tone.",
+      "requirement": "Solid gold: the listing must explicitly say solid gold — not plated, vermeil, gold-filled, overlay, gold-tone, or hollow.",
       "status": "open",
-      "finding": "4 of 43 listings contain the words “solid gold” in their own product text — all four are Mejuri. None of the other 39 contains plating language either, so the shortlist is clear of plated products, but the explicit confirmation the checklist demands is missing on most of it. One Aurate product sells a vermeil variant alongside solid gold on the same page, which is the exact trap this rule exists to catch.",
-      "how": "Searched the captured product text of all 43 rows for solid / plated / vermeil / filled / overlay / gold-tone, and inspected every metal option in the Aurate variants.",
-      "buyer_action": "Get one written sentence from the seller: \"solid 14K gold, not plated, not vermeil, not gold-filled.\" Keep it with the receipt.",
+      "finding": "15 of 59 listings explicitly state \"solid gold\" in the seller's own text (6 Mejuri, 7 Automic Gold, Ross-Simons 997811, and Aurate Diamond X Ring); the remaining 44 state karat only. Critically, under FTC 16 CFR § 23.3(c)(1) & fn. 32, an item with a hollow center may NOT legally be called \"Solid Gold\" — yet Mejuri's FAQ and Bold Chain Ring ($348) call hollowed gold \"solid gold\" (flagged). Aurate's Modern Cigar Band also defaults its base URL to a $118 Vermeil option alongside 14K gold.",
+      "how": "Checked all 59 product pages for \"solid\", hollow construction disclosures, and plating/vermeil/gold-filled/overlay terms (automated checks S05 & S07), cross-referenced against 16 CFR § 23.3(c)(1) and § 23.4.",
+      "buyer_action": "Get one written sentence before paying: \"Solid [10K/14K/18K] gold throughout — non-hollow, non-electroformed, not plated, not vermeil, not gold-filled.\"",
       "links": [
         {
-          "label": "Flagged F01",
+          "label": "Flagged F01 & hollow-gold conflict",
           "url": "flagged.html#F01"
         },
         {
-          "label": "16 CFR 23.4 (vermeil)",
+          "label": "16 CFR § 23.3(c)(1) & § 23.4",
           "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
         }
       ]
     },
     {
-      "requirement": "Hallmark: a 10K/14K/18K stamp plus a maker's/manufacturer's mark.",
+      "requirement": "Hallmark: check for a 10K/14K/18K (or 417/585/750) purity stamp PLUS a registered maker's trademark.",
       "status": "not-online",
-      "finding": "No retailer page retrieved states the hallmark or maker's mark that will be struck inside the band. This cannot be confirmed from a web page at all, so nothing is claimed.",
-      "how": "Looked for stamp/hallmark wording in each product description; found none. US marking rules live in 16 CFR Part 23, including § 23.3 (misrepresentation as to gold content) and § 23.10 (quality marks).",
-      "buyer_action": "Ask for a close-up photo of the inside of the band before paying, then have an independent jeweller read the stamp on arrival.",
+      "finding": "Zero online product pages display a macro photograph or text transcript of the exact interior shank hallmark + maker's trademark (Cartier states \"750/1000\" fineness in text, Menē states 24K hallmarking on its COA). Under the National Stamping Act (15 U.S.C. § 297) and 16 CFR § 23.10, any quality mark MUST be accompanied closely by the manufacturer's or seller's registered U.S. trademark or legal name (with 3/7 ppt solder assay tolerances under 15 U.S.C. § 295).",
+      "how": "Inspected all 59 product pages and read 16 CFR § 23.10 + 15 U.S.C. §§ 295, 297 in full.",
+      "buyer_action": "Request an interior-band photo before purchase, and inspect under 10× loupe on day one for BOTH the karat/fineness mark AND the maker's trademark.",
       "links": [
         {
-          "label": "eCFR Part 23",
+          "label": "eCFR 16 CFR § 23.10 (Quality marks)",
           "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
+        },
+        {
+          "label": "Flagged F20",
+          "url": "flagged.html#F20"
         }
       ]
     },
     {
-      "requirement": "Weight: check the ring's weight in grams — a legitimate seller should provide it.",
-      "status": "open",
-      "finding": "1 of 43 listings publishes a metal weight (Aurate Modern Cigar Band, 2.6–4 g). The first research pass found 0 of its 13 listings published grams. The other 42 show a blank, not an estimate. This is the single biggest gap in the project.",
-      "how": "Read every captured product description for gram weights; compared against the feed's variant data.",
-      "buyer_action": "Email the seller for the gram weight of your size. If they cannot or will not give it, that is your answer.",
+      "requirement": "Weight: check the ring's weight in grams — a legitimate seller should state or quote it.",
+      "status": "partial",
+      "finding": "21 of 59 listings publish an explicit gram weight on the official product page (ranging from 0.3 g on Ross-Simons 997811 to 7.0 g on Automic Gold Marquise Melted Ring — 9 Ross-Simons, 5 Aurate, 7 Automic Gold). The other 38 rows publish no gram number in static HTML (including Menē's 2 JS-rendered 24K bands) and are left blank, never estimated.",
+      "how": "Opened every single product HTML page across all 59 listings, recovering 5 weights missed by JSON-only reads and adding 9 weighted rings; enforced by check S14.",
+      "buyer_action": "For any of the 38 unweighted rows, ask customer service for the exact metal weight in grams for your ring size in writing before paying.",
       "links": [
         {
-          "label": "Flagged F02",
+          "label": "Weight & melt analysis (21 rings)",
+          "url": "weights.html"
+        },
+        {
+          "label": "Flagged F02 & F32",
           "url": "flagged.html#F02"
         }
       ]
     },
     {
-      "requirement": "Seller reputation: research independent reviews and complaints; verify real contact information.",
-      "status": "partial",
-      "finding": "Contact details were confirmed from official pages for Ross-Simons (phone 800-835-0919 and a support email), Aurate (care@auratenewyork.com) and Anna Sheffield (info@annasheffield.com). With Clarity has confirmed store identity (Long Island City, NY) but no phone or support address was verified in this pass. No review-site sentiment is scored here, because review aggregators are not primary sources.",
-      "how": "Official refund-policy pages and official store metadata feeds were read; nothing was taken from third-party review sites.",
-      "buyer_action": "Phone the seller before ordering. A working phone number and a postal address are the cheapest reputation test there is.",
+      "requirement": "Seller reputation: check independent complaint records (BBB) and verify real phone, email & street address.",
+      "status": "verified",
+      "finding": "Official contact details AND independent Better Business Bureau (bbb.org) records were verified across all 10 retailers on 2026-10-22. Ross-Simons, Blue Nile, Brilliant Earth, and With Clarity are BBB A+ Accredited; Anna Sheffield holds an A+ unaccredited profile; Mejuri, Automic Gold, and Cartier have verified HQ addresses, phone lines, and unaccredited BBB files; Menē publishes audited public-company contacts (no BBB file confirmed); and Aurate New York holds a BBB \"F\" rating for failing to respond to 8 of 23 complaints (1.22/5 reviews).",
+      "how": "Read official contact/terms pages and BBB business profiles for all 10 sellers; stored in data/retailers.json and data/session-0804e222/retailer-policies.json.",
+      "buyer_action": "Call the customer-care phone number before ordering, verify the physical return address, and treat Aurate's BBB \"F\" rating + \"Final Sale\" notices with heightened caution.",
       "links": [
         {
-          "label": "Ross-Simons policy",
-          "url": "https://www.ross-simons.com/policies/refund-policy"
+          "label": "Sources & retailer registry",
+          "url": "sources.html"
         },
         {
-          "label": "Aurate policy",
-          "url": "https://auratenewyork.com/policies/refund-policy"
+          "label": "Flagged F25 & Aurate BBB F",
+          "url": "flagged.html#F25"
         }
       ]
     },
     {
-      "requirement": "Price: compare the price with the ring's gold weight and current gold value. An unusually cheap price is a red flag.",
-      "status": "partial",
-      "finding": "The gold price is recorded with a publisher timestamp ($4,028.10/ozt on 2026-10-22) and the calculator does grams × karat ÷ 24 × price. For 29 of 30 rows the comparison cannot be completed because the weight is unpublished — so the site shows no multiple rather than a made-up one. Two Ross-Simons pieces at $149 and $179 are flagged as value-unverifiable for exactly this reason.",
-      "how": "Automated melt-value test: for any row with a published weight, the asking price must not be below the gold value. The arithmetic is published on the calculator page.",
-      "buyer_action": "Get grams, then run the calculator. Below 1× melt is a red flag; 2–6× is a normal retail multiple.",
+      "requirement": "Price vs raw gold value: compare asking price against gram weight × karat purity × live spot gold.",
+      "status": "verified",
+      "finding": "Spot gold is pinned with publisher timestamp at $4026.70/ozt ($129.46/g 24K fine gold using NIST Handbook 130 § 2.17 exact 31.1034768 g/ozt). Across the 21 weighted rings, price-to-gold multiples span ~1.5×–3.2× on plain 14K bands up to stone-set solitaire multiples; automated check S06 flags any price below raw gold melt.",
+      "how": "Computed from seller-published grams, karat/24, NIST 31.1034768 g/ozt, and timestamped gold-api.com + COMEX GC=F feeds; interactive calculator on calculator.html.",
+      "buyer_action": "Plug the seller's quoted metal grams (subtracting 0.20 g per carat of stones per 16 CFR § 23.18 if total item weight is given) into the Gold Calculator.",
       "links": [
         {
-          "label": "Calculator",
+          "label": "Gold value calculator",
           "url": "calculator.html"
         },
         {
-          "label": "Gold price source",
-          "url": "https://api.gold-api.com/price/XAU"
+          "label": "NIST precious-metals conversions",
+          "url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information"
         }
       ]
     },
     {
-      "requirement": "Return policy: make sure you can return it after inspecting it, including exclusions on resized or custom rings.",
+      "requirement": "Return policy: confirm full-refund window and exclusions on resized, engraved, or custom rings.",
       "status": "verified",
-      "finding": "All four return policies were read in full. Ross-Simons: 30 days from receipt, and the exact exclusion your checklist warns about — merchandise 'altered, or resized by a jeweler other than Ross-Simons' cannot be returned. Aurate: 14 days from fulfilment for US orders, 30 days for exchanges, engraved and international sales final. With Clarity: 30 days, but resizing or repair by another jeweller voids it and a missing diamond certificate costs $250. Anna Sheffield: two weeks from delivery, with a 10% restocking fee (max $500) and engraved or bespoke orders final sale.",
-      "how": "Read each retailer's official refund-policy page and copied the exact conditions into data/retailers.json, including the resizing and custom-order exclusions.",
-      "buyer_action": "Do not resize before you decide to keep it, and never let a third-party jeweller touch it while the return window is open. Keep certificates and original packaging.",
+      "finding": "Official return policies are now verified for all 10 retailers: Ross-Simons (30d receipt), With Clarity (30d receipt, max 1 return/6 mos), Anna Sheffield (14d delivery, 10% restocking up to $500, custom final sale), Aurate (policy says 14d fulfillment, but all 5 ring PDPs say \"Final Sale! Exchange for size only\"), Blue Nile (30d from SHIPMENT, max 2/yr, $150 cert fee), Mejuri (30d delivery, engraved final sale), Brilliant Earth (30d ship-readiness, $40 engraving fee, no comparative buying), Automic Gold (30d delivery, engraved/custom final sale), Cartier (30d delivery, engraved/altered strictly excluded), and Menē (7d receipt, up to 10% refund restocking fee). Every single seller voids returns if a third-party jeweller resizes or alters the ring.",
+      "how": "Read all 10 official refund/terms pages directly on 2026-10-22; stored in data/retailers.json.",
+      "buyer_action": "Never engrave at checkout, never let an outside jeweller resize or polish during the inspection window, and note whether the 30-day clock starts at shipment (Blue Nile, Brilliant Earth) or delivery.",
       "links": [
         {
-          "label": "Ross-Simons policy",
-          "url": "https://www.ross-simons.com/policies/refund-policy"
+          "label": "Blue Nile returns",
+          "url": "https://www.bluenile.com/policies/returns"
         },
         {
-          "label": "Aurate policy",
-          "url": "https://auratenewyork.com/policies/refund-policy"
+          "label": "Brilliant Earth returns",
+          "url": "https://www.brilliantearth.com/30-Day-Returns/"
         },
         {
-          "label": "With Clarity policy",
-          "url": "https://www.withclarity.com/policies/refund-policy"
-        },
-        {
-          "label": "Anna Sheffield policy",
-          "url": "https://www.annasheffield.com/policies/refund-policy"
+          "label": "Menē terms (7-day window)",
+          "url": "https://mene.com/terms-of-service"
         }
       ]
     },
     {
-      "requirement": "Payment: prefer a credit card for purchase protection; avoid irreversible payment methods.",
-      "status": "buyer-action",
-      "finding": "Payment method is a checkout choice, not a published product attribute, so there is nothing to verify in a feed. All four retailers accept major card brands according to their own store metadata where published.",
-      "how": "No value was inferred. This item is advice, not data.",
-      "buyer_action": "Pay by credit card. Never wire transfer, and avoid anything that removes your chargeback rights.",
-      "links": [
-        {
-          "label": "Ross-Simons returns and care",
-          "url": "https://www.ross-simons.com/policies/refund-policy"
-        }
-      ]
-    },
-    {
-      "requirement": "Documentation: keep the listing, receipt, description and the seller's claims about purity.",
+      "requirement": "Payment: use a credit card for statutory dispute protection; avoid wire, debit, crypto, or cash-equivalent BNPL.",
       "status": "verified",
-      "finding": "This project already does that for you: every row keeps the exact evidence sentence, the price, the retrieval date and the source URL, and the site regenerates from those records.",
-      "how": "data/rings.json stores the evidence string per row; data/sources.json stores the source registry with retrieval dates.",
-      "buyer_action": "Also save the checkout confirmation and any chat or email where they confirm solid gold and the weight.",
+      "finding": "Verified against official CFPB Fair Credit Billing Act guidance (15 U.S.C. § 1666 & § 1666i; Ask-CFPB en-61 & en-1969): credit cards grant a 60-day written billing-error dispute right (undelivered, unaccepted, or misbilled goods, with payment withheld during investigation) and statutory \"claims and defenses\" rights on >$50 purchases after a good-faith merchant attempt (statutorily tied to home state or ≤100 miles, though many issuers extend broader chargeback rules — check your own cardholder agreement). Debit cards, wires, Zelle, and non-credit BNPL do not carry FCBA rights.",
+      "how": "Retrieved CFPB Ask-CFPB articles en-61 and en-1969 on 2026-10-22.",
+      "buyer_action": "Pay directly with a major credit card, save screenshots of checkout terms, and send written billing disputes within 60 days if misrepresented goods are refused for return.",
       "links": [
         {
-          "label": "Sources",
+          "label": "CFPB billing-error disputes (en-61)",
+          "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
+        },
+        {
+          "label": "CFPB unsatisfactory goods (en-1969)",
+          "url": "https://www.consumerfinance.gov/ask-cfpb/i-bought-something-with-my-credit-card-and-im-not-happy-with-it-what-can-i-do-en-1969/"
+        }
+      ]
+    },
+    {
+      "requirement": "Documentation: archive the listing, price, purity claim, gram quote, certificate, and receipt.",
+      "status": "verified",
+      "finding": "Every one of the 59 rows in this repository archives the exact URL, retrieval date, verbatim evidence string, price basis, and re-verification quote in data/rings.json and data/reverification.json.",
+      "how": "Enforced on every build by automated provenance checks S01, S02, S03, S14, and S15.",
+      "buyer_action": "Save a full-page PDF of the product page at purchase time, your order invoice, any email/chat confirming solid gold + gram weight, and the GIA/IGI/COA certificate.",
+      "links": [
+        {
+          "label": "Sources registry",
           "url": "sources.html"
+        },
+        {
+          "label": "Re-verification ledger",
+          "url": "checks.html#reverification"
         }
       ]
     },
     {
-      "requirement": "Upon arrival: before wearing or resizing, take it to an independent jeweller to verify gold purity and weight.",
+      "requirement": "Upon arrival: before wearing, engraving, or resizing, take the ring to an independent jeweller inside the return window.",
       "status": "buyer-action",
-      "finding": "Physical verification cannot be automated or done remotely. Nothing is claimed about purity beyond what the seller states.",
-      "how": "Not applicable to a web research pass — stated as an open action rather than faked.",
-      "buyer_action": "Weigh it, read the stamp, and ask for a purity test before the return window closes. Do this on day one, not week three.",
+      "finding": "Physical inspection cannot be done online — and return windows are as short as 7 days (Menē), 14 days (Anna Sheffield), or 30 days from shipment rather than delivery (Blue Nile, Brilliant Earth). Any third-party resize, prong tightening, or deep scratch test voids returns at all 10 sellers.",
+      "how": "Cross-checked physical inspection steps against all 10 retailers' return-voiding clauses.",
+      "buyer_action": "Book an independent gemologist/appraiser for the day after delivery; insist strictly on non-destructive testing (calibrated gram scale, loupe hallmark read, hydrostatic specific gravity, ultrasound, and XRF) with tags/certificates kept intact.",
       "links": [
         {
           "label": "Flagged F12",
@@ -157,28 +173,36 @@
       ]
     },
     {
-      "requirement": "Best verification: ask for XRF testing or another professional gold-purity test; do not rely solely on the stamp.",
-      "status": "buyer-action",
-      "finding": "XRF is a physical test performed on the ring. No retailer page retrieved offers or publishes an XRF result per piece, so no purity claim beyond the seller's karat statement is made anywhere on this site.",
-      "how": "Searched the captured product text for XRF / assay; nothing was found, so nothing was claimed.",
-      "buyer_action": "Ask the jeweller for XRF on the band (not just the setting) and keep the printout with the receipt.",
+      "requirement": "Professional purity testing: pair XRF with scale weight & specific-gravity density — never rely on stamp or surface XRF alone.",
+      "status": "verified",
+      "finding": "GIA Gems & Gemology Lab Notes prove neither a hallmark NOR standalone surface XRF is sufficient on its own: in Spring 2024 (Vol. 60, No. 1), a 41 g resin-filled electroformed bracelet with a glued-on \"14K\" disk read 17.99K–22.47K on XRF with no plating alert; in Summer 2025 (Vol. 61, No. 2, \"Gold-Plated Gold\"), 9K/10K gold rings plated with higher-karat yellow gold read 13.5K–18K on XRF because X-rays penetrate only microns. Combining XRF with precision gram weight + hydrostatic specific-gravity (density) testing catches hollow/resin cores and under-karated interiors non-destructively.",
+      "how": "Retrieved and verified GIA Spring 2024 and Summer 2025 Lab Notes directly from gia.edu on 2026-10-22.",
+      "buyer_action": "Ask the independent appraiser for BOTH XRF fluorescence AND hydrostatic specific-gravity + calibrated gram weight, and keep the written test report.",
       "links": [
         {
-          "label": "Method — limits",
-          "url": "methodology.html"
+          "label": "GIA 2024 — Electroformed Gold Bracelet",
+          "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+        },
+        {
+          "label": "GIA 2025 — Gold-Plated Gold",
+          "url": "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold"
         }
       ]
     },
     {
-      "requirement": "If the seller will not let you independently verify or return it: do not buy it.",
+      "requirement": "Walk-away rule: if a seller refuses written specs, independent non-destructive verification, or a real return window, do not buy.",
       "status": "verified",
-      "finding": "This rule is applied throughout. Products with a setting-only price, unclear stone inclusion, or unverified return terms are labelled as such instead of being recommended. No listing on this site is presented as \"safe to buy\" — each one is presented with its evidence and its gaps.",
-      "how": "Every row carries flags; the Flagged page turns each gap into a specific question to ask the seller.",
-      "buyer_action": "If any answer is vague or refused, walk away. There are 30 alternatives here.",
+      "finding": "Applied across all 59 listings: inquiry-only archive pages (Anna Sheffield Bea Solitaire & Hazeline), \"Final Sale! Exchange for size only\" pages + BBB \"F\" rating (Aurate), dead URLs (Cartier CRN4744700, Blue Nile 203242), and unavailable exchange-only listings (Tiffany GRP10863) are explicitly flagged or excluded rather than smoothed over.",
+      "how": "Every gap is surfaced as a visible warning chip on the row and documented on flagged.html.",
+      "buyer_action": "If a seller refuses to state solid non-hollow karat gold and approximate gram weight in writing, or marks your ring Final Sale, walk away — compare the 21 weight-disclosed rings on weights.html instead.",
       "links": [
         {
           "label": "Flagged for review",
           "url": "flagged.html"
+        },
+        {
+          "label": "Weight-disclosed rings",
+          "url": "weights.html"
         }
       ]
     }

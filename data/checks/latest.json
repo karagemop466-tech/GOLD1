@@ -1,14 +1,14 @@
 {
-  "pass": "P37",
-  "generated_at": "2026-10-22T23:36:21Z",
+  "pass": "P40",
+  "generated_at": "2026-10-22T23:59:37Z",
   "builder_version": "1.0.0",
   "summary": {
-    "total": 17,
-    "passed": 17,
+    "total": 19,
+    "passed": 19,
     "failed": 0,
-    "assertions": 3224,
-    "rows": 43,
-    "pages": 75
+    "assertions": 4747,
+    "rows": 59,
+    "pages": 91
   },
   "groups": [
     {
@@ -34,7 +34,7 @@
     {
       "id": "S03",
       "name": "Karat validity and traceability",
-      "description": "Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row's own evidence text.",
+      "description": "Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row's own evidence text (including 750/1000 fineness for 18K).",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,
@@ -120,12 +120,12 @@
       "total_assertions": 0,
       "failures": [],
       "failure_count": 0,
-      "pages_checked": 75
+      "pages_checked": 91
     },
     {
       "id": "S12",
       "name": "Row-to-page coverage",
-      "description": "Every row must have a detail page that shows both its source link and its verified price.",
+      "description": "Every row must have a detail page that shows its source link and, unless the value is unverified, its verified price.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,
@@ -176,6 +176,26 @@
       "id": "S17",
       "name": "Data age",
       "description": "A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S18",
+      "name": "Unverified values are published as unverified",
+      "description": "A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.",
+      "passed": 1,
+      "failed": 0,
+      "total_assertions": 0,
+      "failures": [],
+      "failure_count": 0
+    },
+    {
+      "id": "S19",
+      "name": "Unverified prices never render as numbers",
+      "description": "A row whose price could not be reproduced must print \"— unverified\" wherever a price would go.",
       "passed": 1,
       "failed": 0,
       "total_assertions": 0,

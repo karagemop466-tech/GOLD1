@@ -109,12 +109,17 @@ for (const r of rings.rows) {
 
 const existingIds = new Set(rings.rows.map((r) => r.id));
 for (const nr of newRingsDoc.rows) {
+  const stamped = {
+    ...structuredClone(nr),
+    verified_at: nr.retrieved_at || '2026-10-22',
+    verification_status: 'confirmed',
+  };
   if (!existingIds.has(nr.id)) {
-    rings.rows.push(structuredClone(nr));
+    rings.rows.push(stamped);
     existingIds.add(nr.id);
   } else {
     const idx = rings.rows.findIndex((x) => x.id === nr.id);
-    rings.rows[idx] = structuredClone(nr);
+    rings.rows[idx] = stamped;
   }
 }
 

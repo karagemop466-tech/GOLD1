@@ -38,7 +38,7 @@
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own product feed and linked on the same row. <strong>Nothing is estimated, averaged or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Re-check against the source link before you buy: prices change without notice.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S19 + A01–A10</a>); re-check the live source link before paying.</p>
 </div>
   <div class="table-wrap">
   <table class="data-table">
@@ -167,7 +167,7 @@
       </tr><tr>
         <td><strong>US Government (eCFR, Office of the Federal Register)</strong></td>
         <td class="small">regulation</td>
-        <td>16 CFR Part 23 &quot;Guides for the Jewelry, Precious Metals, and Pewter Industries&quot; exists, up to date as of 2026-10-21, and contains § 23.3 &quot;Misrepresentation as to gold content&quot;, § 23.4 &quot;Misuse of the word vermeil&quot;, § 23.10 &quot;Additional guidance for the use of quality marks&quot; and § 23.18 &quot;Misrepresentation of weight and total weight&quot;. Section text is not quoted here.</td>
+        <td>16 CFR Part 23 read in full on 2026-10-22 (current as of 2026-10-21): § 23.3(a)-(c) &amp; fn. 32 (&quot;Solid Gold&quot; barred on hollow items; definitions of Gold Filled ≥1/20, Rolled Gold Plate ≥1/40, Gold Electroplate ≥0.175 µm; 15 U.S.C. 295 3/7 ppt tolerances), § 23.4 (Vermeil ≥2.5 µm on sterling), § 23.7 (rhodium disclosure), § 23.10 &amp; 15 U.S.C. 297 (mandatory trademark beside quality mark), § 23.18 (1 ct = 200 mg).</td>
         <td><span class="chip ok">retrieved</span></td>
         <td><a class="src" href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr><tr>
@@ -248,6 +248,126 @@
         <td>Second reading of the same feed: 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z); the later reading drives the melt arithmetic</td>
         <td><span class="chip ok">retrieved</span></td>
         <td><a class="src" href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>With Clarity</strong></td>
+        <td class="small">official product page</td>
+        <td>5 rows re-read from the storefront feed; setting prices confirmed, no metal weight published</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.withclarity.com/search/suggest.json?q=solitaire" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Aurate New York</strong></td>
+        <td class="small">official product page</td>
+        <td>5 rows re-read from the storefront feed; published weight range 2.6-4g confirmed on Modern Cigar Band</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://auratenewyork.com/search/suggest.json?q=ring" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Anna Sheffield</strong></td>
+        <td class="small">official product page</td>
+        <td>3 rows re-read; the Bea solitaire page no longer displays any price, so the row is published as unverified</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.annasheffield.com/products/bea-solitaire-ring-14k-gold-champagne-diamond-1-50ct" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Blue Nile</strong></td>
+        <td class="small">official product page</td>
+        <td>8 setting pages re-read; two pages contradict themselves on karat in the details panel</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.bluenile.com/build-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-203284" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Mejuri</strong></td>
+        <td class="small">official product page</td>
+        <td>4 rows re-read; all four state &#39;Solid Yellow Gold (14k)&#39; on the page</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://mejuri.com/shop/rings?Material=Solid+Yellow+Gold+(14k)" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Ross-Simons</strong></td>
+        <td class="small">official product pages (HTML spec tables)</td>
+        <td>Full HTML Details spec read across all 17 inherited Ross-Simons SKUs (recovering 960952 1.3 g) plus 10kt ring 997811 ($89, 0.3 g, solid gold alloy) and 14kt eternity band 939479 ($499, 1.5 g)</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.ross-simons.com/products/997811" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Blue Nile</strong></td>
+        <td class="small">official policy page</td>
+        <td>30-day return window from shipment date (max 2 free US returns/year); resized, custom, and engraved items excluded; $150 missing diamond report fee; +1-800-242-2728; service@bluenile.com</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.bluenile.com/policies/returns" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Mejuri</strong></td>
+        <td class="small">official policy &amp; terms pages</td>
+        <td>Free 30-day return from delivery/pickup on unworn items; engraved and Before We Melt items final sale; contact@mejuri.com; Toronto HQ; 10k solid gold listings diamonds-line-ring &amp; signet-ring ($348)</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Brilliant Earth</strong></td>
+        <td class="small">official policy page</td>
+        <td>30-day return window from shipment/pickup readiness; resized, third-party modified, custom, and comparative-purchasing orders excluded; $40 engraving removal fee; 1-800-691-0952; 300 Grant Ave Fl 3, San Francisco, CA</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.brilliantearth.com/30-Day-Returns/" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>With Clarity</strong></td>
+        <td class="small">official terms &amp; conditions</td>
+        <td>1-844-234-6463; service@withclarity.com; Renaissance FMI Inc., 46-24 28th St, Long Island City, NY; limit 1 return or exchange per 6 months (subsequent orders final sale)</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.withclarity.com/pages/terms-conditions" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Automic Gold</strong></td>
+        <td class="small">official product pages, JSON feeds &amp; return policy</td>
+        <td>7 solid 14k gold rings with published gold gram weights (1.4 g to 7.0 g) and prices ($1,334 to $3,074); free 30-day US returns from delivery; engraved (+$60) &amp; custom final sale; 1-888-992-8866; care@automicgold.com; 88 10th Ave #10, NYC</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.automicgold.com/pages/returns-exchange-policy" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Cartier</strong></td>
+        <td class="small">official product pages &amp; Conditions of Sale</td>
+        <td>3 verified 18K (750/1000) rings (CRB4230400 $3,350, CRB4225700 $3,600, CRB4057600 $1,140); 30-day delivery return window; engraved/altered strictly non-returnable; 1-800-227-8437; 653 Fifth Ave, NYC</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Menē</strong></td>
+        <td class="small">official product pages &amp; Terms of Service</td>
+        <td>2 verified 24K pure gold bands (Classic $1,720, Narrow $1,372); ±1.0 g Crafted-on-Demand COA weight disclosure; 7-day return window (up to 10% refund restocking fee; 5% missing COA fee) + Lifetime Buyback; 1-833-636-3245</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://mene.com/terms-of-service" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>National Institute of Standards and Technology (NIST)</strong></td>
+        <td class="small">federal metrological standard</td>
+        <td>NIST Handbook 130 § 2.17 exact conversion: 1 troy ounce = 31.1034768 grams = 20 pennyweights (1.55517384 g/dwt) = 480 grains</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Gemological Institute of America (GIA)</strong></td>
+        <td class="small">peer-reviewed gemological lab note</td>
+        <td>Spring 2024 Lab Note: 41 g resin-filled electroformed gold bracelet with glued-on 14K disk fooled surface XRF (17.99K–22.47K with no plating alert)</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Gemological Institute of America (GIA)</strong></td>
+        <td class="small">peer-reviewed gemological lab note</td>
+        <td>Summer 2025 Lab Note (&quot;Gold-Plated Gold&quot;): 9K/10K gold items plated with higher-karat yellow gold fooled surface XRF (13.5K–18K with no plating alert)</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Consumer Financial Protection Bureau (CFPB)</strong></td>
+        <td class="small">federal consumer-protection guidance</td>
+        <td>Fair Credit Billing Act (15 U.S.C. § 1666 &amp; § 1666i; Ask-CFPB en-61 &amp; en-1969): 60-day written billing-error rule and credit-card claims/defenses rights</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Better Business Bureau (BBB)</strong></td>
+        <td class="small">independent complaint &amp; accreditation registry</td>
+        <td>BBB ratings &amp; complaint records checked across retailers: A+ Accredited on Ross-Simons, Blue Nile, Brilliant Earth, With Clarity; A+ Unaccredited on Anna Sheffield; F rating (8 unanswered of 23 complaints) on Aurate New York</td>
+        <td><span class="chip ok">retrieved</span></td>
+        <td><a class="src" href="https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/aurate-new-york-0121-170321" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Cartier</strong></td>
+        <td class="small">dead luxury lead URL</td>
+        <td>Nothing — returned Cartier page-not-found / removed product notice on 2026-10-22; excluded from canonical table.</td>
+        <td><span class="chip bad">rejected (404)</span></td>
+        <td><a class="src" href="https://www.cartier.com/en-us/jewelry/engagement-rings/solitaire-1895/solitaire-1895-CRN4744700.html" target="_blank" rel="noopener nofollow">open ↗</a></td>
+      </tr><tr>
+        <td><strong>Blue Nile</strong></td>
+        <td class="small">dead product URL</td>
+        <td>Nothing — returned HTTP 404 on 2026-10-22; excluded.</td>
+        <td><span class="chip bad">rejected (404)</span></td>
+        <td><a class="src" href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-203242" target="_blank" rel="noopener nofollow">open ↗</a></td>
       </tr>
     </tbody>
   </table>
@@ -255,19 +375,99 @@
   <p class="sub">Retrieved 2026-10-22. If a link is dead when you read this, treat the value as unverified — that is exactly how this project treats it too.</p>
 
   <h2>Product pages behind each row</h2>
-  <p>Every listing row links directly to its own official product page, so there is no anonymous data anywhere in the table. The 43 source links are on <a href="rings.html">All rings</a> and on each detail page.</p>
+  <p>Every listing row links directly to its own official product page, so there is no anonymous data anywhere in the table. The 59 source links are on <a href="rings.html">All rings</a> and on each detail page.</p>
+
+  <h2>Verified retailer return policies, contacts &amp; BBB reputation (10 sellers)</h2>
+  <div class="table-wrap">
+  <table class="data-table">
+    <thead><tr><th>Retailer</th><th>Rows</th><th>Verified contact &amp; HQ</th><th>Official return &amp; resize terms</th><th>BBB rating</th><th>Policy link</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>Ross-Simons</strong></td>
+        <td class="num-col">19</td>
+        <td class="small">800-835-0919 · customerservice@ross-simons.com · Ross-Simons, Attn: Returns Department, 9 Ross Simons Dr., Cranston, RI 02920</td>
+        <td class="small">30 days from receipt for refund or exchange; items must be original and unused; shipping non-refundable; merchandise damaged, altered, or resized by a jeweler other than Ross-Simons cannot be returned; all returns are inspected by QA/gemologist before credit.</td>
+        <td class="small"><strong>A+</strong><div class="sub">BBB Accredited Business (since 2017-03-15)</div> <a class="src" href="https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.ross-simons.com/policies/refund-policy" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>With Clarity</strong></td>
+        <td class="num-col">5</td>
+        <td class="small">1-844-234-6463 · service@withclarity.com · Renaissance FMI Inc. / With Clarity Inc., 46-24 28th St, Long Island City, NY 11101 (Showroom: 118 Spring St, New York, NY 10012)</td>
+        <td class="small">30 calendar days from receipt for return or exchange; final sale after that. One return per order; second purchases inside 30 days are final sale. Diamond upgrades are not returnable. Jewellery that is worked on, resized or repaired by another jeweller is not eligible for returns. Free insured return shipping; a missing diamond certificate incurs a $250 fee ($300 to re-certify). Terms &amp; Conditions cap returns/exchanges at 1 per customer every 6 months.</td>
+        <td class="small"><strong>A+</strong><div class="sub">BBB Accredited Business (since 2018-05-16)</div> <a class="src" href="https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/with-clarity-inc-0121-169327/complaints" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.withclarity.com/pages/terms-conditions" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Anna Sheffield</strong></td>
+        <td class="num-col">3</td>
+        <td class="small">+1-212-925-7010 · info@annasheffield.com · Sheffield &amp; Kearney, New York, NY / 8503 Melrose Ave, West Hollywood, CA 90069</td>
+        <td class="small">Returns accepted up to two weeks after delivery for engagement rings, bands and fine jewellery, unworn and in original packaging. A 10% restocking fee (not more than $500) applies to refunds; exchanges do not pay it. Customised, engraved or bespoke orders are final sale. Buyer pays return shipping and original shipping is not refunded. Cancellations of engagement rings incur a fee once production has begun (from day 3).</td>
+        <td class="small"><strong>A+</strong><div class="sub">Not BBB Accredited</div> <a class="src" href="https://www.bbb.org/us/ca/west-hollywood/profile/jewelry-stores/anna-sheffield-jewelry-1216-1650222" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.annasheffield.com/policies/refund-policy" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Aurate</strong></td>
+        <td class="num-col">5</td>
+        <td class="small">1-888-616-2872 · care@auratenewyork.com · 580 5th Ave Ste 2300, New York, NY 10036-4730</td>
+        <td class="small">Refund or exchange on US purchases up to 14 days after the order was fulfilled, original condition; exchanges accepted within 30 days of fulfillment; international sales and engraved pieces are final. Live ring PDPs (2026-10-22) additionally display &quot;Final Sale! Exchange for size only&quot; — verify before checkout.</td>
+        <td class="small"><strong>F</strong><div class="sub">Not BBB Accredited</div> <a class="src" href="https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/aurate-new-york-0121-170321" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://auratenewyork.com/policies/refund-policy" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Blue Nile</strong></td>
+        <td class="num-col">8</td>
+        <td class="small">+1-800-242-2728 · service@bluenile.com · Blue Nile Inc. (Signet Jewelers), Seattle, WA 98108</td>
+        <td class="small">30 days starting from shipment date (NOT delivery date). Free insured US return shipping via RMA (maximum 2 complimentary US returns per customer per year). Exclusions: Rings resized after purchase, engraved items (except rings where engraving removal applies), custom-designed jewelry, Diamond Upgrade Program items, and final-sale items are non-returnable; missing diamond grading report incurs $150 replacement fee.</td>
+        <td class="small"><strong>A+</strong><div class="sub">BBB Accredited Business (since 1999-03-01)</div> <a class="src" href="https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.bluenile.com/policies/returns" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Mejuri</strong></td>
+        <td class="num-col">6</td>
+        <td class="small">+1-855-496-1110 (SMS/Text) / +1-310-597-4745 · contact@mejuri.com · Mejuri Inc., 60 Bloor Street West, Floor 8, Toronto, ON M4W 3B8, Canada</td>
+        <td class="small">30 days starting from delivery or in-store pickup date. Free 30-day returns &amp; exchanges in US/CA/UK/AU/DE on unworn items with original packaging. Exclusions: Engraved/monogrammed items, &quot;Before We Melt&quot; sale items, gift cards, and worn/altered pieces are final sale and non-returnable; lab-grown diamond items must include original SCS certificate.</td>
+        <td class="small"><strong>NR / Unaccredited (16 complaints closed on Chicago US file)</strong><div class="sub">Not BBB Accredited</div> <a class="src" href="https://www.bbb.org/ca/on/toronto/profile/jewelry-manufacturers/mejuri-0107-1370644" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Brilliant Earth</strong></td>
+        <td class="num-col">1</td>
+        <td class="small">1-800-691-0952 (SMS: +1-415-520-6526) · customerservice@brilliantearth.com (web/phone RMA required) · 300 Grant Ave, Floor 3, San Francisco, CA 94108-3629</td>
+        <td class="small">30 days starting from date order is available for shipment or showroom pickup. Free insured FedEx US/CA/UK/AU return label via RMA (RMA valid 7 days; must double-box and drop at staffed FedEx Ship Center). Exclusions: Items that have been resized, modified, repaired by a third party, custom-designed, previously exchanged, upgraded, or bought for &quot;comparative purchasing&quot; are non-returnable; engraved rings incur a $40 engraving-removal fee ($250 per missing diamond certificate on BBB-filed policy).</td>
+        <td class="small"><strong>A+</strong><div class="sub">BBB Accredited Business (since 2007-02-21)</div> <a class="src" href="https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.brilliantearth.com/30-Day-Returns/" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Automic Gold</strong></td>
+        <td class="num-col">7</td>
+        <td class="small">1-888-992-8866 · care@automicgold.com / custom@automicgold.com · 88 10th Ave #10, New York, NY 10011 (In-house NYC manufacturing)</td>
+        <td class="small">30 days starting from delivery date. Free prepaid US return shipping via automic.aftership.com (must mail within 14 days of label generation to avoid recycling fee). Exclusions: Engraved items (+$60/line), custom pieces, modified/resized items, and gift cards are final sale; diamond pieces must include original certificate; eternity bubble rings cannot be resized (30-day size exchange offered).</td>
+        <td class="small"><strong>NR (0 unanswered complaints shown on NY overview)</strong><div class="sub">Not BBB Accredited</div> <a class="src" href="https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/automic-gold-0121-87147097" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.automicgold.com/pages/returns-exchange-policy" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Cartier</strong></td>
+        <td class="num-col">3</td>
+        <td class="small">1-800-227-8437 · Client Relations Center via cartier.com/en-us/contact-customer-care · Cartier (Richemont North America, Inc.), 645 / 653 Fifth Avenue, New York, NY 10022</td>
+        <td class="small">30 days starting from delivery date. Complimentary US e-boutique return shipping or Cartier retail boutique return (strict Maison Quality Control inspection). Exclusions: Personalized, engraved, embossed, bespoke, worn, or altered items are strictly non-returnable and non-refundable; protective stickers, tags, original Maison box, and diamond certificates must be intact; Gift Recipients cannot receive cash refunds.</td>
+        <td class="small"><strong>Unaccredited NY HQ file (founded 1847)</strong><div class="sub">Not BBB Accredited</div> <a class="src" href="https://www.bbb.org/us/ny/new-york/profile/jewelry-designers/cartier-0121-356" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://www.cartier.com/en-us/conditions-of-sales-pay-by-link.html" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr><tr>
+        <td><strong>Menē</strong></td>
+        <td class="num-col">2</td>
+        <td class="small">1-833-636-3245 (1-833-MENE-24K) · Customer Care via mene.com/customer-care · Menē Inc., 307-334 Adelaide Street West, Toronto, ON M5V 1R4, Canada (Made in USA)</td>
+        <td class="small">7 days starting from receipt (delivery) for US/non-EU orders (20 days from fulfillment in EU); plus Lifetime Buyback Guarantee at daily metal value minus 10% fee. Prepaid insured return label emailed within 7 business days (must double-box and drop at staffed FedEx Ship Center or official UPS Store within 7 days). Exclusions: Engraved ($75), customized, or personalized items are final sale; discretionary refunds to original payment method may deduct up to a 10% restocking fee (100% value issued for Menē Credit, which has no cash value); missing Certificate of Authenticity incurs a 5% assessment fee.</td>
+        <td class="small"><span class="unverified" title="Not confirmed by an official source">— unverified</span> <a class="src" href="https://mene.com/terms-of-service" target="_blank" rel="noopener nofollow">BBB ↗</a></td>
+        <td><a class="src" href="https://mene.com/terms-of-service" target="_blank" rel="noopener nofollow">policy ↗</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
   <h2>Rejected sources</h2>
   <p>These were checked and deliberately not used. Recording the failures is part of not hallucinating.</p>
   <ul class="ticks">
-    <li><strong>US Federal Trade Commission</strong> — Nothing - this URL returned a 404 page on 2026-10-22, so it is NOT used as a source. <a href="https://www.ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>LBMA</strong> — Nothing - the request failed (HTTP 500) on 2026-10-22, so it is NOT used as a source. <a href="https://prices.lbma.org.uk/json/gold_pm.json" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>Blue Nile</strong> — Nothing - this URL returned a 404 page on 2026-10-22, so no Blue Nile row was created. <a href="https://www.bluenile.com/engagement-rings/solitaire" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>Set &amp; Stones</strong> — Checked and EXCLUDED: the engagement-ring results returned were gold-filled / gold-plated pieces, which fail the solid-gold requirement. <a href="https://setandstones.com/search/suggest.json?q=engagement%20ring&amp;resources[type]=product&amp;resources[limit]=8" target="_blank" rel="noopener nofollow">link ↗</a></li>
+    <li><strong>US Federal Trade Commission</strong> — Nothing - this URL returned a 404 page on 2026-10-22, so it is NOT used as a source. <a href="https://www.ftc.gov/business-guidance/resources/gold-silver-jewelry-industry-guide" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>LBMA</strong> — Nothing - the request failed (HTTP 500) on 2026-10-22, so it is NOT used as a source. <a href="https://prices.lbma.org.uk/json/gold_pm.json" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>Blue Nile</strong> — Nothing - this URL returned a 404 page on 2026-10-22, so no Blue Nile row was created. <a href="https://www.bluenile.com/engagement-rings/solitaire" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>Set &amp; Stones</strong> — Checked and EXCLUDED: the engagement-ring results returned were gold-filled / gold-plated pieces, which fail the solid-gold requirement. <a href="https://setandstones.com/search/suggest.json?q=engagement%20ring&amp;resources[type]=product&amp;resources[limit]=8" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>Cartier</strong> — Nothing — returned Cartier page-not-found / removed product notice on 2026-10-22; excluded from canonical table. <a href="https://www.cartier.com/en-us/jewelry/engagement-rings/solitaire-1895/solitaire-1895-CRN4744700.html" target="_blank" rel="noopener nofollow">link ↗</a></li><li><strong>Blue Nile</strong> — Nothing — returned HTTP 404 on 2026-10-22; excluded. <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-203242" target="_blank" rel="noopener nofollow">link ↗</a></li>
   </ul>
 </section>
 </main>
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,026.70 per troy ounce at 2026-10-22T23:38:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

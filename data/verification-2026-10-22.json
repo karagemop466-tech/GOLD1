@@ -1,0 +1,989 @@
+{
+ "as_of": "2026-10-22T23:30Z",
+ "session": "sess-277867af",
+ "branch": "arena/277867af-gold1",
+ "method": "Each row's official source page was fetched again on the verification date. Price, karat, title, metal and any published weight were read from that page and compared with the stored value. A stored value that could not be reproduced on the live official page is replaced by the observed value (or blanked if the page no longer shows it) and flagged. Nothing is inferred.",
+ "results": [
+  {
+   "id": "as-bea-3stone",
+   "retailer": "Anna Sheffield",
+   "source_url": "https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond",
+   "fetched_at": "2026-10-22T23:48Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Bea Three Stone Ring - 14k Gold & White Diamond Center",
+    "karat": "14K",
+    "price_low": 5400.0,
+    "price_high": 25100.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"5400.00\", price_max \"25100.00\"; body \"set in recycled 14k yellow, rose, or white gold\"; tag \"starting-at\"."
+   },
+   "quote": "\"price\":\"5400.00\",\"price_max\":\"25100.00\",\"price_min\":\"5400.00\" ... \"One 7x5mm emerald cut white diamond (G/VS2) center stone, two 3mm white diamond (G/VS2) trillion side stones, set in recycled 14k yellow, rose, or white gold.\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14k in body)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "as-bea-sol",
+   "retailer": "Anna Sheffield",
+   "source_url": "https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond",
+   "fetched_at": "2026-10-22T23:50Z",
+   "status": "unverified",
+   "observed": {
+    "title": "Bea Solitaire Ring - 14k Gold & Champagne Diamond (1.50ct)",
+    "karat": "14K",
+    "price_unreadable": true,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: the official product page resolves and still carries the 1.50ct oval champagne diamond description in 14k recycled gold, but it no longer displays any price. The buy box has been replaced by an enquiry form that says \"While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range.\" The stored 11500.00 could not be reproduced, so the row is published as price unverified.",
+    "notes": "Stored value retained in the data file as the last observed figure, marked price_unverified and shown on the site as \"- unverified\". It must not be used as a price until Anna Sheffield quotes it."
+   },
+   "quote": "While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you within your desired price range. ... Details 1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank.",
+   "checks": {
+    "price": "NOT REPRODUCIBLE - marked unverified",
+    "karat": "match (14k in body)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "as-hazeline",
+   "retailer": "Anna Sheffield",
+   "source_url": "https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond",
+   "fetched_at": "2026-10-22T23:45Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Hazeline Solitaire Ring - Yellow Gold & Cushion Champagne Diamond",
+    "karat": "14K",
+    "price_low": 7150.0,
+    "price_high": 9200.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"7150.00\", price_max \"9200.00\"; body \"set in 14k recycled yellow gold\"; tag MTO-4-6-W (made to order)."
+   },
+   "quote": "\"price\":\"7150.00\",\"price_max\":\"9200.00\",\"price_min\":\"7150.00\" ... \"Approximately 1.00ct or 1.50ct cushion champagne diamond center with 0.03ctw small white diamond accents set in 14k recycled yellow gold.\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14k in body)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "au-1ct-emerald",
+   "retailer": "Aurate",
+   "source_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+   "fetched_at": "2026-10-22T23:47Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "1ct Emerald Lab Grown Diamond Bezel Ring",
+    "karat": "14K",
+    "price_low": 1498.0,
+    "price_high": 2100.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"1498.00\", price_max \"2100.00\"; tags \"14k\", \"18k\"."
+   },
+   "quote": "\"price\":\"1498.00\",\"price_max\":\"2100.00\",\"price_min\":\"1498.00\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14k tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "au-2ct-oval",
+   "retailer": "Aurate",
+   "source_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+   "fetched_at": "2026-10-22T23:47Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2ct Oval Lab Grown Diamond Bezel Ring",
+    "karat": "14K",
+    "price_low": 1968.0,
+    "price_high": 2800.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"1968.00\", price_max \"2800.00\"; tags \"14k\", \"18k\", \"platinum\", \"engagement-ring\"."
+   },
+   "quote": "\"price\":\"1968.00\",\"price_max\":\"2800.00\",\"price_min\":\"1968.00\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14k tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "au-3ct-round",
+   "retailer": "Aurate",
+   "source_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+   "fetched_at": "2026-10-22T23:47Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "3ct Round Lab Grown Diamond Bezel Ring",
+    "karat": "14K",
+    "price_low": 2438.0,
+    "price_high": 3000.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"2438.00\", price_max \"3000.00\"; tags \"14k\", \"18k\", \"lab-grown\"."
+   },
+   "quote": "\"price\":\"2438.00\",\"price_max\":\"3000.00\",\"price_min\":\"2438.00\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14k tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "au-cigar",
+   "retailer": "Aurate",
+   "source_url": "https://auratenewyork.com/products/modern-cigar-band",
+   "fetched_at": "2026-10-22T23:47Z",
+   "status": "partially verified",
+   "observed": {
+    "title": "Modern Cigar Band",
+    "karat": "14K",
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: the official storefront feed still publishes the product with price_min \"118.00\" (the vermeil variant) and price_max \"1668.00\"; the product page specs panel repeats \"Weight: 2.6-4g\", \"Width: 20mm\", \"Thickness: 1mm\", \"SKU: AU0429\". The stored 14K variant price of 1308.00 could not be re-read from the product-level feed on this pass.",
+    "notes": "The published weight range 2.6-4g is re-confirmed. The stored price is a single 14K/Yellow/size-3 variant price carried from the earlier official-feed evidence; it is inside the published 118-1668 range but was not re-read line by line on this pass. Flagged for a human to confirm the variant in the cart."
+   },
+   "quote": "\"price\":\"118.00\",\"price_max\":\"1668.00\",\"price_min\":\"118.00\" ... Specs: Width 20mm / Length 5mm / Thickness 1mm / Weight 2.6-4g / SKU AU0429",
+   "checks": {
+    "price": "not re-read at variant level - flagged",
+    "karat": "match (14k tag)",
+    "title": "match",
+    "weight": "2.6-4g re-confirmed"
+   }
+  },
+  {
+   "id": "au-xring",
+   "retailer": "Aurate",
+   "source_url": "https://auratenewyork.com/products/x-ring-with-diamonds",
+   "fetched_at": "2026-10-22T23:47Z",
+   "status": "changed",
+   "observed": {
+    "title": "Diamond X Ring",
+    "karat": "14K",
+    "price_low": 1808.0,
+    "price_high": 2578.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"1808.00\", price_max \"2578.00\". Stored high of 1808 replaced by the published 2578; the row is now labelled a variant range that spans metals.",
+    "notes": "The stored single price 1808 is confirmed as the product's lowest variant price. The official feed publishes a top of 2578, which the row previously omitted."
+   },
+   "quote": "\"price\":\"1808.00\",\"price_max\":\"2578.00\",\"price_min\":\"1808.00\" ... \"37 individual diamonds totalling nearly half a carat\"",
+   "checks": {
+    "price": "confirmed low, high completed to 2578",
+    "karat": "match (14k tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "be-18k-6p-121h6",
+   "retailer": "Brilliant Earth",
+   "source_url": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+   "fetched_at": "2026-10-22T23:59Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Six-Prong Solitaire Ring in 18K Yellow Gold",
+    "karat": "18K",
+    "price_low": 1090.0,
+    "price_high": 1090.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,090 (Setting Only)\"; Ring Information \"Style: BE121H6-18KY\", \"Metal: 18K Yellow Gold\", \"Prong metal: 14K White Gold\", \"Width: 2.5 mm\", \"Setting: Six-Prong\".",
+    "notes": "The official page states the prongs are 14K white gold while the band is 18K yellow gold, so the ring is not 18K throughout. See Flagged F35."
+   },
+   "quote": "$1,090(Setting Only) ... Style: BE121H6-18KY / Metal: 18K Yellow Gold / Prong metal: 14K White Gold / Width: 2.5 mm / Setting: Six-Prong",
+   "checks": {
+    "price": "match",
+    "karat": "match for the band; prongs are 14K - flagged",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-14k-6p-203272",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
+   "fetched_at": "2026-10-22T23:24Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
+    "karat": "14K",
+    "price_low": 1000.0,
+    "price_high": 1000.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,000 (Setting Price)\"; specs \"Metal 14K Yellow Gold\", \"Width 1.90mm\"; details \"This 14k yellow gold, six-prong solitaire\"."
+   },
+   "quote": "$1,000(Setting Price) ... Metal 14K Yellow Gold / Width 1.90mm",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-14k-bezel-296643",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643",
+   "fetched_at": "2026-10-22T23:48Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Bezel Solitaire Engagement Ring in 14K Yellow Gold",
+    "karat": "14K",
+    "price_low": 1310.0,
+    "price_high": 1310.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,310 (Setting Price)\"; specs \"Metal 14K Yellow Gold\", \"Width 2.50mm\"."
+   },
+   "quote": "$1,310(Setting Price) ... Metal 14K Yellow Gold / Width 2.50mm",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-14k-ccf-203284",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
+   "fetched_at": "2026-10-22T23:24Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
+    "karat": "14K",
+    "price_low": 935.0,
+    "price_high": 935.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$935 (Setting Price)\"; specs \"Metal 14K Yellow Gold\", \"Width 2.50mm\". The Product Details block still says \"This one, crafted in 18k yellow gold\", which contradicts the same page's own 14K heading and 14K spec.",
+    "notes": "Blue Nile's own page contradicts itself on karat for this item. Re-confirmed on 2026-10-22 - see Flagged F34."
+   },
+   "quote": "$935(Setting Price) ... Metal 14K Yellow Gold / Width 2.50mm ... Product Details: \"This one, crafted in 18k yellow gold, features a rounded inside edge for comfort.\"",
+   "checks": {
+    "price": "match",
+    "karat": "page contradicts itself - flagged",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-14k-leaf-192442",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442",
+   "fetched_at": "2026-10-22T23:50Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Leaf Solitaire Engagement Ring in 14k Yellow Gold",
+    "karat": "14K",
+    "price_low": 1275.0,
+    "price_high": 1275.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,275 (Setting Price)\"; specs \"Metal 14K Yellow Gold\", \"Width 1.80mm\"; details \"featuring 14k yellow gold design\"."
+   },
+   "quote": "$1,275(Setting Price) ... Metal 14K Yellow Gold / Width 1.80mm",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-14k-ridge-304497",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497",
+   "fetched_at": "2026-10-22T23:50Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Ridged Dome Solitaire Engagement Ring In 14K Yellow Gold",
+    "karat": "14K",
+    "price_low": 2065.0,
+    "price_high": 2065.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$2,065 (Setting Price)\"; specs \"Metal 14K Yellow Gold\", \"Width 4.80mm\"; can be set with emerald 0.50-6.00 carat only."
+   },
+   "quote": "$2,065(Setting Price) ... Metal 14K Yellow Gold / Width 4.80mm",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-14k-tc-203288",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288",
+   "fetched_at": "2026-10-22T23:48Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold",
+    "karat": "14K",
+    "price_low": 1240.0,
+    "price_high": 1240.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,240 (Setting Price)\"; specs \"Metal 14K Yellow Gold\", \"Width 2.15mm\"; details \"Crafted in bright 14k yellow gold\" - consistent."
+   },
+   "quote": "$1,240(Setting Price) ... Metal 14K Yellow Gold / Width 2.15mm ... \"Crafted in bright 14k yellow gold\"",
+   "checks": {
+    "price": "match",
+    "karat": "match and consistent with the description",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-18k-6p-194159",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159",
+   "fetched_at": "2026-10-22T23:50Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+    "karat": "18K",
+    "price_low": 1240.0,
+    "price_high": 1240.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,240 (Setting Price)\"; specs \"Metal 18K Yellow Gold\", \"Width 1.90mm\"; details \"This 18k yellow gold, six-prong solitaire\" - consistent."
+   },
+   "quote": "$1,240(Setting Price) ... Metal 18K Yellow Gold / Width 1.90mm",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "bn-18k-pn-203268",
+   "retailer": "Blue Nile",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268",
+   "fetched_at": "2026-10-22T23:52Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Petite Nouveau Six-Prong Solitaire Engagement Ring in 18k Yellow Gold",
+    "karat": "18K",
+    "price_low": 1420.0,
+    "price_high": 1420.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$1,420 (Setting Price)\"; specs \"Metal 18K Yellow Gold\", \"Width 1.80mm\"; the Product Details block says \"this petite nouveau solitaire engagement ring is crafted in polished 14k white gold\", which contradicts the same page's own 18K yellow gold heading and spec.",
+    "notes": "Second Blue Nile self-contradiction found on 2026-10-22 - see Flagged F34."
+   },
+   "quote": "$1,420(Setting Price) ... Metal 18K Yellow Gold / Width 1.80mm ... Product Details: \"this petite nouveau solitaire engagement ring is crafted in polished 14k white gold\"",
+   "checks": {
+    "price": "match",
+    "karat": "page contradicts itself - flagged",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "mej-2mm",
+   "retailer": "Mejuri",
+   "source_url": "https://mejuri.com/products/2mm-smooth-band",
+   "fetched_at": "2026-10-22T23:55Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2mm Smooth Band",
+    "karat": "14K",
+    "price_low": 498.0,
+    "price_high": 498.0,
+    "solid_stated": true,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$498\"; material \"Solid Yellow Gold (14k)\"; body \"Handcrafted in recycled 14k solid gold featuring streamlined edges\"; specs width 2 mm, thickness 1.3 mm. The page adds \"Engraved items are not eligible for return\"."
+   },
+   "quote": "$498 ... Solid Yellow Gold (14k) ... \"Handcrafted in recycled 14k solid gold featuring streamlined edges\" ... \"Engraved items are not eligible for return.\"",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "solid": "re-confirmed",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "mej-bde",
+   "retailer": "Mejuri",
+   "source_url": "https://mejuri.com/products/bold-diamond-eternity-ring",
+   "fetched_at": "2026-10-22T23:57Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Bold Diamond Eternity Ring",
+    "karat": "14K",
+    "price_low": 2900.0,
+    "price_high": 2900.0,
+    "solid_stated": true,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"From $2,900\"; material \"Solid Yellow Gold (14k), Natural Diamond\"; body \"a bold ring handcrafted in 14k solid gold featuring as many as 23 round brilliant cut diamonds\"; minimum carat weight 1.15-1.57 ct; band width 2.6 mm."
+   },
+   "quote": "From$2,900 ... Solid Yellow Gold (14k), Natural Diamond ... \"handcrafted in 14k solid gold featuring as many as 23 round brilliant cut diamonds\"",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "solid": "re-confirmed",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "mej-db",
+   "retailer": "Mejuri",
+   "source_url": "https://mejuri.com/products/diamonds-band",
+   "fetched_at": "2026-10-22T23:57Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Diamonds Band",
+    "karat": "14K",
+    "price_low": 648.0,
+    "price_high": 648.0,
+    "solid_stated": true,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"$648\"; material \"Solid Yellow Gold (14k), Natural Diamond\"; body \"Handcrafted in 14k solid gold with diamonds\"; minimum carat weight 0.07 ct, shank width 2.8 mm."
+   },
+   "quote": "$648 ... Solid Yellow Gold (14k), Natural Diamond ... \"Handcrafted in 14k solid gold with diamonds\"",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "solid": "re-confirmed",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "mej-deb",
+   "retailer": "Mejuri",
+   "source_url": "https://mejuri.com/products/diamond-eternity-band",
+   "fetched_at": "2026-10-22T23:55Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Diamond Eternity Band",
+    "karat": "14K",
+    "price_low": 1100.0,
+    "price_high": 1100.0,
+    "solid_stated": true,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: \"From $1,100\"; material option \"Solid Yellow Gold (14k), Natural Diamond\"; body \"handcrafted in recycled 14k solid gold, featuring 33-42 responsibly sourced diamonds for an average carat weight of 0.532ct\"; band width 1.5 mm."
+   },
+   "quote": "From$1,100 ... Solid Yellow Gold (14k), Natural Diamond ... \"a slimmed down style handcrafted in recycled 14k solid gold, featuring 33-42 responsibly sourced diamonds for an average carat weight of 0.532ct\"",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "solid": "re-confirmed",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-240912",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/240912",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "C. 2023 Vintage 1.36 Carat Certified Sapphire Ring in 14kt Yellow Gold. Size 7",
+    "karat": "14K",
+    "price_low": 8995.0,
+    "price_high": 8995.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: single variant, \"$8,995\"; specs \"Width 1/4 inch\", \"Metal: 14kt Yellow Gold\"; body \"GIA Cert #7235079100\". No Gold Weight field.",
+    "notes": "Estate one-of-a-kind, size 7 only. GIA certificate number is printed on the official page."
+   },
+   "quote": "$8,995 ... Features a vivid 1.36 carat certified oval cushion-cut sapphire glowing in a four-prong setting on a simple polished band of 14kt yellow gold. GIA Cert #7235079100.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-242556",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/242556",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "C. 1980 Vintage .30 Carat Sapphire Ring with .16 ct. t.w. Diamonds in 14kt Yellow Gold. Size 6.5",
+    "karat": "14K",
+    "price_low": 2195.0,
+    "price_high": 2195.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: single variant, \"$2,195\"; specs \"Width 5/8 inch\", \"Metal: 14kt Yellow Gold\"; body states the diamond accents are set in 14kt white gold, so the ring is two-metal. No Gold Weight field.",
+    "notes": "Estate one-of-a-kind, size 6.5 only. The page describes mixed metals (yellow gold band, white gold-set diamonds)."
+   },
+   "quote": "$2,195 ... C. 1980. A tribute to two-tone, this fascinating Estate collection ring spotlights a deeply hued .30 carat oval sapphire with .16 ct. t.w. round diamonds swirling around and sparkling across the band in 14kt white gold. Finely crafted in polished 14kt yellow gold. ... Exclusive, one-of-a-kind Estate Jewelry.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-254575",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/254575",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "C. 1990 Vintage 14kt Two-Tone Gold Bypass Ring. Size 7.5",
+    "karat": "14K",
+    "price_low": 695.0,
+    "price_high": 695.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: single variant, \"$695\"; specs \"Width 7/16 inch\", \"Metal: 14kt Two-Tone Gold\". No Gold Weight field.",
+    "notes": "Estate one-of-a-kind, size 7.5 only."
+   },
+   "quote": "$695 ... C. 1990. Two tones, infinite versatility. From our Estate collection, this chic 14kt yellow and white gold bypass ring ... Exclusive, one-of-a-kind Estate Jewelry.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-571213",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571213",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Men's 5mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 959.0,
+    "price_high": 959.0,
+    "weight_g_low": 5.0,
+    "weight_g_high": 5.0,
+    "evidence_suffix": "Re-checked 2026-10-22: banner \"CLEARANCE 20% Off\", \"Original price $1,195\", \"Sale price $959\"; variants 8-12 each \"$959.00\"; specs panel \"Gold Weight: 5.0 grams\".",
+    "notes": "Sale price confirmed. Because the listed price is a 20%-off clearance price from $1,195, the price may change when the promotion ends."
+   },
+   "quote": "CLEARANCE 20% Off ~~Original price $1,195~~ Sale price $959 ... Size 8 $959.00 In-Stock ... Gold Weight 5.0 grams.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-571221",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571221",
+   "fetched_at": "2026-10-22T23:24Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Women's 2mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 400.0,
+    "price_high": 400.0,
+    "weight_g_low": 1.7,
+    "weight_g_high": 1.7,
+    "evidence_suffix": "Re-checked 2026-10-22: size variants 5/6/7/8/9 each \"$400.00\"; specs panel \"Metal: 14kt Yellow Gold\", \"Gold Weight: 1.7 grams\".",
+    "notes": "Gold weight is published on the official page (1.7 g). It was previously blank and flagged weight_not_published."
+   },
+   "quote": "Size 5 $400.00 In-Stock ... Metal 14ktYellow Gold / Gold Weight 1.7 grams / Finish Polished / All weights and measurements are approximate.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-571222",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571222",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Women's 3mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 599.0,
+    "price_high": 599.0,
+    "weight_g_low": 2.5,
+    "weight_g_high": 2.5,
+    "evidence_suffix": "Re-checked 2026-10-22: size variants 5/6/7/8/9 each \"$599.00\"; specs panel \"Metal: 14kt Yellow Gold\", \"Gold Weight: 2.5 grams\".",
+    "notes": "Gold weight published on the official page (2.5 g)."
+   },
+   "quote": "Size 5 $599.00 In-Stock ... Metal 14ktYellow Gold / Gold Weight 2.5 grams / Finish Polished.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-571223",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/571223",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "changed",
+   "observed": {
+    "title": "Women's 4mm 14kt Yellow Gold Band",
+    "karat": "14K",
+    "price_low": 849.0,
+    "price_high": 849.0,
+    "weight_g_low": 3.8,
+    "weight_g_high": 3.8,
+    "evidence_suffix": "Re-checked 2026-10-22: every in-stock size variant shows \"$849.00\"; specs panel \"Gold Weight: 3.8 grams\". The stored low of $799.00 could not be reproduced on the page.",
+    "notes": "Stored price range 799-849 replaced by the observed 849-849. The $799 figure is not shown anywhere on the live page and is treated as unverified (see Flagged F31)."
+   },
+   "quote": "Size 5 $849.00 In-Stock / Size 6 $849.00 In-Stock / Size 7 $849.00 In-Stock / Size 8 $849.00 In-Stock / Size 9 $849.00 In-Stock ... Gold Weight 3.8 grams.",
+   "checks": {
+    "price": "changed (low 799 not reproducible)",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-864785",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/864785",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "1.00 ct. t.w. Diamond Bridal Set: Engagement and Wedding Rings in 14kt Yellow Gold",
+    "karat": "14K",
+    "price_low": 2395.0,
+    "price_high": 2395.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: in-stock variants 6/7/8 each \"$2,395.00\" (5, 5.5, 6.5, 7.5, 8.5, 9 Sold Out); no Gold Weight field.",
+    "notes": "Most sizes are sold out on the live page; only 6, 7 and 8 are in stock."
+   },
+   "quote": "$2,395 ... Size 6 $2,395.00 In-Stock / Size 7 $2,395.00 In-Stock / Size 8 $2,395.00 In-Stock ... Width 1/4 inch / Metal 14ktYellow Gold / Finish Polished",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-879968",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/879968",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold",
+    "karat": "14K",
+    "price_low": 2695.0,
+    "price_high": 2695.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$2,695.00\"; specs panel shows only \"Metal: 14kt Yellow Gold\", \"Finish: Polished\" and the diamond row - no Gold Weight field.",
+    "notes": "Page carries a cart-level promotion, \"25% OFF IN CART WITH CODE DIAMOND25\". The listed price of $2,695.00 is before that code. No gold weight is published."
+   },
+   "quote": "25% OFF IN CART WITH CODE DIAMOND25 / $2,695 ... Size 5 $2,695.00 In-Stock ... Metal 14ktYellow Gold / Finish Polished / Gemstone 1 Diamond ( Quantity: 24, Shape & Cutting Style: Round Brilliant, Color Grade: I-J, Clarity: I2-I2, Weight: 2.00 ct. t.w. )",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-907250",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/907250",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "18kt Yellow Gold Roped Ring",
+    "karat": "18K",
+    "price_low": 179.0,
+    "price_high": 179.0,
+    "weight_g_low": 0.5,
+    "weight_g_high": 0.5,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-10 each \"$179.00\"; specs panel \"Metal: 18kt Yellow Gold\", \"Gold Weight: 0.5 grams\".",
+    "notes": "Gold weight published on the official page (0.5 g). Body text: \"Crafted in polished 18kt yellow gold\"."
+   },
+   "quote": "Size 5 $179.00 In-Stock ... Metal 18ktYellow Gold / Gold Weight 0.5 grams.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-943668",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/943668",
+   "fetched_at": "2026-10-22T23:36Z",
+   "status": "changed",
+   "observed": {
+    "title": ".28 ct. t.w. Diamond Engagement Ring Setting in 14kt White Gold",
+    "karat": "14K",
+    "price_low": 1269.0,
+    "price_high": 1269.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: banner \"CLEARANCE 29% Off\", \"Original price $1,795\", \"Sale price $1,269\"; in-stock variants 7/8/9 each \"$1,269.00\" (5, 6, 6.5 Sold Out). No Gold Weight field.",
+    "notes": "Stored range 1269-1439 replaced by the observed 1269-1269; the $1,439 figure is not shown on the live page and is treated as unverified (see Flagged F31). Page repeats \"Center stone and setting are sold separately.\""
+   },
+   "quote": "CLEARANCE 29% Off ~~Original price $1,795~~ Sale price $1,269 ... Size 7 $1,269.00 In-Stock / Size 8 $1,269.00 In-Stock / Size 9 $1,269.00 In-Stock ... Center stone and setting are sold separately.",
+   "checks": {
+    "price": "changed (high 1439 not reproducible)",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-960952",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/960952",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Italian 14kt Yellow Gold Dome Ring",
+    "karat": "14K",
+    "price_low": 399.0,
+    "price_high": 399.0,
+    "weight_g_low": 1.3,
+    "weight_g_high": 1.3,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-10 each \"$399.00\"; specs panel \"Width 1/4 inch\", \"Metal: 14kt Yellow Gold\", \"Gold Weight: 1.3 grams\".",
+    "notes": "Gold weight published on the official page (1.3 g)."
+   },
+   "quote": "Size 5 $399.00 In-Stock ... Width 1/4 inch / Metal 14ktYellow Gold / Gold Weight 1.3 grams.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-981367",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/981367",
+   "fetched_at": "2026-10-22T23:29Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "14kt Yellow Gold Polished Ring",
+    "karat": "14K",
+    "price_low": 149.0,
+    "price_high": 149.0,
+    "weight_g_low": 0.5,
+    "weight_g_high": 0.5,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-10 each \"$149.00\"; specs panel \"Width 1/16 inch\", \"Metal: 14kt Yellow Gold\", \"Gold Weight: 0.5 grams\".",
+    "notes": "Gold weight published on the official page (0.5 g)."
+   },
+   "quote": "Size 5 $149.00 In-Stock ... Width 1/16 inch / Metal 14ktYellow Gold / Gold Weight 0.5 grams.",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "newly captured"
+   }
+  },
+  {
+   "id": "rs-991907",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/991907",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
+    "karat": "14K",
+    "price_low": 2795.0,
+    "price_high": 2795.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$2,795.00\"; specs panel \"Width 5/16 inch\", \"Metal: 14kt White Gold\", no Gold Weight field.",
+    "notes": "Lab-grown diamonds, IGI report included per the page text. No gold weight published."
+   },
+   "quote": "$2,795 ... Size 5 $2,795.00 In-Stock ... Width 5/16 inch / Metal 14ktWhite Gold / Finish Polished / Gemstone 1 Lab-Grown Diamond ( Quantity: 1, ... Weight: 2.00 carats ) / Gemstone 2 Lab-Grown Diamond ( Quantity: 10, ... Weight: 0.30 ct. t.w. )",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-991908",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/991908",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "1.20 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt White Gold",
+    "karat": "14K",
+    "price_low": 1795.0,
+    "price_high": 1795.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$1,795.00\"; specs panel \"Width 1/4 inch\", \"Metal: 14kt White Gold\", no Gold Weight field."
+   },
+   "quote": "$1,795 ... Size 5 $1,795.00 In-Stock ... Metal 14ktWhite Gold / Finish Polished",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-993512",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/993512",
+   "fetched_at": "2026-10-22T23:34Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "2.30 ct. t.w. Lab-Grown Diamond Engagement Ring in 14kt Yellow Gold",
+    "karat": "14K",
+    "price_low": 2795.0,
+    "price_high": 2795.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: variants 5-9 each \"$2,795.00\"; specs panel \"Metal: 14kt Yellow Gold\", no Gold Weight field.",
+    "notes": "Same ring as 991907 in yellow gold. No gold weight published."
+   },
+   "quote": "$2,795 ... Size 5 $2,795.00 In-Stock ... Metal 14ktYellow Gold / Finish Polished",
+   "checks": {
+    "price": "match",
+    "karat": "match",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "rs-999230",
+   "retailer": "Ross-Simons",
+   "source_url": "https://www.ross-simons.com/products/999230",
+   "fetched_at": "2026-10-22T23:31Z",
+   "status": "changed",
+   "observed": {
+    "karat": "14K",
+    "price_low": 489.0,
+    "price_high": 489.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22: banner \"CLEARANCE 30% Off\", \"Original price $695\", \"Sale price $489\"; in-stock variants 5/8/9 \"$489.00\" (sizes 6 and 7 Sold Out). No Gold Weight field on the page.",
+    "notes": "Stored range 489-559 replaced by the observed 489-489; the $559 figure is not shown on the live page and is treated as unverified (see Flagged F31). Stored title is the variant-name short form; the page heading is the full gemstone title (see Flagged F32)."
+   },
+   "quote": "CLEARANCE 30% Off ~~Original price $695~~ Sale price $489 ... Size 5 $489.00 In-Stock / Size 6 Sold Out / Size 7 Sold Out / Size 8 $489.00 In-Stock / Size 9 $489.00 In-Stock ... Width 1/8 inch / Metal 14ktYellow Gold / Finish Polished",
+   "checks": {
+    "price": "changed (high 559 not reproducible)",
+    "karat": "match",
+    "title": "stored title is the variant label, not the page heading",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "wc-4prong",
+   "retailer": "With Clarity",
+   "source_url": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring",
+   "fetched_at": "2026-10-22T23:44Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Four Prong Solitaire Diamond Engagement Ring",
+    "karat": "14K",
+    "price_low": 558.0,
+    "price_high": 801.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"558.00\", price_max \"801.00\"; the feed also shows compare_at_price_min \"620.00\" and compare_at_price_max \"890.00\".",
+    "notes": "The official feed now publishes a struck-through range of 620-890 above the charged range of 558-801."
+   },
+   "quote": "\"compare_at_price_max\":\"890.00\",\"compare_at_price_min\":\"620.00\" ... \"price\":\"558.00\",\"price_max\":\"801.00\",\"price_min\":\"558.00\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14K tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "wc-4prong-petite",
+   "retailer": "With Clarity",
+   "source_url": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring",
+   "fetched_at": "2026-10-22T23:44Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring",
+    "karat": "14K",
+    "price_low": 558.0,
+    "price_high": 963.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"558.00\", price_max \"963.00\"; compare-at range 620-1070."
+   },
+   "quote": "\"price\":\"558.00\",\"price_max\":\"963.00\",\"price_min\":\"558.00\" ... \"Ring Setting Product\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14K tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "wc-6prong",
+   "retailer": "With Clarity",
+   "source_url": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring",
+   "fetched_at": "2026-10-22T23:44Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Classic Six Prong Solitaire Diamond Engagement Ring",
+    "karat": "14K",
+    "price_low": 567.0,
+    "price_high": 828.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"567.00\", price_max \"828.00\"; compare-at range 630-920."
+   },
+   "quote": "\"price\":\"567.00\",\"price_max\":\"828.00\",\"price_min\":\"567.00\" ... \"Ring Setting Product\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14K tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "wc-gerbera",
+   "retailer": "With Clarity",
+   "source_url": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring",
+   "fetched_at": "2026-10-22T23:44Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring",
+    "karat": "14K",
+    "price_low": 1210.0,
+    "price_high": 1850.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"1210.00\", price_max \"1850.00\"; body confirms the centre stone is a created (lab) blue sapphire.",
+    "notes": "Centre stone is created, not natural - the feed body says \"striking marquise created blue sapphire\"."
+   },
+   "quote": "\"price\":\"1210.00\",\"price_max\":\"1850.00\",\"price_min\":\"1210.00\" ... \"This engagement ring is inspired by the Gerbera flower petals with its striking marquise created blue sapphire.\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14K tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  },
+  {
+   "id": "wc-tulip",
+   "retailer": "With Clarity",
+   "source_url": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring",
+   "fetched_at": "2026-10-22T23:40Z",
+   "status": "confirmed",
+   "observed": {
+    "title": "Tulip Basket Cathedral Classic Solitaire Engagement Ring",
+    "karat": "14K",
+    "price_low": 590.0,
+    "price_high": 1110.0,
+    "weight_absent": true,
+    "evidence_suffix": "Re-checked 2026-10-22 on the official storefront feed: price_min \"590.00\", price_max \"1110.00\", tags include \"Ring Setting Product\", \"14K\", \"18K\", \"Platinum\"."
+   },
+   "quote": "\"price\":\"590.00\",\"price_max\":\"1110.00\",\"price_min\":\"590.00\" ... \"Ring Setting Product\"",
+   "checks": {
+    "price": "match",
+    "karat": "match (14K tag)",
+    "title": "match",
+    "weight": "not published - left blank"
+   }
+  }
+ ]
+}

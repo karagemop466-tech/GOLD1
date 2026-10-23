@@ -187,7 +187,7 @@
       "publisher": "US Government (eCFR, Office of the Federal Register)",
       "type": "regulation",
       "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "verified": "16 CFR Part 23 \"Guides for the Jewelry, Precious Metals, and Pewter Industries\" exists, up to date as of 2026-10-21, and contains § 23.3 \"Misrepresentation as to gold content\", § 23.4 \"Misuse of the word vermeil\", § 23.10 \"Additional guidance for the use of quality marks\" and § 23.18 \"Misrepresentation of weight and total weight\". Section text is not quoted here.",
+      "verified": "16 CFR Part 23 read in full on 2026-10-22 (current as of 2026-10-21): § 23.3(a)-(c) & fn. 32 (\"Solid Gold\" barred on hollow items; definitions of Gold Filled ≥1/20, Rolled Gold Plate ≥1/40, Gold Electroplate ≥0.175 µm; 15 U.S.C. 295 3/7 ppt tolerances), § 23.4 (Vermeil ≥2.5 µm on sterling), § 23.7 (rhodium disclosure), § 23.10 & 15 U.S.C. 297 (mandatory trademark beside quality mark), § 23.18 (1 ct = 200 mg).",
       "status": "retrieved",
       "retrieved_at": "2026-10-22"
     },
@@ -306,6 +306,191 @@
       "url": "https://api.gold-api.com/price/XAU",
       "verified": "Second reading of the same feed: 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z); the later reading drives the melt arithmetic",
       "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "p18-with-clarity-recheck",
+      "publisher": "With Clarity",
+      "type": "official product page",
+      "url": "https://www.withclarity.com/search/suggest.json?q=solitaire",
+      "verified": "5 rows re-read from the storefront feed; setting prices confirmed, no metal weight published",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-aurate-recheck",
+      "publisher": "Aurate New York",
+      "type": "official product page",
+      "url": "https://auratenewyork.com/search/suggest.json?q=ring",
+      "verified": "5 rows re-read from the storefront feed; published weight range 2.6-4g confirmed on Modern Cigar Band",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-anna-sheffield-recheck",
+      "publisher": "Anna Sheffield",
+      "type": "official product page",
+      "url": "https://www.annasheffield.com/products/bea-solitaire-ring-14k-gold-champagne-diamond-1-50ct",
+      "verified": "3 rows re-read; the Bea solitaire page no longer displays any price, so the row is published as unverified",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-blue-nile-recheck",
+      "publisher": "Blue Nile",
+      "type": "official product page",
+      "url": "https://www.bluenile.com/build-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-203284",
+      "verified": "8 setting pages re-read; two pages contradict themselves on karat in the details panel",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "p18-mejuri-recheck",
+      "publisher": "Mejuri",
+      "type": "official product page",
+      "url": "https://mejuri.com/shop/rings?Material=Solid+Yellow+Gold+(14k)",
+      "verified": "4 rows re-read; all four state 'Solid Yellow Gold (14k)' on the page",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22",
+      "observed_by": "sess-277867af"
+    },
+    {
+      "id": "rs-html-pdps-0804e222",
+      "publisher": "Ross-Simons",
+      "type": "official product pages (HTML spec tables)",
+      "url": "https://www.ross-simons.com/products/997811",
+      "verified": "Full HTML Details spec read across all 17 inherited Ross-Simons SKUs (recovering 960952 1.3 g) plus 10kt ring 997811 ($89, 0.3 g, solid gold alloy) and 14kt eternity band 939479 ($499, 1.5 g)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bn-return-policy",
+      "publisher": "Blue Nile",
+      "type": "official policy page",
+      "url": "https://www.bluenile.com/policies/returns",
+      "verified": "30-day return window from shipment date (max 2 free US returns/year); resized, custom, and engraved items excluded; $150 missing diamond report fee; +1-800-242-2728; service@bluenile.com",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "mej-return-policy",
+      "publisher": "Mejuri",
+      "type": "official policy & terms pages",
+      "url": "https://mejuri.com/company/returns-terms",
+      "verified": "Free 30-day return from delivery/pickup on unworn items; engraved and Before We Melt items final sale; contact@mejuri.com; Toronto HQ; 10k solid gold listings diamonds-line-ring & signet-ring ($348)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "be-return-policy",
+      "publisher": "Brilliant Earth",
+      "type": "official policy page",
+      "url": "https://www.brilliantearth.com/30-Day-Returns/",
+      "verified": "30-day return window from shipment/pickup readiness; resized, third-party modified, custom, and comparative-purchasing orders excluded; $40 engraving removal fee; 1-800-691-0952; 300 Grant Ave Fl 3, San Francisco, CA",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "wc-terms-conditions",
+      "publisher": "With Clarity",
+      "type": "official terms & conditions",
+      "url": "https://www.withclarity.com/pages/terms-conditions",
+      "verified": "1-844-234-6463; service@withclarity.com; Renaissance FMI Inc., 46-24 28th St, Long Island City, NY; limit 1 return or exchange per 6 months (subsequent orders final sale)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "ag-products-and-policy",
+      "publisher": "Automic Gold",
+      "type": "official product pages, JSON feeds & return policy",
+      "url": "https://www.automicgold.com/pages/returns-exchange-policy",
+      "verified": "7 solid 14k gold rings with published gold gram weights (1.4 g to 7.0 g) and prices ($1,334 to $3,074); free 30-day US returns from delivery; engraved (+$60) & custom final sale; 1-888-992-8866; care@automicgold.com; 88 10th Ave #10, NYC",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "car-products-and-policy",
+      "publisher": "Cartier",
+      "type": "official product pages & Conditions of Sale",
+      "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+      "verified": "3 verified 18K (750/1000) rings (CRB4230400 $3,350, CRB4225700 $3,600, CRB4057600 $1,140); 30-day delivery return window; engraved/altered strictly non-returnable; 1-800-227-8437; 653 Fifth Ave, NYC",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "mene-products-and-policy",
+      "publisher": "Menē",
+      "type": "official product pages & Terms of Service",
+      "url": "https://mene.com/terms-of-service",
+      "verified": "2 verified 24K pure gold bands (Classic $1,720, Narrow $1,372); ±1.0 g Crafted-on-Demand COA weight disclosure; 7-day return window (up to 10% refund restocking fee; 5% missing COA fee) + Lifetime Buyback; 1-833-636-3245",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "nist-handbook-130",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "type": "federal metrological standard",
+      "url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
+      "verified": "NIST Handbook 130 § 2.17 exact conversion: 1 troy ounce = 31.1034768 grams = 20 pennyweights (1.55517384 g/dwt) = 480 grains",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "gia-2024-electroformed",
+      "publisher": "Gemological Institute of America (GIA)",
+      "type": "peer-reviewed gemological lab note",
+      "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+      "verified": "Spring 2024 Lab Note: 41 g resin-filled electroformed gold bracelet with glued-on 14K disk fooled surface XRF (17.99K–22.47K with no plating alert)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "gia-2025-gold-plated-gold",
+      "publisher": "Gemological Institute of America (GIA)",
+      "type": "peer-reviewed gemological lab note",
+      "url": "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold",
+      "verified": "Summer 2025 Lab Note (\"Gold-Plated Gold\"): 9K/10K gold items plated with higher-karat yellow gold fooled surface XRF (13.5K–18K with no plating alert)",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "cfpb-credit-card-disputes",
+      "publisher": "Consumer Financial Protection Bureau (CFPB)",
+      "type": "federal consumer-protection guidance",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+      "verified": "Fair Credit Billing Act (15 U.S.C. § 1666 & § 1666i; Ask-CFPB en-61 & en-1969): 60-day written billing-error rule and credit-card claims/defenses rights",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bbb-retailer-profiles",
+      "publisher": "Better Business Bureau (BBB)",
+      "type": "independent complaint & accreditation registry",
+      "url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/aurate-new-york-0121-170321",
+      "verified": "BBB ratings & complaint records checked across retailers: A+ Accredited on Ross-Simons, Blue Nile, Brilliant Earth, With Clarity; A+ Unaccredited on Anna Sheffield; F rating (8 unanswered of 23 complaints) on Aurate New York",
+      "status": "retrieved",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "cartier-crn4744700-rejected",
+      "publisher": "Cartier",
+      "type": "dead luxury lead URL",
+      "url": "https://www.cartier.com/en-us/jewelry/engagement-rings/solitaire-1895/solitaire-1895-CRN4744700.html",
+      "verified": "Nothing — returned Cartier page-not-found / removed product notice on 2026-10-22; excluded from canonical table.",
+      "status": "rejected (404)",
+      "retrieved_at": "2026-10-22"
+    },
+    {
+      "id": "bluenile-203242-rejected",
+      "publisher": "Blue Nile",
+      "type": "dead product URL",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-203242",
+      "verified": "Nothing — returned HTTP 404 on 2026-10-22; excluded.",
+      "status": "rejected (404)",
       "retrieved_at": "2026-10-22"
     }
   ]

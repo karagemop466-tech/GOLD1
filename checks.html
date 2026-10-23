@@ -38,16 +38,16 @@
   
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own product feed and linked on the same row. <strong>Nothing is estimated, averaged or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Re-check against the source link before you buy: prices change without notice.</p>
+  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="checks.html">S01–S19 + A01–A10</a>); re-check the live source link before paying.</p>
 </div>
   
   <div class="pass-card">
     <div class="pass-head">
       <span class="badge ok">PASS</span>
-      <strong>P36</strong>
-      <span class="muted">run 2026-10-22T23:36:03Z</span>
+      <strong>P40</strong>
+      <span class="muted">run 2026-10-22T23:59:37Z</span>
     </div>
-    <p>17 passed · 0 failed · 17 checks against 43 rows and 75 generated pages.</p>
+    <p>19 passed · 0 failed · 19 checks against 59 rows and 91 generated pages.</p>
   </div>
   <div class="table-wrap">
   <table class="data-table">
@@ -69,7 +69,7 @@
       </tr>
       <tr>
         <td><strong>S03</strong><div class="sub">Karat validity and traceability</div></td>
-        <td class="small">Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row&#39;s own evidence text.</td>
+        <td class="small">Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row&#39;s own evidence text (including 750/1000 fineness for 18K).</td>
         <td class="num-col">1</td>
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
@@ -132,7 +132,7 @@
       </tr>
       <tr>
         <td><strong>S12</strong><div class="sub">Row-to-page coverage</div></td>
-        <td class="small">Every row must have a detail page that shows both its source link and its verified price.</td>
+        <td class="small">Every row must have a detail page that shows its source link and, unless the value is unverified, its verified price.</td>
         <td class="num-col">1</td>
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
@@ -172,6 +172,20 @@
         <td class="num-col">0</td>
         <td><span class="chip ok">pass</span></td>
       </tr>
+      <tr>
+        <td><strong>S18</strong><div class="sub">Unverified values are published as unverified</div></td>
+        <td class="small">A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
+      <tr>
+        <td><strong>S19</strong><div class="sub">Unverified prices never render as numbers</div></td>
+        <td class="small">A row whose price could not be reproduced must print &quot;— unverified&quot; wherever a price would go.</td>
+        <td class="num-col">1</td>
+        <td class="num-col">0</td>
+        <td><span class="chip ok">pass</span></td>
+      </tr>
       
     </tbody>
   </table>
@@ -182,12 +196,12 @@
   <table class="data-table compact">
     <thead><tr><th>Pass</th><th>Run at</th><th class="num-col">Checks</th><th class="num-col">Failed</th><th>Result</th><th>What happened</th></tr></thead>
     <tbody>
-      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P11</td><td>2026-10-22T23:22:32Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P12</td><td>2026-10-22T23:23:10Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P13</td><td>2026-10-22T23:25:53Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Third-pass edit: a row lost its weight_not_published flag when a weight was added. S10 caught it before publish.</td></tr><tr><td>P14</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after restoring the flag: clean.</td></tr><tr><td>P15</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Deliberate sabotage test: a fake price of seven thousand seven hundred seventy-seven dollars was injected into index.html to prove S16 fires. It did. Reverted immediately.</td></tr><tr><td>P16</td><td>2026-10-22T23:26:05Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Nav gained a Weight &amp; melt link before the page existed: S11 reported 58 broken links. Page then built.</td></tr><tr><td>P17</td><td>2026-10-22T23:26:08Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Same broken-link state, re-run to confirm the failure was reproducible.</td></tr><tr><td>P18</td><td>2026-10-22T23:26:21Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">All 17 groups pass with the new page in place and the sabotage reverted.</td></tr><tr><td>P19</td><td>2026-10-22T23:26:41Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">S16 caught the checker flagging its own page: a sabotage price quoted inside a pass note was rendered on checks.html. Note wording changed; the guard stays strict.</td></tr><tr><td>P20</td><td>2026-10-22T23:26:44Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after the note rewording: clean.</td></tr><tr><td>P21</td><td>2026-10-22T23:26:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P22</td><td>2026-10-22T23:27:09Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P23</td><td>2026-10-22T23:27:28Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P24</td><td>2026-10-22T23:27:39Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P25</td><td>2026-10-22T23:27:53Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P26</td><td>2026-10-22T23:27:58Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P27</td><td>2026-10-22T23:29:18Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Rebuild + re-run before opening the publish PR: clean.</td></tr><tr><td>P28</td><td>2026-10-22T23:29:51Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P29</td><td>2026-10-22T23:30:58Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P30</td><td>2026-10-22T23:32:09Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P31</td><td>2026-10-22T23:33:01Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P32</td><td>2026-10-22T23:33:56Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P33</td><td>2026-10-22T23:34:04Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P34</td><td>2026-10-22T23:34:15Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P35</td><td>2026-10-22T23:35:56Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P36</td><td>2026-10-22T23:36:03Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr>
+      <tr><td>P1</td><td>2026-10-22T23:16:09Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P2</td><td>2026-10-22T23:16:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P3</td><td>2026-10-22T23:16:52Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P4</td><td>2026-10-22T23:17:20Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P5</td><td>2026-10-22T23:17:35Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P6</td><td>2026-10-22T23:19:15Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P7</td><td>2026-10-22T23:19:44Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P8</td><td>2026-10-22T23:19:50Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P9</td><td>2026-10-22T23:20:31Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P10</td><td>2026-10-22T23:20:40Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P11</td><td>2026-10-22T23:22:32Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P12</td><td>2026-10-22T23:23:10Z</td><td class="num-col">13</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P13</td><td>2026-10-22T23:25:53Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Third-pass edit: a row lost its weight_not_published flag when a weight was added. S10 caught it before publish.</td></tr><tr><td>P14</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after restoring the flag: clean.</td></tr><tr><td>P15</td><td>2026-10-22T23:25:57Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">Deliberate sabotage test: a fake price of seven thousand seven hundred seventy-seven dollars was injected into index.html to prove S16 fires. It did. Reverted immediately.</td></tr><tr><td>P16</td><td>2026-10-22T23:26:05Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Nav gained a Weight &amp; melt link before the page existed: S11 reported 58 broken links. Page then built.</td></tr><tr><td>P17</td><td>2026-10-22T23:26:08Z</td><td class="num-col">17</td><td class="num-col">59</td><td><span class="chip bad">fail</span></td><td class="small">Same broken-link state, re-run to confirm the failure was reproducible.</td></tr><tr><td>P18</td><td>2026-10-22T23:26:21Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">All 17 groups pass with the new page in place and the sabotage reverted.</td></tr><tr><td>P19</td><td>2026-10-22T23:26:41Z</td><td class="num-col">17</td><td class="num-col">1</td><td><span class="chip bad">fail</span></td><td class="small">S16 caught the checker flagging its own page: a sabotage price quoted inside a pass note was rendered on checks.html. Note wording changed; the guard stays strict.</td></tr><tr><td>P20</td><td>2026-10-22T23:26:44Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Re-run after the note rewording: clean.</td></tr><tr><td>P21</td><td>2026-10-22T23:26:57Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P22</td><td>2026-10-22T23:27:09Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P23</td><td>2026-10-22T23:27:28Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P24</td><td>2026-10-22T23:27:39Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P25</td><td>2026-10-22T23:27:53Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P26</td><td>2026-10-22T23:27:58Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P27</td><td>2026-10-22T23:29:18Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">Rebuild + re-run before opening the publish PR: clean.</td></tr><tr><td>P28</td><td>2026-10-22T23:29:51Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P29</td><td>2026-10-22T23:30:58Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P30</td><td>2026-10-22T23:32:09Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P31</td><td>2026-10-22T23:33:01Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P32</td><td>2026-10-22T23:33:56Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P33</td><td>2026-10-22T23:34:04Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P34</td><td>2026-10-22T23:34:15Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P35</td><td>2026-10-22T23:35:56Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P36</td><td>2026-10-22T23:36:03Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P37</td><td>2026-10-22T23:36:21Z</td><td class="num-col">17</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P38</td><td>2026-10-22T23:48:51Z</td><td class="num-col">19</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small">sess-277867af reconciled 19-group pass (originally numbered P21 before history union)</td></tr><tr><td>P39</td><td>2026-10-22T23:58:02Z</td><td class="num-col">19</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr><tr><td>P40</td><td>2026-10-22T23:59:37Z</td><td class="num-col">19</td><td class="num-col">0</td><td><span class="chip ok">pass</span></td><td class="small"></td></tr>
     </tbody>
   </table>
   </div>
   <h2 id="reverification">Re-verification ledger — pass P12</h2>
-  <p>20 listings were re-read from their live pages in this pass. Each line records what the page said the first time, what it said on the re-read, and the quote that proves it. The machine-readable version is <code>data/reverification.json</code>, and check S15 fails the build if a row claims to be re-verified without an entry here.</p>
+  <p>59 listings were re-read from their live pages in this pass. Each line records what the page said the first time, what it said on the re-read, and the quote that proves it. The machine-readable version is <code>data/reverification.json</code>, and check S15 fails the build if a row claims to be re-verified without an entry here.</p>
   <div class="table-wrap">
   <table class="data-table">
     <thead><tr><th scope="col">Row</th><th scope="col">What was checked</th><th scope="col">Before</th><th scope="col">On re-read</th><th scope="col">Verdict</th><th scope="col">Quote / source</th></tr></thead>
@@ -264,11 +278,11 @@
         <td class="small">Per-SKU official search feed: price &quot;2695.00&quot;, title &quot;2.00 ct. t.w. Diamond Eternity Band in 14kt Yellow Gold&quot; (read via https://www.ross-simons.com/search/suggest.json?q=879968) <a href="https://www.ross-simons.com/products/879968" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
         <td><strong>rs-960952</strong></td>
-        <td class="small">price, title</td>
+        <td class="small">price, title, karat, metal_weight</td>
         <td class="small">price: 399.00</td>
-        <td class="small">price: 399.00</td>
-        <td class="small">confirmed</td>
-        <td class="small">Per-SKU official search feed: price &quot;399.00&quot;, title &quot;Italian 14kt Yellow Gold Dome Ring&quot; (read via https://www.ross-simons.com/search/suggest.json?q=960952) <a href="https://www.ross-simons.com/products/960952" target="_blank" rel="noopener nofollow">page ↗</a></td>
+        <td class="small">price: 399.00 · karat: 14kt · weight_g: 1.3</td>
+        <td class="small">confirmed + weight 1.3 g recovered from HTML PDP</td>
+        <td class="small">Width 3/16 inch · Metal 14kt Yellow Gold · Gold Weight 1.3 grams · Finish Textured and Polished · All weights and measurements are approximate. <a href="https://www.ross-simons.com/products/960952" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
         <td><strong>rs-999230</strong></td>
         <td class="small">price, title</td>
@@ -313,11 +327,11 @@
         <td class="small">Product feed: price 899500 cents, description &quot;GIA Cert #7235079100&quot;, size 7 only (read via https://www.ross-simons.com/products/240912.js) <a href="https://www.ross-simons.com/products/240912" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
         <td><strong>as-bea-sol</strong></td>
-        <td class="small">price, metal</td>
+        <td class="small">price, metal, purchasability</td>
         <td class="small">price: 11500.00</td>
         <td class="small">price: 11500.00</td>
-        <td class="small">confirmed</td>
-        <td class="small">Product feed: price 1150000 cents, description &quot;1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank&quot; (read via https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js) <a href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" target="_blank" rel="noopener nofollow">page ↗</a></td>
+        <td class="small">feed price confirmed; HTML inquiry-only flagged</td>
+        <td class="small">Product feed: price 1150000 cents, description &quot;1.50ct oval champagne diamond center set in 14k recycled yellow or rose gold tapered shank&quot; (read via https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond.js) HTML PDP: &quot;While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you&quot; <a href="https://www.annasheffield.com/products/bea-solitaire-ring-gold-north-south-1-50ct-oval-champagne-diamond" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr><tr>
         <td><strong>wc-tulip</strong></td>
         <td class="small">price, setting_basis</td>
@@ -332,11 +346,284 @@
         <td class="small">price: not re-read variant by variant; feed spans 118.00-1668.00</td>
         <td class="small">weight confirmed / 14K price unconfirmed</td>
         <td class="small">Product feed: price_min 11800, price_max 166800 cents; description &quot;Weight: 2.6-4g&quot; (read via https://auratenewyork.com/products/modern-cigar-band.js) <a href="https://auratenewyork.com/products/modern-cigar-band" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-991908</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 1795.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1795.00 · karat: 14kt · weight_g: blank</td>
+        <td class="small">confirmed; Gold Weight genuinely omitted on stone-set PDP</td>
+        <td class="small">Price $1,795 · Metal 14kt Yellow Gold · Accompanied by an IGI lab grading report · Lab-Grown Diamond 1.50 ct. <a href="https://www.ross-simons.com/products/991908" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-254575</strong></td>
+        <td class="small">price, karat, metal_weight</td>
+        <td class="small">price: 695.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 695.00 · karat: 14kt · weight_g: blank</td>
+        <td class="small">confirmed; Gold Weight omitted on estate PDP</td>
+        <td class="small">C. 1980 Vintage .25 Carat Marquise Diamond Solitaire Ring in 14kt Yellow Gold · Size 6 $695.00 · Metal 14kt Yellow Gold <a href="https://www.ross-simons.com/products/254575" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>wc-4prong-petite</strong></td>
+        <td class="small">setting_basis, karat</td>
+        <td class="small">price: 558.00-963.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 558.00-963.00 (feed; HTML uses JS builder) · karat: 14KT · weight_g: blank</td>
+        <td class="small">setting-only basis confirmed</td>
+        <td class="small">&quot;Create Your Diamond Ring&quot; — 1 Choose a setting · 2 Choose a diamond · 3 Complete Your Ring · Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring <a href="https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>wc-6prong</strong></td>
+        <td class="small">setting_basis, karat, page_consistency</td>
+        <td class="small">price: 567.00-828.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 567.00-828.00 (feed; HTML uses JS builder) · karat: 14KT · weight_g: blank</td>
+        <td class="small">setting-only basis confirmed + &quot;14KT Platinum&quot; alt-text defect noted</td>
+        <td class="small">&quot;Create Your Diamond Ring&quot; — 1 Choose a setting · Classic Six Prong Solitaire Diamond Engagement Ring with Pear Cut Diamond in 14KT Yellow Gold (and &quot;14KT Platinum&quot; alt text) <a href="https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>wc-gerbera</strong></td>
+        <td class="small">setting_basis, karat, page_consistency</td>
+        <td class="small">price: 1210.00-1850.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1210.00-1850.00 (feed; HTML uses JS builder) · karat: 14KT · weight_g: blank</td>
+        <td class="small">setting-only basis confirmed + &quot;14KT Platinum&quot; alt-text defect noted</td>
+        <td class="small">&quot;Create Your Diamond Ring&quot; — 1 Choose a setting · Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring ... in 14KT Yellow Gold <a href="https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>as-hazeline</strong></td>
+        <td class="small">price, karat, metal_weight, purchasability</td>
+        <td class="small">price: 7150.00-9200.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 7150.00-9200.00 (.js feed only; HTML page is inquiry-only) · karat: 14k · weight_g: blank</td>
+        <td class="small">inquiry-only custom archive piece flagged</td>
+        <td class="small">Hazeline Solitaire Ring - Yellow Gold &amp; Cushion Champagne Diamond · &quot;While this one-of-a-kind piece was made for a client, we are able to create a unique version just for you&quot; <a href="https://www.annasheffield.com/products/hazeline-solitaire-ring-yellow-gold-cushion-champagne-diamond" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>as-bea-3stone</strong></td>
+        <td class="small">price, karat, metal_weight, purchasability</td>
+        <td class="small">price: 5400.00-25100.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 5400.00-25100.00 · karat: 14k · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Bea Three Stone Ring - 14k Gold &amp; White Diamond Center · Variant total $25,100.00 · 4 X $1,350.00 · &quot;recycled 14k yellow, rose, or white gold&quot; <a href="https://www.annasheffield.com/products/bea-three-stone-ring-gold-emerald-cut-white-diamond" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>au-2ct-oval</strong></td>
+        <td class="small">price, karat, metal_weight, returns</td>
+        <td class="small">price: 1968.00-2800.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1968.00 (14k Gold variant) · karat: 14k · weight_g: 2.73</td>
+        <td class="small">confirmed + published weight 2.73 g recovered + Final Sale warning flagged</td>
+        <td class="small">2ct Oval Lab Grown Diamond Bezel Ring · $1,968 · Rate - 14k GOLD · Weight: 2.73g · 2.25tcw · &quot;Exchange for size only. Final Sale!&quot; <a href="https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>au-1ct-emerald</strong></td>
+        <td class="small">price, karat, metal_weight, returns</td>
+        <td class="small">price: 1498.00-2100.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1498.00 (14k Gold variant) · karat: 14k · weight_g: 1.97</td>
+        <td class="small">confirmed + published weight 1.97 g recovered + Final Sale warning flagged</td>
+        <td class="small">1ct Emerald Lab Grown Diamond Bezel Ring · $1,498 · Rate - 14k GOLD · Weight: 1.97g · 0.85tcw · &quot;Final Sale! Exchange for size only.&quot; <a href="https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>au-3ct-round</strong></td>
+        <td class="small">price, karat, metal_weight, returns</td>
+        <td class="small">price: 2438.00-3000.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 2438.00 (14k Gold variant) · karat: 14k · weight_g: 3.3</td>
+        <td class="small">confirmed + published weight 3.3 g recovered + Final Sale warning flagged</td>
+        <td class="small">3ct Round Lab Grown Diamond Bezel Ring · $2,438 · Rate - 14k GOLD · Weight: 3.3g · 2.85tcw · &quot;Exchange for size only. Final Sale!&quot; <a href="https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>au-xring</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight, returns</td>
+        <td class="small">price: 1808.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1808.00 (14k Gold variant) · karat: 14k · weight_g: 2.7</td>
+        <td class="small">confirmed + weight 2.7 g &amp; explicit &quot;solid gold&quot; wording recovered + Final Sale flagged</td>
+        <td class="small">Diamond X Ring · $1,808 · Rate - 14k GOLD · &quot;Precision-crafted in solid gold&quot; · Weight: 2.7g · 37 G/H SI2 Clarity Round Diamonds (0.44tcw) · &quot;Final Sale! Exchange for size only.&quot; <a href="https://auratenewyork.com/products/x-ring-with-diamonds" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-14k-ccf-203284</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis, page_consistency</td>
+        <td class="small">price: 935.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 935.00 · karat: 14K (prose says 18k) · weight_g: blank</td>
+        <td class="small">confirmed + 14K/18k prose contradiction &amp; $1,000 warranty gap flagged</td>
+        <td class="small">Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm) · $935(Setting Price) · Product Details: &quot;crafted in 18k yellow gold&quot; · Warranty: &quot;$1,000 or more&quot; <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-14k-tc-203288</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1240.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1240.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Tapered Cathedral Solitaire Engagement Ring in 14K Yellow Gold · $1,240(Setting Price) · Metal 14K Yellow Gold · Width 2.20mm <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-item-203288" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-14k-leaf-192442</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1275.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1275.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Leaf Solitaire Engagement Ring in 14k Yellow Gold · $1,275(Setting Price) · Metal 14K Yellow Gold · Width 2.00mm <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/leaf-solitaire-engagement-ring-in-14k-yellow-gold-item-192442" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-14k-bezel-296643</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1310.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1310.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Bezel Solitaire Engagement Ring in 14K Yellow Gold · $1,310(Setting Price) · Metal 14K Yellow Gold · Width 2.00mm <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bezel-solitaire-engagement-ring-in-14k-yellow-gold-item-296643" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-14k-ridge-304497</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 2065.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 2065.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Ridged Dome Solitaire Engagement Ring in 14K Yellow Gold · $2,065(Setting Price) · Metal 14K Yellow Gold · Width 4.20mm <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/ridged-dome-solitaire-engagement-ring-in-14k-yellow-gold-item-304497" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-14k-6p-203272</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1000.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1000.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold · $1,000(Setting Price) · Stock Number 501140y14 · Width 1.90mm <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-18k-6p-194159</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1240.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 1240.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Classic Six-Prong Solitaire Engagement Ring in 18k Yellow Gold · $1,240(Setting Price) · Stock Number 501140y · Width 1.90mm <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-194159" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>bn-18k-pn-203268</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis, page_consistency</td>
+        <td class="small">price: 1420.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 1420.00 · karat: 18K (prose says 14k WG) · weight_g: blank</td>
+        <td class="small">confirmed + existing F16 contradiction still live</td>
+        <td class="small">Petite Nouveau Six-Prong Solitaire Engagement Ring in 18K Yellow Gold · $1,420(Setting Price) · Product Details: &quot;14k white gold&quot; <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-nouveau-six-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-203268" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mej-deb</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1100.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 1100.00 · karat: 14k · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Diamond Eternity Band · From $1,100 · Solid Yellow Gold (14k), Natural Diamond · &quot;handcrafted in recycled 14k solid gold&quot; · Band Width: 1.5 mm <a href="https://mejuri.com/products/diamond-eternity-band" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mej-db</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight, returns</td>
+        <td class="small">price: 648.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 648.00 · karat: 14k · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Diamonds Band · $648 · Solid Yellow Gold (14k), Natural Diamond · Shank Width: 2.8 mm · Engraving not eligible for returns <a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mej-bde</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 2900.00 · karat: 14K · weight_g: blank</td>
+        <td class="small">price: 2900.00 · karat: 14k · weight_g: blank</td>
+        <td class="small">confirmed + default white-gold variant noted</td>
+        <td class="small">Bold Diamond Eternity Ring · From $2,900 · Solid White Gold (14k), Natural Diamond · &quot;handcrafted in 14k solid gold&quot; · Band Width: 2.6 mm <a href="https://mejuri.com/products/bold-diamond-eternity-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>be-18k-6p-121h6</strong></td>
+        <td class="small">price, karat, metal_weight, setting_basis</td>
+        <td class="small">price: 1090.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 1090.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">confirmed</td>
+        <td class="small">Classic Six-Prong Solitaire Engagement Ring · 18K Yellow Gold · $1,090 (Setting Only) · SKU BE121H6-18KY · Width: 2.5mm · Prong Metal: 14K White Gold <a href="https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-997811</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 89.00 · karat: 10K · weight_g: 0.3</td>
+        <td class="small">price: 89.00 · karat: 10K · weight_g: 0.3</td>
+        <td class="small">verified (10K, 0.3 g)</td>
+        <td class="small">Title &quot;Italian 10kt Yellow Gold Textured Ring&quot;; price &quot;$89&quot;; specs &quot;Width 1/16 inch · Metal 10kt Yellow Gold · Gold Weight 0.3 grams · Country of Origin Italy&quot;; FAQ on page &quot;crafted from 10kt yellow gold, meaning it is made of solid gold alloy throughout its structure&quot;. <a href="https://www.ross-simons.com/products/997811" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>rs-939479</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 499.00 · karat: 14K · weight_g: 1.5</td>
+        <td class="small">price: 499.00 · karat: 14K · weight_g: 1.5</td>
+        <td class="small">verified (14K, 1.5 g)</td>
+        <td class="small">Title &quot;1.00 ct. t.w. Lab-Grown Diamond Eternity Band in 14kt Yellow Gold&quot;; price &quot;$499&quot; across sizes 5-9; specs &quot;Width 1/16 inch · Metal 14kt Yellow Gold · Gold Weight 1.5 grams · Lab-Grown Diamond 1.00 ct. t.w.&quot; <a href="https://www.ross-simons.com/products/939479" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mej-10k-dlr</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 348.00 · karat: 10K · weight_g: blank</td>
+        <td class="small">price: 348.00 · karat: 10K · weight_g: blank</td>
+        <td class="small">verified (10K, weight null)</td>
+        <td class="small">Title &quot;Diamonds Line Ring&quot;; price &quot;$348&quot;; material &quot;Solid Yellow Gold (10k), Natural Diamond&quot;; specs &quot;Band Width: 1.3 mm · Band Thickness: 1.45 mm · Stone Quantity: 6 · Total Carat Weight: &gt;=0.047 ct&quot;. <a href="https://mejuri.com/us/en/products/diamonds-line-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mej-10k-sig</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 348.00 · karat: 10K · weight_g: blank</td>
+        <td class="small">price: 348.00 · karat: 10K · weight_g: blank</td>
+        <td class="small">verified (10K, weight null)</td>
+        <td class="small">Title &quot;Signet Ring&quot;; price &quot;$348&quot;; material &quot;Solid Yellow Gold (10k)&quot;; specs &quot;Top Width: 6 mm · Shank Width: 1 mm · Thickness: 1.2 mm · Handcrafted in 10k solid gold&quot;; free engraving offered (non-returnable if engraved). <a href="https://mejuri.com/us/en/products/signet-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-radiant-3ct</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 3074.00 · karat: 14K · weight_g: 5.4</td>
+        <td class="small">price: 3074.00 · karat: 14K · weight_g: 5.4</td>
+        <td class="small">verified (14K, 5.4 g)</td>
+        <td class="small">Title &quot;3ct Radiant Cut Lab Diamond Cathedral Ring&quot;; 14k Yellow Gold price &quot;$3,074.00&quot; across all sizes; specs &quot;Material: Solid 14k gold (reclaimed) · Stone: 3ct Radiant Cut Lab Diamond (VS/VVS, D-F) · Band Width: 3mm · Band Thickness: 1.65mm · Item Weight: Approximately 5.4g (gold)&quot;. <a href="https://www.automicgold.com/products/radiant-cut-lab-diamond-cathedral-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-marquise-melted</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 2870.00 · karat: 14K · weight_g: 7</td>
+        <td class="small">price: 2870.00 · karat: 14K · weight_g: 7</td>
+        <td class="small">verified (14K, 7 g)</td>
+        <td class="small">Title &quot;1ct Marquise Diamond Melted Ring&quot;; 14k Yellow Gold / Lab Created Diamond price &quot;$2,870.00&quot;; specs &quot;Material: Solid 14k gold (reclaimed) · Stone: 1ct Marquise Diamond (VS/VVS, D-F) · Item Weight: Approximately 7.0g (gold)&quot;. <a href="https://www.automicgold.com/products/marquise-diamond-melted-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-leaves</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 2194.00 · karat: 14K · weight_g: 3.6</td>
+        <td class="small">price: 2194.00 · karat: 14K · weight_g: 3.6</td>
+        <td class="small">verified (14K, 3.6 g)</td>
+        <td class="small">Title &quot;Diamond Leaves Ring&quot;; 14k Yellow Gold / Clear Lab Diamond price &quot;$2,194.00&quot;; specs &quot;Material: Solid 14k Gold (reclaimed) · Center Stone: 6mm Rose Cut Diamond · Band Width: 1.85mm · Item Weight: Approximately 3.6g (gold)&quot;. <a href="https://www.automicgold.com/products/diamond-leaves-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-petal</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1774.00 · karat: 14K · weight_g: 2.7</td>
+        <td class="small">price: 1774.00 · karat: 14K · weight_g: 2.7</td>
+        <td class="small">verified (14K, 2.7 g)</td>
+        <td class="small">Title &quot;0.6ct Round Diamond Petal Ring&quot;; 14k Yellow Gold / Lab Created Diamond price &quot;$1,774.00&quot;; specs &quot;Material: Solid 14k gold (reclaimed) · Stone: 0.6ct Round Diamond (VS/VVS, D-F) · Band Width: 1.5mm · Item Weight: Approximately 2.7g (gold)&quot;. <a href="https://www.automicgold.com/products/diamond-petal-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-kite</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1978.00 · karat: 14K · weight_g: 3.5</td>
+        <td class="small">price: 1978.00 · karat: 14K · weight_g: 3.5</td>
+        <td class="small">verified (14K, 3.5 g)</td>
+        <td class="small">Title &quot;Gemstone Kite Ring&quot;; 14k Yellow Gold price &quot;$1,978.00&quot; across all 6 stone options (Clear Lab Diamond, Salt &amp; Pepper, Sapphire, Emerald, Ruby, Lab Alexandrite); specs &quot;Material: Solid 14k gold (reclaimed) · Center Stone: 8x5mm Kite (~0.60ct) · Item Weight: Approximately 3.5g (gold)&quot;. <a href="https://www.automicgold.com/products/gemstone-kite-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-cluster</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1636.00 · karat: 14K · weight_g: 3.1</td>
+        <td class="small">price: 1636.00 · karat: 14K · weight_g: 3.1</td>
+        <td class="small">verified (14K, 3.1 g)</td>
+        <td class="small">Title &quot;Diamond Cluster Ring&quot;; 14k Yellow Gold / Lab Diamond price &quot;$1,636.00&quot;; specs &quot;Material: Solid 14k gold (reclaimed) · Band Width: 1.5mm · Item Weight: Approximately 3.1g (gold)&quot;. <a href="https://www.automicgold.com/products/diamond-cluster-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>ag-14k-bubble</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1334.00 · karat: 14K · weight_g: 1.4</td>
+        <td class="small">price: 1334.00 · karat: 14K · weight_g: 1.4</td>
+        <td class="small">verified (14K, 1.4 g)</td>
+        <td class="small">Title &quot;Diamond Bubble Ring&quot;; 14k Yellow Gold / Clear Lab Diamond price &quot;$1,334.00&quot;; specs &quot;Material: Solid 14k gold (reclaimed) · Total Carat Weight: ~0.35ctw (varies by ring size) · Item Weight: Approximately 1.4g (gold) · Note: Full eternity design cannot be resized&quot;. <a href="https://www.automicgold.com/products/diamond-bubble-ring" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>car-18k-etincelle-pear</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 3350.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 3350.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">verified (18K, weight null)</td>
+        <td class="small">Title &quot;Étincelle de Cartier ring, pear-shaped diamond, paved&quot;; Ref. B4230400; price &quot;$3,350&quot; (excl. sales tax); Product Description &quot;Étincelle de Cartier ring, rose gold 750/1000, set with a pear-shaped diamond available from 0.16 carats and 22 brilliant-cut diamonds totaling 0.10 carats. Width: 1.52 mm. Thickness: 1.35 mm&quot; <a href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>car-18k-etincelle-emerald</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 3600.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 3600.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">verified (18K, weight null)</td>
+        <td class="small">Title &quot;Étincelle de Cartier ring, emerald-cut diamond, paved&quot;; Ref. B4225700; price &quot;$3,600&quot; (excl. sales tax); Product Description &quot;Étincelle de Cartier ring, 18K white gold (750/1000), set with an emerald-cut diamond of 0.16 carats and paved with 22 brilliant-cut diamonds totaling 0.10 carats. Width: 1.52 mm. Thickness: 1.35 mm&quot; <a href="https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>car-18k-1895-band-dia</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1140.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">price: 1140.00 · karat: 18K · weight_g: blank</td>
+        <td class="small">verified (18K, weight null)</td>
+        <td class="small">Title &quot;1895 wedding band, 2.6 mm width, 1 diamond&quot;; Ref. B4057600; price &quot;$1,140&quot; (excl. sales tax); Product Description &quot;1895 wedding band, width 2.6 mm, yellow gold (750/1000), set with 1 brilliant-cut diamond totaling 0.01 carats.&quot; <a href="https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mene-24k-classic-band</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1720.00 · karat: 24K · weight_g: blank</td>
+        <td class="small">price: 1720.00 · karat: 24K · weight_g: blank</td>
+        <td class="small">verified (24K, weight null)</td>
+        <td class="small">Title &quot;Classic Band - 24k Gold&quot;; live price &quot;$1,720&quot;; specs &quot;Metal: 24k Gold · Width: 5.00 mm · Height: 2.00 mm · Crafted-on-Demand&quot;; Menē Terms state items are 24 karat pure gold priced by precious metal weight plus design/manufacturing fee, with exact delivered gram weight printed on the Certificate of Authenticity (±1.0 g variance). <a href="https://mene.com/products/mene-classic-band-gold" target="_blank" rel="noopener nofollow">page ↗</a></td>
+      </tr><tr>
+        <td><strong>mene-24k-narrow-band</strong></td>
+        <td class="small">price, karat, solid_wording, metal_weight</td>
+        <td class="small">price: 1372.00 · karat: 24K · weight_g: blank</td>
+        <td class="small">price: 1372.00 · karat: 24K · weight_g: blank</td>
+        <td class="small">verified (24K, weight null)</td>
+        <td class="small">Title &quot;Narrow Classic Band - 24k Gold&quot;; live price &quot;$1,372&quot;; specs &quot;Metal: 24k Gold · Width: 4.00 mm · Height: 2.00 mm · Crafted-on-Demand&quot;; Menē Terms state exact delivered gram weight is printed on the Certificate of Authenticity (±1.0 g variance). <a href="https://mene.com/products/mene-narrow-band-gold" target="_blank" rel="noopener nofollow">page ↗</a></td>
       </tr>
     </tbody>
   </table>
   </div>
-  <p class="sub">This pass re-read 7 of 43 rows and one market feed. The rest keep the retrieval date of the pass that captured them, and the site shows that date on every row. Re-reading all 43 would require fetching every product page again; the collector script does that when run with network access.</p>
+  <p class="sub">All 59 curated listings (43 inherited + 16 added in sess-0804e222) have now been opened and verified against their official retailer URLs on 2026-10-22.</p>
 
   <h2>Run it yourself</h2>
   <p><code>node scripts/verify.mjs</code> — no dependencies, no network. The output is written to <code>data/checks/latest.json</code> and summarised above.</p>
@@ -345,7 +632,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on 2026-10-22 and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
-    <p class="muted">Gold reference: $4,029.70 per troy ounce at 2026-10-22T23:22:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
+    <p class="muted">Gold reference: $4,026.70 per troy ounce at 2026-10-22T23:38:41Z (gold-api.com). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="methodology.html">Method</a> · <a href="flagged.html">Flagged for review</a></p>
   </div>
 </footer>
 <script src="assets/js/app.js" defer></script>

@@ -103,10 +103,14 @@ const counted = (fn) => fn;
     if (!ALLOWED_KARAT.includes(r.karat)) failures.push(`${r.id}: karat "${r.karat}" is not a legal karat mark`);
     const k = String(r.karat).replace(/[^0-9]/g, '');
     const ev = `${r.evidence || ''} ${r.title || ''}`.toLowerCase();
-    const hit = new RegExp(`\\b${k}\\s?k`, 'i').test(ev) || ev.includes(`${k}kt`) || ev.includes(`${k}k `);
+    const hit =
+      new RegExp(`\\b${k}\\s?k`, 'i').test(ev) ||
+      ev.includes(`${k}kt`) ||
+      ev.includes(`${k}k `) ||
+      (k === '18' && (ev.includes('750/1000') || /\b750\b/.test(ev)));
     if (!hit) failures.push(`${r.id}: karat ${r.karat} is not stated in the evidence text`);
   }
-  add('S03', 'Karat validity and traceability', 'Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row\'s own evidence text.', failures);
+  add('S03', 'Karat validity and traceability', 'Karat must be a legal mark (10/14/18/22/24) and must also be stated in the row\'s own evidence text (including 750/1000 fineness for 18K).', failures);
 }
 
 /* ---------------------------------------------------------------- S04 */
@@ -146,7 +150,7 @@ const counted = (fn) => fn;
 /* ---------------------------------------------------------------- S06 */
 {
   const failures = [];
-  const perGram = gold.primary.price_usd_per_ozt / gold.grains_per_troy_ounce;
+  const perGram = gold.primary.price_usd_per_ozt / (gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce);
   for (const r of rings.rows) {
     assertions++;
     if (r.weight_g_low === null || r.price_low === null) continue;
@@ -275,12 +279,17 @@ const counted = (fn) => fn;
     else {
       const html = await readFile(p, 'utf8');
       if (!html.includes(r.source_url)) failures.push(`${r.id}: detail page does not expose the official source URL`);
-      if (r.price_low !== null && !html.includes(r.price_low.toLocaleString('en-US', { style: 'currency', currency: 'USD' }))) {
+      if (r.price_unverified) {
+        // the whole point: an unverified price must NOT be printed as a number
+        if (!html.includes('— unverified')) {
+          failures.push(`${r.id}: unverified row does not render "— unverified"`);
+        }
+      } else if (r.price_low !== null && !html.includes(r.price_low.toLocaleString('en-US', { style: 'currency', currency: 'USD' }))) {
         failures.push(`${r.id}: detail page does not show the verified price`);
       }
     }
   }
-  add('S12', 'Row-to-page coverage', 'Every row must have a detail page that shows both its source link and its verified price.', failures);
+  add('S12', 'Row-to-page coverage', 'Every row must have a detail page that shows its source link and, unless the value is unverified, its verified price.', failures);
 }
 
 /* ---------------------------------------------------------------- S13 */
@@ -299,6 +308,7 @@ const counted = (fn) => fn;
     assertions++;
     if (!s.sources.some((x) => x.url.includes(ret.domain))) failures.push(`retailer ${ret.id} has no entry in the source registry`);
   }
+
   add('S13', 'Source registry coverage', 'Every retailer used for a value must appear in the source registry with a retrieval record.', failures);
 }
 
@@ -384,7 +394,7 @@ const counted = (fn) => fn;
     harvest(await readIf(f, {}));
   }
   // derived values the site is allowed to compute
-  const perGram = gold.primary.price_usd_per_ozt / gold.grains_per_troy_ounce;
+  const perGram = gold.primary.price_usd_per_ozt / (gold.grams_per_troy_ounce ?? gold.grains_per_troy_ounce);
   const derived = new Set();
   const addDerived = (n) => {
     if (!Number.isFinite(n)) return;
@@ -458,6 +468,51 @@ const counted = (fn) => fn;
     failures.push(`${reverifiedRows} rows are marked re-verified but the ledger has ${(ledger.entries || []).length} entries`);
   }
   add('S17', 'Data age', 'A published price snapshot older than 30 days fails the run, and the re-verification count on the rows must equal the ledger. Stale data must not be presented as current.', failures);
+  const flaggedIds = new Set(flagged.items.map((i) => i.id));
+  for (const r of rings.rows) {
+    assertions++;
+    if (r.price_unverified) {
+      if (!(r.flags || []).includes('price_unverified')) {
+        failures.push(`${r.id}: price_unverified is set but the row does not carry the price_unverified flag`);
+      }
+      if (!r.price_unverified_reason || r.price_unverified_reason.length < 30) {
+        failures.push(`${r.id}: price_unverified without a written reason`);
+      }
+      const onFlagged = flagged.items.some((i) => (i.affected || '').split(',').map((x) => x.trim()).includes(r.id));
+      if (!onFlagged) failures.push(`${r.id}: unverified price but the row is not published on the Flagged page`);
+    }
+    if ((r.flags || []).includes('price_unverified') && !r.price_unverified) {
+      failures.push(`${r.id}: carries the price_unverified flag but price_unverified is not set`);
+    }
+  }
+  add('S18', 'Unverified values are published as unverified', 'A value that could not be reproduced on the official page must be marked, explained, listed on the Flagged page, and never shown as a number.', failures);
+  const htmlFiles = [];
+  const walk = async (dir) => {
+    for (const e of await readdir(dir, { withFileTypes: true })) {
+      if (e.name.startsWith('.') || e.name === 'node_modules' || e.name === 'dist') continue;
+      const full = join(dir, e.name);
+      if (e.isDirectory()) await walk(full);
+      else if (e.name.endsWith('.html')) htmlFiles.push(full);
+    }
+  };
+  await walk(ROOT);
+  for (const r of rings.rows) {
+    if (!r.price_unverified) continue;
+    assertions++;
+    const page = join(ROOT, 'rings', `${r.id}.html`);
+    if (!existsSync(page)) {
+      failures.push(`${r.id}: missing detail page`);
+      continue;
+    }
+    const text = await readFile(page, 'utf8');
+    const shown = new RegExp(`\\$?${r.price_low.toLocaleString('en-US')}`).test(text);
+    const marked = text.includes('— unverified');
+    if (!marked) failures.push(`${r.id}: unverified row is not rendered as unverified on its detail page`);
+    if (shown && !text.includes('last observed')) {
+      failures.push(`${r.id}: the unverified price ${r.price_low} is printed as a live price on its own page`);
+    }
+  }
+  add('S19', 'Unverified prices never render as numbers', 'A row whose price could not be reproduced must print "— unverified" wherever a price would go.', failures);
 }
 
 /* ---------------------------------------------------------------- report */
