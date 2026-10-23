@@ -13,6 +13,7 @@
  *   Q06  the new finding F68 exists, carries sources, and is rendered with an anchor
  *   Q07  no stale pass prose ("65 findings", "50 parsed by the automated runner")
  *   Q08  security posture of the regenerated HTML (inline script/handler, secrets)
+ *   Q09  the landing page's "latest pass" sentence is derived from the newest ledger
  *
  * Run: node scripts/audit_67748540.mjs
  */
@@ -225,6 +226,25 @@ await group('Q08', 'Regenerated HTML keeps its security posture', async (assert)
     assert(!/(AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY)/.test(html), `${p}: secret-like string`);
     assert(!/localhost|127\.0\.0\.1/.test(html), `${p}: references a local address`);
   }
+});
+
+await group('Q09', 'Landing page latest-pass sentence is derived from the newest ledger', async (assert) => {
+  const html = await readText('index.html');
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  const confirmed =
+    (cmp.verdict_counts.stored_price_reproduced ?? 0) +
+    (cmp.verdict_counts.stored_range_reproduced_seller_feed ?? 0) +
+    (cmp.verdict_counts.stored_variant_price_reproduced_seller_feed ?? 0);
+  const handRead = cmp.hand_read_resolved ?? 0;
+  const total = rings.rows.length;
+  assert(
+    text.includes(`${confirmed + handRead} of ${total} rows reproduced exactly (${confirmed} by the runner, ${handRead} by the second channel)`),
+    `landing does not state the derived tally "${confirmed + handRead} of ${total} (${confirmed} runner + ${handRead} second channel)"`
+  );
+  assert(text.includes(`the other ${handRead} refused the runner with HTTP 403`), 'landing does not state how many rows the runner could not read');
+  assert(!/48 parsed by the automated workflow/.test(text), 'landing still carries the stale pre-P117 tally ("48 parsed by the automated workflow")');
+  assert(/0 contradictions/.test(text), 'landing does not state the drift count');
+  assert(text.includes('3 rows unverified by design'), 'landing does not state the by-design count');
 });
 
 const failed = results.filter((r) => r.failures.length);
