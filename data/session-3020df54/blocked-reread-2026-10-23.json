@@ -1,0 +1,160 @@
+{
+  "session": "sess-3020df54",
+  "branch": "arena/3020df54-gold1",
+  "task": "T37 \u2014 independent second-channel re-read of the 9 rows that returned HTTP 403 to the GitHub Actions runner in pass 6 (F53), later resolved by sess-545688f3 (pass 7, \u00a716); this file is the dual-channel corroboration record",
+  "method": "Arena sandbox web-fetch channel (different egress than the GitHub Actions runner). Shopify retailers read through the seller's own product JSON endpoint (<product-url>.js); Cartier read through the public product page. Only what the source printed is recorded; nothing is inferred.",
+  "rule": "No hallucinations: every value below is a verbatim field or page line from the URL named, read at the timestamp recorded. Values this channel could not read are listed as not_read and change nothing.",
+  "reads": [
+    {
+      "row": "wc-tulip",
+      "read_at": "2026-10-23T10:31Z",
+      "url_read": "https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 590,
+        "price_high": 1110,
+        "karat": "14K",
+        "basis": "Ring Setting Product"
+      },
+      "verbatim": "\"title\":\"Tulip Basket Cathedral Classic Solitaire Engagement Ring\"; \"price\":59000,\"price_min\":59000,\"price_max\":111000; tags include \"Ring Setting Product\", \"14K\", \"18K\"; variant \"14KT White Gold / Round\" \"price\":59000",
+      "verdict": "confirmed \u2014 stored $590\u2013$1,110 equals live price_min 59000 / price_max 111000 (cents)",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: $590\u2013$1,110 (their channel) \u2014 MATCHES this read"
+    },
+    {
+      "row": "wc-4prong",
+      "read_at": "2026-10-23T10:31Z",
+      "url_read": "https://www.withclarity.com/products/classic-four-prong-solitaire-diamond-engagement-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 558,
+        "price_high": 801,
+        "karat": "14K",
+        "basis": "Ring Setting Product"
+      },
+      "verbatim": "\"title\":\"Classic Four Prong Solitaire Diamond Engagement Ring\"; \"price\":55800,\"price_min\":55800,\"price_max\":80100; \"compare_at_price_min\":62000,\"compare_at_price_max\":89000; tags include \"Ring Setting Product\", \"14K\", \"18K\"; variant \"1.9 / 14KT White Gold / Round\" \"price\":55800",
+      "verdict": "confirmed \u2014 stored $558\u2013$801 equals live price_min 55800 / price_max 80100 (cents). Note for F52: the product-level 14K minimum read $558 on this channel at 10:31Z, not $590; $590 may be a variant-level (e.g. yellow-gold) price \u2014 variant lines were not all read, so F52 is neither confirmed nor refuted for the specific variant it cites",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: $558\u2013$801 restored per 2026-10-23T06:05:04-04:00 OCT-Discount-23 update \u2014 this independent 10:31Z read confirms price_min 55800 / price_max 80100"
+    },
+    {
+      "row": "wc-4prong-petite",
+      "read_at": "2026-10-23T10:36Z",
+      "url_read": "https://www.withclarity.com/products/classic-four-prong-petite-comfort-fit-solitaire-engagement-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 558,
+        "price_high": 963,
+        "karat": "14K",
+        "basis": "Ring Setting Product"
+      },
+      "verbatim": "\"title\":\"Classic Four Prong Petite Comfort Fit Solitaire Engagement Ring\"; \"price\":55800,\"price_min\":55800,\"price_max\":96300; \"compare_at_price_min\":62000,\"compare_at_price_max\":107000; tags include \"Ring Setting Product\", \"14K\", \"18K\"",
+      "verdict": "confirmed \u2014 stored $558\u2013$963 equals live price_min 55800 / price_max 96300 (cents)",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: $558\u2013$963 \u2014 MATCHES this read"
+    },
+    {
+      "row": "wc-6prong",
+      "read_at": "2026-10-23T10:36Z",
+      "url_read": "https://www.withclarity.com/products/classic-six-prong-solitaire-diamond-engagement-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 567,
+        "price_high": 828,
+        "karat": "14K",
+        "basis": "Ring Setting Product"
+      },
+      "verbatim": "\"title\":\"Classic Six Prong Solitaire Diamond Engagement Ring\"; \"price\":56700,\"price_min\":56700,\"price_max\":82800; \"compare_at_price_min\":63000,\"compare_at_price_max\":92000; tags include \"Ring Setting Product\", \"14K\", \"18K\"; variant \"1.9 / 14KT Yellow Gold / Round\" present",
+      "verdict": "confirmed \u2014 stored $567\u2013$828 equals live price_min 56700 / price_max 82800 (cents)",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: $567\u2013$828 \u2014 MATCHES this read"
+    },
+    {
+      "row": "wc-gerbera",
+      "read_at": "2026-10-23T10:39Z",
+      "url_read": "https://www.withclarity.com/products/gerbera-marquise-created-blue-sapphire-and-diamond-engagement-ring.js",
+      "channel": "official Shopify product JSON",
+      "stored": {
+        "price_low": 1210,
+        "price_high": 1850,
+        "karat": "14K",
+        "basis": "Ring Setting Product"
+      },
+      "verbatim": "\"title\":\"Gerbera Marquise Created Blue Sapphire and Diamond Engagement Ring\"; \"price\":121000,\"price_min\":121000,\"price_max\":185000; tags include \"Ring Setting Product\", \"14K\", \"18K\"; body \"striking marquise created blue sapphire. The created blue sapphire under-halo\"",
+      "verdict": "confirmed \u2014 stored $1,210\u2013$1,850 equals live price_min 121000 / price_max 185000 (cents)",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: $1,210\u2013$1,850 \u2014 MATCHES this read"
+    },
+    {
+      "row": "car-18k-1895-band-dia",
+      "read_at": "2026-10-23T10:26Z",
+      "url_read": "https://www.cartier.com/en-us/jewelry/wedding-bands/1895/1895-wedding-band-CRB4057600.html (final URL: .../1895-wedding-band-2.6-mm-width-1-diamond-CRB4057600.html)",
+      "channel": "official Cartier product page",
+      "stored": {
+        "price": 1140,
+        "karat": "18K",
+        "metal": "Yellow gold"
+      },
+      "verbatim": "Page title \"18K Yellow Gold 1895 Single Diamond Wedding Band | Cartier US\"; h1 \"1895 wedding band, 2.6 mm width, 1 diamond\"; Product Description \"1895 wedding band / Width 2.6 mm / Yellow gold (750/1000) / Set with a brilliant-cut diamond of 0.01 carat (for size 52)\"; price \"$1,140\"; \"Ref.B4057600\"; return wording \"You may return or exchange your Cartier creation within 30 days.\"",
+      "verdict": "confirmed \u2014 stored $1,140 and 18K yellow gold (750/1000) match the live page exactly; the 30-day return wording also matches data/retailers.json",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: CRB4057600 $1,140, 750/1000 \u2014 MATCHES this read"
+    },
+    {
+      "row": "car-18k-etincelle-pear",
+      "read_at": "2026-10-23T10:33Z",
+      "url_read": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-pear-shaped-diamond-paved-CRB4230400.html",
+      "channel": "official Cartier product page",
+      "stored": {
+        "price": 3350,
+        "karat": "18K",
+        "metal": "Rose gold"
+      },
+      "verbatim": "Page title \"18K Rose Gold Pear Shaped Etincelle de Cartier Ring | Cartier US\"; h1 \"Etincelle de Cartier ring, pear-shaped diamond, paved\"; Product Description \"Etincelle de Cartier ring / Rose gold 750/1000 / Set with a pear-shaped diamond centre stone of 0.16 carats and 22 brilliant-cut diamonds totalling 0.10 carats / Width: 1.52 mm\"; price \"$3,350\"; \"Ref.B4230400\"",
+      "verdict": "confirmed \u2014 stored $3,350 and 18K rose gold (750/1000) match the live page exactly",
+      "drift": false,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: CRB4230400 $3,350, 750/1000 \u2014 MATCHES this read"
+    },
+    {
+      "row": "car-18k-etincelle-emerald",
+      "read_at": null,
+      "url_read": "https://www.cartier.com/en-us/jewelry/engagement-rings/etincelle-de-cartier/etincelle-de-cartier-ring-emerald-cut-diamond-paved-CRB4225700.html",
+      "channel": "attempted via Arena fetch channel",
+      "stored": {
+        "price": 3600,
+        "karat": "18K",
+        "metal": "White gold"
+      },
+      "verbatim": null,
+      "verdict": "not_read \u2014 the fetch channel's upstream proxy returned repeated SignatureDoesNotMatch infrastructure errors between 10:37Z and 11:05Z (6 attempts); the page itself was never reached, so nothing is recorded and the stored value keeps its 2026-10-22 capture date",
+      "drift": null,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: CRB4225700 $3,600, 750/1000 (their channel read it; this channel did not reach the page \u2014 upstream proxy SignatureDoesNotMatch failures 10:37Z\u201310:53Z, 6 attempts 10:37Z\u201311:05Z)"
+    },
+    {
+      "row": "be-18k-6p-121h6",
+      "read_at": null,
+      "url_read": "https://www.brilliantearth.com/Classic-Six-Prong-Solitaire-Ring-Gold-BE121H6-1151507/",
+      "channel": "attempted via Arena fetch channel",
+      "stored": {
+        "price": 1090,
+        "karat": "18K",
+        "metal": "18K Yellow Gold"
+      },
+      "verbatim": null,
+      "verdict": "not_read \u2014 same upstream proxy infrastructure failure; page never reached; stored value keeps its 2026-10-22 capture date",
+      "drift": null,
+      "cross_reference_pass7": "sess-545688f3 \u00a716: live PDP read, geo-IP localized \u20ac1,250.00 on non-US proxy, $1,090 US snapshot kept partly_verified (their channel; this channel did not reach the page \u2014 same proxy failure)"
+    }
+  ],
+  "summary": {
+    "blocked_rows_in_f53": 9,
+    "read_on_second_channel": 7,
+    "confirmed_exact": 7,
+    "drift_found": 0,
+    "not_read": 2,
+    "corroborated_against_pass7": 7,
+    "disagreements_with_pass7": 0
+  },
+  "corroboration_note": "An independent reverify.yml runner execution on this branch (commit 3b7cd99, data/live/2026-10-23T10-16-23Z.json, finished 2026-10-23T10:16:23Z) reproduced the same 50/59 automated reads and the same 9-row HTTP 403 block list, corroborating pass 6's F53.",
+  "ingestion": "No shared file was edited by this session. sess-545688f3 (pass 7, board \u00a716, PRs #39/#40 merged) had already resolved all 9 rows on their own channel before this file landed. Value added: 7 of the 9 resolutions are now corroborated by a second, independent retrieval channel with matching verbatim values and separate timestamps; the 2 rows this channel could not reach (car-18k-etincelle-emerald, be-18k-6p-121h6) keep sess-545688f3's single-channel reads as published, with be-18k-6p-121h6 already labelled partly_verified (F53/\u00a716). No published number needs to change."
+}
