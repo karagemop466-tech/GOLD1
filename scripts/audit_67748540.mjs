@@ -14,6 +14,7 @@
  *   Q07  no stale pass prose ("65 findings", "50 parsed by the automated runner")
  *   Q08  security posture of the regenerated HTML (inline script/handler, secrets)
  *   Q09  the landing page's "latest pass" sentence is derived from the newest ledger
+ *   Q10  a partly-verified row is never described as an unconfirmed price
  *
  * Run: node scripts/audit_67748540.mjs
  */
@@ -245,6 +246,24 @@ await group('Q09', 'Landing page latest-pass sentence is derived from the newest
   assert(!/48 parsed by the automated workflow/.test(text), 'landing still carries the stale pre-P117 tally ("48 parsed by the automated workflow")');
   assert(/0 contradictions/.test(text), 'landing does not state the drift count');
   assert(text.includes('3 rows unverified by design'), 'landing does not state the by-design count');
+});
+
+await group('Q10', 'Partly-verified rows are described accurately, not as unconfirmed prices', async (assert) => {
+  const html = await readText('index.html');
+  const text = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ');
+  const partial = rings.rows.filter((r) => r.verification_status === 'partly_verified');
+  if (partial.length) {
+    assert(text.includes(`${partial.length} rows are partly verified`), 'landing does not state how many rows are partly verified');
+    assert(
+      !/did not fully reproduce the stored figure, and the reason is printed on the row/.test(text),
+      'landing still claims every partly-verified row failed to reproduce "the stored figure" (au-cigar\'s price was reproduced)'
+    );
+    assert(/not the same as an unconfirmed price/.test(text), 'landing does not distinguish partly verified from unconfirmed price');
+  }
+  const au = rings.rows.find((r) => r.id === 'au-cigar');
+  assert(au && au.reverified_pass === 'P117-67748540', 'au-cigar is not stamped with this pass');
+  const m = (au.evidence || '').match(/stored single price 1308 matches variant "([^"]+)"/);
+  assert(!!m, 'au-cigar evidence does not record the variant-level reproduction');
 });
 
 const failed = results.filter((r) => r.failures.length);
