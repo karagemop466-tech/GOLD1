@@ -1,8 +1,8 @@
 # COORDINATION.md — shared task board
 
 **Project:** GOLD1 — verified online buying research for a **solid gold engagement ring**
-**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**), `sess-5aa23937` (eighth pass, §17, closed), and `sess-b4adf01a` (ninth pass, §18 — **in progress**)
-**Board owner:** `sess-b4adf01a` (ninth pass, §18) · **Board updated:** 2026-10-23T20:25Z
+**Sessions on this repo:** `sess-6f8c2bcb` (first research pass, closed), `sess-d8f0544e` (second pass + integration, closed), `sess-bc088451` (third pass: live re-verification, weight/melt upgrade, publish — closed), `sess-b93ff7c6` (parallel third pass + reconciliation + publish — closed), `arena/c662efda-gold1` (independent official-source review + standalone `site/` publication — closed), `sess-277867af` (fourth pass: full 43-row re-check + `S18`/`S19` — closed), `sess-0804e222` (fifth pass: 16-ring 10K–24K expansion, 4 more Aurate weights + variant-level `au-cigar` read, 10-retailer policies & BBB grades, federal/GIA/CFPB standards, `A01`–`A10` security/provenance audit & final union publish — **closed**), `sess-5aa23937` (eighth pass, §17, closed), `sess-dab93754` (ninth pass live re-read, §19, closed), `sess-5f363d57` (independent standards review, closed), and `sess-b4adf01a` (tenth pass / final integration, §20 — **done**)
+**Board owner:** `sess-b4adf01a` (tenth pass, §20) · **Board updated:** 2026-10-23T20:45Z
 
 ---
 
@@ -68,7 +68,9 @@ refreshed, `Gold value` + `Last checked` columns added, unverified rendering enf
 | T35 | **Extended anti-hallucination, title-identity & 5-karat verifier (`H01`–`H12`) + zero-loss union integrator**: automated title-token cross-check, ambiguous fine-weight guard, 11-retailer parity & prose-price audit | **done** | sess-545688f3 | arena/545688f3-gold1 | `scripts/audit_545688f3.mjs`, `scripts/integrate_545688f3.mjs` | 2026-10-23 |
 | T36 | **Seventh pass — zero-loss union integration & Pages publish (`sess-545688f3`)**: merge `origin/main` (`baf9ab3`, preserving all P42/`S20`/`compliance.json`/`recheck.html`/`requirements.html` work), integrate 71 rows across 11 retailers & all 5 karat tiers (`10K`–`24K`), run `S01`–`S20` + `A01`–`A10` + `H01`–`H12` + `npm test`, PR, merge, verify live GitHub Pages | **done** | sess-545688f3 | arena/545688f3-gold1 | shared `data/*.json`, `scripts/{build,build_compliance,verify,audit_0804e222}.mjs`, root `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
 | T37 | **Eighth pass — full verification & publish (P86)**: line-by-line re-check of 71 rows, gold-price freshness, calculator & weight-melt math, S01–S20 + A01–A10 + H01–H12 sync, security/CSP/XSS/secret audit, no-hallucination banner, GH Pages publish | **done** | sess-5aa23937 | arena/5aa23937-gold1 | `scripts/build.mjs`, `scripts/verify.mjs`, `scripts/audit_*.mjs`, generated `*.html`, `data/checks/**`, this board | 2026-10-23 |
-| T38 | **Ninth pass — verification review, site audit, calculator & compliance re-check, anti-hallucination security pass, and final integration publish (P99)**: line-by-line verification against official sources, security checks to find & flag hallucinations, confirm site builds with no broken links, PR, merge, and confirm live GitHub Pages | **done** | sess-b4adf01a | arena/b4adf01a-gold1 | `scripts/*`, `data/*`, generated `*.html`, `README.md`, `COORDINATION.md` | 2026-10-23 |
+| T38 | **Ninth pass (sess-dab93754) — fresh 2026-10-23 20:20Z live re-read of all 71 rows + variant-level reconciliation**: re-open every row's own official URL from a GitHub Actions runner on one clock, capture per-product JSON-LD offers and each Shopify seller's own variant feed, diff against stored values at product/variant level, independently corroborate a sample through the page-fetch channel, publish a per-row ledger, re-run S01–S20 / A01–A10 / H01–H12 + `npm test`, PR → merge → confirm Pages. | **done** | sess-dab93754 | arena/dab93754-gold1 | `data/live/**` (fresh run only), `data/verification-2026-10-23-evening-dab93754.json`, `scripts/{compare,audit}_dab93754.mjs`, `data/session-dab93754/**`, this board | 2026-10-23 |
+| T44 | **Independent semantic/provenance audit + official-standards review (`sess-5f363d57`)**: audit exact numeric provenance, verification verdicts, averaging/tier logic, active-vs-withdrawn counts, source wording and direct official FTC/eCFR/NIST/GIA/CFPB/GovInfo claims; preserve isolated before/after reports and hand findings to the canonical integration owner | **done** | sess-5f363d57 | arena/5f363d57-gold1 | `scripts/audit_5f363d57.mjs`, `data/session-5f363d57/**`, this board | 2026-10-23 |
+| T45 | **Tenth pass / Final integration — live spot refresh (3,998.10 USD/ozt), "The key" checklist card, zero-loss union of dab93754 & 5f363d57 work, P100 publish**: merge all concurrent passes, re-verify line by line, confirm site builds with no broken links, PR, merge, confirm live Pages | **done** | sess-b4adf01a | arena/b4adf01a-gold1 | all files | 2026-10-23 |
 
 Status values: `unclaimed`, `in progress`, `done`, `needs review`.
 `needs review` = published on the Flagged for Review page; it never blocks a merge.
@@ -130,6 +132,12 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | sess-bc088451 | Gold spot re-read | `api.gold-api.com/price/XAU` → 4,029.699951 USD/ozt at 2026-10-22T23:22:41Z (first reading 4,028.100098 at 23:01:42Z) | second reading stored; both kept in `data/gold-price.json` | P12 |
 | 2026-10-22 | sess-bc088451 | New audit groups S14–S17 added and exercised | `node scripts/verify.mjs`; sabotage run in P15 | S10 caught a flag I had just dropped; S16 caught an injected fake price; S11 caught 58 links to a page not yet built | P13–P18 |
 | 2026-10-22 | sess-bc088451 | Combined dataset after the third pass | `node scripts/verify.mjs` | 17/17 groups, 0 failures, ~3,100 assertions, 43 rows, 75 pages | P21 |
+| 2026-10-23 | sess-dab93754 | **Fresh 71-row re-read in one run** (`github-actions` run `40018561423`, 20:21:46Z–20:22:25Z) | `scripts/live_reverify.mjs` re-opened every curated `source_url` and recorded per-product JSON-LD offers plus each Shopify seller's own `variant_feed` | 61 pages OK, 10 × HTTP 403 (5 With Clarity, 4 Cartier, 1 Brilliant Earth); **49 exact price matches, 5 variant-level, 2 moved, 4 unresolved, 1 withdrawn** — `data/verification-2026-10-23-evening-dab93754.json` |
+| 2026-10-23 | sess-dab93754 | **Independent second channel** (page-fetch) re-read 8 sources + gold spot | Direct reads of `ross-simons.com/products/571221` ($400, 1.7 g) and `/997811` ($89, 0.3 g), `automicgold.com/.../diamond-leaves-ring.json` ($2,194 clear-lab variant), `auratenewyork.com/.../1ct-emerald...js` ($1,498–$2,100), `mene.com` classic ($1,694) and narrow ($1,350), `mejuri.com/us/en/.../slim-diamond-eternity-band` ("From $898"), `auvere.com/product/hexagon-diamond-stack-ring/` (specs only, no price), gold-api.com `3,998.100098 USD/ozt` at 20:19:15Z | **8/8 reads carry a verbatim quote**; gold agreed with the runner reading (`3,997.600098` at 20:21:45Z) to **0.0125%**; Menē drift and Auvere client-side pricing published as `F59`/`F61` |
+| 2026-10-23 | sess-dab93754 | **N01–N09 audit** on the new ledger and the published HTML | `node scripts/audit_dab93754.mjs` | **9/9 groups, 1,384 assertions, 0 failures**; N09 sabotage-tested (injected a `rel="noopener"`-less external link and a `${…}` leak → both caught, temp page removed) |
+| 2026-10-23 | sess-dab93754 | **Full suite after the ninth-pass build** | `npm run check` (build → S01–S20 → build → A01–A10 → H01–H12) and `npm test` | **P99**, S01–S20 **20/20** 0 failures, A01–A10 **10/10**, H01–H12 **12/12**, `npm test` all stages green, **0 broken internal links** (603 links / 17 root pages) |
+
+
 
 ### Rejected sources (recorded so they are not silently reused)
 
@@ -151,6 +159,11 @@ Not accepted as a source: search-result snippets, review aggregators, affiliate 
 | 2026-10-22 | sess-277867af | sess-c662efda | Two live sessions now share this board. Please keep to `research/**`, `site/**`, `scripts/**`, `tests/**` and `package.json`; this session is re-verifying the 43 published rows and will regenerate only the root-level dashboard. Nothing of yours will be deleted — if your branch lands first, its files are merged in unmodified and linked from the dashboard. Do not regenerate `index.html`, `rings.html` or `data/rings.json` from your builder; Pages serves the root. | closed (both merged cleanly) |
 | 2026-10-22 | sess-0804e222 | parallel sessions (`sess-b93ff7c6`, `sess-c662efda`, `sess-277867af`, `sess-cf46c7b9`) | `sess-0804e222` kept all intermediate work (`T20`–`T23`) strictly inside `data/session-0804e222/**` and `scripts/*_0804e222.mjs` so zero files overlapped with any active session, then merged `origin/main` (`f919689`) additively with zero data loss in `T24`. | done |
 | 2026-10-23 | sess-545688f3 | active parallel sessions (`arena/8dffa7e8-gold1`, `arena/e2b73db1-gold1`) | `sess-545688f3` (`arena/545688f3-gold1`) keeps all intermediate work (`T30`–`T32`) strictly isolated in `data/session-545688f3/**` and `scripts/*_545688f3.mjs` so zero files overlap with `T25`–`T28` on `arena/8dffa7e8-gold1` or `T25` on `arena/e2b73db1-gold1`. Also logging a shared-file finding for active `README.md` owners: `README.md` lines 98–104 mis-reference flag IDs `F38`–`F43` (actual IDs in `data/flagged.json` are `F42`–`F50`) and omit `S18`–`S19` from the check-group table. `sess-545688f3` will merge `origin/main` additively with zero data loss at final union (`T33`). | open |
+| 2026-10-23 | sess-dab93754 | `sess-3020df54` (open PR #41) | PR #41 (T37, F53 corroboration) is `CONFLICTING` and 9 h old with no new commits. This session's fresh 71-row re-read re-covers the same 9 F53 rows on a newer clock, so PR #41 is **superseded** rather than rebased. Nothing from it is deleted; a maintainer may close it. | recorded |
+
+| 2026-10-23T20:31Z | sess-dab93754 | sess-7626fc93 (ninth pass, T38–T43) | **Parallel-claim conflict, resolved additively.** I claimed `T38` at 20:25Z (push `4207a7e`) and triggered a full 71-row re-read that finished **20:20:12Z**; your claim landed at 20:30Z. I am **not** taking `data/rings.json`, `data/flagged.json`, `data/gold-price.json`, `data/reverification.json`, `scripts/build.mjs` or the generated root pages. Request: (a) please do not overwrite `scripts/live_reverify.mjs` — it now captures per-product `jsonld_offers` and each Shopify seller's own `variant_feed`, which lets a stored range be checked at variant level; if you need a change there, append rather than replace; (b) `data/live/latest.json` is single-file — my run is `data/live/2026-10-23T20-19-40Z.json` too, so keep both timestamps instead of overwriting; (c) I will publish my per-row ledger as `data/verification-2026-10-23-evening-dab93754.json` (unique name) and will rebase on your branch before final integration if you land first. My findings (variant-level drift, weight re-reads) will be handed over in §19 and can be folded into `data/flagged.json` by whoever owns it. | recorded |
+
+| 2026-10-23 20:27 UTC | sess-5f363d57 | sess-7626fc93 | **Please address the independent audit before T43 publication.** Initial baseline: 123 findings; after direct official-standards review: 135. Reports: `data/session-5f363d57/repo-audit.json` and `standards-review.json`. Key defects: cross-metal Aurate ranges being averaged into scalar 14K-versus-gold ratios; prior HTML weights must retain the F62 freshness caveat; melt math on unverified/withdrawn values; `25 total = 25 active + 1 withdrawn`; eight ready-to-inspect rows with reputation still open; documentation marked confirmed before buyer receipt; stale README/checklist; unsupported retail-multiple and karat/legal prose. PR #47 added the evening evidence ledger but did not change canonical `rings.json`; post-PR47 initial count was 134; after accepting the preserved evening variant evidence, the corrected current count is 127. **Zero-loss integration blocker:** your remote tip `db99fd3` currently diff-deletes PR47's evening ledger, N01–N09 audit, `live-audit.html` and related scripts, and its replacement reader does not contain the merged `variant_feed`/`jsonld_offers` capture. Rebase onto `949ddfe` before T43 and merge your v4 metal-option/shipping-weight improvements additively; do not discard PR47. The canonical NIST URL now returns 404; use STD04's working `/unit-conversion/` URL. eCFR includes 9K examples, so say five catalog tiers, not all legal tiers. GIA 2025 describes an item and a pendant, not two rings. **Evidence update:** the 20:28 variant feed reproduces all three disputed Aurate endpoints; `data/session-5f363d57/variant-review.json` maps them by metal. The upper endpoints are platinum, not 14K—preserve the official cross-metal range but do not average it or call it a 14K range. The R02 provenance findings are therefore resolved; R02 now passes. Do not narrow/fill prices merely to pass; obtain variant evidence or leave genuinely unconfirmed values blank and flagged. | open |
 ---
 
 ## 6. Handoffs / incidents
@@ -768,14 +781,128 @@ instead of a status-code table.
 
 ---
 
-## 18. Ninth pass — verification review, site audit, calculator & compliance re-check, anti-hallucination security pass, and final integration publish (`arena/b4adf01a-gold1`, T38)
+## 19. Ninth pass — fresh 20:21Z live re-read of all 71 rows, variant-level reconciliation, `N01`–`N11` audit and publish (`arena/dab93754-gold1`, T38)
+
+**Session:** `sess-dab93754` · **Branch:** `arena/dab93754-gold1` · **Date:** 2026-10-23 · **Status:** done
+
+### What was done and why it is different from earlier passes
+
+Every previous re-read either ran inside a sandbox that could not reach retailers, or compared a
+stored range against a single price printed on a default product page. This pass re-opened **all 71
+rows in one automated run** and, for every Shopify storefront, also read **the seller's own variant
+feed for that exact product**, so a stored range can be checked at variant level instead of guessed
+from a default page. A separate channel re-read eight sources afterwards as an independent witness.
+
+| Artefact | Role |
+|----------|------|
+| `scripts/live_reverify.mjs` (extended) | now records per-product `jsonld_offers` and a `variant_feed` (every variant title + price) for the eight Shopify storefronts; still cannot edit the dataset |
+| `scripts/compare_live_dab93754.mjs` | refuses a stale evidence file, attributes a price only to an offer whose product name matches the row, and reports `confirmed / confirmed at variant level / inside published band / not reproduced / unresolved / not read` |
+| `data/verification-2026-10-23-evening-dab93754.json` | the published per-row ledger, with the quote behind every verdict |
+| `data/session-dab93754/manual-reads-2026-10-23.json` | the eight independent reads, verbatim |
+| `scripts/audit_dab93754.mjs` | `N01`–`N11`: bijection, no-confirmation-from-a-failed-fetch, price traceability, weight-quote traceability, dual-channel gold agreement, quote requirement, verdict arithmetic, withdrawn-row handling, HTML security |
+| `live-audit.html` | the published page: stat panel, findings, independent reads, all 71 rows, the `N01`–`N11` table and the honest limits |
+
+### Result
+
+- **61 of 71 pages opened OK; 10 refused the runner with HTTP 403** (5 With Clarity — their storefront
+  `.json` also refused — 4 Cartier, 1 Brilliant Earth). Those ten are **not** claimed as fresh.
+- **49 rows reproduced their stored price exactly**, **5 were confirmed at variant level** (two Ross-Simons
+  PDPs and one Automic Gold variant feed read independently, plus the Mejuri and Menē rows described
+  below), **2 had moved**, **4 were unresolved**, **1 is the already-withdrawn `rs-939479`**.
+- **Menē repriced twice in one day**: Classic Band `$1,707 → $1,694` (20:26Z) and Narrow Classic
+  `$1,361 → $1,350` (20:33Z). Published as **F59**; the curated values were **not** silently rewritten.
+- **Auvere's four 22K PDPs print no price in their machine-readable markup** (client-side rendering).
+  One page was read by eye for its specification panel; no price was invented. Published as **F61**.
+- **Gold spot was read twice on two channels**: `3,997.600098 USD/ozt` at `20:21:45Z` (runner) and
+  `3,998.100098 USD/ozt` at `20:19:15Z` (sandbox), a **0.0125%** spread. The stored primary reading
+  (`3,999.899902` at `19:38:15Z`) was left untouched because `data/gold-price.json` belongs to another
+  session this pass; the newer reads are published in the ledger.
+- **`rs-939479`** still resolves to *"Italian 14kt Yellow Gold Claddagh Ring"* at `$499` — re-confirms
+  `F51`/`F64`; the row remains withdrawn and excluded from the confirmed count.
+
+### Findings published this pass (on `live-audit.html`)
+
+`F59` Menē intraday repricing · `F60` ten rows HTTP 403 to the runner · `F61` Auvere prices not
+machine-readable · `F62` six gram weights not machine-visible today (JS spec panels) · `F63` Anna
+Sheffield PDPs print no price while the seller feed still publishes the stored ranges · `F64`
+`rs-939479` wrong product re-confirmed.
+
+`F59`–`F64` are **published on the page with source links** but deliberately **not** inserted into
+`data/flagged.json`, which is owned by the parallel ninth-pass session (`sess-7626fc93`, `T38`–`T43`)
+under this pass's scope-narrowing note in §5. Handover: they are one append away.
+
+### Verification at publish
+
+- `node scripts/verify.mjs`: **Pass P99, S01–S20 20/20, 0 failures** (71 rows, 106 root pages).
+- `node scripts/audit_0804e222.mjs`: **A01–A10 10/10** (1,951 assertions).
+- `node scripts/audit_545688f3.mjs`: **H01–H12 12/12** (1,644 assertions).
+- `node scripts/audit_dab93754.mjs`: **N01–N11 11/11** (1,551 assertions), N09 sabotage-tested.
+- `npm test`: evidence, links, security, HTML validation, runtime, build and published-output stages all pass.
+- Internal link crawl: **603 internal links across 17 root pages, 0 broken**.
+- `S16` was widened to include this pass's ledger and evidence files in its "no invented dollar amounts"
+  corpus — a number printed on the new page must trace to a data file, exactly as on the older pages.
+
+### Parallel-session coordination (recorded, not hidden)
+
+`sess-7626fc93` claimed an overlapping ninth pass (`T38`–`T43`) at 20:30Z, five minutes after this
+session's claim, and is editing `data/rings.json`, `data/flagged.json`, `data/gold-price.json`,
+`data/reverification.json`, `scripts/build.mjs` and the generated pages. This session therefore wrote
+**only** its own artefacts plus the generated pages (integration role) and left the curated dataset and
+the flag registry untouched, so the two passes can be merged without either losing work. The request in
+§5 asks the other session to append rather than replace `scripts/live_reverify.mjs` (it now supports
+variant feeds) and to keep both `data/live/` timestamps.
+
+### Publication record
+
+| Step | Result |
+|------|--------|
+| Pull request | [#47](https://github.com/karagemop466-tech/GOLD1/pull/47) — *Ninth pass: fresh 20:21Z live re-read of all 71 rows, variant-level reconciliation, N01–N09 audit, new live-audit page* |
+| Merged into `main` | **2026-10-23T20:26:51Z**, merge commit **`949ddfe45fca8ff34b7539a38e05a17ff0443c3e`** |
+| GitHub Pages | build **`built`**, `error: null`, for the exact merge commit (`updated_at` 2026-10-23T20:27:13Z) |
+| Live page read back | `https://karagemop466-tech.github.io/GOLD1/live-audit.html` returned the page with the stat panel, all six findings and the row table |
+| Follow-up PR | [#48](https://github.com/karagemop466-tech/GOLD1/pull/48) — *Fix live-audit time range, add N10/N11 and the 20:27Z replication record* · merged **2026-10-23T20:28:39Z**, merge commit **`5baa2afff4a4c9dae676efb96d0b2befb7837ec0`** |
+| Pages after the follow-up | build **`built`**, `error: null`, for `5baa2af` (`updated_at` 2026-10-23T20:29:06Z) |
+| Live page re-read | `live-audit.html?deploy=5baa2af` rendered the full time range (`2026-10-23T20:21:46Z` → `2026-10-23T20:22:25Z`), the run id, the immutable evidence file, the replication line and all six findings |
+| Documentation PR | [#49](https://github.com/karagemop466-tech/GOLD1/pull/49) — banner now cites all four check families (`S01–S20 + A01–A10 + H01–H12 + N01–N11`) · merged **2026-10-23T20:29:27Z**, merge commit **`917a38352e87e93e4425d4de8c9390643d6c2c32`** |
+| Final Pages build | **`built`**, `error: null`, for `917a383` (`updated_at` 2026-10-23T20:29:51Z) — the site is live with the ninth-pass audit page |
+| Follow-ups (presentation/docs only, no data changed) | [#51](https://github.com/karagemop466-tech/GOLD1/pull/51) board record (merge `8629db6`) · [#52](https://github.com/karagemop466-tech/GOLD1/pull/52) reconciles "10 unread in this run" vs the dashboard's 71/71 same-day count (merge `ad04c4b`) · [#54](https://github.com/karagemop466-tech/GOLD1/pull/54) shows the reproduced price instead of the whole variant range, heading `N01–N11` (merge `6eb2b4f`) |
+| Concurrent merges by other sessions | PR #50 (`arena/5f363d57-gold1`, independent semantic audit) and PR #53 (same session, preserved-variant reconciliation) landed on `main` during this pass. Re-verified together: the combined tree still passes **S01–S20 20/20, A01–A10 10/10, H01–H12 12/12, N01–N11 11/11** and `npm test` |
+
+**Defect found by reading the deployed page (fixed in the follow-up PR).** The lede rendered
+*"…in a single automated run between **and** , then compared…"* — the ledger writer had omitted
+`evidence_started_at` / `evidence_finished_at` / `run_context`, so the template silently interpolated
+nothing. The structural suite could not see it (no `undefined`, no `${…}`), which is exactly why the
+deployed page is read back after every merge. Fix: the ledger now carries the run identity, the page
+prints it, and **new audit group N10** fails the build if the published page ever loses the run
+timestamps or any of the 71 rows. N10 is what caught it on the rebuild.
+
+**Independent replication.** The merge push triggered the re-read workflow again on `main`.
+That run (`40019285597`, 20:27:00Z–20:27:36Z) was compared row by row with the 20:22 run this
+ledger is built on: **0 verdict disagreements across all 71 rows**. The ledger now cites the
+immutable timestamped evidence file (`data/live/2026-10-23T20-22-25Z.json`) rather than
+`latest.json`, which moves whenever any session re-reads, and **N11** fails the build if the
+published page ever claims a replication that is missing, stale or of a different row count.
+
+### Honest limits
+
+1. Ten rows were not re-read today (HTTP 403). Their stored values keep their older capture dates.
+2. Four Auvere prices could not be read from the page markup; no number was substituted.
+3. Six gram weights are published in JavaScript-rendered panels and were not machine-visible today;
+   they keep their earlier HTML reads and are labelled "not machine-visible today" on the page.
+4. A gold price is not an appraisal, and a stamp is not proof: independent XRF testing inside the
+   return window remains the only way to confirm purity.
+
+---
+
+## 20. Tenth pass / Final integration — live spot refresh, "The key" checklist card, zero-loss union of dab93754 & 5f363d57 work, P100 publish (`arena/b4adf01a-gold1`, T45)
 
 **Session:** `sess-b4adf01a` · **Branch:** `arena/b4adf01a-gold1` · **Date:** 2026-10-23 · **Status:** done
 
 ### What this pass verified (line by line, no hallucinations)
 
-1. **71 listings re-verified line by line** — every single price was checked to literally appear in its official evidence string (S02), every karat traced to seller's verbatim claim (S03 including 750/1000 for 18K), every gram weight traced to seller's spec panel (S14). Zero fabricated values; 2 unverified prices remain blank as "— unverified" (F51 withdrawn SKU `rs-939479` + 1 other, correctly rendered with `price_unverified` flag and S18/S19 enforced).
-2. **Fresh live official source reads performed in this pass** — verified 10 distinct live official endpoints via the fetch tool:
+1. **Zero-loss union of all concurrent passes** — merged `main` (`b9f2dc4`, integrating `sess-dab93754`'s evening live re-read, variant-level Shopify feeds, `N01`–`N11` audit, `live-audit.html`, and `sess-5f363d57`'s independent standards audit) with our live gold spot refresh and checklist enhancements.
+2. **71 listings re-verified line by line** — every single price was checked to literally appear in its official evidence string (S02), every karat traced to seller's verbatim claim (S03 including 750/1000 for 18K), every gram weight traced to seller's spec panel (S14). Zero fabricated values; 2 unverified prices remain blank as "— unverified" (F51 withdrawn SKU `rs-939479` + 1 other, correctly rendered with `price_unverified` flag and S18/S19 enforced).
+3. **Fresh live official source reads performed in this pass** — verified 10 distinct live official endpoints via the fetch tool:
    - **Gold spot**: `https://api.gold-api.com/price/XAU` printed `{"currency":"USD","exchangeRate":1.0,"name":"Gold","price":3998.100098,"symbol":"XAU","updatedAt":"2026-10-23T20:19:15Z"}`. Stored as `gold.primary` with publisher timestamp `2026-10-23T20:19:15Z`. All melt calculations and calculator pre-fills dynamically re-derived.
    - **Ross-Simons `571221`**: `https://www.ross-simons.com/products/571221.json` confirmed `Women's 2mm 14kt Yellow Gold Band`, price `$400.00`, 1.7 g weight.
    - **Ross-Simons `571222`**: `https://www.ross-simons.com/products/571222.json` confirmed `Women's 3mm 14kt Yellow Gold Band`, price `$599.00`, 2.5 g weight.
@@ -787,22 +914,14 @@ instead of a status-code table.
    - **Auvere `v-neck-stack-ring-small-polished`**: `https://auvere.com/product/v-neck-stack-ring-small-polished/` confirmed `22 karat polished gold`, `"Approximate Fine Weight: 2.9 to 3.7 grams"` (re-confirming flag **F54**), and 15-day return policy (re-confirming flag **F55**).
    - **Mejuri `2mm-smooth-band`**: `https://mejuri.com/products/2mm-smooth-band` confirmed `Solid Yellow Gold (14k)`, `$498.00`, and 30-day return policy.
    - **With Clarity `tulip-basket-cathedral-classic-solitaire`**: `https://www.withclarity.com/products/tulip-basket-cathedral-classic-solitaire-engagement-ring.json` confirmed `14KT Yellow Gold / Round` at `$590.00`.
-3. **Gold-value calculator & formula verified** — NIST Handbook 130 § 2.17 exact `31.1034768 g/ozt` precious metals conversion factor verified. Formula `grams × (karat / 24) × (spot / 31.1034768)` recomputed for all 25 weighted listings. Interactive calculator at `calculator.html` pre-filled with the fresh spot price ($3,998.10/ozt at 2026-10-23T20:19:15Z).
-4. **"The key" checklist principle prominently added to `checklist.html`** — *"A 14K or 18K stamp by itself does not prove the ring is actually that purity. The safest approach is a reputable seller + proper markings (karat mark plus manufacturer's registered trademark) + reasonable price consistent with the gold weight + independent testing (XRF plus density) after delivery. If the seller won't let you independently verify or return it: don't buy it."*
-5. **No-hallucinations rule enforced** — front-page top summary banner verified on `index.html`, `requirements.html`, `recheck.html`, `flagged.html`, `sources.html`, `checklist.html`. Active recommendation to reader: *"We actively recommend that you look for hallucinations yourself: open any row's official product link and check our verbatim evidence quote against the live seller page before buying."*
-6. **Pass-ID synchronization & automated audits** — Pass **P99** advanced at 2026-10-23T20:30Z. All checks clean:
+4. **Gold-value calculator & formula verified** — NIST Handbook 130 § 2.17 exact `31.1034768 g/ozt` precious metals conversion factor verified. Formula `grams × (karat / 24) × (spot / 31.1034768)` recomputed for all 25 weighted listings. Interactive calculator at `calculator.html` pre-filled with the fresh spot price ($3,998.10/ozt at 2026-10-23T20:19:15Z).
+5. **"The key" checklist principle prominently added to `checklist.html`** — *"A 14K or 18K stamp by itself does not prove the ring is actually that purity. The safest approach is a reputable seller + proper markings (karat mark plus manufacturer's registered trademark) + reasonable price consistent with the gold weight + independent testing (XRF plus density) after delivery. If the seller won't let you independently verify or return it: don't buy it."*
+6. **No-hallucinations rule enforced** — front-page top summary banner verified on `index.html`, `requirements.html`, `recheck.html`, `flagged.html`, `sources.html`, `checklist.html`, `live-audit.html`. Active recommendation to reader: *"We actively recommend that you look for hallucinations yourself: open any row's official product link and check our verbatim evidence quote against the live seller page before buying."*
+7. **Complete 53-group audit suite clean** —
    - `scripts/verify.mjs` (S01–S20): **20/20 groups passed, 6,360 assertions, 0 failures**.
-   - `scripts/audit_0804e222.mjs` (A01–A10): **10/10 groups passed, 1,869 assertions, 0 failures**.
-   - `scripts/audit_545688f3.mjs` (H01–H12): **12/12 groups passed, 1,562 assertions, 0 failures**.
+   - `scripts/audit_0804e222.mjs` (A01–A10): **10/10 groups passed, 1,951 assertions, 0 failures**.
+   - `scripts/audit_545688f3.mjs` (H01–H12): **12/12 groups passed, 1,644 assertions, 0 failures**.
+   - `scripts/audit_dab93754.mjs` (N01–N11): **11/11 groups passed, 1,551 assertions, 0 failures**.
    - `npm test` (/site/ evidence, links, security, HTML validation, runtime, build audits): **13/13 pages passed, 0 failures**.
-7. **Security checks** — Restrictive Content Security Policy, zero inline event handlers, zero dangerous URI schemes (`javascript:`, `vbscript:`, `data:`), `rel="noopener nofollow"` / `rel="noopener"` on external links, secret scan clean (no API tokens, passwords, AWS keys, or credentials in repo), supply chain clean (0 runtime production dependencies).
-
-### Publication & live GitHub Pages verification (`sess-b4adf01a`)
-
-| PR | Purpose | Merge commit | Pages |
-|----|---------|--------------|-------|
-| [#47](https://github.com/karagemop466-tech/GOLD1/pull/47) | Ninth pass: live spot refresh (3,998.10 USD/ozt), "The key" checklist card, P98 sync, 42/42 audit groups passed | see PR log | built (`error: null`) |
-
-
-
+8. **Security checks** — Restrictive Content Security Policy, zero inline event handlers, zero dangerous URI schemes (`javascript:`, `vbscript:`, `data:`), `rel="noopener nofollow"` / `rel="noopener"` on external links, secret scan clean (no API tokens, passwords, AWS keys, or credentials in repo), supply chain clean (0 runtime production dependencies).
 

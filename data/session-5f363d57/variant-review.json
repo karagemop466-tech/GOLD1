@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "session": "sess-5f363d57",
+  "reviewed_at": "2026-10-23T20:32:11Z",
+  "evidence_file": "data/live/2026-10-23T20-28-52Z.json",
+  "evidence_sha256": "58ae8523041f4c52685a70a37da397d98aadc222d5e2acbf90ba82e646b47db7",
+  "run_context": "github-actions run 40019445293",
+  "method": "Read the preserved official Shopify variant feed for the exact product. Grouped only explicit variant titles/prices; no interpolation, averaging, or inference.",
+  "rows": [
+    {
+      "id": "au-2ct-oval",
+      "product_url": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring",
+      "official_variant_feed": "https://auratenewyork.com/products/2ct-oval-lab-grown-diamond-bezel-ring.json",
+      "feed_fetched_at": "2026-10-23T20:28:23Z",
+      "feed_http_status": 200,
+      "variant_count": 70,
+      "metal_price_groups": {
+        "14k": [
+          1968
+        ],
+        "18k": [
+          2438
+        ],
+        "Platinum": [
+          2800
+        ]
+      },
+      "stored_range": [
+        1968,
+        2800
+      ],
+      "conclusion": "The stored endpoints are reproduced, but they span different metals. Do not call the upper endpoint a 14K price or average the range into a 14K-versus-gold ratio."
+    },
+    {
+      "id": "au-1ct-emerald",
+      "product_url": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring",
+      "official_variant_feed": "https://auratenewyork.com/products/1ct-emerald-lab-grown-diamond-bezel-ring.json",
+      "feed_fetched_at": "2026-10-23T20:28:24Z",
+      "feed_http_status": 200,
+      "variant_count": 70,
+      "metal_price_groups": {
+        "14k": [
+          1498
+        ],
+        "18k": [
+          1878
+        ],
+        "Platinum": [
+          2100
+        ]
+      },
+      "stored_range": [
+        1498,
+        2100
+      ],
+      "conclusion": "The stored endpoints are reproduced, but they span different metals. Do not call the upper endpoint a 14K price or average the range into a 14K-versus-gold ratio."
+    },
+    {
+      "id": "au-3ct-round",
+      "product_url": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring",
+      "official_variant_feed": "https://auratenewyork.com/products/3ct-round-lab-grown-diamond-bezel-ring.json",
+      "feed_fetched_at": "2026-10-23T20:28:24Z",
+      "feed_http_status": 200,
+      "variant_count": 70,
+      "metal_price_groups": {
+        "14k": [
+          2438
+        ],
+        "18k": [
+          2858
+        ],
+        "Platinum": [
+          3000
+        ]
+      },
+      "stored_range": [
+        2438,
+        3000
+      ],
+      "conclusion": "The stored endpoints are reproduced, but they span different metals. Do not call the upper endpoint a 14K price or average the range into a 14K-versus-gold ratio."
+    }
+  ],
+  "weight_freshness": {
+    "finding": "F62 in data/verification-2026-10-23-evening-dab93754.json",
+    "rows": [
+      "rs-571213",
+      "au-2ct-oval",
+      "au-1ct-emerald",
+      "au-3ct-round",
+      "au-cigar",
+      "au-xring"
+    ],
+    "conclusion": "The latest automated extraction did not see these weights. Retain the earlier verbatim official HTML quotes and dates, publish the F62 limitation, and do not describe them as freshly machine-read today."
+  }
+}
