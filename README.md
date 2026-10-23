@@ -5,7 +5,7 @@ A source-linked buying dashboard for **solid gold engagement rings**, built so t
 **Live site:** https://karagemop466-tech.github.io/GOLD1/ (plus standalone 13-row official-source evidence review at https://karagemop466-tech.github.io/GOLD1/site/)
 
 > ### No hallucinations. Read this first.
-> Every price, karat and gram figure on this site was copied from the seller's own official page and linked on the same row. **Nothing is estimated, averaged, inferred or remembered.** A value that could not be confirmed is printed as **— unverified** and listed on **Flagged for review**. Every build is re-tested by 19 anti-hallucination groups (S01–S19) plus 10 extended provenance/security groups (A01–A10), and the suite is deliberately sabotaged with a fake price to prove it fires.
+> Every price, karat and gram figure on this site was copied from the seller's own official page and linked on the same row. **Nothing is estimated, averaged, inferred or remembered.** A value that could not be confirmed is printed as **— unverified** and listed on **Flagged for review**. Every build is re-tested by 20 anti-hallucination groups (S01–S20) plus 10 extended provenance/security groups (A01–A10), and the suite is deliberately sabotaged with a fake price to prove it fires.
 
 **Latest pass — 2026-10-23 (`arena/8dffa7e8-gold1`):** every one of the 59 listings was opened again at its own official product URL from an independent network. **39 prices reproduced exactly; 4 were corrected** against a quoted page line (wider size/variant ranges); **1 row was withdrawn** because Ross-Simons now sells a different ring under that SKU at the same price and weight (F51); **9 pages were blocked** by With Clarity, Cartier and Brilliant Earth, so those rows are labelled *not re-read* rather than presented as fresh (F53). New in this pass: a **12-point requirements scorecard** (`requirements.html`) that scores every row against the buyer's own checklist, and a **full re-check ledger** (`recheck.html`) with the quote behind every verdict.
 
@@ -57,7 +57,7 @@ That rule is printed at the top of the landing page, repeated on every subpage, 
 | `data/checks/` | Latest canonical anti-hallucination pass and full pass history |
 | `scripts/integrate_0804e222.mjs` | Zero-loss, idempotent integrator merging `data/session-0804e222/*` into canonical `data/*.json` |
 | `scripts/build.mjs` | Root static site generator (91 HTML pages, zero runtime dependencies) |
-| `scripts/verify.mjs` | Canonical anti-hallucination audit: **19 check groups (`S01`–`S19`)** |
+| `scripts/verify.mjs` | Canonical anti-hallucination audit: **20 check groups (`S01`–`S20`)** |
 | `scripts/live_reverify.mjs` | Re-opens every official product page on a runner with full internet and records what it printed (never edits the curated data) |
 | `scripts/reconcile_live.mjs` | Applies only evidence-backed corrections, with a quote and URL for each, and writes the per-row ledger |
 | `scripts/build_compliance.mjs` | Builds the 12-point requirements scorecard |

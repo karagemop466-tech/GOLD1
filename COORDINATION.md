@@ -399,6 +399,15 @@ Anna Sheffield, Blue Nile, Mejuri, Brilliant Earth re-reads plus the two gold-pr
 each with the URL, what was verified on it and the retrieval date. Every row's own official
 product URL remains linked from the table.
 
+### Publication (2026-10-23)
+
+- **Pull request:** [#30](https://github.com/karagemop466-tech/GOLD1/pull/30) — *Sixth pass: 2026-10-23 live re-read of all 59 rows, 12-point requirements scorecard, F51 withdrawal*.
+- **Merged into `main`:** 2026-10-23T10:07:36Z. Merge commit **`f0be1a79c81bfe80f6b4eb6a0f78d3c8ed281668`**.
+- **Merge conflict resolved without losing work:** `origin/main` had advanced with `arena/e2b73db1-gold1` (PR #27) and `arena/afc98570-gold1` (PR #28) while this pass ran. Their session's freshness banner (`Price snapshots are not live quotes…`), the registry-derived retailer count in the landing metadata, the `scripts/verify_data.py` compatibility wrapper, and their §14 record were kept verbatim. This pass's record was renumbered to §15 and its tasks from T25–T28 to **T29–T32** to avoid colliding with their T25 claim. No data, flag, archive or audit group from either session was dropped, and both sessions' generated pages were resolved by regenerating from the merged data.
+- **GitHub Pages:** build `built`, `error: null`, for the exact merge commit `f0be1a7`.
+- **Live pages verified:** `https://karagemop466-tech.github.io/GOLD1/requirements.html` rendered the 12-point scorecard and the 8-row shortlist from the merged data.
+- **Follow-up found on the live page and fixed:** the "computable gold value" stat note printed a literal `${usd(spot)}` because the string was single-quoted instead of a template. Fixed in `scripts/build.mjs`, and a **new audit group S20** ("no template leaks or undefined values") now fails the build if any generated page ever contains an unreplaced `${…}` expression or the word "undefined". Sabotage-tested by re-injecting the leak: S20 failed as intended, then passed again after the fix. The suite is therefore **20 groups (S01–S20)**.
+
 ### Irregularities / open items
 
 F37 (unverified Anna Sheffield price), F38 (Blue Nile karat contradictions), F39 (Aurate
