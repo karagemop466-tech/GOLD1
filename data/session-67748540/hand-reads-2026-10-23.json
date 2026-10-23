@@ -1,5 +1,5 @@
 {
- "pass": "P116-67748540",
+ "pass": "P117-67748540",
  "purpose": "Independent second-channel reads for the 2026-10-23T23:39Z pass. The Actions runner (data/live/2026-10-23T23-39-43Z.json) returned HTTP 403 on 10 rows; this session's own retrieval channel re-opened those 10 official pages, plus both Menē 24K PDPs and the gold spot feed, and recorded the exact string each page printed.",
  "clock_note": "This session's retrieval tool does not stamp a per-fetch timestamp. Reads were made inside the window 2026-10-23T23:41Z-23:53Z (UTC). 'observed_at_approx' is the position in that window, not a page-provided timestamp; no page-provided date is claimed. The runner file carries exact second-resolution timestamps for the 61 rows it did read.",
  "observed_at_window": "2026-10-23T23:41Z-23:53Z",

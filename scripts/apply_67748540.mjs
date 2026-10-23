@@ -18,7 +18,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const ROOT = process.cwd();
-const PASS = 'P116-67748540';
+const PASS = 'P117-67748540';
 const DAY = '2026-10-23';
 const read = async (p) => JSON.parse(await readFile(join(ROOT, p), 'utf8'));
 const write = async (p, d) => writeFile(join(ROOT, p), JSON.stringify(d, null, 1) + '\n');

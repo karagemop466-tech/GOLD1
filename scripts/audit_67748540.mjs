@@ -24,7 +24,7 @@ const ROOT = process.cwd();
 const readJson = async (p) => JSON.parse(await readFile(join(ROOT, p), 'utf8'));
 const readText = async (p) => readFile(join(ROOT, p), 'utf8');
 
-const PASS = 'P116-67748540';
+const PASS = 'P117-67748540';
 const results = [];
 let assertions = 0;
 
@@ -63,7 +63,7 @@ await group('Q01', 'Fresh-pass stamp covers exactly the confirmed rows', async (
     const row = rings.rows.find((r) => r.id === c.id);
     assert(!!row, `${c.id}: confirmed but missing from the dataset`);
     assert(row.reverified_at === '2026-10-23', `${c.id}: confirmed today but reverified_at is ${row.reverified_at}`);
-    assert(row.evidence.includes('P116-67748540'), `${c.id}: evidence carries no dated ${PASS} quote`);
+    assert(row.evidence.includes('P117-67748540'), `${c.id}: evidence carries no dated ${PASS} quote`);
   }
   for (const r of rings.rows.filter((x) => x.withdrawn)) {
     assert(!r.evidence.includes(PASS), `${r.id}: a withdrawn row must not carry a fresh confirmation quote`);
