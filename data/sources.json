@@ -434,10 +434,11 @@
       "id": "nist-handbook-130",
       "publisher": "National Institute of Standards and Technology (NIST)",
       "type": "federal metrological standard",
-      "url": "https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information",
+      "url": "https://www.nist.gov/pml/owm/metric-si/unit-conversion/precious-metals-conversion-information",
       "verified": "NIST Handbook 130 § 2.17 exact conversion: 1 troy ounce = 31.1034768 grams = 20 pennyweights (1.55517384 g/dwt) = 480 grains",
       "status": "retrieved",
-      "retrieved_at": "2026-10-22"
+      "retrieved_at": "2026-10-22",
+      "url_correction_note": "URL corrected 2026-10-23 (sess-356f1adf): the previously stored path returned HTTP 404; this /unit-conversion/ path was opened live on 2026-10-23 and renders NIST Handbook 130 § 2.17 (F67)."
     },
     {
       "id": "gia-2024-electroformed",

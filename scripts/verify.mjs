@@ -27,6 +27,8 @@ const rings = await read('data/rings.json');
 const retailersDoc = await read('data/retailers.json');
 const flagged = await read('data/flagged.json');
 const gold = await read('data/gold-price.json');
+const sourcesDoc = await readIf('data/sources.json', { sources: [] });
+const checklistDoc = await readIf('data/checklist.json', { items: [] });
 const built = await readIf('data/build-report.json', null);
 
 const retailers = Object.fromEntries(retailersDoc.retailers.map((r) => [r.id, r]));
@@ -71,7 +73,32 @@ const counted = (fn) => fn;
     if (!r.retrieved_at) failures.push(`${label}: no retrieval date`);
     if (!r.evidence || r.evidence.length < 25) failures.push(`${label}: evidence string too short to verify anything`);
   }
-  add('S01', 'Provenance', 'Every row has an HTTPS source on the retailer\'s own domain, a retrieval date, and a usable evidence string.', failures);
+
+  /* T47 (sess-356f1adf) — retired official-source URLs must never be re-published.
+     The NIST precious-metals page moved behind /unit-conversion/. The old path 404s;
+     it was found live on 2026-10-23 still stored in canonical data (Flag F67) and fixed.
+     This assertion only inspects URL-valued fields, never free text. */
+  const RETIRED_URLS = [
+    'https://www.nist.gov/pml/owm/metric-si/precious-metals-conversion-information',
+  ];
+  const urlFields = [
+    ['data/gold-price.json unit_authority.source_url', gold?.unit_authority?.source_url],
+    ['data/gold-price.json primary.source_url', gold?.primary?.source_url],
+    ...((retailersDoc?.retailers || []).flatMap((r) => [
+      [`data/retailers.json ${r.id} url`, r.url],
+      [`data/retailers.json ${r.id} bbb_url`, r.bbb_url],
+    ])),
+    ...((flagged?.items || []).flatMap((f) => (f.sources || []).map((u, i) => [`data/flagged.json ${f.id} source[${i}]`, u]))),
+    ...((sourcesDoc?.sources || []).flatMap((s) => [[`data/sources.json ${s.id} url`, s.url]])),
+    ...((checklistDoc?.items || []).flatMap((c, i) => (c.links || []).map((l) => [`data/checklist.json item[${i}] link`, l.url]))),
+  ];
+  for (const [label, url] of urlFields) {
+    assertions++;
+    if (typeof url !== 'string') continue;
+    if (RETIRED_URLS.includes(url.trim())) failures.push(`${label}: retired official URL still published (${url}) — see Flag F67`);
+  }
+
+  add('S01', 'Provenance', 'Every row has an HTTPS source on the retailer\'s own domain, a retrieval date, and a usable evidence string; no retired official-source URL (e.g. the moved NIST path, F67) is published anywhere in the canonical data.', failures);
 }
 
 /* ---------------------------------------------------------------- S02 */
