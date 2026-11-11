@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+<title>Verification Checks — GOLD (verified 2026-11-11)</title>
+<style>
+:root{--ink:#1b1b1f;--muted:#5b5b66;--line:#e3e1da;--bg:#faf8f4;--card:#fff;--gold:#8a6d1d;--warn:#8a2020;--ok:#1d6b3f}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:#141210;color:#f5efe2;border-bottom:3px solid var(--gold)}
+header .wrap{max-width:1080px;margin:0 auto;padding:14px 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.brand{font-weight:700;letter-spacing:.04em;text-decoration:none;color:#f5efe2}
+.brand span{color:#e8c766}
+nav a{color:#d9d2c2;text-decoration:none;margin-right:12px;font-size:14px}
+nav a.active{color:#fff;border-bottom:2px solid var(--gold);font-weight:600}
+main{max-width:1080px;margin:0 auto;padding:18px}
+.banner{background:#fff6dd;border:2px solid var(--gold);border-radius:8px;padding:14px 16px;margin:0 0 18px}
+.banner strong{color:var(--warn)}
+.banner.warn{background:#fdecec;border-color:#c46a6a}
+h1{font-size:1.6rem;margin:.2em 0 .4em}
+h2{font-size:1.2rem;margin:1.4em 0 .5em;border-bottom:1px solid var(--line);padding-bottom:.25em}
+h3{font-size:1.02rem;margin:1em 0 .4em}
+.cards{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;min-width:130px}
+.card .num{font-size:1.5rem;font-weight:700;color:var(--gold)}
+.card .lbl{font-size:12.5px;color:var(--muted)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:14px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.tile{display:block;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;text-decoration:none;color:var(--ink)}
+.tile:hover{border-color:var(--gold)}
+.tile strong{display:block;margin-bottom:4px}
+.tile span{font-size:13px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}
+th{background:#f1ede3;position:sticky;top:0}
+.table-scroll{overflow:auto;max-height:70vh;border:1px solid var(--line);border-radius:8px}
+.tag{display:inline-block;border-radius:99px;padding:1px 9px;font-size:12px;font-weight:600}
+.ok{background:#e3f4ea;color:var(--ok)}
+.drift{background:#fdecec;color:var(--warn)}
+.unv{background:#fff1cf;color:#7a5b00}
+.muted{color:var(--muted);font-size:13.5px}
+code{background:#f1ede3;padding:1px 5px;border-radius:4px;font-size:13px}
+a{color:#6b4e0e}
+blockquote{margin:.4em 0;padding:.5em .8em;border-left:3px solid var(--gold);background:#fffdf5;font-size:14px}
+footer{max-width:1080px;margin:24px auto 0;padding:16px 18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}
+.calc{display:flex;flex-wrap:wrap;gap:10px;align-items:end}
+.calc label{display:flex;flex-direction:column;font-size:13px;gap:4px}
+.calc input,.calc select{padding:7px 9px;border:1px solid var(--line);border-radius:6px;font-size:15px;background:#fff}
+.calc button{padding:9px 16px;background:var(--gold);color:#fff;border:0;border-radius:6px;font-weight:600;cursor:pointer}
+#meltOut{font-size:1.3rem;font-weight:700;color:var(--gold)}
+ul.tight{margin:.4em 0;padding-left:1.2em}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="index.html">Au <span>GOLD · verified 2026-11-11</span></a>
+  <nav><a href="index.html">Dashboard</a><a href="rows.html">Rows — 71+13</a><a href="gold.html">Gold & Calculator</a><a href="checklist.html">Checklist</a><a href="sources.html">Sources</a><a href="flagged.html">Flagged for Review</a><a href="checks.html" class="active">Verification Checks</a></nav>
+</div></header>
+<main>
+
+<div class="banner"><strong>No hallucinations.</strong> These gates are the machine half of the rule; the human half is re-reading every quote on <a href="sources.html">Sources</a>. Security and anti-hallucination checks run after every review pass.</div>
+<h1>Verification checks — V01–V12</h1>
+<section class="panel">
+<h2>Gate definitions</h2>
+<div class="table-scroll"><table>
+<tr><th>ID</th><th>Name</th><th>What it enforces</th></tr>
+<tr><td>V01</td><td>No-hallucination banner in top summary</td><td>index.html must open with the No-hallucinations rule above all content.</td></tr>
+<tr><td>V02</td><td>Every canonical row has an official https source URL</td><td>All 71 rows in data/session-7173133c/verify-7173133c.json carry source_url.</td></tr>
+<tr><td>V03</td><td>Every canonical price is live-confirmed or explicitly drift-flagged</td><td>price_verdict ∈ allowed set; drift rows appear in findings.</td></tr>
+<tr><td>V04</td><td>No weight invented</td><td>weight_verdict confirmed* or not_published/labelled; published weights equal stored weights; blank stays blank.</td></tr>
+<tr><td>V05</td><td>Market anchors carry publisher timestamps</td><td>gold-api and COMEX readings both have publisher timestamps and verbatim quotes.</td></tr>
+<tr><td>V06</td><td>Drift is disclosed, never silently written</td><td>Stored-vs-live mismatches appear in findings[] with both numbers.</td></tr>
+<tr><td>V07</td><td>Checklist page carries all 12 items + The key</td><td>checklist.html renders 12 sections and the key principle.</td></tr>
+<tr><td>V08</td><td>Flagged page lists every finding with a source link</td><td>flagged.html anchors V-7173133c-01..N, each with source_url.</td></tr>
+<tr><td>V09</td><td>Links &amp; placeholders</td><td>No broken internal hrefs in portal HTML; no placeholder markers of any kind.</td></tr>
+<tr><td>V10</td><td>Security: inline handlers, dangerous URIs, secrets, CSP</td><td>No on*= handlers, no javascript:/vbscript:/data:text-html hrefs, no credential patterns, CSP meta present on every page.</td></tr>
+<tr><td>V11</td><td>noopener noreferrer on every target=_blank</td><td>Every external link carries rel=&quot;noopener noreferrer&quot;.</td></tr>
+<tr><td>V12</td><td>Provenance &amp; dates everywhere</td><td>Portal pages carry the 2026-11-11 date, session id, and per-row fetch quotes; checks.json failure_count === 0 after run.</td></tr>
+</table></div>
+</section>
+<section class="panel">
+<h2>Last run</h2>
+<div class="table-scroll"><table><tr><th>Gate</th><th>Name</th><th>Result</th></tr><tr id="V01"><td>V01</td><td>No-hallucination banner in top summary</td><td><span class="tag ok">PASS</span></td></tr><tr id="V02"><td>V02</td><td>Every row has an official https source URL</td><td><span class="tag ok">PASS</span></td></tr><tr id="V03"><td>V03</td><td>Price verdicts explicit; drift disclosed as findings</td><td><span class="tag ok">PASS</span></td></tr><tr id="V04"><td>V04</td><td>No weight invented; blanks stay blank</td><td><span class="tag ok">PASS</span></td></tr><tr id="V05"><td>V05</td><td>Market anchors carry publisher timestamps and quotes</td><td><span class="tag ok">PASS</span></td></tr><tr id="V06"><td>V06</td><td>Drift disclosed with both numbers</td><td><span class="tag ok">PASS</span></td></tr><tr id="V07"><td>V07</td><td>Checklist page has 12 items and The key</td><td><span class="tag ok">PASS</span></td></tr><tr id="V08"><td>V08</td><td>Flagged page lists every finding with a source link</td><td><span class="tag ok">PASS</span></td></tr><tr id="V09"><td>V09</td><td>Internal links resolve; no placeholder text</td><td><span class="tag ok">PASS</span></td></tr><tr id="V10"><td>V10</td><td>Security: handlers, URIs, secrets, CSP</td><td><span class="tag ok">PASS</span></td></tr><tr id="V11"><td>V11</td><td>noopener noreferrer on every external link</td><td><span class="tag ok">PASS</span></td></tr><tr id="V12"><td>V12</td><td>Provenance, dates and session id on every page</td><td><span class="tag ok">PASS</span></td></tr></table></div>
+<p class="muted">Run #4 at 2026-11-11T08:48:27Z · failure count <strong>0</strong> · written by <code>scripts/verify_7173133c.mjs</code>.</p>
+</section>
+<section class="panel">
+<h2>Companion repository gate</h2>
+<p class="muted">The repo-wide CI (<code>.github/workflows/integrity.yml</code>) runs <code>npm ci --ignore-scripts &amp;&amp; npm run check &amp;&amp; npm test &amp;&amp; npm audit --audit-level=high</code> on every PR and push to main; this portal's verifier and tests are exercised in this session's PR run and by <code>tests/verify-7173133c.test.mjs</code>.</p>
+</section>
+
+</main>
+<footer>
+  <p><strong>No hallucinations.</strong> Every price, weight and quote on this portal was read from the official source URL shown beside it via this session's own page-fetch channel on <strong>2026-11-11</strong> (<code>sess-7173133c</code>, task T56/§29). Anything that could not be confirmed is blank and flagged — never inferred.</p>
+  <p>This is an independent research project. It is not affiliated with, endorsed by, or sponsored by any retailer or institution named here. Prices are snapshots — always re-open the official product page before buying. A stamp alone does not prove purity: get independent testing before wearing or resizing.</p>
+  <p>Canonical root dashboard: <a href="../../../index.html">site root</a> · Flagged register: <a href="../../../flagged.html">root flagged.html</a> · Board: <a href="../../../COORDINATION.md">COORDINATION.md</a></p>
+</footer>
+</body>
+</html>

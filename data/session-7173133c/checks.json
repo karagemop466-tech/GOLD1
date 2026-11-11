@@ -1,0 +1,81 @@
+{
+  "run": 5,
+  "generated_at": "2026-11-11T08:48:27Z",
+  "session": "sess-7173133c",
+  "task": "T56",
+  "results": [
+    {
+      "id": "V01",
+      "name": "No-hallucination banner in top summary",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V02",
+      "name": "Every row has an official https source URL",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V03",
+      "name": "Price verdicts explicit; drift disclosed as findings",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V04",
+      "name": "No weight invented; blanks stay blank",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V05",
+      "name": "Market anchors carry publisher timestamps and quotes",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V06",
+      "name": "Drift disclosed with both numbers",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V07",
+      "name": "Checklist page has 12 items and The key",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V08",
+      "name": "Flagged page lists every finding with a source link",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V09",
+      "name": "Internal links resolve; no placeholder text",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V10",
+      "name": "Security: handlers, URIs, secrets, CSP",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V11",
+      "name": "noopener noreferrer on every external link",
+      "pass": true,
+      "failures": []
+    },
+    {
+      "id": "V12",
+      "name": "Provenance, dates and session id on every page",
+      "pass": true,
+      "failures": []
+    }
+  ],
+  "failure_count": 0
+}
