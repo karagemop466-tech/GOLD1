@@ -19,6 +19,7 @@ const OUT = ROOT;
 const read = async (p) => JSON.parse(await readFile(join(ROOT, p), 'utf8'));
 
 const rings = await read('data/rings.json');
+const currentReview = await read('data/current-review.json');
 const retailersDoc = await read('data/retailers.json');
 const sourcesDoc = await read('data/sources.json');
 const flagged = await read('data/flagged.json');
@@ -226,7 +227,8 @@ const retrievedDates = [...new Set(rings.rows.map((r) => r.retrieved_at))].sort(
 /* ------------------------------------------------------------------ layout */
 const NAV = [
   ['index.html', 'Dashboard'],
-  ['rings.html', 'All rings'],
+  ['current-review.html', 'Current review'],
+  ['rings.html', 'Historical rings'],
   ['requirements.html', 'Requirements'],
   ['recheck.html', 'Re-check 23 Oct'],
   ['live-audit.html', 'Live audit'],
@@ -268,11 +270,16 @@ ${extraHead}
   </div>
 </header>
 <main id="main">
+<section class="wrap rule-banner" aria-label="Current verification limits">
+  <h2>No hallucinations — the rule this whole project runs on</h2>
+  <p><strong>Review dated ${esc(currentReview.reviewed_at)}:</strong> ${currentReview.rows.length} listings reviewed locally; no fresh retailer retrieval in this session. Prices, policies, gold references and seller claims elsewhere below are <strong>historical snapshots, not current verified offers</strong>. Older “confirmed” verdicts apply only to their recorded dates. Unknown current values remain blank.</p>
+  <p><a href="${current === 'root' ? '' : '../'}current-review.html">Current row-by-row review and official sources</a> · <a href="${current === 'root' ? '' : '../'}flagged.html#current-freshness">Flagged for Review</a>. Automated tests check consistency, not truth; actively look for hallucinations after every review. Gold-content calculations are conditional estimates, not measured purity or guaranteed resale value.</p>
+</section>
 ${body}
 </main>
 <footer class="site-foot">
   <div class="wrap">
-    <p><strong>No hallucinated prices.</strong> Every price and specification on this site was copied from an official retailer feed retrieved on ${esc(retrievedDates.join(', ') || '2026-10-22')} and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
+    <p><strong>No hallucinated prices.</strong> Historical prices and specifications are attributed by the stored research to official sources retrieved on ${esc(retrievedDates.join(', ') || '2026-10-22')} and is linked to the exact page it came from. Values that could not be confirmed are blank, not estimated.</p>
     <p class="muted">Gold reference: ${usd(spot)} per troy ounce at ${esc(gold.primary.publisher_timestamp)} (${esc(gold.primary.publisher)}). A gold price is not an appraisal. Nothing here is legal, financial or appraisal advice. · <a href="${current === 'root' ? '' : '../'}methodology.html">Method</a> · <a href="${current === 'root' ? '' : '../'}flagged.html">Flagged for review</a></p>
   </div>
 </footer>
@@ -285,7 +292,7 @@ ${body}
 const noHallucinationBanner = (prefix = '') => `
 <div class="rule-banner" role="note">
   <h2>No hallucinations — the rule this whole project runs on</h2>
-  <p>Every price, karat and weight below is copied from the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and every row is re-read live against its official page with the result published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
+  <p>Historical price, karat and weight records below are attributed to the seller's own official product page or feed and linked on the same row. <strong>Nothing is estimated, averaged, inferred or remembered.</strong> If a value was not confirmed on an official source it is shown as <span class="unverified">— unverified</span> and listed on the <a href="${prefix}flagged.html">Flagged for review</a> page. Every build is mechanically verified by automated anti-hallucination and security passes (<a href="${prefix}checks.html">S01–S20 + A01–A10 + H01–H13 + N01–N11 + Q01–Q10</a>), and the archived October re-read results are published on the <a href="${prefix}live-audit.html">evening live audit</a>. <strong>We actively recommend that you look for hallucinations yourself:</strong> open any row's official product link and check our verbatim evidence quote against the live seller page before buying (latest re-read: ${esc(recheckDate || 'not recorded')}; snapshots are not live quotes).</p>
 </div>`;
 
 const stat = (value, label, note = '') => `
@@ -457,7 +464,7 @@ const dashboard = layout({
     ${stat(`${CATEGORIES.length}`, 'style categories', 'solitaire through estate')}
     ${stat(`${weightPublished}/${totalRows}`, 'publish metal weight', '0.3 g to 7.0 g — the number you need for a value check')}
     ${stat(`${solidStated}/${totalRows}`, 'say "solid gold"', solidStated === 0 ? 'karat is stated; the word solid is not' : Object.entries(rings.rows.filter((r) => r.solid_stated).reduce((a, r) => ((a[r.retailer] = (a[r.retailer] || 0) + 1), a), {})).sort((a, b) => b[1] - a[1]).map(([k, v]) => `${v} ${k}`).join(', '))}
-    ${stat(`${verifiedToday}/${totalRows}`, `verdict from ${compliance.as_of}`, 're-read live today, or documented as partly verified')}
+    ${stat(`${verifiedToday}/${totalRows}`, `verdict from ${compliance.as_of}`, 'historical re-read, or documented as partly verified')}
     ${stat(`${flagged.items.length}`, 'flagged findings', 'published, not hidden')}
     ${stat(`${liveFetchOk}/${totalRows}`, 'pages re-read 2026-10-23', 'every official URL opened directly on 2026-10-23')}
   </div>
@@ -496,10 +503,10 @@ const dashboard = layout({
     <h2>How current each row is — pass ${esc(latestChecks?.pass || 'P50')}, ${esc(compliance.as_of)}</h2>
     <p>Nothing here is inherited on trust. Every listing has been opened at its own official URL at least once, and ${liveFetchOk} of ${totalRows} were opened again on ${esc(compliance.as_of)} by the re-read workflow. The verdict for each row is on <a href="recheck.html">Re-check 23 Oct</a>, and the quote each number was read from is in <code>data/verification-${esc(compliance.as_of)}.json</code>. Rows that could not be re-opened keep their older capture date and say so — none is presented as fresh.</p>
     <ul class="ticks">
-      <li><strong>${publishedWeights.length} of ${totalRows} rows publish a metal weight</strong> (${publishedWeights.slice(0, 12).map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}${publishedWeights.length > 12 ? `, and ${publishedWeights.length - 12} more` : ''}). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. ${compliance.summary.weight_published - 5 === 16 ? 'Sixteen were re-read verbatim today; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.' : ''}</li>
+      <li><strong>${publishedWeights.length} of ${totalRows} rows publish a metal weight</strong> (${publishedWeights.slice(0, 12).map((r) => `<a href="rings/${r.id}.html">${esc(r.weight_g_low)} g</a>`).join(', ')}${publishedWeights.length > 12 ? `, and ${publishedWeights.length - 12} more` : ''}). Every figure is a “Gold Weight” line copied from the seller's own spec panel — none is inferred from size or karat. ${compliance.summary.weight_published - 5 === 16 ? 'Sixteen were re-read verbatim in that October pass; five Aurate weights could not be reproduced, because Aurate prints no gram figure in the static page and its variant weight field is a 6 g shipping weight.' : ''}</li>
       ${recheckPartial.length ? `<li><strong>${recheckPartial.length} rows are partly verified.</strong> ${recheckPartial.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a>`).join(', ')} — a partly-verified row is one where the seller's page did not reproduce <em>every</em> stored field, which is not the same as an unconfirmed price: <a href="rings/au-cigar.html">the Modern Cigar Band's</a> stored $1,308 was reproduced at variant level on 2026-10-23T23:39Z (the seller's own feed prints 14K / Yellow / 3 = 1308.00) even though its published weight stays a 2.6–4 g model range. Each row prints exactly what was and was not reproduced.</li>` : ''}
       <li><strong>${priceUnverifiedRows.length} rows carry no usable price.</strong> ${priceUnverifiedRows.map((r) => `<a href="rings/${r.id}.html">${esc(r.title)}</a> — ${esc((r.price_unverified_reason || '').split(':')[0])}`).join('; ')}. Both read “— unverified” everywhere on this site.</li>
-      ${notRereadToday ? `<li><strong>${notRereadToday} rows were not re-read today</strong> because With Clarity, Cartier and Brilliant Earth block automated retrieval (<a href="flagged.html">F53</a>). Their stored values keep the 2026-10-22 date and are labelled <em>not re-read 2026-10-23</em> on every table.</li>` : `<li><strong>0 rows remain unread today</strong> — all 9 pages previously blocked on the automated runner (With Clarity, Cartier and Brilliant Earth; <a href="flagged.html">F53</a>) were verified via direct storefront JSON &amp; PDP fetches.</li>`}
+      ${notRereadToday ? `<li><strong>${notRereadToday} rows were not re-read in that October pass</strong> because With Clarity, Cartier and Brilliant Earth block automated retrieval (<a href="flagged.html">F53</a>). Their stored values keep the 2026-10-22 date and are labelled <em>not re-read 2026-10-23</em> on every table.</li>` : `<li><strong>0 rows remained unread in that October pass</strong> — all 9 pages previously blocked on the automated runner (With Clarity, Cartier and Brilliant Earth; <a href="flagged.html">F53</a>) were verified via direct storefront JSON &amp; PDP fetches.</li>`}
     </ul>
     <p class="sub">Full list of the ${flagged.items.length} open findings, with source links: <a href="flagged.html">Flagged for review →</a></p>
   </div>
@@ -1055,6 +1062,7 @@ const flaggedPage = layout({
   body: `
 <section class="wrap section">
   <h1>Flagged for review</h1>
+  <article class="rule-banner" id="current-freshness"><h2>Current verification gap — ${esc(currentReview.reviewed_at)}</h2><p>All ${currentReview.rows.length} current product quotes and the current gold reference are unverified in this session. This is a freshness gap, not proof that the historical records were fabricated. No fresh seller request was made because the seller hosts are outside this session's outbound allowlist. <a href="current-review.html">Every affected row, its official source and blank current fields →</a></p><p>Existing automated audits compare stored claims with stored evidence. They cannot establish independent truth or certify a ring. Return eligibility, maker’s mark, net gold weight and professional purity testing still require verification before relying on any candidate.</p></article>
   <p class="lede">${flagged.items.length} findings. None of these block the release — they are published so you can review them after the site is live. Every finding carries the source link that produced it.</p>
   ${noHallucinationBanner()}
   <div class="flag-grid">
@@ -1517,7 +1525,7 @@ const eveningPage = eveningLedger
   ${noHallucinationBanner()}
 
   <div class="stat-grid">
-    ${stat(`${eveningLedger.summary.confirmed + eveningLedger.summary.confirmed_two_channels + eveningLedger.summary.confirmed_independent_read + eveningLedger.summary.consistent_with_published_range}/${eveningLedger.summary.rows}`, 'rows confirmed today', `${eveningLedger.summary.confirmed} from the automated run alone, ${eveningLedger.summary.confirmed_two_channels} by two independent channels. The stored price appears in the page’s own offer data or in the seller’s own variant feed for that exact product.`)}
+    ${stat(`${eveningLedger.summary.confirmed + eveningLedger.summary.confirmed_two_channels + eveningLedger.summary.confirmed_independent_read + eveningLedger.summary.consistent_with_published_range}/${eveningLedger.summary.rows}`, 'rows confirmed in the October pass', `${eveningLedger.summary.confirmed} from the automated run alone, ${eveningLedger.summary.confirmed_two_channels} by two independent channels. The stored price appears in the page’s own offer data or in the seller’s own variant feed for that exact product.`)}
     ${stat(`${eveningLedger.summary.stored_price_not_reproduced}`, 'prices that moved', 'Both Menē 24K bands repriced with spot gold during the pass. Published, not overwritten.')}
     ${stat(`${eveningLedger.summary.unresolved_price}`, 'prices not machine-readable', 'Client-side price rendering, read by eye where possible; the rest stay unresolved rather than guessed.')}
     ${stat(`${eveningLedger.summary.not_read}`, 'rows blocked (HTTP 403)', 'Five With Clarity, four Cartier and one Brilliant Earth page refused the runner. Nothing is claimed fresh for them.')}
@@ -1577,10 +1585,10 @@ const eveningPage = eveningLedger
   </div>
 
   <h2>The full 71-row ledger</h2>
-  <p class="sub">“Stored” is what this project had before the pass. “Read today” is what the official page or the seller’s own variant feed printed in this run. A screenshot is never a source, and a missing value is never filled in.</p>
+  <p class="sub">“Stored” is what this project had before the pass. “Read in that pass” is what the official page or the seller’s own variant feed printed in this run. A screenshot is never a source, and a missing value is never filled in.</p>
   <div class="table-wrap">
   <table class="data-table">
-    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Read today</th><th scope="col">Verdict</th><th scope="col">Weight</th><th scope="col">Note</th><th scope="col">Official source</th></tr></thead>
+    <thead><tr><th scope="col">Row</th><th scope="col">Seller</th><th scope="col">Stored price</th><th scope="col">Read in October pass</th><th scope="col">Verdict</th><th scope="col">Weight</th><th scope="col">Note</th><th scope="col">Official source</th></tr></thead>
     <tbody>
     ${eveningLedger.rows
       .map((r) => {
@@ -1605,7 +1613,7 @@ const eveningPage = eveningLedger
               ? '—'
               : r.weight_reproduced_today === true
                 ? `${r.stored_weight_g} g re-printed`
-                : `${r.stored_weight_g} g (not machine-visible today)`;
+                : `${r.stored_weight_g} g (not machine-visible in that pass)`;
         return `<tr${r.verdict === 'withdrawn_source_mismatch' ? ' class="row-alert"' : ''}>
       <td><strong>${esc(r.id)}</strong><div class="sub">${esc(r.stored_title)}</div></td>
       <td>${esc(r.retailer)}</td>
@@ -1656,6 +1664,19 @@ const eveningPage = eveningLedger
 function ledgerEvidenceFile(doc) {
   return doc.evidence_file || 'data/live/latest.json';
 }
+
+const currentReviewPage = layout({
+  title: 'Current verification review', description: 'Current unverified values, historical evidence dates and official product links for every listing.',
+  current: 'root', active: 'Current review',
+  body: `<section class="wrap section"><h1>Current verification review</h1>
+  <p class="lede">${currentReview.rows.length} records · review date ${esc(currentReview.reviewed_at)} · 0 current quotes confirmed. No manual entry is needed to browse this register. Empty cells mean unverified, not zero. Titles and categories identify historical records and have not been freshly confirmed.</p>
+  <p>Current gold price: <span class="unverified">— unverified</span>. Historical gold evidence: ${esc(currentReview.historical_gold_date)}. <a href="${esc(currentReview.current_gold_source)}" rel="noopener nofollow">Publisher source</a>. The <a href="calculator.html">calculator</a> uses a dated reference, not a current appraisal.</p>
+  <p><a href="data/current-review.json">Download the complete review JSON</a> · <a href="rings.html">Browse historical prices separately</a></p>
+  <div class="table-wrap"><table class="data-table"><caption>All current fields are blank pending official-source confirmation</caption><thead><tr><th scope="col">Record / seller</th><th scope="col">Category</th><th scope="col">Historical evidence date</th><th scope="col">Current price</th><th scope="col">Current karat</th><th scope="col">Current metal g</th><th scope="col">Current fine gold g</th><th scope="col">Status / reason</th><th scope="col">Official source</th></tr></thead><tbody>
+  ${currentReview.rows.map(r => `<tr><td><a href="rings/${esc(r.id)}.html">${esc(r.title)}</a><br>${esc(r.retailer)}<br><code>${esc(r.id)}</code></td><td>${esc(r.category)}</td><td>${esc(r.historical_evidence_date ?? '')}</td><td aria-label="Unverified"></td><td aria-label="Unverified"></td><td aria-label="Unverified"></td><td aria-label="Unverified"></td><td><strong>Unverified</strong><br>${esc(r.reason)}</td><td><a href="${esc(r.source_url)}" rel="noopener nofollow">Official product</a></td></tr>`).join('')}
+  </tbody></table></div><h2>Review limits</h2><p>${esc(currentReview.recommendation)} Domain matching checks the stored retailer registry, not the contents or availability of a live source. No claim of a complete market-wide list or a purchase-ready ring is made.</p></section>`
+});
+await writeFile(join(OUT, 'current-review.html'), currentReviewPage);
 
 await writeFile(join(OUT, 'index.html'), dashboard);
 await writeFile(join(OUT, 'requirements.html'), requirementsPage);
